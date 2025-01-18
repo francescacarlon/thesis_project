@@ -3,8 +3,8 @@ import re
 import os
 import json
 
-# Define the base path for your project
-base_path = r"C:/Users/Francesca Carlon/Desktop/Fran_stuff/MASTER/THESIS/thesis_project"
+# Define the base path for project
+base_path = r"C:/Users/Francesca Carlon/Desktop/Fran_stuff/MASTER/THESIS/thesis_project/chapters"
 existing_json_file = os.path.join(base_path, "dataset.json")
 
 # Define the chapters and their sections to extract
@@ -99,8 +99,8 @@ for chapter, sections in chapters_to_extract.items():
         data[current_id] = {
             "chapter": chapter,
             "sections": combined_sections,  # Store sections as a single string
-            "topic": f"Topic of Sections {combined_sections}",  # Replace chapter_title with topic
-            "original_category": category,  # Empty field for manual completion
+            "topic": f"Topic of Sections {combined_sections}",  # Manually fill in
+            "original_category": category,  # Completed via category_mapping
             "original_text": combined_paragraphs
         }
         current_id += 1
