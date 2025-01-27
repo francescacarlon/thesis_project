@@ -1,2 +1,4 @@
-# main.py file
-# is gitrep working?
+from src.benchmark_processor import process_dataset
+
+if __name__ == "__main__":
+    process_dataset()
