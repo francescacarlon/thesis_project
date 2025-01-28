@@ -10,8 +10,9 @@ def create_benchmark():
     for key, value in dataset.items():
         original_text = value["original_text"]
 
-        # Perform readability analysis
-        readability_analysis = analyze_text(original_text)
+        # Perform readability, POS analysis
+        text_analysis = analyze_text(original_text)
+
 
         # Prepare benchmark structure with readability analysis
         benchmark_data[key] = {
@@ -20,15 +21,16 @@ def create_benchmark():
             "topic": value["topic"],
             "original_category": value["original_category"],
             "original_text": original_text,
-            "original_text_analysis": readability_analysis,  # Add only readability scores
-            "CS_tailored_gpto1": None,
-            "CS_tailored_gpt4o": None,
-            "CS_tailored_claude_sonnet": None,
-            "CS_tailored_gemini": None
+            "original_text_analysis": text_analysis # Add only readability scores
+            #"CS_tailored_gpto1": None,
+            #"CS_tailored_gpt4o": None,
+            #"CS_tailored_claude_sonnet": None,
+            #"CS_tailored_gemini": None,
+            #"CS_tailored_llama": None
         }
 
     save_dataset(benchmark_data, BENCHMARK_PATH)
-    print(f"Benchmark with readability scores saved to {BENCHMARK_PATH}")
+    print(f"Benchmark with text analysis saved to {BENCHMARK_PATH}")
 
 if __name__ == "__main__":
     create_benchmark()

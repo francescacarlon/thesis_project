@@ -9,12 +9,21 @@
             "readability": {
                 "flesch_reading_ease": 57.57,
                 "flesch_kincaid_grade": 8.6
+            },
+            "pos": {
+                "NN": 0.3402061855670103,
+                "IN": 0.12886597938144329,
+                "CD": 0.010309278350515464,
+                "JJ": 0.14432989690721648,
+                "CC": 0.06701030927835051,
+                "VB": 0.10309278350515463,
+                "DT": 0.08762886597938144,
+                "RB": 0.061855670103092786,
+                "VBG": 0.020618556701030927,
+                "NNP": 0.015463917525773196,
+                "VBN": 0.020618556701030927
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     },
     "2": {
         "chapter": "18",
@@ -26,12 +35,22 @@
             "readability": {
                 "flesch_reading_ease": 62.88,
                 "flesch_kincaid_grade": 8.7
+            },
+            "pos": {
+                "JJ": 0.07563025210084033,
+                "NN": 0.2647058823529412,
+                "VB": 0.10084033613445378,
+                "DT": 0.15546218487394958,
+                "IN": 0.15546218487394958,
+                "MD": 0.03361344537815126,
+                "CC": 0.04201680672268908,
+                "VBG": 0.008403361344537815,
+                "CD": 0.004201680672268907,
+                "NNP": 0.0546218487394958,
+                "RB": 0.029411764705882353,
+                "VBN": 0.07563025210084033
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     },
     "3": {
         "chapter": "21",
@@ -43,12 +62,22 @@
             "readability": {
                 "flesch_reading_ease": 59.3,
                 "flesch_kincaid_grade": 8.0
+            },
+            "pos": {
+                "VB": 0.09170305676855896,
+                "DT": 0.19213973799126638,
+                "NN": 0.2663755458515284,
+                "IN": 0.1091703056768559,
+                "NNP": 0.11790393013100436,
+                "CC": 0.034934497816593885,
+                "CD": 0.004366812227074236,
+                "VBN": 0.048034934497816595,
+                "MD": 0.008733624454148471,
+                "VBG": 0.004366812227074236,
+                "JJ": 0.09606986899563319,
+                "RB": 0.026200873362445413
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     },
     "4": {
         "chapter": "G",
@@ -60,12 +89,22 @@
             "readability": {
                 "flesch_reading_ease": 57.98,
                 "flesch_kincaid_grade": 8.5
+            },
+            "pos": {
+                "DT": 0.1691542288557214,
+                "NN": 0.3681592039800995,
+                "CC": 0.03482587064676617,
+                "VB": 0.10945273631840796,
+                "JJ": 0.07960199004975124,
+                "IN": 0.15422885572139303,
+                "CD": 0.024875621890547265,
+                "VBG": 0.01990049751243781,
+                "MD": 0.004975124378109453,
+                "VBN": 0.009950248756218905,
+                "RB": 0.01990049751243781,
+                "RP": 0.004975124378109453
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     },
     "5": {
         "chapter": "H",
@@ -77,12 +116,21 @@
             "readability": {
                 "flesch_reading_ease": 60.51,
                 "flesch_kincaid_grade": 7.5
+            },
+            "pos": {
+                "VB": 0.08629441624365482,
+                "DT": 0.1065989847715736,
+                "NN": 0.3553299492385787,
+                "IN": 0.12690355329949238,
+                "JJ": 0.1218274111675127,
+                "VBN": 0.030456852791878174,
+                "NNP": 0.06598984771573604,
+                "VBG": 0.005076142131979695,
+                "CC": 0.05583756345177665,
+                "RB": 0.03553299492385787,
+                "MD": 0.01015228426395939
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     },
     "6": {
         "chapter": "7",
@@ -94,12 +142,22 @@
             "readability": {
                 "flesch_reading_ease": 54.15,
                 "flesch_kincaid_grade": 12.0
+            },
+            "pos": {
+                "DT": 0.1945392491467577,
+                "NN": 0.36860068259385664,
+                "VB": 0.08191126279863481,
+                "JJ": 0.10238907849829351,
+                "IN": 0.12627986348122866,
+                "VBN": 0.020477815699658702,
+                "CC": 0.034129692832764506,
+                "RB": 0.020477815699658702,
+                "NNP": 0.017064846416382253,
+                "CD": 0.010238907849829351,
+                "VBG": 0.017064846416382253,
+                "MD": 0.006825938566552901
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     },
     "7": {
         "chapter": "7a",
@@ -111,12 +169,21 @@
             "readability": {
                 "flesch_reading_ease": 49.75,
                 "flesch_kincaid_grade": 11.6
+            },
+            "pos": {
+                "DT": 0.20574162679425836,
+                "JJ": 0.10526315789473684,
+                "NN": 0.3827751196172249,
+                "VB": 0.10526315789473684,
+                "IN": 0.11004784688995216,
+                "NNP": 0.014354066985645933,
+                "CC": 0.019138755980861243,
+                "RB": 0.019138755980861243,
+                "VBN": 0.019138755980861243,
+                "VBG": 0.014354066985645933,
+                "RP": 0.004784688995215311
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     },
     "8": {
         "chapter": "7b",
@@ -128,12 +195,23 @@
             "readability": {
                 "flesch_reading_ease": 60.35,
                 "flesch_kincaid_grade": 9.6
+            },
+            "pos": {
+                "DT": 0.17801047120418848,
+                "NN": 0.32460732984293195,
+                "IN": 0.14659685863874344,
+                "VB": 0.14136125654450263,
+                "VBN": 0.015706806282722512,
+                "NNP": 0.041884816753926704,
+                "VBG": 0.010471204188481676,
+                "JJ": 0.07329842931937172,
+                "FW": 0.010471204188481676,
+                "RB": 0.020942408376963352,
+                "CD": 0.015706806282722512,
+                "CC": 0.015706806282722512,
+                "MD": 0.005235602094240838
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     },
     "9": {
         "chapter": "8",
@@ -145,12 +223,21 @@
             "readability": {
                 "flesch_reading_ease": 43.53,
                 "flesch_kincaid_grade": 12.0
+            },
+            "pos": {
+                "DT": 0.18309859154929578,
+                "JJ": 0.11737089201877934,
+                "NN": 0.3145539906103286,
+                "NNP": 0.014084507042253521,
+                "VB": 0.09859154929577464,
+                "IN": 0.14084507042253522,
+                "VBG": 0.028169014084507043,
+                "RB": 0.046948356807511735,
+                "CC": 0.018779342723004695,
+                "VBN": 0.03286384976525822,
+                "MD": 0.004694835680751174
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     },
     "10": {
         "chapter": "8a",
@@ -162,12 +249,21 @@
             "readability": {
                 "flesch_reading_ease": 50.67,
                 "flesch_kincaid_grade": 11.3
+            },
+            "pos": {
+                "VB": 0.1415525114155251,
+                "RB": 0.0684931506849315,
+                "JJ": 0.0958904109589041,
+                "NNP": 0.0228310502283105,
+                "IN": 0.1050228310502283,
+                "NN": 0.2968036529680365,
+                "DT": 0.1506849315068493,
+                "VBN": 0.0639269406392694,
+                "CC": 0.0319634703196347,
+                "CD": 0.0045662100456621,
+                "VBG": 0.0182648401826484
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     },
     "11": {
         "chapter": "4",
@@ -179,12 +275,22 @@
             "readability": {
                 "flesch_reading_ease": 44.37,
                 "flesch_kincaid_grade": 13.7
+            },
+            "pos": {
+                "IN": 0.09774436090225563,
+                "DT": 0.18796992481203006,
+                "NN": 0.3082706766917293,
+                "VB": 0.12030075187969924,
+                "JJ": 0.09774436090225563,
+                "NNP": 0.08646616541353383,
+                "RB": 0.02631578947368421,
+                "VBN": 0.041353383458646614,
+                "VBG": 0.007518796992481203,
+                "CC": 0.015037593984962405,
+                "MD": 0.007518796992481203,
+                "CD": 0.0037593984962406013
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     },
     "12": {
         "chapter": "6",
@@ -196,12 +302,22 @@
             "readability": {
                 "flesch_reading_ease": 53.41,
                 "flesch_kincaid_grade": 10.2
+            },
+            "pos": {
+                "NNP": 0.0125,
+                "NN": 0.33125,
+                "VB": 0.1125,
+                "DT": 0.11875,
+                "JJ": 0.1375,
+                "IN": 0.16875,
+                "VBG": 0.025,
+                "VBN": 0.03125,
+                "CC": 0.00625,
+                "CD": 0.0125,
+                "RB": 0.0375,
+                "MD": 0.00625
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     },
     "13": {
         "chapter": "6a",
@@ -213,12 +329,21 @@
             "readability": {
                 "flesch_reading_ease": 56.66,
                 "flesch_kincaid_grade": 9.0
+            },
+            "pos": {
+                "VB": 0.12,
+                "NN": 0.288,
+                "IN": 0.128,
+                "CD": 0.032,
+                "CC": 0.016,
+                "DT": 0.136,
+                "JJ": 0.168,
+                "RB": 0.056,
+                "VBN": 0.032,
+                "MD": 0.016,
+                "VBG": 0.008
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     },
     "14": {
         "chapter": "13",
@@ -230,12 +355,22 @@
             "readability": {
                 "flesch_reading_ease": 61.36,
                 "flesch_kincaid_grade": 9.2
+            },
+            "pos": {
+                "DT": 0.1568627450980392,
+                "JJ": 0.06372549019607843,
+                "NN": 0.3627450980392157,
+                "IN": 0.14215686274509803,
+                "NNP": 0.0392156862745098,
+                "VB": 0.11764705882352941,
+                "CC": 0.03431372549019608,
+                "VBN": 0.04411764705882353,
+                "RB": 0.0196078431372549,
+                "MD": 0.004901960784313725,
+                "VBG": 0.00980392156862745,
+                "CD": 0.004901960784313725
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     },
     "15": {
         "chapter": "16",
@@ -247,11 +382,21 @@
             "readability": {
                 "flesch_reading_ease": 55.74,
                 "flesch_kincaid_grade": 9.3
+            },
+            "pos": {
+                "DT": 0.17733990147783252,
+                "JJ": 0.06896551724137931,
+                "NN": 0.3694581280788177,
+                "IN": 0.1477832512315271,
+                "NNP": 0.024630541871921183,
+                "VB": 0.09359605911330049,
+                "VBG": 0.019704433497536946,
+                "CD": 0.009852216748768473,
+                "CC": 0.024630541871921183,
+                "VBN": 0.054187192118226604,
+                "RB": 0.0049261083743842365,
+                "MD": 0.0049261083743842365
             }
-        },
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_gemini": null
+        }
     }
 }
