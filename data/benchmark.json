@@ -23,7 +23,19 @@
                 "NNP": 0.015463917525773196,
                 "VBN": 0.020618556701030927
             }
-        }
+        },
+        "CS_tailored_gpto1": null,
+        "CS_tailored_gpt4o": null,
+        "CS_tailored_claude_sonnet": null,
+        "CS_tailored_gemini": null,
+        "CS_tailored_llama": null,
+        "CS_tailored_mistral": null,
+        "CL_tailored_gpto1": null,
+        "CL_tailored_gpt4o": null,
+        "CL_tailored_claude_sonnet": null,
+        "CL_tailored_gemini": null,
+        "CL_tailored_llama": null,
+        "CL_tailored_mistral": null
     },
     "2": {
         "chapter": "18",
@@ -50,7 +62,19 @@
                 "RB": 0.029411764705882353,
                 "VBN": 0.07563025210084033
             }
-        }
+        },
+        "CS_tailored_gpto1": null,
+        "CS_tailored_gpt4o": null,
+        "CS_tailored_claude_sonnet": null,
+        "CS_tailored_gemini": null,
+        "CS_tailored_llama": null,
+        "CS_tailored_mistral": null,
+        "CL_tailored_gpto1": null,
+        "CL_tailored_gpt4o": null,
+        "CL_tailored_claude_sonnet": null,
+        "CL_tailored_gemini": null,
+        "CL_tailored_llama": null,
+        "CL_tailored_mistral": null
     },
     "3": {
         "chapter": "21",
@@ -77,7 +101,19 @@
                 "JJ": 0.09606986899563319,
                 "RB": 0.026200873362445413
             }
-        }
+        },
+        "CS_tailored_gpto1": null,
+        "CS_tailored_gpt4o": null,
+        "CS_tailored_claude_sonnet": null,
+        "CS_tailored_gemini": null,
+        "CS_tailored_llama": null,
+        "CS_tailored_mistral": null,
+        "CL_tailored_gpto1": null,
+        "CL_tailored_gpt4o": null,
+        "CL_tailored_claude_sonnet": null,
+        "CL_tailored_gemini": null,
+        "CL_tailored_llama": null,
+        "CL_tailored_mistral": null
     },
     "4": {
         "chapter": "G",
@@ -104,7 +140,19 @@
                 "RB": 0.01990049751243781,
                 "RP": 0.004975124378109453
             }
-        }
+        },
+        "CS_tailored_gpto1": null,
+        "CS_tailored_gpt4o": null,
+        "CS_tailored_claude_sonnet": null,
+        "CS_tailored_gemini": null,
+        "CS_tailored_llama": null,
+        "CS_tailored_mistral": null,
+        "CL_tailored_gpto1": null,
+        "CL_tailored_gpt4o": null,
+        "CL_tailored_claude_sonnet": null,
+        "CL_tailored_gemini": null,
+        "CL_tailored_llama": null,
+        "CL_tailored_mistral": null
     },
     "5": {
         "chapter": "H",
@@ -130,7 +178,19 @@
                 "RB": 0.03553299492385787,
                 "MD": 0.01015228426395939
             }
-        }
+        },
+        "CS_tailored_gpto1": null,
+        "CS_tailored_gpt4o": null,
+        "CS_tailored_claude_sonnet": null,
+        "CS_tailored_gemini": null,
+        "CS_tailored_llama": null,
+        "CS_tailored_mistral": null,
+        "CL_tailored_gpto1": null,
+        "CL_tailored_gpt4o": null,
+        "CL_tailored_claude_sonnet": null,
+        "CL_tailored_gemini": null,
+        "CL_tailored_llama": null,
+        "CL_tailored_mistral": null
     },
     "6": {
         "chapter": "7",
@@ -157,7 +217,19 @@
                 "VBG": 0.017064846416382253,
                 "MD": 0.006825938566552901
             }
-        }
+        },
+        "L_tailored_gpto1": null,
+        "L_tailored_gpt4o": null,
+        "L_tailored_claude_sonnet": null,
+        "L_tailored_gemini": null,
+        "L_tailored_llama": null,
+        "L_tailored_mistral": null,
+        "CL_tailored_gpto1": null,
+        "CL_tailored_gpt4o": null,
+        "CL_tailored_claude_sonnet": null,
+        "CL_tailored_gemini": null,
+        "CL_tailored_llama": null,
+        "CL_tailored_mistral": null
     },
     "7": {
         "chapter": "7a",
@@ -183,7 +255,19 @@
                 "VBG": 0.014354066985645933,
                 "RP": 0.004784688995215311
             }
-        }
+        },
+        "L_tailored_gpto1": null,
+        "L_tailored_gpt4o": null,
+        "L_tailored_claude_sonnet": null,
+        "L_tailored_gemini": null,
+        "L_tailored_llama": null,
+        "L_tailored_mistral": null,
+        "CL_tailored_gpto1": null,
+        "CL_tailored_gpt4o": null,
+        "CL_tailored_claude_sonnet": null,
+        "CL_tailored_gemini": null,
+        "CL_tailored_llama": null,
+        "CL_tailored_mistral": null
     },
     "8": {
         "chapter": "7b",
@@ -211,7 +295,19 @@
                 "CC": 0.015706806282722512,
                 "MD": 0.005235602094240838
             }
-        }
+        },
+        "L_tailored_gpto1": null,
+        "L_tailored_gpt4o": null,
+        "L_tailored_claude_sonnet": null,
+        "L_tailored_gemini": null,
+        "L_tailored_llama": null,
+        "L_tailored_mistral": null,
+        "CL_tailored_gpto1": null,
+        "CL_tailored_gpt4o": null,
+        "CL_tailored_claude_sonnet": null,
+        "CL_tailored_gemini": null,
+        "CL_tailored_llama": null,
+        "CL_tailored_mistral": null
     },
     "9": {
         "chapter": "8",
@@ -237,7 +333,19 @@
                 "VBN": 0.03286384976525822,
                 "MD": 0.004694835680751174
             }
-        }
+        },
+        "L_tailored_gpto1": null,
+        "L_tailored_gpt4o": null,
+        "L_tailored_claude_sonnet": null,
+        "L_tailored_gemini": null,
+        "L_tailored_llama": null,
+        "L_tailored_mistral": null,
+        "CL_tailored_gpto1": null,
+        "CL_tailored_gpt4o": null,
+        "CL_tailored_claude_sonnet": null,
+        "CL_tailored_gemini": null,
+        "CL_tailored_llama": null,
+        "CL_tailored_mistral": null
     },
     "10": {
         "chapter": "8a",
@@ -263,7 +371,19 @@
                 "CD": 0.0045662100456621,
                 "VBG": 0.0182648401826484
             }
-        }
+        },
+        "L_tailored_gpto1": null,
+        "L_tailored_gpt4o": null,
+        "L_tailored_claude_sonnet": null,
+        "L_tailored_gemini": null,
+        "L_tailored_llama": null,
+        "L_tailored_mistral": null,
+        "CL_tailored_gpto1": null,
+        "CL_tailored_gpt4o": null,
+        "CL_tailored_claude_sonnet": null,
+        "CL_tailored_gemini": null,
+        "CL_tailored_llama": null,
+        "CL_tailored_mistral": null
     },
     "11": {
         "chapter": "4",
@@ -290,7 +410,19 @@
                 "MD": 0.007518796992481203,
                 "CD": 0.0037593984962406013
             }
-        }
+        },
+        "L_tailored_gpto1": null,
+        "L_tailored_gpt4o": null,
+        "L_tailored_claude_sonnet": null,
+        "L_tailored_gemini": null,
+        "L_tailored_llama": null,
+        "L_tailored_mistral": null,
+        "CS_tailored_gpto1": null,
+        "CS_tailored_gpt4o": null,
+        "CS_tailored_claude_sonnet": null,
+        "CS_tailored_gemini": null,
+        "CS_tailored_llama": null,
+        "CS_tailored_mistral": null
     },
     "12": {
         "chapter": "6",
@@ -317,7 +449,19 @@
                 "RB": 0.0375,
                 "MD": 0.00625
             }
-        }
+        },
+        "L_tailored_gpto1": null,
+        "L_tailored_gpt4o": null,
+        "L_tailored_claude_sonnet": null,
+        "L_tailored_gemini": null,
+        "L_tailored_llama": null,
+        "L_tailored_mistral": null,
+        "CS_tailored_gpto1": null,
+        "CS_tailored_gpt4o": null,
+        "CS_tailored_claude_sonnet": null,
+        "CS_tailored_gemini": null,
+        "CS_tailored_llama": null,
+        "CS_tailored_mistral": null
     },
     "13": {
         "chapter": "6a",
@@ -343,7 +487,19 @@
                 "MD": 0.016,
                 "VBG": 0.008
             }
-        }
+        },
+        "L_tailored_gpto1": null,
+        "L_tailored_gpt4o": null,
+        "L_tailored_claude_sonnet": null,
+        "L_tailored_gemini": null,
+        "L_tailored_llama": null,
+        "L_tailored_mistral": null,
+        "CS_tailored_gpto1": null,
+        "CS_tailored_gpt4o": null,
+        "CS_tailored_claude_sonnet": null,
+        "CS_tailored_gemini": null,
+        "CS_tailored_llama": null,
+        "CS_tailored_mistral": null
     },
     "14": {
         "chapter": "13",
@@ -370,7 +526,19 @@
                 "VBG": 0.00980392156862745,
                 "CD": 0.004901960784313725
             }
-        }
+        },
+        "L_tailored_gpto1": null,
+        "L_tailored_gpt4o": null,
+        "L_tailored_claude_sonnet": null,
+        "L_tailored_gemini": null,
+        "L_tailored_llama": null,
+        "L_tailored_mistral": null,
+        "CS_tailored_gpto1": null,
+        "CS_tailored_gpt4o": null,
+        "CS_tailored_claude_sonnet": null,
+        "CS_tailored_gemini": null,
+        "CS_tailored_llama": null,
+        "CS_tailored_mistral": null
     },
     "15": {
         "chapter": "16",
@@ -397,6 +565,18 @@
                 "RB": 0.0049261083743842365,
                 "MD": 0.0049261083743842365
             }
-        }
+        },
+        "L_tailored_gpto1": null,
+        "L_tailored_gpt4o": null,
+        "L_tailored_claude_sonnet": null,
+        "L_tailored_gemini": null,
+        "L_tailored_llama": null,
+        "L_tailored_mistral": null,
+        "CS_tailored_gpto1": null,
+        "CS_tailored_gpt4o": null,
+        "CS_tailored_claude_sonnet": null,
+        "CS_tailored_gemini": null,
+        "CS_tailored_llama": null,
+        "CS_tailored_mistral": null
     }
 }
