@@ -1,15 +1,15 @@
-# import nltk
+import nltk
 import textstat
 #import numpy as np
 #from sklearn.feature_extraction.text import CountVectorizer
 #from sklearn.metrics.pairwise import cosine_similarity
 #from nltk.translate.bleu_score import sentence_bleu
 #from rouge_score import rouge_scorer
-#from collections import Counter
+from collections import Counter
 #
-## Download necessary NLTK resources if not already available
-#nltk.download('punkt')
-#nltk.download('averaged_perceptron_tagger')
+# Download necessary NLTK resources if not already available
+#nltk.download('punkt_tab')
+nltk.download('averaged_perceptron_tagger_eng')
 
 # Function to compute readability scores
 def compute_readability(text):
@@ -18,16 +18,48 @@ def compute_readability(text):
         "flesch_kincaid_grade": textstat.flesch_kincaid_grade(text)
     }
 
-"""
+
 # Function to compute POS distribution
 def compute_pos_distribution(text):
+    # Tokenize the text
     words = nltk.word_tokenize(text)
+    
+    # Perform POS tagging
     pos_tags = nltk.pos_tag(words)
-    pos_counts = Counter(tag for _, tag in pos_tags)
-    total_words = len(words)
+    
+    # Filter out unwanted tags and punctuation
+    filtered_tags = [
+        tag for word, tag in pos_tags 
+        if tag not in {"PRP", "PRP$", "WDT", "TO", "POS", "WP", "WRB", "PDT", "EX", "WP$"} and word.isalpha()
+    ]
+    
+    # Group POS tags according to your rules
+    grouped_tags = []
+    for tag in filtered_tags:
+        if tag in {"VB", "VBP", "VBZ"}:
+            grouped_tags.append("VB")  # Group all present tense verbs
+        elif tag in {"VBN", "VBD"}:
+            grouped_tags.append("VBN")  # Group past participles and past tense
+        elif tag in {"NN", "NNS"}:
+            grouped_tags.append("NN")  # Group singular and plural nouns
+        elif tag in {"JJ", "JJS", "JJR"}:
+            grouped_tags.append("JJ") # Group adjectives, superlative adjectives and comparative adjectives
+        elif tag in {"RB", "RBR", "RBS"}:
+            grouped_tags.append("RB") # Group adverbs, comparative adverbs, superlative adverbs
+        else:
+            grouped_tags.append(tag)  # Keep other tags as-is
+
+    # Count the POS tags
+    pos_counts = Counter(grouped_tags)
+    
+    # Calculate the distribution as percentages
+    total_words = sum(pos_counts.values())
     pos_distribution = {tag: count / total_words for tag, count in pos_counts.items()}
+    
     return pos_distribution
 
+
+"""
 # Function to compute Jaccard similarity between two texts
 def compute_jaccard_similarity(text1, text2):
     set1 = set(nltk.word_tokenize(text1.lower()))
@@ -58,6 +90,6 @@ def compute_rouge(reference, candidate):
 # Function to analyze a text
 def analyze_text(text):
     return {
-        "readability": compute_readability(text)
-        # "pos_distribution": compute_pos_distribution(text),
+        "readability": compute_readability(text),
+        "pos": compute_pos_distribution(text)
     }
