@@ -1,257 +1,342 @@
 {
     "1": {
-        "chapter": "17",
-        "sections": "17.1",
-        "topic": "English Word Classes",
         "original_category": "L",
         "original_text": "Parts of speech fall into two broad categories: closed class and open class. Closed classes are those with relatively fixed membership, such as prepositions [...]. By contrast, nouns and verbs are open classes [...]. Closed class words are generally function words like of, it, and, or you, which tend to be very short, occur frequently, and often have structuring uses in grammar. Four major open classes occur in the languages of the world: nouns [...], verbs, adjectives, and adverbs, [...]. Nouns are words for people, places, or things,  [...]. Verbs refer to actions and processes, including main verbs like draw, provide, and go. English verbs have inflections (non-third-person-singular (eat), third-person singular (eats), progressive (eating), past participle (eaten)). [...]. Adjectives often describe properties or qualities of nouns, like color (white, black), age (old, young), and value (good, bad), [...]. Adverbs generally modify something. [...] A particle [...] is used in combination with a verb. Particles often have extended meanings that aren't quite the same as the prepositions they resemble, as in the particle 'over' in 'she turned the paper over'. A phrasal verb and a particle acting as a single unit is called a phrasal verb. The meaning of phrasal verbs is often non-compositional - not predictable from the individual meanings of the verb and the particle. [...]",
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_llama": null,
-        "CS_tailored_mistral": null,
-        "CL_tailored_gpto1": null,
-        "CL_tailored_gpt4o": null,
-        "CL_tailored_claude_sonnet": null,
-        "CL_tailored_llama": null,
-        "CL_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 57.57,
+            "flesch_kincaid_grade": 8.6
+        },
+        "pos": {
+            "NN": 0.3402061855670103,
+            "IN": 0.12886597938144329,
+            "CD": 0.010309278350515464,
+            "JJ": 0.14432989690721648,
+            "CC": 0.06701030927835051,
+            "VB": 0.10309278350515463,
+            "DT": 0.08762886597938144,
+            "RB": 0.061855670103092786,
+            "VBG": 0.020618556701030927,
+            "NNP": 0.015463917525773196,
+            "VBN": 0.020618556701030927
+        },
+        "tailored_texts": {}
     },
     "2": {
-        "chapter": "18",
-        "sections": "18.1, 18.2",
-        "topic": "Constituency and Context-Free Grammars",
         "original_category": "L",
         "original_text": "Syntactic constituency is the idea that groups of words can behave as single units, or constituents. Consider the noun phrase, a sequence of words surrounding at least one noun. [...] they can all appear in similar syntactic environments, for example, before a verb: 'three parties from Brooklyn arrive'. [...] A widely used formal system for modeling constituent structure in natural language is the context-free grammar (CFG). [...] A context-free grammar consists of a set of rules or productions, each of which expresses the ways that symbols of the language can be grouped and ordered together, and a lexicon of words and symbols. [...] an NP (or noun phrase) can be composed of either a ProperNoun or a determiner (Det) followed by a Nominal; [...]. Context-free rules can be hierarchically  embedded, [...]: Det → a, Det → the, Noun → flight. [...] Thus, a CFG can be used to generate a set of strings. This sequence of rule expansions is called a derivation of the string of words. It is common to represent a derivation by a parse tree (commonly shown inverted with the root at the top). [...]. A CFG like that of L0 defines a formal language. Sentences (strings of words) that can be derived by a grammar are in the formal language defined by that grammar, and are called grammatical sentences. Sentences that cannot be derived by a given formal grammar are not in the language defined by that grammar and are  referred to as ungrammatical. [...] In linguistics, the use of formal languages to model natural languages is called generative grammar [...].",
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_llama": null,
-        "CS_tailored_mistral": null,
-        "CL_tailored_gpto1": null,
-        "CL_tailored_gpt4o": null,
-        "CL_tailored_claude_sonnet": null,
-        "CL_tailored_llama": null,
-        "CL_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 62.88,
+            "flesch_kincaid_grade": 8.7
+        },
+        "pos": {
+            "JJ": 0.07563025210084033,
+            "NN": 0.2647058823529412,
+            "VB": 0.10084033613445378,
+            "DT": 0.15546218487394958,
+            "IN": 0.15546218487394958,
+            "MD": 0.03361344537815126,
+            "CC": 0.04201680672268908,
+            "VBG": 0.008403361344537815,
+            "CD": 0.004201680672268907,
+            "NNP": 0.0546218487394958,
+            "RB": 0.029411764705882353,
+            "VBN": 0.07563025210084033
+        },
+        "tailored_texts": {}
     },
     "3": {
-        "chapter": "21",
-        "sections": "21.1, 21.2",
-        "topic": "Semantic Roles and Diathesis Alternations",
         "original_category": "L",
         "original_text": "Consider the meanings of the arguments Sasha, Pat, the window, and the door in these two sentences. Sasha broke the window. Pat opened the door. The subjects Sasha and Pat, what we might call the breaker of the window breaking event and the opener of the door-opening event, have something in common. They are both volitional actors, often animate, and they have direct causal responsibility for their events. Thematic roles are a way to capture this semantic commonality between breakers and openers. We say that the subjects of both these verbs are agents. Thus, AGENT is the thematic role that represents an abstract idea such as volitional causation. Similarly, the direct objects of both these verbs, the BrokenThing and OpenedThing, are both prototypically inanimate objects that are affected in some way by the action. The semantic role for these participants is theme. [...] Semantic roles thus help generalize over different surface realizations of predicate arguments. For example, while the AGENT is often realized as the subject of the sentence, in other cases the THEME can be the subject. [...] John (AGENT) broke the window (THEME). John (AGENT) broke the window (THEME) with a rock (INSTRUMENT). The rock (INSTRUMENT) broke the window (THEME). The window (THEME) broke. The window (THEME) was broken by John (AGENT). These examples suggest that break has (at least) the possible arguments AGENT, THEME, and INSTRUMENT. [...] These multiple argument structure realizations [...] are called verb alternations or diathesis alternations.",
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_llama": null,
-        "CS_tailored_mistral": null,
-        "CL_tailored_gpto1": null,
-        "CL_tailored_gpt4o": null,
-        "CL_tailored_claude_sonnet": null,
-        "CL_tailored_llama": null,
-        "CL_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 59.3,
+            "flesch_kincaid_grade": 8.0
+        },
+        "pos": {
+            "VB": 0.09170305676855896,
+            "DT": 0.19213973799126638,
+            "NN": 0.2663755458515284,
+            "IN": 0.1091703056768559,
+            "NNP": 0.11790393013100436,
+            "CC": 0.034934497816593885,
+            "CD": 0.004366812227074236,
+            "VBN": 0.048034934497816595,
+            "MD": 0.008733624454148471,
+            "VBG": 0.004366812227074236,
+            "JJ": 0.09606986899563319,
+            "RB": 0.026200873362445413
+        },
+        "tailored_texts": {}
     },
     "4": {
-        "chapter": "G",
-        "sections": "G.1, G.2",
-        "topic": "Word Senses and Relations Between Senses",
         "original_category": "L",
         "original_text": "A sense (or word sense) is a discrete representation of one aspect of the meaning of a word. [...] In context, it's easy to see the different meanings: mouse1: a mouse controlling a computer system in 1968. mouse2: a quiet animal like a mouse. bank1: a bank can hold the investments in a custodial account. bank2: as agriculture burgeons on the east bank, the river...[...] we need to consider the alternative ways that dictionaries and thesauruses offer for defining senses. One is based on the fact that dictionaries or thesauruses give textual definitions for each sense called glosses. [...] bank: 1. financial institution that accepts deposits and channels the money into lending activities 2. sloping land (especially the slope beside a body of water). [...] when two senses of two different words (lemmas) are identical, or nearly identical, we say the two senses are synonyms [...] couch/sofa vomit/throw up filbert/hazelnut car/automobile. [...] antonyms are words with an opposite meaning, like: long/short big/little fast/slow cold/hot dark/light. [...] [a] hyponym of [a] word if the [other word] is more specific, denoting a subclass of the other. For example, car is a hyponym of vehicle, dog is a hyponym of animal, [...]. Conversely, we say that vehicle is a hypernym of car, and animal is a hypernym of dog. [...] meronymy, the part-whole relation. [...] wheel is a meronym of car, and car is a holonym of wheel.",
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_llama": null,
-        "CS_tailored_mistral": null,
-        "CL_tailored_gpto1": null,
-        "CL_tailored_gpt4o": null,
-        "CL_tailored_claude_sonnet": null,
-        "CL_tailored_llama": null,
-        "CL_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 57.98,
+            "flesch_kincaid_grade": 8.5
+        },
+        "pos": {
+            "DT": 0.1691542288557214,
+            "NN": 0.3681592039800995,
+            "CC": 0.03482587064676617,
+            "VB": 0.10945273631840796,
+            "JJ": 0.07960199004975124,
+            "IN": 0.15422885572139303,
+            "CD": 0.024875621890547265,
+            "VBG": 0.01990049751243781,
+            "MD": 0.004975124378109453,
+            "VBN": 0.009950248756218905,
+            "RB": 0.01990049751243781,
+            "RP": 0.004975124378109453
+        },
+        "tailored_texts": {}
     },
     "5": {
-        "chapter": "H",
-        "sections": "H.1, H.2",
-        "topic": "Phonetics",
         "original_category": "L",
         "original_text": "We'll represent the pronunciation of a word as a string of phones, which are speech sounds, each represented with symbols adapted from the Roman alphabet. The standard phonetic representation for transcribing the world's languages is the International Phonetic Alphabet (IPA), [...] the mapping between the letters of English orthography and phones is relatively opaque; a single letter can represent very different sounds in different contexts. [...] Many other languages, for example, Spanish, are much more transparent in their sound-orthography mapping than English. Articulatory phonetics is the study of how these phones are produced as the various articulatory phonetics organs in the mouth, throat, and nose modify the airflow from the lungs. [...] we can group [consonants] into classes by their point of maximum restriction, their place of articulation. [...] bilabial: [...] [p], [b], [m]. labiodental [v] and [f] [...]. dental: [...] [th] of thing and the [dh] of though. [...] alveolar: [s], [z], [t], [d]. [...] velar: [k], [g]. [...] Consonants are also distinguished by how the restriction in airflow is made [...]. This feature is called the manner of articulation [...]. voiced stops [b], [d], and [g],unvoiced stops [p], [t], and [k]. nasal sounds [n], [m], and [ng]. labiodental fricatives [f] and [v]. alveolar fricatives [s] and [z]. affricates [ch] and [jh]. approximants [y] and [w].",
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_llama": null,
-        "CS_tailored_mistral": null,
-        "CL_tailored_gpto1": null,
-        "CL_tailored_gpt4o": null,
-        "CL_tailored_claude_sonnet": null,
-        "CL_tailored_llama": null,
-        "CL_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 60.51,
+            "flesch_kincaid_grade": 7.5
+        },
+        "pos": {
+            "VB": 0.08629441624365482,
+            "DT": 0.1065989847715736,
+            "NN": 0.3553299492385787,
+            "IN": 0.12690355329949238,
+            "JJ": 0.1218274111675127,
+            "VBN": 0.030456852791878174,
+            "NNP": 0.06598984771573604,
+            "VBG": 0.005076142131979695,
+            "CC": 0.05583756345177665,
+            "RB": 0.03553299492385787,
+            "MD": 0.01015228426395939
+        },
+        "tailored_texts": {}
     },
     "6": {
-        "chapter": "7",
-        "sections": "7.3",
-        "topic": "Feed-Forward Neural Networks (FFNNs)",
         "original_category": "CS",
         "original_text": "A feedforward network is a multilayer network in which the units are connected with no cycles; the outputs from units in each layer are passed to units in the next higher layer, and no outputs are passed back to lower layers. [...] Simple feedforward networks have three kinds of nodes: input units, hidden units, and output units. [...] The input layer x is a vector of simple scalar values. [...] The core of the neural network is the hidden layer h formed of hidden units hi, each of which is a neural unit [...]. In the standard architecture, each layer is fully-connected, meaning that each unit in each layer takes as input the outputs from all the units in the previous layer, and there is a link between every pair of units from two adjacent layers. [...] a single hidden unit has as parameters a weight vector and a bias. We represent the parameters for the entire hidden layer by combining the weight vector and bias for each unit i into a single weight matrix W and a single bias vector b for the whole layer. [...] the hidden layer computation for a feedforward network can be done very efficiently with simple matrix operations. In fact, the computation only has three steps: multiplying the weight matrix by the input vector x, adding the bias vector b, and applying the activation function g (such as the sigmoid, tanh, or ReLU activation […]). The output of the hidden layer, the vector h, is thus the following (for this example we'll use the sigmoid function σ as our activation function): h = σ(Wx+b). [...] The role of the output layer is to take this new representation h and compute a final output. This output could be a real valued number, but in many cases the goal of the network is to make some sort of classification decision, [...].",
-        "L_tailored_gpto1": null,
-        "L_tailored_gpt4o": null,
-        "L_tailored_claude_sonnet": null,
-        "L_tailored_llama": null,
-        "L_tailored_mistral": null,
-        "CL_tailored_gpto1": null,
-        "CL_tailored_gpt4o": null,
-        "CL_tailored_claude_sonnet": null,
-        "CL_tailored_llama": null,
-        "CL_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 54.15,
+            "flesch_kincaid_grade": 12.0
+        },
+        "pos": {
+            "DT": 0.1945392491467577,
+            "NN": 0.36860068259385664,
+            "VB": 0.08191126279863481,
+            "JJ": 0.10238907849829351,
+            "IN": 0.12627986348122866,
+            "VBN": 0.020477815699658702,
+            "CC": 0.034129692832764506,
+            "RB": 0.020477815699658702,
+            "NNP": 0.017064846416382253,
+            "CD": 0.010238907849829351,
+            "VBG": 0.017064846416382253,
+            "MD": 0.006825938566552901
+        },
+        "tailored_texts": {}
     },
     "7": {
-        "chapter": "7a",
-        "sections": "7.5",
-        "topic": " Training FFNNs (Loss Function and Gradient)",
         "original_category": "CS",
         "original_text": "A feedforward neural net is an instance of supervised machine learning in which we know the correct output y for each observation x. What the system produces is ˆy, the system's estimate of the true y. The goal of the training procedure is to learn parameters W[i] and b[i] for each layer i that make ˆy for each training observation as close as possible to the true y. [...] First, we'll need a loss function that models the distance between the system output and the gold output, and it's common to use the loss function used for logistic regression, the cross-entropy loss. Second, to find the parameters that minimize this loss function, we'll use the gradient descent optimization algorithm [...]. Third, gradient descent requires knowing the gradient of the loss function, the vector that contains the partial derivative of the loss function with respect to each of the parameters. [...] for neural networks, with millions of parameters in many layers, it's much harder to see how to compute the partial derivative of some weight in layer 1 when the loss is attached to some much later layer. How do we partial out the loss over all those intermediate layers? The answer is the algorithm called error backpropagation or backward differentiation. [...] Computing the gradient requires the partial derivative of the loss function with respect to each parameter. [...] The solution to computing this gradient is an algorithm called error backpropagation.",
-        "L_tailored_gpto1": null,
-        "L_tailored_gpt4o": null,
-        "L_tailored_claude_sonnet": null,
-        "L_tailored_llama": null,
-        "L_tailored_mistral": null,
-        "CL_tailored_gpto1": null,
-        "CL_tailored_gpt4o": null,
-        "CL_tailored_claude_sonnet": null,
-        "CL_tailored_llama": null,
-        "CL_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 49.75,
+            "flesch_kincaid_grade": 11.6
+        },
+        "pos": {
+            "DT": 0.20574162679425836,
+            "JJ": 0.10526315789473684,
+            "NN": 0.3827751196172249,
+            "VB": 0.10526315789473684,
+            "IN": 0.11004784688995216,
+            "NNP": 0.014354066985645933,
+            "CC": 0.019138755980861243,
+            "RB": 0.019138755980861243,
+            "VBN": 0.019138755980861243,
+            "VBG": 0.014354066985645933,
+            "RP": 0.004784688995215311
+        },
+        "tailored_texts": {}
     },
     "8": {
-        "chapter": "7b",
-        "sections": "7.5",
-        "topic": "Backward Pass",
         "original_category": "CS",
         "original_text": "The importance of the computation graph comes from the backward pass, which is used to compute the derivatives that we'll need for the weight update. [...] Backwards differentiation makes use of the chain rule [...]. Suppose we are computing the derivative of a composite function f(x) = u(v(x)). The derivative of f(x) is the derivative of u(x) with respect to v(x) times the derivative of v(x) with respect to x. [...] The chain rule extends to more than two functions. If computing the derivative of a composite function f(x) = u(v(w(x))), the derivative of f(x) is: df/dx = du/dv·dv/dw·dw/dx. The intuition of backward differentiation is to pass gradients back from the final node to all the nodes in the graph. [...] Each node takes an upstream gradient that is passed in from its parent node to the right, and for each of its inputs computes a local gradient (the gradient of its output with respect to its input), and uses the chain rule to multiply these two to compute a downstream gradient to be passed on to the next earlier node. Let's now compute the 3 derivatives we need. Since in the computation graph L = ce, we can directly compute the derivative ∂L/∂c: ∂L/∂c = e. For the other two, we'll need to use the chain rule: ∂L/∂a=∂L/∂e*∂e/∂a [and] ∂L/∂b=∂L/∂e*∂e/∂d*∂d/∂b.",
-        "L_tailored_gpto1": null,
-        "L_tailored_gpt4o": null,
-        "L_tailored_claude_sonnet": null,
-        "L_tailored_llama": null,
-        "L_tailored_mistral": null,
-        "CL_tailored_gpto1": null,
-        "CL_tailored_gpt4o": null,
-        "CL_tailored_claude_sonnet": null,
-        "CL_tailored_llama": null,
-        "CL_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 60.35,
+            "flesch_kincaid_grade": 9.6
+        },
+        "pos": {
+            "DT": 0.17801047120418848,
+            "NN": 0.32460732984293195,
+            "IN": 0.14659685863874344,
+            "VB": 0.14136125654450263,
+            "VBN": 0.015706806282722512,
+            "NNP": 0.041884816753926704,
+            "VBG": 0.010471204188481676,
+            "JJ": 0.07329842931937172,
+            "FW": 0.010471204188481676,
+            "RB": 0.020942408376963352,
+            "CD": 0.015706806282722512,
+            "CC": 0.015706806282722512,
+            "MD": 0.005235602094240838
+        },
+        "tailored_texts": {}
     },
     "9": {
-        "chapter": "8",
-        "sections": "8.1",
-        "topic": "Recurrent Neural Networks (RNNs)",
         "original_category": "CS",
         "original_text": "A recurrent neural network (RNN) is any network that contains a cycle within its network connections, meaning that the value of some unit is directly, or indirectly, dependent on its own earlier outputs as an input. [...] As with ordinary feedforward networks, an input vector representing the current input, xt, is multiplied by a weight matrix and then passed through a non-linear activation function to compute the values for a layer of hidden units. This hidden layer is then used to calculate a corresponding output, yt. [...] The key difference from a feedforward network lies in the recurrent link [...] [which] augments the input to the computation at the hidden layer with the value of the hidden layer from the preceding point in time. The hidden layer from the previous time step provides a form of memory, or context, that encodes earlier processing and informs the decisions to be made at later points in time. [...] the context embodied in the previous hidden layer can include information extending back to the beginning of the sequence. Adding this temporal dimension makes RNNs appear to be more complex than non-recurrent architectures. [...] we're still performing the standard feedforward calculation [...]. The most significant change lies in the new set of weights, U, that connect the hidden layer from the previous time step to the current hidden layer. [...] the [tailored] backpropagation algorithm [...] [is] referred to as backpropagation through time [...].",
-        "L_tailored_gpto1": null,
-        "L_tailored_gpt4o": null,
-        "L_tailored_claude_sonnet": null,
-        "L_tailored_llama": null,
-        "L_tailored_mistral": null,
-        "CL_tailored_gpto1": null,
-        "CL_tailored_gpt4o": null,
-        "CL_tailored_claude_sonnet": null,
-        "CL_tailored_llama": null,
-        "CL_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 43.53,
+            "flesch_kincaid_grade": 12.0
+        },
+        "pos": {
+            "DT": 0.18309859154929578,
+            "JJ": 0.11737089201877934,
+            "NN": 0.3145539906103286,
+            "NNP": 0.014084507042253521,
+            "VB": 0.09859154929577464,
+            "IN": 0.14084507042253522,
+            "VBG": 0.028169014084507043,
+            "RB": 0.046948356807511735,
+            "CC": 0.018779342723004695,
+            "VBN": 0.03286384976525822,
+            "MD": 0.004694835680751174
+        },
+        "tailored_texts": {}
     },
     "10": {
-        "chapter": "8a",
-        "sections": "8.5",
-        "topic": "Long Short-Term Memory (LSTMs)",
         "original_category": "CS",
         "original_text": "[...] it is quite difficult to train RNNs for tasks that require a network to make use of information distant from the current point of processing. [...] the information encoded in hidden states tends to be fairly local, more relevant to the most recent parts of the input sequence and recent decisions. [...] the gradients are eventually driven to zero, a situation called the vanishing gradients problem. To address these issues, more complex network architectures have been designed to explicitly manage the task of maintaining relevant context over time, by enabling the network to learn to forget information that is no longer needed and to remember information required for decisions still to come. The most commonly used such extension to RNNs is the long short-term memory (LSTM) network. LSTMs [...] remove information no longer needed from the context, and adding information likely to be needed for later decision making. [...] LSTMs accomplish this by first adding an explicit context layer to the architecture [...], and control the flow of information into and out of the units [...]. These gates are implemented through the use of additional weights that operate sequentially on the input, and previous hidden layer, and previous context layers. [...] The purpose of [the forget gate] is to delete information from the context that is no longer needed. [...] the add gate to select the information to add to the current context. [...] The final gate is the output gate which is used to decide what information is required for the current hidden state. [...]",
-        "L_tailored_gpto1": null,
-        "L_tailored_gpt4o": null,
-        "L_tailored_claude_sonnet": null,
-        "L_tailored_llama": null,
-        "L_tailored_mistral": null,
-        "CL_tailored_gpto1": null,
-        "CL_tailored_gpt4o": null,
-        "CL_tailored_claude_sonnet": null,
-        "CL_tailored_llama": null,
-        "CL_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 50.67,
+            "flesch_kincaid_grade": 11.3
+        },
+        "pos": {
+            "VB": 0.1415525114155251,
+            "RB": 0.0684931506849315,
+            "JJ": 0.0958904109589041,
+            "NNP": 0.0228310502283105,
+            "IN": 0.1050228310502283,
+            "NN": 0.2968036529680365,
+            "DT": 0.1506849315068493,
+            "VBN": 0.0639269406392694,
+            "CC": 0.0319634703196347,
+            "CD": 0.0045662100456621,
+            "VBG": 0.0182648401826484
+        },
+        "tailored_texts": {}
     },
     "11": {
-        "chapter": "4",
-        "sections": "4.1, 4.2",
-        "topic": "Naive Bayes Classifiers",
         "original_category": "CL",
         "original_text": "In this section we introduce the multinomial naive Bayes classifier, so called because it is a Bayesian classifier that makes a simplifying (naive) assumption about how the features interact. [...] We represent a text document as if it were a bag of words, that is, an unordered set of words with their position ignored, keeping only their frequency in the document. [...] Naive Bayes is a probabilistic classifier, meaning that for a document d, out of all classes c ∈ C the classifier returns the class ˆc which has the maximum posterior probability given the document. […] we use the hat notation ˆ to mean “our estimate of the correct class”, and we use argmax to mean an operation that selects the argument (in this case the class c) that maximizes a function (in this case the probability P(c|d). cˆ = argmax c∈C P(c|d). [...] Thus, we can choose the class that maximizes this simpler formula: cˆ = argmax c∈C P(c|d) = argmax c∈C P(d|c)P(c). [...] we compute the most probable class ˆc given some document d by choosing the class which has the highest product of two probabilities: the prior probability of the class P(c) and the likelihood of the document P(d|c): cˆ = argmax c∈C P(d|c)(likelihood)P(c)(prior). [...] The first is the bag-of-words assumption discussed intuitively above: we assume position doesn't matter [...]. The second is commonly called the naive Bayes assumption: this is the conditional independence assumption that the probabilities P(fi|c) are independent given the class c and hence can be 'naively' multiplied as follows: P(f1, f2,...., fn|c) = P(f1|c)·P(f2|c)· ... ·P(fn|c). The final equation for the class chosen by a naive Bayes classifier is thus: cNB = argmax c∈C P(c) Yf∈F P(f|c). [...] . Classifiers that use a linear combination of the inputs to make a classification decision —like naive Bayes and also logistic regression—are called linear classifiers.",
-        "L_tailored_gpto1": null,
-        "L_tailored_gpt4o": null,
-        "L_tailored_claude_sonnet": null,
-        "L_tailored_llama": null,
-        "L_tailored_mistral": null,
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_llama": null,
-        "CS_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 44.37,
+            "flesch_kincaid_grade": 13.7
+        },
+        "pos": {
+            "IN": 0.09774436090225563,
+            "DT": 0.18796992481203006,
+            "NN": 0.3082706766917293,
+            "VB": 0.12030075187969924,
+            "JJ": 0.09774436090225563,
+            "NNP": 0.08646616541353383,
+            "RB": 0.02631578947368421,
+            "VBN": 0.041353383458646614,
+            "VBG": 0.007518796992481203,
+            "CC": 0.015037593984962405,
+            "MD": 0.007518796992481203,
+            "CD": 0.0037593984962406013
+        },
+        "tailored_texts": {}
     },
     "12": {
-        "chapter": "6",
-        "sections": "6.2",
-        "topic": "Vector Semantics",
         "original_category": "CL",
         "original_text": "Vector semantics is the standard way to represent word meaning in NLP, helping us model many of the aspects of word meaning we saw in the previous section. [...] to define the meaning of a word by its distribution in language use, meaning its neighboring words or grammatical environments. Their idea was that two words that occur in very similar distributions (whose neighboring words are similar) have similar meanings. [...] The idea of vector semantics is to represent a word as a point in a multidimensional semantic space that is derived (in ways we'll see) from the distributions of embeddings word neighbors. Vectors for representing words are called embeddings, [...] two most commonly used models. In the tf-idf model, an important baseline, the meaning of a word is defined by a simple function of the counts of nearby words. We will see that this method results in very long vectors that are sparse, i.e. mostly zeros (since most words simply never occur in the context of others).[…] the word2vec model family for constructing short, dense vectors that have useful semantic properties.",
-        "L_tailored_gpto1": null,
-        "L_tailored_gpt4o": null,
-        "L_tailored_claude_sonnet": null,
-        "L_tailored_llama": null,
-        "L_tailored_mistral": null,
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_llama": null,
-        "CS_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 53.41,
+            "flesch_kincaid_grade": 10.2
+        },
+        "pos": {
+            "NNP": 0.0125,
+            "NN": 0.33125,
+            "VB": 0.1125,
+            "DT": 0.11875,
+            "JJ": 0.1375,
+            "IN": 0.16875,
+            "VBG": 0.025,
+            "VBN": 0.03125,
+            "CC": 0.00625,
+            "CD": 0.0125,
+            "RB": 0.0375,
+            "MD": 0.00625
+        },
+        "tailored_texts": {}
     },
     "13": {
-        "chapter": "6a",
-        "sections": "6.4",
-        "topic": "Cosine Similarity",
         "original_category": "CL",
         "original_text": "To measure similarity between two target words v and w, we need a metric that takes two vectors [...] and gives a measure of their similarity. By far the most common similarity metric is the cosine of the angle between the vectors. The cosine—like most measures for vector similarity used in NLP—is based on the dot product operator from linear algebra, also called the inner product [...]. The dot product acts as a similarity metric because it will tend to be high just when the two vectors have large values in the same dimensions. Alternatively, vectors that have zeros in different dimensions—orthogonal vectors—will have a dot product of 0, representing their strong dissimilarity. [...]  The raw dot product thus will be higher for frequent words. [...] we'd like a similarity metric that tells us how similar two words are regardless of their frequency. [...] normalized dot product [...] a ·b / |a||b| = cosθ.",
-        "L_tailored_gpto1": null,
-        "L_tailored_gpt4o": null,
-        "L_tailored_claude_sonnet": null,
-        "L_tailored_llama": null,
-        "L_tailored_mistral": null,
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_llama": null,
-        "CS_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 56.66,
+            "flesch_kincaid_grade": 9.0
+        },
+        "pos": {
+            "VB": 0.12,
+            "NN": 0.288,
+            "IN": 0.128,
+            "CD": 0.032,
+            "CC": 0.016,
+            "DT": 0.136,
+            "JJ": 0.168,
+            "RB": 0.056,
+            "VBN": 0.032,
+            "MD": 0.016,
+            "VBG": 0.008
+        },
+        "tailored_texts": {}
     },
     "14": {
-        "chapter": "13",
-        "sections": "13.2",
-        "topic": "Machine Translation",
         "original_category": "CL",
         "original_text": "The standard architecture for MT is the encoder-decoder transformer or sequence-to-sequence model [...]. Given a sentence in a source language, the MT task is then to generate a corresponding sentence in a target language. […]. MT uses supervised machine learning: at training time the system is given a large set of parallel sentences (each sentence in a source language matched with a sentence in the target language), and learns to map source sentences into target sentences. [...] we split the sentences into a sequence of subword tokens (tokens can be words, or subwords, or individual characters). The systems are then trained to maximize the probability of the sequence of tokens in the target language y1,..., ym given the sequence of tokens in the source language x1,..., xn: P(y1,..., ym|x1,..., xn). […] The encoder takes the input words x = [x1,..., xn] and produces an intermediate context h. At decoding time, the system takes h and, word by word, generates the output y [...]. [...] Machine translation models are trained on a parallel corpus, sometimes called a bitext, a text that appears in two (or more) languages. [...] Standard training corpora for MT come as aligned pairs of sentences. [...] To score the similarity of sentences across languages, we need to make use of a multilingual embedding space, in which sentences from different languages are in the same embedding space [...]",
-        "L_tailored_gpto1": null,
-        "L_tailored_gpt4o": null,
-        "L_tailored_claude_sonnet": null,
-        "L_tailored_llama": null,
-        "L_tailored_mistral": null,
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_llama": null,
-        "CS_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 61.36,
+            "flesch_kincaid_grade": 9.2
+        },
+        "pos": {
+            "DT": 0.1568627450980392,
+            "JJ": 0.06372549019607843,
+            "NN": 0.3627450980392157,
+            "IN": 0.14215686274509803,
+            "NNP": 0.0392156862745098,
+            "VB": 0.11764705882352941,
+            "CC": 0.03431372549019608,
+            "VBN": 0.04411764705882353,
+            "RB": 0.0196078431372549,
+            "MD": 0.004901960784313725,
+            "VBG": 0.00980392156862745,
+            "CD": 0.004901960784313725
+        },
+        "tailored_texts": {}
     },
     "15": {
-        "chapter": "16",
-        "sections": "16.2",
-        "topic": "Automatic Speech Recognition (ASR)",
         "original_category": "CL",
         "original_text": "The first step in ASR is to transform the input waveform into a sequence of acoustic feature vectors, […]. The input to a speech recognizer is a complex series of changes in air pressure […]. We represent sound waves by plotting the change in air pressure over time. [...] The first step in digitizing a sound wave […]. This analog-to-digital conversion has two steps: sampling and quantization. To sample a signal, we measure its amplitude at a particular time; the sampling rate is the number of samples taken per second. [...] This maximum frequency for a given sampling rate is called the Nyquist frequency. [...] Amplitude measurements are stored as integers, […]. This process of representing real-valued quantization numbers as integers is called quantization; [...]. From the digitized, quantized representation of the waveform, we need to extract spectral features from a small window of speech that characterizes part of a particular phoneme. The speech extracted from each window is called a frame. The windowing is characterized by three parameters: the window size or frame size of the window (its width in milliseconds), the frame stride, (also called shift or offset) between successive windows, and the shape of the window. [...] The tool for extracting spectral information […] is the discrete Fourier transform or DFT. [...] If we plot the magnitude against the frequency, we can visualize the spectrum. [...]",
-        "L_tailored_gpto1": null,
-        "L_tailored_gpt4o": null,
-        "L_tailored_claude_sonnet": null,
-        "L_tailored_llama": null,
-        "L_tailored_mistral": null,
-        "CS_tailored_gpto1": null,
-        "CS_tailored_gpt4o": null,
-        "CS_tailored_claude_sonnet": null,
-        "CS_tailored_llama": null,
-        "CS_tailored_mistral": null
+        "readability": {
+            "flesch_reading_ease": 55.74,
+            "flesch_kincaid_grade": 9.3
+        },
+        "pos": {
+            "DT": 0.17733990147783252,
+            "JJ": 0.06896551724137931,
+            "NN": 0.3694581280788177,
+            "IN": 0.1477832512315271,
+            "NNP": 0.024630541871921183,
+            "VB": 0.09359605911330049,
+            "VBG": 0.019704433497536946,
+            "CD": 0.009852216748768473,
+            "CC": 0.024630541871921183,
+            "VBN": 0.054187192118226604,
+            "RB": 0.0049261083743842365,
+            "MD": 0.0049261083743842365
+        },
+        "tailored_texts": {}
     }
 }
