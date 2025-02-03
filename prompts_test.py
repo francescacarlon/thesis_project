@@ -1,10 +1,28 @@
-import json
-from utils import load_dataset, save_dataset  # Ensure `save_dataset` is implemented
+from utils import load_dataset  # Import function to load benchmark.json
 from llm_caller import call_llm
 from config import BENCHMARK_PATH
 
 # ✅ Load benchmark data
 benchmark_data = load_dataset(BENCHMARK_PATH)
+
+# ✅ Display available entries
+print("\n📌 Available Text Entries:")
+for key, value in benchmark_data.items():
+    print(f"{key}: {value['topic']} (Category: {value['original_category']})")
+
+# ✅ Let user pick an entry
+entry_id = input("\nEnter the entry number to test: ").strip()
+
+if entry_id not in benchmark_data:
+    print("\n❌ Invalid entry number. Please try again.")
+    exit()
+
+# ✅ Retrieve `original_text`
+original_text = benchmark_data[entry_id]["original_text"]
+
+# ✅ Let user pick two target categories
+target_category_1 = input("Enter first target category (L, CS, CL): ").strip().upper()
+target_category_2 = input("Enter second target category (L, CS, CL): ").strip().upper()
 
 # ✅ Define the prompt template
 def create_prompt1(target_category, text):
@@ -69,42 +87,23 @@ def create_prompt2(target_category, text):
     Tailored text (provide one text per target category only):
     """
 
-# ✅ Iterate over all entries in the benchmark dataset
-for entry_id, entry_data in benchmark_data.items():
-    original_text = entry_data["original_text"]
-    original_category = entry_data["original_category"]
 
-    # ✅ Determine target categories
-    if original_category == "L":
-        target_category_1, target_category_2 = "CS", "CL"
-    elif original_category == "CS":
-        target_category_1, target_category_2 = "L", "CL"
-    elif original_category == "CL":
-        target_category_1, target_category_2 = "L", "CS"
-    else:
-        print(f"\n❌ Unknown category for entry {entry_id}. Skipping.")
-        continue
+# ✅ Call GPT-4o with both prompts
+try:
+    # First tailored explanation
+    prompt_1 = create_prompt2(target_category_1, original_text)
+    response_1 = call_llm("gpt4o", prompt_1)
 
-    try:
-        # ✅ Generate first tailored explanation
-        prompt_1 = create_prompt2(target_category_1, original_text)
-        response_1 = call_llm("gpt4o", prompt_1)
+    # Second tailored explanation
+    prompt_2 = create_prompt2(target_category_2, original_text)
+    response_2 = call_llm("gpt4o", prompt_2)
 
-        # ✅ Generate second tailored explanation
-        prompt_2 = create_prompt2(target_category_2, original_text)
-        response_2 = call_llm("gpt4o", prompt_2)
+    # ✅ Print the prompt & response for easy comparison
+    #print("\n🔹 Prompt Used for", target_category_1, ":\n", prompt_1)
+    print("\n✅ Tailored Explanation for", target_category_1, ":\n", response_1)
 
-        # ✅ Store the responses in the benchmark data
-        benchmark_data[entry_id][f"{target_category_1}_tailored_gpt4o"] = response_1
-        benchmark_data[entry_id][f"{target_category_2}_tailored_gpt4o"] = response_2
+    #print("\n🔹 Prompt Used for", target_category_2, ":\n", prompt_2)
+    print("\n✅ Tailored Explanation for", target_category_2, ":\n", response_2)
 
-        print(f"\n✅ Tailored explanations generated for Entry {entry_id} ({entry_data['topic']})")
-
-    except Exception as e:
-        print(f"\n❌ Error processing Entry {entry_id}: {str(e)}")
-
-# ✅ Save the updated benchmark data
-with open(BENCHMARK_PATH, "w", encoding="utf-8") as f:
-    json.dump(benchmark_data, f, indent=4, ensure_ascii=False)
-
-print("\n🎉 All entries have been paraphrased and saved successfully!")
+except Exception as e:
+    print("\n❌ Error calling GPT-4o:", str(e))
