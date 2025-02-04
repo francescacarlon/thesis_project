@@ -1,3 +1,9 @@
+"""
+To test different prompts on selected original_texts from the 3 categories. 
+This file allows me to choose one entry from benchmark, and have it tailored to other categories. 
+After reading the output, I choose the prompt giving the best texts to tailor the whole benchmark. 
+"""
+
 from utils import load_dataset  # Import function to load benchmark.json
 from llm_caller import call_llm
 from config import BENCHMARK_PATH
@@ -24,7 +30,7 @@ original_text = benchmark_data[entry_id]["original_text"]
 target_category_1 = input("Enter first target category (L, CS, CL): ").strip().upper()
 target_category_2 = input("Enter second target category (L, CS, CL): ").strip().upper()
 
-# ✅ Define the prompt template
+# ✅ Define the prompt template and define the categories
 def create_prompt1(target_category, text):
 
     category_definitions = {
@@ -55,7 +61,7 @@ def create_prompt1(target_category, text):
     Tailored text (provide one text per target category only):
     """
 
-# ✅ Define the prompt template
+# ✅ Define the prompt template and define the categories
 def create_prompt2(target_category, text):
 
     category_definitions = {
@@ -88,7 +94,7 @@ def create_prompt2(target_category, text):
     """
 
 
-# ✅ Call GPT-4o with both prompts
+# ✅ Call GPT-4o with selected prompts
 try:
     # First tailored explanation
     prompt_1 = create_prompt2(target_category_1, original_text)

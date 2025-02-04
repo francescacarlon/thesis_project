@@ -1,3 +1,15 @@
+"""
+File with the linguistic metrics functions.
+For each text:
+- readability: Flesch scores;
+- POS distribution.
+
+For similarity scores between texts:
+- Jaccard similarity;
+- Cosine similarity;
+- BLEU and ROUGE scores.
+"""
+
 import nltk
 import textstat
 #import numpy as np
@@ -33,7 +45,7 @@ def compute_pos_distribution(text):
         if tag not in {"PRP", "PRP$", "WDT", "TO", "POS", "WP", "WRB", "PDT", "EX", "WP$"} and word.isalpha()
     ]
     
-    # Group POS tags according to your rules
+    # Group POS tags according to my rules
     grouped_tags = []
     for tag in filtered_tags:
         if tag in {"VB", "VBP", "VBZ"}:

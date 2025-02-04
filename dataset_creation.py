@@ -1,3 +1,8 @@
+"""
+This files makes the initial dataset. It extracts the original texts from selected chapters and saves the details for each entry. 
+Details stored: chapter, sections, topic, original_category, original_text. 
+"""
+
 import pdfplumber
 import re
 import os
