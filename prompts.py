@@ -1,3 +1,9 @@
+"""
+This file automates the creation of tailored texts for all the benchmark file entries.
+It automatically retrieves the original texts and original categories. 
+It tailors the texts for the target categories and saves them in benchmark, in the LLM's corresponding entry. 
+"""
+
 import json
 from utils import load_dataset, save_dataset  # Ensure `save_dataset` is implemented
 from llm_caller import call_llm
@@ -6,7 +12,7 @@ from config import BENCHMARK_PATH
 # ✅ Load benchmark data
 benchmark_data = load_dataset(BENCHMARK_PATH)
 
-# ✅ Define the prompt template
+# ✅ Define the prompt template and define the categories
 def create_prompt1(target_category, text):
 
     category_definitions = {
@@ -37,7 +43,7 @@ def create_prompt1(target_category, text):
     Tailored text (provide one text per target category only):
     """
 
-# ✅ Define the prompt template
+# ✅ Define the prompt template and define the categories
 def create_prompt2(target_category, text):
 
     category_definitions = {

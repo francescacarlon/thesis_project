@@ -1,7 +1,12 @@
+"""
+Functions to create benchmark (original texts and tailored texts) and linguistic_analysis (linguistic metrics results) files. 
+It takes the original_text from the dataset, makes the tailored paraphrasis according to LLM and target category, performs linguistic analysis.
+"""
+
 from utils import load_dataset, save_dataset
 from linguistic_analysis import analyze_text
 from llm_caller import call_llm
-from prompts import create_prompt2  # Import prompt function
+from prompts import create_prompt2  # add other prompt functions if using other prompts
 from config import DATASET_PATH, BENCHMARK_PATH, LINGUISTIC_ANALYSIS_PATH  
 
 def create_benchmark():
@@ -43,7 +48,7 @@ def create_benchmark():
                 "original_text": original_text
             }
 
-        # ✅ Perform linguistic analysis for the original text if missing
+        # ✅ First perform linguistic analysis for the original text if missing
         if key not in linguistic_analysis:
             original_analysis = analyze_text(original_text)  # Call once
             linguistic_analysis[key] = {
@@ -55,7 +60,7 @@ def create_benchmark():
             }
 
 
-        # ✅ Generate tailored explanations for each target category
+        # ✅ Generate tailored explanations for each target category and LLM
         for target_category in TAILORING_MATRIX.get(original_category, []):
             tailored_key = f"{target_category}_tailored_gpt4o"
 
@@ -75,7 +80,7 @@ def create_benchmark():
                 continue  # Skip generating a new paraphrase
 
 
-            # ✅ Create the tailored prompt
+            # ✅ Use the tailored prompt
             prompt = create_prompt2(target_category, original_text)
 
             try:

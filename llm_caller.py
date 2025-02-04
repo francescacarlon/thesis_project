@@ -1,3 +1,7 @@
+"""
+This file calls the LLMs with the corresponding API keys. 
+"""
+
 #from config import LLM_MODELS
 from dotenv import load_dotenv
 import os
@@ -73,7 +77,7 @@ def call_llm(model, prompt):
 
     # Format messages properly
     messages = [
-        {"role": "system", "content": "You are an expert in explaining concepts."},
+        {"role": "system", "content": "You are an expert in explaining concepts."}, # General instruction to the model, overwritten with the specific prompt
         {"role": "user", "content": prompt}
     ]
 

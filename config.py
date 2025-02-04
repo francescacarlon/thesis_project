@@ -1,3 +1,7 @@
+"""
+References for paths and API keys.
+"""
+
 from pathlib import Path
 import os
 from dotenv import load_dotenv
