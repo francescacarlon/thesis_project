@@ -1,14 +1,14 @@
 """
-This file calls the LLMs with the corresponding API keys. 
+This file calls the different LLMs with the corresponding API keys. 
 """
 
-#from config import LLM_MODELS
 from dotenv import load_dotenv
 import os
+import openai
 
 # Load API keys from .env
 load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") # for GPT-4o and o1
 
 # add API keys for other models:
 # ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
@@ -19,7 +19,6 @@ def get_api_function_llm(model):
     """Selects the appropriate API function based on the model name."""
     
     if model == "gpt4o":
-        import openai
         client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
         def openai_gpt4o_call(messages):
@@ -32,42 +31,27 @@ def get_api_function_llm(model):
             return response
 
         return openai_gpt4o_call
+    
+    elif model == "o1":  # Explicitly handling "o1"
+        client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
-    """elif model == "claude_sonnet":
-        import anthropic
-        client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-
-        def anthropic_claude_call(messages):
-            #Calls Claude API.
-            response = client.messages.create(
-                model="claude-2.1",
-                max_tokens=1024,
-                temperature=0.7,
-                messages=messages
-            )
-            return response
-
-        return anthropic_claude_call
-
-    elif model == "mistral":
-        import mistralai
-        client = mistralai.Client(api_key=MISTRAL_API_KEY)
-
-        def mistral_call(messages):
-            #Calls Mistral API.
-            response = client.chat_completions.create(
-                model="mistral-large",
+        def openai_o1_call(messages):
+            """Calls OpenAI GPT-4-Turbo API (formerly o1)."""
+            response = client.chat.completions.create(
+                model="gpt-4-turbo",  # Correct API name for o1
                 messages=messages,
                 temperature=0.7
             )
             return response
 
-        return mistral_call
-        
+        return openai_o1_call
+
+    elif model == "claude":
+        pass
 
     else:
         raise ValueError(f"Model '{model}' is not supported.")
-        """
+        
         
 
 def call_llm(model, prompt):
