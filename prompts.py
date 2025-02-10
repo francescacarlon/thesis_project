@@ -5,7 +5,7 @@ It tailors the texts for the target categories and saves them in benchmark, in t
 """
 
 import json
-from utils import load_dataset, save_dataset  # Ensure `save_dataset` is implemented
+from utils import load_dataset, save_dataset  # Ensure save_dataset is implemented
 from llm_caller import call_llm
 from config import BENCHMARK_PATH
 
@@ -94,11 +94,11 @@ for entry_id, entry_data in benchmark_data.items():
     try:
         # ✅ Generate first tailored explanation
         prompt_1 = create_prompt2(target_category_1, original_text)
-        response_1 = call_llm("gpt4o", prompt_1)
+        response_1 = call_llm("gpt4o", prompt_1) # insert llm name
 
         # ✅ Generate second tailored explanation
         prompt_2 = create_prompt2(target_category_2, original_text)
-        response_2 = call_llm("gpt4o", prompt_2)
+        response_2 = call_llm("gpt4o", prompt_2) # insert llm name
 
         # ✅ Store the responses in the benchmark data
         benchmark_data[entry_id][f"{target_category_1}_tailored_gpt4o"] = response_1

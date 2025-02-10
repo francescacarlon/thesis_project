@@ -94,15 +94,15 @@ def create_prompt2(target_category, text):
     """
 
 
-# ✅ Call GPT-4o with selected prompts
+# ✅ Call models with selected prompts
 try:
     # First tailored explanation
-    prompt_1 = create_prompt2(target_category_1, original_text)
-    response_1 = call_llm("gpt4o", prompt_1)
+    prompt_1 = create_prompt1(target_category_1, original_text)
+    response_1 = call_llm("o1", prompt_1)
 
     # Second tailored explanation
-    prompt_2 = create_prompt2(target_category_2, original_text)
-    response_2 = call_llm("gpt4o", prompt_2)
+    prompt_2 = create_prompt1(target_category_2, original_text)
+    response_2 = call_llm("o1", prompt_2)
 
     # ✅ Print the prompt & response for easy comparison
     #print("\n🔹 Prompt Used for", target_category_1, ":\n", prompt_1)
@@ -112,4 +112,5 @@ try:
     print("\n✅ Tailored Explanation for", target_category_2, ":\n", response_2)
 
 except Exception as e:
-    print("\n❌ Error calling GPT-4o:", str(e))
+    print(f"\n❌ Error calling model:", str(e))
+
