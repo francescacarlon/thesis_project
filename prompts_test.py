@@ -93,16 +93,50 @@ def create_prompt2(target_category, text):
     Tailored text (provide one text per target category only):
     """
 
+# ✅ Define the prompt template and define the categories
+def create_prompt3(target_category, text):
+
+    category_definitions = {
+        "L": "Linguistics (L) audience have a strong background on language structure, phonetics, syntax, and semantics. They have little or no technical knowledge.",
+        "CS": "Computer Science (CS) audience have strong technical backgrounds, including programming, algorithms, and machine learning. They have little or no linguistic knowledge.",
+        "CL": "Computational Linguistics (CL) audience bridge linguistics and computer science, NLP, corpus linguistics, AI, and LLMs."
+    }
+    
+    category_explanation = category_definitions.get(target_category, "Unknown category") # unknown if the category does not appear in category_definitions
+
+    return f"""
+    You are a freelance copywriter responsible for adapting field-specific academic texts for an audience with a background in {target_category}. 
+    Your client at the publishing house will decide whether to publish your adapted texts in the new edition of the book, making you famous in the copywriting field. 
+    Rewrite the explanation below in a way that is most comprehensible to {target_category} audience.
+    The key objective is to ensure that your audience grasp concepts outside their existing background knowledge so your client will publish your work. 
+    If you succeed, many more clients will work with you and you will become extremely rich. 
+    Consider the information on {category_explanation} to tailor the explanation to your audience specific backgrounds 
+    - Read the text carefully.
+    - Identify the key concepts.
+    - Use terminology that is familiar to their field.
+    - Avoid unnecessary sentence complexity while maintaining accuracy. 
+    - Provide examples they are familiar with.
+    - Provide analogies they can relate their knowledge with and transfer it to new concepts.
+    - Integrate background information if needed.    
+
+    Original text: 
+    {text}
+
+    ### END OF INPUT ###
+
+    Tailored text (provide one text per target category only):
+    """
+
 
 # ✅ Call models with selected prompts
 try:
     # First tailored explanation
-    prompt_1 = create_prompt1(target_category_1, original_text)
-    response_1 = call_llm("llama", prompt_1)
+    prompt_1 = create_prompt3(target_category_1, original_text)
+    response_1 = call_llm("o1", prompt_1)
 
     # Second tailored explanation
-    prompt_2 = create_prompt1(target_category_2, original_text)
-    response_2 = call_llm("llama", prompt_2)
+    prompt_2 = create_prompt3(target_category_2, original_text)
+    response_2 = call_llm("o1", prompt_2)
 
     # ✅ Print the prompt & response for easy comparison
     #print("\n🔹 Prompt Used for", target_category_1, ":\n", prompt_1)
