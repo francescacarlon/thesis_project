@@ -33,20 +33,26 @@ def get_api_function_llm(model):
             return response
 
         return openai_gpt4o_call
-    
-    elif model == "o1":  # Explicitly handling "o1"
+        
+    elif model == "o1-preview":  # Explicitly handling "o1-preview"
         client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
         def openai_o1_call(messages):
-            """Calls OpenAI GPT-4-Turbo API (formerly o1)."""
+            """Calls OpenAI's o1-preview model, ensuring it does not include 'system' messages."""
+            
+            # ✅ Filter out system messages
+            filtered_messages = [msg for msg in messages if msg.get("role") != "system"]
+
             response = client.chat.completions.create(
-                model="gpt-4-turbo",  # Correct API name for o1
-                messages=messages,
-                temperature=0.7
+                model="o1-preview",  
+                messages=filtered_messages  # ✅ Use filtered messages
+                #temperature=0.7
             )
             return response
 
         return openai_o1_call
+
+
 
     elif model == "claude":
         client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
