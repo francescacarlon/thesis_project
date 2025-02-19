@@ -36,3 +36,12 @@ if __name__ == "__main__":
     print("\n🔹 Running API Connection Tests...\n")
     test_api_key()
     test_gpt4o()
+
+
+import openai
+
+client = openai.OpenAI()  # Ensure your OpenAI client is properly initialized
+models = client.models.list()
+
+for model in models:
+    print(model.id)

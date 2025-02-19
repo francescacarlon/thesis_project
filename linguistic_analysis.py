@@ -25,10 +25,15 @@ nltk.download('averaged_perceptron_tagger_eng')
 
 # Function to compute readability scores
 def compute_readability(text):
+    """Computes readability scores, ensuring text is a valid string."""
+    if not isinstance(text, str) or not text.strip():  # Check for None or empty strings
+        return {"flesch_reading_ease": 0, "flesch_kincaid_grade": 0}
+
     return {
         "flesch_reading_ease": textstat.flesch_reading_ease(text),
         "flesch_kincaid_grade": textstat.flesch_kincaid_grade(text)
     }
+
 
 
 # Function to compute POS distribution
