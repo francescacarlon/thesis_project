@@ -58,20 +58,27 @@ def get_api_function_llm(model):
         client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
         def claude_call(user_message):
-            """Calls Anthropic Claude 3.5 Sonnet API."""
+            """Calls Anthropic Claude API correctly."""
             try:
                 response = client.messages.create(
-                    model="claude-3.5-sonnet-20240626",  # Latest Claude 3.5 Sonnet
+                    model="claude-3-5-sonnet-20241022",  # Make sure this model is available in your account
                     max_tokens=1024,
                     temperature=0.7,
-                    messages=[{"role": "user", "content": user_message}]  # Ensure proper format
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": [{"type": "text", "text": str(user_message)}]  # ✅ Ensure user_message is a string
+                        }
+                    ]  
                 )
-                return response.content.strip()  # ✅ Extract only the text response
+                return response.content[0].text.strip()  # ✅ Extract text from response
             except Exception as e:
-                print(f"\n❌ Error calling Anthropic API: {e}")  # Removed undefined 'model'
+                print(f"\n❌ Error calling Anthropic API: {e}")
                 return None
 
+  
         return claude_call
+
     
     elif model == "llama":
         def llama_call(user_message):
@@ -107,23 +114,59 @@ def get_api_function_llm(model):
         
 
 def call_llm(model, prompt):
-    """Call the LLM API using the selected model."""
+    """Call the LLM API using the selected model and extract responses correctly."""
     
     llm_function = get_api_function_llm(model)
 
-    # Format messages properly
-    messages = [
-        {"role": "system", "content": "You are an expert in explaining concepts."}, # General instruction to the model, overwritten with the specific prompt
-        {"role": "user", "content": prompt}
-    ]
+    if model in ["gpt4o", "o1-preview"]:
+        # ✅ OpenAI models require formatted message lists
+        messages = [
+            {"role": "system", "content": "You are an expert in explaining concepts."}, 
+            {"role": "user", "content": prompt}
+        ]
+        response = llm_function(messages)
 
-    # Call the API
-    response = llm_function(messages)
+        # ✅ Extract response correctly for OpenAI API
+        try:
+            return response.choices[0].message.content.strip()
+        except AttributeError:
+            print("\n❌ Error: Unexpected response format from OpenAI API")
+            print(response)  # Debugging info
+            return None
 
-    # ✅ Extract only the generated text
-    try:
-        return response.choices[0].message.content.strip()
-    except AttributeError:
-        print("\n❌ Error: Unexpected response format from OpenAI API")
-        print(response)  # Debugging info
+    elif model == "claude":
+        # ✅ Claude only needs a plain string input (no role messages needed)
+        response = llm_function(prompt)
+
+        # ✅ Extract response correctly for Claude API
+        try:
+            if response:
+                return response.strip()  # Claude responses are already strings
+            else:
+                print("\n❌ Error: Claude API returned None")
+                return None
+        except AttributeError:
+            print("\n❌ Error: Unexpected response format from Claude API")
+            print(response)  # Debugging info
+            return None
+
+    elif model == "llama":
+        # ✅ LLaMA also takes a plain string input
+        response = llm_function(prompt)
+
+        # ✅ Extract response correctly for LLaMA API
+        try:
+            if response:
+                return response.strip()  # LLaMA responses are already strings
+            else:
+                print("\n❌ Error: LLaMA API returned None")
+                return None
+        except AttributeError:
+            print("\n❌ Error: Unexpected response format from LLaMA API")
+            print(response)  # Debugging info
+            return None
+
+    else:
+        print("\n❌ Error: Unsupported model:", model)
         return None
+
