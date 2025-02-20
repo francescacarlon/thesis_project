@@ -24,9 +24,9 @@ def create_benchmark(llm_model, prompt_function_name):
 
     # ✅ Load existing benchmark and linguistic analysis data
     try:
-        benchmark_data = load_dataset(BENCHMARK_PATH)
+        benchmark = load_dataset(BENCHMARK_PATH)
     except FileNotFoundError:
-        benchmark_data = {}
+        benchmark = {}
 
     try:
         linguistic_analysis = load_dataset(LINGUISTIC_ANALYSIS_PATH)
@@ -58,8 +58,8 @@ def create_benchmark(llm_model, prompt_function_name):
         print(f"\n🔹 Processing Entry {key} ({original_category})...")
 
         # ✅ Ensure the entry exists in benchmark data
-        if key not in benchmark_data:
-            benchmark_data[key] = {
+        if key not in benchmark:
+            benchmark[key] = {
                 "chapter": value["chapter"],
                 "sections": value["sections"],
                 "topic": value["topic"],
@@ -83,7 +83,7 @@ def create_benchmark(llm_model, prompt_function_name):
             tailored_key = f"{target_category}_tailored_{llm_model_key}"
 
             # ✅ Check if tailored text already exists and is valid
-            tailored_text = benchmark_data[key].get(tailored_key)
+            tailored_text = benchmark[key].get(tailored_key)
 
             if tailored_text is not None and isinstance(tailored_text, str) and tailored_text.strip():
                 print(f"⏭️ Skipping {target_category} for {key}, already exists.")
@@ -112,10 +112,10 @@ def create_benchmark(llm_model, prompt_function_name):
                 # ✅ Ensure response is valid before saving
                 if isinstance(response, str) and response.strip():
                     # ✅ Ensure the key exists in benchmark_data before updating
-                    if key not in benchmark_data:
-                        benchmark_data[key] = {}
+                    if key not in benchmark:
+                        benchmark[key] = {}
 
-                    benchmark_data[key][tailored_key] = response  # Save generated text in benchmark.json
+                    benchmark[key][tailored_key] = response  # Save generated text in benchmark.json
                     
                     # ✅ Ensure entry exists in linguistic_analysis before storing analysis
                     if key not in linguistic_analysis:
@@ -134,14 +134,14 @@ def create_benchmark(llm_model, prompt_function_name):
 
                 else:
                     print(f"⚠️ Warning: Generated text is invalid for {target_category} in entry {key}. Keeping null.")
-                    benchmark_data[key][tailored_key] = None
+                    benchmark[key][tailored_key] = None
 
             except Exception as e:
                 print(f"❌ Error generating for {target_category} in entry {key}: {e}")
-                benchmark_data[key][tailored_key] = None  # Keep null if there's an error
+                benchmark[key][tailored_key] = None  # Keep null if there's an error
 
     # ✅ Save the updated benchmark and linguistic analysis data
-    save_dataset(benchmark_data, BENCHMARK_PATH)  # Ensure benchmark.json is updated
+    save_dataset(benchmark, BENCHMARK_PATH)  # Ensure benchmark.json is updated
     save_dataset(linguistic_analysis, LINGUISTIC_ANALYSIS_PATH)
 
     print("\n✅ Benchmark updated with tailored texts and saved.")
