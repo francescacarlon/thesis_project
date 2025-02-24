@@ -106,6 +106,50 @@
                     "RP": 0.007594936708860759,
                     "MD": 0.002531645569620253
                 }
+            },
+            "CS_tailored_claude": {
+                "text": "Here's a CS-tailored explanation of the linguistic concepts:\n\n```\n// Data Types and Inheritance in Language\n\nclass Words {\n    /* Words can be classified into two main types:\n     * 1. Static (closed) types: like system reserved keywords\n     * 2. Dynamic (open) types: like user-defined variables\n     */\n\n    // Static types (closed class):\n    // Similar to reserved keywords in programming (if, while, for)\n    // - Fixed set\n    // - Core system functions\n    // - High frequency usage\n    // - Short length\n    // - Cannot be extended by users\n\n    // Dynamic types (open class):\n    // Similar to user-defined classes and methods\n    // Main types include:\n    // - Nouns (like class names: String, Integer)\n    // - Verbs (like methods: getData(), processInput())\n    // - Adjectives (like attributes: public, private, static)\n    // - Adverbs (like modifiers: async, volatile)\n\n    // Method combinations (phrasal verbs):\n    /* Similar to method overloading where:\n     * method + particle = new functionality\n     * Example: turnOver() != turn() + over\n     * Like how ArrayList.add() behaves differently from +\n     */\n\n    // Verb states (inflections):\n    /* Similar to different method states:\n     * Base: process()\n     * Present: processes() \n     * Continuous: processing()\n     * Completed: processed()\n     */\n}\n```\n\nThis explanation uses:\n- Programming paradigms (classes, inheritance)\n- Familiar CS concepts (data types, methods)\n- Code-style documentation\n- Direct analogies to programming concepts\n- Practical examples from coding\n- Clear structure with comments",
+                "readability": {
+                    "flesch_reading_ease": 20.25,
+                    "flesch_kincaid_grade": 18.8
+                },
+                "pos": {
+                    "RB": 0.019230769230769232,
+                    "DT": 0.019230769230769232,
+                    "NN": 0.40384615384615385,
+                    "IN": 0.12179487179487179,
+                    "JJ": 0.1346153846153846,
+                    "NNP": 0.1346153846153846,
+                    "CC": 0.01282051282051282,
+                    "MD": 0.01282051282051282,
+                    "VB": 0.04487179487179487,
+                    "VBN": 0.05128205128205128,
+                    "CD": 0.00641025641025641,
+                    "NNPS": 0.00641025641025641,
+                    "FW": 0.00641025641025641,
+                    "VBG": 0.02564102564102564
+                }
+            },
+            "CL_tailored_claude": {
+                "text": "I'll provide tailored explanations for different CL expert backgrounds:\n\nFor NLP/Computational Expert:\n\"Think of Parts of Speech (POS) as two main data structures: closed sets and open sets. Closed sets are like enumerated types with finite, predefined values (e.g., prepositions), similar to boolean operators or special tokens in programming. Open sets are dynamic arrays that can grow, like nouns and verbs, comparable to user-defined variables. Closed-class words function like syntactic operators (e.g., 'of', 'and') - they're high-frequency tokens that define structural relationships. Open classes (nouns, verbs, adjectives, adverbs) are like content-bearing tokens in your training data. Verbs come with morphological transformations (inflections) - think of them as different states of the same base token (eat→{eats, eating, eaten}). Particles in phrasal verbs are particularly challenging for language models because they create non-compositional meanings - similar to how 'turn_over' needs to be tokenized as a single semantic unit rather than processing 'turn'+'over' separately for accurate meaning representation.\"\n\nThis explanation:\n- Uses programming/data structure analogies\n- References familiar NLP concepts (tokens, training data)\n- Maintains technical precision\n- Addresses computational challenges\n- Uses terminology from both linguistics and computer science\n- Provides concrete examples in a computational context\n- Highlights aspects relevant to language processing tasks\n\nI focused on the NLP/Computational expert perspective as it's most relevant for solving modern linguistic challenges. This explanation should help them understand both the linguistic concepts and their computational implications.",
+                "readability": {
+                    "flesch_reading_ease": 25.49,
+                    "flesch_kincaid_grade": 14.7
+                },
+                "pos": {
+                    "VB": 0.10416666666666667,
+                    "JJ": 0.15625,
+                    "NN": 0.390625,
+                    "IN": 0.140625,
+                    "NNP": 0.041666666666666664,
+                    "CD": 0.005208333333333333,
+                    "VBN": 0.026041666666666668,
+                    "CC": 0.026041666666666668,
+                    "VBG": 0.03125,
+                    "MD": 0.010416666666666666,
+                    "DT": 0.046875,
+                    "RB": 0.020833333333333332
+                }
             }
         }
     },
@@ -215,6 +259,47 @@
                     "MD": 0.02386634844868735,
                     "VBG": 0.03579952267303103
                 }
+            },
+            "CS_tailored_claude": {
+                "text": "Here's a CS-tailored explanation of the linguistic concept:\n\nTailored for Computer Scientists:\n\nSyntactic constituency is like object-oriented programming, where words are objects that can be grouped into larger functional units (similar to classes). Think of a noun phrase as a class that must contain at least one noun object.\n\nThe Context-Free Grammar (CFG) is essentially a recursive parsing system, similar to how compilers process programming languages. It's comparable to BNF (Backus-Naur Form) notation used in programming language specifications.\n\nThe rules work like this:\n```\nclass NounPhrase {\n    constructor() {\n        return ProperNoun || (Determiner + Nominal)\n    }\n}\n\n// Terminal rules (like leaf nodes):\nDeterminer = [\"a\", \"the\"]\nNoun = [\"flight\"]\n```\n\nThe derivation process is analogous to traversing a tree data structure, where:\n- Non-terminal symbols are internal nodes\n- Terminal symbols (actual words) are leaf nodes\n- Production rules define valid parent-child relationships\n\nThe parse tree is similar to an Abstract Syntax Tree (AST) in compiler design, but inverted. A string is \"grammatical\" if it can be generated by the grammar rules (like valid code that compiles) and \"ungrammatical\" if it can't (like a syntax error).\n\nThink of generative grammar as a formal specification language for natural language, just as programming languages have formal specifications that define their syntax and structure.\n\nExample:\n```\n         S\n        /\\\n      NP  VP\n     /\\    |\n   Det  N  V\n    |   |  |\n   the dog runs\n```\n\nThis explanation uses programming concepts like classes, tree structures, and compiler theory to make linguistic concepts more accessible to CS experts.",
+                "readability": {
+                    "flesch_reading_ease": 33.99,
+                    "flesch_kincaid_grade": 15.6
+                },
+                "pos": {
+                    "RB": 0.01932367149758454,
+                    "DT": 0.0966183574879227,
+                    "NN": 0.3140096618357488,
+                    "IN": 0.11594202898550725,
+                    "JJ": 0.14009661835748793,
+                    "VBN": 0.024154589371980676,
+                    "NNP": 0.11594202898550725,
+                    "NNPS": 0.004830917874396135,
+                    "VB": 0.10144927536231885,
+                    "MD": 0.01932367149758454,
+                    "CD": 0.004830917874396135,
+                    "VBG": 0.024154589371980676,
+                    "CC": 0.01932367149758454
+                }
+            },
+            "CL_tailored_claude": {
+                "text": "I'll provide tailored explanations for different CL expert backgrounds:\n\nFor NLP/Computer Science background:\n\"Think of syntactic constituency as a hierarchical data structure, similar to how we organize code or XML documents. Just like how we nest elements in programming, words in language form nested structures called constituents. Context-free grammars (CFGs) are essentially production rules that define valid combinations, much like a programming language's syntax rules. Imagine writing a compiler: Det → 'the' is like declaring a token type, and NP → Det Nominal is like defining valid statement patterns. Parse trees are comparable to Abstract Syntax Trees (ASTs) in compilation, showing how tokens combine into larger structures. The grammar's ability to determine valid/invalid sentences is analogous to a compiler accepting or rejecting code based on syntax rules.\"\n\nFor Linguistics background:\n\"Syntactic constituency explains how morphemes and words combine into larger meaningful units, similar to how morphological processes create complex words. Context-free grammars formalize this by defining allowable combinations, much like how morphological rules describe word formation. Think of phrase structure rules like 'NP → Det Nominal' as similar to describing inflectional paradigms, but at the phrasal level. The recursive nature of CFGs mirrors how language naturally embeds clauses within clauses. Parse trees visually represent these relationships, similar to how we diagram sentences to show grammatical relations. The grammatical/ungrammatical distinction parallels how native speakers intuitively recognize well-formed versus ill-formed utterances.\"\n\nFor AI/Machine Learning background:\n\"Syntactic constituency is a way to model sequential data (words) as hierarchical structures, similar to how neural networks process sequential inputs. Context-free grammars are like rule-based decision trees that determine valid structural combinations. The production rules (Det → 'the', NP → Det Nominal) are comparable to transition functions in sequential models. Parse trees represent the decision path taken to generate a valid sequence, similar to attention mechanisms showing how different parts of input relate. The grammatical/ungrammatical classification is analogous to binary classification tasks, where the model learns to distinguish valid from invalid patterns in the training data.\"",
+                "readability": {
+                    "flesch_reading_ease": 26.71,
+                    "flesch_kincaid_grade": 14.3
+                },
+                "pos": {
+                    "VB": 0.1223021582733813,
+                    "JJ": 0.16546762589928057,
+                    "NN": 0.3669064748201439,
+                    "IN": 0.1079136690647482,
+                    "NNP": 0.08992805755395683,
+                    "DT": 0.06474820143884892,
+                    "CC": 0.017985611510791366,
+                    "VBN": 0.014388489208633094,
+                    "RB": 0.02158273381294964,
+                    "VBG": 0.02877697841726619
+                }
             }
         }
     },
@@ -321,6 +406,46 @@
                     "VBN": 0.046413502109704644,
                     "RB": 0.016877637130801686,
                     "RP": 0.004219409282700422
+                }
+            },
+            "CS_tailored_claude": {
+                "text": "Here's a CS-tailored explanation of the text:\n\n```\nLet's analyze this like a function signature with polymorphic behavior:\n\nConsider the action break() with different parameter configurations:\nbreak(agent: Actor, theme: Object, instrument?: Tool)\n\nSimilar to how a class method can be called with different argument arrangements (method overloading), actions in language can have multiple valid \"signatures\":\n\n1. Primary pattern:\n   break(agent=\"John\", theme=\"window\")\n   // Standard constructor pattern where agent initiates action\n\n2. Extended pattern:\n   break(agent=\"John\", theme=\"window\", instrument=\"rock\")\n   // Additional optional parameter\n\n3. Instrument promotion:\n   break(agent=\"rock\", theme=\"window\")\n   // Instrument elevated to agent position, like when a helper class takes over main functionality\n\n4. Theme-only pattern:\n   break(theme=\"window\")\n   // Similar to a default constructor with minimal parameters\n\n5. Passive pattern:\n   wasbroken(theme=\"window\", agent=\"John\")\n   // Like reversing a stack trace to show origin\n\nThis resembles how interfaces can define multiple valid implementations of the same core functionality. Each variation maintains the core action (break) but allows different argument structures, similar to how REST APIs can handle different parameter combinations for the same endpoint.\n\nThe semantic roles (AGENT, THEME, INSTRUMENT) are like strongly-typed parameters in a function declaration, ensuring semantic consistency across different syntactic implementations.\n```\n\nThis explanation:\n- Uses familiar programming concepts (functions, parameters, overloading)\n- Provides code-like examples\n- Maps linguistic concepts to CS equivalents (semantic roles → type system)\n- Uses familiar patterns (constructors, interfaces)\n- Maintains technical precision while using familiar terminology",
+                "readability": {
+                    "flesch_reading_ease": 7.45,
+                    "flesch_kincaid_grade": 17.5
+                },
+                "pos": {
+                    "RB": 0.005,
+                    "DT": 0.085,
+                    "NN": 0.425,
+                    "IN": 0.075,
+                    "VB": 0.1,
+                    "JJ": 0.155,
+                    "NNP": 0.075,
+                    "MD": 0.02,
+                    "VBN": 0.015,
+                    "VBG": 0.03,
+                    "RP": 0.01,
+                    "CC": 0.005
+                }
+            },
+            "CL_tailored_claude": {
+                "text": "I'll provide a tailored explanation for a Computational Linguistics expert, incorporating elements from NLP, corpus linguistics, and modern language processing concepts.\n\nTailored explanation for CL expert:\n\"Let's analyze this through the lens of semantic role labeling (SRL), a crucial task in NLP that parallels traditional linguistic argument structure analysis. Consider the semantic frame annotation problem in these sentences:\n\n'Sasha broke the window' and 'Pat opened the door'\n\nJust as modern neural architectures learn to identify predicate-argument structures, traditional linguistics identifies thematic roles. The AGENT role (Sasha, Pat) shares properties that would be key features in a machine learning model: [+volitional], [+animate], [+causal]. This is similar to how BERT or GPT models learn to distinguish agent-like entities through attention patterns in their training data.\n\nThe alternations in argument realization can be viewed as transformation patterns, similar to how we handle different surface forms in corpus annotation schemes:\n\nBase: [AGENT-subject] [Predicate] [THEME-object]\n- John[AGENT] broke window[THEME]\nInstrument: [AGENT-subject] [Predicate] [THEME-object] [INSTRUMENT-PP]\n- John[AGENT] broke window[THEME] with rock[INSTRUMENT]\nInstrument-Subject: [INSTRUMENT-subject] [Predicate] [THEME-object]\n- rock[INSTRUMENT] broke window[THEME]\n\nThis systematic variation is analogous to how we handle canonical and non-canonical patterns in dependency parsing or how transformers learn alternative realizations of the same semantic content through attention mechanisms.\n\nThink of it as a structured prediction task where the model needs to learn the valid mappings between semantic roles and syntactic positions, similar to how we train SRL systems.\"\n\nThis explanation:\n- Uses CL-specific terminology (SRL, neural architectures, attention patterns)\n- Provides relevant analogies to modern NLP concepts\n- Structures information in a familiar computational format\n- References familiar tools (BERT, GPT)\n- Maintains technical precision while being accessible to the target audience",
+                "readability": {
+                    "flesch_reading_ease": 3.53,
+                    "flesch_kincaid_grade": 21.1
+                },
+                "pos": {
+                    "VB": 0.09282700421940929,
+                    "DT": 0.08860759493670886,
+                    "JJ": 0.16033755274261605,
+                    "NN": 0.35864978902953587,
+                    "IN": 0.10126582278481013,
+                    "NNP": 0.12236286919831224,
+                    "VBG": 0.012658227848101266,
+                    "CC": 0.02531645569620253,
+                    "VBN": 0.029535864978902954,
+                    "MD": 0.008438818565400843
                 }
             }
         }
@@ -429,6 +554,45 @@
                     "MD": 0.00423728813559322,
                     "VBN": 0.0211864406779661,
                     "RB": 0.019067796610169493
+                }
+            },
+            "CS_tailored_claude": {
+                "text": "Here's a CS-tailored explanation of the text:\n\n\"Let me explain this using programming and data structure concepts:\n\nWord senses are like different implementations of the same variable name in different contexts (similar to polymorphism). Think of it as method overloading where the same word has multiple meanings based on context:\n\n```python\nclass Mouse:\n    def type1(self): # Computer peripheral\n        return \"Input device\"\n    def type2(self): # Animal\n        return \"Rodent\"\n```\n\nThe relationship between words can be modeled as a hierarchical tree structure:\n- Synonyms are like aliases or multiple references pointing to the same object (car -> automobile)\n- Antonyms are like boolean opposites (hot = !cold)\n- Hyponyms/Hypernyms represent an 'IS-A' relationship, similar to class inheritance:\n```python\nclass Vehicle:    # Hypernym\n    pass\nclass Car(Vehicle):    # Hyponym\n    pass\n```\n- Meronymy represents a 'HAS-A' relationship, similar to object composition:\n```python\nclass Car:\n    def __init__(self):\n        self.wheel = Wheel()    # wheel is a meronym of car\n```\n\nThink of a dictionary as a hash map where each key (word) maps to multiple values (senses), and each sense contains metadata (definition, relationships) - similar to how JSON objects store nested information.\"\n\nThis explanation uses familiar CS concepts like:\n- Object-oriented programming\n- Data structures (trees, hash maps)\n- Boolean logic\n- Programming patterns (inheritance, composition)\n- Common programming language syntax",
+                "readability": {
+                    "flesch_reading_ease": 15.17,
+                    "flesch_kincaid_grade": 20.8
+                },
+                "pos": {
+                    "RB": 0.017142857142857144,
+                    "DT": 0.09142857142857143,
+                    "NN": 0.4342857142857143,
+                    "IN": 0.08,
+                    "VB": 0.09142857142857143,
+                    "VBG": 0.022857142857142857,
+                    "CC": 0.017142857142857144,
+                    "NNP": 0.07428571428571429,
+                    "JJ": 0.14285714285714285,
+                    "VBN": 0.017142857142857144,
+                    "MD": 0.005714285714285714,
+                    "$": 0.005714285714285714
+                }
+            },
+            "CL_tailored_claude": {
+                "text": "I'll provide tailored explanations for different CL expert backgrounds:\n\nFor NLP/AI Expert:\n\"Let's frame this in terms of semantic relationships and disambiguation tasks. Consider word embeddings and their vector spaces: words have multiple discrete semantic representations (senses) that occupy different positions in the embedding space. Like how 'mouse' in 'computer mouse' clusters with technology terms, while 'mouse (animal)' groups with fauna vectors. These sense distinctions are similar to how BERT handles polysemy through contextual embeddings. The semantic relationships follow clear hierarchical patterns:\n- Equivalent vectors (synonyms): {couch, sofa}, {car, automobile}\n- Opposite vectors (antonyms): {hot, cold}, {dark, light}\n- Hierarchical inclusion (hypernym-hyponym): like class inheritance in programming, where 'vehicle' is the parent class of 'car'\n- Component relationships (meronym-holonym): similar to object-oriented composition, where 'wheel' is a component object of the 'car' class\"\n\nFor Corpus Linguist:\n\"This concept relates to how we analyze semantic patterns in corpora. Think of how concordance lines reveal different usage patterns for the same word form. For instance, when analyzing 'bank' in a corpus:\n- Financial sense collocates with: deposits, investments, account\n- Geographical sense collocates with: river, east, slope\nThese distinct collocational patterns help identify word senses, similar to how we use corpus evidence to compile dictionary entries. The semantic relationships (synonymy, antonymy, hyponymy, meronymy) are observable through corpus-based methods like collocation networks and distributional analysis.\"\n\nThese explanations leverage domain-specific concepts and methodologies familiar to each expert group, making the content more accessible while maintaining technical accuracy.",
+                "readability": {
+                    "flesch_reading_ease": 10.94,
+                    "flesch_kincaid_grade": 18.3
+                },
+                "pos": {
+                    "VB": 0.11219512195121951,
+                    "JJ": 0.18536585365853658,
+                    "NN": 0.4292682926829268,
+                    "IN": 0.13170731707317074,
+                    "NNP": 0.02926829268292683,
+                    "DT": 0.07317073170731707,
+                    "CC": 0.01951219512195122,
+                    "VBG": 0.014634146341463415,
+                    "RB": 0.004878048780487805
                 }
             }
         }
@@ -539,6 +703,48 @@
                     "MD": 0.013108614232209739,
                     "RP": 0.0018726591760299626,
                     "UH": 0.0018726591760299626
+                }
+            },
+            "CS_tailored_claude": {
+                "text": "Here's a CS-tailored explanation:\n\n\"Think of speech sounds (phones) as discrete tokens in a processing pipeline, similar to how we tokenize strings in programming. Each phone is like a unique character in a specialized alphabet.\n\nThe International Phonetic Alphabet (IPA) is essentially a standardized encoding system for speech, but English doesn't follow a consistent encoding pattern. Unlike UTF-8 where each character maps predictably to a binary sequence, English letter-to-sound mapping is more like a complex hash function with collisions - the same letter can output different sounds depending on context.\n\nThe classification of sounds follows a hierarchical structure, similar to class inheritance in OOP:\n\nParent class: Consonants\nSubclasses (based on location/place of articulation):\n- Bilabial: [p,b,m] (like pressing Ctrl+B - think 'B' for bilabial)\n- Labiodental: [v,f] (like pressing Ctrl+F - think 'F' for forward)\n- Dental: [th,dh] (think thread operations)\n- Alveolar: [s,z,t,d] (like system calls)\n- Velar: [k,g] (think kernel operations)\n\nAdditional attributes (manner of articulation):\n- voiced_stops = ['b','d','g']  # requires thread synchronization\n- unvoiced_stops = ['p','t','k']  # no thread dependency\n- nasals = ['n','m','ng']  # think network operations\n- fricatives = {\n    'labiodental': ['f','v'],\n    'alveolar': ['s','z']\n}\n- affricates = ['ch','jh']  # composite operations\n- approximants = ['y','w']  # weak references\n\nThis hierarchical classification system works like a decision tree for sound categorization.\"\n\nThe explanation uses programming concepts (tokenization, encoding, class hierarchy, arrays, dictionaries) and computing terminology (operations, thread synchronization) to make linguistic concepts more accessible to CS experts.",
+                "readability": {
+                    "flesch_reading_ease": 1.1,
+                    "flesch_kincaid_grade": 22.1
+                },
+                "pos": {
+                    "RB": 0.02403846153846154,
+                    "DT": 0.08653846153846154,
+                    "NN": 0.47596153846153844,
+                    "NNP": 0.052884615384615384,
+                    "IN": 0.11057692307692307,
+                    "JJ": 0.10096153846153846,
+                    "VB": 0.09134615384615384,
+                    "VBG": 0.03365384615384615,
+                    "VBN": 0.009615384615384616,
+                    "CC": 0.009615384615384616,
+                    "MD": 0.004807692307692308
+                }
+            },
+            "CL_tailored_claude": {
+                "text": "I'll tailor the explanation for a Computational Linguistics (CL) expert, focusing on aspects that bridge linguistics and computer science:\n\nTailored text for CL expert:\n\"Think of phone representation as a symbolic encoding system for speech sounds, similar to how we encode characters in ASCII or Unicode, but for pronunciation. The International Phonetic Alphabet (IPA) functions like a standardized character set for sound representation across languages. Just as programming languages have different levels of abstraction from machine code, languages vary in their orthographic transparency - English has complex many-to-many mappings between letters and sounds, while Spanish follows more predictable one-to-one mappings.\n\nThe sound production system works like a configurable pipeline, where articulators (mouth, throat, nose) act as filters modifying the airflow input. Consonants can be classified using a feature matrix based on two main parameters:\n\n1. Place of articulation (location parameter):\n- bilabial ([p,b,m]) = lips as primary filter\n- labiodental ([v,f]) = lips+teeth filter\n- dental ([th,dh]) = tongue+teeth filter\n- alveolar ([s,z,t,d]) = tongue+ridge filter\n- velar ([k,g]) = tongue back+soft palate filter\n\n2. Manner of articulation (method parameter):\n- stops = complete airflow blocking ([b,d,g] voiced, [p,t,k] unvoiced)\n- nasals = nasal cavity resonance ([n,m,ng])\n- fricatives = continuous turbulent airflow ([f,v,s,z])\n- affricates = stop+fricative combination ([ch,jh])\n- approximants = minimal constriction ([y,w])\n\nThis systematic classification enables discrete representation of continuous speech phenomena, similar to how we discretize other continuous signals in digital processing.\"\n\nThis explanation uses computational analogies (encoding, pipeline, parameters, filters, discrete representation), maintains technical precision, and relates to concepts familiar to CL experts while preserving the linguistic information.",
+                "readability": {
+                    "flesch_reading_ease": 6.78,
+                    "flesch_kincaid_grade": 19.9
+                },
+                "pos": {
+                    "VB": 0.08333333333333333,
+                    "DT": 0.05,
+                    "NN": 0.45,
+                    "IN": 0.1125,
+                    "JJ": 0.15416666666666667,
+                    "NNP": 0.05416666666666667,
+                    "VBG": 0.029166666666666667,
+                    "CC": 0.020833333333333332,
+                    "VBN": 0.016666666666666666,
+                    "RB": 0.0125,
+                    "MD": 0.004166666666666667,
+                    "CD": 0.004166666666666667,
+                    "FW": 0.008333333333333333
                 }
             }
         }
@@ -651,6 +857,47 @@
                     "RP": 0.0019801980198019802,
                     "MD": 0.01782178217821782
                 }
+            },
+            "L_tailored_claude": {
+                "text": "For Linguistics (L) witnesses, I'll rewrite the text using language and analogies familiar to their field:\n\n\"Think of a feedforward network as a hierarchical language structure, similar to how words combine to form phrases, then sentences, with information flowing in one direction only - like the strict word order in English (Subject -> Verb -> Object), never backwards.\n\nThis network has three levels, just like the classic linguistic hierarchy: input (like individual phonemes), hidden (like the rules that transform these basic sounds into meaningful words), and output (like the final utterance or meaning).\n\nThe input layer is like a sequence of distinct sounds (phonemes). The hidden layer, which is the heart of the system, is where the 'grammar rules' operate. Imagine each hidden unit as a linguistic rule that takes all the information from the previous level - similar to how morphological rules apply to all relevant sounds in a word.\n\nThe connections between layers are like agreement rules in language: each element in one level connects to every element in the next level, just as gender or number agreement in some languages affects multiple word categories simultaneously.\n\nThe mathematical operations (weights and biases) are similar to how linguistic rules have different strengths and contexts. For example, just as the rule 'i before e except after c' has different weights in different contexts, these network rules have varying strengths of application.\n\nThe final transformation through an 'activation function' is like applying phonological rules that determine whether a sound should be voiced or unvoiced in a specific context.\n\nThe output layer makes the final decision, similar to how our language faculty ultimately decides whether a sentence is grammatical or ungrammatical, or which meaning to assign to an ambiguous phrase.\"\n\nThis explanation uses familiar linguistic concepts (phonemes, morphology, syntax, agreement rules) and processes (hierarchical structure, rule application) to make the technical concepts more accessible to linguistics experts.",
+                "readability": {
+                    "flesch_reading_ease": 34.29,
+                    "flesch_kincaid_grade": 15.5
+                },
+                "pos": {
+                    "IN": 0.13380281690140844,
+                    "NNP": 0.028169014084507043,
+                    "VB": 0.10211267605633803,
+                    "DT": 0.13732394366197184,
+                    "NN": 0.3485915492957746,
+                    "VBG": 0.017605633802816902,
+                    "CC": 0.035211267605633804,
+                    "JJ": 0.14084507042253522,
+                    "RB": 0.03169014084507042,
+                    "CD": 0.01056338028169014,
+                    "VBN": 0.01056338028169014,
+                    "MD": 0.0035211267605633804
+                }
+            },
+            "CL_tailored_claude": {
+                "text": "I'll provide tailored explanations for different CL expert backgrounds:\n\nFor NLP/Computational Linguistics Expert:\n\"Think of a feedforward network as a pipeline for language processing that works like a one-way parsing tree: information flows from bottom to top, never backwards. It has three layers: input (like your raw tokens), hidden (like your feature representations), and output (your classification decisions). The hidden layer is where the main processing happens, similar to how we extract linguistic features. The network uses matrix operations - imagine a giant contingency table where each cell contains a weight showing how important each input feature is. The process is: multiply your input vector (think of it as your one-hot encoded words) by these weights, add some bias terms (like your prior probabilities), and transform the result using functions like sigmoid (similar to probability normalization in statistical NLP). The final layer then makes decisions, like how we do in sentiment analysis or language identification tasks.\"\n\nFor Corpus Linguist:\n\"Consider this network like a systematic corpus analysis process: you start with raw data (input layer), process it through analytical steps (hidden layer), and arrive at conclusions (output layer). The hidden layer works like your annotation scheme - each unit captures different patterns in your data, similar to how you'd code linguistic features in corpus analysis. The weights between layers are like your frequency distributions and correlations between features. The whole process is unidirectional, like moving from text to annotation to analysis, never mixing these stages. The mathematical operations are similar to calculating log-likelihood or mutual information scores, but done simultaneously across all features.\"\n\nFor AI/LLM Expert:\n\"The feedforward network implements a transformer-like forward pass but without self-attention mechanisms. The architecture maintains strict layer hierarchy (input→hidden→output) without residual connections or feedback loops. The hidden layer employs dense connections analogous to the feed-forward network (FFN) component in transformer blocks, using matrix multiplication W·x + b followed by non-linear activation. The key difference from modern architectures is the simplicity of the forward propagation: a single matrix multiplication and activation step, compared to the multi-head attention and layer normalization in transformers. The output layer serves as the final classifier, similar to the head of a pretrained model fine-tuned for downstream tasks.\"",
+                "readability": {
+                    "flesch_reading_ease": 22.95,
+                    "flesch_kincaid_grade": 15.7
+                },
+                "pos": {
+                    "VB": 0.0914826498422713,
+                    "JJ": 0.13249211356466878,
+                    "NN": 0.416403785488959,
+                    "IN": 0.13249211356466878,
+                    "NNP": 0.025236593059936908,
+                    "DT": 0.11987381703470032,
+                    "RB": 0.012618296529968454,
+                    "CD": 0.0031545741324921135,
+                    "VBN": 0.012618296529968454,
+                    "CC": 0.03470031545741325,
+                    "VBG": 0.01892744479495268
+                }
             }
         }
     },
@@ -760,6 +1007,51 @@
                     "CD": 0.002544529262086514,
                     "MD": 0.005089058524173028,
                     "NNPS": 0.002544529262086514
+                }
+            },
+            "L_tailored_claude": {
+                "text": "For Linguistics (L) witnesses, I'll rewrite the text using language and analogies familiar to their field:\n\n\"Think of a language learning system that works similarly to how children acquire grammar rules. Just as children need correct examples of sentences to learn (like 'I am' instead of 'I be'), this system learns from correct examples. \n\nThe system is like a student trying to master a new language, where for each input (like a sentence in English), we know exactly what the correct output should be (like its translation in Spanish). The system makes its best guess at the translation, and then we measure how far off it is from the correct version - similar to how we would mark errors in a language test.\n\nThe learning process is like fine-tuning grammar rules through practice. Just as language learners adjust their understanding of grammar rules based on corrections, this system adjusts its internal 'rules' (called parameters) to get better at the task. \n\nThe way it learns is similar to how linguists analyze language patterns: working backward from errors to understand what went wrong. Imagine teaching pronunciation: when a student makes a mistake, you need to trace back through all the aspects of articulation (tongue position, lip shape, airflow) to find where the error began. This system does something similar called 'backpropagation' - it traces errors backward through its layers of understanding to figure out which 'rules' need adjustment.\n\nThe goal is to minimize mistakes, just like how language learners gradually reduce their grammatical errors through practice and correction. The system uses a mathematical measure (called a loss function) to track these errors, similar to how we might count grammar mistakes in an essay.\"\n\nThis explanation:\n- Uses familiar concepts from linguistics (grammar rules, language acquisition, error correction)\n- Provides relevant analogies (language learning, pronunciation teaching)\n- Avoids technical mathematical terminology\n- Maintains the key concepts while using field-specific examples\n- Follows a logical progression familiar to language analysis",
+                "readability": {
+                    "flesch_reading_ease": 36.02,
+                    "flesch_kincaid_grade": 14.8
+                },
+                "pos": {
+                    "IN": 0.12359550561797752,
+                    "NNP": 0.026217228464419477,
+                    "VB": 0.15730337078651685,
+                    "DT": 0.11610486891385768,
+                    "NN": 0.36704119850187267,
+                    "VBG": 0.02247191011235955,
+                    "CC": 0.011235955056179775,
+                    "JJ": 0.10112359550561797,
+                    "RB": 0.03745318352059925,
+                    "MD": 0.011235955056179775,
+                    "VBN": 0.02247191011235955,
+                    "RP": 0.003745318352059925
+                }
+            },
+            "CL_tailored_claude": {
+                "text": "I'll help you rewrite the text for different CL expert witnesses. I'll provide tailored explanations for three key witness profiles:\n\n1. For the Linguistics Expert:\n\"Think of a feedforward neural network as a language learning system, similar to how humans learn through correction and feedback. Like in language acquisition, where a teacher provides the correct forms (y) for a learner's attempts (x), the system learns through examples. The network makes predictions (ˆy) and adjusts its understanding (parameters W[i] and b[i]) based on how far off it was from the correct answer - much like how language learners refine their grammar through feedback. The learning process uses three key mechanisms: first, a way to measure mistakes (like tracking grammar errors), second, a method to improve (similar to language learning strategies), and third, a way to trace back where the mistake originated (like identifying which grammar rule led to an error). This last part, called backpropagation, works like diagnostic feedback in language teaching, tracing errors back to their source.\"\n\n2. For the NLP/Computational Expert:\n\"A feedforward neural network implements supervised learning through input-output pairs (x,y), where the system's output (ˆy) aims to approximate the ground truth (y). The network optimization involves learning layer-specific weights W[i] and biases b[i] to minimize the difference between predicted and actual outputs. The process employs three core components: 1) cross-entropy loss function for classification tasks, similar to logistic regression; 2) gradient descent optimization, like in traditional ML algorithms; and 3) backpropagation for computing gradients across layers. The backpropagation algorithm efficiently calculates partial derivatives through the chain rule, enabling gradient computation across multiple layers without explicit calculation of all intermediate derivatives.\"\n\n3. For the Corpus Linguistics Expert:\n\"Consider a feedforward neural network as a text classification system, similar to how you might categorize corpus entries. Just as you have labeled examples in your corpus (like annotated texts), this system learns from paired examples where x is the input (like a text segment) and y is the correct label (like its category). The system makes predictions (ˆy) and learns to adjust its internal weights (W[i]) and offsets (b[i]) to improve accuracy - similar to how you might refine annotation guidelines based on inter-annotator agreement. The learning process uses error measurement (like calculating annotation reliability), systematic improvement (like iterative annotation guidelines refinement), and error tracing (like identifying sources of disagreement in annotations).\"\n\nThese explanations maintain technical accuracy while using familiar concepts and analogies for each expert type.",
+                "readability": {
+                    "flesch_reading_ease": 28.88,
+                    "flesch_kincaid_grade": 15.5
+                },
+                "pos": {
+                    "VB": 0.10192837465564739,
+                    "DT": 0.1046831955922865,
+                    "NN": 0.4022038567493113,
+                    "IN": 0.1322314049586777,
+                    "JJ": 0.09641873278236915,
+                    "NNP": 0.027548209366391185,
+                    "CD": 0.008264462809917356,
+                    "CC": 0.03305785123966942,
+                    "VBN": 0.030303030303030304,
+                    "RB": 0.01928374655647383,
+                    "SYM": 0.0027548209366391185,
+                    "VBG": 0.030303030303030304,
+                    "UH": 0.0027548209366391185,
+                    "MD": 0.005509641873278237,
+                    "$": 0.0027548209366391185
                 }
             }
         }
@@ -876,6 +1168,49 @@
                     "RP": 0.001455604075691412,
                     "NNPS": 0.001455604075691412
                 }
+            },
+            "L_tailored_claude": {
+                "text": "For Linguistics (L) experts, here's my tailored explanation:\n\n\"Think of this process like tracing the etymology of a complex word back to its roots, but with mathematical relationships. Just as a word's meaning can be derived from understanding its historical components, here we're tracing how changes ripple backward through a system.\n\nImagine the word 'uncomfortable': if we want to understand how changing the root 'comfort' affects the final meaning, we need to consider how each morpheme (-un, -able) contributes to the whole. This is similar to what we call the 'chain rule' in mathematics.\n\nLike how morphological rules combine in a specific order to form words (un- + comfort + -able), mathematical operations also follow a strict order of combination. When we want to understand how changing one early element affects the final result, we need to trace backwards through each step, much like decomposing a word into its constituent morphemes.\n\nFor example, if we have three connected elements (let's call them L, c, and e), finding how changes in the first element affect the final result is like analyzing how changing a root word affects its fully derived form. We need to consider each transformation step by step, multiplying the individual effects together, just as we would consider how each morphological process contributes to the final word's meaning.\n\nThis process is particularly similar to how you analyze syntactic trees: you start from the top (the complete phrase) and work your way down to understand how each component contributes to the whole meaning.\"\n\nThis explanation uses familiar concepts from linguistics (etymology, morphemes, syntactic trees) to explain the mathematical concept of backward differentiation and the chain rule, making it more accessible to linguistics experts.",
+                "readability": {
+                    "flesch_reading_ease": 34.49,
+                    "flesch_kincaid_grade": 15.4
+                },
+                "pos": {
+                    "IN": 0.11403508771929824,
+                    "NNP": 0.013157894736842105,
+                    "NN": 0.31140350877192985,
+                    "RB": 0.05263157894736842,
+                    "JJ": 0.11403508771929824,
+                    "DT": 0.14035087719298245,
+                    "VBG": 0.04824561403508772,
+                    "CC": 0.017543859649122806,
+                    "MD": 0.008771929824561403,
+                    "VB": 0.15789473684210525,
+                    "VBN": 0.013157894736842105,
+                    "CD": 0.008771929824561403
+                }
+            },
+            "CL_tailored_claude": {
+                "text": "I'll provide tailored explanations for different CL expert backgrounds:\n\nFor NLP/AI experts:\n\"Think of backpropagation like debugging an NLP pipeline in reverse. Just as we trace errors backward through a text processing chain, backward differentiation traces the impact of each component on the final output. The computation graph is similar to a dependency parse tree, where each node's influence flows backward. The chain rule works like composition of transformations: if you have word → embedding → context → prediction, the gradient flows backward through each transformation, multiplying the local changes (like how changing a word embedding affects context, and how context affects prediction). In mathematical terms, if L is your loss function (like cross-entropy in classification), you calculate how each previous step contributed to that loss by multiplying the gradients at each step, just as you would analyze how each processing stage contributes to a final classification error.\"\n\nFor Corpus Linguists:\n\"Consider how linguistic features chain together to create meaning. Just as morphological changes cascade into syntactic changes, which affect semantic interpretation, the computation graph shows how early mathematical operations influence the final result. The chain rule is like analyzing how a change in one linguistic feature (say, word order) affects intermediate features (like syntactic structure) and ultimately the final interpretation. In our mathematical example, we're looking at how changes in initial values (a and b) propagate through intermediate calculations (like d and e) to affect the final result (L), similar to how you might trace the impact of corpus features through various linguistic levels of analysis.\"\n\nFor Computational Linguistics combining both:\n\"The computation graph represents mathematical operations similar to how we represent linguistic transformations in formal grammars. Backward differentiation is analogous to how we trace feature dependencies in unification-based grammars, but with numerical values instead of linguistic features. The chain rule shows how changes propagate backward through the network, similar to how we compute the probability of a parse by multiplying probabilities of individual rules in probabilistic context-free grammars. If L represents our loss function (like parsing error), ∂L/∂a represents how much a change in an early parameter affects the final error, just as we might analyze how early disambiguation choices affect final parse quality.\"\n\nThese explanations maintain mathematical precision while using familiar concepts from each field to make the ideas more accessible.",
+                "readability": {
+                    "flesch_reading_ease": 18.49,
+                    "flesch_kincaid_grade": 17.4
+                },
+                "pos": {
+                    "VB": 0.11044776119402985,
+                    "JJ": 0.14328358208955225,
+                    "NN": 0.3492537313432836,
+                    "IN": 0.15223880597014924,
+                    "NNP": 0.029850746268656716,
+                    "VBG": 0.03582089552238806,
+                    "DT": 0.11641791044776119,
+                    "RB": 0.029850746268656716,
+                    "CC": 0.014925373134328358,
+                    "VBN": 0.0029850746268656717,
+                    "MD": 0.008955223880597015,
+                    "CD": 0.0029850746268656717,
+                    "UH": 0.0029850746268656717
+                }
             }
         }
     },
@@ -983,6 +1318,46 @@
                     "CC": 0.031746031746031744,
                     "MD": 0.006349206349206349,
                     "RP": 0.0031746031746031746
+                }
+            },
+            "L_tailored_claude": {
+                "text": "For Linguistics (L) experts, I would tailor the explanation this way:\n\n\"Think of a recurrent neural network (RNN) as a system that processes language in a way similar to how humans understand context in conversations. Just like how we interpret a word or phrase based on what was said before, an RNN has a special kind of 'memory' that remembers previous information to understand the current input better.\n\nLet me draw a parallel with language processing: When you analyze a sentence like 'The bank is closed,' you need the previous context to know if we're talking about a financial institution or a riverbank. Similarly, an RNN maintains a 'memory' of previous words or elements to make sense of the current one.\n\nThe network processes information in a sequence, much like how we process sentences word by word. Each word (input) is analyzed while keeping in mind what came before it, similar to how syntactic parsing requires knowledge of previous sentence elements to determine the correct grammatical structure.\n\nThe 'recurrent' part means it loops back to itself, like how anaphora in language refers back to previously mentioned elements. For example, in 'John picked up the book. He read it,' understanding 'He' and 'it' requires remembering the previous sentence.\n\nThe system learns through a process called 'backpropagation through time,' which you can think of as similar to how language learners adjust their understanding of grammar rules based on corrections over time, moving backward from the result to understand where mistakes were made.\"\n\nThis explanation uses linguistic concepts and terminology (context, anaphora, syntactic parsing) that language experts are familiar with, and provides relevant examples from their field of expertise.",
+                "readability": {
+                    "flesch_reading_ease": 46.0,
+                    "flesch_kincaid_grade": 13.1
+                },
+                "pos": {
+                    "IN": 0.16521739130434782,
+                    "NNP": 0.030434782608695653,
+                    "NN": 0.30434782608695654,
+                    "MD": 0.008695652173913044,
+                    "VB": 0.12608695652173912,
+                    "DT": 0.12173913043478261,
+                    "JJ": 0.1,
+                    "CC": 0.02608695652173913,
+                    "VBN": 0.05652173913043478,
+                    "RB": 0.0391304347826087,
+                    "VBG": 0.021739130434782608
+                }
+            },
+            "CL_tailored_claude": {
+                "text": "I'll provide tailored explanations for different CL expert backgrounds:\n\nFor Linguistics experts:\n\"Think of RNNs as a computational model that mimics how context influences language understanding over time - similar to how previous words in a sentence affect our interpretation of subsequent words. Just as we maintain working memory of earlier parts of a sentence to comprehend later elements, RNNs have a 'memory mechanism' that carries information forward. Like how syntactic dependencies can span across multiple words (think long-distance dependencies in relative clauses), RNNs can maintain relevant information across multiple processing steps. The network learns which previous information is relevant through weighted connections, similar to how we learn which contextual cues are important for understanding discourse. The 'backpropagation through time' is analogous to how we might trace back through a sentence to understand where we made a parsing error.\"\n\nFor NLP practitioners:\n\"RNNs are sequence processors that, unlike traditional bag-of-words approaches, maintain state information across tokens. Consider processing the sentence 'The bank by the river has eroded' versus 'The bank in the city has closed' - the meaning of 'bank' depends on previous words. RNNs capture this by feeding the hidden state from processing previous words as additional input when processing the current word. The hidden state matrix U acts like a memory buffer, similar to how n-gram models consider previous context, but more flexibly. The backpropagation through time is conceptually similar to updating feature weights in sequence labeling tasks, but across temporal steps rather than just current features.\"\n\nFor Computer Scientists:\n\"RNNs implement a graph with cycles where nodes represent computational units and edges represent weighted connections. Unlike DAGs in feedforward networks, RNNs allow information flow in cycles, creating a state machine where the next state depends on both current input and previous state. The hidden layer acts as a state vector, updated at each timestep through matrix multiplication with input (W) and previous state (U) weights, followed by non-linear activation. The architecture implements a Markov process where the hidden state encapsulates historical information. Backpropagation through time unrolls this cyclic graph into a deep feedforward network for gradient computation, similar to dynamic programming in sequence algorithms.\"",
+                "readability": {
+                    "flesch_reading_ease": 30.5,
+                    "flesch_kincaid_grade": 14.9
+                },
+                "pos": {
+                    "VB": 0.09717868338557993,
+                    "JJ": 0.16300940438871472,
+                    "NN": 0.34169278996865204,
+                    "IN": 0.16300940438871472,
+                    "NNP": 0.05329153605015674,
+                    "DT": 0.09404388714733543,
+                    "VBG": 0.0219435736677116,
+                    "RB": 0.0219435736677116,
+                    "MD": 0.009404388714733543,
+                    "VBN": 0.018808777429467086,
+                    "CC": 0.01567398119122257
                 }
             }
         }
@@ -1094,6 +1469,48 @@
                     "VBN": 0.033816425120772944,
                     "CC": 0.01932367149758454
                 }
+            },
+            "L_tailored_claude": {
+                "text": "For Linguistics (L) experts, here's my tailored explanation:\n\n\"Imagine language processing as a conversation where you need to remember what was said before to understand the current meaning. Traditional neural networks struggled with this, similar to how a person might lose track of the subject in a very long, complex sentence.\n\nThink of RNNs (Recurrent Neural Networks) like a reader who can only clearly remember the most recent words in a sentence, struggling to connect back to important information from earlier passages - much like how working memory in language processing has limitations.\n\nThe LSTM (Long Short-Term Memory) network solves this by working like our natural language memory system. Just as we selectively remember important grammatical and semantic information while processing sentences, LSTM has three key mechanisms:\n\n1. A 'forget gate' - like how we naturally forget irrelevant context from earlier in a conversation (e.g., forgetting temporary referents once they're no longer needed)\n2. An 'add gate' - similar to how we maintain important references in discourse (like keeping track of pronouns and their antecedents)\n3. An 'output gate' - comparable to how we access relevant information when needed (like retrieving the subject of a sentence when processing agreement with its verb)\n\nThis is analogous to how we process complex sentences with long-distance dependencies, where we must maintain certain information while discarding irrelevant details to understand the complete meaning.\"\n\n[This explanation uses linguistic concepts like referents, antecedents, and long-distance dependencies that linguists are familiar with, while drawing parallels to language processing concepts they understand well.]",
+                "readability": {
+                    "flesch_reading_ease": 29.08,
+                    "flesch_kincaid_grade": 15.4
+                },
+                "pos": {
+                    "IN": 0.1553398058252427,
+                    "NNP": 0.05339805825242718,
+                    "NN": 0.2961165048543689,
+                    "RB": 0.05825242718446602,
+                    "JJ": 0.1407766990291262,
+                    "DT": 0.10194174757281553,
+                    "VB": 0.09223300970873786,
+                    "VBN": 0.024271844660194174,
+                    "MD": 0.014563106796116505,
+                    "VBG": 0.043689320388349516,
+                    "CC": 0.014563106796116505,
+                    "CD": 0.0048543689320388345
+                }
+            },
+            "CL_tailored_claude": {
+                "text": "I'll provide tailored explanations for different CL expert backgrounds:\n\nFor NLP/AI Expert:\n\"Think of LSTM networks as an enhanced version of RNNs that solve the memory management problem in sequence processing. While basic RNNs struggle with long-range dependencies (similar to how early machine translation systems couldn't handle long sentences), LSTMs implement an explicit memory management system. Like a computer's RAM with smart garbage collection, LSTMs have three control mechanisms: a forget gate (deleting outdated information), an add gate (storing new relevant information), and an output gate (selecting what's needed now). Imagine processing a coreference resolution task: when you see 'John... he... him,' the LSTM can maintain John's information while discarding irrelevant intermediate details, similar to how transformers maintain attention scores, but through a different mechanism.\"\n\nFor Corpus Linguist:\n\"LSTMs are like having a smart annotation system that can handle long-distance relationships in text. While simple sequential models (like those used in early corpus analysis) might lose track of important context after a few words, LSTMs maintain a running 'notepad' of important information. Think of how you track theme-rheme patterns in discourse analysis: the network has gates that decide what contextual information to keep (like maintaining the main topic), what to add (new relevant information), and what to output (relevant features for the current analysis). It's similar to how you'd maintain coherence tracking in a large corpus, but automated and trainable.\"\n\nFor Traditional Linguist:\n\"LSTMs solve a problem similar to long-distance dependencies in syntax. Just as humans can maintain agreement between distant elements in a sentence (like in 'The book that was on the shelf, which my colleague recommended last month, is fascinating'), LSTMs have a mechanism to maintain relevant information over long distances. They use three types of 'gates' that function like cognitive memory management: one decides what to forget (like clearing working memory), another decides what new information to store (like focusing attention on new important elements), and the third decides what information is relevant for the current moment (like selecting appropriate context for disambiguation).\"",
+                "readability": {
+                    "flesch_reading_ease": 26.14,
+                    "flesch_kincaid_grade": 16.6
+                },
+                "pos": {
+                    "VB": 0.0958904109589041,
+                    "JJ": 0.15753424657534246,
+                    "NN": 0.3184931506849315,
+                    "IN": 0.1506849315068493,
+                    "NNP": 0.06506849315068493,
+                    "DT": 0.08904109589041095,
+                    "MD": 0.017123287671232876,
+                    "VBN": 0.023972602739726026,
+                    "CD": 0.010273972602739725,
+                    "VBG": 0.04794520547945205,
+                    "CC": 0.02054794520547945,
+                    "RB": 0.003424657534246575
+                }
             }
         }
     },
@@ -1202,6 +1619,48 @@
                     "VBG": 0.0351288056206089,
                     "MD": 0.00468384074941452,
                     "CD": 0.00468384074941452
+                }
+            },
+            "L_tailored_claude": {
+                "text": "Here's my tailored explanation for Linguistics (L) experts:\n\n\"Let me explain this classification method by drawing parallels with language analysis you're familiar with:\n\nImagine you're analyzing texts to determine their authorship, but in a very specific way. This classifier, called naive Bayes, works like a simplified model of text recognition. Just as you might identify an author's style, but focusing only on their vocabulary choices while temporarily ignoring syntax and word order.\n\nThink of it like creating a frequency dictionary for each potential author (or 'class'). Instead of analyzing sentences as structured units (like you would in syntax), we treat the text as an unordered collection of words - similar to how you might count morphemes or phonemes in a corpus study, caring about their frequency but not their position.\n\nThe 'naive' part comes from a simplifying assumption that would make any linguist raise an eyebrow: it pretends that words occur independently of each other - as if the occurrence of 'the' had no influence on whether 'cat' might follow. We know this isn't true in real language (think of collocations!), but it's surprisingly effective for classification.\n\nThe classifier makes its decision by combining two types of probability:\n1. The baseline probability of each author (like how prolific they are)\n2. The likelihood of seeing these specific words in their writing\n\nJust as you might identify a Shakespeare play by both knowing how many plays he wrote (prior probability) and recognizing his characteristic vocabulary (likelihood), this classifier combines these probabilities to make its best guess about classification.\n\nThe method is 'linear' because it combines these features in a straightforward additive way, similar to how you might add up distinctive features in phonology to identify a phoneme.\"\n\nThis explanation uses linguistic concepts (morphemes, phonemes, corpus studies, collocations, syntax) and familiar tasks (authorship attribution, feature analysis) to make the technical concepts more accessible to linguistics experts.",
+                "readability": {
+                    "flesch_reading_ease": 38.66,
+                    "flesch_kincaid_grade": 13.8
+                },
+                "pos": {
+                    "RB": 0.041044776119402986,
+                    "JJ": 0.11567164179104478,
+                    "NN": 0.3208955223880597,
+                    "IN": 0.16417910447761194,
+                    "NNP": 0.014925373134328358,
+                    "VB": 0.09701492537313433,
+                    "DT": 0.12313432835820895,
+                    "VBG": 0.04477611940298507,
+                    "CC": 0.033582089552238806,
+                    "VBN": 0.011194029850746268,
+                    "MD": 0.026119402985074626,
+                    "CD": 0.0037313432835820895,
+                    "RP": 0.0037313432835820895
+                }
+            },
+            "CS_tailored_claude": {
+                "text": "Here's a tailored explanation for Computer Science experts:\n\n\"Let me explain the Naive Bayes classifier using programming and data structure concepts you're familiar with:\n\nThink of Naive Bayes as a classification algorithm that works like a probability-based sorting function. Just as you'd use .sort() to organize arrays, Naive Bayes organizes text into categories based on probability calculations.\n\nThe algorithm treats a document like a HashMap<String, Integer>, where:\n- Keys are words\n- Values are their frequencies\n- Order doesn't matter (unlike Arrays)\n\nThe core function looks like this pseudo-code:\n```python\ndef classify(document):\n    return max_probability_class = argmax(\n        for each class c:\n            prior_probability(c) * likelihood(document|c)\n    )\n```\n\nThe 'naive' part comes from treating features like independent threads in parallel processing - they don't interact with each other. It's similar to how MapReduce works: each word probability is calculated independently and then reduced to a final probability through multiplication.\n\nThe algorithm is 'linear' like linear search - it makes decisions based on a weighted sum of inputs, similar to how you'd calculate weighted grades in a course:\nfinal_score = (assignment_score * 0.4) + (exam_score * 0.6)\n\nIn Big O notation, this makes it efficiently scalable at O(n) for classification, where n is the number of features (words) in your document.\"\n\nThis explanation uses:\n- Data structures (HashMap)\n- Programming concepts (sorting, functions)\n- Parallel processing analogies\n- Big O notation\n- Pseudo-code\n- Familiar computational concepts\n\nThis should resonate well with CS experts and help them understand the concept through their existing technical knowledge.",
+                "readability": {
+                    "flesch_reading_ease": 28.37,
+                    "flesch_kincaid_grade": 15.7
+                },
+                "pos": {
+                    "RB": 0.034653465346534656,
+                    "DT": 0.10891089108910891,
+                    "JJ": 0.0891089108910891,
+                    "NN": 0.33663366336633666,
+                    "IN": 0.13861386138613863,
+                    "NNP": 0.09900990099009901,
+                    "VB": 0.12871287128712872,
+                    "VBG": 0.024752475247524754,
+                    "CC": 0.01485148514851485,
+                    "VBN": 0.019801980198019802,
+                    "MD": 0.0049504950495049506
                 }
             }
         }
@@ -1313,6 +1772,48 @@
                     "CD": 0.006042296072507553,
                     "FW": 0.0030211480362537764
                 }
+            },
+            "L_tailored_claude": {
+                "text": "For Linguistics (L) experts, I would rewrite the text as follows:\n\n\"Think about how we understand word meaning through the company it keeps - a principle you'll recognize from structural linguistics and distributional semantics. Just as you study how words relate to their linguistic environment, modern language processing uses a mathematical way to capture these relationships.\n\nImagine creating a detailed 'meaning map' where each word is a point in space, and words with similar meanings cluster together - much like how you might group semantically related words in a field analysis. For example, just as you would note that 'dog' and 'cat' often appear in similar contexts (both can be pets, both take similar verbs like 'feed' or 'pet'), this system captures these patterns mathematically.\n\nThere are two main approaches to creating these meaning maps. The first is like creating an exhaustive concordance of word co-occurrences - similar to how you might study collocations - but it results in very sparse data because most words don't appear together frequently. The second approach, called word2vec, is more like your semantic feature analysis, creating more compact and rich representations of meaning relationships.\n\nThis is comparable to how you might analyze semantic fields or componential analysis, but instead of manual feature listing, it automatically learns these relationships from large amounts of natural language data.\"\n\n[This explanation uses familiar concepts from linguistics (structural linguistics, distributional semantics, collocations, semantic fields), provides relevant examples (dog/cat), and draws parallels with linguistic analytical methods they already know (componential analysis, field analysis). It avoids technical mathematical terminology while maintaining the core concepts.]",
+                "readability": {
+                    "flesch_reading_ease": 28.27,
+                    "flesch_kincaid_grade": 15.8
+                },
+                "pos": {
+                    "IN": 0.12053571428571429,
+                    "NNP": 0.013392857142857142,
+                    "NN": 0.3080357142857143,
+                    "MD": 0.026785714285714284,
+                    "VB": 0.13392857142857142,
+                    "DT": 0.09375,
+                    "JJ": 0.16517857142857142,
+                    "CC": 0.04017857142857143,
+                    "RB": 0.0625,
+                    "VBG": 0.026785714285714284,
+                    "CD": 0.004464285714285714,
+                    "VBN": 0.004464285714285714
+                }
+            },
+            "CS_tailored_claude": {
+                "text": "I'll rewrite this for CS experts, using concepts and analogies they're familiar with:\n\nTailored for CS experts:\n\"Think of vector semantics as a hash table for word meaning in NLP, where each word maps to coordinates in a multi-dimensional space. Just like how we index data structures, words are indexed by their context (neighboring words). The core algorithm follows a 'similarity by association' principle: if two words frequently share the same neighbors in their execution context, they're likely to have similar meanings.\n\nThere are two main implementation approaches:\n1. tf-idf: Similar to a sparse matrix representation, where each word is a vector with mostly zero values (like storing a large, sparse adjacency matrix). While memory-inefficient, it's a useful baseline algorithm.\n2. word2vec: Comparable to dimensionality reduction techniques like PCA, it creates optimized, dense vectors (think compressed arrays) with meaningful semantic properties.\n\nThe transformation from words to vectors is like converting string data into numerical features that machine learning models can process - except here, the features automatically capture semantic relationships.\"\n\nThis explanation:\n- Uses CS terminology (hash table, data structures, sparse matrix, arrays)\n- Provides familiar analogies (indexing, dimensionality reduction)\n- References concepts they work with (algorithms, memory efficiency)\n- Maintains technical precision while using their domain language\n- Connects to ML concepts they understand (feature extraction, numerical processing)",
+                "readability": {
+                    "flesch_reading_ease": 22.04,
+                    "flesch_kincaid_grade": 16.1
+                },
+                "pos": {
+                    "VB": 0.09782608695652174,
+                    "DT": 0.08152173913043478,
+                    "IN": 0.13043478260869565,
+                    "NNP": 0.043478260869565216,
+                    "NN": 0.41847826086956524,
+                    "VBG": 0.03804347826086957,
+                    "CC": 0.005434782608695652,
+                    "JJ": 0.11956521739130435,
+                    "VBN": 0.021739130434782608,
+                    "CD": 0.016304347826086956,
+                    "RB": 0.021739130434782608,
+                    "MD": 0.005434782608695652
+                }
             }
         }
     },
@@ -1419,6 +1920,48 @@
                     "VBG": 0.036011080332409975,
                     "RB": 0.027700831024930747,
                     "MD": 0.00554016620498615
+                }
+            },
+            "L_tailored_claude": {
+                "text": "For Linguistics (L) experts, I would rewrite the text as follows:\n\n\"When comparing the meaning relationship between two words, we can represent each word's patterns of usage mathematically, similar to how we map pronunciation features in phonetic space. Just like how similar sounds share acoustic properties, similar words tend to appear in similar contexts.\n\nThink of each word as having a 'meaning profile' based on its contextual patterns, like how we create distinctive feature matrices for phonemes. To measure how close two words' meanings are, we use a technique that's analogous to measuring the overlap between two sets of phonological features.\n\nThe main measurement we use is called 'cosine similarity,' which tells us how aligned these meaning profiles are. It's like measuring how much two dialect variations overlap in their feature sets, but normalized so that frequently occurring words don't automatically seem more similar just because they appear more often.\n\nFor example, just as /p/ and /b/ are more similar because they share most features (differing only in voicing), words like 'happy' and 'joyful' would have high similarity because they appear in similar contexts. Conversely, just as /p/ and /n/ have few features in common, words like 'happy' and 'telescope' would show low similarity because they rarely share contexts.\"\n\nThis explanation:\n- Uses familiar linguistic concepts (features, phonemes, context)\n- Provides relevant analogies (phonological features comparison)\n- Uses familiar examples (sound comparisons, word pairs)\n- Avoids complex mathematical terminology\n- Maintains accuracy while using accessible language\n- Builds on their understanding of feature analysis and contextual relationships",
+                "readability": {
+                    "flesch_reading_ease": 26.24,
+                    "flesch_kincaid_grade": 16.5
+                },
+                "pos": {
+                    "IN": 0.15023474178403756,
+                    "NNP": 0.018779342723004695,
+                    "NN": 0.3192488262910798,
+                    "MD": 0.018779342723004695,
+                    "VB": 0.12206572769953052,
+                    "DT": 0.046948356807511735,
+                    "VBG": 0.03755868544600939,
+                    "CD": 0.018779342723004695,
+                    "RB": 0.06103286384976526,
+                    "JJ": 0.1596244131455399,
+                    "VBN": 0.014084507042253521,
+                    "CC": 0.028169014084507043,
+                    "$": 0.004694835680751174
+                }
+            },
+            "CS_tailored_claude": {
+                "text": "For Computer Science experts, I would rewrite the text as follows:\n\n\"Think of word similarity calculation as a vector operation, similar to measuring proximity between two points in an n-dimensional space. Just like calculating similarity between feature vectors in machine learning, we use cosine similarity here.\n\nThe process is analogous to comparing two arrays in programming:\n```python\n# Example vectors for words 'cat' and 'dog'\nv1 = [0.2, 0.5, 0.1]  # 'cat' vector\nv2 = [0.3, 0.4, 0.2]  # 'dog' vector\n```\n\nWe use cosine similarity because it's invariant to vector magnitude, similar to how we normalize feature vectors in classification tasks. The formula is essentially:\n```\nsimilarity = dot_product(v1, v2) / (magnitude(v1) * magnitude(v2))\n```\n\nThis is particularly useful because:\n1. Like unit testing two pieces of code for similarity, it returns 1 for identical vectors\n2. Similar to checking orthogonality in graphics programming, it returns 0 for completely different vectors\n3. Just as we normalize input features in neural networks, this normalization prevents frequent words from dominating the similarity scores\n\nThe final output is always between -1 and 1, making it perfect for comparative analysis, similar to how we normalize probabilities in classification tasks.\"\n\nThis explanation uses familiar CS concepts (vectors, normalization, feature engineering), provides code examples, and makes analogies to common programming tasks, which should resonate well with CS experts.",
+                "readability": {
+                    "flesch_reading_ease": 24.58,
+                    "flesch_kincaid_grade": 15.1
+                },
+                "pos": {
+                    "IN": 0.1588235294117647,
+                    "NNP": 0.041176470588235294,
+                    "NN": 0.36470588235294116,
+                    "MD": 0.011764705882352941,
+                    "VB": 0.11764705882352941,
+                    "DT": 0.058823529411764705,
+                    "JJ": 0.11764705882352941,
+                    "VBG": 0.047058823529411764,
+                    "CD": 0.01764705882352941,
+                    "RB": 0.047058823529411764,
+                    "CC": 0.01764705882352941
                 }
             }
         }
@@ -1533,6 +2076,49 @@
                     "MD": 0.00954653937947494,
                     "CC": 0.021479713603818614
                 }
+            },
+            "L_tailored_claude": {
+                "text": "Here's a tailored explanation for Linguistics (L) experts:\n\n\"Think of this as a sophisticated language learning system that works similarly to how we understand the relationship between different languages' structures. Just as we can map grammatical patterns between languages (like how the English Subject-Verb-Object might become Subject-Object-Verb in Japanese), this system learns to map sentences between languages.\n\nThe process is similar to how we break down language learning: first, we segment speech or text into meaningful units (like morphemes, words, or phrases). This system does the same by breaking sentences into smaller pieces - sometimes whole words, sometimes parts of words (like how 'unfortunately' can be broken into 'un-', 'fortune', and '-ly').\n\nThe system learns through exposure to parallel texts - imagine having 'The Little Prince' in both English and French side by side. Just as bilingual children learn to express the same meaning in two languages by hearing both versions, this system learns by seeing millions of matched sentence pairs.\n\nThe fascinating part for linguists is how it creates a universal 'meaning space' - similar to the concept of universal grammar or semantic primitives. Imagine a space where semantically equivalent expressions from different languages cluster together, regardless of their surface form. It's like having a map where the French 'chat', English 'cat', and Spanish 'gato' all point to the same conceptual space.\n\nThe system then learns to navigate from one language to another through this shared semantic space, much like how we understand that different syntactic constructions across languages can express the same underlying meaning.\"\n\nThis explanation:\n- Uses familiar linguistic concepts (morphemes, semantic primitives, universal grammar)\n- Provides relevant analogies (bilingual language acquisition)\n- References familiar linguistic phenomena (word segmentation, cross-linguistic meaning equivalence)\n- Uses terminology from their field\n- Maintains accuracy while being accessible\n- Connects to core linguistic concepts they understand",
+                "readability": {
+                    "flesch_reading_ease": 35.71,
+                    "flesch_kincaid_grade": 15.0
+                },
+                "pos": {
+                    "RB": 0.047058823529411764,
+                    "DT": 0.10980392156862745,
+                    "JJ": 0.1607843137254902,
+                    "NN": 0.3215686274509804,
+                    "IN": 0.13725490196078433,
+                    "NNP": 0.027450980392156862,
+                    "VBG": 0.027450980392156862,
+                    "VB": 0.10980392156862745,
+                    "MD": 0.01568627450980392,
+                    "RP": 0.00392156862745098,
+                    "CC": 0.023529411764705882,
+                    "VBN": 0.00784313725490196,
+                    "CD": 0.00784313725490196
+                }
+            },
+            "CS_tailored_claude": {
+                "text": "Here's a CS-tailored explanation:\n\n\"Machine Translation (MT) is like a specialized language compiler that transforms code from one language to another. The architecture resembles a classic client-server model where:\n\n- The encoder (client) packages the input data (source language tokens) into an intermediate representation (like serialized data)\n- The decoder (server) processes this representation to output the target language tokens\n\nThe training process is similar to supervised learning in classification tasks, but instead of predicting a single label, it predicts a sequence of tokens. Think of it as:\n\n```python\ndef translate(source_tokens: List[str]) -> List[str]:\n    context = encoder.process(source_tokens)\n    target_tokens = decoder.generate(context)\n    return target_tokens\n```\n\nThe training data is a parallel array where index i in array A (source language) corresponds to index i in array B (target language). The model learns to maximize P(target_sequence | source_sequence), similar to how a language model predicts the next token in autocomplete.\n\nThe multilingual embedding space is like a shared memory space where vectors from different languages can be compared - imagine a hashmap where similar meanings across languages map to similar vector coordinates.\n\nTraining data consists of aligned sentence pairs, like paired key-value entries in a dictionary, where each source sentence (key) maps to its translation (value).\"\n\nThis explanation uses programming concepts (compiler, client-server, arrays, hashmaps), provides a code snippet, and uses familiar CS terminology to make the concepts more accessible to CS experts.",
+                "readability": {
+                    "flesch_reading_ease": 21.02,
+                    "flesch_kincaid_grade": 16.5
+                },
+                "pos": {
+                    "RB": 0.02040816326530612,
+                    "DT": 0.1377551020408163,
+                    "NN": 0.4387755102040816,
+                    "NNP": 0.05102040816326531,
+                    "VB": 0.11224489795918367,
+                    "IN": 0.09183673469387756,
+                    "JJ": 0.09183673469387756,
+                    "CD": 0.00510204081632653,
+                    "VBN": 0.02040816326530612,
+                    "CC": 0.01020408163265306,
+                    "VBG": 0.015306122448979591,
+                    "MD": 0.00510204081632653
+                }
             }
         }
     },
@@ -1641,6 +2227,46 @@
                     "VBG": 0.046875,
                     "CD": 0.004464285714285714,
                     "CC": 0.022321428571428572
+                }
+            },
+            "L_tailored_claude": {
+                "text": "Here's a tailored explanation for Linguistics (L) experts:\n\nTailored text for Linguistics (L):\n\n\"This process is similar to how we analyze speech sounds in phonetics, but using computer technology. Just like we break down spoken language into individual sounds and their features, this system breaks down speech into digital pieces.\n\nImagine recording someone speaking - the sound waves are like the ones we study in acoustic phonetics. Just as we use spectrograms to visualize speech sounds, this system samples the sound at regular intervals, similar to taking snapshots of the sound wave. Think of it like breaking down a continuous utterance into tiny time segments, much like how we segment continuous speech into discrete phonemes.\n\nThe system measures the sound's strength (amplitude) at each point, comparable to how we measure intensity in acoustic analysis. This is similar to when we analyze stress and intonation patterns, but much more precise.\n\nThe process then uses windows or frames - think of these like the segments we use in phonetic transcription, but extremely short. Just as we analyze features of individual phones in connected speech, this system analyzes short segments of the sound wave to identify acoustic characteristics.\n\nFinally, it creates a visual representation of the frequency components, similar to the spectrograms we use in phonetic analysis, but more detailed. This is comparable to how we visualize formants and other acoustic features in phonetic analysis, helping us understand the sound's properties.\"\n\nThis explanation uses familiar concepts from phonetics and phonology, making it accessible to linguistics experts while maintaining technical accuracy.",
+                "readability": {
+                    "flesch_reading_ease": 41.4,
+                    "flesch_kincaid_grade": 12.8
+                },
+                "pos": {
+                    "RB": 0.04,
+                    "DT": 0.10666666666666667,
+                    "JJ": 0.16444444444444445,
+                    "NN": 0.32,
+                    "IN": 0.13333333333333333,
+                    "NNP": 0.035555555555555556,
+                    "VB": 0.11555555555555555,
+                    "CC": 0.04,
+                    "VBG": 0.035555555555555556,
+                    "RP": 0.008888888888888889
+                }
+            },
+            "CS_tailored_claude": {
+                "text": "Let me craft an explanation tailored for CS experts by translating acoustic signal processing concepts into familiar programming and data processing terminology:\n\nTailored text for CS experts:\n\n\"The ASR pipeline starts with data preprocessing, similar to how we handle input data in machine learning pipelines. The raw input is an analog signal (think continuous time-series data) that needs to be converted into a discrete, processable format.\n\nThe analog-to-digital conversion is like converting floating-point numbers into fixed-precision integers, using two main operations:\n1. Sampling: Creating discrete time steps (like array indices) at fixed intervals\n2. Quantization: Similar to reducing floating-point precision to integer values (think of float32 to int16 conversion)\n\nThe sampling rate follows the Nyquist theorem, which is analogous to ensuring sufficient array resolution to capture the highest frequency component without aliasing (like when you need enough pixels to represent the smallest details in image processing).\n\nThe next step implements a sliding window approach (similar to convolution operations in CNNs) with three hyperparameters:\n- Window size: The buffer size for each data chunk\n- Stride: Step size for the sliding window (like stride in convolution layers)\n- Window shape: A weighting function applied to the buffer (similar to activation functions)\n\nFinally, we apply a Discrete Fourier Transform (DFT) - essentially converting time-domain data into frequency-domain features, similar to how we transform raw input features into a more useful representation space in machine learning. The output is comparable to a feature vector that can be fed into a classification model.\"\n\nThis explanation leverages familiar CS concepts like data types, array operations, CNN architectures, and feature engineering to make the acoustic concepts more accessible to CS experts.",
+                "readability": {
+                    "flesch_reading_ease": 11.69,
+                    "flesch_kincaid_grade": 20.1
+                },
+                "pos": {
+                    "VB": 0.10683760683760683,
+                    "DT": 0.10256410256410256,
+                    "NN": 0.3888888888888889,
+                    "VBN": 0.021367521367521368,
+                    "IN": 0.1111111111111111,
+                    "NNP": 0.05555555555555555,
+                    "VBG": 0.05555555555555555,
+                    "JJ": 0.11965811965811966,
+                    "CC": 0.008547008547008548,
+                    "CD": 0.008547008547008548,
+                    "RB": 0.017094017094017096,
+                    "MD": 0.004273504273504274
                 }
             }
         }

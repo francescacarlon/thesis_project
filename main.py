@@ -5,13 +5,14 @@ from benchmark_creation import create_benchmark
 LLM_MODELS = {
     "gpt4o": "gpt-4o",
     "o1-preview": "o1-preview",
-    "claude" : "claude-3-5-sonnet-20241022"
+    "claude" : "claude"
 }
 
 PROMPT_FUNCTIONS = {
     2: "create_prompt2",
     3: "create_prompt3",
-    4: "create_prompt4"
+    4: "create_prompt4",
+    5: "create_prompt5"
 }
 
 def main():
