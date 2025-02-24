@@ -815,25 +815,25 @@
                 }
             },
             "L_tailored_o1-preview": {
-                "text": "Imagine a feedforward neural network as a model that processes information in sequential layers, much like how we comprehend language step by step. In linguistics, we often start with phonetic input, move through syntactic structures, and finally arrive at semantic interpretation. Similarly, a feedforward network moves data forward from one layer to the next without any cycles or loops back to previous layers.\n\nThe network consists of three types of units: **input units**, **hidden units**, and **output units**. The **input layer** is a vector of basic values, analogous to the initial sounds or words we perceive—a starting point for processing. These inputs are simple scalar values, representing the raw data that the network will interpret.\n\nAt the heart of the network are the **hidden units**, forming the **hidden layer**. Think of this layer as the syntactic and semantic processing stages in language understanding. Each hidden unit transforms the input by applying certain parameters, much like how we apply grammatical rules to construct meaning from words. These units are interconnected in such a way that every unit in a layer receives input from all units in the previous layer—this is known as a **fully-connected** architecture. It's similar to how every word in a sentence can influence the overall interpretation.\n\nEach hidden unit has associated parameters: a **weight vector** and a **bias**. The weight vector assigns importance to the inputs, akin to how certain words or structures in a sentence carry more weight in determining meaning. The bias adjusts the activation threshold of the unit, much like how context can influence our expectation of certain linguistic constructions.\n\nThe computation within the hidden layer is efficient and follows three main steps:\n\n1. **Multiplication of the weight matrix by the input vector**: This step combines all the inputs, weighted according to their significance, similar to analyzing which words are most critical in a sentence.\n2. **Addition of the bias vector**: This adjusts the combined input, analogous to considering the context or prior knowledge that might shift our interpretation.\n3. **Application of an activation function**: Functions like the sigmoid (σ) determine the activation level of the unit, comparable to deciding whether a particular syntactic or semantic rule applies.\n\nMathematically, the output of the hidden layer is expressed as:\n\n\\[ h = \\sigma(Wx + b) \\]\n\nHere, \\( h \\) is the output vector of the hidden layer, \\( W \\) is the weight matrix, \\( x \\) is the input vector, \\( b \\) is the bias vector, and \\( \\sigma \\) is the activation function. This equation encapsulates how the network transforms the input into a new representation.\n\nThe **output layer** then takes this transformed representation and produces the final result. This could be a real-valued number or a classification decision. In linguistic terms, it's like arriving at the overall meaning or categorization of a sentence after processing all the syntactic and semantic information.\n\nIn essence, a feedforward neural network processes information in a structured, layer-by-layer fashion, much like the way we interpret language—from raw sounds to meaningful concepts—without revisiting previous steps. This forward-only movement ensures efficient computation and clear progression from input to output.",
+                "text": "Imagine you're analyzing a sentence to determine its meaning or sentiment. A **feedforward network** works in a similar way—it processes information in one direction, from input to output, without looping back. Think of it as moving from hearing sounds to understanding words and then grasping the full sentence, step by step.\n\nThis network has three layers:\n\n1. **Input Layer**: This is where the information enters the system. In linguistic terms, it's like the sounds or letters you first perceive—basic units that need further interpretation.\n\n2. **Hidden Layer**: Here, the real processing happens. It's akin to parsing the syntax and semantics of a sentence. Each **hidden unit** applies certain rules (parameters) to the input, much like how you use grammatical rules to understand sentence structure. These units help uncover underlying patterns that aren't immediately obvious.\n\n3. **Output Layer**: This layer produces the final interpretation or decision. For example, determining the sentiment of a sentence (positive, negative, or neutral) after analyzing its components.\n\nIn a **fully-connected** network, every unit in one layer connects to every unit in the next layer, just as every word can potentially influence the meaning of a sentence. There are no shortcuts or skipped connections, ensuring that all possible interactions are considered.\n\nEach hidden unit has:\n\n- **Weights**: Think of these as the emphasis or importance given to certain inputs, similar to how some words carry more significance in a sentence.\n- **Bias**: This acts like a threshold or baseline that needs to be overcome for the unit to activate, comparable to needing enough context to interpret an ambiguous phrase.\n\nThe processing in the hidden layer involves three steps:\n\n1. **Multiplication**: The input values are multiplied by the weights, akin to applying grammatical rules to words.\n2. **Addition of Bias**: The bias values are added, adjusting for context or nuances in language.\n3. **Activation Function**: This function (like a sigmoid or ReLU) determines if the combined input is strong enough to produce an output, similar to deciding whether a particular meaning fits the context.\n\nThe mathematical representation is:\n\\[ h = \\sigma(Wx + b) \\]\n- \\( h \\) is the output from the hidden layer.\n- \\( \\sigma \\) is the activation function.\n- \\( W \\) is the weight matrix.\n- \\( x \\) is the input vector.\n- \\( b \\) is the bias vector.\n\nFinally, the output layer takes this processed information to deliver the end result, much like concluding the overall meaning after dissecting a sentence's structure and words.\n\nIn summary, a feedforward network systematically processes input data through layers, transforming it at each stage to produce a meaningful output—mirroring how we interpret language from raw sounds to complete understanding.",
                 "readability": {
-                    "flesch_reading_ease": 42.41,
-                    "flesch_kincaid_grade": 12.4
+                    "flesch_reading_ease": 46.98,
+                    "flesch_kincaid_grade": 10.6
                 },
                 "pos": {
-                    "VB": 0.10217391304347827,
-                    "DT": 0.17391304347826086,
-                    "JJ": 0.1282608695652174,
-                    "NN": 0.33043478260869563,
-                    "IN": 0.12173913043478261,
-                    "RB": 0.02608695652173913,
-                    "CC": 0.034782608695652174,
-                    "CD": 0.006521739130434782,
-                    "VBN": 0.021739130434782608,
-                    "VBG": 0.02608695652173913,
-                    "MD": 0.010869565217391304,
-                    "NNP": 0.015217391304347827,
-                    "FW": 0.002173913043478261
+                    "NNP": 0.04774535809018567,
+                    "VBG": 0.042440318302387266,
+                    "DT": 0.16710875331564987,
+                    "NN": 0.3183023872679045,
+                    "VB": 0.11140583554376658,
+                    "CC": 0.03183023872679045,
+                    "IN": 0.10875331564986737,
+                    "JJ": 0.10875331564986737,
+                    "CD": 0.010610079575596816,
+                    "RB": 0.03183023872679045,
+                    "MD": 0.002652519893899204,
+                    "VBN": 0.015915119363395226,
+                    "FW": 0.002652519893899204
                 }
             },
             "CL_tailored_o1-preview": {
@@ -967,24 +967,24 @@
                 }
             },
             "L_tailored_o1-preview": {
-                "text": "**Understanding Feedforward Neural Networks Through Linguistics**\n\nImagine you're working on parsing sentences to understand their grammatical structures. You have a collection of sentences (inputs) and their correct parse trees (outputs). Your goal is to develop a system that can predict the correct parse tree for any given sentence. This scenario is similar to how a **feedforward neural network** operates in the realm of machine learning.\n\nA **feedforward neural network** is like a model that takes an input (like a sentence) and moves forward through layers to produce an output (like a parse tree). In **supervised learning**, we already know the correct output \\( y \\) for each input \\( x \\). The system's predicted output is \\( \\hat{y} \\), an estimate of the true \\( y \\). The objective is to adjust the system so that \\( \\hat{y} \\) closely matches \\( y \\) for all training examples.\n\nTo achieve this, the network adjusts its internal parameters—think of these as rules or weights in a grammar. These parameters are \\( W[i] \\) and \\( b[i] \\) for each layer \\( i \\) in the network. Adjusting these is akin to refining grammatical rules to better parse sentences correctly.\n\nHowever, how do we know how well our system is performing? We need a way to measure the difference between our predicted outputs and the true outputs. This is where a **loss function** comes into play. The loss function quantifies the \"distance\" between \\( \\hat{y} \\) and \\( y \\). A common choice is the **cross-entropy loss**, similar to evaluating how inaccurately a parse tree represents the intended grammatical structure.\n\nTo minimize this loss—that is, to improve our system—we use an optimization method called **gradient descent**. Imagine adjusting syntactic rules incrementally to reduce parsing errors across all sentences. Gradient descent works by tweaking the parameters in the direction that most reduces the loss.\n\nBut adjusting these parameters isn't straightforward. In linguistics, changing one rule may have unforeseen effects on sentence parsing elsewhere. Similarly, in networks with many layers and parameters, calculating how each parameter affects the loss is complex. We need to know the **gradient** of the loss function: how much the loss changes with respect to each parameter.\n\nThis is where the **error backpropagation** (or **backward differentiation**) algorithm helps. Backpropagation efficiently computes these gradients by moving backward through the network, layer by layer—much like retracing your steps in a syntactic analysis to identify where a misinterpretation occurred. It tells us how to adjust each parameter to improve the overall performance.\n\nIn essence, training a feedforward neural network involves:\n\n1. **Defining a Loss Function**: Measuring the difference between predicted outputs and true outputs (like evaluating parsing accuracy).\n2. **Optimization with Gradient Descent**: Iteratively adjusting parameters to minimize loss (like refining grammatical rules).\n3. **Computing Gradients via Backpropagation**: Efficiently calculating how to change each parameter (like understanding the impact of each rule on parsing errors).\n\nBy viewing neural networks through the lens of linguistic analysis, we can appreciate how these models learn from data. They adjust internal parameters to better predict outputs, much like refining our understanding of grammar to better interpret language.",
+                "text": "Think of a linguist trying to teach a model to parse sentences correctly. A feedforward neural network works in a similar way: it's a system that learns from examples where we already know the correct output for each input. For instance, if we input a sentence, we know its proper syntactic structure. The network processes the input sentence and tries to predict this structure. Its prediction is called ŷ (y-hat), and we want this prediction to be as close as possible to the true structure, y.\n\nTo achieve this, the network adjusts its internal parameters—much like tweaking grammatical rules—to improve its predictions. But how does it know which adjustments to make? First, we need a way to measure the difference between the network's prediction and the true structure. This is done using a loss function, which acts like a measure of error. A common choice is the cross-entropy loss, similar to how we might calculate the difference between expected and observed linguistic patterns.\n\nNext, to minimize this loss—or error—we use an optimization process called gradient descent. Think of it as gradually refining our grammatical rules to better fit the language data we're observing. Gradient descent helps the network figure out the direction and magnitude by which to change each parameter to reduce the overall error.\n\nHowever, in complex networks with many layers—like analyzing deep hierarchical sentence structures—it becomes challenging to determine how changes in early layers affect the final output. This is where the error backpropagation algorithm comes into play. Backpropagation efficiently computes the necessary adjustments for each parameter by moving backward through the network. It assesses how a small change in one parameter influences the overall error, allowing the network to update its parameters in a way that improves its predictions over time.\n\nBy using these methods, a feedforward neural network learns to make more accurate predictions, much like a linguist refining theories to better understand language.",
                 "readability": {
-                    "flesch_reading_ease": 47.18,
-                    "flesch_kincaid_grade": 10.6
+                    "flesch_reading_ease": 45.05,
+                    "flesch_kincaid_grade": 11.4
                 },
                 "pos": {
-                    "NNP": 0.04805491990846682,
-                    "IN": 0.12585812356979406,
-                    "VBG": 0.06407322654462243,
-                    "NN": 0.3135011441647597,
-                    "VB": 0.12128146453089245,
-                    "JJ": 0.08237986270022883,
-                    "DT": 0.16018306636155608,
-                    "CC": 0.02288329519450801,
-                    "MD": 0.006864988558352402,
-                    "VBN": 0.016018306636155607,
-                    "RB": 0.036613272311212815,
-                    "CD": 0.002288329519450801
+                    "NN": 0.3106060606060606,
+                    "IN": 0.10606060606060606,
+                    "DT": 0.17045454545454544,
+                    "VBG": 0.03787878787878788,
+                    "VB": 0.15151515151515152,
+                    "RB": 0.03787878787878788,
+                    "JJ": 0.12878787878787878,
+                    "CC": 0.022727272727272728,
+                    "VBN": 0.01893939393939394,
+                    "NNP": 0.007575757575757576,
+                    "MD": 0.003787878787878788,
+                    "CD": 0.003787878787878788
                 }
             },
             "CL_tailored_o1-preview": {
@@ -1124,26 +1124,26 @@
                 }
             },
             "L_tailored_o1-preview": {
-                "text": "Think of a complex sentence you're analyzing—it has layers of phrases and words building up to convey a specific meaning. In linguistics, we often use syntax trees to break down sentences into their constituent parts, showing how each element contributes to the overall structure and meaning.\n\nNow, imagine a similar tree-like diagram, but instead of words and phrases, it consists of mathematical operations leading to a final output. This is called a **computation graph**. Just as we parse a sentence to understand how its parts contribute to its meaning, we use computation graphs to see how different computations combine to produce a result.\n\nThe real power of computation graphs comes when we want to understand how changes in one part affect the whole—much like considering how altering a word in a sentence might change its overall meaning. In mathematical terms, we're interested in computing **derivatives**, which tell us how a small change in an input influences the output.\n\nTo do this, we use a method called **backward differentiation**, which relies on the **chain rule** from calculus. If this sounds unfamiliar, think of the chain rule as a way to trace the impact of a change through the layers of our syntax tree.\n\nSuppose we have a function that's composed of other functions, similar to a sentence made up of phrases within phrases. For example, consider a composite function \\( f(x) = u(v(x)) \\). To find out how a change in \\( x \\) affects \\( f(x) \\), we look at how \\( x \\) affects \\( v(x) \\), and how \\( v(x) \\) affects \\( u(v(x)) \\). Mathematically, this is expressed as:\n\\[ \\frac{df}{dx} = \\frac{du}{dv} \\times \\frac{dv}{dx} \\]\n\nIn linguistic terms, it's like saying the effect of altering a noun affects the noun phrase it's in, which in turn affects the verb phrase, and so on up to the entire sentence.\n\nThis idea extends to more layers. If we have \\( f(x) = u(v(w(x))) \\), the derivative becomes:\n\\[ \\frac{df}{dx} = \\frac{du}{dv} \\times \\frac{dv}{dw} \\times \\frac{dw}{dx} \\]\nEach piece represents how a change moves through each layer, just as a change in a morpheme can influence a word, then a phrase, and ultimately the whole sentence.\n\nIn the computation graph, during the backward pass, we pass these \"gradients\" back from the final output to all previous nodes, similar to tracing how a change in meaning propagates from the top of a syntax tree down to its leaves. Each node calculates a local derivative (how its output changes with respect to its input) and multiplies it by the gradient passed from the next node, applying the chain rule.\n\nLet's see how this works with an example. Suppose our final output is \\( L = c \\times e \\), analogous to a sentence composed of two main phrases \\( c \\) and \\( e \\). To find out how changes in \\( c \\) affect \\( L \\), we compute the derivative:\n\\[ \\frac{\\partial L}{\\partial c} = e \\]\nThis is straightforward—changing \\( c \\) directly scales \\( L \\) by \\( e \\), much like changing a key phrase alters the sentence meaning proportionally.\n\nFor more intricate paths, we use the chain rule. To find how a change in \\( a \\) affects \\( L \\), we trace the path through the computation graph:\n\\[ \\frac{\\partial L}{\\partial a} = \\frac{\\partial L}{\\partial e} \\times \\frac{\\partial e}{\\partial a} \\]\nSimilarly, for \\( b \\):\n\\[ \\frac{\\partial L}{\\partial b} = \\frac{\\partial L}{\\partial e} \\times \\frac{\\partial e}{\\partial d} \\times \\frac{\\partial d}{\\partial b} \\]\nThis is like assessing how tweaking a word (\\( a \\) or \\( b \\)) impacts a phrase (\\( d \\) or \\( e \\)), which in turn influences the overall sentence \\( L \\).\n\nIn essence, backward differentiation and the chain rule provide a systematic way to understand and compute how changes in the smallest units affect the entire structure—a concept quite familiar in linguistic analysis. By leveraging these mathematical tools, we can adjust and optimize complex models, ensuring that each component contributes effectively to the desired outcome.",
+                "text": "In linguistics, we often analyze how smaller units of language combine to create meaning in larger structures. For example, morphemes join to form words, words assemble into phrases, and phrases construct sentences. A change in a single word can influence the interpretation of an entire sentence, much like altering a note can change the mood of a melody.\n\nSimilarly, in machine learning, complex computations are broken down into simpler functions connected in a **computation graph**. This graph is like a linguistic tree diagram that shows how words and phrases build up to form a sentence. The computation graph helps us understand how changes in input affect the final output, which is crucial when we want to improve or adjust our models.\n\nOne key process in this graph is the **backward pass**, used to compute adjustments needed for the model to learn from data—much like revising a sentence to better convey meaning. To perform these adjustments, we rely on a mathematical concept called the **chain rule**, which helps us understand how changes propagate through connected functions.\n\nImagine you have a composite function, similar to a complex sentence built from smaller clauses: \n\n- **f(x) = u(v(x))**\n\nHere, **f** represents the full sentence, **u** is a phrase, and **v** is a word within that phrase. To determine how a change in the word (**x**) affects the entire sentence (**f(x)**), we apply the chain rule. It tells us that the overall effect is the product of two effects:\n\n1. How the phrase (**u**) changes with respect to the word (**v**): **du/dv**\n2. How the word (**v**) changes with respect to its subcomponents (**x**): **dv/dx**\n\nMathematically, this is expressed as:\n\n- **df/dx = (du/dv) × (dv/dx)**\n\nThis mirrors how altering a word influences a phrase and, in turn, the whole sentence.\n\nThe chain rule extends to even more layers, just as sentences can have multiple embedded clauses:\n\n- **f(x) = u(v(w(x)))**\n\nHere, **w(x)** could be a morpheme affecting a word (**v**), which affects a phrase (**u**), culminating in the sentence (**f**). The derivative, showing how a change in the morpheme impacts the sentence, becomes:\n\n- **df/dx = (du/dv) × (dv/dw) × (dw/dx)**\n\nIn the **backward pass** of the computation graph, we trace this chain of influence in reverse—much like deconstructing a sentence to see how each component contributes to the overall meaning. Each node (function) in the graph receives an **upstream gradient** from its output, representing the effect on the final result. It then computes a **local gradient**, showing how its own output changes with its input.\n\nBy multiplying the upstream gradient by the local gradient (applying the chain rule), we get a **downstream gradient**. This value is passed on to the next node, analogous to seeing how a change in a phrase affects the words within it.\n\nLet's look at a practical example:\n\nSuppose our computation graph calculates a loss (**L**) representing error, which we want to minimize. The loss depends on variables **c** and **e**, such that:\n\n- **L = c × e**\n\nThe direct impact of **c** on **L** is straightforward:\n\n- **∂L/∂c = e**\n\nThis is like recognizing that changing one word (**c**) directly affects the sentence's meaning (**L**).\n\nFor variables that influence **L** indirectly, we use the chain rule:\n\n- To find how **a** affects **L**:\n  - **∂L/∂a = (∂L/∂e) × (∂e/∂a)**\n\n- For **b**:\n  - **∂L/∂b = (∂L/∂e) × (∂e/∂d) × (∂d/∂b)**\n\nThese equations show how changes in **a** or **b** propagate through the computation graph to influence **L**, much like how a nuance in a morpheme can alter a word's meaning, which then affects a phrase and the entire sentence.\n\nUnderstanding this process allows us to see how small adjustments at one level can lead to significant changes in the final output. It's akin to appreciating how the choice of a single word can reshape a message, a concept that's fundamental in linguistics. By drawing parallels between linguistic structures and computational graphs, we can make complex mathematical ideas more accessible and relevant to those versed in language studies.",
                 "readability": {
-                    "flesch_reading_ease": 54.05,
-                    "flesch_kincaid_grade": 12.1
+                    "flesch_reading_ease": 53.75,
+                    "flesch_kincaid_grade": 12.2
                 },
                 "pos": {
-                    "NN": 0.2897196261682243,
-                    "IN": 0.1252336448598131,
-                    "DT": 0.1588785046728972,
-                    "JJ": 0.11962616822429907,
-                    "VB": 0.14392523364485982,
-                    "CC": 0.026168224299065422,
-                    "VBG": 0.028037383177570093,
-                    "RP": 0.007476635514018692,
-                    "RB": 0.029906542056074768,
-                    "VBN": 0.014953271028037384,
-                    "CD": 0.003738317757009346,
-                    "MD": 0.005607476635514018,
-                    "NNP": 0.03177570093457944,
-                    "FW": 0.014953271028037384
+                    "IN": 0.11806797853309481,
+                    "NN": 0.32379248658318427,
+                    "RB": 0.025044722719141325,
+                    "VB": 0.14311270125223613,
+                    "JJ": 0.09123434704830054,
+                    "CC": 0.017889087656529516,
+                    "DT": 0.16636851520572452,
+                    "MD": 0.014311270125223614,
+                    "VBG": 0.03220035778175313,
+                    "VBN": 0.023255813953488372,
+                    "RP": 0.0035778175313059034,
+                    "CD": 0.007155635062611807,
+                    "NNP": 0.03041144901610018,
+                    "FW": 0.0035778175313059034
                 }
             },
             "CL_tailored_o1-preview": {
@@ -1279,24 +1279,24 @@
                 }
             },
             "L_tailored_o1-preview": {
-                "text": "Imagine you're analyzing a sentence word by word. As each word unfolds, you don't interpret it in isolation; instead, you rely on the context provided by the previous words to grasp its full meaning. Similarly, a Recurrent Neural Network (RNN) is a computational model designed to process sequences of data by remembering previous inputs.\n\nIn traditional neural networks, known as feedforward networks, information moves in one direction—from the input to the output—without considering past inputs. Each input is treated independently, much like interpreting a single word without any surrounding context.\n\nAn RNN, on the other hand, introduces a looping mechanism in its structure. This loop allows the network to incorporate its prior outputs into new computations, effectively creating a form of memory or context. At each step \\( t \\), the network takes the current input \\( x_t \\) and combines it with information from earlier steps to inform its processing. This is akin to how the meaning of a word can depend on the words that came before it, influencing your interpretation as you read.\n\nThe \"hidden layer\" in an RNN functions much like the mental notes you keep while parsing a complex sentence. It retains essential information from previous inputs, enabling the network to understand sequences where order and temporal dynamics matter—such as syntax and discourse in language.\n\nBecause the RNN can reference information from any point earlier in the sequence, it can capture long-range dependencies within data. This ability mirrors how we understand that a pronoun refers back to a noun mentioned several sentences earlier. By adding this temporal dimension, RNNs handle tasks involving time series or ordered data more effectively than non-recurrent architectures.\n\nWhile the fundamental computation in an RNN resembles that of feedforward networks—applying weights to inputs and passing them through an activation function—the key difference lies in how it updates its hidden states. A new set of weights connects the hidden layer from the previous time step to the current one, much like updating your understanding of a narrative as new information arrives.\n\nTraining an RNN involves adjusting these weights to minimize errors over time, a process called \"backpropagation through time.\" This method extends the standard backpropagation used in other networks, accounting for the sequential nature of the data and how earlier inputs influence later ones.\n\nIn essence, RNNs allow us to model and predict sequences by continually integrating new inputs with historical context, much like how we comprehend language by considering both current words and prior discourse.",
+                "text": "Recurrent Neural Networks (RNNs) are a class of neural networks designed to handle sequential data, much like how we process language over time. Imagine reading a sentence: each word you encounter isn't interpreted in isolation but is understood in the context of the words that came before. This accumulation of context is crucial in linguistics, where meaning often depends on syntax, semantics, and prior discourse.\n\nAn RNN mirrors this linguistic process by introducing cycles in its network connections. Unlike standard neural networks that process inputs independently, RNNs feed the output from one step back into the network as input for the next step. This means that the network's current state is influenced by its previous states, effectively giving it a memory of earlier inputs.\n\nHere's how it works:\n\n1. **Current Input Processing**: At a given time step \\( t \\), the network receives an input vector \\( x_t \\), which could represent linguistic data like a word or phoneme.\n\n2. **Combining Past and Present**: This input is combined with the hidden state from the previous time step \\( h_{t-1} \\). The hidden state acts as the network's memory, capturing information from all prior inputs.\n\n3. **Computing the New State**: The combined information is passed through a nonlinear activation function to produce a new hidden state \\( h_t \\), encapsulating both the current input and past context.\n\n4. **Generating an Output**: Using \\( h_t \\), the network computes an output \\( y_t \\), which might predict the next word in a sentence or classify the sentiment of a phrase.\n\nThe key innovation of RNNs is this recurrent link that carries forward the hidden state \\( h_t \\) across time steps. This design allows RNNs to handle sequences where each element depends on those preceding it—an inherent property of language.\n\nWhen it comes to training the network, RNNs use a specialized version of the backpropagation algorithm called **backpropagation through time**. This method adjusts the network's weights by considering the error not just at a single point but across the entire sequence of inputs. It's akin to reevaluating the understanding of a sentence after reaching its end, recognizing that earlier interpretations might need adjustment based on later information.\n\nBy incorporating a temporal dimension and a form of memory, RNNs are particularly well-suited for linguistic tasks. They can model the flow of language, capturing dependencies and structures that span across time, much like understanding how the meaning of a sentence unfolds word by word.",
                 "readability": {
-                    "flesch_reading_ease": 41.09,
-                    "flesch_kincaid_grade": 12.9
+                    "flesch_reading_ease": 50.36,
+                    "flesch_kincaid_grade": 11.4
                 },
                 "pos": {
-                    "NNP": 0.0332409972299169,
-                    "VBG": 0.04986149584487535,
-                    "DT": 0.1440443213296399,
-                    "NN": 0.29916897506925205,
-                    "IN": 0.15789473684210525,
-                    "VB": 0.0997229916897507,
-                    "RB": 0.04155124653739612,
-                    "VBN": 0.024930747922437674,
-                    "JJ": 0.11080332409972299,
-                    "CD": 0.00554016620498615,
-                    "CC": 0.024930747922437674,
-                    "MD": 0.008310249307479225
+                    "JJ": 0.10893854748603352,
+                    "NNP": 0.05027932960893855,
+                    "VB": 0.0893854748603352,
+                    "DT": 0.15921787709497207,
+                    "NN": 0.2988826815642458,
+                    "IN": 0.1452513966480447,
+                    "VBN": 0.027932960893854747,
+                    "RB": 0.0335195530726257,
+                    "VBG": 0.04748603351955307,
+                    "CC": 0.025139664804469275,
+                    "CD": 0.002793296089385475,
+                    "MD": 0.0111731843575419
                 }
             },
             "CL_tailored_o1-preview": {
@@ -1429,25 +1429,23 @@
                 }
             },
             "L_tailored_o1-preview": {
-                "text": "Understanding language often requires keeping track of words and ideas that appear earlier in a sentence or conversation. For example, consider the sentence: \"Despite the heavy rain that started unexpectedly, the outdoor concert continued as planned.\" To grasp the full meaning, we need to remember that \"the heavy rain that started unexpectedly\" sets the context for why it was notable that \"the outdoor concert continued as planned.\"\n\nSimilarly, when computers process language using models like Recurrent Neural Networks (RNNs), they need a way to remember important information from earlier words or phrases to understand the entire sequence properly. RNNs are designed to handle sequences by passing information from one step to the next, much like how we read a sentence word by word.\n\nHowever, standard RNNs struggle with remembering information from distant parts of a sequence. This is because the further back the information is, the more it gets \"forgotten\" as the network processes new inputs. This issue is known as the **vanishing gradients problem**, where the influence of earlier information diminishes over time, similar to how a faint echo fades away.\n\nTo address this, researchers developed a specialized type of RNN called the **Long Short-Term Memory (LSTM)** network. LSTMs are specifically designed to retain important information over longer sequences and decide what information to keep or discard.\n\nYou can think of an LSTM as a skilled linguist reading a complex text who knows exactly what details to remember for later and what can be set aside. LSTMs achieve this through components called **gates**, which function like decision-makers:\n\n1. **Forget Gate**: This gate determines what information is no longer relevant and can be removed from the current context. For instance, in processing a sentence, once a subordinate clause is fully understood, details from it that are no longer needed might be set aside to focus on the main clause.\n\n2. **Add Gate**: Also known as the input gate, it decides what new information should be added to the context. Continuing our analogy, it's like noting a new important character introduced in a story who will be significant later on.\n\n3. **Output Gate**: This gate selects what information from the current context should be used to influence the next step or final understanding. It's akin to summarizing the key points so far to make sense of the next paragraph you read.\n\nBy using these gates, LSTMs effectively manage the flow of information, keeping track of vital linguistic elements over long passages. This makes them particularly useful for tasks like language translation, speech recognition, and text analysis, where understanding depends on the relationships between words and phrases spread out over a sequence.\n\nIn essence, LSTMs enhance the ability of computational models to handle the complexities of language, ensuring that important context isn't lost, much like how we, as linguists, pay attention to and recall critical details to interpret meaning accurately.",
+                "text": "When we analyze sentences in linguistics, we're often concerned with how words relate to each other across different parts of a sentence—even when they're not next to each other. For example, in the sentence \"The gift that she received from her friend was cherished,\" the subject \"gift\" is linked to the verb \"was cherished,\" despite several words separating them. Recognizing these long-distance relationships is crucial for understanding meaning.\n\nSimilarly, when using neural networks to process language, basic models like recurrent neural networks (RNNs) struggle to remember important information from earlier in a sequence when making later decisions. RNNs tend to focus on the most recent words, so earlier information can fade from memory—much like trying to recall a word you heard minutes ago in a long conversation. This fading of memory in neural networks is known as the \"vanishing gradients problem.\" Essentially, the network has difficulty learning from distant inputs because their influence weakens over time.\n\nTo address this challenge, more advanced models called Long Short-Term Memory networks (LSTMs) have been developed. LSTMs are designed to better manage context over time, allowing the network to remember vital information and forget what's no longer needed—much like how we focus on relevant parts of a conversation and disregard the rest.\n\nLSTMs introduce an explicit \"context layer\" that acts like a mental workspace where important pieces of information are stored. They use mechanisms known as \"gates\" to control what information is kept, added, or outputted from this context layer:\n\n1. **Forget Gate**: This gate decides what information should be removed from the context. It's like determining which details are no longer important to the overall understanding and can be let go.\n\n2. **Input (Add) Gate**: This gate selects new, relevant information from the current input to add to the context. It's similar to noting a crucial point someone just mentioned that you know you'll need to remember later.\n\n3. **Output Gate**: This gate decides what information from the context is needed for the current decision. It's akin to recalling a specific detail you've stored to help you interpret the next part of the conversation.\n\nBy using these gates, LSTMs effectively manage the flow of information, maintaining relevant context over longer periods. This capability is essential for language-related tasks where understanding depends on capturing long-distance dependencies between words or phrases. For example, in machine translation or parsing complex sentences, remembering how earlier parts relate to later ones allows for more accurate and meaningful interpretations.",
                 "readability": {
-                    "flesch_reading_ease": 48.33,
-                    "flesch_kincaid_grade": 12.2
+                    "flesch_reading_ease": 42.21,
+                    "flesch_kincaid_grade": 12.5
                 },
                 "pos": {
-                    "VBG": 0.03571428571428571,
-                    "NN": 0.2571428571428571,
-                    "RB": 0.06190476190476191,
-                    "VB": 0.13333333333333333,
-                    "IN": 0.13333333333333333,
-                    "CC": 0.02619047619047619,
-                    "DT": 0.12380952380952381,
-                    "JJ": 0.10476190476190476,
-                    "VBN": 0.05238095238095238,
-                    "NNP": 0.05,
-                    "CD": 0.002380952380952381,
-                    "MD": 0.016666666666666666,
-                    "RP": 0.002380952380952381
+                    "VB": 0.12607449856733524,
+                    "NN": 0.2722063037249284,
+                    "IN": 0.1346704871060172,
+                    "RB": 0.05157593123209169,
+                    "VBN": 0.06303724928366762,
+                    "DT": 0.11174785100286533,
+                    "JJ": 0.12320916905444126,
+                    "VBG": 0.04871060171919771,
+                    "NNP": 0.04011461318051576,
+                    "MD": 0.008595988538681949,
+                    "CC": 0.02005730659025788
                 }
             },
             "CL_tailored_o1-preview": {
@@ -1579,25 +1577,24 @@
                 }
             },
             "L_tailored_o1-preview": {
-                "text": "In this section, we'll explore the **multinomial naive Bayes classifier**, a statistical method used for categorizing text documents. It's called \"naive\" because it makes a simplifying assumption about how words (features) interact within a document.\n\nWhen using this classifier, we represent a text document using the **bag-of-words model**. This means we treat the document as an unordered collection of words, ignoring the syntax, structure, and the position of words—much like compiling a frequency list from a corpus without considering grammatical relationships. We focus solely on how often each word appears in the document.\n\nThe naive Bayes classifier is a **probabilistic classifier**. Given a document **d** and a set of possible categories **C** (such as topics or genres), it aims to predict the most probable category **ĉ** (pronounced \"c hat\") for the document. It does this by calculating the probability of each category given the document and selecting the one with the highest probability. Mathematically, this is expressed as:\n\n**ĉ = argmax₍c ∈ C₎ P(c | d)**\n\nHere, **P(c | d)** represents the posterior probability of category **c** given document **d**. The term **\"argmax\"** refers to the operation of finding the argument (in this case, the category **c**) that maximizes the function **P(c | d)**.\n\nTo simplify the calculation, we use **Bayes' Theorem**, which allows us to rewrite the equation:\n\n**ĉ = argmax₍c ∈ C₎ P(d | c) × P(c)**\n\nIn this equation:\n\n- **P(c)** is the **prior probability** of category **c**—how likely the category is in general.\n- **P(d | c)** is the **likelihood** of observing document **d** given category **c**—how likely the document's contents are if it belongs to that category.\n\nThe naive Bayes classifier relies on two key assumptions:\n\n1. **Bag-of-Words Assumption**: We assume that the position and order of words in the document do not matter; only the frequency of each word is important. This is similar to analyzing a text for lexical content without considering syntactic structures—focusing on what words are used rather than how they're arranged. While this ignores important linguistic features like syntax and semantics, it simplifies the analysis.\n\n2. **Conditional Independence Assumption (Naive Bayes Assumption)**: We assume that each word in the document occurs independently of the others, given the category. In other words, within a specific category, the presence of one word doesn't affect the probability of another word appearing. Mathematically, this means:\n\n   **P(f₁, f₂, ..., fₙ | c) = P(f₁ | c) × P(f₂ | c) × ... × P(fₙ | c)**\n\n   Here, **f₁** to **fₙ** represent the words (features) in the document. This assumption simplifies the computation of the likelihood by allowing us to multiply the individual probabilities of each word occurring in the category.\n\nWith these assumptions, the final equation for choosing the best category becomes:\n\n**ĉ = argmax₍c ∈ C₎ P(c) × ∏₍f ∈ F₎ P(f | c)**\n\nIn this formula:\n\n- **∏₍f ∈ F₎** denotes the product over all words **f** in the set of features **F** found in the document.\n- We're effectively multiplying the prior probability of the category by the probabilities of each word occurring in that category.\n\n**Linear Classifiers**:\n\nClassifiers like naive Bayes are known as **linear classifiers** because they make decisions based on a linear combination of input features—in this case, the logarithm of word probabilities. This means they draw linear boundaries in the feature space to separate different categories. **Logistic regression** is another example of a linear classifier.\n\n**An Example in Linguistics Context**:\n\nImagine you're trying to determine the genre of a text—say, distinguishing between poetry and prose—based solely on word frequencies. In poetry, certain words (like \"heart,\" \"dream,\" \"night\") might appear more frequently, while in prose, words like \"said,\" \"went,\" or \"looked\" might be more common. By calculating the probabilities of words given each genre (P(f | c)), the naive Bayes classifier can predict the genre of a new text by seeing which set of word probabilities matches the text more closely.\n\n**Understanding the Assumptions in Linguistic Terms**:\n\nWhile the bag-of-words and independence assumptions simplify computation, they also ignore important linguistic phenomena:\n\n- **Syntax and Word Order**: In natural language, the arrangement of words affects meaning. By ignoring word order, we lose information about the syntactic structure, which can be crucial for understanding context.\n- **Semantic Relationships**: Words often have interdependencies (collocations, idioms, semantic roles). The assumption that words occur independently overlooks these relationships.\n\nDespite these limitations, the naive Bayes classifier performs surprisingly well in practice for tasks like text classification and spam detection, partly because the frequency of words can be a strong indicator of a document's category.\n\n**Conclusion**:\n\nThe multinomial naive Bayes classifier provides a straightforward and efficient way to categorize text by leveraging word frequencies and simplifying assumptions. While it abstracts away from the rich structural and semantic nuances studied in linguistics, it demonstrates how statistical methods can be applied to language data for practical applications.",
+                "text": "In this section, we'll delve into the multinomial naive Bayes classifier, a method used for categorizing text documents based on their content. Imagine you have a collection of articles, and you want to sort them into topics like syntax, phonetics, or semantics. The multinomial naive Bayes classifier helps us do just that by examining the words used in each document.\n\n**Bag of Words Representation**\n\nFirst, we represent each document as a \"bag of words.\" This concept treats the document as an unordered collection of words, ignoring the sequence in which they appear. Much like analyzing the frequency of phonemes without considering their position in a word, we focus solely on which words are present and how often they occur. For example, whether the word \"morphology\" appears at the beginning or end of an article isn't important—what matters is that it appears and its frequency.\n\n**Probabilistic Classification**\n\nThe naive Bayes classifier is probabilistic, meaning it calculates the likelihood that a document belongs to a particular category based on the words it contains. For a given document **d**, the classifier tries to find the class **ĉ** (our best guess for the correct category) from all possible classes **C** that has the highest probability given the document. This is expressed as:\n\n```\nĉ = argmax₍c ∈ C₎ P(c | d)\n```\n\nHere, **P(c | d)** represents the probability of class **c** given document **d**. The \"argmax\" operation means we select the class **c** that maximizes this probability.\n\n**Applying Bayes' Theorem**\n\nCalculating **P(c | d)** directly can be complex, so we simplify it using Bayes' theorem:\n\n```\nP(c | d) ∝ P(d | c) × P(c)\n```\n\nThis equation tells us that the probability of class **c** given document **d** is proportional to:\n\n- **P(d | c)**: The likelihood of observing document **d** if it belongs to class **c**.\n- **P(c)**: The prior probability of class **c**, which is how common the class is overall.\n\nSo, our classification rule becomes:\n\n```\nĉ = argmax₍c ∈ C₎ P(d | c) × P(c)\n```\n\n**Naive Assumptions**\n\nTo make the calculations manageable, we introduce two key assumptions:\n\n1. **Bag-of-Words Assumption**: We assume that the position of words in the document doesn't matter. This is similar to analyzing a corpus for word frequency without considering syntax or word order.\n\n2. **Naive Bayes Assumption**: We assume that each word in the document occurs independently of the others, given the class. While in linguistics we know that context and word relationships are important, this assumption simplifies our model and allows us to compute probabilities more easily.\n\nUnder the naive Bayes assumption, the likelihood **P(d | c)** can be calculated by multiplying the probabilities of each word **fᵢ** occurring in class **c**:\n\n```\nP(d | c) = P(f₁ | c) × P(f₂ | c) × ... × P(fₙ | c)\n```\n\n**Final Classification Equation**\n\nCombining these ideas, the final equation for choosing the class using the naive Bayes classifier is:\n\n```\nĉ = argmax₍c ∈ C₎ P(c) × ∏₍f ∈ F₎ P(f | c)\n```\n\nHere:\n\n- **∏₍f ∈ F₎** denotes the product over all words **f** in the set of features **F** (the vocabulary).\n- **P(f | c)** is the probability of word **f** occurring in documents of class **c**.\n\n**Linear Classifiers**\n\nIt's worth noting that classifiers like naive Bayes, which use a linear combination of input features (in this case, word probabilities), are called **linear classifiers**. They make decisions based on the weighted sum of the input features, offering a straightforward and efficient way to classify data.\n\n**Analogy in Linguistics**\n\nThink of this process as similar to identifying the dialect of a speaker based on certain phonetic features. If certain phonemes or pronunciations are more likely in a particular dialect, you can estimate the dialect by analyzing the presence and frequency of these features in speech, assuming each feature contributes independently to the dialect identification.\n\n**Conclusion**\n\nThe multinomial naive Bayes classifier provides a simple yet powerful way to classify text documents by leveraging word frequencies and making simplifying assumptions about word independence and order. Despite its \"naive\" assumptions, it often performs well in practice and serves as a foundational tool in computational linguistics and natural language processing.",
                 "readability": {
-                    "flesch_reading_ease": 33.24,
-                    "flesch_kincaid_grade": 13.8
+                    "flesch_reading_ease": 38.45,
+                    "flesch_kincaid_grade": 13.9
                 },
                 "pos": {
-                    "IN": 0.14603616133518776,
-                    "DT": 0.15855354659248957,
-                    "NN": 0.29902642559109877,
-                    "VB": 0.09596662030598054,
-                    "JJ": 0.10152990264255911,
-                    "NNP": 0.06397774687065369,
-                    "VBN": 0.027816411682892908,
-                    "VBG": 0.03894297635605007,
-                    "CC": 0.019471488178025034,
-                    "RB": 0.03616133518776078,
-                    "CD": 0.0027816411682892906,
-                    "MD": 0.008344923504867872,
-                    "NNPS": 0.0013908205841446453
+                    "IN": 0.1362126245847176,
+                    "DT": 0.1345514950166113,
+                    "NN": 0.29069767441860467,
+                    "VB": 0.11794019933554817,
+                    "JJ": 0.10299003322259136,
+                    "NNP": 0.09302325581395349,
+                    "VBN": 0.026578073089700997,
+                    "VBG": 0.036544850498338874,
+                    "CC": 0.024916943521594685,
+                    "RB": 0.029900332225913623,
+                    "MD": 0.0049833887043189366,
+                    "CD": 0.0016611295681063123
                 }
             },
             "CS_tailored_o1-preview": {
@@ -1731,24 +1728,25 @@
                 }
             },
             "L_tailored_o1-preview": {
-                "text": "Vector semantics is a fundamental approach in natural language processing (NLP) for representing word meanings. It helps us model various aspects of word meaning that you've studied in linguistics. The core idea is to define a word's meaning based on its distribution in actual language use—that is, by examining the neighboring words or grammatical environments where the word occurs. This concept is akin to the distributional hypothesis in linguistics, which posits that words appearing in similar contexts tend to have similar meanings.\n\nFor example, consider the words \"doctor\" and \"nurse.\" They often appear in similar contexts, such as \"the ___ examined the patient\" or \"the ___ works at the hospital.\" Because they share common neighboring words and grammatical structures, we infer that their meanings are related.\n\nIn vector semantics, each word is represented as a point in a multidimensional semantic space. Think of this space as a coordinate system where each dimension captures some aspect of meaning derived from word co-occurrence patterns. The position of a word in this space reflects its relationships with other words based on how frequently they appear together. These representations are called **embeddings**.\n\nThere are different models for creating these word embeddings. One fundamental model is **tf-idf** (term frequency-inverse document frequency). In this model, a word's meaning is defined by a vector where each component corresponds to the count of nearby words, weighted by how unique those words are across documents. However, this method often results in very long vectors that are **sparse**—mostly filled with zeros—because most words do not co-occur with most other words.\n\nTo overcome this issue, the **word2vec** model was developed. Word2vec constructs shorter, **dense** vectors that efficiently capture semantic properties. These vectors are not only more manageable but also preserve meaningful relationships between words. For instance, in the word2vec space, the vector difference between \"king\" and \"queen\" is similar to that between \"man\" and \"woman,\" reflecting gender relations encoded in the embeddings.\n\nBy representing words as embeddings in a semantic space, vector semantics provides powerful tools for analyzing and understanding language computationally, building on principles familiar from linguistic studies of meaning and context.",
+                "text": "Vector semantics is a crucial approach in natural language processing (NLP) for representing word meanings computationally. Building on concepts from linguistics, particularly the distributional hypothesis, it operates on the idea that *a word's meaning is shaped by the contexts in which it appears*. In simpler terms, words that occur in similar environments—surrounded by the same neighboring words or used in similar grammatical structures—tend to have similar meanings.\n\nImagine each word as a point in a vast, multidimensional space where distances reflect semantic similarities. This space is constructed by analyzing large language datasets to observe patterns of word co-occurrences. The closer two words are in this space, the more similar their meanings are. These points or positions are represented by mathematical objects called **vectors**, and when used to encode word meanings, they're often referred to as **embeddings**.\n\nOne foundational method for creating these embeddings is the **term frequency-inverse document frequency (tf-idf)** model. In this model, we quantify a word's meaning based on how often it appears near other specific words, while also considering how common those neighboring words are across all texts. However, this approach typically results in very long vectors that are **sparse**—filled mostly with zeros—since any given word only appears near a small subset of all possible words.\n\nTo address the limitations of sparse vectors, more advanced techniques like the **word2vec** model family have been developed. These models generate shorter, **dense** vectors where every part of the vector contributes to encoding the word's meaning. Dense embeddings are more efficient and effective at capturing the subtle nuances of semantic relationships between words, making them valuable tools in NLP tasks such as language modeling, translation, and semantic analysis.\n\nBy leveraging these vector-based representations, NLP can more effectively mimic human-like understanding of language, allowing for better processing and interpretation of text data.",
                 "readability": {
-                    "flesch_reading_ease": 45.15,
-                    "flesch_kincaid_grade": 11.3
+                    "flesch_reading_ease": 32.83,
+                    "flesch_kincaid_grade": 14.0
                 },
                 "pos": {
-                    "NNP": 0.006329113924050633,
-                    "NN": 0.33544303797468356,
-                    "VB": 0.11075949367088607,
-                    "DT": 0.12341772151898735,
-                    "JJ": 0.11075949367088607,
-                    "IN": 0.15822784810126583,
-                    "VBG": 0.03164556962025317,
-                    "FW": 0.0031645569620253164,
-                    "VBN": 0.04430379746835443,
-                    "CC": 0.028481012658227847,
-                    "RB": 0.04430379746835443,
-                    "CD": 0.0031645569620253164
+                    "NNP": 0.022304832713754646,
+                    "NN": 0.32342007434944237,
+                    "VB": 0.08921933085501858,
+                    "DT": 0.11895910780669144,
+                    "JJ": 0.13011152416356878,
+                    "IN": 0.14869888475836432,
+                    "VBG": 0.03717472118959108,
+                    "RB": 0.05204460966542751,
+                    "VBN": 0.040892193308550186,
+                    "CC": 0.022304832713754646,
+                    "CD": 0.007434944237918215,
+                    "FW": 0.0037174721189591076,
+                    "MD": 0.0037174721189591076
                 }
             },
             "CS_tailored_o1-preview": {
@@ -1880,25 +1878,25 @@
                 }
             },
             "L_tailored_o1-preview": {
-                "text": "In linguistics, we often understand a word's meaning by examining the company it keeps—the contexts in which it appears. To determine how similar two words are, we can compare these contexts. Imagine creating a profile for each word that records how frequently it appears alongside other words or in specific linguistic environments. This profile acts like a fingerprint of the word's usage.\n\nTo measure the similarity between two such word profiles, we need a method that quantifies how alike they are. One effective approach is to calculate the cosine of the angle between their profiles. While this concept comes from mathematics, think of it as a way to assess how closely the words align in their usage patterns.\n\nThis cosine measure is based on something called the dot product, which, in this context, sums up the shared features between the two word profiles. If two words commonly occur in the same contexts, their profiles will have high values in the same places, resulting in a high dot product. This indicates a strong similarity in meaning or usage.\n\nHowever, words that are generally more frequent in language might have higher dot products simply because they occur more often, not necessarily because they are similar in meaning to other words. To account for this and focus on true similarity, we normalize the dot product. This means we adjust the calculation to consider the overall frequency of each word, leveling the playing field.\n\nBy dividing the dot product by the combined \"sizes\" (or lengths) of the two word profiles, we obtain the cosine of the angle between them. This normalized measure ensures that we're comparing the words based on their usage patterns relative to their frequencies. The result is a reliable metric that tells us how similar two words are in meaning or function, regardless of how often they appear in the language.",
+                "text": "To figure out how similar two words are, we can think of each word as a collection of features—much like how linguists break down words into phonetic components or semantic features. Imagine assigning numerical values to these features for each word; this set of numbers forms what's called a vector.\n\nNow, to measure the similarity between two word vectors, we use a method called **cosine similarity**. Picture each vector as an arrow pointing in a multidimensional space defined by the features we've identified. The cosine similarity measures the angle between these two arrows. If the angle is small and the arrows point in a similar direction, the words are considered similar. If the angle is large and the arrows point in different directions, the words are less similar.\n\nThe key calculation here involves something known as the **dot product** (or **inner product**). This involves multiplying the corresponding feature values of the two words and then adding all those results together. If both words have high values in the same features—for example, if both are [+animate], [+animal], [+domestic]—the dot product will be large, indicating a high degree of similarity. Conversely, if one word has high values where the other has zeros—like comparing \"dog\" ([+canine]) and \"table\" ([-canine])—the dot product will be small or even zero, showing they are quite different.\n\nHowever, words that are generally more frequent in language might naturally have higher values across many features, which could inflate the dot product simply due to their frequency. To adjust for this and ensure we're measuring true similarity rather than just frequency, we **normalize** the dot product. This means we divide the dot product by the product of the lengths (or magnitudes) of the two vectors. This normalized value is the **cosine of the angle** between the vectors and provides a similarity score that isn't affected by how often the words occur in language.\n\nIn summary, by representing words as vectors of linguistic features and calculating the cosine of the angle between them, we obtain a meaningful measure of similarity that reflects the shared characteristics of the words, independent of their frequency.",
                 "readability": {
-                    "flesch_reading_ease": 60.24,
-                    "flesch_kincaid_grade": 9.7
+                    "flesch_reading_ease": 49.25,
+                    "flesch_kincaid_grade": 11.8
                 },
                 "pos": {
-                    "IN": 0.16044776119402984,
-                    "NN": 0.2873134328358209,
-                    "RB": 0.05223880597014925,
-                    "VB": 0.13805970149253732,
-                    "DT": 0.15671641791044777,
-                    "VBG": 0.026119402985074626,
-                    "JJ": 0.09701492537313433,
-                    "CD": 0.026119402985074626,
-                    "MD": 0.011194029850746268,
-                    "NNP": 0.0037313432835820895,
-                    "CC": 0.018656716417910446,
-                    "VBN": 0.018656716417910446,
-                    "RP": 0.0037313432835820895
+                    "VB": 0.11041009463722397,
+                    "RP": 0.006309148264984227,
+                    "JJ": 0.13249211356466878,
+                    "CD": 0.022082018927444796,
+                    "NN": 0.27129337539432175,
+                    "MD": 0.015772870662460567,
+                    "IN": 0.13564668769716087,
+                    "DT": 0.1640378548895899,
+                    "CC": 0.03470031545741325,
+                    "NNP": 0.006309148264984227,
+                    "VBG": 0.031545741324921134,
+                    "VBN": 0.022082018927444796,
+                    "RB": 0.0473186119873817
                 }
             },
             "CS_tailored_o1-preview": {
@@ -2034,25 +2032,25 @@
                 }
             },
             "L_tailored_o1-preview": {
-                "text": "Machine translation (MT) aims to convert sentences from one language (the source language) into another language (the target language). Think of it as teaching a machine to translate, much like a bilingual speaker would.\n\nModern MT systems use an approach similar to parsing and generating sentences, familiar concepts in linguistics. The process involves two main steps:\n\n1. **Encoding (Understanding the Source Sentence):**\n   - The system reads the input sentence in the source language and processes it to grasp its meaning and structure.\n   - This step is akin to semantic and syntactic analysis, where the system identifies grammatical structures and meanings within the sentence.\n   - The result is an intermediate representation of the sentence's content, capturing the essential information.\n\n2. **Decoding (Generating the Target Sentence):**\n   - Using the intermediate representation, the system constructs the sentence in the target language.\n   - It generates the sentence word by word, ensuring that the original meaning is preserved.\n   - This is similar to how we might rephrase a thought in a different language while maintaining its original intent and grammatical correctness.\n\nTo teach the system how to translate, we use **supervised learning**. This involves providing the system with a large collection of **parallel sentences**—pairs of sentences where each sentence in the source language is matched with its equivalent in the target language. This collection is known as a **parallel corpus** or **bitext**.\n\nDuring training, the system learns the correspondences between the two languages:\n\n- **Tokenization:** Sentences are broken down into smaller units called **tokens**. Tokens can be entire words, parts of words (like prefixes or suffixes), or even individual characters. This is similar to morphological analysis, where we study the structure of words.\n- The system learns to predict the sequence of tokens in the target language based on the sequence of tokens in the source language. It aims to find the most probable translation, much like predicting the next word in a sentence based on context.\n\nAn important concept in modern MT is the use of a **multilingual embedding space**:\n\n- This is a way of representing sentences from different languages in a common space based on their meanings.\n- In this space, sentences that are similar in meaning are placed close together, regardless of the language.\n- It reflects the idea of universal semantics, where the underlying meanings of sentences can be compared across languages.\n\nBy combining these techniques, MT systems can effectively learn how to translate between languages, handling complex structures and preserving meanings. The process mirrors linguistic analysis and synthesis, applying concepts of syntax, semantics, and morphology to enable machines to perform translation tasks.",
+                "text": "In the field of machine translation (MT), a common approach uses models known as encoder-decoder transformers or sequence-to-sequence models. The primary goal of MT is to take a sentence in a source language and produce an equivalent sentence in a target language.\n\nTo accomplish this, MT systems utilize supervised machine learning. During training, the system is presented with a large collection of parallel sentences—each sentence in the source language is paired with its corresponding sentence in the target language. This process allows the system to learn how to map source sentences to target sentences effectively.\n\nAn important aspect of this training involves breaking down sentences into smaller units called tokens. Tokens can be entire words, parts of words (subwords), or individual characters. By segmenting sentences into tokens, the system can better handle linguistic variations such as inflections, derivations, and compound words.\n\nThe system is trained to maximize the probability of generating the correct sequence of tokens in the target language based on the sequence of tokens in the source language. This relationship is expressed as P(y₁, ..., yₘ | x₁, ..., xₙ), where y₁ to yₘ represent the tokens in the target sentence, and x₁ to xₙ represent the tokens in the source sentence.\n\nIn linguistic terms, the encoder component processes the input words from the source sentence and creates an intermediate representation, often referred to as the context or hidden state. This context captures the semantic and syntactic essence of the source sentence. The decoder then uses this context to generate the target sentence, producing one token at a time in a manner similar to constructing a sentence word by word.\n\nTraining these translation models relies on a parallel corpus, also known as a bitext—a collection of texts where each entry is available in two or more languages with aligned sentences. Standard MT training corpora consist of these aligned sentence pairs, enabling the system to learn direct mappings between languages.\n\nTo assess and facilitate the translation of sentences across different languages, MT models employ a multilingual embedding space. In this space, sentences from various languages are represented numerically in a way that places semantically similar sentences close together. This shared representation allows the model to recognize and relate meanings across languages, much like understanding synonyms within a single language.",
                 "readability": {
-                    "flesch_reading_ease": 44.44,
-                    "flesch_kincaid_grade": 11.6
+                    "flesch_reading_ease": 42.92,
+                    "flesch_kincaid_grade": 12.2
                 },
                 "pos": {
-                    "NN": 0.3316062176165803,
-                    "NNP": 0.02849740932642487,
-                    "VB": 0.10880829015544041,
-                    "IN": 0.12953367875647667,
-                    "CD": 0.007772020725388601,
-                    "DT": 0.16062176165803108,
-                    "VBG": 0.046632124352331605,
-                    "RB": 0.02072538860103627,
-                    "JJ": 0.09067357512953368,
-                    "MD": 0.012953367875647668,
-                    "CC": 0.031088082901554404,
-                    "VBN": 0.02849740932642487,
-                    "RP": 0.0025906735751295338
+                    "IN": 0.14,
+                    "DT": 0.15714285714285714,
+                    "NN": 0.35714285714285715,
+                    "NNP": 0.022857142857142857,
+                    "JJ": 0.08285714285714285,
+                    "VB": 0.10857142857142857,
+                    "VBN": 0.03428571428571429,
+                    "CC": 0.03142857142857143,
+                    "VBG": 0.025714285714285714,
+                    "RB": 0.025714285714285714,
+                    "RP": 0.002857142857142857,
+                    "MD": 0.005714285714285714,
+                    "CD": 0.005714285714285714
                 }
             },
             "CS_tailored_o1-preview": {
@@ -2187,25 +2185,26 @@
                 }
             },
             "L_tailored_o1-preview": {
-                "text": "The first step in automatic speech recognition (ASR) is to convert spoken language into a form that a computer can interpret. When we speak, we produce complex patterns of air pressure changes over time—these are the sound waves. Similar to how linguists represent sound in waveforms to study phonetics, we can plot these sound waves by graphing the changes in air pressure over time.\n\nTo analyze these sound waves digitally, we must transform the continuous analog signal into a digital format. This process is called **analog-to-digital conversion** and involves two main steps: **sampling** and **quantization**.\n\n**Sampling** is like taking snapshots of the sound wave at regular intervals. We measure the amplitude (loudness) of the sound wave at specific moments in time. The number of samples taken each second is called the **sampling rate**. A higher sampling rate captures more detail of the sound, much like how a high-resolution image captures more detail than a low-resolution one.\n\nAn important concept related to sampling is the **Nyquist frequency**, which is the highest frequency that can be accurately captured at a given sampling rate. To faithfully reproduce all the frequencies in speech, the sampling rate must be at least twice the highest frequency present in the signal. This ensures that all phonetic details, such as high-frequency fricatives, are accurately represented.\n\n**Quantization** involves converting these amplitude measurements into numerical values that a computer can process. Instead of dealing with continuous values, we assign each measurement to the nearest integer. This is similar to categorizing continuous sounds into discrete phonemes in phonology. By quantizing the amplitudes, we simplify the data while retaining essential information about the speech signal.\n\nOnce we have this digitized and quantized representation of the sound wave, we need to extract features that characterize the speech sounds, particularly the phonemes. We do this by examining small segments of the speech signal called **frames**. Each frame captures a brief moment (typically around 20-40 milliseconds) of the speech and is used to analyze the acoustic properties of that segment.\n\nWhen creating these frames, three parameters are important:\n\n1. **Window size (frame size)**: The duration of each frame in milliseconds.\n2. **Frame stride (shift or offset)**: The time interval between the start of one frame and the start of the next. Overlapping frames can capture transitional sounds between phonemes.\n3. **Window shape**: The mathematical function applied to each frame to minimize discontinuities at the edges, which can affect the analysis.\n\nTo extract detailed spectral information from each frame, we use the **Discrete Fourier Transform (DFT)**. The DFT breaks down the complex sound wave into its constituent frequencies, much like how a spectrogram displays the frequency content of a sound over time—a tool familiar in acoustic phonetics.\n\nBy plotting the magnitude (strength) of each frequency component against frequency, we obtain the **spectrum** of the sound. This spectrum visually represents how much energy is present at each frequency within the frame. Different phonemes have characteristic spectral patterns, so analyzing the spectrum helps in distinguishing among them.\n\nIn summary, by converting speech into a digital format and analyzing its spectral features frame by frame, ASR systems can interpret spoken language. This process parallels many concepts in linguistics and phonetics, such as waveform analysis, spectrograms, and the study of phonemic distinctions based on acoustic properties.",
+                "text": "In automatic speech recognition (ASR), the initial task is to transform spoken language into a digital format that a computer can interpret. This begins by converting the continuous sound waves of speech into a sequence of numerical representations called acoustic feature vectors.\n\nWhen we speak, we create sound waves through fluctuating air pressure over time. Imagine plotting these fluctuations on a graph, with time on the horizontal axis and air pressure on the vertical axis. This visualization resembles the waveforms familiar in phonetics when analyzing speech sounds.\n\nTo make these analog sound waves usable for computational processing, we perform an **analog-to-digital conversion**. This conversion has two key steps: **sampling** and **quantization**.\n\n- **Sampling** involves measuring the amplitude (the strength or intensity) of the sound wave at regular intervals. The **sampling rate** is the number of these measurements taken each second. For instance, a common sampling rate is 16,000 samples per second (16 kHz), capturing detailed information about the speech signal.\n\n- According to the **Nyquist theorem**, to accurately represent all frequencies in the original sound, the sampling rate must be at least twice the highest frequency present. This maximum frequency that can be captured is known as the **Nyquist frequency**. So, a 16 kHz sampling rate can accurately represent frequencies up to 8,000 Hz, covering the essential range of human speech sounds.\n\n- **Quantization** converts these amplitude measurements into numerical values that a computer can store. Since computers handle finite sets of numbers (like integers), we map the continuous range of amplitudes into discrete levels. This is similar to categorizing continuous speech sounds into discrete phonemes in linguistics, simplifying continuous variation into distinct units.\n\nWith the sound wave digitized, we proceed to analyze small segments of the speech signal to extract meaningful features. We divide the continuous stream into short, manageable pieces called **frames**. Each frame captures a brief window of the sound wave, potentially encompassing parts of individual phonemes.\n\nThe process of framing involves three important parameters:\n\n- **Window size (frame size):** This is the duration of each frame, typically around 20 to 30 milliseconds. This length is long enough to capture the characteristics of individual speech sounds but short enough to provide detailed temporal resolution.\n\n- **Frame stride (shift or offset):** This is the time interval between the starts of consecutive frames. Often, frames overlap to ensure continuity and capture transitional features between sounds, much like overlapping articulatory features between phonemes.\n\n- **Window shape:** This refers to the weighting function applied to each frame to minimize edge effects. Common window shapes (like the Hamming window) emphasize the central part of the frame, reducing distortions at the boundaries.\n\nTo extract detailed frequency information from each frame, we use the **discrete Fourier transform (DFT)**. The DFT decomposes the complex time-domain signal into its constituent frequencies, akin to how a spectrogram represents the frequency components of speech sounds in acoustic phonetics.\n\nBy plotting the magnitude (intensity) of each frequency component against frequency, we obtain the **spectrum** of the sound. This spectrum reveals which frequencies are present and their relative strengths, providing valuable insights into the acoustic properties of the speech. Understanding these spectral features is crucial for distinguishing between different phonemes and prosodic elements, much like how linguists analyze formant frequencies to identify vowel qualities.\n\nIn summary, ASR begins by converting speech into a digital format through sampling and quantization, then breaks it down into frames for detailed analysis. Using tools like the DFT, we examine the frequency content of these frames, enabling computers to interpret and recognize the linguistic information encoded in human speech.",
                 "readability": {
-                    "flesch_reading_ease": 45.15,
-                    "flesch_kincaid_grade": 11.3
+                    "flesch_reading_ease": 35.88,
+                    "flesch_kincaid_grade": 12.8
                 },
                 "pos": {
-                    "DT": 0.15492957746478872,
-                    "JJ": 0.10663983903420524,
-                    "NN": 0.3158953722334004,
-                    "IN": 0.14285714285714285,
-                    "NNP": 0.030181086519114688,
-                    "VB": 0.11468812877263582,
-                    "MD": 0.018108651911468814,
-                    "VBG": 0.03822937625754527,
-                    "RB": 0.02414486921529175,
-                    "VBN": 0.028169014084507043,
-                    "CC": 0.018108651911468814,
-                    "CD": 0.006036217303822937,
-                    "RP": 0.002012072434607646
+                    "IN": 0.13627992633517497,
+                    "JJ": 0.1252302025782689,
+                    "NN": 0.3370165745856354,
+                    "NNP": 0.029465930018416207,
+                    "DT": 0.143646408839779,
+                    "VB": 0.10313075506445672,
+                    "MD": 0.009208103130755065,
+                    "VBG": 0.04788213627992634,
+                    "VBN": 0.01841620626151013,
+                    "CC": 0.01841620626151013,
+                    "CD": 0.003683241252302026,
+                    "RB": 0.02394106813996317,
+                    "FW": 0.001841620626151013,
+                    "RP": 0.001841620626151013
                 }
             },
             "CS_tailored_o1-preview": {
