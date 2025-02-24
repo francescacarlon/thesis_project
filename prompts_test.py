@@ -204,11 +204,11 @@ def create_prompt5(target_category, text):
 try:
     # First tailored explanation
     prompt_1 = create_prompt4(target_category_1, original_text)
-    response_1 = call_llm("claude", prompt_1)
+    response_1 = call_llm("o1-preview", prompt_1)
 
     # Second tailored explanation
     prompt_2 = create_prompt4(target_category_2, original_text)
-    response_2 = call_llm("claude", prompt_2)
+    response_2 = call_llm("o1-preview", prompt_2)
 
     # ✅ Print the prompt & response for easy comparison
     #print("\n🔹 Prompt Used for", target_category_1, ":\n", prompt_1)
