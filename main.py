@@ -5,10 +5,13 @@ from benchmark_creation import create_benchmark
 LLM_MODELS = {
     "gpt4o": "gpt-4o",
     "o1-preview": "o1-preview",
-    "claude" : "claude"
+    "o1" : "o1",
+    "claude" : "claude",
+    "deepseek" : "deepseek-reasoner"
 }
 
 PROMPT_FUNCTIONS = {
+    1: "create_prompt1",
     2: "create_prompt2",
     3: "create_prompt3",
     4: "create_prompt4",

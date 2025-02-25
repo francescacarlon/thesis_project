@@ -7,6 +7,7 @@ After reading the output, I choose the prompt giving the best texts to tailor th
 from utils import load_dataset  # Import function to load benchmark.json
 from llm_caller import call_llm
 from config import BENCHMARK_PATH
+import time
 
 # ✅ Load benchmark data
 benchmark_data = load_dataset(BENCHMARK_PATH)
@@ -203,12 +204,23 @@ def create_prompt5(target_category, text):
 # ✅ Call models with selected prompts
 try:
     # First tailored explanation
-    prompt_1 = create_prompt4(target_category_1, original_text)
-    response_1 = call_llm("o1-preview", prompt_1)
+    prompt_1 = create_prompt1(target_category_1, original_text)
+    response_1 = call_llm("deepseek", prompt_1)
 
     # Second tailored explanation
-    prompt_2 = create_prompt4(target_category_2, original_text)
-    response_2 = call_llm("o1-preview", prompt_2)
+    prompt_2 = create_prompt1(target_category_2, original_text)
+
+
+    # Add a delay
+    time.sleep(1)  # Wait 1 second
+    print("Prompt for second text:", prompt_2)  # Debugging: Print the prompt
+
+
+    response_2 = call_llm("deepseek", prompt_2)
+
+    # added
+    if not response_2:
+        print("❌ No response received for second text. Check the API call.")
 
     # ✅ Print the prompt & response for easy comparison
     #print("\n🔹 Prompt Used for", target_category_1, ":\n", prompt_1)
