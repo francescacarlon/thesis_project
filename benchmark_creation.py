@@ -8,7 +8,7 @@ from utils import load_dataset, save_dataset
 from linguistic_analysis import analyze_text
 from llm_caller import call_llm
 from prompts import *  # Import all prompts
-from config import DATASET_PATH, BENCHMARK_PATH, LINGUISTIC_ANALYSIS_PATH  
+from config import DATASET_PATH, BENCHMARK_PATH, LINGUISTIC_ANALYSIS_PATH
 
 def create_benchmark(llm_model, prompt_function_name):
     """

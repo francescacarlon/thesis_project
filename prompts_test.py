@@ -164,32 +164,28 @@ def create_prompt4(target_category, text):
     """
 
 # ✅ Define the prompt template and define the categories
-def create_prompt5(target_category, text):
+def create_prompt5(target_category, text): # this with no role
 
     category_definitions = {
-        "L": "Linguistics (L) witnesses have a strong background on language structure, phonetics, syntax, and semantics. They have little or no technical knowledge.",
-        "CS": "Computer Science (CS) witnesses have strong technical backgrounds, including programming, algorithms, and machine learning. They have little or no linguistic knowledge.",
-        "CL": "Computational Linguistics (CL) witnesses bridge linguistics and computer science, NLP, corpus linguistics, AI, and LLMs."
+        "L": "Linguistics (L) audience have a strong background on language structure, phonetics, syntax, and semantics. They have little or no technical knowledge.",
+        "CS": "Computer Science (CS) audience have strong technical backgrounds, including programming, algorithms, and machine learning. They have little or no linguistic knowledge.",
+        "CL": "Computational Linguistics (CL) audience bridge linguistics and computer science, NLP, corpus linguistics, AI, and LLMs."
     }
     
     category_explanation = category_definitions.get(target_category, "Unknown category") # unknown if the category does not appear in category_definitions
 
     return f"""
-    You are playing a game against your friends. 
-    You have to solve a mystery: a murder has been committed, and you must be the first to find the murderer to win the game.
-    The killer has left behind cryptic messages written in field-specific jargon. 
-    The only way to decipher them is by rewriting the concepts in a way that the key witnesses (experts in {target_category}) can understand.
-    You have to rewrite the concepts so that the witness can give you clues on who committed the crime. 
-    Consider the information on {category_explanation} to tailor the explanation to each witness specific background.
-    They rate your explanations from one to ten (the higher the score, the more useful the clue is).
-    The winning steps for good paraphrasis are:
+    Paraphrase the given concepts in order for the audience of the {target_category} to understand concepts outside of their field of knowledge. 
+    You must consider the information on the {category_explanation} to adapt the tailored texts to the audience backgrounds. 
     - Read the text carefully.
     - Identify the key concepts.
-    - Use terminology that is familiar to the jury's field.
-    - Avoid unnecessary sentence complexity while maintaining precision and accuracy. 
+    - Use terminology specific to their field.
+    - Avoid unnecessary sentence complexity while maintaining accuracy. 
     - Provide examples they are familiar with.
     - Provide analogies they can relate their knowledge with and transfer it to new concepts.
-    - Integrate background information if needed.    
+    - Integrate background information if needed.
+    - Do not consider other background per category. 
+    - Output only one text per category.
 
     Original text: 
     {text}
@@ -204,19 +200,19 @@ def create_prompt5(target_category, text):
 # ✅ Call models with selected prompts
 try:
     # First tailored explanation
-    prompt_1 = create_prompt1(target_category_1, original_text)
-    response_1 = call_llm("deepseek", prompt_1)
+    prompt_1 = create_prompt5(target_category_1, original_text)
+    response_1 = call_llm("mistral", prompt_1)
 
     # Second tailored explanation
-    prompt_2 = create_prompt1(target_category_2, original_text)
+    prompt_2 = create_prompt5(target_category_2, original_text)
 
 
     # Add a delay
     time.sleep(1)  # Wait 1 second
-    print("Prompt for second text:", prompt_2)  # Debugging: Print the prompt
+    # print("Prompt for second text:", prompt_2)  # Debugging: Print the prompt
 
 
-    response_2 = call_llm("deepseek", prompt_2)
+    response_2 = call_llm("mistral", prompt_2)
 
     # added
     if not response_2:

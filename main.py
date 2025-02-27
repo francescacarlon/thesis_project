@@ -4,10 +4,12 @@ from benchmark_creation import create_benchmark
 # ✅ Define available LLMs and prompts
 LLM_MODELS = {
     "gpt4o": "gpt-4o",
-    "o1-preview": "o1-preview",
-    "o1" : "o1",
+    # "o1-preview": "o1-preview",
+    # "o1" : "o1",
     "claude" : "claude",
-    "deepseek" : "deepseek-reasoner"
+    "deepseek" : "deepseek",
+    "llama" : "llama",
+    "mistral" : "mistral"
 }
 
 PROMPT_FUNCTIONS = {
@@ -37,9 +39,9 @@ def main():
         exit(1)
 
     # ✅ Normalize model name for consistency in stored keys
-    if llm_model in ["o1-preview"]:
-        llm_model_key = "o1-preview"  # Consistent with benchmark JSON format
-    else:
+    # if llm_model in ["o1-preview"]:
+        # llm_model_key = "o1-preview"  # Consistent with benchmark JSON format
+    # else:
         llm_model_key = llm_model  # Use actual model name if not a special case
 
     print(f"\n🚀 Running benchmark with:")
