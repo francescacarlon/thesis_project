@@ -254,6 +254,7 @@ def call_llm(model, prompt, retries=3, delay=2):
                     {"role": "system", "content": "You are an expert in explaining concepts."},  # Placeholder system message
                     {"role": "user", "content": prompt},
                 ]
+                print(f"🔄 Raw API Response from {model}:\n{response}\n{'-'*80}")
                 response = llm_function(messages)
                 return process_response(response, model)
 
