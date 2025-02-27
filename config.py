@@ -12,7 +12,6 @@ DATASET_PATH = BASE_PATH / "data/dataset.json"
 BENCHMARK_PATH = BASE_PATH / "data/benchmark.json"
 LINGUISTIC_ANALYSIS_PATH = BASE_PATH / "data/linguistic_analysis.json"  # New file only for linguistic analysis
 
-
 # Load environment variables from .env file
 load_dotenv()
 
