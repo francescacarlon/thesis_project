@@ -34,7 +34,7 @@ def create_prompt1(target_category, text):
 
     ### END OF INPUT ###
 
-    Tailored text (provide one text per target category only):
+    Now, rewrite this explanation for the {target_category} audience:
     """
 
 def create_prompt2(target_category, text):
@@ -66,7 +66,8 @@ def create_prompt2(target_category, text):
 
     ### END OF INPUT ###
 
-    Tailored text (provide one text per target category only):
+    Now, rewrite this explanation for the {target_category} audience:
+
     """
 
 def create_prompt3(target_category, text):
@@ -98,7 +99,8 @@ def create_prompt3(target_category, text):
 
     ### END OF INPUT ###
 
-    Tailored text (provide one text per target category only):
+    Now, rewrite this explanation for the {target_category} audience:
+
     """
 
 # ✅ Define the prompt template and define the categories
@@ -133,7 +135,8 @@ def create_prompt4(target_category, text):
 
     ### END OF INPUT ###
 
-    Tailored text (provide one text per target category only):
+    Now, rewrite this explanation for the {target_category} audience:
+
     """
 
 # ✅ Define the prompt template and define the categories
@@ -165,5 +168,15 @@ def create_prompt5(target_category, text): # this with no role
 
     ### END OF INPUT ###
 
-    Tailored text (provide one text per target category only):
+    Now, rewrite this explanation for the {target_category} audience:
+
     """
+
+
+PROMPT_FUNCTIONS = {
+    1: "create_prompt1",
+    2: "create_prompt2",
+    3: "create_prompt3",
+    4: "create_prompt4",
+    5: "create_prompt5"
+}
