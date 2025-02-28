@@ -23,6 +23,12 @@ from collections import Counter
 #nltk.download('punkt_tab')
 nltk.download('averaged_perceptron_tagger_eng')
 
+# Function to compute tokens: length of the text
+def count_tokens(text):
+    words = nltk.word_tokenize(text)
+    words = [w for w in words if w.isalpha()]  # No punctuation
+    return len(words)
+
 # Function to compute readability scores
 def compute_readability(text):
     """Computes readability scores, ensuring text is a valid string."""
@@ -107,6 +113,7 @@ def compute_rouge(reference, candidate):
 # Function to analyze a text
 def analyze_text(text):
     return {
+        "token_count": count_tokens(text),
         "readability": compute_readability(text),
         "pos": compute_pos_distribution(text)
     }

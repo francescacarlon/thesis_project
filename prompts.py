@@ -32,9 +32,10 @@ def create_prompt1(target_category, text):
     Original text: 
     {text}
 
+    Now provide the adapted explanation, and nothing else:
+
     ### END OF INPUT ###
 
-    Now, rewrite this explanation for the {target_category} audience:
     """
 
 def create_prompt2(target_category, text):
@@ -64,9 +65,9 @@ def create_prompt2(target_category, text):
     Original text: 
     {text}
 
-    ### END OF INPUT ###
+    Now provide the adapted explanation, and nothing else:
 
-    Now, rewrite this explanation for the {target_category} audience:
+    ### END OF INPUT ###
 
     """
 
@@ -97,9 +98,9 @@ def create_prompt3(target_category, text):
     Original text: 
     {text}
 
-    ### END OF INPUT ###
+    Now provide the adapted explanation, and nothing else:
 
-    Now, rewrite this explanation for the {target_category} audience:
+    ### END OF INPUT ###
 
     """
 
@@ -133,9 +134,9 @@ def create_prompt4(target_category, text):
     Original text: 
     {text}
 
-    ### END OF INPUT ###
+    Now provide the adapted explanation, and nothing else:
 
-    Now, rewrite this explanation for the {target_category} audience:
+    ### END OF INPUT ###
 
     """
 
@@ -166,9 +167,9 @@ def create_prompt5(target_category, text): # this with no role
     Original text: 
     {text}
 
-    ### END OF INPUT ###
+    Now provide the adapted explanation, and nothing else:
 
-    Now, rewrite this explanation for the {target_category} audience:
+    ### END OF INPUT ###
 
     """
 

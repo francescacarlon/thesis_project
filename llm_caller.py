@@ -230,46 +230,58 @@ def call_llm(model, prompt, retries=3, delay=2):
                 return None
 
             if isinstance(response, str):
-                return response.strip()
-
-            if isinstance(response, dict):  # Handle structured responses
+                response_text = response.strip()
+            elif isinstance(response, dict):
                 if "choices" in response and len(response["choices"]) > 0:
-                    return response["choices"][0]["message"]["content"].strip()
+                    response_text = response["choices"][0]["message"]["content"].strip()
                 elif "generated_text" in response:
-                    return response["generated_text"].strip()
+                    response_text = response["generated_text"].strip()
+                else:
+                    print(f"\n❌ Unexpected response format from {model_name} API")
+                    print(response)
+                    return None
+            else:
+                print(f"\n❌ Unexpected response format from {model_name} API")
+                print(response)
+                return None
 
-            print(f"\n❌ Attempt {attempt + 1}: Unexpected response format from {model_name} API")
-            print(response)  # Debugging info
-            return None
+            # ✅ Cleanup: Remove echoed prompts if present
+            if "Original text:" in response_text:
+                response_text = response_text.split("Original text:", 1)[-1].strip()
+
+            if "### END OF INPUT ###" in response_text:
+                response_text = response_text.split("### END OF INPUT ###")[-1].strip()
+
+            return response_text
+
         except Exception as e:
             print(f"\n❌ Error processing {model_name} API response - {e}")
-            print(response)  # Debugging info
+            print(response)
             return None
 
     for attempt in range(retries):
         try:
             if model in ["gpt4o", "o1-preview", "o1", "deepseek"]:
-                # ✅ OpenAI and DeepSeek models require formatted message lists
                 messages = [
-                    {"role": "system", "content": "You are an expert in explaining concepts."},  # Placeholder system message
+                    {"role": "system", "content": "You are an expert in explaining concepts."},
                     {"role": "user", "content": prompt},
                 ]
-                print(f"🔄 Raw API Response from {model}:\n{response}\n{'-'*80}")
                 response = llm_function(messages)
+                # print(f"🔄 Raw API Response from {model} (attempt {attempt + 1}):\n{response}\n{'-'*80}")
                 return process_response(response, model)
 
             elif model in ["claude", "llama", "mistral"]:
-                # ✅ These models take plain string input
                 response = llm_function(prompt)
+                # print(f"🔄 Raw API Response from {model} (attempt {attempt + 1}):\n{response}\n{'-'*80}")
                 return process_response(response, model)
 
         except Exception as e:
             print(f"\n❌ Attempt {attempt + 1}: Error calling {model} - {e}")
-            if attempt < retries - 1:  # Don't wait on the last attempt
-                time.sleep(delay)  # Wait before retrying
-            continue  # Retry
+            if attempt < retries - 1:
+                time.sleep(delay)
+            continue
 
-    # ✅ This should be OUTSIDE the for loop to print only when all retries fail
     print(f"\n❌ All {retries} attempts failed for model: {model}")
     return None
+
 
