@@ -5,9 +5,9 @@ from prompts import PROMPT_FUNCTIONS
 LLM_MODELS = {
     # "gpt4o": "gpt4o"
     # "claude" : "claude",
-    #"deepseek" : "deepseek",
-    "mistral" : "mistral"
-    # "llama" : "llama"    
+    # "deepseek" : "deepseek"
+    # "mistral" : "mistral"
+    "llama" : "llama"    
 }
 
 
@@ -16,20 +16,27 @@ def main():
 
     # TEST: ONLY FIRST PROMPT 
 
-    # llm_model = "llama"
-    # prompt_function_name = PROMPT_FUNCTIONS[1]  # First prompt (create_prompt1)
+    llm_model = "llama"
+    prompt_function_name = PROMPT_FUNCTIONS[3]  # First prompt (create_prompt1)
+
+    print(f"\n📝 Running benchmark for:")
+    print(f"   🧠 LLM Model: {llm_model}")
+    print(f"   ✏️  Prompt Function: {prompt_function_name}")
+
+    # ✅ Call the benchmark function for each LLM and each prompt
+    create_benchmark(llm_model, prompt_function_name, target_key="1") # TEST on n. ENTRY # max_entries=3 instead of target
 
     # WHOLE BENCHMARK
-    for llm_model in LLM_MODELS.values():  # ✅ Only keep values (model names)
-        for prompt_function_name in PROMPT_FUNCTIONS.values():  # ✅ Only keep function names
-
-            print(f"\n📝 Running benchmark for:")
-            print(f"   🧠 LLM Model: {llm_model}")
-            print(f"   ✏️  Prompt Function: {prompt_function_name}")
+    # for llm_model in LLM_MODELS.values():  # ✅ Only keep values (model names)
+    #     for prompt_function_name in PROMPT_FUNCTIONS.values():  # ✅ Only keep function names
+# 
+    #         print(f"\n📝 Running benchmark for:")
+    #         print(f"   🧠 LLM Model: {llm_model}")
+    #         print(f"   ✏️  Prompt Function: {prompt_function_name}")
 
     # ✅ Call the benchmark function for each LLM and each prompt
     # create_benchmark(llm_model, prompt_function_name, max_entries=2) # TEST on n. ENTRY
-            create_benchmark(llm_model, prompt_function_name) # WHOLE BENCHMARK
+            # create_benchmark(llm_model, prompt_function_name) # WHOLE BENCHMARK
 
     print("\n✅ All benchmarks have been generated successfully!")
 

@@ -216,17 +216,15 @@ def get_api_function_llm(model):
         
 
 def call_llm(model, prompt, retries=3, delay=2):
-    """
-    Call the LLM API using the selected model and extract responses correctly.
-    Includes a retry mechanism for transient errors.
-    """
     llm_function = get_api_function_llm(model)
+    if llm_function is None:
+        raise ValueError(f"❌ No valid LLM function found for model '{model}'")
 
-    def process_response(response, model_name):
+    def process_response(response):
         """Extracts and processes the response correctly for different models."""
         try:
             if not response:
-                print(f"\n❌ Attempt {attempt + 1}: {model_name} API returned None")
+                print(f"\n❌ Received empty response from {model}")
                 return None
 
             if isinstance(response, str):
@@ -237,11 +235,11 @@ def call_llm(model, prompt, retries=3, delay=2):
                 elif "generated_text" in response:
                     response_text = response["generated_text"].strip()
                 else:
-                    print(f"\n❌ Unexpected response format from {model_name} API")
+                    print(f"\n❌ Unexpected response format from {model}")
                     print(response)
                     return None
             else:
-                print(f"\n❌ Unexpected response format from {model_name} API")
+                print(f"\n❌ Unexpected response format from {model}")
                 print(response)
                 return None
 
@@ -255,7 +253,7 @@ def call_llm(model, prompt, retries=3, delay=2):
             return response_text
 
         except Exception as e:
-            print(f"\n❌ Error processing {model_name} API response - {e}")
+            print(f"\n❌ Error processing response from {model} - {e}")
             print(response)
             return None
 
@@ -267,21 +265,18 @@ def call_llm(model, prompt, retries=3, delay=2):
                     {"role": "user", "content": prompt},
                 ]
                 response = llm_function(messages)
-                # print(f"🔄 Raw API Response from {model} (attempt {attempt + 1}):\n{response}\n{'-'*80}")
-                return process_response(response, model)
 
             elif model in ["claude", "llama", "mistral"]:
                 response = llm_function(prompt)
-                # print(f"🔄 Raw API Response from {model} (attempt {attempt + 1}):\n{response}\n{'-'*80}")
-                return process_response(response, model)
+
+            result = process_response(response)
+            if result is not None:
+                return result  # ✅ If processing worked, return early
 
         except Exception as e:
             print(f"\n❌ Attempt {attempt + 1}: Error calling {model} - {e}")
             if attempt < retries - 1:
                 time.sleep(delay)
-            continue
 
     print(f"\n❌ All {retries} attempts failed for model: {model}")
-    return None
-
-
+    return None  # ✅ All retries exhausted, return None
