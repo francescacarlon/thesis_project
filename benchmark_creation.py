@@ -22,11 +22,26 @@ def has_long_dash_run(text, threshold=20):
 
     return max_run >= threshold
 
-def create_benchmark(llm_model, prompt_function_name, max_entries=None):
+def is_valid_existing_text(text, dash_threshold=20):
+    """
+    Checks if the existing text is valid.
+    A valid text:
+    - is not empty
+    - is not the special "FAILED" marker
+    - is not the string "None"
+    - does not contain long runs of dashes
+    """
+    if not text or text.strip() in {"", "FAILED", "None"}:
+        return False  # Empty, failed, or explicitly broken is invalid
+    if has_long_dash_run(text, threshold=dash_threshold):
+        return False  # Contains too many dashes (likely corrupted)
+    return True
+
+
+def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_key=None):
     """
     Generates tailored paraphrases using the selected LLM and prompt,
     and performs linguistic analysis for each entry in the dataset.
-    This version processes only the first entry (for testing purposes).
     """
 
     dataset = load_dataset(DATASET_PATH)
@@ -52,13 +67,14 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None):
         raise ValueError(f"❌ Error: Prompt function '{prompt_function_name}' is not in PROMPT_FUNCTIONS.")
     prompt_key = f"prompt{prompt_number}"
 
-    # ✅ Process only the first entry (for testing)
     for i, (key, value) in enumerate(dataset.items()):
         if max_entries and i >= max_entries:
             break
 
-        print(f"\n⚡ Processing entry {i+1}/{max_entries or len(dataset)}: {key}")
+        if target_key and key != target_key:  # Add this line to skip unwanted entries
+            continue
 
+        print(f"\n⚡ Processing entry {i+1}/{max_entries or len(dataset)}: {key}")
 
         original_text = value["original_text"]
         original_category = value["original_category"]
@@ -77,27 +93,22 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None):
         linguistic_analysis[key] = {
             "original_category": original_category,
             "original_text": original_text,
-            "token_count": original_analysis["token_count"],  # Add token count
+            "token_count": original_analysis["token_count"],
             "readability": original_analysis["readability"],
             "pos": original_analysis["pos"],
-            "tailored_texts": linguistic_analysis.get(key, {}).get("tailored_texts", {})  # ✅ Keep any existing tailored texts analysis
-            }
+            "tailored_texts": linguistic_analysis.get(key, {}).get("tailored_texts", {})
+        }
 
         for target_category in TAILORING_MATRIX.get(original_category, []):
             benchmark.setdefault(key, {}).setdefault("tailored_texts", {}).setdefault(llm_model, {}).setdefault(target_category, {})
 
-            # UNCOMMENT WHEN FINISHED UPDATES - ok done
-            # if prompt_key in benchmark[key]["tailored_texts"][llm_model][target_category]:
-            # print(f"⏭️ Skipping {target_category} for {key}, already exists.")
-            # continue
             existing_text = benchmark[key]["tailored_texts"][llm_model][target_category].get(prompt_key, "").strip()
 
-            if existing_text and not has_long_dash_run(existing_text):
-                print(f"⏭️ Skipping {target_category} for {key}, already exists and is valid.")
+            if is_valid_existing_text(existing_text):
+                print(f"⏭️ Skipping {target_category} for {key}, already exists and passed validation.")
                 continue
             else:
-                print(f"♻️ Regenerating {target_category} for {key} because it contains a long dash run.")
-
+                print(f"♻️ Regenerating {target_category} for {key} because it failed validation (empty, failed, or has long dashes).")
 
             print(f"\n📝 Generating tailored text for {target_category} in entry {key} using {llm_model} with {prompt_key}...")
 
@@ -107,12 +118,8 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None):
                     raise ValueError(f"❌ Error: The prompt function '{prompt_function_name}' does not exist or is not callable.")
 
                 prompt = prompt_function(target_category, original_text)
-                # print(f"📩 Sending prompt to {llm_model} for entry {key}-{target_category}-{prompt_key}:\n{prompt}\n{'-'*80}")
                 response = call_llm(llm_model, prompt)
-                # print(f"🔎 Raw LLM Response for {key}-{target_category}-{prompt_key}:\n{response}\n{'-'*80}")
 
-
-                # ✅ Handle response correctly
                 if isinstance(response, str):
                     response_text = response.strip()
                 elif hasattr(response, "choices") and response.choices:
@@ -120,22 +127,18 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None):
                 else:
                     response_text = str(response).strip()
 
-                # ✅ Cleanup response (remove echo or input repetition)
                 if "Original text:" in response_text:
                     response_text = response_text.split("Original text:", 1)[-1].strip()
                 if "### END OF INPUT ###" in response_text:
                     response_text = response_text.split("### END OF INPUT ###")[-1].strip()
-                # print(f"✨ Final Cleaned Text for {key}-{target_category}-{prompt_key}:\n{response_text[:500]}\n{'-'*80}")
 
-                # ✅ Check if the response is valid
                 if isinstance(response_text, str) and response_text.strip():
-                    # print(f"🔍 Final LLM output for {key} ({target_category}):\n{response_text[:500]}\n{'-'*80}")
                     benchmark[key]["tailored_texts"][llm_model][target_category][prompt_key] = response_text
 
                     tailored_analysis = analyze_text(response_text)
                     linguistic_analysis[key]["tailored_texts"][llm_model][target_category][prompt_key] = {
                         "text": response_text,
-                        "token_count": tailored_analysis["token_count"],  # ✅ Add token count here
+                        "token_count": tailored_analysis["token_count"],
                         "readability": tailored_analysis["readability"],
                         "pos": tailored_analysis["pos"]
                     }
