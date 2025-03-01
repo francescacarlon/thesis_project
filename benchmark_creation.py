@@ -20,24 +20,46 @@ def has_long_dash_run(text, threshold=20):
 
     return max_run >= threshold
 
-def is_valid_existing_text(text, dash_threshold=20, min_word_count=100):
+def is_valid_existing_text(text, dash_threshold=20, min_word_count=100, min_char_count=30):
     if text is None:
         return False
-    if not text.strip() or text.strip() in {"", "FAILED", "None"}:
+
+    text = text.strip()
+
+    if text in {"", "FAILED", "None", "#"}:
         return False
-    if has_long_dash_run(text, threshold=dash_threshold):
-        return False
+
+    if len(text) < min_char_count:
+        return False  # Too short, e.g., just "In"
+
     if len(text.split()) < min_word_count:
         return False
+
+    if has_long_dash_run(text, threshold=dash_threshold):
+        return False
+
+    suspicious_endings = {"...", "END OF OUTPUT", "### END OF INPUT ###"}
+    if any(text.endswith(marker) for marker in suspicious_endings):
+        return False
+
+    if "Original text:" in text and text.count("Original text:") > 1:
+        return False
+
     return True
 
 def get_invalid_reason(text):
-    if text in {"", "FAILED", "None"}:
+    if text is None or text.strip() in {"", "FAILED", "None"}:
         return "text is empty, marked as FAILED, or None"
-    if has_long_dash_run(text):
-        return "text contains a long run of dashes"
+    if len(text.strip()) < 30:
+        return "text is too short (fewer than 30 characters)"
     if len(text.split()) < 100:
         return "text is too short (<100 words)"
+    if has_long_dash_run(text):
+        return "text contains a long run of dashes"
+    if any(text.strip().endswith(marker) for marker in {"...", "END OF OUTPUT", "### END OF INPUT ###"}):
+        return "text ends with suspicious marker"
+    if "Original text:" in text and text.count("Original text:") > 1:
+        return "text contains repeated 'Original text:' marker"
     return "unknown validation failure"
 
 def extract_text_from_llm_response(response):
@@ -134,9 +156,24 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
                 raise ValueError(f"Prompt function '{prompt_function_name}' does not exist.")
 
             prompt = prompt_function(target_category, original_text)
-            response = call_llm(llm_model, prompt)
-            response_text = extract_text_from_llm_response(response)
-            response_text = clean_response_text(response_text)
+
+            MAX_RETRIES = 3
+
+            for attempt in range(MAX_RETRIES):
+                response = call_llm(llm_model, prompt)
+                response_text = extract_text_from_llm_response(response)
+                response_text = clean_response_text(response_text)
+
+                if is_valid_existing_text(response_text):
+                    print(f"✅ Text is valid on attempt {attempt+1}")
+                    break
+                else:
+                    reason = get_invalid_reason(response_text)
+                    print(f"⚠️ Attempt {attempt+1}/{MAX_RETRIES} failed due to: {reason}")
+
+            # else:
+            #     print(f"❌ All attempts failed — keeping null for {key}-{target_category}-{prompt_key}")
+            #     response_text = None
 
             if response_text:
                 tailored_texts[prompt_key] = response_text
@@ -147,7 +184,6 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
                     "readability": tailored_analysis["readability"],
                     "pos": tailored_analysis["pos"]
                 }
-                # tailored_texts[f"{prompt_key}_regenerated"] = True
                 print(f"Successfully generated {target_category} for {key} (Tokens: {tailored_analysis['token_count']})")
             else:
                 print(f"Warning: Generated text is invalid for {target_category} in entry {key}. Keeping null.")
