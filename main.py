@@ -14,17 +14,17 @@ LLM_MODELS = {
 def main():
     print("\n🚀 Starting automatic benchmark generation for all LLMs and prompts...\n")
 
-    # TEST: ONLY FIRST PROMPT 
+    # TEST: ONLY N PROMPT 
 
     llm_model = "llama"
-    prompt_function_name = PROMPT_FUNCTIONS[3]  # First prompt (create_prompt1)
+    prompt_function_name = PROMPT_FUNCTIONS[5]  # Choose prompt n. to test
 
     print(f"\n📝 Running benchmark for:")
     print(f"   🧠 LLM Model: {llm_model}")
     print(f"   ✏️  Prompt Function: {prompt_function_name}")
 
     # ✅ Call the benchmark function for each LLM and each prompt
-    create_benchmark(llm_model, prompt_function_name, target_key="1") # TEST on n. ENTRY # max_entries=3 instead of target
+    create_benchmark(llm_model, prompt_function_name, target_key="2") # max_entries=2) #, target_key="1") # max_entries=from 1 to n. OR # target_key=only that key
 
     # WHOLE BENCHMARK
     # for llm_model in LLM_MODELS.values():  # ✅ Only keep values (model names)
