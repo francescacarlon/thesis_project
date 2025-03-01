@@ -8,6 +8,7 @@ import openai
 import anthropic
 import requests
 import time
+from openai.types.chat import ChatCompletion
 
 # Load API keys from .env
 # add API key for other models
@@ -224,22 +225,27 @@ def call_llm(model, prompt, retries=3, delay=2):
         """Extracts and processes the response correctly for different models."""
         try:
             if not response:
-                print(f"\n❌ Received empty response from {model}")
+                print(f"\n❌ Received empty response.")
                 return None
 
             if isinstance(response, str):
                 response_text = response.strip()
+
+            elif isinstance(response, ChatCompletion):
+                response_text = response.choices[0].message.content.strip()
+
             elif isinstance(response, dict):
                 if "choices" in response and len(response["choices"]) > 0:
                     response_text = response["choices"][0]["message"]["content"].strip()
                 elif "generated_text" in response:
                     response_text = response["generated_text"].strip()
                 else:
-                    print(f"\n❌ Unexpected response format from {model}")
+                    print(f"\n❌ Unexpected response format (dict case)")
                     print(response)
                     return None
+
             else:
-                print(f"\n❌ Unexpected response format from {model}")
+                print(f"\n❌ Unexpected response type: {type(response)}")
                 print(response)
                 return None
 
@@ -253,7 +259,7 @@ def call_llm(model, prompt, retries=3, delay=2):
             return response_text
 
         except Exception as e:
-            print(f"\n❌ Error processing response from {model} - {e}")
+            print(f"\n❌ Error processing response - {e}")
             print(response)
             return None
 
