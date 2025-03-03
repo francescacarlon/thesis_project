@@ -103,11 +103,16 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
         "CL": ["L", "CS"]
     }
 
-    prompt_number = next((key for key, value in PROMPT_FUNCTIONS.items() if value == prompt_function_name), None)
+    # Sort PROMPT_FUNCTIONS numerically before extracting prompt_number
+    sorted_prompt_keys = sorted(PROMPT_FUNCTIONS.keys(), key=lambda x: int(x))  # Sort keys numerically
+    sorted_prompts = {key: PROMPT_FUNCTIONS[key] for key in sorted_prompt_keys}  # Reorder dictionary
+
+    prompt_number = next((key for key, value in sorted_prompts.items() if value == prompt_function_name), None)
     if prompt_number is None:
         raise ValueError(f"Prompt function '{prompt_function_name}' is not in PROMPT_FUNCTIONS.")
 
-    prompt_key = f"prompt{prompt_number}"
+    prompt_key = f"prompt{prompt_number}"  # Now it's always ordered correctly!
+
 
     for i, (key, value) in enumerate(dataset.items()):
         if max_entries and i >= max_entries:
