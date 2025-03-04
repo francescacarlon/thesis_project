@@ -2171,6 +2171,48 @@
                             "DT": 0.09941520467836257,
                             "MD": 0.011695906432748537
                         }
+                    },
+                    "prompt4": {
+                        "text": "**Adapted Explanation:**  \nSyntactic constituency organizes words into hierarchical units (constituents), analogous to how composite data structures group primitives. Consider a noun phrase (NP) as a struct encapsulating a noun with modifiers (e.g., `struct NP { Det determiner; Nominal nominal; }`). Context-free grammars (CFGs) formalize this using production rules, like BNF in programming language syntax. For example:  \n```\nNP → ProperNoun | Det Nominal  \nDet → \"a\" | \"the\"  \n```  \nThese rules recursively generate valid word sequences, mirroring how a parser constructs an abstract syntax tree. A CFG’s “language” is the set of all valid derivations (grammatical sentences), akin to a compiler accepting syntactically correct code. Ungrammatical sentences are runtime errors—invalid permutations rejected by the grammar’s rules. This generative approach parallels formal language theory in automata, where CFGs define syntax hierarchies for both programming and natural languages.  \n\n**Key CS Links:**  \n- Parse trees ≈ Abstract Syntax Trees (ASTs)  \n- CFG productions ≈ BNF rules in language specs  \n- Grammaticality ≈ Syntax validation in compilers",
+                        "token_count": 148,
+                        "readability": {
+                            "flesch_reading_ease": 29.25,
+                            "flesch_kincaid_grade": 13.3
+                        },
+                        "pos": {
+                            "NNP": 0.16783216783216784,
+                            "NN": 0.38461538461538464,
+                            "VB": 0.06293706293706294,
+                            "IN": 0.08391608391608392,
+                            "JJ": 0.1048951048951049,
+                            "DT": 0.11188811188811189,
+                            "VBG": 0.03496503496503497,
+                            "RB": 0.02097902097902098,
+                            "VBN": 0.013986013986013986,
+                            "FW": 0.006993006993006993,
+                            "CC": 0.006993006993006993
+                        }
+                    },
+                    "prompt5": {
+                        "text": "Syntactic constituency organizes words into hierarchical units (constituents), analogous to how data structures group related elements. For example, a noun phrase (NP) acts like a structured object containing a noun and its modifiers, similar to a class instance in OOP. These units follow combinatorial rules defined by **context-free grammars (CFGs)** - familiar from programming language syntax. A CFG’s production rules (e.g., `NP → Det Nominal`) mirror how composite types are defined recursively, like nested structs or JSON schemas.  \n\nDerivations generate valid word sequences via rule applications, comparable to building an abstract syntax tree during compilation. The parse tree’s structure enforces grammaticality: sentences derivable via the CFG are \"valid syntax,\" while others are \"compile-time errors.\" For instance, `the flight` is grammatical (matches `Det → the`, `Noun → flight`), but `flight the` violates the NP rule, akin to a type mismatch.  \n\nGenerative grammars formalize this process, treating language as a set of strings produced by rule-based systems - much like defining all valid programs in a formal language (e.g., regex). Lexical entries (`Det → a | the`) act like terminal symbols in a parser’s token stream. This framework bridges linguistic structure and computational models of syntax validation.",
+                        "token_count": 186,
+                        "readability": {
+                            "flesch_reading_ease": 45.66,
+                            "flesch_kincaid_grade": 11.1
+                        },
+                        "pos": {
+                            "JJ": 0.15083798882681565,
+                            "NN": 0.37988826815642457,
+                            "VB": 0.07262569832402235,
+                            "IN": 0.11173184357541899,
+                            "VBN": 0.0223463687150838,
+                            "DT": 0.12290502793296089,
+                            "NNP": 0.061452513966480445,
+                            "VBG": 0.027932960893854747,
+                            "CC": 0.0223463687150838,
+                            "RB": 0.0223463687150838,
+                            "FW": 0.00558659217877095
+                        }
                     }
                 },
                 "CL": {
@@ -2237,6 +2279,49 @@
                             "RB": 0.02197802197802198,
                             "CD": 0.005494505494505495,
                             "VBG": 0.04395604395604396
+                        }
+                    },
+                    "prompt4": {
+                        "text": "**Adapted Explanation:**  \nSyntactic constituency organizes words into nested units (like LEGO blocks) that function together in sentence structure. For NLP, consider a noun phrase (NP) as a module combining elements (e.g., determiner + noun) to fill slots like sentence subjects. Context-free grammars (CFGs) formalize this using rewrite rules (e.g., `NP → Det Noun`) and a lexicon (word-to-category mappings), mirroring how programming languages define syntax. Hierarchical rule application generates derivations, visualized as parse trees (akin to abstract syntax trees in code compilation). A CFG’s formal language includes all validly constructed sentences, akin to grammatically correct code—strings violating the grammar are \"ungrammatical.\" This rule-based modeling aligns with generative grammar frameworks used in parser design, where syntax constraints ensure computational tractability in tasks like dependency parsing.  \n\n*Key bridges:*  \n- **CS analogy:** CFG rules ≈ BNF syntax definitions; parse trees ≈ ASTs.  \n- **NLP relevance:** Directly underpins constituency parsers and grammar-checking systems.  \n- **Formal language link:** Grammaticality mirrors valid/invalid outputs in rule-based generation.",
+                        "token_count": 144,
+                        "readability": {
+                            "flesch_reading_ease": 23.63,
+                            "flesch_kincaid_grade": 13.4
+                        },
+                        "pos": {
+                            "NNP": 0.13043478260869565,
+                            "NN": 0.42028985507246375,
+                            "VB": 0.08695652173913043,
+                            "IN": 0.09420289855072464,
+                            "VBN": 0.036231884057971016,
+                            "RB": 0.028985507246376812,
+                            "DT": 0.057971014492753624,
+                            "JJ": 0.07971014492753623,
+                            "VBG": 0.036231884057971016,
+                            "CC": 0.021739130434782608,
+                            "FW": 0.007246376811594203
+                        }
+                    },
+                    "prompt5": {
+                        "text": "Syntactic constituency describes how word groups function as coherent units (constituents) within hierarchical structures, analogous to how parse tree nodes represent nested linguistic patterns. For CL practitioners, this aligns with formal syntax modeling via context-free grammars (CFGs)—rule-based systems where non-terminal symbols (e.g., NP, VP) decompose into terminal symbols (words) through production rules. For example, an NP could expand to [Det + Nominal], mirroring dependency parsing or chunking in NLP pipelines.  \n\nCFGs generate valid syntactic structures through derivations, represented as inverted parse trees (rooted at S), akin to syntax trees in NLP toolkits like SpaCy or Stanford Parser. These grammars define a formal language: sentences derivable via rules are \"grammatical\" (like well-formed code adhering to a programming language’s syntax), while others are \"ungrammatical\" (akin to syntax errors). Hierarchical rule embedding allows recursion, critical for modeling nested constructs like relative clauses—similar to recursive function calls in programming.  \n\nThis approach underpins generative grammar frameworks, where rule-based systems explicitly model syntactic validity, paralleling early NLP systems’ use of handcrafted grammars for tasks like machine translation or text generation. While modern LLMs use statistical patterns rather than explicit CFGs, the conceptual foundation remains relevant for syntax-aware evaluation or grammar induction tasks.",
+                        "token_count": 189,
+                        "readability": {
+                            "flesch_reading_ease": 24.07,
+                            "flesch_kincaid_grade": 15.3
+                        },
+                        "pos": {
+                            "JJ": 0.16759776536312848,
+                            "NN": 0.36312849162011174,
+                            "VB": 0.0893854748603352,
+                            "IN": 0.1452513966480447,
+                            "VBN": 0.01675977653631285,
+                            "NNP": 0.09497206703910614,
+                            "DT": 0.03910614525139665,
+                            "VBG": 0.03910614525139665,
+                            "MD": 0.00558659217877095,
+                            "CC": 0.0223463687150838,
+                            "FW": 0.00558659217877095,
+                            "RB": 0.0111731843575419
                         }
                     }
                 }
@@ -3216,6 +3301,49 @@
                             "MD": 0.013071895424836602,
                             "RB": 0.026143790849673203
                         }
+                    },
+                    "prompt4": {
+                        "text": "In computational semantics, consider AGENT and THEME as abstract interface types in object-oriented programming. Just as multiple classes can implement the same interface, diverse sentence structures can realize these roles. For \"break\":  \n1. `john.break(window)` → AGENT=subject (like a method caller)  \n2. `rock.break(window)` → INSTRUMENT=subject (like a tool parameter)  \n3. `window.break()` → THEME=subject (passive voice ≈ static method)  \n\nThese alternations mirror function overloading—same core operation with varying parameter signatures. THEME acts as a required argument (like a main input tensor), AGENT as an optional initiator (training process), INSTRUMENT as a secondary modifier (optimizer hyperparameter). This role system enables NLP models to cluster syntactic variations under shared semantic prototypes, similar to how dimensionality reduction groups related feature vectors.",
+                        "token_count": 103,
+                        "readability": {
+                            "flesch_reading_ease": 23.43,
+                            "flesch_kincaid_grade": 13.5
+                        },
+                        "pos": {
+                            "IN": 0.13,
+                            "JJ": 0.17,
+                            "NN": 0.4,
+                            "VB": 0.07,
+                            "NNP": 0.07,
+                            "CC": 0.01,
+                            "MD": 0.02,
+                            "DT": 0.1,
+                            "VBG": 0.02,
+                            "VBN": 0.01
+                        }
+                    },
+                    "prompt5": {
+                        "text": "Thematic roles in linguistics are like parameter types in a function signature, defining the roles entities play in an action. In \"Sasha broke the window\" and \"Pat opened the door,\" **Sasha** and **Pat** are **AGENTS**—they act as the \"functions\" intentionally initiating the action (like a `for` loop actively modifying an array). The **window** and **door** are **THEMES**—the \"data structures\" being directly affected (like an array mutated by `push()`). An **INSTRUMENT** (e.g., \"a rock\" in \"John broke the window with a rock\") is an optional tool parameter, akin to passing a sorting algorithm a comparator function.  \n\n**Verb alternations** mirror function overloading: the same core action (\"break\") can be expressed with different argument structures, similar to a method accepting varying parameter orders or optional args. For example:  \n- `break(AGENT=John, THEME=window, INSTRUMENT=rock)`  \n- `break(THEME=window)` (passive voice: `window.wasBrokenBy(John)`)  \n- `break(INSTRUMENT=rock, THEME=window)` (\"The rock broke the window\")  \n\nThese roles generalize argument patterns across contexts, much like interfaces enforce consistent method signatures despite varying implementations.",
+                        "token_count": 152,
+                        "readability": {
+                            "flesch_reading_ease": 34.76,
+                            "flesch_kincaid_grade": 13.3
+                        },
+                        "pos": {
+                            "JJ": 0.05333333333333334,
+                            "NN": 0.37333333333333335,
+                            "IN": 0.11333333333333333,
+                            "VB": 0.06,
+                            "DT": 0.15333333333333332,
+                            "VBG": 0.06,
+                            "NNP": 0.06666666666666667,
+                            "VBN": 0.04666666666666667,
+                            "CC": 0.02666666666666667,
+                            "RB": 0.02666666666666667,
+                            "FW": 0.006666666666666667,
+                            "RP": 0.006666666666666667,
+                            "MD": 0.006666666666666667
+                        }
                     }
                 },
                 "CL": {
@@ -3278,6 +3406,48 @@
                             "NNP": 0.14,
                             "VBN": 0.05333333333333334,
                             "CC": 0.006666666666666667
+                        }
+                    },
+                    "prompt4": {
+                        "text": "In NLP, thematic roles like AGENT and THEME abstractly map *who does what* in events, regardless of syntactic structure. For example:  \n- **AGENT** = intentional initiator (e.g., \"John\" in \"John broke the window\" or \"[The window] was broken **by John**\").  \n- **THEME** = entity directly affected (e.g., \"window\" in both active/passive forms).  \n\nThis mirrors how semantic role labeling (SRL) in NLP pipelines extracts *who* and *what* consistently, even when syntax varies (e.g., \"A rock broke the window\" assigns THEME to \"window\" and INSTRUMENT to \"rock\"). Verbs like *break* exhibit **argument structure alternations**—flexible syntactic frames (active, passive, instrumental) while preserving core roles. Computational models leverage these abstractions to generalize across paraphrases or languages, similar to normalizing diverse input formats into unified semantic graphs for tasks like relation extraction or machine translation.  \n\nKey insight: Thematic roles decouple event semantics from surface syntax, enabling robust pattern matching in text—vital for training LLMs on \"who did what\" despite grammatical variation.",
+                        "token_count": 147,
+                        "readability": {
+                            "flesch_reading_ease": 39.13,
+                            "flesch_kincaid_grade": 11.6
+                        },
+                        "pos": {
+                            "IN": 0.14814814814814814,
+                            "NNP": 0.1111111111111111,
+                            "JJ": 0.1259259259259259,
+                            "NN": 0.34074074074074073,
+                            "CC": 0.044444444444444446,
+                            "RB": 0.037037037037037035,
+                            "VB": 0.05925925925925926,
+                            "VBN": 0.044444444444444446,
+                            "DT": 0.05185185185185185,
+                            "VBG": 0.037037037037037035
+                        }
+                    },
+                    "prompt5": {
+                        "text": "In NLP and semantic role labeling, consider how predicate-argument structures map to abstract semantic roles across syntactic variations. Take the sentences \"Sasha broke the window\" and \"Pat opened the door\": both subjects (Sasha/Pat) fulfill the AGENT role—intentional actors (typically animate) initiating actions. The objects (window/door) serve as THEME—inanimate entities directly affected by the action. These roles persist across syntactic frames, similar to how dependency parses generalize across active/passive constructions. For instance, \"John broke the window (AGENT-THEME)\" vs. \"The window broke (THEME-only)\" demonstrate diathesis alternations, where core semantics remain stable despite surface-form shifts. This mirrors how verbs like *break* allow argument structure flexibility (AGENT/THEME/INSTRUMENT) in frameworks like PropBank. Such alternations are critical for tasks like semantic parsing, where models must disambiguate roles regardless of syntactic realization (e.g., \"The rock [INSTRUMENT] broke the window\" vs. \"John [AGENT] broke the window with a rock\"). These generalizations enable LLMs to map diverse surface forms to unified event representations, akin to how FrameNet captures role invariance across lexico-syntactic contexts.",
+                        "token_count": 150,
+                        "readability": {
+                            "flesch_reading_ease": 30.97,
+                            "flesch_kincaid_grade": 12.6
+                        },
+                        "pos": {
+                            "IN": 0.11510791366906475,
+                            "NNP": 0.07913669064748201,
+                            "CC": 0.014388489208633094,
+                            "JJ": 0.1079136690647482,
+                            "NN": 0.3669064748201439,
+                            "VB": 0.1079136690647482,
+                            "DT": 0.11510791366906475,
+                            "VBN": 0.050359712230215826,
+                            "RB": 0.02158273381294964,
+                            "VBG": 0.007194244604316547,
+                            "MD": 0.007194244604316547,
+                            "FW": 0.007194244604316547
                         }
                     }
                 }
@@ -4276,6 +4446,49 @@
                             "VBG": 0.03424657534246575,
                             "CC": 0.0136986301369863
                         }
+                    },
+                    "prompt4": {
+                        "text": "In computational semantics, a **word sense** is a distinct meaning variant of a term, analogous to how a single function name in code might have overloaded implementations (e.g., `mouse` as input device vs. animal). Key semantic relations include:  \n1. **Synonyms**: Different terms mapping to the same semantic value, like aliases in programming (e.g., `vomit`/`throw_up` ≈ `sort()`/`arrange()`).  \n2. **Antonyms**: Binary opposites, akin to Boolean complements (e.g., `long`/`short` ≈ `true`/`false` in logic gates).  \n3. **Hyponymy/Hypernymy**: Inheritance hierarchies (e.g., `Car` is a subclass of `Vehicle` in OOP; `dog` → `animal` mirrors `LinkedList` → `List`).  \n4. **Meronymy**: Compositional relationships, like components in a data structure (e.g., `wheel` is a meronym of `car` ≈ `Node` is part of `LinkedList`).  \n\nLexical resources define senses via structured entries (like API documentation), enabling disambiguation algorithms to treat word meaning as a multi-label classification problem.",
+                        "token_count": 122,
+                        "readability": {
+                            "flesch_reading_ease": 42.48,
+                            "flesch_kincaid_grade": 10.3
+                        },
+                        "pos": {
+                            "IN": 0.13675213675213677,
+                            "JJ": 0.15384615384615385,
+                            "NN": 0.42735042735042733,
+                            "DT": 0.07692307692307693,
+                            "VB": 0.07692307692307693,
+                            "MD": 0.008547008547008548,
+                            "VBN": 0.008547008547008548,
+                            "RB": 0.017094017094017096,
+                            "NNP": 0.06837606837606838,
+                            "VBG": 0.017094017094017096,
+                            "FW": 0.008547008547008548
+                        }
+                    },
+                    "prompt5": {
+                        "text": "In NLP, a **word sense** is like a subclass in object-oriented programming—distinct variations of a base \"word\" class. For example, \"mouse\" has subclasses `mouse1` (computer device) and `mouse2` (animal), similar to how `Animal` and `Device` might inherit from a base `Entity` class.  \n\n**Glosses** are docstrings for word senses—structured explanations defining their semantic behavior, much like code comments specifying a function’s purpose.  \n\n**Synonyms** are semantic aliases: two words (lemmas) mapping to the same sense, like `vomit` and `throw_up` being functions with identical outputs but different names.  \n\n**Antonyms** are semantic inverses, analogous to complementary boolean flags (e.g., `is_hot` vs `is_cold`) or opposing optimization objectives (minimizing vs maximizing loss).  \n\n**Hyponymy** is an inheritance hierarchy: `Car` is a subclass (hyponym) of `Vehicle`, just as `Vehicle` is a superclass (hypernym) of `Car`.  \n\n**Meronymy** models composition: `Wheel` is a component (meronym) of `Car`, like a `Tensor` object being part of a `NeuralNetwork` class (holonym).  \n\nThese relationships structure semantic networks similarly to how OOP or data structures organize code.",
+                        "token_count": 154,
+                        "readability": {
+                            "flesch_reading_ease": 36.28,
+                            "flesch_kincaid_grade": 12.7
+                        },
+                        "pos": {
+                            "IN": 0.10884353741496598,
+                            "NNP": 0.06802721088435375,
+                            "DT": 0.08843537414965986,
+                            "NN": 0.43537414965986393,
+                            "VB": 0.08163265306122448,
+                            "CC": 0.04081632653061224,
+                            "JJ": 0.08163265306122448,
+                            "MD": 0.006802721088435374,
+                            "VBG": 0.047619047619047616,
+                            "RB": 0.027210884353741496,
+                            "VBN": 0.006802721088435374,
+                            "CD": 0.006802721088435374
+                        }
                     }
                 },
                 "CL": {
@@ -4335,6 +4548,49 @@
                             "VBG": 0.04,
                             "VBN": 0.008,
                             "CC": 0.008
+                        }
+                    },
+                    "prompt4": {
+                        "text": "In computational linguistics, a **word sense** represents a distinct meaning variant of a term, critical for tasks like word sense disambiguation (WSD). For instance, in NLP models, contextual embeddings (e.g., BERT) distinguish \"mouse\" as a computer device versus an animal by analyzing co-occurring tokens. Dictionaries and resources like WordNet formalize senses via **glosses** (textual definitions), enabling supervised WSD training.  \n\n**Semantic relations** structure lexical knowledge:  \n- **Synonyms**: Senses with near-identical meanings (e.g., \"car/automobile\"), used in paraphrase generation or data augmentation.  \n- **Antonyms**: Opposing meanings (e.g., \"hot/cold\"), leveraged in sentiment analysis to detect polarity shifts.  \n- **Hyponymy/Hypernymy**: Hierarchical \"is-a\" relations (e.g., \"car → vehicle\"), foundational for taxonomies in knowledge graphs or entity linking (e.g., GPT-4 resolving \"vehicle\" mentions to subclasses).  \n- **Meronymy**: Part-whole relations (e.g., \"wheel → car\"), applied in QA systems to infer component queries.  \n\nThese relations are encoded in ontologies (WordNet) or learned implicitly by LLMs through distributional patterns in training corpora.",
+                        "token_count": 132,
+                        "readability": {
+                            "flesch_reading_ease": 27.08,
+                            "flesch_kincaid_grade": 12.1
+                        },
+                        "pos": {
+                            "IN": 0.16279069767441862,
+                            "JJ": 0.10077519379844961,
+                            "NN": 0.4186046511627907,
+                            "DT": 0.046511627906976744,
+                            "VB": 0.06201550387596899,
+                            "NNP": 0.08527131782945736,
+                            "VBG": 0.03875968992248062,
+                            "CC": 0.031007751937984496,
+                            "VBN": 0.046511627906976744,
+                            "RB": 0.007751937984496124
+                        }
+                    },
+                    "prompt5": {
+                        "text": "In computational linguistics, a **word sense** represents a distinct meaning variant of a lexical item, akin to how a single word embedding might cluster into multiple vectors for different contexts. For example, *mouse* splits into a *computer device* sense (WSD tag \"mouse1\") and a *rodent* sense (\"mouse2\"), paralleling how BERT disambiguates polysemous tokens via attention mechanisms. Dictionaries formalize these senses through **glosses**—structured definitions that serve as training signals for tasks like semantic role labeling or supervised word sense disambiguation (e.g., WordNet’s \"bank: financial institution\" vs. \"riverbank\").  \n\n**Synonyms** arise when two lemmas share identical senses (e.g., *car/automobile*), critical for paraphrase generation or coreference resolution. **Antonyms** (e.g., *hot/cold*) model oppositional relations, useful in sentiment analysis or contrastive learning. **Hyponymy** defines hierarchical \"is-a\" relationships, such as *car → vehicle*—a structure foundational to ontologies like DBpedia, where hypernyms (broader categories) enable entity typing in information extraction. Conversely, **meronymy** encodes part-whole relations (e.g., *wheel → car*), analogous to component detection in frame semantics or dependency parsing. These relations mirror inheritance hierarchies in OOP (hyponymy) or system decomposition in software design (meronymy), bridging linguistic theory to computational workflows like knowledge graph construction.",
+                        "token_count": 174,
+                        "readability": {
+                            "flesch_reading_ease": 20.68,
+                            "flesch_kincaid_grade": 14.5
+                        },
+                        "pos": {
+                            "IN": 0.12121212121212122,
+                            "JJ": 0.12121212121212122,
+                            "NN": 0.4727272727272727,
+                            "DT": 0.048484848484848485,
+                            "VB": 0.09090909090909091,
+                            "FW": 0.012121212121212121,
+                            "VBG": 0.024242424242424242,
+                            "MD": 0.006060606060606061,
+                            "NNP": 0.048484848484848485,
+                            "CC": 0.03636363636363636,
+                            "VBN": 0.006060606060606061,
+                            "CD": 0.006060606060606061,
+                            "RB": 0.006060606060606061
                         }
                     }
                 }
@@ -5341,6 +5597,48 @@
                             "RB": 0.006493506493506494,
                             "CC": 0.012987012987012988
                         }
+                    },
+                    "prompt4": {
+                        "text": "Phonetic representations can be viewed as encoding schemes for speech sounds. The International Phonetic Alphabet (IPA) acts like a universal character encoding standard (similar to Unicode) where each symbol maps to an atomic speech unit. Unlike efficient programming language syntax, English orthography has poor type inference - the same \"variable\" (letter) can represent different \"values\" (sounds) based on context, while languages like Spanish have more consistent static typing.  \n\nSpeech production resembles a physical state machine: articulators (actuators like lips/tongue) modify airflow parameters (pressure/turbulence) through constrained geometries (oral/nasal cavities). Consonants are classified by their collision detection zones (place of articulation):  \n\n- Coordinate systems: Bilabial (lip collision: [p],[b]), Labiodental (lip-teeth: [f],[v]), Alveolar (ridge contact: [t],[s])  \n- Operation types (manner of articulation):  \n  - Interruptions: Stops ([p]/[b] = SIGKILL vs SIGTERM airflow blocks)  \n  - Turbulence generators: Fricatives ([s],[z] = bitstream noise)  \n  - Binary flags: Voicing ([b] = 1, [p] = 0)  \n\nExamples: [s] = alveolar::fricative(voiced=False), [m] = bilabial::nasal(voiced=True). This feature engineering allows discrete representation of continuous speech signals for ML pipelines.",
+                        "token_count": 154,
+                        "readability": {
+                            "flesch_reading_ease": 11.45,
+                            "flesch_kincaid_grade": 18.1
+                        },
+                        "pos": {
+                            "JJ": 0.12666666666666668,
+                            "NN": 0.43333333333333335,
+                            "MD": 0.013333333333333334,
+                            "VB": 0.08666666666666667,
+                            "VBN": 0.02666666666666667,
+                            "IN": 0.1,
+                            "VBG": 0.02,
+                            "DT": 0.04666666666666667,
+                            "NNP": 0.12666666666666668,
+                            "RB": 0.006666666666666667,
+                            "FW": 0.006666666666666667,
+                            "SYM": 0.006666666666666667
+                        }
+                    },
+                    "prompt5": {
+                        "text": "Phonetic transcription encodes word pronunciation as strings of discrete units (phones), akin to tokenization in NLP. The International Phonetic Alphabet (IPA) acts as a standardized encoding schema – like Unicode for speech sounds – where each symbol maps to a specific articulatory configuration.  \n\nEnglish spelling-to-sound mapping is highly irregular (like an inconsistent API), while Spanish follows predictable rules (similar to regex patterns). Articulatory phonetics analyzes how airflow is algorithmically transformed by biological \"hardware\" – lips, tongue, and vocal cords acting as physical operators.  \n\nConsonants are classified by:  \n1. **Place of Articulation** (data source):  \n   - Bilabial [p]: Keyboard input (both lips as dual keypress)  \n   - Velar [k]: Touchscreen swipe (tongue contact with soft palate)  \n\n2. **Manner of Articulation** (processing method):  \n   - Stops [t]/[d]: Binary I/O (complete airflow blockage then release)  \n   - Fricatives [s]: Stream processing (continuous turbulent airflow)  \n   - Nasals [m]: Parallel processing (airflow diverted to nasal channel)  \n\nVoicing adds a binary feature flag – [b] (vocal cord vibration = 1) vs [p] (0). Affricates like [ch] combine stop and fricative operations in a single function call. This feature engineering enables precise speech sound classification, similar to clustering algorithms in ML.",
+                        "token_count": 175,
+                        "readability": {
+                            "flesch_reading_ease": 25.8,
+                            "flesch_kincaid_grade": 14.6
+                        },
+                        "pos": {
+                            "JJ": 0.20833333333333334,
+                            "NN": 0.40476190476190477,
+                            "IN": 0.10714285714285714,
+                            "NNP": 0.07738095238095238,
+                            "DT": 0.05357142857142857,
+                            "VB": 0.07738095238095238,
+                            "RB": 0.017857142857142856,
+                            "VBN": 0.017857142857142856,
+                            "CC": 0.011904761904761904,
+                            "VBG": 0.023809523809523808
+                        }
                     }
                 },
                 "CL": {
@@ -5407,6 +5705,45 @@
                             "CD": 0.005376344086021506,
                             "FW": 0.010752688172043012,
                             "CC": 0.005376344086021506
+                        }
+                    },
+                    "prompt4": {
+                        "text": "In computational terms, phones function as atomic phonetic tokens mapped via IPA—a Unicode-like standardization system for cross-lingual speech sound representation. Orthography-to-phone alignment varies in predictability: English resembles irregular grapheme-to-phoneme conversion (e.g., \"ough\" in *though* vs. *through*), while Spanish aligns with rule-based tokenization. Articulatory phonetics analyzes speech sound generation as biomechanical feature engineering: **place** (articulator positions: bilabial [p], alveolar [t]) and **manner** (airflow modulation: fricatives [s], stops [k]) act as phonetic feature sets. These classes parallel acoustic model training data, where voicing (vibrational [z] vs. non-vibrational [s]) or nasality ([m]) serve as discriminative features for speech recognition systems. For NLP, this relates to TTS pipelines converting spelling to pronunciation using context-sensitive rules—akin to disambiguating homographs via syntactic context.",
+                        "token_count": 105,
+                        "readability": {
+                            "flesch_reading_ease": 14.36,
+                            "flesch_kincaid_grade": 14.9
+                        },
+                        "pos": {
+                            "IN": 0.15841584158415842,
+                            "JJ": 0.21782178217821782,
+                            "NN": 0.43564356435643564,
+                            "VBN": 0.009900990099009901,
+                            "NNP": 0.039603960396039604,
+                            "VB": 0.04950495049504951,
+                            "CC": 0.019801980198019802,
+                            "DT": 0.019801980198019802,
+                            "VBG": 0.04950495049504951
+                        }
+                    },
+                    "prompt5": {
+                        "text": "Phonetic transcription represents speech sounds as strings using symbols from systems like the International Phonetic Alphabet (IPA), analogous to Unicode standardization for multilingual text processing. English grapheme-to-phone mapping is highly irregular—similar to ambiguous tokenization in NLP—where a single letter (e.g., \"c\" in \"cat\" vs. \"city\") maps unpredictably to sounds, unlike Spanish’s rule-like transparency. Articulatory phonetics analyzes how airflow is shaped by vocal tract structures—a physical counterpart to acoustic feature extraction in speech recognition. Consonants are classified by *place of articulation* (e.g., bilabial [p], alveolar [t], velar [k]) and *manner of articulation* (e.g., stops [p/t/k], fricatives [s/z], approximants [w]). Voicing—vocal fold vibration as in [b] vs. [p]—parallels binary feature encoding in phonological models. These distinctions underpin grapheme-to-phoneme conversion tasks and multilingual ASR/TTS systems, where Spanish’s regularity simplifies alignment, while English requires context-aware models.",
+                        "token_count": 118,
+                        "readability": {
+                            "flesch_reading_ease": 17.0,
+                            "flesch_kincaid_grade": 13.9
+                        },
+                        "pos": {
+                            "JJ": 0.1875,
+                            "NN": 0.39285714285714285,
+                            "VB": 0.10714285714285714,
+                            "IN": 0.15178571428571427,
+                            "VBG": 0.017857142857142856,
+                            "DT": 0.026785714285714284,
+                            "NNP": 0.05357142857142857,
+                            "RB": 0.017857142857142856,
+                            "VBN": 0.026785714285714284,
+                            "CC": 0.017857142857142856
                         }
                     }
                 }
@@ -6410,6 +6747,50 @@
                             "FW": 0.006711409395973154,
                             "UH": 0.006711409395973154
                         }
+                    },
+                    "prompt4": {
+                        "text": "In linguistics, consider a feedforward network as a hierarchical processing system mirroring how language is structured across distinct analytical levels (e.g., phonetics → syntax → semantics). Imagine three sequential modules:  \n\n1. **Input Module**: Receives raw linguistic data (like acoustic features or word tokens), analogous to phonetic transcription.  \n2. **Hidden Module**: Acts as an abstract \"grammar\" layer, combining weighted rules—akin to how phonological or syntactic constraints assign priority to certain patterns. For instance, just as vowel harmony rules apply weighted preferences across segments, this layer mathematically blends inputs (using operations like *Wx + b*) and applies thresholds (activation functions) to filter signals, akin to allophonic variation rules.  \n3. **Output Module**: Produces a structured decision (e.g., parsing a sentence or disambiguating meaning), similar to semantic role labeling.  \n\nData flows strictly forward, like language processing in the brain: once a phonetic cue is interpreted as a phoneme, it isn’t \"re-analyzed\" retroactively. The system’s efficiency mirrors how syntactic trees are built incrementally, with each layer refining representation without feedback loops.",
+                        "token_count": 158,
+                        "readability": {
+                            "flesch_reading_ease": 21.09,
+                            "flesch_kincaid_grade": 14.4
+                        },
+                        "pos": {
+                            "IN": 0.10135135135135136,
+                            "NN": 0.3716216216216216,
+                            "VB": 0.08783783783783784,
+                            "DT": 0.07432432432432433,
+                            "JJ": 0.14189189189189189,
+                            "VBG": 0.04054054054054054,
+                            "VBN": 0.02702702702702703,
+                            "NNP": 0.060810810810810814,
+                            "CD": 0.006756756756756757,
+                            "CC": 0.02702702702702703,
+                            "RB": 0.05405405405405406,
+                            "FW": 0.006756756756756757
+                        }
+                    },
+                    "prompt5": {
+                        "text": "A feedforward network can be likened to a strictly hierarchical linguistic processing system, where information flows unidirectionally—like parsing a sentence through successive layers of analysis without feedback. Imagine three stages:  \n\n1. **Input Layer**: This acts as the \"phonetic transcription\" of raw data, where each unit represents a discrete feature (e.g., acoustic properties or lexical tokens).  \n\n2. **Hidden Layer(s)**: These function like intermediate syntactic or semantic representations. Each hidden unit combines input features through weighted rules—analogous to how phonological rules prioritize certain features (e.g., voicing or place of articulation). The weights act like the \"strength\" of a feature’s influence, while biases adjust activation thresholds, similar to how a phonological process might only apply if a feature surpasses a critical value. The hidden layer’s computation—**h = σ(Wx + b)**—can be compared to applying a non-linear phonological rule (e.g., sigmoid ≈ a gradual lenition process) to a weighted combination of inputs.  \n\n3. **Output Layer**: This produces the final \"parse,\" such as a grammatical category or semantic interpretation, derived from the transformed hidden representation.  \n\nThe network’s architecture is **fully connected**, meaning every feature in one layer influences all units in the next—akin to how all phonemes in a syllable might contribute to its syllabic structure. Crucially, there are **no cycles**; the process is strictly feedforward, unlike recursive syntactic trees. Computations rely on structured transformations (matrix operations), mirroring how feature matrices in phonology are systematically modified.  \n\n**Example**: Classifying a word’s part-of-speech could involve input (phonetic features), hidden layers (morphophonemic rules), and output (noun/verb decision), with each step applying weighted, thresholded transformations.",
+                        "token_count": 247,
+                        "readability": {
+                            "flesch_reading_ease": 20.48,
+                            "flesch_kincaid_grade": 14.6
+                        },
+                        "pos": {
+                            "DT": 0.14285714285714285,
+                            "JJ": 0.16883116883116883,
+                            "NN": 0.3246753246753247,
+                            "MD": 0.017316017316017316,
+                            "VB": 0.08225108225108226,
+                            "VBN": 0.03463203463203463,
+                            "RB": 0.030303030303030304,
+                            "VBG": 0.030303030303030304,
+                            "IN": 0.09523809523809523,
+                            "NNP": 0.04329004329004329,
+                            "CD": 0.008658008658008658,
+                            "CC": 0.021645021645021644
+                        }
                     }
                 },
                 "CL": {
@@ -6474,6 +6855,47 @@
                             "VB": 0.05759162303664921,
                             "VBG": 0.04712041884816754,
                             "FW": 0.005235602094240838
+                        }
+                    },
+                    "prompt4": {
+                        "text": "**Adapted Explanation:**  \nA feedforward neural network processes information sequentially through distinct computational layers—input, hidden, and output—without feedback loops. Imagine it like a pipeline for feature extraction in NLP: raw input data (e.g., word embeddings) flows forward, undergoing transformations at each layer. Each hidden neuron applies a weighted sum (via matrix multiplication **Wx**) of inputs, adds a bias (**b**), then passes the result through an activation function (e.g., sigmoid **σ** or ReLU) to introduce non-linearity, akin to how syntactic or semantic features are combined in a parser. The output layer then maps these abstract representations to final predictions, such as classifying text sentiment or part-of-speech tags. This architecture mirrors the efficiency of linear algebra operations in vector space models, enabling scalable training via matrix-based computations—critical for tasks like language modeling or machine translation.  \n\n*Tailored for CL/NLP practitioners:*  \n- **Matrix operations** → Parallel to word embedding transformations.  \n- **Activation functions** → Non-linear decision boundaries in tasks like NER.  \n- **Layers** → Hierarchical feature abstraction, similar to parsing pipelines.  \n- **Output classification** → Direct analogy to sentiment/entity labeling.",
+                        "token_count": 156,
+                        "readability": {
+                            "flesch_reading_ease": 22.21,
+                            "flesch_kincaid_grade": 13.9
+                        },
+                        "pos": {
+                            "NNP": 0.0945945945945946,
+                            "NN": 0.38513513513513514,
+                            "DT": 0.08783783783783784,
+                            "JJ": 0.13513513513513514,
+                            "VB": 0.06756756756756757,
+                            "RB": 0.02702702702702703,
+                            "IN": 0.12162162162162163,
+                            "VBN": 0.013513513513513514,
+                            "CC": 0.033783783783783786,
+                            "FW": 0.006756756756756757,
+                            "VBG": 0.02702702702702703
+                        }
+                    },
+                    "prompt5": {
+                        "text": "A feedforward neural network is a layered architecture without feedback loops, where information flows unidirectionally from input nodes through computational layers to produce outputs—similar to how NLP pipelines process text through discrete stages (tokenization → feature extraction → classification). Inputs are encoded as vectors (like word embeddings), which are transformed via matrix operations in hidden layers. Each hidden neuron applies a weighted sum of inputs (matrix multiplication with a weight matrix **W** and bias vector **b**), followed by a nonlinear activation (e.g., sigmoid, ReLU)—analogous to feature engineering in corpus linguistics, but automated through learned parameters. These transformations create hierarchical representations, enabling tasks like sentiment classification. The output layer then maps this representation to a decision (e.g., class probabilities via softmax). Crucially, the fully connected design (all neurons linked across adjacent layers) allows efficient batch computation via tensor operations, mirroring how transformers process sequences in parallel. This architecture underpins many NLP components, though modern LLMs extend it with mechanisms like attention.",
+                        "token_count": 155,
+                        "readability": {
+                            "flesch_reading_ease": 19.77,
+                            "flesch_kincaid_grade": 14.9
+                        },
+                        "pos": {
+                            "DT": 0.08904109589041095,
+                            "JJ": 0.1232876712328767,
+                            "NN": 0.410958904109589,
+                            "VB": 0.0958904109589041,
+                            "IN": 0.14383561643835616,
+                            "RB": 0.02054794520547945,
+                            "NNP": 0.0410958904109589,
+                            "VBN": 0.04794520547945205,
+                            "CC": 0.0136986301369863,
+                            "VBG": 0.0136986301369863
                         }
                     }
                 }
@@ -7524,6 +7946,48 @@
                             "CD": 0.007246376811594203,
                             "RB": 0.043478260869565216
                         }
+                    },
+                    "prompt4": {
+                        "text": "A feedforward neural network operates like a structured language acquisition model, where the system learns to map inputs (x) to correct outputs (y) through iterative feedback, akin to a child refining grammar rules from corrected utterances. During training, the network adjusts hierarchical \"layers\" of weighted connections (analogous to syntactic or phonological rule hierarchies) to minimize discrepancies between its predictions (ŷ) and target outputs. The cross-entropy loss function acts as a probabilistic error detector, measuring mismatches like a linguist quantifying deviations from a phonemic inventory. To optimize these weights, gradient descent iteratively tunes parameters—similar to dialectal shift toward a prestige form—by calculating how each connection contributes to overall error. For multi-layered systems, error back-propagation reverses this process: like tracing a syntactic error through a parse tree, it distributes corrective signals backward across layers, computing partial derivatives (sensitivity of error to each weight) via chain rules reminiscent of phonological derivation ordering. This mirrors how linguistic competence emerges from feedback-driven adjustments across interacting subsystems.",
+                        "token_count": 155,
+                        "readability": {
+                            "flesch_reading_ease": 10.43,
+                            "flesch_kincaid_grade": 18.5
+                        },
+                        "pos": {
+                            "DT": 0.12056737588652482,
+                            "JJ": 0.1347517730496454,
+                            "NN": 0.41843971631205673,
+                            "VB": 0.09219858156028368,
+                            "IN": 0.1347517730496454,
+                            "FW": 0.0070921985815602835,
+                            "VBG": 0.05673758865248227,
+                            "VBN": 0.0070921985815602835,
+                            "CC": 0.014184397163120567,
+                            "RB": 0.014184397163120567
+                        }
+                    },
+                    "prompt5": {
+                        "text": "A feedforward neural network operates like a supervised language learning task, where the system is trained on input-output pairs (x, y), akin to teaching a learner to map phonetic inputs (e.g., acoustic signals) to semantic outputs (e.g., word meanings). The network generates an estimate (ŷ) for each input, analogous to a language model predicting a syntactic structure for a sentence. Training adjusts \"weights\" (W[i]) and \"biases\" (b[i])—parameters acting like language-specific rules at different layers (phonological, morphological, etc.)—to minimize the mismatch between ŷ and y.  \n\nThe **loss function** (e.g., cross-entropy) quantifies this mismatch, much like measuring the divergence between a predicted phoneme sequence and its attested form. **Gradient descent** iteratively refines parameters, akin to adjusting phonological or syntactic rules to reduce errors in a language learner’s output. Crucially, computing how early-layer parameters (e.g., phonetic feature weights) contribute to later errors (e.g., semantic misinterpretations) requires **backpropagation**. This mirrors tracing a semantic error back through syntactic, morphological, and phonological layers to identify where the representation diverged, adjusting each layer’s \"rules\" accordingly. The process ensures coordinated learning across hierarchical linguistic levels, optimizing the entire system’s performance.",
+                        "token_count": 178,
+                        "readability": {
+                            "flesch_reading_ease": 23.43,
+                            "flesch_kincaid_grade": 13.5
+                        },
+                        "pos": {
+                            "DT": 0.13333333333333333,
+                            "JJ": 0.15757575757575756,
+                            "NN": 0.3515151515151515,
+                            "VB": 0.09090909090909091,
+                            "IN": 0.07878787878787878,
+                            "VBG": 0.06666666666666667,
+                            "VBN": 0.01818181818181818,
+                            "UH": 0.006060606060606061,
+                            "NNP": 0.030303030303030304,
+                            "CC": 0.030303030303030304,
+                            "FW": 0.012121212121212121,
+                            "RB": 0.024242424242424242
+                        }
                     }
                 },
                 "CL": {
@@ -7588,6 +8052,47 @@
                             "CC": 0.006993006993006993,
                             "CD": 0.006993006993006993,
                             "RB": 0.03496503496503497
+                        }
+                    },
+                    "prompt4": {
+                        "text": "**Adapted Explanation:**  \nA feedforward neural network is a supervised ML model trained on labeled data (input **x** with target **y**). During training, it adjusts internal parameters (weights/biases) across layers to minimize prediction error (ŷ vs. **y**). This optimization uses:  \n1. **Cross-entropy loss** (common in NLP for tasks like text classification) to quantify error.  \n2. **Gradient descent** to iteratively update parameters by moving \"downhill\" on the loss landscape.  \n3. **Backpropagation**, which efficiently calculates gradients across layers by dynamically propagating error signals backward—akin to how dependency parsing traces grammatical relationships through a sentence’s structure.  \n\nFor NLP systems (e.g., sentiment analysis), backprop adjusts early-layer embeddings and weights based on final output errors, ensuring holistic model tuning without manual layer-by-layer derivative calculations.",
+                        "token_count": 109,
+                        "readability": {
+                            "flesch_reading_ease": 14.15,
+                            "flesch_kincaid_grade": 15.0
+                        },
+                        "pos": {
+                            "NNP": 0.0784313725490196,
+                            "NN": 0.39215686274509803,
+                            "DT": 0.049019607843137254,
+                            "JJ": 0.14705882352941177,
+                            "VB": 0.058823529411764705,
+                            "VBN": 0.029411764705882353,
+                            "IN": 0.14705882352941177,
+                            "FW": 0.00980392156862745,
+                            "RB": 0.029411764705882353,
+                            "VBG": 0.049019607843137254,
+                            "CC": 0.00980392156862745
+                        }
+                    },
+                    "prompt5": {
+                        "text": "A feedforward neural network is a supervised learning model where the system learns to map inputs **x** (e.g., text tokens or acoustic features) to target outputs **y** (e.g., POS tags or sentiment labels) by adjusting internal parameters. During training, the network predicts **ŷ** and iteratively minimizes the difference between **ŷ** and the gold-standard **y** using a **loss function** (e.g., cross-entropy, familiar from logistic regression in statistical NLP). To optimize parameters (weights **W** and biases **b** across layers), **gradient descent** adjusts these values in the direction that most reduces prediction error. \n\nHowever, computing gradients for deep networks—where parameters in early layers indirectly influence the final loss through many intermediate transformations—is non-trivial. This is solved by **backpropagation**, an algorithm that efficiently calculates gradients by applying the chain rule *backward* through the network’s layers. Analogous to how syntactic dependencies propagate constraints through a parse tree, backpropagation distributes error signals from the output layer back to earlier layers, enabling each parameter to update based on its contribution to the overall error. This mirrors how linguistic annotations (e.g., parse trees) propagate information bidirectionally in pipeline systems, but here it automates gradient computation for end-to-end optimization—critical for training modern LLMs with layered architectures.",
+                        "token_count": 187,
+                        "readability": {
+                            "flesch_reading_ease": 19.47,
+                            "flesch_kincaid_grade": 15.0
+                        },
+                        "pos": {
+                            "DT": 0.10919540229885058,
+                            "JJ": 0.13218390804597702,
+                            "NN": 0.3620689655172414,
+                            "VB": 0.10919540229885058,
+                            "NNP": 0.04597701149425287,
+                            "CC": 0.034482758620689655,
+                            "IN": 0.1206896551724138,
+                            "VBG": 0.034482758620689655,
+                            "RB": 0.040229885057471264,
+                            "VBN": 0.011494252873563218
                         }
                     }
                 }
@@ -8688,6 +9193,48 @@
                             "FW": 0.010309278350515464,
                             "CC": 0.010309278350515464
                         }
+                    },
+                    "prompt4": {
+                        "text": "**Adapted Explanation:**  \nIn syntax, imagine building a sentence’s structure like assembling a tree: each node (e.g., phrases, words) contributes to the whole. The \"backward pass\" is akin to dissecting how each element affects the sentence’s meaning, starting from the root (the full sentence) and tracing dependencies back to individual words. This mirrors the chain rule in calculus, where a change in one element propagates through layers—like altering a verb’s tense (local adjustment) ripples through its clause, then the entire sentence.  \n\nFor example, if sentence meaning *L* combines a clause (*c*) and an embedded phrase (*e*), *L = c·e*. Adjusting *c* directly impacts *L* by the value of *e* (∂L/∂c = e). But for deeper elements, like a verb (*a*) or noun (*b*), you chain contributions: *a* modifies *e*, which then scales *L* (∂L/∂a = ∂L/∂e · ∂e/∂a). Each node multiplies its local influence (how it shapes its direct parent) by the upstream impact (how the parent shapes the whole), much like syntactic heads govern their dependents’ roles. This layered analysis ensures precise adjustments, akin to diagnosing grammaticality by testing each constituent’s role in the structure.  \n\n**Key Analogy:** Syntax trees → computation graphs; chain rule → hierarchical dependency parsing; gradients → structural influence weights.",
+                        "token_count": 193,
+                        "readability": {
+                            "flesch_reading_ease": 51.58,
+                            "flesch_kincaid_grade": 10.9
+                        },
+                        "pos": {
+                            "NNP": 0.05056179775280899,
+                            "NN": 0.4044943820224719,
+                            "IN": 0.09550561797752809,
+                            "VBG": 0.0449438202247191,
+                            "DT": 0.15168539325842698,
+                            "VB": 0.07303370786516854,
+                            "JJ": 0.12359550561797752,
+                            "CC": 0.02247191011235955,
+                            "RB": 0.02247191011235955,
+                            "CD": 0.0056179775280898875,
+                            "FW": 0.0056179775280898875
+                        }
+                    },
+                    "prompt5": {
+                        "text": "In language processing models, a computation graph functions like a syntactic dependency tree, where each node represents an operation (e.g., combining morphemes or applying phonological rules). The *backward pass* operates analogously to tracing grammatical relationships bottom-up: just as syntactic features percolate from lexical heads to phrasal projections, gradients (quantified \"error signals\") propagate backward through the graph to adjust parameters.  \n\nThis uses a principle akin to *semantic compositionality*: if a complex expression *f(x) = u(v(x))* derives its meaning through nested functions, its structural sensitivity (derivative) equals the product of each component’s local sensitivity. For example, interpreting the semantic contribution of *\"unhappiness\"* involves first analyzing *\"-ness\" → \"happy\" → \"un-\"*, with each affix modifying the root’s meaning incrementally. Similarly, backward differentiation multiplies local sensitivities (∂u/∂v, ∂v/∂x) via the chain rule to quantify how each operation affects the final output.  \n\nNodes act like morphological rules: an upstream gradient (e.g., the semantic impact of *\"-ness\"*) combines with a local gradient (how *\"un-\"* modifies *\"happy\"*) to compute a downstream gradient (how *\"un-\"* ultimately affects *\"unhappiness\"*).  \n\nApplied to your example:  \n- ∂L/∂c = e is direct, like measuring how a phoneme’s duration (c) affects syllable weight (L).  \n- ∂L/∂a requires chaining, akin to calculating how a syntactic movement (a) impacts word order (e), which then influences sentence meaning (L).  \n- ∂L/∂b involves deeper nesting, paralleling how a phonological rule (b) alters segmental features (d), which modify syllable structure (e), ultimately affecting prosody (L).  \n\nThis mirrors how linguists reconstruct diachronic changes through intermediate synchronic states.",
+                        "token_count": 234,
+                        "readability": {
+                            "flesch_reading_ease": 17.23,
+                            "flesch_kincaid_grade": 15.8
+                        },
+                        "pos": {
+                            "IN": 0.07981220657276995,
+                            "NN": 0.38028169014084506,
+                            "DT": 0.12206572769953052,
+                            "JJ": 0.15492957746478872,
+                            "VB": 0.107981220657277,
+                            "VBG": 0.056338028169014086,
+                            "CC": 0.004694835680751174,
+                            "RB": 0.03755868544600939,
+                            "VBN": 0.018779342723004695,
+                            "NNP": 0.028169014084507043,
+                            "FW": 0.009389671361502348
+                        }
                     }
                 },
                 "CL": {
@@ -8751,6 +9298,48 @@
                             "FW": 0.006578947368421052,
                             "CC": 0.006578947368421052,
                             "RB": 0.006578947368421052
+                        }
+                    },
+                    "prompt4": {
+                        "text": "**Adapted Explanation:**  \nIn neural network training, the computation graph enables efficient backpropagation by tracing gradients through operations. Consider a loss \\( L \\) calculated via layers \\( A \\rightarrow D \\rightarrow E \\). To update weights (e.g., at layer \\( A \\)), we compute gradients backward:  \n\n1. **Local Gradients:** Each layer (e.g., \\( E \\)) calculates derivatives of its output w.r.t. inputs (like \\( \\partial E/\\partial D \\)).  \n2. **Chain Rule:** Gradients flow backward—multiplying local derivatives with upstream gradients. For \\( A \\), \\( \\partial L/\\partial A = (\\partial L/\\partial E) \\cdot (\\partial E/\\partial D) \\cdot (\\partial D/\\partial A) \\), akin to error signals adjusting parameters layer-by-layer.  \n3. **Direct vs. Chained Derivatives:** Parameters directly affecting \\( L \\) (e.g., \\( c \\) in \\( L = c \\cdot e \\)) have immediate gradients (\\( \\partial L/\\partial c = e \\)), while others chain through intermediate layers.  \n\nThis mirrors how LLMs propagate prediction errors backward to fine-tune embeddings and attention weights, layer by layer, ensuring precise updates via gradient descent.  \n\n---  \n**Tailored for CL/NLP Jury:** Uses familiar concepts (backprop, embeddings, attention), emphasizes layer-wise gradient chaining (critical in transformer architectures), and links to optimization in LLMs.",
+                        "token_count": 138,
+                        "readability": {
+                            "flesch_reading_ease": 33.0,
+                            "flesch_kincaid_grade": 11.9
+                        },
+                        "pos": {
+                            "NNP": 0.17557251908396945,
+                            "NN": 0.37404580152671757,
+                            "IN": 0.1297709923664122,
+                            "JJ": 0.10687022900763359,
+                            "DT": 0.030534351145038167,
+                            "VB": 0.10687022900763359,
+                            "VBG": 0.030534351145038167,
+                            "VBN": 0.015267175572519083,
+                            "RB": 0.007633587786259542,
+                            "FW": 0.007633587786259542,
+                            "CC": 0.015267175572519083
+                        }
+                    },
+                    "prompt5": {
+                        "text": "In neural network training (particularly for NLP tasks like machine translation), the computation graph enables efficient gradient calculation through backpropagation - analogous to how syntactic trees represent hierarchical language structure. The backward pass calculates partial derivatives using the chain rule from calculus: just as a dependency parse traces relationships between words, gradients flow inversely through computational nodes.  \n\nConsider a text classification model where loss \\( L \\) propagates through layers. For output layer gradients (\\( \\partial L/\\partial c \\)), we directly measure prediction error. Hidden layer gradients (e.g., \\( \\partial L/\\partial a \\)) require chaining derivatives across operations, like how POS tag probabilities depend on preceding word embeddings. Each network layer acts like a function composition \\( f(x) = u(v(x)) \\), where the total derivative becomes \\( du/dv \\cdot dv/dx \\) - mirroring how transformer layers process token sequences through attention and feed-forward sublayers. Nodes multiply upstream gradients (from later layers) with local gradients (layer-specific transformations), effectively distributing error signals to optimize parameters, similar to how language models adjust word embeddings based on contextual prediction errors.",
+                        "token_count": 156,
+                        "readability": {
+                            "flesch_reading_ease": 8.47,
+                            "flesch_kincaid_grade": 17.1
+                        },
+                        "pos": {
+                            "IN": 0.1232876712328767,
+                            "JJ": 0.1232876712328767,
+                            "NN": 0.4589041095890411,
+                            "RB": 0.0410958904109589,
+                            "NNP": 0.04794520547945205,
+                            "DT": 0.06164383561643835,
+                            "VB": 0.08904109589041095,
+                            "VBG": 0.03424657534246575,
+                            "FW": 0.00684931506849315,
+                            "CC": 0.00684931506849315,
+                            "VBN": 0.00684931506849315
                         }
                     }
                 }
@@ -9798,6 +10387,46 @@
                             "CC": 0.009433962264150943,
                             "VBN": 0.0047169811320754715
                         }
+                    },
+                    "prompt4": {
+                        "text": "**Adapted Explanation:**  \nA recurrent neural network (RNN) is a computational model designed to process sequences—like sentences or sound waves—by maintaining a \"memory\" of prior elements in the sequence. Imagine parsing a sentence: understanding the meaning of \"bank\" in \"I withdrew cash from the bank\" relies on knowing the preceding words (\"withdrew cash\"), much like how syntax depends on word order. Unlike simpler models that treat each input (e.g., a word) in isolation, an RNN loops its hidden layer’s output back into itself at each step. This loop acts like a mental notepad, retaining contextual clues (e.g., semantic coherence in a paragraph or phonetic patterns in speech). During training, the model adjusts how heavily it relies on past versus current information—akin to refining grammatical intuitions through exposure to more language data. The process mirrors how humans iteratively revise interpretations as a conversation unfolds.",
+                        "token_count": 138,
+                        "readability": {
+                            "flesch_reading_ease": 44.95,
+                            "flesch_kincaid_grade": 11.4
+                        },
+                        "pos": {
+                            "NNP": 0.03125,
+                            "NN": 0.3671875,
+                            "DT": 0.140625,
+                            "JJ": 0.1171875,
+                            "VB": 0.078125,
+                            "VBN": 0.0078125,
+                            "CC": 0.015625,
+                            "VBG": 0.046875,
+                            "IN": 0.1640625,
+                            "RB": 0.03125
+                        }
+                    },
+                    "prompt5": {
+                        "text": "A recurrent neural network (RNN) can be understood as a recursive structure in language processing, where earlier outputs feed back into the system to shape future decisions—similar to how a sentence’s syntax depends on prior clauses. Like parsing a continuous discourse, an RNN processes sequential data (e.g., phonemes in a word) by maintaining a \"working memory\" (hidden layer) that integrates new input (e.g., a phoneme) with contextual information from prior steps. This memory acts like anaphora resolution in discourse, where pronouns refer back to earlier nouns, ensuring coherence across time.  \n\nThe core mechanism resembles a feedback loop in phonology: Just as vowel harmony in a language (e.g., Turkish) propagates features forward in a word, the RNN’s hidden layer at time *t* combines current input (e.g., a speech sound) with its own prior state (analogous to phonological rules conditioned by preceding segments). This creates a chain of dependencies, allowing the network to \"remember\" patterns over extended sequences, much like tracking grammatical agreement in a multi-clause sentence.  \n\nTraining an RNN involves adjusting connection strengths (weights) through a process akin to error-driven language acquisition: If the network mispredicts a semantic role (e.g., agent vs. patient), it traces back through the sequence—like diagnosing a garden-path sentence—to refine its internal mappings. This \"backpropagation through time\" mirrors how a linguist might revise a syntactic analysis upon encountering a parsing inconsistency later in a text.",
+                        "token_count": 218,
+                        "readability": {
+                            "flesch_reading_ease": 35.27,
+                            "flesch_kincaid_grade": 13.1
+                        },
+                        "pos": {
+                            "DT": 0.1568627450980392,
+                            "JJ": 0.12745098039215685,
+                            "NN": 0.35294117647058826,
+                            "NNP": 0.024509803921568627,
+                            "MD": 0.00980392156862745,
+                            "VB": 0.08333333333333333,
+                            "VBN": 0.014705882352941176,
+                            "IN": 0.14215686274509803,
+                            "RB": 0.0392156862745098,
+                            "VBG": 0.049019607843137254
+                        }
                     }
                 },
                 "CL": {
@@ -9863,6 +10492,45 @@
                             "RB": 0.014218009478672985,
                             "CC": 0.009478672985781991,
                             "NNPS": 0.004739336492890996
+                        }
+                    },
+                    "prompt4": {
+                        "text": "An RNN processes sequences by dynamically updating a hidden state that serves as a compressed memory of previous inputs. Unlike feedforward networks (e.g., standard LLM layers), each step combines the current input (e.g., a word embedding) with the prior hidden state via learned weights (matrix **U**), enabling context-aware predictions—like using preceding words to resolve ambiguous token meanings in a sentence. Training unrolls these steps into a computational graph (**backpropagation through time**), optimizing how past context influences current decisions. For NLP tasks like POS tagging, this mirrors tracking grammatical agreement across a sentence, where verb tense depends on a subject mentioned earlier.",
+                        "token_count": 97,
+                        "readability": {
+                            "flesch_reading_ease": 37.5,
+                            "flesch_kincaid_grade": 12.2
+                        },
+                        "pos": {
+                            "DT": 0.13978494623655913,
+                            "NNP": 0.053763440860215055,
+                            "NN": 0.3333333333333333,
+                            "IN": 0.13978494623655913,
+                            "RB": 0.021505376344086023,
+                            "VBG": 0.07526881720430108,
+                            "JJ": 0.17204301075268819,
+                            "VB": 0.053763440860215055,
+                            "VBN": 0.010752688172043012
+                        }
+                    },
+                    "prompt5": {
+                        "text": "Recurrent Neural Networks (RNNs) are neural architectures designed to process sequential data (e.g., text, speech) by maintaining a dynamic \"memory\" of prior inputs. Unlike standard feedforward networks (which process each input independently), RNNs introduce a recurrent connection that allows the hidden layer at time step *t* to integrate both the current input (e.g., a word embedding *xₜ*) and the hidden state from the previous step *hₜ₋₁*. This recurrence enables the model to encode contextual information from earlier in the sequence, analogous to how linguistic context (e.g., preceding words in a sentence) informs tasks like part-of-speech tagging or coreference resolution.  \n\nThe recurrent loop is governed by a weight matrix **U** that updates the hidden state over time, effectively compressing the sequence history into a compact representation. During training, backpropagation through time (BPTT) unrolls the network across time steps, treating the temporal dependencies as a deep feedforward graph. This mirrors how language models like early LSTMs or GRUs learn long-range patterns in text corpora. While RNNs are computationally intensive due to sequential processing, their ability to handle variable-length inputs makes them foundational for tasks like machine translation or syntactic parsing, where local and global dependencies interact.",
+                        "token_count": 187,
+                        "readability": {
+                            "flesch_reading_ease": 34.86,
+                            "flesch_kincaid_grade": 13.2
+                        },
+                        "pos": {
+                            "JJ": 0.15028901734104047,
+                            "NNP": 0.057803468208092484,
+                            "VB": 0.09826589595375723,
+                            "NN": 0.35260115606936415,
+                            "VBN": 0.011560693641618497,
+                            "IN": 0.12138728323699421,
+                            "VBG": 0.028901734104046242,
+                            "DT": 0.12716763005780346,
+                            "RB": 0.023121387283236993,
+                            "CC": 0.028901734104046242
                         }
                     }
                 }
@@ -10906,6 +11574,49 @@
                             "FW": 0.005988023952095809,
                             "CC": 0.011976047904191617
                         }
+                    },
+                    "prompt4": {
+                        "text": "For linguists: Imagine training a system to track syntactic dependencies or discourse referents across a narrative. Basic recurrent networks struggle here—like a listener retaining only the last few words of a sentence, their \"working memory\" fades rapidly (vanishing gradients), losing earlier subjects or modifiers. LSTMs fix this by mimicking skilled storytellers: they consciously **forget** irrelevant details (e.g., discarded plot threads), **add** crucial new elements (e.g., character motivations), and **output** only context-appropriate structures (e.g., maintaining agreement with distant antecedents). This is managed via layered control mechanisms—akin to phonological rules applying cyclically—that selectively update a sustained \"context layer,\" ensuring coherence over long spans, much like managing anaphora or tense consistency in extended discourse.",
+                        "token_count": 104,
+                        "readability": {
+                            "flesch_reading_ease": 21.5,
+                            "flesch_kincaid_grade": 14.2
+                        },
+                        "pos": {
+                            "IN": 0.09,
+                            "NN": 0.38,
+                            "NNP": 0.02,
+                            "VBG": 0.1,
+                            "DT": 0.08,
+                            "VB": 0.04,
+                            "JJ": 0.14,
+                            "CC": 0.04,
+                            "RB": 0.07,
+                            "VBN": 0.04
+                        }
+                    },
+                    "prompt5": {
+                        "text": "For linguists analyzing sequential structures like discourse or syntax, standard recurrent neural networks (RNNs) face challenges akin to tracking long-distance dependencies in nested clauses. Just as a listener’s working memory fades when parsing a deeply embedded relative clause, RNNs struggle to retain early input signals—a computational \"attenuation\" where earlier linguistic elements (e.g., discourse topics) lose influence on later processing steps. This mirrors how prosodic or syntactic focus might decay across a lengthy utterance.  \n\nTo address this, architectures like long short-term memory (LSTM) networks introduce mechanisms analogous to syntactic or discourse management. Imagine a system with three metalinguistic \"gates\":  \n1. **Forget gate**: Discards contextually irrelevant features (e.g., dropping an expired topic marker after its referent is resolved).  \n2. **Add gate**: Incorporates new salient information (e.g., introducing a foregrounded constituent in a left-dislocation structure).  \n3. **Output gate**: Selects features relevant to the current processing step (e.g., maintaining subject-verb agreement across intervening clauses).  \n\nThese gates operate like parametric rules in a grammar, weighted to prioritize or suppress information flow. The LSTM’s \"context layer\" functions as a dynamic memory buffer, akin to tracking thematic roles or anaphora chains across a narrative. By learning which features to retain or discard—much like semantic priming or phonological buffering—the system mitigates the attenuation problem, enabling dependencies as distant as cataphoric references or cross-sentential coherence relations.",
+                        "token_count": 204,
+                        "readability": {
+                            "flesch_reading_ease": 31.38,
+                            "flesch_kincaid_grade": 12.5
+                        },
+                        "pos": {
+                            "IN": 0.09424083769633508,
+                            "NN": 0.3612565445026178,
+                            "VBG": 0.05759162303664921,
+                            "JJ": 0.16230366492146597,
+                            "CC": 0.041884816753926704,
+                            "NNP": 0.03664921465968586,
+                            "VB": 0.1099476439790576,
+                            "RB": 0.02617801047120419,
+                            "DT": 0.08376963350785341,
+                            "MD": 0.005235602094240838,
+                            "CD": 0.005235602094240838,
+                            "VBN": 0.010471204188481676,
+                            "FW": 0.005235602094240838
+                        }
                     }
                 },
                 "CL": {
@@ -10970,6 +11681,47 @@
                             "RB": 0.02617801047120419,
                             "VBN": 0.015706806282722512,
                             "MD": 0.005235602094240838
+                        }
+                    },
+                    "prompt4": {
+                        "text": "For NLP/CL practitioners: RNNs struggle to track long-range dependencies in sequences—like resolving coreference across paragraphs or modeling discourse structure—because their hidden states prioritize local context, and gradient signals diminish over time (vanishing gradients). LSTMs address this by introducing gated memory cells that dynamically manage context. Imagine a system with three neural \"filters\": a forget gate (pruning irrelevant information, e.g., outdated entity mentions), an input gate (updating context with salient features, like new discourse referents), and an output gate (focusing on task-relevant signals for the next prediction). These gates—controlled by learned weights—operate on the current input, previous hidden state, and cell state, forming an adaptive memory buffer. This architecture mirrors how transformers later used attention to scale context, but LSTMs achieved stepwise efficiency for sequential data, enabling early breakthroughs in machine translation and text generation.",
+                        "token_count": 126,
+                        "readability": {
+                            "flesch_reading_ease": 23.46,
+                            "flesch_kincaid_grade": 15.5
+                        },
+                        "pos": {
+                            "IN": 0.11570247933884298,
+                            "NN": 0.39669421487603307,
+                            "NNP": 0.024793388429752067,
+                            "VB": 0.049586776859504134,
+                            "VBG": 0.0743801652892562,
+                            "CC": 0.049586776859504134,
+                            "JJ": 0.15702479338842976,
+                            "DT": 0.08264462809917356,
+                            "RB": 0.01652892561983471,
+                            "CD": 0.008264462809917356,
+                            "VBN": 0.024793388429752067
+                        }
+                    },
+                    "prompt5": {
+                        "text": "Training recurrent neural networks (RNNs) for tasks requiring long-distance dependencies—like capturing syntactic structure or discourse coherence—is challenging due to their tendency to prioritize local context. This arises because hidden states in standard RNNs primarily encode recent inputs and decisions, while gradients (critical for learning) diminish exponentially over time (*vanishing gradients*), hindering the model’s ability to link distant events.  \n\nLSTMs address this by introducing a dedicated *memory cell* and gating mechanisms—akin to attention mechanisms in transformers, but sequential. These gates function like weighted filters:  \n- **Forget gate**: Prunes irrelevant information from the memory cell (e.g., discarding resolved pronouns in coreference resolution).  \n- **Add gate**: Integrates new, task-relevant information (e.g., embedding a newly introduced entity for later reference).  \n- **Output gate**: Selectively exposes memory content to influence the current hidden state (e.g., prioritizing subject-verb agreement cues for next-word prediction).  \n\nEach gate employs learnable weights that process the input, previous hidden state, and memory cell, enabling dynamic context management. This architecture mirrors how humans incrementally update working memory during language comprehension—retaining salient details while suppressing noise. LSTMs became foundational in pre-transformer NLP systems (e.g., early neural machine translation), where handling long-range dependencies directly impacted performance on tasks like semantic role labeling or dialogue modeling.",
+                        "token_count": 185,
+                        "readability": {
+                            "flesch_reading_ease": 13.75,
+                            "flesch_kincaid_grade": 15.1
+                        },
+                        "pos": {
+                            "VBG": 0.09090909090909091,
+                            "JJ": 0.1534090909090909,
+                            "NN": 0.39204545454545453,
+                            "NNP": 0.045454545454545456,
+                            "IN": 0.10227272727272728,
+                            "CC": 0.03409090909090909,
+                            "VB": 0.0625,
+                            "DT": 0.0625,
+                            "RB": 0.028409090909090908,
+                            "VBN": 0.028409090909090908
                         }
                     }
                 }
@@ -12033,6 +12785,50 @@
                             "FW": 0.0044444444444444444,
                             "MD": 0.0044444444444444444
                         }
+                    },
+                    "prompt4": {
+                        "text": "**Adapted Explanation for Linguistics Jury:**  \n\nThe multinomial naive Bayes classifier operates like a linguistic detective, deducing a text’s category (e.g., genre, author) by weighing two clues: **baseline category frequency** (how common a category is overall) and **feature-category alignment** (how strongly specific words signal a category). It treats a document as a *lexical frequency profile*—ignoring word order but tracking word counts, akin to quantifying a text’s \"vocabulary fingerprint.\"  \n\nTo classify, it selects the category with the highest combined score:  \n1. **Prior (baseline frequency):** Analogous to estimating the likelihood of encountering a rare vs. common grammatical construction in a corpus.  \n2. **Likelihood (feature alignment):** Assumes words act as independent cues (like phonemes in a phonotactic rule), multiplying each word’s probability within a category. For example, if \"sonorant\" and \"fricative\" are likelier in phonology papers than novels, their joint occurrence is naively treated as a product of individual probabilities.  \n\nThis \"naive\" independence assumption mirrors analyzing syntactic structures without considering hierarchical dependencies—efficient but theoretically simplified. The winning category maximizes:  \n**Final Score = (Baseline Category Frequency) × (Product of Word Probabilities per Category).**  \n\nLike identifying a language family through shared lexical roots, this method aggregates isolated cues into a probabilistic verdict, prioritizing transparency over structural nuance.",
+                        "token_count": 196,
+                        "readability": {
+                            "flesch_reading_ease": 10.8,
+                            "flesch_kincaid_grade": 16.2
+                        },
+                        "pos": {
+                            "NNP": 0.09042553191489362,
+                            "IN": 0.1276595744680851,
+                            "DT": 0.11702127659574468,
+                            "JJ": 0.16489361702127658,
+                            "NN": 0.3191489361702128,
+                            "VB": 0.047872340425531915,
+                            "VBG": 0.06382978723404255,
+                            "CD": 0.005319148936170213,
+                            "CC": 0.02127659574468085,
+                            "RB": 0.02127659574468085,
+                            "FW": 0.005319148936170213,
+                            "VBN": 0.015957446808510637
+                        }
+                    },
+                    "prompt5": {
+                        "text": "To linguists familiar with structural analysis but new to computational methods: Imagine categorizing texts by treating each document as a **lexical frequency inventory**—akin to a phoneme inventory, but ignoring positional relationships (like analyzing vowel distribution without considering syllable structure). This \"bag-of-words\" model approximates a text’s identity through raw token counts, much like quantifying morpheme frequency in a corpus.  \n\nThe **multinomial naïve Bayes classifier** operates like a probabilistic dialect identifier. It selects the most likely category (e.g., genre, language variety) by balancing two factors:  \n1. **Prior probability**: The baseline frequency of a category in your training data (e.g., how common \"academic papers\" are in your corpus).  \n2. **Likelihood**: How probable the observed word frequencies are within each category (e.g., the likelihood of encountering \"morphosyntax\" in academic vs. conversational texts).  \n\nCritically, it assumes **conditional independence** between features (words), similar to analyzing phonotactic rules without considering coarticulation effects—even though adjacent segments influence one another, we simplify by treating each phoneme’s probability as isolated. Mathematically, this lets us multiply individual word probabilities per category, just as we might compute the joint probability of independent phonological features.  \n\nThe classifier ultimately picks the category with the highest product of prior and likelihood probabilities, akin to identifying a language family by maximizing the alignment of lexical frequencies and typological priors. Like linear phonological rules combining discrete features, this model uses additive log-probabilities (a linear decision boundary) to classify texts.",
+                        "token_count": 225,
+                        "readability": {
+                            "flesch_reading_ease": 2.65,
+                            "flesch_kincaid_grade": 17.3
+                        },
+                        "pos": {
+                            "NN": 0.3380952380952381,
+                            "JJ": 0.18095238095238095,
+                            "IN": 0.1380952380952381,
+                            "CC": 0.01904761904761905,
+                            "NNP": 0.01904761904761905,
+                            "VBG": 0.06666666666666667,
+                            "DT": 0.11904761904761904,
+                            "VB": 0.07142857142857142,
+                            "RB": 0.02857142857142857,
+                            "CD": 0.009523809523809525,
+                            "MD": 0.004761904761904762,
+                            "FW": 0.004761904761904762
+                        }
                     }
                 },
                 "CS": {
@@ -12093,6 +12889,49 @@
                             "VBG": 0.07272727272727272,
                             "VBN": 0.024242424242424242,
                             "VB": 0.05454545454545454
+                        }
+                    },
+                    "prompt4": {
+                        "text": "The multinomial naive Bayes classifier is a probabilistic algorithm that assigns labels (e.g., spam/not spam) by calculating the most likely class for a given input based on feature statistics. Here’s how it works in CS terms:  \n\n1. **Input Representation**: Documents are treated as *feature vectors* of word frequencies, akin to a histogram (bag-of-words). Positional information is discarded, similar to how hash tables store keys without order.  \n\n2. **Probabilistic Decision**: For a document \\(d\\), the classifier selects the class \\(\\hat{c}\\) that maximizes \\(P(c) \\cdot \\prod_{f \\in d} P(f \\mid c)\\), where:  \n   - \\(P(c)\\) is the *prior* (class frequency in training data, like class imbalance in a dataset).  \n   - \\(P(f \\mid c)\\) is the *likelihood* (probability of observing feature \\(f\\) in class \\(c\\), computed via smoothed frequency counts).  \n\n3. **Simplifications**:  \n   - **Conditional Independence**: Features (words) are assumed independent given the class—analogous to assuming pixels in a grayscale image are independent for quick probability calculations, even though correlations exist.  \n   - **Linear Classification**: The decision boundary is a weighted sum of log probabilities, akin to logistic regression but with weights derived from likelihood ratios instead of gradient descent.  \n\n**Example**: For spam detection, the model multiplies the prior probability of \"spam\" by the likelihoods of words like \"free\" or \"offer\" appearing in spam, ignoring word order. Despite its unrealistic independence assumption (like assuming RAM and CPU usage in a program are unrelated), it works efficiently on high-dimensional data—similar to how hash functions trade off collisions for speed.  \n\n**Why CS practitioners care**: It’s \\(O(n)\\) during inference, scales to large datasets, and serves as a baseline for text tasks, much like bubble sort is a simple baseline for sorting algorithms.",
+                        "token_count": 260,
+                        "readability": {
+                            "flesch_reading_ease": 31.82,
+                            "flesch_kincaid_grade": 14.4
+                        },
+                        "pos": {
+                            "DT": 0.08677685950413223,
+                            "JJ": 0.12396694214876033,
+                            "NNP": 0.08264462809917356,
+                            "NN": 0.3512396694214876,
+                            "VB": 0.09090909090909091,
+                            "IN": 0.15289256198347106,
+                            "VBG": 0.028925619834710745,
+                            "RB": 0.024793388429752067,
+                            "VBN": 0.028925619834710745,
+                            "FW": 0.008264462809917356,
+                            "CC": 0.01652892561983471,
+                            "RP": 0.004132231404958678
+                        }
+                    },
+                    "prompt5": {
+                        "text": "The multinomial naive Bayes classifier is a probabilistic model that predicts labels by maximizing the product of prior probabilities and feature likelihoods - similar to optimizing a function with argmax in algorithms. Think of each document as a feature vector where word frequencies are counts (like a histogram), ignoring word order (bag-of-words assumption). This is analogous to dimension reduction where we discard positional information to simplify computation.\n\nThe \"naive\" part refers to conditional independence between features given the class - equivalent to assuming all words in a document contribute independently to its classification, much like how individual pixels in a MNIST digit image might be treated independently in a simple computer vision model. The classifier calculates:\n\nĉ = argmax[P(c) * Π P(wordᵢ|c)]  \n(prior)     (likelihoods)\n\nwhere P(c) is the class distribution in training data (like class weights), and P(wordᵢ|c) are learned word probabilities per class (like parameters in a neural network's softmax layer). This multiplicative approach resembles calculating joint probabilities in Bayesian networks.\n\nDespite its simplicity, naive Bayes works surprisingly well for tasks like spam detection - similar to how linear regression can outperform complex models on well-structured data. Like logistic regression, it's a linear classifier because its decision boundary can be expressed as a weighted sum of input features (log-probabilities in this case).",
+                        "token_count": 208,
+                        "readability": {
+                            "flesch_reading_ease": 19.71,
+                            "flesch_kincaid_grade": 17.0
+                        },
+                        "pos": {
+                            "DT": 0.11052631578947368,
+                            "JJ": 0.12631578947368421,
+                            "NNP": 0.042105263157894736,
+                            "NN": 0.4105263157894737,
+                            "VB": 0.06842105263157895,
+                            "IN": 0.14210526315789473,
+                            "VBG": 0.02631578947368421,
+                            "CC": 0.010526315789473684,
+                            "VBN": 0.021052631578947368,
+                            "RB": 0.02631578947368421,
+                            "MD": 0.015789473684210527
                         }
                     }
                 }
@@ -13146,6 +13985,50 @@
                             "MD": 0.007874015748031496,
                             "CD": 0.007874015748031496
                         }
+                    },
+                    "prompt4": {
+                        "text": "**Adapted Explanation:**  \nVector semantics operationalizes the distributional hypothesis—familiar from structural linguistics—by encoding a word’s meaning numerically based on its habitual co-occurrence patterns. Just as phonemes are defined by their positional contrasts, words are mapped into a geometric space where proximity reflects semantic similarity: words sharing collocational habitats (like \"river\" and \"bank\") cluster together. Two methods dominate. The first, akin to a frequency-tabulated concordance, generates sparse vectors (mostly zeros), mirroring exhaustive but inefficient lexical inventories. The second, like extracting distinctive features in phonology, produces dense vectors that compactly capture core semantic dimensions (e.g., \"king\" – \"man\" + \"woman\" ≈ \"queen\"). Both transform Firth’s axiom—“a word is known by the company it keeps”—into measurable spatial relationships.  \n\n**Rationale:**  \n- **Linguistic hooks:** References to structuralism (Firth), phonology (contrastive features), and semantics (collocations) align with the jury’s expertise.  \n- **Analogy:** Comparing sparse vectors to concordances and dense vectors to phonological features bridges technical and familiar concepts.  \n- **Example:** Arithmetic on embeddings (king → queen) mirrors componential analysis in semantics.  \n- **Avoids jargon:** \"Embeddings\" become \"numerical vectors\"; \"tf-idf\" is reframed via concordances.  \n- **Flow:** Links distributionalism → methods → linguistic parallels, ensuring coherence.",
+                        "token_count": 173,
+                        "readability": {
+                            "flesch_reading_ease": 14.25,
+                            "flesch_kincaid_grade": 14.9
+                        },
+                        "pos": {
+                            "NNP": 0.06707317073170732,
+                            "NN": 0.36585365853658536,
+                            "VB": 0.08536585365853659,
+                            "DT": 0.06097560975609756,
+                            "JJ": 0.17682926829268292,
+                            "IN": 0.07926829268292683,
+                            "VBG": 0.04878048780487805,
+                            "RB": 0.036585365853658534,
+                            "VBN": 0.036585365853658534,
+                            "CC": 0.03048780487804878,
+                            "CD": 0.006097560975609756,
+                            "NNPS": 0.006097560975609756
+                        }
+                    },
+                    "prompt5": {
+                        "text": "Vector semantics models word meaning by analyzing linguistic distribution—the syntactic and semantic contexts where a word appears, akin to the distributional hypothesis in linguistics. Just as phonemes are defined by their positional constraints (e.g., allophones in complementary distribution), a word’s meaning is inferred from its habitual co-occurrence with neighboring words. For instance, \"bank\" (financial) and \"bank\" (river) are disambiguated by their collocates (\"money\" vs. \"water\"), much like minimal pairs in phonology distinguish meaning.  \n\nThese distributional patterns are mapped onto a multidimensional semantic space, where each word becomes a coordinate (vector). Think of this as a semantic feature matrix, but with dimensions derived statistically from corpus data. Two primary methods exist:  \n\n1. **tf-idf**: Creates sparse vectors (like a phoneme inventory table where most cells are empty) by weighting word frequency in specific contexts. This mirrors how rare phonological contrasts (e.g., clicks) are marked in a feature system—salient but infrequent.  \n2. **word2vec**: Generates dense vectors (like a compact set of distinctive semantic features) by compensing co-occurrence regularities. These capture relational meaning, similar to how semantic roles (agent, patient) organize syntax—proximity in the vector space reflects synonymy or hyponymy.  \n\nJust as syntactic trees abstract hierarchical structure, embeddings abstract distributional meaning into geometric relationships, enabling computational \"tests\" of semantic similarity—paralleling how linguists operationalize meaning through collocational frames or semantic primes.",
+                        "token_count": 204,
+                        "readability": {
+                            "flesch_reading_ease": 22.0,
+                            "flesch_kincaid_grade": 14.0
+                        },
+                        "pos": {
+                            "NNP": 0.010362694300518135,
+                            "NN": 0.3626943005181347,
+                            "IN": 0.14507772020725387,
+                            "VBG": 0.025906735751295335,
+                            "JJ": 0.21243523316062177,
+                            "CC": 0.031088082901554404,
+                            "DT": 0.07772020725388601,
+                            "VB": 0.08290155440414508,
+                            "FW": 0.0051813471502590676,
+                            "RB": 0.010362694300518135,
+                            "VBN": 0.031088082901554404,
+                            "CD": 0.0051813471502590676
+                        }
                     }
                 },
                 "CS": {
@@ -13209,6 +14092,51 @@
                             "RB": 0.026845637583892617,
                             "CD": 0.013422818791946308,
                             "VBG": 0.020134228187919462
+                        }
+                    },
+                    "prompt4": {
+                        "text": "In computational terms, vector semantics encodes word meaning through statistical co-occurrence patterns, analogous to feature engineering in machine learning. Words are represented as numerical vectors in a high-dimensional space, where semantic similarity corresponds to vector proximity – like clustering similar data points. Two primary implementations exist:  \n\n1. **TF-IDF**: A sparse vector approach similar to one-hot encoding, where dimensions correspond to vocabulary terms and values reflect term frequency (weighted by inverse document frequency). This creates memory-intensive, high-dimensional representations, akin to unstructured data matrices.  \n\n2. **Word2Vec**: A dense embedding method optimized via neural networks, compressing semantic information into low-dimensional vectors (like PCA for linguistic features). These embeddings capture relational patterns (e.g., \"king - man + woman ≈ queen\") through efficient distributed representations, mirroring how convolutional nets extract hierarchical features from pixels.  \n\nThe core principle aligns with algorithmic similarity measures: words appearing in comparable syntactic contexts (e.g., similar neighboring tokens in a parse tree or adjacent positions in a token stream) receive analogous vector representations, enabling semantic operations through linear algebra.",
+                        "token_count": 152,
+                        "readability": {
+                            "flesch_reading_ease": 4.07,
+                            "flesch_kincaid_grade": 16.8
+                        },
+                        "pos": {
+                            "IN": 0.125,
+                            "JJ": 0.2013888888888889,
+                            "NN": 0.4305555555555556,
+                            "VB": 0.06944444444444445,
+                            "VBN": 0.027777777777777776,
+                            "DT": 0.05555555555555555,
+                            "VBG": 0.05555555555555555,
+                            "CD": 0.006944444444444444,
+                            "CC": 0.013888888888888888,
+                            "FW": 0.006944444444444444,
+                            "NNP": 0.006944444444444444
+                        }
+                    },
+                    "prompt5": {
+                        "text": "Vector semantics is a core method in NLP for encoding word meaning using mathematical structures familiar to CS audiences. It treats words as vectors in high-dimensional space, analogous to feature vectors in machine learning. The key principle aligns with the distributional hypothesis: words appearing in similar contexts (like similar neighboring words or syntactic patterns) should have similar vector representations. This mirrors how collaborative filtering recommends items based on user behavior patterns.  \n\nTwo primary approaches exist:  \n1. **TF-IDF (Baseline Model):** Creates sparse, high-dimensional vectors where each dimension corresponds to word co-occurrence frequency, similar to one-hot encoding but weighted by term importance. These vectors are memory-intensive and suffer from the curse of dimensionality, like sparse matrices in large-scale datasets.  \n2. **Word2Vec (Dense Embeddings):** Generates compact, dense vectors through neural optimization, akin to dimensionality reduction techniques like PCA. These embeddings capture semantic relationships through vector arithmetic (e.g., *king - man + woman ≈ queen*), much like how convolutional kernels extract hierarchical features in images.  \n\nThe shift from sparse to dense vectors parallels optimizing a hash table (direct but inefficient) versus training a lightweight neural network (efficient and generalizable). Both methods leverage distributional statistics but trade off interpretability for computational efficiency and semantic richness, aligning with common ML design choices.",
+                        "token_count": 192,
+                        "readability": {
+                            "flesch_reading_ease": 20.48,
+                            "flesch_kincaid_grade": 14.6
+                        },
+                        "pos": {
+                            "NNP": 0.06593406593406594,
+                            "NN": 0.38461538461538464,
+                            "VB": 0.07142857142857142,
+                            "DT": 0.06593406593406594,
+                            "IN": 0.12087912087912088,
+                            "VBG": 0.038461538461538464,
+                            "JJ": 0.17582417582417584,
+                            "CC": 0.038461538461538464,
+                            "MD": 0.005494505494505495,
+                            "VBN": 0.01098901098901099,
+                            "CD": 0.005494505494505495,
+                            "FW": 0.005494505494505495,
+                            "RB": 0.005494505494505495,
+                            "RP": 0.005494505494505495
                         }
                     }
                 }
@@ -14261,6 +15189,49 @@
                             "MD": 0.0125,
                             "NNP": 0.00625
                         }
+                    },
+                    "prompt4": {
+                        "text": "To assess how closely two words align in meaning based on their contextual usage patterns—like comparing \"bank\" (financial) and \"riverbank\"—we use a method inspired by semantic feature overlap. Imagine plotting each word in a multidimensional space where dimensions represent shared contexts (e.g., \"money,\" \"water\"). The more two words co-occur in similar contexts, the greater their directional alignment.  \n\nFrequent words (e.g., \"the\") dominate many contexts, skewing raw overlap scores. To neutralize frequency bias, we calculate the angle between their directional paths: a narrow angle (aligned paths) implies high similarity, while a right angle (orthogonal paths) implies no relationship. This angle-based measure, *cosine similarity*, acts like a semantic compass—it identifies shared meaning trajectories while controlling for how often words appear, much like isolating syntactic function from lexical frequency in corpus analysis.",
+                        "token_count": 123,
+                        "readability": {
+                            "flesch_reading_ease": 35.88,
+                            "flesch_kincaid_grade": 12.8
+                        },
+                        "pos": {
+                            "VB": 0.08771929824561403,
+                            "RB": 0.02631578947368421,
+                            "CD": 0.017543859649122806,
+                            "NN": 0.35964912280701755,
+                            "IN": 0.11403508771929824,
+                            "VBG": 0.06140350877192982,
+                            "VBN": 0.03508771929824561,
+                            "JJ": 0.17543859649122806,
+                            "CC": 0.008771929824561403,
+                            "DT": 0.10526315789473684,
+                            "NNP": 0.008771929824561403
+                        }
+                    },
+                    "prompt5": {
+                        "text": "To assess how closely two words align in meaning, we can model them as vectors in a multidimensional semantic space—akin to phonological distinctive features but extended to lexical semantics. Just as phonological similarity might involve shared features like [±voice] or [±nasal], vector similarity relies on overlapping values across dimensions (e.g., semantic domains, collocational patterns).  \n\nThe *dot product* here acts like a weighted tally of shared features: vectors with high values in matching dimensions yield a higher score. However, this raw score is influenced by word frequency—much like how high-frequency phonemes might dominate a spectrogram. Orthogonal vectors (e.g., words with no overlapping semantic components, like \"syntax\" and \"trombone\") score zero, paralleling how distinct phonological categories (e.g., plosives vs. fricatives) occupy non-overlapping acoustic spaces.  \n\nTo neutralize frequency effects—similar to normalizing pitch contours across speakers—we use the *cosine*: the dot product divided by the product of the vectors’ magnitudes. This measures the angular proximity between vectors, unaffected by their length (frequency). Imagine comparing vowel formants: whether two vowels are acoustically similar depends not on their amplitude (loudness) but on their relative positions in the F1-F2 space. Similarly, cosine similarity isolates structural alignment, revealing semantic kinship independent of usage frequency.",
+                        "token_count": 183,
+                        "readability": {
+                            "flesch_reading_ease": 29.55,
+                            "flesch_kincaid_grade": 13.2
+                        },
+                        "pos": {
+                            "VB": 0.09411764705882353,
+                            "RB": 0.041176470588235294,
+                            "CD": 0.011764705882352941,
+                            "NN": 0.3411764705882353,
+                            "IN": 0.14705882352941177,
+                            "MD": 0.01764705882352941,
+                            "DT": 0.08235294117647059,
+                            "JJ": 0.1588235294117647,
+                            "CC": 0.023529411764705882,
+                            "VBN": 0.03529411764705882,
+                            "VBG": 0.041176470588235294,
+                            "NNP": 0.0058823529411764705
+                        }
                     }
                 },
                 "CS": {
@@ -14326,6 +15297,49 @@
                             "VBG": 0.04430379746835443,
                             "CC": 0.0189873417721519,
                             "RB": 0.012658227848101266
+                        }
+                    },
+                    "prompt4": {
+                        "text": "In machine learning, when comparing feature vectors (like word embeddings), we need a frequency-invariant similarity measure. The dot product (sum of element-wise multiplications) acts as a base similarity score but is biased toward high-magnitude vectors (analogous to how L2 regularization penalizes large weights). To normalize this, we compute the cosine similarity: divide the dot product by the product of both vectors' L2 norms. This is equivalent to projecting the vectors onto a unit sphere and measuring the angle between them – geometrically, two vectors with identical orientation (regardless of magnitude) achieve maximum similarity (1.0), while orthogonal vectors score 0.0. This mirrors how TF-IDF adjusts term frequencies to focus on distribution rather than raw counts.",
+                        "token_count": 105,
+                        "readability": {
+                            "flesch_reading_ease": 27.01,
+                            "flesch_kincaid_grade": 14.2
+                        },
+                        "pos": {
+                            "IN": 0.14736842105263157,
+                            "NN": 0.3894736842105263,
+                            "VBG": 0.031578947368421054,
+                            "VB": 0.11578947368421053,
+                            "DT": 0.1368421052631579,
+                            "JJ": 0.09473684210526316,
+                            "CC": 0.021052631578947368,
+                            "VBN": 0.021052631578947368,
+                            "RB": 0.031578947368421054,
+                            "CD": 0.010526315789473684
+                        }
+                    },
+                    "prompt5": {
+                        "text": "To compare two word vectors **v** and **w** (like high-dimensional feature embeddings in ML), we use a similarity metric. The **dot product** (element-wise multiplication and summation, akin to weighted feature alignment) is a baseline, but it’s biased toward vectors with larger magnitudes (e.g., frequent words like \"the\" dominating rare words). To remove this bias, we normalize: divide the dot product by the **L2 norms** of both vectors (like unit-scaling in data preprocessing). This gives the **cosine similarity** (cosθ), which measures the angle between vectors, ignoring their magnitudes.  \n\n**Analogy**: Treat vectors as arrows in space. The dot product tells you if they point in similar directions, but longer arrows (high-frequency words) skew results. Normalizing is like shrinking both arrows to length 1, so similarity depends purely on their angle:  \n- **cosθ = 1**: Identical direction (e.g., \"king\" and \"monarch\" in an embedding space).  \n- **cosθ = 0**: Orthogonal (no shared features, like \"code\" and \"banana\").  \n- **cosθ = -1**: Opposite directions (rare in NLP, akin to antonyms in certain embeddings).  \n\n**Example**: In word2vec, \"algorithm\" and \"program\" might have a high cosine similarity, even if their raw dot product is small due to differing frequencies.",
+                        "token_count": 176,
+                        "readability": {
+                            "flesch_reading_ease": 47.18,
+                            "flesch_kincaid_grade": 10.6
+                        },
+                        "pos": {
+                            "VB": 0.09937888198757763,
+                            "CD": 0.006211180124223602,
+                            "NN": 0.37888198757763975,
+                            "CC": 0.043478260869565216,
+                            "VBN": 0.018633540372670808,
+                            "IN": 0.13664596273291926,
+                            "NNP": 0.037267080745341616,
+                            "DT": 0.09937888198757763,
+                            "JJ": 0.11801242236024845,
+                            "FW": 0.006211180124223602,
+                            "VBG": 0.031055900621118012,
+                            "RB": 0.018633540372670808,
+                            "MD": 0.006211180124223602
                         }
                     }
                 }
@@ -15430,6 +16444,49 @@
                             "FW": 0.005780346820809248,
                             "MD": 0.011560693641618497
                         }
+                    },
+                    "prompt4": {
+                        "text": "**Adapted Explanation for Linguistics Jury:**  \n\nModern machine translation systems function as structural analyzers and reconstructors, akin to mapping the syntactic architecture of a source language onto a target language’s framework. These systems are trained on aligned bilingual sentence pairs—parallel texts where each source sentence mirrors its target counterpart—much like a language learner studying translations to infer cross-linguistic patterns.  \n\nThe process begins by segmenting sentences into smaller linguistic units (e.g., morphemes, characters, or hybrid subword forms) to handle morphological diversity. The system then calculates the statistical likelihood of generating a coherent target sentence from the source input, optimizing for syntactic and semantic fidelity.  \n\nAn **encoder** analyzes the source sentence’s structural and semantic relationships, building a contextual “blueprint.” The **decoder** uses this blueprint to incrementally reconstruct the sentence in the target language, ensuring alignment with its grammatical rules—similar to how a speaker adapts a thought from one language’s syntax to another’s.  \n\nCrucially, these systems rely on **multilingual embedding spaces**, where sentences from different languages occupy shared semantic coordinates. Think of this as a cross-linguistic semantic field: just as phonemes map to acoustic features, sentences with equivalent meanings cluster proximally, enabling the model to gauge interlingual similarity.  \n\nThis approach mirrors how bilinguals mentally align languages but operationalized through statistical patterns in large text collections.",
+                        "token_count": 208,
+                        "readability": {
+                            "flesch_reading_ease": 24.68,
+                            "flesch_kincaid_grade": 15.1
+                        },
+                        "pos": {
+                            "NNP": 0.030927835051546393,
+                            "IN": 0.1134020618556701,
+                            "NN": 0.3865979381443299,
+                            "JJ": 0.13402061855670103,
+                            "CC": 0.02577319587628866,
+                            "FW": 0.005154639175257732,
+                            "VBG": 0.041237113402061855,
+                            "DT": 0.13402061855670103,
+                            "VB": 0.07731958762886598,
+                            "VBN": 0.020618556701030927,
+                            "RB": 0.02577319587628866,
+                            "CD": 0.005154639175257732
+                        }
+                    },
+                    "prompt5": {
+                        "text": "In machine translation (MT), the core framework resembles a bilingual linguist analyzing source text and reconstructing its meaning in a target language. The process mirrors **syntactic parsing** and **semantic composition**: an **encoder** dissects the source sentence’s structural patterns (morphemes, word order, etc.), creating an abstract representation akin to a deep syntactic tree. A **decoder** then uses this \"blueprint\" to generate a target sentence, adhering to its own grammatical rules—much like rephrasing a sentence while preserving its illocutionary force.  \n\nTraining relies on **parallel corpora**—aligned sentence pairs, comparable to bilingual dictionaries but at the utterance level. These pairs allow the system to learn probabilistic mappings between source and target structures, similar to identifying **allophonic correspondences** across dialects. Sentences are often split into **subword units** (e.g., morphemes or phoneme clusters) to handle rare lexical items, mirroring morphological segmentation.  \n\nCrucially, the system optimizes the likelihood of generating the correct target sequence, analogous to maximizing **phonotactic probability** in speech production. To align cross-lingual meanings, a **multilingual semantic space** is used—a unified conceptual \"map\" where sentences from different languages occupy analogous positions based on meaning, much like synonym sets in a thesaurus span multiple languages. This ensures translations preserve pragmatic intent, not just literal form.",
+                        "token_count": 196,
+                        "readability": {
+                            "flesch_reading_ease": 27.72,
+                            "flesch_kincaid_grade": 13.9
+                        },
+                        "pos": {
+                            "IN": 0.08196721311475409,
+                            "NN": 0.3989071038251366,
+                            "NNP": 0.01639344262295082,
+                            "DT": 0.11475409836065574,
+                            "VB": 0.08196721311475409,
+                            "JJ": 0.17486338797814208,
+                            "VBG": 0.060109289617486336,
+                            "CC": 0.0273224043715847,
+                            "FW": 0.00546448087431694,
+                            "RB": 0.0273224043715847,
+                            "VBN": 0.01092896174863388
+                        }
                     }
                 },
                 "CS": {
@@ -15493,6 +16550,47 @@
                             "VBG": 0.03414634146341464,
                             "VBN": 0.02926829268292683,
                             "CC": 0.014634146341463415
+                        }
+                    },
+                    "prompt4": {
+                        "text": "Machine translation (MT) systems function like neural sequence-to-sequence models optimized for language pairs. The core architecture—similar to autoencoders—uses an encoder to compress source-language text (e.g., Spanish sentences) into a dense numerical representation (a context vector), then a decoder expands this vector into target-language text (e.g., English). Training resembles supervised learning with paired input-output data: given aligned sentence pairs (like labeled training examples in ML), the model minimizes cross-entropy loss by predicting target subword tokens (analogous to tokenization in BERT/GPT, splitting text into word fragments for robustness).  \n\nAt inference, it autoregressively generates outputs token-by-token, mirroring how GPT generates text. Performance hinges on aligned multilingual embeddings—imagine Word2Vec vectors extended to sentences, where semantically equivalent phrases in different languages occupy nearby regions in a shared vector space. This embedding alignment allows the model to map linguistic patterns across languages, akin to how contrastive learning aligns image-text pairs in multimodal systems.  \n\nKey components:  \n- **Encoder/Decoder**: Like compressing/decompressing files, but with attention mechanisms to prioritize relevant context.  \n- **Subword tokenization**: Preprocessing text into units (e.g., \"un+able\") to handle rare words, similar to hash tables resolving collisions via segmentation.  \n- **Parallel corpora**: Training data structured as (source, target) pairs, comparable to input-output pairs in supervised regression tasks.",
+                        "token_count": 179,
+                        "readability": {
+                            "flesch_reading_ease": 19.37,
+                            "flesch_kincaid_grade": 15.0
+                        },
+                        "pos": {
+                            "NN": 0.42424242424242425,
+                            "NNP": 0.03636363636363636,
+                            "VB": 0.07878787878787878,
+                            "IN": 0.1393939393939394,
+                            "JJ": 0.13333333333333333,
+                            "VBN": 0.048484848484848485,
+                            "DT": 0.06060606060606061,
+                            "RB": 0.01818181818181818,
+                            "VBG": 0.048484848484848485,
+                            "FW": 0.006060606060606061,
+                            "CC": 0.006060606060606061
+                        }
+                    },
+                    "prompt5": {
+                        "text": "Machine translation (MT) leverages encoder-decoder transformer architectures, akin to sequence-to-sequence models in NLP. The encoder acts like a feature extractor, converting a source-language sentence (e.g., French) into a dense context vector—a high-dimensional latent representation. The decoder then autoregressively generates the target-language sentence (e.g., English), token by token, conditioned on this vector—similar to how a recurrent neural network (RNN) generates text sequentially.  \n\nTraining uses supervised learning on parallel corpora (bitexts), analogous to paired input-output datasets in ML. Sentences are tokenized into subword units (like Byte-Pair Encoding in NLP) to handle rare words, reducing the vocabulary size while preserving morphology. The model optimizes the conditional probability \\( P(y_1, \\ldots, y_m | x_1, \\ldots, x_n) \\), akin to maximizing log-likelihood in a classifier, where the \"classes\" are sequences of target tokens.  \n\nThe encoder’s context vector serves as an embedding of the source sentence, while the decoder operates like a conditional language model. At inference, decoding resembles beam search in autoregressive models (e.g., GPT), balancing exploration and exploitation.  \n\nTo evaluate cross-lingual similarity, sentences are mapped into a shared multilingual embedding space—like projecting images and text into the same latent space in multimodal models. Distance metrics (e.g., cosine similarity) then quantify alignment, analogous to nearest-neighbor retrieval in recommendation systems.",
+                        "token_count": 180,
+                        "readability": {
+                            "flesch_reading_ease": 23.02,
+                            "flesch_kincaid_grade": 13.6
+                        },
+                        "pos": {
+                            "NN": 0.3508771929824561,
+                            "NNP": 0.05263157894736842,
+                            "VB": 0.08771929824561403,
+                            "JJ": 0.1286549707602339,
+                            "IN": 0.13450292397660818,
+                            "DT": 0.11695906432748537,
+                            "VBG": 0.05263157894736842,
+                            "RB": 0.029239766081871343,
+                            "VBN": 0.03508771929824561,
+                            "CC": 0.011695906432748537
                         }
                     }
                 }
@@ -16558,6 +17656,50 @@
                             "MD": 0.009345794392523364,
                             "CD": 0.004672897196261682
                         }
+                    },
+                    "prompt4": {
+                        "text": "**Adapted Explanation:**  \n\nIn speech recognition, we first convert spoken sounds into a digital format that machines can analyze. Imagine capturing speech as a series of snapshots:  \n1. **Sampling & Quantization:**  \n   - **Sampling**: Like transcribing a sound’s loudness at tiny, regular intervals (e.g., 16,000 \"measurements\" per second). The faster we sample, the higher pitches we can detect (Nyquist principle: detect up to half the sampling rate).  \n   - **Quantization**: Rounding each loudness measurement to the nearest whole number, similar to simplifying a detailed phonetic transcription into discrete symbols.  \n\n2. **Windowing & Spectral Analysis:**  \n   - Split the digitized sound into short overlapping segments (**frames**), akin to isolating individual phonemes in a spectrogram. Each frame’s duration (e.g., 25ms) and overlap (e.g., 10ms stride) ensure we capture transitions, much like analyzing coarticulation in connected speech.  \n   - Use **spectral analysis** (e.g., Fourier transforms) to break each frame into its frequency components, revealing formants or noise patterns—mirroring how linguists dissect vowels and consonants using spectrograms.  \n\nThis process transforms raw sound into structured acoustic \"maps,\" allowing machines to match patterns to linguistic units (phonemes, words), much like phoneticians annotate speech.  \n\n---  \n*Linguistic parallels: Sampling ≈ phonetic transcription resolution; frames ≈ phoneme boundaries; spectral analysis ≈ formant tracking in vowel studies.*",
+                        "token_count": 184,
+                        "readability": {
+                            "flesch_reading_ease": 40.65,
+                            "flesch_kincaid_grade": 11.0
+                        },
+                        "pos": {
+                            "NNP": 0.047058823529411764,
+                            "NN": 0.38823529411764707,
+                            "IN": 0.1,
+                            "RB": 0.011764705882352941,
+                            "VB": 0.07647058823529412,
+                            "JJ": 0.16470588235294117,
+                            "DT": 0.08235294117647059,
+                            "MD": 0.011764705882352941,
+                            "VBG": 0.08235294117647059,
+                            "RP": 0.0058823529411764705,
+                            "CC": 0.01764705882352941,
+                            "$": 0.0058823529411764705,
+                            "VBN": 0.0058823529411764705
+                        }
+                    },
+                    "prompt5": {
+                        "text": "In speech recognition, we first convert spoken input into a structured form for analysis, much like phonologists decompose continuous speech into discrete phonemes. The raw input—air pressure fluctuations—is analogous to a dynamic prosodic contour. To digitize this:  \n\n1. **Sampling**: Capture \"snapshots\" of the sound wave at regular intervals (e.g., 16,000 snapshots/second). This mirrors using a narrow transcription rate to avoid aliasing, where undersampling misrepresents high-frequency components (like failing to notate a rapid [ɾ] vs. [d] distinction). The **Nyquist limit** ensures our sampling rate is twice the highest frequency present, akin to needing sufficient phonetic detail to distinguish [s] (high-frequency) from [ʃ].  \n\n2. **Quantization**: Assign integer values to amplitude measurements, similar to categorizing gradient vowel formants into discrete phonemic symbols (e.g., reducing a continuum of [æ~ɛ] to /æ/).  \n\nNext, we divide the digitized signal into **frames**—brief, overlapping temporal windows (e.g., 25ms), like isolating a syllable nucleus or measuring formant stability in a vowel. Each frame’s **spectral features** are extracted via a mathematical tool (DFT), which decomposes the sound into its frequency components, much like a spectrogram visualizes formants (F1/F2) for vowel identification. These features act as acoustic \"distinctive features,\" encoding cues relevant to phoneme identity (e.g., burst frequency for [k] vs. [t]).  \n\nThis process transforms raw speech into a phonetically interpretable sequence, analogous to mapping a phonetic signal to a phonological representation.",
+                        "token_count": 204,
+                        "readability": {
+                            "flesch_reading_ease": 30.06,
+                            "flesch_kincaid_grade": 13.0
+                        },
+                        "pos": {
+                            "IN": 0.11290322580645161,
+                            "NN": 0.3333333333333333,
+                            "RB": 0.026881720430107527,
+                            "VB": 0.08602150537634409,
+                            "JJ": 0.1881720430107527,
+                            "DT": 0.12365591397849462,
+                            "NNP": 0.04838709677419355,
+                            "VBG": 0.06451612903225806,
+                            "FW": 0.005376344086021506,
+                            "CC": 0.005376344086021506,
+                            "VBN": 0.005376344086021506
+                        }
                     }
                 },
                 "CS": {
@@ -16618,6 +17760,46 @@
                             "VB": 0.07534246575342465,
                             "DT": 0.03424657534246575,
                             "VBN": 0.0136986301369863
+                        }
+                    },
+                    "prompt4": {
+                        "text": "In ASR, raw audio is processed like a time-series dataset. First, **analog-to-digital conversion** samples the continuous sound wave at fixed intervals (sampling rate), akin to capturing periodic sensor readings in IoT systems. The Nyquist theorem ensures no aliasing, mirroring how data pipelines avoid undersampling. Next, **quantization** maps amplitude values to integers, similar to casting floating-point sensor data to 8-bit representations for efficiency.  \n\nThe digitized signal is then split into overlapping **frames** using a sliding window (e.g., 25ms chunks with 10ms shifts), analogous to batch processing in ML or convolutional kernel operations. Each frame undergoes **spectral analysis via DFT/FFT**, decomposing the temporal signal into frequency components—like projecting a vector into an orthogonal basis. The resulting magnitude-frequency plot (spectrum) acts as a feature vector, comparable to extracting edge detectors in CNN layers before classification.  \n\nThis pipeline transforms raw waveforms into structured, frequency-domain inputs suitable for sequence models (e.g., RNNs/Transformers), aligning with preprocessing steps in vision or time-series tasks.",
+                        "token_count": 142,
+                        "readability": {
+                            "flesch_reading_ease": 30.26,
+                            "flesch_kincaid_grade": 12.9
+                        },
+                        "pos": {
+                            "IN": 0.14074074074074075,
+                            "NNP": 0.044444444444444446,
+                            "JJ": 0.11851851851851852,
+                            "NN": 0.3851851851851852,
+                            "VB": 0.06666666666666667,
+                            "VBN": 0.02962962962962963,
+                            "DT": 0.0962962962962963,
+                            "VBG": 0.0962962962962963,
+                            "RB": 0.007407407407407408,
+                            "CC": 0.014814814814814815
+                        }
+                    },
+                    "prompt5": {
+                        "text": "In ASR, we preprocess raw audio (time-series pressure data) similar to how you'd prepare unstructured data for ML models. The analog-to-digital conversion works like video frame sampling:  \n\n1. **Sampling**: Capture amplitude values at fixed intervals (sampling rate = samples/sec). Just as frame rate limits detectable motion, the **Nyquist frequency** (half the sampling rate) defines the max detectable pitch. Undersampling causes aliasing artifacts.  \n\n2. **Quantization**: Map continuous amplitudes to discrete integers (like reducing float32 to 8-bit integers), introducing quantization error – analogous to pixel color depth compression.  \n\n3. **Windowing**: Split the digitized signal into overlapping frames (fixed-duration slices), akin to convolutional kernels sliding over input data. Parameters:  \n   - **Frame size**: Window width (e.g., 25ms chunks)  \n   - **Stride**: Offset between windows (like CNN stride hyperparameter)  \n   - **Window shape**: Tapered edges (Hamming/Gaussian windows) to avoid spectral leakage, similar to edge-padding strategies.  \n\n4. **Feature Extraction**: Apply FFT (optimized DFT) to each frame to get spectral features – think of it as projecting time-domain data into frequency-domain \"embeddings.\" The magnitude spectrum (frequency vs. energy plot) serves as a feature vector for downstream models, like MFCCs in audio CNNs.  \n\n**Example**: A 16kHz WAV file quantized to 16-bit integers → split into 25ms frames with 10ms stride → FFT computes 40 log-magnitude bins per frame, forming a spectrogram (2D feature matrix). This mirrors how image classifiers use pixel arrays, but with time-frequency tradeoffs.",
+                        "token_count": 193,
+                        "readability": {
+                            "flesch_reading_ease": 38.72,
+                            "flesch_kincaid_grade": 11.7
+                        },
+                        "pos": {
+                            "IN": 0.11864406779661017,
+                            "NNP": 0.12994350282485875,
+                            "VB": 0.06779661016949153,
+                            "JJ": 0.096045197740113,
+                            "NN": 0.4350282485875706,
+                            "DT": 0.062146892655367235,
+                            "VBN": 0.022598870056497175,
+                            "VBG": 0.05649717514124294,
+                            "RB": 0.005649717514124294,
+                            "CC": 0.005649717514124294
                         }
                     }
                 }
