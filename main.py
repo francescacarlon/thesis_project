@@ -3,11 +3,11 @@ from prompts import PROMPT_FUNCTIONS
 
 # ✅ Define available LLMs and prompts
 LLM_MODELS = {
-    "deepseek": "deepseek"
-    # "gpt4o": "gpt4o",
-    # "claude": "claude"
-    # "mistral": "mistral",
-    # "llama": "llama"
+    "deepseek": "deepseek",
+    "gpt4o": "gpt4o",
+    "claude": "claude",
+    "mistral": "mistral",
+    "llama": "llama"
 }
 
 # ✅ Toggle between test mode and full benchmark
