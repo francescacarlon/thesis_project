@@ -30,7 +30,7 @@ def is_valid_existing_text(text, dash_threshold=20, min_word_count=100, min_char
         return False
 
     if len(text) < min_char_count:
-        return False  # Too short, e.g., just "In"
+        return False
 
     if len(text.split()) < min_word_count:
         return False
@@ -103,16 +103,11 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
         "CL": ["L", "CS"]
     }
 
-    # Sort PROMPT_FUNCTIONS numerically before extracting prompt_number
-    sorted_prompt_keys = sorted(PROMPT_FUNCTIONS.keys(), key=lambda x: int(x))  # Sort keys numerically
-    sorted_prompts = {key: PROMPT_FUNCTIONS[key] for key in sorted_prompt_keys}  # Reorder dictionary
-
-    prompt_number = next((key for key, value in sorted_prompts.items() if value == prompt_function_name), None)
+    prompt_number = next((key for key, value in PROMPT_FUNCTIONS.items() if value == prompt_function_name), None)
     if prompt_number is None:
         raise ValueError(f"Prompt function '{prompt_function_name}' is not in PROMPT_FUNCTIONS.")
 
-    prompt_key = f"prompt{prompt_number}"  # Now it's always ordered correctly!
-
+    prompt_key = f"prompt{prompt_number}"
 
     for i, (key, value) in enumerate(dataset.items()):
         if max_entries and i >= max_entries:
@@ -170,30 +165,39 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
                 response_text = clean_response_text(response_text)
 
                 if is_valid_existing_text(response_text):
-                    print(f"✅ Text is valid on attempt {attempt+1}")
                     break
-                else:
-                    reason = get_invalid_reason(response_text)
-                    print(f"⚠️ Attempt {attempt+1}/{MAX_RETRIES} failed due to: {reason}")
 
-            # else:
-            #     print(f"❌ All attempts failed — keeping null for {key}-{target_category}-{prompt_key}")
-            #     response_text = None
+            tailored_texts[prompt_key] = response_text
+            tailored_analysis = analyze_text(response_text)
+            linguistic_analysis[key].setdefault("tailored_texts", {}).setdefault(llm_model, {}).setdefault(target_category, {})[prompt_key] = {
+                "text": response_text,
+                "token_count": tailored_analysis["token_count"],
+                "readability": tailored_analysis["readability"],
+                "pos": tailored_analysis["pos"]
+            }
 
-            if response_text:
-                tailored_texts[prompt_key] = response_text
-                tailored_analysis = analyze_text(response_text)
-                linguistic_analysis[key].setdefault("tailored_texts", {}).setdefault(llm_model, {}).setdefault(target_category, {})[prompt_key] = {
-                    "text": response_text,
-                    "token_count": tailored_analysis["token_count"],
-                    "readability": tailored_analysis["readability"],
-                    "pos": tailored_analysis["pos"]
-                }
-                print(f"Successfully generated {target_category} for {key} (Tokens: {tailored_analysis['token_count']})")
-            else:
-                print(f"Warning: Generated text is invalid for {target_category} in entry {key}. Keeping null.")
-                tailored_texts[prompt_key] = None
+    def sort_prompt_keys(data):
+        for entry_key, entry in data.items():
+            for llm, categories in entry.get("tailored_texts", {}).items():
+                for category, prompts in categories.items():
+                    if not isinstance(prompts, dict):
+                        print(f"⚠️ Warning: Unexpected type for prompts in {entry_key}-{llm}-{category}. Skipping reorder.")
+                        continue
+                    sorted_prompts = dict(sorted(prompts.items(), key=lambda x: int(x[0].replace("prompt", ""))))
+                    if list(prompts.keys()) != list(sorted_prompts.keys()):
+                        print(f"Reordering prompts for {entry_key}-{llm}-{category}")
+                    categories[category] = sorted_prompts
+
+    print("Checking and reordering prompt keys...")
+    sort_prompt_keys(benchmark)
+    sort_prompt_keys(linguistic_analysis)
+
+    # Remove unwanted entries from linguistic_analysis
+    for entry in linguistic_analysis.values():
+        for key_to_remove in ["L_tailored_gpt4o", "L_tailored_o1-preview", "L_tailored_claude"]:
+            if key_to_remove in entry.get("tailored_texts", {}):
+                print(f"Removing {key_to_remove} from linguistic_analysis")
+                del entry["tailored_texts"][key_to_remove]
 
     save_dataset(benchmark, BENCHMARK_PATH)
     save_dataset(linguistic_analysis, LINGUISTIC_ANALYSIS_PATH)
-    print(f"\nBenchmark updated and saved (Processed {min(len(dataset), max_entries or len(dataset))} entries).")
