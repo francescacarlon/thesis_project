@@ -1890,46 +1890,46 @@
             "claude": {
                 "CS": {
                     "prompt1": {
-                        "text": "Here's the CS-friendly explanation:\n\nIn programming languages, we're familiar with parsing code into abstract syntax trees (ASTs). Natural languages follow a similar principle called syntactic constituency, where words combine into larger functional units, just like how we group code expressions.\n\nThink of it like object-oriented composition: words can be composed into larger structures called constituents. For example, \"three parties from Brooklyn\" is a noun phrase that acts as a single unit in a sentence, similar to how multiple objects can be treated as one composite object in programming.\n\nContext-free grammar (CFG), which you've likely encountered in compiler design, is also used to model natural language structure. Just as we define grammar rules for programming languages, CFGs for natural language consist of production rules and a lexicon (think of it as keywords and identifiers in programming).\n\nThe rules look familiar to CS students:\n```\nNP → ProperNoun\nNP → Det Nominal\nDet → \"the\" | \"a\"\nNoun → \"flight\"\n```\n\nThese rules generate valid strings through derivations, visualized as parse trees - exactly like the ASTs we use in compilation. The process is recursive, allowing hierarchical embedding of rules, similar to how nested function calls work.\n\nA CFG defines a formal language: strings (sentences) that can be derived using the grammar rules are \"grammatical\" (valid syntax in programming terms), while those that can't be derived are \"ungrammatical\" (syntax errors). This formal approach to modeling natural language is called generative grammar, analogous to how formal grammars generate valid programs in programming languages.",
-                        "token_count": 239,
+                        "text": "Here's an explanation adapted for CS students:\n\nContext-free grammars (CFGs), which you may know from compiler design, can also model natural language structure. Similar to how we parse programming languages, natural language has components that combine hierarchically.\n\nThink of syntactic constituency like object-oriented composition: words group together to form larger functional units (constituents), just as objects combine to create more complex objects. For example, a noun phrase is like a composite class that can contain multiple elements but acts as a single unit in larger structures.\n\nThe CFG implementation for natural language works exactly like the grammars you've used for programming languages:\n- Production rules define valid combinations (similar to BNF notation)\n- A lexicon serves as the terminal symbols (like keywords and literals in programming)\n- Parse trees represent the derivation (identical to AST generation)\n\nFor example, consider this simplified grammar:NP -> ProperNoun | Det Nominal\nDet -> \"a\" | \"the\"\nNoun -> \"flight\"Just as a compiler validates program syntax, these rules determine if a sentence is grammatical (parseable) or ungrammatical (syntax error). The process of generating valid sentences by applying these rules is called generative grammar - conceptually similar to how a programming language grammar generates valid program structures.\n\nThis is why compiler theory and natural language processing share many fundamental algorithms, like recursive descent parsing and CYK parsing, despite operating on different types of languages.",
+                        "token_count": 219,
                         "readability": {
-                            "flesch_reading_ease": 38.45,
-                            "flesch_kincaid_grade": 13.9
+                            "flesch_reading_ease": 22.79,
+                            "flesch_kincaid_grade": 17.9
                         },
                         "pos": {
-                            "RB": 0.027649769585253458,
-                            "DT": 0.07834101382488479,
-                            "NN": 0.31336405529953915,
-                            "IN": 0.1382488479262673,
-                            "VBG": 0.04608294930875576,
-                            "JJ": 0.15668202764976957,
-                            "NNP": 0.055299539170506916,
-                            "VB": 0.0967741935483871,
-                            "VBN": 0.05069124423963134,
-                            "MD": 0.018433179723502304,
-                            "CD": 0.009216589861751152,
-                            "CC": 0.009216589861751152
+                            "RB": 0.04411764705882353,
+                            "DT": 0.09313725490196079,
+                            "NN": 0.3431372549019608,
+                            "VBN": 0.014705882352941176,
+                            "IN": 0.11764705882352941,
+                            "NNP": 0.06372549019607843,
+                            "MD": 0.014705882352941176,
+                            "VB": 0.10294117647058823,
+                            "JJ": 0.1568627450980392,
+                            "VBG": 0.024509803921568627,
+                            "CC": 0.024509803921568627
                         }
                     },
                     "prompt2": {
-                        "text": "Here's how syntax structures in natural language processing relate to concepts you're already familiar with:\n\nThink of syntactic constituency like object-oriented programming, where words are objects that can be grouped into larger functional units. Just as you create classes that contain related attributes and methods, language has phrases that contain related words.\n\nA context-free grammar (CFG) is similar to a recursive data structure definition. Like how you might define a binary tree node that can contain other nodes, CFG rules define how language components can contain other components. It's essentially a formal specification for valid language structures.\n\nThe rules work like production rules in a compiler:\n```\nNP -> ProperNoun | Det Nominal\nDet -> \"a\" | \"the\"\nNoun -> \"flight\"\n```\n\nThe derivation process is analogous to traversing a tree data structure, where each node expansion follows the grammar rules. The resulting parse tree is similar to an abstract syntax tree (AST) in compiler design, showing how the sentence is hierarchically structured.\n\nJust as a program is \"syntactically valid\" if it follows the programming language's grammar, a sentence is \"grammatical\" if it can be derived using the CFG rules. Think of the grammar as a formal specification that defines a language, similar to how BNF notation defines programming language syntax.\n\nThis formal system allows us to programmatically analyze and generate valid language structures, much like how compilers parse and validate code.",
-                        "token_count": 223,
+                        "text": "Here's the adapted explanation:\n\nThink of syntactic constituency like object-oriented programming, where groups of words act as objects that can be treated as single units. Just as you create classes with specific behaviors, words can be grouped into phrases that function together.\n\nConsider a noun phrase (NP) as a data structure - it's a sequence containing at least one noun and its modifiers. These NPs can occupy specific positions in a sentence, similar to how objects fit into predefined slots in your code.\n\nContext-free grammar (CFG) is essentially a formal specification language for natural language, comparable to BNF notation in programming languages. Like defining valid syntax in a programming language, CFG consists of production rules and a lexicon (think of it as keywords and identifiers in your programming language).\n\nThe rules work hierarchically, similar to recursive function calls. For example:NP -> ProperNoun | Det Nominal\nDet -> \"a\" | \"the\"\nNoun -> \"flight\"This process generates strings through rule expansions (similar to function execution), creating what we call a derivation. The derivation can be visualized as a tree structure - think of an Abstract Syntax Tree (AST) in compiler design, but for natural language.\n\nA CFG defines a formal language, just like how programming language specifications define valid syntax. Sentences that can be derived using the grammar rules are \"grammatical\" (valid syntax), while those that can't are \"ungrammatical\" (syntax errors). This formal approach to modeling natural language is called generative grammar, analogous to how compilers use formal specifications to process programming languages.",
+                        "token_count": 244,
                         "readability": {
-                            "flesch_reading_ease": 40.18,
-                            "flesch_kincaid_grade": 13.2
+                            "flesch_reading_ease": 42.41,
+                            "flesch_kincaid_grade": 12.4
                         },
                         "pos": {
-                            "RB": 0.04,
-                            "JJ": 0.14,
-                            "NN": 0.32,
-                            "IN": 0.1,
-                            "VB": 0.14,
-                            "MD": 0.025,
-                            "VBN": 0.015,
-                            "CC": 0.015,
-                            "DT": 0.12,
-                            "NNP": 0.06,
-                            "VBG": 0.025
+                            "RB": 0.027149321266968326,
+                            "DT": 0.09954751131221719,
+                            "JJ": 0.13122171945701358,
+                            "NN": 0.334841628959276,
+                            "IN": 0.13122171945701358,
+                            "MD": 0.027149321266968326,
+                            "VB": 0.10407239819004525,
+                            "VBN": 0.02262443438914027,
+                            "NNP": 0.07239819004524888,
+                            "VBG": 0.027149321266968326,
+                            "CD": 0.004524886877828055,
+                            "CC": 0.01809954751131222
                         }
                     },
                     "prompt3": {
@@ -1954,46 +1954,47 @@
                         }
                     },
                     "prompt4": {
-                        "text": "Here's my adapted explanation for CS practitioners:\n\nThink of syntactic constituency like object-oriented programming: words group into larger functional units, similar to how we bundle code into classes and methods. Just as a class can contain multiple objects that work as one unit, a noun phrase bundles words that function together.\n\nContext-free grammar (CFG) is essentially a recursive pattern-matching system, similar to regular expressions but more powerful. Like defining class hierarchies in programming, CFG uses production rules to specify valid patterns. For example, just as we might define a class structure:\n\n```\nclass NounPhrase {\n    Determiner det;    // \"the\", \"a\"\n    Nominal nominal;   // \"flight\"\n}\n```\n\nCFG defines similar structural rules: NP → Det Nominal\n\nThe derivation process is like traversing a tree data structure, where each node expansion follows the production rules. Parse trees are essentially abstract syntax trees (ASTs) for natural language, similar to what compilers generate when parsing programming languages.\n\nWhen we say a sentence is \"grammatical,\" it means it can be successfully parsed using the CFG rules - just like how a compiler accepts or rejects code based on the programming language's syntax rules. The whole system is analogous to a formal language specification, like BNF notation used to define programming language syntax.",
-                        "token_count": 196,
+                        "text": "Here's my adaptation for CS practitioners:\n\nIn programming languages, syntactic constituency is like nested object composition, where smaller components combine to form larger functional units. Think of it as a tree data structure where each node represents a language component.\n\nContext-Free Grammar (CFG) is similar to the compilation process's parsing phase, where code is broken down into a hierarchical structure. Just as programming languages have syntax rules (like how to form a valid if-statement or function declaration), natural language has production rules that define valid word combinations.\n\nConsider this analogy: A noun phrase is like a custom object class, where different instances (three parties from Brooklyn, the big computer, my red car) can all serve as the subject in a statement, just as different objects of the same class can be used interchangeably in your code.\n\nThe CFG rules work like a recursive function: starting from a root node (like the main() function), it expands into smaller components following predefined patterns. For example:NP -> Det Nominal  // Parent class definition\nDet -> \"the\"       // Terminal value assignment\nNominal -> \"computer\" // Terminal value assignmentThe parse tree generated is essentially an Abstract Syntax Tree (AST), similar to what compilers create when parsing source code. Valid sentences are those that can be generated by following these grammar rules, just as valid programs must follow the programming language's syntax rules.\n\nThink of generative grammar as the BNF (Backus-Naur Form) notation used to define programming language syntax, but for natural language instead.",
+                        "token_count": 240,
                         "readability": {
-                            "flesch_reading_ease": 37.74,
-                            "flesch_kincaid_grade": 14.2
+                            "flesch_reading_ease": 35.71,
+                            "flesch_kincaid_grade": 15.0
                         },
                         "pos": {
-                            "RB": 0.045454545454545456,
-                            "JJ": 0.14204545454545456,
-                            "NN": 0.3522727272727273,
-                            "IN": 0.09090909090909091,
-                            "NNP": 0.07386363636363637,
-                            "VB": 0.125,
-                            "CC": 0.017045454545454544,
-                            "DT": 0.09090909090909091,
-                            "MD": 0.017045454545454544,
-                            "CD": 0.005681818181818182,
-                            "VBG": 0.022727272727272728,
-                            "VBN": 0.017045454545454544
+                            "RB": 0.027149321266968326,
+                            "NN": 0.3393665158371041,
+                            "IN": 0.11312217194570136,
+                            "NNP": 0.08597285067873303,
+                            "VBG": 0.02262443438914027,
+                            "JJ": 0.13574660633484162,
+                            "VB": 0.10407239819004525,
+                            "DT": 0.1085972850678733,
+                            "VBN": 0.027149321266968326,
+                            "RP": 0.004524886877828055,
+                            "CC": 0.00904977375565611,
+                            "CD": 0.004524886877828055,
+                            "MD": 0.01809954751131222
                         }
                     },
                     "prompt5": {
-                        "text": "Here's the CS-oriented explanation:\n\nThink of syntactic constituency as object-oriented composition, where words combine into larger functional units, similar to how classes can be composed of other classes. Just like how objects can be treated as single entities regardless of their internal complexity, word groups can act as unified components.\n\nConsider it like a tree data structure where each node represents a grammatical unit. The context-free grammar (CFG) is essentially a set of production rules, similar to the formal grammars you might have encountered in compiler design. If you're familiar with BNF (Backus-Naur Form) notation in programming language specifications, CFG works the same way.\n\nFor example, just as you might define a class structure:\n```\nclass NounPhrase {\n    Determiner det;    // \"the\", \"a\"\n    Nominal nominal;   // \"flight\"\n}\n```\n\nThe grammar rules work similarly:\n```\nNP -> Det Nominal\nDet -> \"the\" | \"a\"\nNominal -> \"flight\"\n```\n\nThe parsing process is analogous to how a compiler constructs an Abstract Syntax Tree (AST). Each valid sentence is like a successfully compiled program, while invalid sentences are like syntax errors. The derivation process is similar to walking through a tree data structure, where each node expansion follows the production rules.\n\nThis formal system is comparable to how programming languages are defined: you have a set of rules that determine valid constructions, and anything that doesn't follow these rules is considered invalid syntax. The generative grammar concept is essentially a formal language specification, much like how programming languages are formally specified.",
-                        "token_count": 233,
+                        "text": "Here's the CS-adapted explanation:\n\nThink of syntactic constituency as recursive data structures in natural language, where words combine into larger functional units, similar to how objects can be nested in object-oriented programming. Just like how you can have nested classes or composite design patterns, language has hierarchical structures.\n\nContext-free grammar (CFG) - a concept you might know from compiler design - serves as the formal system for modeling these structures. It's analogous to how programming languages are defined, with production rules similar to BNF notation. For example:NP -> ProperNoun | Det Nominal\nDet -> \"a\" | \"the\"\nNoun -> \"flight\"This is like defining a class hierarchy or type system, where larger structures are built from smaller components. The derivation process is similar to instantiating objects or building an Abstract Syntax Tree (AST) in compiler construction, where each node represents a grammatical component.\n\nJust as a compiler validates code against language syntax, CFGs determine whether sentences are \"grammatical\" (valid) or \"ungrammatical\" (invalid) according to the defined rules. The parse tree generated is essentially an AST for natural language, with the root node at the top and terminal nodes (actual words) at the leaves.\n\nThis formal system of generative grammar is like having a programming language specification that can generate all valid sentences, similar to how a programming language grammar defines all valid program structures.\n\nThink of it as writing a parser that validates and structures natural language instead of code, using familiar concepts from compiler theory and formal languages.",
+                        "token_count": 240,
                         "readability": {
-                            "flesch_reading_ease": 38.96,
-                            "flesch_kincaid_grade": 13.7
+                            "flesch_reading_ease": 30.09,
+                            "flesch_kincaid_grade": 15.0
                         },
                         "pos": {
-                            "RB": 0.04716981132075472,
-                            "DT": 0.1320754716981132,
-                            "NN": 0.30660377358490565,
-                            "IN": 0.10377358490566038,
-                            "JJ": 0.14150943396226415,
-                            "VB": 0.12735849056603774,
-                            "MD": 0.02358490566037736,
-                            "VBN": 0.0330188679245283,
-                            "NNP": 0.07075471698113207,
-                            "VBG": 0.009433962264150943,
-                            "CC": 0.0047169811320754715
+                            "RB": 0.013574660633484163,
+                            "DT": 0.11312217194570136,
+                            "NN": 0.3257918552036199,
+                            "IN": 0.12217194570135746,
+                            "JJ": 0.16289592760180996,
+                            "VB": 0.09049773755656108,
+                            "MD": 0.01809954751131222,
+                            "VBN": 0.027149321266968326,
+                            "NNP": 0.06334841628959276,
+                            "CC": 0.03167420814479638,
+                            "VBG": 0.03167420814479638
                         }
                     }
                 },
@@ -2111,24 +2112,25 @@
             "deepseek": {
                 "CS": {
                     "prompt1": {
-                        "text": "In programming terms, syntactic constituency means words form logical units (like data structures) that function together. Think of these units as structs/objects - for example, a \"noun phrase\" struct could contain a noun plus modifiers (like `ProperNoun` or `Det + Nominal` in pseudocode).\n\nWe model this with **context-free grammars (CFGs)**, which you've seen in parser design and BNF notation. A CFG has:\n1. **Production rules** (like function definitions):  \n   `NP → ProperNoun | Det Nominal`  \n   `Det → \"a\" | \"the\"`  \n2. **Lexicon** (token dictionary):  \n   `ProperNoun → \"Brooklyn\"`  \n   `Noun → \"flight\"`\n\nCFGs build **parse trees** through derivations (execution traces of rule applications), similar to how recursion creates call stacks. The root is your starting symbol (e.g., `S`), leaves are words.\n\nExample derivation for \"the flight arrives\":\n```\nS → NP VP  \nNP → Det Noun → \"the flight\"  \nVP → Verb → \"arrives\"\n```\n\nA CFG defines a **formal language** - all valid sentences (strings) it can generate are \"grammatical\" (like syntactically correct code), others are \"ungrammatical\" (syntax errors). This approach, called **generative grammar**, mirrors how programming language specifications define valid syntax through production rules.",
-                        "token_count": 162,
+                        "text": "Syntactic constituency organizes words into hierarchical units (like data structures) that function as single components in a sentence. Think of these units as objects with defined properties—for example, a \"noun phrase\" (NP) is a group built around a noun, similar to a struct containing a head variable (noun) and optional modifiers.  \n\nWe model this using **context-free grammars (CFGs)**, which you’ve seen in automata theory. A CFG has:  \n1. **Production rules** (like BNF syntax):  \n   `NP → ProperNoun | Det Nominal` (an NP can be a proper noun or a determiner + nominal).  \n2. **Terminals** (basic tokens): `Det → \"a\", Noun → \"flight\"`.  \n\nCFGs generate valid sentences via **derivations** (rule applications), visualized as inverted parse trees (like abstract syntax trees in compilers). Valid sentences are \"grammatical\" (syntactically correct, like code that compiles); invalid ones are \"ungrammatical\" (syntax errors).  \n\n**Example**: For the sentence `three parties from Brooklyn arrive`:  \n- The NP `three parties from Brooklyn` acts as a single unit (like a struct passed to the verb `arrive`).  \n- CFG rules hierarchically decompose this NP, similar to nested function calls.  \n\nThis formalizes natural language syntax using tools from computation (CFGs, parse trees) you already understand.",
+                        "token_count": 182,
                         "readability": {
-                            "flesch_reading_ease": 54.52,
-                            "flesch_kincaid_grade": 9.8
+                            "flesch_reading_ease": 45.96,
+                            "flesch_kincaid_grade": 11.0
                         },
                         "pos": {
-                            "IN": 0.09803921568627451,
-                            "VBG": 0.013071895424836602,
-                            "NN": 0.35947712418300654,
-                            "JJ": 0.13071895424836602,
-                            "VB": 0.1111111111111111,
-                            "RB": 0.026143790849673203,
-                            "DT": 0.0915032679738562,
-                            "MD": 0.013071895424836602,
-                            "CC": 0.0196078431372549,
-                            "NNP": 0.12418300653594772,
-                            "VBN": 0.013071895424836602
+                            "JJ": 0.14367816091954022,
+                            "NN": 0.3563218390804598,
+                            "VB": 0.08045977011494253,
+                            "IN": 0.12643678160919541,
+                            "DT": 0.11494252873563218,
+                            "NNP": 0.08620689655172414,
+                            "VBN": 0.022988505747126436,
+                            "VBG": 0.017241379310344827,
+                            "CC": 0.011494252873563218,
+                            "RB": 0.022988505747126436,
+                            "MD": 0.005747126436781609,
+                            "CD": 0.011494252873563218
                         }
                     },
                     "prompt2": {
@@ -2153,44 +2155,45 @@
                         }
                     },
                     "prompt3": {
-                        "text": "Here's how natural language syntax works for programmers: Think of sentences as having nested data structures similar to abstract syntax trees. Groups of words (\"constituents\") act like logical units that combine through rewrite rules - this is syntactic constituency.\n\nIn programming terms:\n- A Context-Free Grammar (CFG) acts like a parser generator for human language\n- Noun phrases (NP) are objects with properties: `NP → ProperNoun | Det + Nominal` (like class inheritance)\n- Terminals are your lexicon (\"a\", \"the\", \"function\") - think enum values\n- Parse trees show the derivation path, like an AST for an English sentence\n\nExample CFG production:\n```\nS → NP VP        # Sentence = NounPhrase + VerbPhrase\nNP → Det Nominal # NounPhrase = Determiner + NounGroup\nVP → Verb NP     # VerbPhrase = Verb + NounPhrase\nDet → \"a\" | \"the\"\nNominal → Noun | Noun PP\n```\n\nThe sentence \"the function executes\" would parse as:\n```\n[S [NP [Det \"the\"] [Nominal \"function\"]] [VP [Verb \"executes\"]]]\n```\n\nGrammatical sentences are valid program strings that follow the grammar's syntax rules. Ungrammatical ones are like code with syntax errors - they can't be derived through valid productions. This formal language approach (generative grammar) systematically defines all syntactically valid \"programs\" (sentences) in the language.",
-                        "token_count": 177,
+                        "text": "In natural language processing, we analyze sentence structure using hierarchical units similar to how we define data structures in programming. Consider noun phrases (\"three parties from Brooklyn\") as composite objects that function as single components. These units follow strict assembly rules, much like syntax rules in programming languages.  \n\nWe model this using context-free grammars (CFGs) – the same tool used to define programming language syntax. A CFG works like a recursive recipe:  \n1. **Rules**: Define how components combine (e.g., `NP → ProperNoun | Det + Nominal`, analogous to `if-statement → if (condition) { block }`).  \n2. **Lexicon**: A vocabulary list, like reserved keywords (`Det → \"a\", \"the\"`; `Noun → \"flight\"`).  \n\nDerivations (rule application sequences) generate valid sentences, visualized as parse trees – identical to abstract syntax trees (ASTs) in code compilation. For example, the sentence \"the flight arrives\" derives from:  \n`S → NP + VP`  \n`NP → Det + Noun`  \n`VP → Verb`  \n\nSentences adhering to CFG rules are *grammatical* (valid syntax), while others are *ungrammatical* (like code syntax errors). This framework, called generative grammar, treats language as a formal system that algorithmically produces valid structures – mirroring how compilers generate executable code from valid input.",
+                        "token_count": 175,
                         "readability": {
-                            "flesch_reading_ease": 35.34,
-                            "flesch_kincaid_grade": 17.2
+                            "flesch_reading_ease": 46.37,
+                            "flesch_kincaid_grade": 10.9
                         },
                         "pos": {
-                            "RB": 0.023391812865497075,
-                            "JJ": 0.08771929824561403,
-                            "NN": 0.32748538011695905,
-                            "VB": 0.0935672514619883,
-                            "IN": 0.10526315789473684,
-                            "VBG": 0.011695906432748537,
-                            "VBN": 0.011695906432748537,
-                            "NNP": 0.22807017543859648,
-                            "DT": 0.09941520467836257,
-                            "MD": 0.011695906432748537
+                            "IN": 0.1111111111111111,
+                            "JJ": 0.16049382716049382,
+                            "NN": 0.3395061728395062,
+                            "VB": 0.09876543209876543,
+                            "VBG": 0.037037037037037035,
+                            "CD": 0.006172839506172839,
+                            "NNP": 0.1111111111111111,
+                            "DT": 0.07407407407407407,
+                            "RB": 0.030864197530864196,
+                            "VBN": 0.024691358024691357,
+                            "MD": 0.006172839506172839
                         }
                     },
                     "prompt4": {
-                        "text": "**Adapted Explanation:**  \nSyntactic constituency organizes words into hierarchical units (constituents), analogous to how composite data structures group primitives. Consider a noun phrase (NP) as a struct encapsulating a noun with modifiers (e.g., `struct NP { Det determiner; Nominal nominal; }`). Context-free grammars (CFGs) formalize this using production rules, like BNF in programming language syntax. For example:  \n```\nNP → ProperNoun | Det Nominal  \nDet → \"a\" | \"the\"  \n```  \nThese rules recursively generate valid word sequences, mirroring how a parser constructs an abstract syntax tree. A CFG’s “language” is the set of all valid derivations (grammatical sentences), akin to a compiler accepting syntactically correct code. Ungrammatical sentences are runtime errors—invalid permutations rejected by the grammar’s rules. This generative approach parallels formal language theory in automata, where CFGs define syntax hierarchies for both programming and natural languages.  \n\n**Key CS Links:**  \n- Parse trees ≈ Abstract Syntax Trees (ASTs)  \n- CFG productions ≈ BNF rules in language specs  \n- Grammaticality ≈ Syntax validation in compilers",
-                        "token_count": 148,
+                        "text": "In computer science terms, syntactic constituency organizes words into nested groups (constituents) analogous to hierarchical data structures. These groups follow rewrite rules defined in a context-free grammar (CFG), which operates similarly to Backus-Naur Form in programming language specifications. A CFG contains:\n\n1. **Terminals**: Base tokens (words) like \"flight\" or \"the\"\n2. **Non-terminals**: Structural categories (NP for noun phrase, VP for verb phrase)\n3. **Production rules**: \n   - NP → Det Noun (e.g., \"the flight\")\n   - VP → Verb NP (e.g., \"book the flight\")\n\nThese rules generate parse trees through recursive substitutions, mirroring how compilers derive abstract syntax trees from source code. A sentence is **grammatical** if it can be generated through valid rule applications (like syntactically correct code), otherwise **ungrammatical** (invalid syntax). This formalism enables NLP systems to decompose sentences into executable structural patterns, much like parsing mathematical expressions using operator precedence hierarchies.",
+                        "token_count": 130,
                         "readability": {
-                            "flesch_reading_ease": 29.25,
-                            "flesch_kincaid_grade": 13.3
+                            "flesch_reading_ease": 40.55,
+                            "flesch_kincaid_grade": 11.0
                         },
                         "pos": {
-                            "NNP": 0.16783216783216784,
-                            "NN": 0.38461538461538464,
-                            "VB": 0.06293706293706294,
-                            "IN": 0.08391608391608392,
-                            "JJ": 0.1048951048951049,
-                            "DT": 0.11188811188811189,
-                            "VBG": 0.03496503496503497,
-                            "RB": 0.02097902097902098,
-                            "VBN": 0.013986013986013986,
-                            "FW": 0.006993006993006993,
-                            "CC": 0.006993006993006993
+                            "IN": 0.11290322580645161,
+                            "NN": 0.4112903225806452,
+                            "JJ": 0.13709677419354838,
+                            "VB": 0.08064516129032258,
+                            "DT": 0.07258064516129033,
+                            "VBN": 0.016129032258064516,
+                            "NNP": 0.08870967741935484,
+                            "RB": 0.03225806451612903,
+                            "VBG": 0.03225806451612903,
+                            "CC": 0.008064516129032258,
+                            "MD": 0.008064516129032258
                         }
                     },
                     "prompt5": {
@@ -2753,15 +2756,24 @@
                         }
                     },
                     "prompt4": {
-                        "text": "### END OF RESPONSE #\n\n\n### END OF",
-                        "token_count": 5,
+                        "text": "In the realm of Natural Language Processing (NLP), thematic roles represent a crucial concept for capturing semantic relationships within sentences. Thematic roles, such as AGENT, THEME, and INSTRUMENT, serve as abstract notions that embody the roles played by entities in a particular event or action. For instance, in the sentences \"Sasha broke the window\" and \"Pat opened the door,\" the subjects \"Sasha\" and \"Pat\" assume the role of AGENT, denoting their direct causal responsibility for the events. The direct objects \"window\" and \"door\" embody the THEME role, signifying the entities affected by the actions. These roles facilitate the generalization of different surface-level realizations of predicate arguments, enabling the identification of commonalities between various sentence structures. Furthermore, thematic roles can be realized in multiple ways, such as through verb alternations or diathesis alternations, where the same verb can be used in different constructions, as seen in the examples \"John broke the window\" and \"The window was broken by John.\" By recognizing and analyzing these thematic roles, NLP systems can better comprehend the nuances of language, ultimately enhancing their ability to process and generate human-like text.",
+                        "token_count": 182,
                         "readability": {
-                            "flesch_reading_ease": 100.24,
-                            "flesch_kincaid_grade": 0.5
+                            "flesch_reading_ease": 27.86,
+                            "flesch_kincaid_grade": 15.9
                         },
                         "pos": {
-                            "NNP": 0.6,
-                            "NN": 0.4
+                            "IN": 0.14689265536723164,
+                            "DT": 0.12994350282485875,
+                            "NN": 0.2937853107344633,
+                            "NNP": 0.0903954802259887,
+                            "JJ": 0.1016949152542373,
+                            "VB": 0.062146892655367235,
+                            "VBG": 0.03954802259887006,
+                            "CC": 0.05084745762711865,
+                            "VBN": 0.05649717514124294,
+                            "RB": 0.011299435028248588,
+                            "MD": 0.01694915254237288
                         }
                     },
                     "prompt5": {
@@ -3017,111 +3029,111 @@
             "claude": {
                 "CS": {
                     "prompt1": {
-                        "text": "Let me explain semantic roles using concepts familiar to CS students:\n\nThink of semantic roles like function parameters in programming, but for natural language processing (NLP). Just as a function can have different parameter types serving specific purposes, sentences have arguments that play distinct semantic roles.\n\nLet's analyze this with an object-oriented programming analogy:\n\n```python\nclass Event:\n    def __init__(self, agent, theme, instrument=None):\n        self.agent = agent      # The entity causing the action\n        self.theme = agent      # The entity affected by the action\n        self.instrument = None  # Optional tool used\n```\n\nIn sentences like \"Sasha broke the window\" and \"Pat opened the door\":\n- AGENT is like the primary actor (similar to a user object initiating a method call)\n- THEME is like the object being modified (similar to the data being manipulated)\n- INSTRUMENT is an optional parameter (like a tool object passed to a method)\n\nJust as methods can be called with different parameter arrangements, sentences can express the same event in multiple ways (verb alternations):\n\n```\n1. john.break(window)                  → \"John broke the window\"\n2. john.break(window, tool=rock)       → \"John broke the window with a rock\"\n3. rock.break(window)                  → \"The rock broke the window\"\n4. window.setState(broken)             → \"The window broke\"\n5. window.setStateBy(broken, john)     → \"The window was broken by John\"\n```\n\nThis is similar to how APIs can provide multiple method signatures for the same operation, with different parameter arrangements achieving the same result. The underlying event structure remains constant, but the surface representation varies, just like different interface implementations in programming.",
-                        "token_count": 223,
+                        "text": "Let me explain thematic roles using concepts familiar to computer programming and object-oriented design.\n\nThink of thematic roles as interfaces or abstract classes that define the behavior of entities in a sentence, similar to how we define roles in software design patterns. Just as a class can implement multiple interfaces, words in a sentence can fulfill specific semantic roles.\n\nLet's analyze this using two example sentences:Sasha broke the window\nPat opened the doorIn object-oriented terms, we can identify several key roles:\n\n1. AGENT: Similar to the initiator object in the Command pattern, this is the entity that triggers the action. It has:\n   - Control flow responsibility\n   - Intentional execution\n   - Direct causation\n   In our examples, Sasha and Pat are AGENTS.\n\n2. THEME: Think of this as the target object that the operation acts upon, similar to how a method modifies its parameter. The window and door are THEMEs.\n\n3. INSTRUMENT: Like a utility class or helper method, it's a tool used to accomplish the action.\n\nThese roles can be arranged in different syntactic patterns, similar to how we can refactor method calls:// Different valid arrangements of the same semantic roles\nJohn (AGENT) broke the window (THEME)\nJohn (AGENT) broke the window (THEME) with a rock (INSTRUMENT)\nThe rock (INSTRUMENT) broke the window (THEME)\nThe window (THEME) broke\nThe window (THEME) was broken by John (AGENT)This is analogous to method overloading or different implementations of the same interface, where the underlying semantic relationship remains constant despite syntactic variations. These different arrangements are called verb alternations, similar to how a single API endpoint might accept different parameter combinations.",
+                        "token_count": 260,
                         "readability": {
-                            "flesch_reading_ease": 34.76,
-                            "flesch_kincaid_grade": 13.3
+                            "flesch_reading_ease": 38.76,
+                            "flesch_kincaid_grade": 13.8
                         },
                         "pos": {
-                            "VB": 0.07009345794392523,
-                            "JJ": 0.1261682242990654,
-                            "NN": 0.37383177570093457,
-                            "VBG": 0.03271028037383177,
-                            "IN": 0.09813084112149532,
-                            "CC": 0.014018691588785047,
-                            "NNP": 0.04672897196261682,
-                            "DT": 0.14018691588785046,
-                            "MD": 0.018691588785046728,
-                            "VBN": 0.07009345794392523,
-                            "RB": 0.009345794392523364
+                            "VB": 0.10548523206751055,
+                            "JJ": 0.14345991561181434,
+                            "NN": 0.3080168776371308,
+                            "VBG": 0.012658227848101266,
+                            "CC": 0.02531645569620253,
+                            "NNP": 0.10126582278481013,
+                            "IN": 0.08438818565400844,
+                            "DT": 0.14345991561181434,
+                            "MD": 0.02531645569620253,
+                            "CD": 0.004219409282700422,
+                            "VBN": 0.046413502109704644
                         }
                     },
                     "prompt2": {
-                        "text": "Here's the CS-oriented explanation:\n\nThink of semantic roles like function parameters in programming, where different arguments can fulfill specific roles in a predicate (similar to a function call). Let's analyze this through a structured approach:\n\nConsider two operations:\n```\nbreakEvent(Sasha, window)\nopenEvent(Pat, door)\n```\n\nJust as methods have parameters with defined behaviors, sentences have arguments with specific semantic roles. The primary roles are:\n\nAGENT: Similar to the initiator object in object-oriented programming, it's the entity that triggers the action (typically with intention and control, like a user initiating a process)\nTHEME: Comparable to the target object being modified, it's the entity affected by the operation\nINSTRUMENT: Like a utility class or tool used to execute an operation\n\nThese roles can be implemented in different syntactic patterns, similar to method overloading:\n```\n// Different implementations of the same semantic structure\nbreak(AGENT: John, THEME: window)\nbreak(AGENT: John, THEME: window, INSTRUMENT: rock)\nbreak(INSTRUMENT: rock, THEME: window)\nbreak(THEME: window)  // Similar to a default constructor\nbreak(THEME: window, AGENT: John, passive: true)\n```\n\nThese different implementations of the same semantic structure are analogous to polymorphism, where the core meaning remains constant while the syntax varies. This pattern of multiple valid implementations is called verb alternation, similar to how a single interface can have multiple valid implementations in OOP.",
-                        "token_count": 212,
+                        "text": "Here's the CS-oriented explanation:\n\nThink of semantic roles like function parameters in programming, but for natural language processing. Let's analyze how arguments (parameters) behave in different sentence structures, similar to how method signatures can vary.\n\nConsider these two function-like structures:break(Sasha, window)\nopen(Pat, door)Just as functions have type constraints, these \"language functions\" have semantic type requirements. The first parameter (subject) in both cases is an AGENT - like a primary actor in an object-oriented system that initiates the action. Think of it as the main thread that triggers an operation.\n\nThe second parameter (direct object) is a THEME - the entity affected by the operation, similar to how a data object is modified by a method call.\n\nThe verb \"break\" can have multiple valid argument configurations, analogous to method overloading:break(AGENT, THEME)                    // John broke the window\nbreak(AGENT, THEME, INSTRUMENT)        // John broke the window with a rock\nbreak(INSTRUMENT, THEME)               // The rock broke the window\nbreak(THEME)                           // The window broke\nbreak(THEME, AGENT, passive=True)      // The window was broken by JohnThese different argument structures (verb alternations) are like different interfaces for the same underlying operation, each valid but with different parameter arrangements and optional arguments.",
+                        "token_count": 192,
                         "readability": {
-                            "flesch_reading_ease": -6.49,
-                            "flesch_kincaid_grade": 27.0
-                        },
-                        "pos": {
-                            "RB": 0.015151515151515152,
-                            "DT": 0.12626262626262627,
-                            "NN": 0.37373737373737376,
-                            "IN": 0.09595959595959595,
-                            "JJ": 0.16666666666666666,
-                            "MD": 0.015151515151515152,
-                            "VB": 0.0707070707070707,
-                            "CD": 0.005050505050505051,
-                            "NNP": 0.08585858585858586,
-                            "CC": 0.010101010101010102,
-                            "VBG": 0.010101010101010102,
-                            "VBN": 0.025252525252525252
-                        }
-                    },
-                    "prompt3": {
-                        "text": "In programming terms, think of semantic roles as interfaces that define how different components interact in a sentence's structure. Just like how a class can implement multiple interfaces, words can take on different semantic roles.\n\nLet's analyze this using two example sentences:\n```\nSasha.break(window);\nPat.open(door);\n```\n\nHere, 'Sasha' and 'Pat' implement what we call the AGENT interface - they're like the main thread that initiates an action with direct control over the execution. Just as a primary thread controls program flow, an AGENT controls the action.\n\nThe objects 'window' and 'door' implement the THEME interface - they're like the data objects being manipulated by the program. Think of them as the target variables that get modified by our operations.\n\nJust as methods can be called with different parameter arrangements, sentences can have different argument structures. Consider these variations of the break() operation:\n\n```\nJohn.break(window);                    // Basic AGENT->THEME\nJohn.break(window, rock);             // AGENT->THEME with INSTRUMENT\nrock.break(window);                   // INSTRUMENT->THEME\nwindow.break();                       // THEME only\nwindow.breakPassive(agent: John);     // Passive construction\n```\n\nThese different implementations of the same basic operation are similar to method overloading in OOP, where the same method can be called with different parameter configurations. In linguistics, these variations are called verb alternations, comparable to different method signatures for the same operation.\n\nThe AGENT, THEME, and INSTRUMENT roles are like abstract interfaces that different nouns can implement, allowing for flexible but structured interactions in language, similar to how interfaces enable polymorphism in programming.",
-                        "token_count": 224,
-                        "readability": {
-                            "flesch_reading_ease": 40.04,
-                            "flesch_kincaid_grade": 11.2
-                        },
-                        "pos": {
-                            "IN": 0.13942307692307693,
-                            "VBG": 0.02403846153846154,
-                            "NN": 0.3269230769230769,
-                            "JJ": 0.125,
-                            "VB": 0.09615384615384616,
-                            "DT": 0.11057692307692307,
-                            "NNP": 0.09134615384615384,
-                            "MD": 0.028846153846153848,
-                            "CD": 0.004807692307692308,
-                            "RB": 0.009615384615384616,
-                            "CC": 0.019230769230769232,
-                            "VBN": 0.02403846153846154
-                        }
-                    },
-                    "prompt4": {
-                        "text": "Here's my adaptation for CS practitioners:\n\nThink of semantic roles like function parameters in programming, but for natural language. Just as a function like deleteFile(agent, target) has defined parameter roles, sentences have semantic \"parameters\" with specific roles.\n\nConsider these two operations:\n```python\nSasha.break(window)\nPat.open(door)\n```\n\nThe \"agent\" parameter (Sasha, Pat) is like the main executing thread that triggers the action - it's the active, intentional initiator, similar to how a primary thread controls program flow. The \"theme\" parameter (window, door) is the object being modified, like a mutable data structure that gets altered by an operation.\n\nJust as functions can have multiple valid signatures, these semantic operations can be expressed in different ways while maintaining their core parameter roles:\n\n```python\n# Different valid implementations of the break operation:\nagent.break(theme)                    # John broke the window\nagent.break(theme, instrument)        # John broke the window with a rock\ninstrument.break(theme)               # The rock broke the window\ntheme.break()                         # The window broke\ntheme.break(by=agent)                # The window was broken by John\n```\n\nThese different ways of expressing the same operation are like method overloading or function polymorphism - the underlying operation remains the same, but the parameter arrangement varies. In NLP, we call these variations \"verb alternations\", similar to how you might have different valid ways to call the same API endpoint.",
-                        "token_count": 204,
-                        "readability": {
-                            "flesch_reading_ease": 37.2,
-                            "flesch_kincaid_grade": 12.3
-                        },
-                        "pos": {
-                            "RB": 0.020833333333333332,
-                            "NN": 0.359375,
-                            "IN": 0.10416666666666667,
-                            "NNP": 0.052083333333333336,
-                            "JJ": 0.13020833333333334,
-                            "CC": 0.015625,
-                            "DT": 0.140625,
-                            "VB": 0.078125,
-                            "VBN": 0.052083333333333336,
-                            "CD": 0.005208333333333333,
-                            "VBG": 0.026041666666666668,
-                            "MD": 0.015625
-                        }
-                    },
-                    "prompt5": {
-                        "text": "Here's the CS-adapted explanation:\n\nThink of semantic roles like class attributes in object-oriented programming, where different instances (words) can fulfill similar functionalities (roles) in a sentence. Just as methods have parameters with specific purposes, verbs have arguments with defined semantic roles.\n\nLet's analyze this using a programming analogy:\n\n```python\nclass Event:\n    def __init__(self, agent=None, theme=None, instrument=None):\n        self.agent = agent      # The initiator/executor of the action\n        self.theme = theme      # The affected object\n        self.instrument = instrument  # The tool used\n```\n\nConsider these sentence variations like different method calls:\n```python\nbreak_event1 = Event(agent=\"John\", theme=\"window\")\nbreak_event2 = Event(agent=\"John\", theme=\"window\", instrument=\"rock\")\nbreak_event3 = Event(instrument=\"rock\", theme=\"window\")\nbreak_event4 = Event(theme=\"window\")\n```\n\nSimilar to how function parameters can be optional or rearranged in different calls, semantic roles can appear in different positions in sentences while maintaining their logical relationship to the action. This is comparable to how API endpoints might accept different parameter combinations while performing essentially the same operation.\n\nThink of verb alternations like method overloading in programming, where the same verb (method) can accept different arrangements of arguments (parameters) while maintaining the core meaning of the operation, just as `list.sort()` and `sorted(list)` achieve the same goal through different syntactic structures.",
-                        "token_count": 175,
-                        "readability": {
-                            "flesch_reading_ease": 16.93,
+                            "flesch_reading_ease": 27.56,
                             "flesch_kincaid_grade": 16.0
                         },
                         "pos": {
-                            "RB": 0.024096385542168676,
-                            "DT": 0.0963855421686747,
-                            "NN": 0.3614457831325301,
-                            "IN": 0.13253012048192772,
-                            "JJ": 0.1566265060240964,
-                            "MD": 0.030120481927710843,
-                            "VB": 0.0783132530120482,
-                            "NNP": 0.05421686746987952,
-                            "VBG": 0.03614457831325301,
-                            "VBN": 0.018072289156626505,
-                            "CC": 0.012048192771084338
+                            "RB": 0.010869565217391304,
+                            "DT": 0.14673913043478262,
+                            "NN": 0.3532608695652174,
+                            "IN": 0.10326086956521739,
+                            "JJ": 0.1358695652173913,
+                            "CC": 0.016304347826086956,
+                            "VB": 0.08152173913043478,
+                            "MD": 0.010869565217391304,
+                            "CD": 0.005434782608695652,
+                            "NNP": 0.08695652173913043,
+                            "FW": 0.005434782608695652,
+                            "VBN": 0.043478260869565216
+                        }
+                    },
+                    "prompt3": {
+                        "text": "In programming terms, think of semantic roles as predefined interfaces that describe how different participants interact within an action (like method parameters with specific behaviors). Let's analyze this through a code-like perspective:\n\nConsider two operations:Sasha.break(window)\nPat.open(door)Both Sasha and Pat function as AGENTS - similar to primary actors in a system that trigger actions intentionally (like a main thread or user input handler). They're the active initiators with direct control over the operation execution.\n\nThe THEME (window, door) represents the objects that undergo state changes - similar to mutable objects that are modified by method calls. Think of them as the target parameters that get transformed by the operation.\n\nJust as a method can be implemented with different parameter combinations, actions can be expressed through various argument structures:// Different implementations of the break operation\nbreak(agent: John, theme: window)\nbreak(agent: John, theme: window, instrument: rock)\nbreak(instrument: rock, theme: window)\nbreak(theme: window)  // Similar to an automated process\nbreak(theme: window, agent: John, passive: true)  // Passive constructionThese different implementations of the same action are called verb alternations - analogous to method overloading where the same operation can be performed with different parameter combinations while maintaining the core functionality.\n\nThe semantic roles (AGENT, THEME, INSTRUMENT) act like interface contracts, defining the expected behavior of each participant, regardless of how they're syntactically arranged in the actual implementation.",
+                        "token_count": 223,
+                        "readability": {
+                            "flesch_reading_ease": 18.59,
+                            "flesch_kincaid_grade": 17.4
+                        },
+                        "pos": {
+                            "IN": 0.12980769230769232,
+                            "VBG": 0.019230769230769232,
+                            "NN": 0.3942307692307692,
+                            "JJ": 0.15384615384615385,
+                            "VB": 0.057692307692307696,
+                            "DT": 0.10576923076923077,
+                            "CD": 0.004807692307692308,
+                            "NNP": 0.0625,
+                            "CC": 0.009615384615384616,
+                            "RB": 0.014423076923076924,
+                            "VBN": 0.03365384615384615,
+                            "MD": 0.014423076923076924
+                        }
+                    },
+                    "prompt4": {
+                        "text": "Here's my adaptation for CS practitioners:\n\nIn programming, think of semantic roles like strongly-typed parameters in a function call. Just as a function can accept different parameter combinations, verbs in language accept different \"argument types.\" Let's model this using an event handler pattern:\n\nConsider a breakEvent and an openEvent, each with their own parameters. Like in object-oriented programming, these events share common parameter types:\n\n- AGENT: analogous to the initiator object that triggers a method (like user.click() or system.execute())\n- THEME: similar to the target object being modified (like button.setState() or file.modify())\n- INSTRUMENT: comparable to a helper object used to perform the action (like using a BufferedWriter to modify a file)\n\nJust as a method can be called with different parameter combinations while maintaining the same core functionality, verbs can arrange these roles in different valid patterns:# Different valid implementations of breakEvent:\nbreakEvent(agent=\"John\", theme=\"window\")\nbreakEvent(agent=\"John\", theme=\"window\", instrument=\"rock\")\nbreakEvent(instrument=\"rock\", theme=\"window\")\nbreakEvent(theme=\"window\")  # Like a parameterless event triggerThese different parameter arrangements are similar to method overloading in Java or function polymorphism in C++, where the same operation can be performed with different argument combinations. In NLP, we call these variations \"verb alternations,\" similar to how we handle different method signatures in programming.",
+                        "token_count": 194,
+                        "readability": {
+                            "flesch_reading_ease": 23.87,
+                            "flesch_kincaid_grade": 15.4
+                        },
+                        "pos": {
+                            "RB": 0.0055248618784530384,
+                            "NN": 0.3812154696132597,
+                            "IN": 0.13812154696132597,
+                            "NNP": 0.055248618784530384,
+                            "VBG": 0.03314917127071823,
+                            "JJ": 0.1270718232044199,
+                            "DT": 0.11602209944751381,
+                            "MD": 0.022099447513812154,
+                            "VB": 0.07734806629834254,
+                            "CC": 0.022099447513812154,
+                            "VBN": 0.022099447513812154
+                        }
+                    },
+                    "prompt5": {
+                        "text": "Here's the CS-adapted explanation:\n\nThink of semantic roles like a class hierarchy in object-oriented programming, where different instances (words) can fulfill similar functional roles, much like polymorphism. Just as methods can have different parameters with specific roles, sentences have arguments with defined semantic functions.\n\nConsider these function-like structures:break(agent: Sasha, theme: window)\nopen(agent: Pat, theme: door)The 'agent' parameter (Sasha, Pat) acts like a primary executor (similar to a main thread or process initiator) that triggers the action. The 'theme' parameter (window, door) is like the object being modified by the operation, similar to how a method modifies a data structure.\n\nThese roles can be implemented in different syntactic patterns, similar to how the same functionality can be achieved through different code structures:// Different implementations of the same semantic structure\nbreak(agent: John, theme: window)\nbreak(agent: John, theme: window, instrument: rock)\nbreak(instrument: rock, theme: window)\nbreak(theme: window)  // Like a parameterless constructor\nbreak(theme: window, agent: John, passive: true)  // Passive voice as a flagThis is analogous to method overloading in programming, where the same operation can be performed with different parameter combinations while maintaining the core functionality. The verb alternations are like different interfaces to the same underlying semantic operation, similar to how an API can expose multiple endpoints for the same core functionality.",
+                        "token_count": 213,
+                        "readability": {
+                            "flesch_reading_ease": 10.77,
+                            "flesch_kincaid_grade": 20.4
+                        },
+                        "pos": {
+                            "RB": 0.009950248756218905,
+                            "DT": 0.11442786069651742,
+                            "NN": 0.39800995024875624,
+                            "IN": 0.09950248756218906,
+                            "JJ": 0.1791044776119403,
+                            "MD": 0.029850746268656716,
+                            "VB": 0.07462686567164178,
+                            "NNP": 0.04975124378109453,
+                            "FW": 0.004975124378109453,
+                            "CC": 0.004975124378109453,
+                            "VBG": 0.014925373134328358,
+                            "VBN": 0.01990049751243781
                         }
                     }
                 },
@@ -3214,24 +3226,24 @@
                         }
                     },
                     "prompt5": {
-                        "text": "For Computational Linguistics audience:\n\nSemantic roles can be understood similarly to how we handle argument parsing in programming functions, but for natural language. Let's analyze this through familiar NLP concepts:\n\nConsider these sentences in a dependency parsing task:\n\"Sasha broke the window\" and \"Pat opened the door\"\n\nJust as we assign specific roles to parameters in function calls, we assign semantic roles to sentence components. Think of it as mapping arguments in a predicate-argument structure, where:\n\n- AGENT (like Sasha, Pat) functions as the primary actor (similar to the subject in a syntactic parse), typically initiating the action - comparable to the main process in an execution flow\n- THEME (like window, door) is the entity affected by the action - similar to an object being modified in a program\n- INSTRUMENT (like \"with a rock\") is the tool used - analogous to a method or tool in processing\n\nThese roles create a semantic framework similar to how we handle different argument arrangements in function calls. Consider these alternations:\n\n```\nbreak(AGENT: John, THEME: window)\nbreak(AGENT: John, THEME: window, INSTRUMENT: rock)\nbreak(INSTRUMENT: rock, THEME: window)\nbreak(THEME: window)\nbreak_passive(THEME: window, AGENT: John)\n```\n\nThis is similar to how we handle different argument patterns in NLP pipelines, where the same semantic content can be expressed through various syntactic structures, much like function overloading in programming.",
-                        "token_count": 217,
+                        "text": "For CL Audience:\n\nThe concept of thematic roles can be understood similarly to how we handle argument structures in programming or semantic parsing. Let's analyze how semantic participants (like function arguments) relate to predicates (similar to functions) in natural language.\n\nConsider these sentences:\n\"Sasha broke the window\"\n\"Pat opened the door\"\n\nJust as functions have parameters with specific roles, predicates in language assign semantic roles to their arguments. The subjects (Sasha, Pat) function as AGENTS - comparable to primary actors in an action sequence, similar to how a main function initiates a process. These AGENTS have properties we'd associate with autonomous actors in a computational system: they're volitional (making deliberate choices) and causally responsible for the action.\n\nThe objects (window, door) are THEMES - entities affected by the operation, similar to mutable objects that undergo state changes in programming. An INSTRUMENT (like \"rock\" in \"broke with a rock\") is analogous to a tool or method used to execute the operation.\n\nWhat makes this particularly relevant to NLP is how these roles remain constant despite syntactic transformations (like passive voice or argument structure alternations). Think of it as maintaining consistent semantic representation despite varying surface forms - similar to how different API calls might represent the same underlying operation. For example:active: John (AGENT) broke window (THEME)\npassive: window (THEME) was broken by John (AGENT)\ninchoative: window (THEME) brokeThis mapping between semantic roles and syntactic realizations is crucial for tasks like semantic role labeling, event extraction, and meaning representation in NLP systems.",
+                        "token_count": 248,
                         "readability": {
-                            "flesch_reading_ease": 8.71,
-                            "flesch_kincaid_grade": 25.3
+                            "flesch_reading_ease": 29.48,
+                            "flesch_kincaid_grade": 15.3
                         },
                         "pos": {
-                            "IN": 0.12690355329949238,
-                            "NNP": 0.116751269035533,
-                            "NN": 0.3248730964467005,
-                            "JJ": 0.116751269035533,
-                            "MD": 0.01015228426395939,
-                            "VB": 0.08121827411167512,
-                            "RB": 0.02030456852791878,
-                            "VBG": 0.03553299492385787,
-                            "CC": 0.015228426395939087,
-                            "DT": 0.1218274111675127,
-                            "VBN": 0.030456852791878174
+                            "IN": 0.1288888888888889,
+                            "NNP": 0.08444444444444445,
+                            "DT": 0.08888888888888889,
+                            "NN": 0.3377777777777778,
+                            "JJ": 0.15555555555555556,
+                            "MD": 0.008888888888888889,
+                            "VB": 0.08888888888888889,
+                            "RB": 0.017777777777777778,
+                            "VBG": 0.02666666666666667,
+                            "CC": 0.02666666666666667,
+                            "VBN": 0.035555555555555556
                         }
                     }
                 }
@@ -3239,25 +3251,24 @@
             "deepseek": {
                 "CS": {
                     "prompt1": {
-                        "text": "In NLP, verbs can be viewed as functions with parameters (thematic roles) defining each argument's purpose. Let's map this to CS concepts:\n\n1. **AGENT** = \"Executor\" parameter  \n   - Volitional initiator of action (like a function's caller/subject)  \n   - Ex: `break(AGENT=John, THEME=window)`  \n   Analogous to `user.initiate_action()` in OOP\n\n2. **THEME** = \"Primary Input\" parameter  \n   - Object being transformed (like a function's main input argument)  \n   - Ex: `open(AGENT=Pat, THEME=door)`  \n   Similar to `process_data(input_dataset)`\n\n3. **INSTRUMENT** = \"Tool\" parameter (optional)  \n   - Means used to perform action (like a secondary function argument)  \n   - Ex: `break(THEME=window, INSTRUMENT=rock)`  \n   Comparable to `compress(file, algorithm=zlib)`\n\n**Verb Alternations = Function Overloading**  \nThe same core operation can accept parameters in different configurations:\n\n```python\n# Active voice\ndef break(agent: Actor, theme: Object):  \n    pass  # John broke the window\n\n# Instrumental passive\ndef break(theme: Object, instrument: Tool):  \n    pass  # Rock broke the window\n\n# Property change\ndef break(theme: Object):  \n    pass  # Window broke\n```\n\nJust like polymorphic functions, the semantic roles persist even when syntax changes (active/passive voice, argument order). Recognizing these patterns helps build better parsers and semantic models - crucial for tasks like machine translation where \"window\" must stay THEME whether the sentence is \"John broke ___\" or \"___ was broken.\"",
-                        "token_count": 170,
+                        "text": "In programming terms, think of verbs like functions that take arguments with specific **semantic roles** (like parameter types). Let's analyze the sentences \"Sasha broke the window\" and \"Pat opened the door\":  \n\n1. **AGENT** = The \"executing entity\" initiating an action (like an object calling a method).  \n   - *Sasha* and *Pat* are AGENTS: they intentionally perform actions (`break()`, `open()`).  \n\n2. **THEME** = The \"input data\" directly affected by the action (like a parameter being modified).  \n   - *Window* (broken) and *door* (opened) are THEMES: they undergo state changes.  \n\n3. **INSTRUMENT** = An optional \"tool argument\" (like a secondary parameter).  \n   - Ex: \"John broke the window *with a rock*\" adds an INSTRUMENT.  \n\n**Verb alternations** are like function overloading: the same operation can accept different argument structures:break(AGENT=John, THEME=window)  \nbreak(INSTRUMENT=rock, THEME=window)  # Agent omitted  \nbreak(THEME=window)                   # Passive voice equivalentJust as a function’s parameters determine its behavior, semantic roles generalize *how* participants (arguments) contribute to an event’s meaning, regardless of their syntactic position (subject/object). This abstraction helps NLP systems parse sentences consistently, similar to type-checking in compilers.",
+                        "token_count": 159,
                         "readability": {
-                            "flesch_reading_ease": 28.57,
-                            "flesch_kincaid_grade": 15.6
+                            "flesch_reading_ease": 29.55,
+                            "flesch_kincaid_grade": 13.2
                         },
                         "pos": {
-                            "IN": 0.07975460122699386,
-                            "NNP": 0.1411042944785276,
-                            "NN": 0.4049079754601227,
-                            "MD": 0.018404907975460124,
-                            "VB": 0.0736196319018405,
-                            "VBN": 0.05521472392638037,
-                            "JJ": 0.10429447852760736,
-                            "VBG": 0.018404907975460124,
-                            "DT": 0.06748466257668712,
-                            "NNPS": 0.006134969325153374,
-                            "RB": 0.018404907975460124,
-                            "CC": 0.012269938650306749
+                            "IN": 0.09271523178807947,
+                            "VBG": 0.026490066225165563,
+                            "NN": 0.3443708609271523,
+                            "VB": 0.10596026490066225,
+                            "JJ": 0.09271523178807947,
+                            "DT": 0.12582781456953643,
+                            "NNP": 0.09271523178807947,
+                            "VBN": 0.059602649006622516,
+                            "CC": 0.019867549668874173,
+                            "RB": 0.033112582781456956,
+                            "MD": 0.006622516556291391
                         }
                     },
                     "prompt2": {
@@ -3281,24 +3292,25 @@
                         }
                     },
                     "prompt3": {
-                        "text": "In natural language processing, think of verbs as functions that take different types of parameters. Let's analyze the sentences \"Sasha broke the window\" and \"Pat opened the door\" through a CS lens:\n\n1. **Agents = Active Controllers**  \nSasha and Pat are like users initiating commands. They're the *AGENT* parameter - volitional actors causing changes (similar to how a program might require a userID for accountability).\n\n2. **Themes = Data Objects**  \nThe window and door are *THEME* parameters - inanimate objects being modified (like variables passed to a function).\n\n3. **Instrument = Tools**  \nOptional parameters like \"with a rock\" become *INSTRUMENT* (think: third-party libraries used in your code).\n\nThis system is called **thematic role labeling** - it's like type-checking for language. Just as a function `break(agent, theme, instrument?)` can accept parameters in different formats:  \n```python\nbreak(agent=John, theme=window, instrument=rock)  \nbreak(instrument=rock, theme=window)  # Passive voice equivalent  \nbreak(theme=window)  # Agent omitted  \n```  \n\nThese variations are called **verb alternations** - different API endpoints for the same core operation. Recognizing these patterns helps machines parse sentences as effectively as your IDE understands method overloading.",
-                        "token_count": 161,
+                        "text": "Let's analyze sentence structures using programming concepts. Just like functions have parameters with specific purposes, verbs have semantic roles for their arguments. Take these function-like sentences:\n\n1. executeAction(AGENT=Sasha, THEME=window) ➔ \"Sasha broke the window\"  \n2. executeAction(AGENT=Pat, THEME=door) ➔ \"Pat opened the door\"\n\nThe AGENT parameter (subject) acts like an initiator in a program - an entity that deliberately triggers an operation (volitional causation). The THEME parameter (object) represents the data structure being modified - the operand that gets transformed.\n\nThese semantic roles form an interface that persists across different syntax patterns, similar to method overloading:# Different method signatures for \"break\":\ndef break(AGENT: Actor, THEME: Object):  # Active voice\ndef break(THEME: Object):                # Middle voice (\"Window broke\")\ndef break(THEME: Object, INSTRUMENT: Tool):  # With tool parameterJust like how a function's parameters can be ordered differently (positional vs keyword arguments), natural language uses syntactic transformations (active/passive voice) while preserving semantic roles. The INSTRUMENT role acts like an optional tool parameter that enables the operation.\n\nThis role system helps NLP models generalize across sentence structures, similar to how type signatures help compilers understand functions. Whether the AGENT appears as the subject (\"John broke the window\") or in a prepositional phrase (\"Window was broken by John\"), its semantic type remains consistent.",
+                        "token_count": 197,
                         "readability": {
-                            "flesch_reading_ease": 37.5,
-                            "flesch_kincaid_grade": 12.2
+                            "flesch_reading_ease": 25.8,
+                            "flesch_kincaid_grade": 14.6
                         },
                         "pos": {
-                            "IN": 0.1111111111111111,
-                            "JJ": 0.0915032679738562,
-                            "NN": 0.3464052287581699,
-                            "VB": 0.08496732026143791,
-                            "DT": 0.09803921568627451,
-                            "NNP": 0.11764705882352941,
-                            "VBN": 0.058823529411764705,
-                            "CC": 0.0196078431372549,
-                            "VBG": 0.032679738562091505,
-                            "MD": 0.013071895424836602,
-                            "RB": 0.026143790849673203
+                            "VB": 0.10695187165775401,
+                            "JJ": 0.10695187165775401,
+                            "NN": 0.37967914438502676,
+                            "VBG": 0.0213903743315508,
+                            "NNP": 0.10695187165775401,
+                            "IN": 0.0855614973262032,
+                            "DT": 0.11764705882352941,
+                            "VBN": 0.0481283422459893,
+                            "RB": 0.0106951871657754,
+                            "FW": 0.0053475935828877,
+                            "MD": 0.0053475935828877,
+                            "CC": 0.0053475935828877
                         }
                     },
                     "prompt4": {
@@ -4185,47 +4197,45 @@
                         }
                     },
                     "prompt2": {
-                        "text": "Here's how word meanings relate to data structures and hierarchies in natural language processing:\n\nThink of a word as an object that can have multiple distinct implementations, similar to polymorphism in programming. For example, \"mouse\" can be instantiated as either a computer peripheral device or a rodent, depending on the context.\n\nThese different implementations (word senses) are typically stored in structured databases, similar to how we organize class definitions:\n\n```\nclass Mouse:\n    def __init__(self, sense_id):\n        if sense_id == 1:\n            self.definition = \"Computer input device\"\n        elif sense_id == 2:\n            self.definition = \"Small rodent\"\n```\n\nThe relationships between words form a hierarchical tree structure, comparable to class inheritance:\n\n- Synonyms are like identical interfaces (car.drive() ≈ automobile.drive())\n- Antonyms are like complementary boolean states (hot/cold, dark/light)\n- Hyponyms/Hypernyms create an inheritance tree:\n    Vehicle (parent class)\n    └── Car (child class)\n        └── Sedan (grandchild class)\n\nMeronymy represents a composition relationship, similar to how objects can be composed of other objects:\n```\nclass Car:\n    def __init__(self):\n        self.wheel = Wheel()  # wheel is a component/meronym of car\n        self.engine = Engine()\n```\n\nThis hierarchical organization enables efficient natural language processing, much like how class hierarchies enable efficient code organization and reuse.",
-                        "token_count": 162,
+                        "text": "Here's the CS-oriented explanation:\n\nWord sense disambiguation can be viewed as a classification problem where words (tokens) map to different semantic classes (meanings), similar to how objects in programming can have multiple states or interpretations based on context.\n\nConsider these examples as different object instances:\n- mouse.type1 = \"computer_peripheral\"\n- mouse.type2 = \"biological_entity\"\n- bank.type1 = \"financial_institution\"\n- bank.type2 = \"geographical_feature\"\n\nThese semantic relationships can be modeled as a hierarchical tree structure or graph:\n\n1. Synonyms: Equivalent nodes that point to the same semantic value\n   {car, automobile} -> same reference object\n   Similar to aliases or pointers to the same memory location\n\n2. Antonyms: Complementary pairs with opposite values\n   Similar to boolean operators: hot(!cold), dark(!light)\n\n3. Hyponyms/Hypernyms: Forms an inheritance tree\n   vehicle (parent class)\n   └── car (child class)\n   Similar to class inheritance in OOP\n\n4. Meronyms/Holonyms: Represents composition relationships\n   car (composite object)\n   └── wheel (component object)\n   Similar to composite design pattern or object composition\n\nEach word sense can be thought of as a distinct object definition in a semantic database, where glosses (dictionary definitions) serve as documentation for each semantic class.",
+                        "token_count": 156,
                         "readability": {
-                            "flesch_reading_ease": 23.66,
-                            "flesch_kincaid_grade": 15.4
+                            "flesch_reading_ease": 20.48,
+                            "flesch_kincaid_grade": 14.6
                         },
                         "pos": {
-                            "RB": 0.020134228187919462,
-                            "NN": 0.4228187919463087,
-                            "VB": 0.09395973154362416,
-                            "CC": 0.03355704697986577,
-                            "IN": 0.10067114093959731,
-                            "JJ": 0.15436241610738255,
-                            "DT": 0.08053691275167785,
-                            "MD": 0.020134228187919462,
-                            "VBN": 0.020134228187919462,
-                            "VBG": 0.006711409395973154,
-                            "NNP": 0.040268456375838924,
-                            "$": 0.006711409395973154
+                            "RB": 0.006944444444444444,
+                            "DT": 0.08333333333333333,
+                            "NN": 0.4375,
+                            "NNP": 0.027777777777777776,
+                            "MD": 0.027777777777777776,
+                            "VB": 0.08333333333333333,
+                            "VBN": 0.027777777777777776,
+                            "IN": 0.08333333333333333,
+                            "JJ": 0.1875,
+                            "VBG": 0.006944444444444444,
+                            "CC": 0.027777777777777776
                         }
                     },
                     "prompt3": {
-                        "text": "Here's how word meanings work in natural language, explained through a computational lens:\n\nThink of a word as having multiple possible meanings (senses) stored like enum values or class instances. Just as a variable can have different values based on context, a word can represent different concepts depending on its usage.\n\nFor example, consider \"mouse\" as having two distinct semantic values:\n- mouse1 = computer_input_device\n- mouse2 = small_rodent\n\nThese different meanings are stored in lexical databases (similar to lookup tables) called dictionaries, where each entry (sense) has a definition string (gloss), like:\n```\nbank = {\n    1: \"financial_institution handling deposits and loans\",\n    2: \"slope_beside_water\"\n}\n```\n\nWords can have various semantic relationships, comparable to class relationships in object-oriented programming:\n\n1. Synonyms: Different words mapping to the same semantic value\n   - car.meaning == automobile.meaning\n   - vomit.meaning == throw_up.meaning\n\n2. Antonyms: Words with opposite semantic values, like boolean opposites\n   - hot ⟷ cold\n   - dark ⟷ light\n\n3. Hyponyms/Hypernyms: Similar to class inheritance hierarchies\n   - vehicle (superclass) → car (subclass)\n   - animal (superclass) → dog (subclass)\n\n4. Meronyms/Holonyms: Comparable to composition relationships\n   - car (container) contains wheel (component)\n   - wheel is_part_of car\n\nThis structured representation of word meanings enables natural language processing systems to understand and process text semantically.",
-                        "token_count": 165,
+                        "text": "Here's a CS-friendly explanation of word meanings and relationships:\n\nIn natural language processing, words are like variables that can hold multiple values (meanings) called senses. Just as a variable name can represent different values depending on context, a word's meaning changes based on its usage context.\n\nConsider the ambiguity in these examples:\n- mouse: can be either a computer input device (mouse1) or a rodent (mouse2)\n- bank: represents either a financial institution (bank1) or a riverside terrain (bank2)\n\nThese word senses are stored in data structures similar to dictionaries, where each word (key) maps to multiple definitions (values) called glosses. For example:\nbank = {\n    1: \"financial institution that handles deposits and loans\",\n    2: \"sloping land beside water\"\n}\n\nWords can have various relationship types, similar to class relationships in object-oriented programming:\n\n1. Synonyms: Different words pointing to the same meaning (like aliases):\n   car === automobile\n   couch === sofa\n\n2. Antonyms: Words with opposite meanings (like boolean opposites):\n   hot <!=> cold\n   dark <!=> light\n\n3. Hyponyms/Hypernyms: Represent IS-A relationships (like class inheritance):\n   vehicle <-- car (car inherits from vehicle)\n   animal <-- dog (dog inherits from animal)\n\n4. Meronyms/Holonyms: Represent HAS-A relationships (like object composition):\n   car.wheel (wheel is a component of car)\n   wheel.belongs_to(car)",
+                        "token_count": 175,
                         "readability": {
-                            "flesch_reading_ease": 19.3,
-                            "flesch_kincaid_grade": 17.1
+                            "flesch_reading_ease": 32.94,
+                            "flesch_kincaid_grade": 14.0
                         },
                         "pos": {
-                            "RB": 0.019230769230769232,
-                            "NN": 0.4358974358974359,
-                            "VB": 0.08333333333333333,
-                            "IN": 0.10256410256410256,
-                            "JJ": 0.16025641025641027,
-                            "VBN": 0.05128205128205128,
-                            "DT": 0.057692307692307696,
-                            "NNP": 0.00641025641025641,
-                            "VBG": 0.038461538461538464,
-                            "CC": 0.019230769230769232,
-                            "MD": 0.019230769230769232,
-                            "CD": 0.00641025641025641
+                            "RB": 0.011904761904761904,
+                            "DT": 0.07738095238095238,
+                            "NN": 0.49404761904761907,
+                            "IN": 0.1130952380952381,
+                            "CC": 0.03571428571428571,
+                            "JJ": 0.11904761904761904,
+                            "VB": 0.07142857142857142,
+                            "MD": 0.023809523809523808,
+                            "VBN": 0.02976190476190476,
+                            "VBG": 0.017857142857142856,
+                            "NNP": 0.005952380952380952
                         }
                     },
                     "prompt4": {
@@ -9109,24 +9119,23 @@
                 },
                 "CL": {
                     "prompt1": {
-                        "text": "In neural network training (like optimizing NLP models), computation graphs track all operations for efficient gradient calculation during backpropagation. Here's why this matters for your CL work:\n\n1. **Backward Pass = Chain Rule Applied to Model Components**  \n   Just like dependency parsing reveals word relationships, backprop reveals how each parameter (e.g., weights in a transformer layer) contributes to the final loss. We calculate derivatives backward through the graph using the chain rule:\n\n   If a POS tagger's loss `L` depends on embedding layer output `e`, which depends on attention weights `a`:\n   ```\n   ∂L/∂a = ∂L/∂e * ∂e/∂a\n   ```\n   Multiply gradients at each step like composing pipeline processors in an NLP system.\n\n2. **Gradient Flow = Error Signal Propagation**  \n   Each node (e.g., a softmax layer or LSTM cell) receives an \"upstream\" gradient from its output side, calculates its local gradient (how its inputs affect its output), then sends \"downstream\" gradients to its input nodes. This mirrors how syntax errors propagate through parse trees.\n\n3. **Practical Example**  \n   Suppose we compute loss `L = cross_entropy(c, e)` in a sentiment analysis model:\n   - Direct derivative: `∂L/∂c = e` (immediate output layer adjustment)\n   - Chained derivatives:  \n     `∂L/∂a = ∂L/∂e * ∂e/∂a` (adjusting attention weights)  \n     `∂L/∂b = ∂L/∂e * ∂e/∂d * ∂d/∂b` (adjusting earlier embeddings)\n\nThis structured approach enables efficient updates across all model layers - crucial for training LLMs and other deep NLP architectures.",
-                        "token_count": 195,
+                        "text": "**Adapted Explanation for CL Students:**  \nIn neural network training (like optimizing NLP models), computation graphs track how operations (e.g., embedding layers, activation functions) transform inputs into outputs (e.g., loss values). The *backward pass* calculates gradients (error signals) needed to update weights—critical for learning patterns in language data.  \n\n**Key Analogy:** Imagine training a sentiment classifier. The graph connects layers (input text → embeddings → dense layer → loss). Backpropagation works like tracing backward: \"How much did each embedding/node contribute to misclassifying 'bad' as positive?\"  \n\n**Chain Rule & Gradients:**  \n- For composite operations (e.g., loss = cross_entropy(softmax(embeddings))), gradients multiply step-by-step via the chain rule:  \n  *Total gradient = (loss gradient w.r.t softmax) × (softmax gradient w.r.t embeddings)*  \n- Each node (e.g., embedding layer) receives an *upstream gradient* (error from later layers) and computes a *local gradient* (how its output changes with its input, like word vectors). These multiply to propagate error backward.  \n\n**Example (Language Model Training):**  \nLet loss *L* depend on cross-entropy (*ce*) and embeddings (*a, b*). Compute gradients:  \n1. **Direct derivative**: ∂L/∂ce = 1 (loss directly compares *ce* to true labels).  \n2. **Chain rule for embeddings**:  \n   - ∂L/∂a = ∂L/∂ce × ∂ce/∂a (error flows through cross-entropy → embedding layer)  \n   - ∂L/∂b = ∂L/∂ce × ∂ce/∂dense_output × ∂dense_output/∂b (error traverses multiple layers).  \n\nThis mirrors how LLMs adjust word embeddings based on prediction errors in text generation!",
+                        "token_count": 183,
                         "readability": {
-                            "flesch_reading_ease": 39.26,
-                            "flesch_kincaid_grade": 13.6
+                            "flesch_reading_ease": 33.81,
+                            "flesch_kincaid_grade": 11.5
                         },
                         "pos": {
-                            "IN": 0.10614525139664804,
-                            "JJ": 0.10614525139664804,
-                            "NN": 0.40782122905027934,
-                            "VBG": 0.0446927374301676,
-                            "NNP": 0.12849162011173185,
-                            "VB": 0.0670391061452514,
-                            "DT": 0.1005586592178771,
-                            "RB": 0.01675977653631285,
-                            "CC": 0.0111731843575419,
-                            "FW": 0.00558659217877095,
-                            "VBN": 0.00558659217877095
+                            "NNP": 0.10982658959537572,
+                            "IN": 0.10404624277456648,
+                            "NN": 0.4508670520231214,
+                            "JJ": 0.07514450867052024,
+                            "VBG": 0.046242774566473986,
+                            "VB": 0.09826589595375723,
+                            "DT": 0.06358381502890173,
+                            "VBN": 0.017341040462427744,
+                            "RB": 0.023121387283236993,
+                            "CC": 0.011560693641618497
                         }
                     },
                     "prompt2": {
@@ -9643,24 +9652,24 @@
                         }
                     },
                     "prompt4": {
-                        "text": "Large language models can be viewed as highly advanced NLP tools, trained on massive datasets to learn the intricacies of human language. These models are capable of capturing complex patterns and relationships within language, allowing them to be fine-tuned for a variety of tasks, such as language translation, text summarization, and question answering. For NLP practitioners, this means that large language models can be leveraged to build sophisticated chatbots, virtual assistants,",
-                        "token_count": 70,
+                        "text": "An RNN is similar to other networks, but has a key difference in that it loops back on itself. Think of it like a feedback loop in a control system, where the output of the previous step is used as input for the current step. In NLP, this allows the network to keep track of context and make decisions based on what it has seen before. For example, in language modeling, an RNN can use the previous words in a sentence to predict the next word. The network uses a set of weights to connect the hidden layer from the previous time step to the current hidden layer, allowing it to capture temporal relationships in the data. This is similar to how a hidden Markov model uses probabilities to model sequences, but RNNs can learn more complex patterns. The backpropagation algorithm is used to train the network, but it's modified to handle the temporal dimension, which is referred to as backpropagation through time. This allows the network to learn from its mistakes and improve its performance over time, much like how a reinforcement learning agent learns from trial and error. By using this feedback loop, RNNs can learn to recognize patterns in sequential data, such as speech, text, or time series data, and make predictions or take actions based on that data. \n\n     \n\nI hope this paraphrasis meets the requirements and is clear and concise for the CL jury! Let me know if you have any further questions or if you'd like me to elaborate on any of the concepts. \n\nHowever, I will only provide the paraphrasis as requested:\n\nIn the context of Natural Language Processing (NLP), a Recurrent Neural Network (RNN) can be viewed as a dynamic system that leverages temporal dependencies to model sequential data, such as text or speech. By incorporating a feedback loop, the RNN is able to capture contextual information from previous time steps, enabling it to make informed predictions about future outcomes. This is analogous to how a language model uses statistical patterns to predict the next word in a sentence. The RNN's hidden layer serves as a form of memory, storing information from previous time steps and using it to inform decisions at later points in time. The network is trained using a modified version of the backpropagation algorithm, known as backpropagation through time, which allows it to learn from its mistakes and adapt to the sequential nature of the data. This enables the RNN to recognize complex patterns in language and make accurate predictions, much like how a machine translation system uses contextual information to generate coherent translations. By harnessing the power of temporal dependencies, RNNs have become a crucial component in many NLP applications, including language modeling, sentiment analysis, and text classification. \n\n \n\nIn the context of Natural Language Processing (NLP), a Recurrent Neural Network (RNN) can be viewed as a dynamic system that leverages temporal dependencies to model sequential data, such as text or speech. By incorporating a feedback loop, the RNN is able to capture contextual information from previous time steps, enabling it to make informed predictions about future outcomes. This is analogous to how a language model uses statistical patterns to predict the next word in a sentence. The RNN's hidden layer serves as a form of memory, storing information from previous time steps and using it to inform decisions at later points in time. The network is trained using a modified version of the backpropagation algorithm, known as backpropagation through time, which allows it to learn from its mistakes and adapt to the sequential nature of the data. This enables the RNN to recognize complex patterns in language and make accurate predictions, much like how a machine translation system uses contextual information to generate coherent translations. By harnessing the power of temporal dependencies",
+                        "token_count": 634,
                         "readability": {
-                            "flesch_reading_ease": 38.96,
-                            "flesch_kincaid_grade": 13.7
+                            "flesch_reading_ease": 45.69,
+                            "flesch_kincaid_grade": 13.2
                         },
                         "pos": {
-                            "JJ": 0.16666666666666666,
-                            "NN": 0.3333333333333333,
-                            "MD": 0.030303030303030304,
-                            "VB": 0.10606060606060606,
-                            "VBN": 0.045454545454545456,
-                            "IN": 0.15151515151515152,
-                            "RB": 0.015151515151515152,
-                            "NNP": 0.030303030303030304,
-                            "DT": 0.06060606060606061,
-                            "VBG": 0.030303030303030304,
-                            "CC": 0.030303030303030304
+                            "DT": 0.13805309734513274,
+                            "NNP": 0.05486725663716814,
+                            "VB": 0.13274336283185842,
+                            "JJ": 0.12035398230088495,
+                            "NN": 0.3008849557522124,
+                            "CC": 0.03716814159292035,
+                            "IN": 0.13805309734513274,
+                            "RB": 0.012389380530973451,
+                            "VBN": 0.02654867256637168,
+                            "MD": 0.010619469026548672,
+                            "VBG": 0.02831858407079646
                         }
                     },
                     "prompt5": {
@@ -12283,25 +12292,25 @@
                 },
                 "CS": {
                     "prompt1": {
-                        "text": "Let me explain the Multinomial Naive Bayes classifier in a way that will connect with your programming background.\n\nThink of Naive Bayes as a classification algorithm that works similarly to how you'd implement a recommendation system. Just like how you might classify an email as spam based on certain keywords, Naive Bayes makes classification decisions based on probability calculations.\n\nThe \"bag of words\" concept is similar to creating a frequency dictionary or hash map in programming, where:\n```python\ndocument = {\n    'word1': frequency1,\n    'word2': frequency2,\n    ...\n}\n```\n\nThe classifier uses two key probabilities that we multiply together:\n1. Prior probability P(c): The baseline probability of a class (like the probability of an email being spam)\n2. Likelihood P(d|c): The probability of seeing this document given the class\n\nThe \"naive\" part comes from a simplifying assumption that makes the math easier: we treat each feature (word) as independent. It's like treating each element in an array as completely unrelated to the others. While this isn't strictly true in real text (words do relate to each other), it works surprisingly well in practice.\n\nThe final classification formula looks like this:\n```\nclass = argmax(P(class) * product(P(feature|class)))\n```\n\nIn programming terms, you could think of it as:\n```python\ndef naive_bayes_classify(document):\n    return max(\n        possible_classes,\n        key=lambda c: prior_probability(c) * \n            product([likelihood(feature, c) for feature in document])\n    )\n```\n\nThis is called a linear classifier because it makes decisions based on a linear combination of inputs, similar to how you might implement a weighted sum in a neural network's linear layer.\n\nThe key advantage is computational efficiency - instead of considering complex word relationships (which would be O(n²) or worse), we get O(n) complexity by treating features independently.",
-                        "token_count": 268,
+                        "text": "Let me explain the Multinomial Naive Bayes classifier in CS terms you'll find familiar:\n\nThink of Naive Bayes as a classification algorithm similar to how you'd implement a simple recommendation system. It's \"naive\" because it makes a fundamental simplification in how it processes input features - imagine treating them like independent variables in your code.\n\nFor text classification, we transform documents into feature vectors, similar to how you'd create a word frequency dictionary in Python. Instead of maintaining the complex structure of text, we simplify it to a {word: frequency} mapping - that's the \"bag of words\" concept.\n\nThe algorithm works like this:# Pseudocode representation\nclass_prediction = argmax(P(class|document))\n# Which simplifies to:\nclass_prediction = argmax(P(document|class) * P(class))This is similar to maximizing a function in algorithms, where we're finding the class that gives us the highest probability score.\n\nThe core mathematical optimization looks like this:cNB = argmax[P(class) * ∏P(feature|class)]Two key simplifications make this algorithm efficient:\n1. Position independence: Like working with a HashSet instead of an Array - order doesn't matter\n2. Feature independence: Each feature contributes independently to the probability, like separate nodes in a decision tree\n\nNaive Bayes belongs to the family of linear classifiers, similar to logistic regression, where the final decision boundary is created through a linear combination of inputs - conceptually similar to how you'd implement a simple neural network's single layer.\n\nThis implementation is particularly efficient for text classification tasks, similar to how you might build a spam filter or document categorizer.",
+                        "token_count": 240,
                         "readability": {
-                            "flesch_reading_ease": 29.69,
-                            "flesch_kincaid_grade": 15.2
+                            "flesch_reading_ease": 19.4,
+                            "flesch_kincaid_grade": 17.1
                         },
                         "pos": {
-                            "VB": 0.10743801652892562,
-                            "DT": 0.1322314049586777,
-                            "NNP": 0.06198347107438017,
-                            "NN": 0.3305785123966942,
-                            "IN": 0.1446280991735537,
-                            "MD": 0.02066115702479339,
-                            "VBG": 0.03305785123966942,
-                            "RB": 0.04132231404958678,
-                            "VBN": 0.024793388429752067,
-                            "JJ": 0.09090909090909091,
-                            "CC": 0.008264462809917356,
-                            "CD": 0.004132231404958678
+                            "VB": 0.1073170731707317,
+                            "DT": 0.13658536585365855,
+                            "NNP": 0.07317073170731707,
+                            "NN": 0.33658536585365856,
+                            "IN": 0.12195121951219512,
+                            "JJ": 0.15121951219512195,
+                            "VBG": 0.02926829268292683,
+                            "RB": 0.024390243902439025,
+                            "CD": 0.004878048780487805,
+                            "VBN": 0.004878048780487805,
+                            "MD": 0.004878048780487805,
+                            "CC": 0.004878048780487805
                         }
                     },
                     "prompt2": {
@@ -12348,47 +12357,47 @@
                         }
                     },
                     "prompt4": {
-                        "text": "Here's my adaptation for CS practitioners:\n\nThink of Multinomial Naive Bayes as a sorting algorithm for documents, similar to how you'd classify emails into spam or not-spam. It's like having a hash table where each document is reduced to a frequency counter of its words (imagine a Python dictionary with word counts), ignoring their order - just like how Counter() works in Python.\n\nThe algorithm computes a probability score, similar to how you'd calculate weighted scores in a recommendation system. For each possible class (like spam/not-spam), it multiplies two key components:\n1. Prior probability: The base rate of each class in your training data (like percentage of spam in all emails)\n2. Likelihood: The probability of seeing these word frequencies in this class\n\nThe 'naive' part comes from treating each feature (word) as independent - like treating each bit in a binary number as independent when calculating probabilities. This is similar to assuming each node in a graph has no edges connecting to other nodes.\n\nThe final classification is determined by a simple argmax operation - like finding the index of the maximum value in an array. The math can be expressed as:\n\n```python\nclass_prediction = argmax([prior[class_i] * product(likelihood[word][class_i] for word in document) \n                          for class_i in possible_classes])\n```\n\nIt's a linear classifier because it makes decisions based on a weighted sum of inputs, similar to how a simple perceptron works, but using multiplication in log space instead of addition.",
-                        "token_count": 228,
+                        "text": "Here's my adapted explanation for CS practitioners:\n\nThink of Multinomial Naive Bayes as a simplified sorting algorithm that operates like a spam filter. Just as you'd classify emails based on word frequencies without caring about their position (like a HashMap of word counts), this classifier treats documents as unordered collections of words with their frequencies.\n\nThe algorithm is like implementing a max() function that selects the most probable class by multiplying two key probabilities:\n1. Prior probability (P(c)): like the default probability in your training data (e.g., percentage of spam in all emails)\n2. Likelihood (P(d|c)): similar to calculating conditional probabilities in your feature space\n\nThe \"naive\" part comes from treating features as independent - imagine parallel processing where you don't need to check relationships between features. It's like assuming each word's probability is independent of other words, so you can multiply their individual probabilities (similar to AND operations).\n\nIn code terms, you could think of it as:class_prediction = argmax([prior[class] * product(likelihood[feature][class] \n                         for feature in document) for class in classes])It's a linear classifier because it makes decisions based on linear combinations of inputs, similar to how you'd implement a simple weighted sum in a neural network's single layer.",
+                        "token_count": 199,
                         "readability": {
-                            "flesch_reading_ease": 36.73,
-                            "flesch_kincaid_grade": 14.6
+                            "flesch_reading_ease": 29.79,
+                            "flesch_kincaid_grade": 15.2
                         },
                         "pos": {
-                            "RB": 0.019417475728155338,
-                            "NN": 0.33980582524271846,
-                            "IN": 0.1941747572815534,
-                            "NNP": 0.03398058252427184,
-                            "DT": 0.1553398058252427,
-                            "JJ": 0.10194174757281553,
-                            "VB": 0.06796116504854369,
-                            "CC": 0.009708737864077669,
-                            "VBG": 0.04854368932038835,
-                            "VBN": 0.019417475728155338,
-                            "CD": 0.0048543689320388345,
-                            "MD": 0.0048543689320388345
+                            "RB": 0.022727272727272728,
+                            "JJ": 0.13068181818181818,
+                            "NN": 0.36363636363636365,
+                            "IN": 0.21022727272727273,
+                            "NNP": 0.045454545454545456,
+                            "DT": 0.07954545454545454,
+                            "VB": 0.08522727272727272,
+                            "VBN": 0.011363636363636364,
+                            "VBG": 0.03409090909090909,
+                            "CD": 0.005681818181818182,
+                            "MD": 0.011363636363636364
                         }
                     },
                     "prompt5": {
-                        "text": "Here's the CS-adapted explanation:\n\nImagine you're building a document classifier using probability distributions, similar to how we classify data points in machine learning. The multinomial naive Bayes classifier is like a simplified version of a probabilistic decision tree, where we make an assumption to reduce computational complexity.\n\nThink of a document as an array or hash map, where we only store word frequencies without caring about their index positions (similar to a COUNT(*) GROUP BY in SQL). This is our \"bag of words\" model.\n\nThe classifier implements a function that returns the class with the highest probability score, similar to an argmax operation in neural networks. Mathematically, it's like finding the maximum value in an array of probabilities, where each probability is calculated for a different class.\n\nThe algorithm multiplies two key components:\n1. Prior probability: P(c) - like the base rate in your training data\n2. Likelihood: P(d|c) - probability of seeing this document given a specific class\n\nThe \"naive\" part comes from treating features (words) as independent variables, similar to treating each feature independently in a feature vector. Instead of computing complex conditional probabilities between features (which would be O(n²)), we simply multiply individual probabilities (O(n)).\n\nThe final implementation is essentially a linear classifier, much like logistic regression, where the decision boundary is created through a linear combination of inputs. You can think of it as a simplified perceptron where the weights are derived from probability calculations rather than gradient descent.\n\nIn code terms, you'd be implementing something like:\n```python\nclass_prediction = argmax([prior[c] * product([likelihood[feature][c] \n                         for feature in document]) for c in classes])\n```",
-                        "token_count": 264,
+                        "text": "Here's the CS-tailored explanation:\n\nMultinomial Naive Bayes is a linear classifier that operates similarly to how we handle arrays or sets in programming. Imagine a document as a dictionary or hash map, where we only store word frequencies without caring about their order (like a Counter object in Python).\n\nThe algorithm works like a simplified version of probability-based decision trees. Just as we optimize for maximum value in sorting algorithms, here we're finding argmax of probabilities across classes. The formula looks like this:\n\npredicted_class = argmax(P(class|document))\n\nThis can be broken down into two components we multiply together (similar to how we combine weights in neural networks):\n1. Prior probability: P(class) - initial probability of the class\n2. Likelihood: P(document|class) - probability of document given the class\n\nThe \"naive\" part comes from treating features (words) as independent variables - similar to how we might process independent features in a feature vector for machine learning. This independence assumption allows us to multiply individual probabilities instead of computing complex joint probabilities, making it computationally efficient (O(n) complexity).\n\nThink of it like parallel processing: instead of analyzing word relationships (which would be like checking all array elements against each other), we process each word independently and combine their probabilities.\n\nThe final implementation resembles a simple linear combination, similar to the weighted sum you'd find in the forward pass of a neural network:\npredicted_class = argmax(P(class) * product(P(feature|class)))\n\nThis makes it part of the linear classifier family, alongside algorithms like logistic regression, where the decision boundary is a linear combination of inputs.",
+                        "token_count": 251,
                         "readability": {
-                            "flesch_reading_ease": 25.69,
-                            "flesch_kincaid_grade": 14.7
+                            "flesch_reading_ease": 20.62,
+                            "flesch_kincaid_grade": 16.6
                         },
                         "pos": {
-                            "RB": 0.04602510460251046,
-                            "DT": 0.13389121338912133,
-                            "NN": 0.3514644351464435,
-                            "VBG": 0.03765690376569038,
-                            "JJ": 0.12552301255230125,
-                            "VB": 0.07112970711297072,
-                            "IN": 0.1506276150627615,
-                            "NNP": 0.04184100418410042,
-                            "CC": 0.0041841004184100415,
-                            "VBN": 0.02510460251046025,
-                            "CD": 0.0041841004184100415,
-                            "MD": 0.008368200836820083
+                            "RB": 0.049107142857142856,
+                            "DT": 0.12053571428571429,
+                            "NN": 0.3125,
+                            "JJ": 0.14285714285714285,
+                            "NNP": 0.044642857142857144,
+                            "VB": 0.08928571428571429,
+                            "CC": 0.013392857142857142,
+                            "IN": 0.15178571428571427,
+                            "VBG": 0.04017857142857143,
+                            "VBN": 0.013392857142857142,
+                            "MD": 0.013392857142857142,
+                            "RP": 0.004464285714285714,
+                            "CD": 0.004464285714285714
                         }
                     }
                 }
@@ -14596,24 +14605,24 @@
                         }
                     },
                     "prompt2": {
-                        "text": "Here's how vector similarity works in AI, explained in programming terms:\n\nThink of words as vectors in a high-dimensional space, similar to how you'd represent features in machine learning. Just like comparing two data points in your feature space, we need a reliable metric to measure how similar two word vectors are.\n\nThe most efficient approach is using cosine similarity, which is essentially normalized dot product. If you're familiar with ML classifiers or neural networks, you've probably used dot products before. Here's why it works:\n\n1. The dot product (a·b) acts like a similarity score between vectors - high values indicate vectors pointing in similar directions in the feature space\n2. But raw dot product has a problem: it's biased toward longer vectors (think of frequent words with larger values)\n3. To fix this, we normalize by dividing by the vectors' magnitudes: (a·b)/(|a||b|)\n\nIn code terms, it's similar to:\n```python\ndef cosine_similarity(vec1, vec2):\n    dot_product = np.dot(vec1, vec2)\n    norm = (np.linalg.norm(vec1) * np.linalg.norm(vec2))\n    return dot_product / norm\n```\n\nThis normalization ensures we're only measuring directional similarity, just like unit vectors in your linear algebra classes, regardless of the vectors' original magnitudes.",
-                        "token_count": 170,
+                        "text": "Here's how vector similarity works in AI, explained through a CS lens:\n\nThink of word vectors like feature vectors in machine learning, where each dimension represents a distinct attribute. Just as you'd compare feature vectors in classification tasks, we need a metric to quantify how similar two word vectors are.\n\nThe primary similarity metric is cosine similarity - essentially the same concept you've encountered in ML clustering algorithms. It's computed using the dot product (a fundamental operation you're familiar with from linear algebra), but normalized to account for vector magnitudes.\n\nThe dot product works as a similarity measure because, just like in feature space:\n- High values in matching dimensions contribute positively (think matching features)\n- Zeros in different dimensions (like orthogonal feature vectors) result in zero similarity\n- Normalization (dividing by ||a||||b||) eliminates the bias from magnitude differences\n\nIn code terms, if you have two word vectors a and b, their similarity is:similarity = np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))This is analogous to how you'd normalize feature vectors in ML to ensure fair comparisons regardless of scale.",
+                        "token_count": 172,
                         "readability": {
-                            "flesch_reading_ease": 44.34,
-                            "flesch_kincaid_grade": 11.6
+                            "flesch_reading_ease": 29.79,
+                            "flesch_kincaid_grade": 15.2
                         },
                         "pos": {
-                            "RB": 0.06,
-                            "JJ": 0.14666666666666667,
-                            "NN": 0.3466666666666667,
-                            "VB": 0.1,
-                            "IN": 0.16666666666666666,
-                            "NNP": 0.02,
-                            "VBN": 0.02,
-                            "VBG": 0.04,
-                            "DT": 0.07333333333333333,
-                            "CD": 0.013333333333333334,
-                            "CC": 0.013333333333333334
+                            "RB": 0.038461538461538464,
+                            "JJ": 0.1282051282051282,
+                            "NN": 0.34615384615384615,
+                            "VB": 0.11538461538461539,
+                            "IN": 0.16025641025641027,
+                            "NNP": 0.02564102564102564,
+                            "VBN": 0.02564102564102564,
+                            "DT": 0.09615384615384616,
+                            "CD": 0.019230769230769232,
+                            "VBG": 0.03205128205128205,
+                            "CC": 0.01282051282051282
                         }
                     },
                     "prompt3": {

@@ -18,7 +18,7 @@ def main():
 
     if TEST_MODE:
         # ✅ Run a single test prompt
-        llm_model = "mistral"  # Set the model for testing
+        llm_model = "llama"  # Set the model for testing
         prompt_function_name = PROMPT_FUNCTIONS[1]  # Choose the specific prompt function
 
         print(f"\n📝 Running test benchmark for:")
