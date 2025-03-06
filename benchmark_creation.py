@@ -6,6 +6,36 @@ from prompts import PROMPT_FUNCTIONS
 from config import DATASET_PATH, BENCHMARK_PATH, LINGUISTIC_ANALYSIS_PATH
 
 from openai.types.chat import ChatCompletion
+import re
+
+def aggressively_clean_response(text):
+    # Only remove unwanted markers, leaving code fences and backticks untouched
+    patterns = [
+        r"(?i)###\s*END OF OUTPUT.*",
+        r"(?i)###\s*END OF FILE.*",
+        r"(?i)###\s*END OF INPUT.*",
+        r"(?i)\[System note.*?\]",
+    ]
+
+    for pattern in patterns:
+        text = re.sub(pattern, "", text)
+
+    # Optional cleanup - dashes and excessive newlines
+    text = re.sub(r"^-{5,}", "", text)
+    text = re.sub(r'\n{3,}', '\n\n', text)
+
+    return text.strip()
+
+def clean_response_text(text):
+    markers = [
+        r"Original text:.*?",
+        r"### END OF INPUT ###.*?",
+        r"### END OF OUTPUT ###.*?",
+        r"### END OF FILE ###.*?"
+    ]
+    for marker in markers:
+        text = re.sub(marker, "", text, flags=re.DOTALL).strip()
+    return text
 
 def has_long_dash_run(text, threshold=20):
     max_run = 0
@@ -21,30 +51,17 @@ def has_long_dash_run(text, threshold=20):
     return max_run >= threshold
 
 def is_valid_existing_text(text, dash_threshold=20, min_word_count=100, min_char_count=30):
-    if text is None:
+    if text is None or text.strip() in {"", "FAILED", "None", "#"}:
         return False
-
     text = text.strip()
-
-    if text in {"", "FAILED", "None", "#"}:
+    if len(text) < min_char_count or len(text.split()) < min_word_count:
         return False
-
-    if len(text) < min_char_count:
-        return False
-
-    if len(text.split()) < min_word_count:
-        return False
-
     if has_long_dash_run(text, threshold=dash_threshold):
         return False
-
-    suspicious_endings = {"...", "END OF OUTPUT", "### END OF INPUT ###"}
-    if any(text.endswith(marker) for marker in suspicious_endings):
+    if any(text.endswith(marker) for marker in {"...", "END OF OUTPUT", "### END OF INPUT ###", "### END OF FILE ###"}):
         return False
-
     if "Original text:" in text and text.count("Original text:") > 1:
         return False
-
     return True
 
 def get_invalid_reason(text):
@@ -56,7 +73,7 @@ def get_invalid_reason(text):
         return "text is too short (<100 words)"
     if has_long_dash_run(text):
         return "text contains a long run of dashes"
-    if any(text.strip().endswith(marker) for marker in {"...", "END OF OUTPUT", "### END OF INPUT ###"}):
+    if any(text.strip().endswith(marker) for marker in {"...", "END OF OUTPUT", "### END OF INPUT ###", "### END OF FILE ###"}):
         return "text ends with suspicious marker"
     if "Original text:" in text and text.count("Original text:") > 1:
         return "text contains repeated 'Original text:' marker"
@@ -65,24 +82,14 @@ def get_invalid_reason(text):
 def extract_text_from_llm_response(response):
     if isinstance(response, str):
         return response.strip()
-
     if isinstance(response, ChatCompletion):
         return response.choices[0].message.content.strip()
-
     if isinstance(response, dict):
         if "choices" in response and len(response["choices"]) > 0:
             return response["choices"][0]["message"]["content"].strip()
         if "generated_text" in response:
             return response["generated_text"].strip()
-
     raise ValueError(f"Unexpected response format: {response}")
-
-def clean_response_text(text):
-    if "Original text:" in text:
-        text = text.split("Original text:", 1)[-1].strip()
-    if "### END OF INPUT ###" in text:
-        text = text.split("### END OF INPUT ###", 1)[-1].strip()
-    return text
 
 def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_key=None):
     dataset = load_dataset(DATASET_PATH)
@@ -162,6 +169,8 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
             for attempt in range(MAX_RETRIES):
                 response = call_llm(llm_model, prompt)
                 response_text = extract_text_from_llm_response(response)
+
+                response_text = aggressively_clean_response(response_text)
                 response_text = clean_response_text(response_text)
 
                 if is_valid_existing_text(response_text):
@@ -176,6 +185,7 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
                 "pos": tailored_analysis["pos"]
             }
 
+          
     def sort_prompt_keys(data):
         for entry_key, entry in data.items():
             for llm, categories in entry.get("tailored_texts", {}).items():
@@ -188,16 +198,8 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
                         print(f"Reordering prompts for {entry_key}-{llm}-{category}")
                     categories[category] = sorted_prompts
 
-    print("Checking and reordering prompt keys...")
     sort_prompt_keys(benchmark)
     sort_prompt_keys(linguistic_analysis)
-
-    # Remove unwanted entries from linguistic_analysis
-    for entry in linguistic_analysis.values():
-        for key_to_remove in ["L_tailored_gpt4o", "L_tailored_o1-preview", "L_tailored_claude"]:
-            if key_to_remove in entry.get("tailored_texts", {}):
-                print(f"Removing {key_to_remove} from linguistic_analysis")
-                del entry["tailored_texts"][key_to_remove]
 
     save_dataset(benchmark, BENCHMARK_PATH)
     save_dataset(linguistic_analysis, LINGUISTIC_ANALYSIS_PATH)
