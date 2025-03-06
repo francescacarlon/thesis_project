@@ -8,46 +8,15 @@ from config import DATASET_PATH, BENCHMARK_PATH, LINGUISTIC_ANALYSIS_PATH
 from openai.types.chat import ChatCompletion
 import re
 
-def aggressively_clean_response(text):
-    # Only remove unwanted markers, leaving code fences and backticks untouched
-    patterns = [
-        r"(?i)###\s*END OF OUTPUT.*",
-        r"(?i)###\s*END OF FILE.*",
-        r"(?i)###\s*END OF INPUT.*",
-        r"(?i)\[System note.*?\]",
-    ]
-
-    for pattern in patterns:
-        text = re.sub(pattern, "", text)
-
-    # Optional cleanup - dashes and excessive newlines
-    text = re.sub(r"^-{5,}", "", text)
-    text = re.sub(r'\n{3,}', '\n\n', text)
-
-    return text.strip()
-
-def clean_response_text(text):
-    markers = [
-        r"Original text:.*?",
-        r"### END OF INPUT ###.*?",
-        r"### END OF OUTPUT ###.*?",
-        r"### END OF FILE ###.*?"
-    ]
-    for marker in markers:
-        text = re.sub(marker, "", text, flags=re.DOTALL).strip()
-    return text
-
 def has_long_dash_run(text, threshold=20):
     max_run = 0
     current_run = 0
-
     for char in text:
         if char == '-':
             current_run += 1
             max_run = max(max_run, current_run)
         else:
             current_run = 0
-
     return max_run >= threshold
 
 def is_valid_existing_text(text, dash_threshold=20, min_word_count=100, min_char_count=30):
@@ -90,6 +59,54 @@ def extract_text_from_llm_response(response):
         if "generated_text" in response:
             return response["generated_text"].strip()
     raise ValueError(f"Unexpected response format: {response}")
+
+def clean_text(text):
+    patterns = [
+        r"(?i)###\s*END OF OUTPUT.*",
+        r"(?i)###\s*END OF FILE.*",
+        r"(?i)###\s*END OF INPUT.*",
+        r"(?i)\[System note.*?\]",
+        r"Original text:.*?",
+        r"### END OF INPUT ###.*?",
+        r"### END OF OUTPUT ###.*?",
+        r"### END OF FILE ###.*?"
+    ]
+    for pattern in patterns:
+        text = re.sub(pattern, "", text, flags=re.DOTALL).strip()
+    text = re.sub(r"^-{5,}", "", text)
+    text = re.sub(r'\n{3,}', '\n\n', text)
+    return text.strip()
+
+def clean_existing_texts(benchmark):
+    cleaned_count = 0
+    for key, entry in benchmark.items():
+        for llm, categories in entry.get("tailored_texts", {}).items():
+            for category, prompts in categories.items():
+                for prompt_key, text in prompts.items():
+                    cleaned_text = clean_text(text)
+                    if cleaned_text != text:
+                        cleaned_count += 1
+                    benchmark[key]["tailored_texts"][llm][category][prompt_key] = cleaned_text
+    print(f"\n✅ Post-run cleanup applied to {cleaned_count} texts in benchmark.")
+
+def clean_existing_texts_in_linguistic_analysis(linguistic_analysis):
+    cleaned_count = 0
+    for key, entry in linguistic_analysis.items():
+        for llm, categories in entry.get("tailored_texts", {}).items():
+            for category, prompts in categories.items():
+                for prompt_key, analysis in prompts.items():
+                    if "text" in analysis:
+                        cleaned_text = clean_text(analysis["text"])
+                        updated_analysis = analyze_text(cleaned_text)
+                        if cleaned_text != analysis["text"]:
+                            cleaned_count += 1
+                        linguistic_analysis[key]["tailored_texts"][llm][category][prompt_key] = {
+                            "text": cleaned_text,
+                            "token_count": updated_analysis["token_count"],
+                            "readability": updated_analysis["readability"],
+                            "pos": updated_analysis["pos"]
+                        }
+    print(f"\n✅ Post-run cleanup and re-analysis applied to {cleaned_count} texts in linguistic_analysis.")
 
 def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_key=None):
     dataset = load_dataset(DATASET_PATH)
@@ -169,9 +186,7 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
             for attempt in range(MAX_RETRIES):
                 response = call_llm(llm_model, prompt)
                 response_text = extract_text_from_llm_response(response)
-
-                response_text = aggressively_clean_response(response_text)
-                response_text = clean_response_text(response_text)
+                response_text = clean_text(response_text)
 
                 if is_valid_existing_text(response_text):
                     break
@@ -185,7 +200,9 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
                 "pos": tailored_analysis["pos"]
             }
 
-          
+    clean_existing_texts(benchmark)
+    clean_existing_texts_in_linguistic_analysis(linguistic_analysis)
+
     def sort_prompt_keys(data):
         for entry_key, entry in data.items():
             for llm, categories in entry.get("tailored_texts", {}).items():
