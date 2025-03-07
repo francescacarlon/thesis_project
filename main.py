@@ -18,15 +18,15 @@ def main():
 
     if TEST_MODE:
         # ✅ Run a single test prompt
-        llm_model = "mistral"  # Set the model for testing
-        prompt_function_name = PROMPT_FUNCTIONS[5]  # Choose the specific prompt function
+        llm_model = "llama"  # Set the model for testing
+        prompt_function_name = PROMPT_FUNCTIONS[3]  # Choose the specific prompt function
 
         print(f"\n📝 Running test benchmark for:")
         print(f"   🧠 LLM Model: {llm_model}")
         print(f"   ✏️  Prompt Function: {prompt_function_name}")
 
         # ✅ Call the benchmark function for the test case
-        create_benchmark(llm_model, prompt_function_name, target_key="7")  # Optionally: max_entries=2
+        create_benchmark(llm_model, prompt_function_name, target_key="4")  # Optionally: max_entries=2
 
     else:
         # ✅ Run the full benchmark loop for all LLMs and prompts
