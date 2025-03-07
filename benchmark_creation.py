@@ -69,13 +69,15 @@ def clean_text(text):
         r"Original text:.*?",
         r"### END OF INPUT ###.*?",
         r"### END OF OUTPUT ###.*?",
-        r"### END OF FILE ###.*?"
+        r"### END OF FILE ###.*?",
+        r"(?:```python\s*```)?\s*# No code in this file(?:\n|.)*?```(?:\s*```python\s*```)?"
     ]
     for pattern in patterns:
         text = re.sub(pattern, "", text, flags=re.DOTALL).strip()
     text = re.sub(r"^-{5,}", "", text)
     text = re.sub(r'\n{3,}', '\n\n', text)
     return text.strip()
+
 
 def clean_existing_texts(benchmark):
     cleaned_count = 0
