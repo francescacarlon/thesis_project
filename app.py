@@ -2,7 +2,11 @@ import streamlit as st
 import json
 import random
 import urllib.parse
-from config import BENCHMARK_PATH  # Import benchmark path from config
+# from config import BENCHMARK_PATH  # Import benchmark path from config
+from pathlib import Path
+
+BASE_PATH = Path(__file__).parent
+BENCHMARK_PATH = BASE_PATH / "data/benchmark.json"
 
 # Load the benchmark.json file
 def load_data():
