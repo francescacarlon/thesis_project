@@ -45,7 +45,7 @@ def get_random_text(data):
 
 # Generate a URL-safe string for sharing
 def generate_shareable_url(topic_key):
-    base_url = "https://your-streamlit-app.com/"  # Replace with your deployed app URL
+    base_url = "https://francescacarlon-thesis-project-app-xqi66e.streamlit.app/"  # Replace with your deployed app URL
     params = {"topic": topic_key}
     encoded_params = urllib.parse.urlencode(params)
     return f"{base_url}?{encoded_params}"
