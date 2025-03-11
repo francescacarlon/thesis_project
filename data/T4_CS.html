@@ -1,0 +1,117 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Word Senses and Relations Between Senses</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 40px; padding: 20px; line-height: 1.6; }
+                    .container { max-width: 800px; margin: auto; }
+                    h1, h2 { color: #333; }
+                    .box { background: #f4f4f4; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+                    .category { font-weight: bold; color: #0056b3; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>Word Senses and Relations Between Senses</h1>
+                    <p><strong>Instance Code:</strong> T4</p>
+                    <p><strong>Original Category:</strong> L</p>
+                    <p><strong>Target Category:</strong> CS</p>
+                    <div class="box">
+                        <h2>Original Text</h2>
+                        <p>A sense (or word sense) is a discrete representation of one aspect of the meaning of a word. [...] In context, it's easy to see the different meanings: mouse1: a mouse controlling a computer system in 1968. mouse2: a quiet animal like a mouse. bank1: a bank can hold the investments in a custodial account. bank2: as agriculture burgeons on the east bank, the river...[...] we need to consider the alternative ways that dictionaries and thesauruses offer for defining senses. One is based on the fact that dictionaries or thesauruses give textual definitions for each sense called glosses. [...] bank: 1. financial institution that accepts deposits and channels the money into lending activities 2. sloping land (especially the slope beside a body of water). [...] when two senses of two different words (lemmas) are identical, or nearly identical, we say the two senses are synonyms [...] couch/sofa vomit/throw up filbert/hazelnut car/automobile. [...] antonyms are words with an opposite meaning, like: long/short big/little fast/slow cold/hot dark/light. [...] [a] hyponym of [a] word if the [other word] is more specific, denoting a subclass of the other. For example, car is a hyponym of vehicle, dog is a hyponym of animal, [...]. Conversely, we say that vehicle is a hypernym of car, and animal is a hypernym of dog. [...] meronymy, the part-whole relation. [...] wheel is a meronym of car, and car is a holonym of wheel.</p>
+                    </div>
+                    <h2>CS Tailored Explanations</h2>
+            
+                    <div class="box">
+                        <p class="category">mistral - CS (CS_mistral_prompt4)</p>
+                        <p>1. A sense (or word sense) is a distinct representation of a single meaning of a word, as understood in context. For example, "mouse" can refer to:
+       - A computer peripheral used to interact with a system (1968 mouse)
+       - A small rodent (rodent mouse)
+
+    2. "Bank" can have the following meanings:
+       - A financial institution that manages and lends money (bank1)
+       - A slope adjacent to a body of water (bank2)
+
+    3. Dictionaries and thesauruses provide alternative definitions for each sense, often in the form of glosses.
+
+    4. Synonyms are two senses of two different words that are identical or nearly identical. For example, couch and sofa are synonyms, as are filbert and hazelnut, car and automobile.
+
+    5. Antonyms are words with opposite meanings, such as long and short, big and little, fast and slow, cold and hot, dark and light.
+
+    6. A hyponym is a more specific word denoting a subclass of another word. For example, car is a hyponym of vehicle, and dog is a hyponym of animal. Conversely, vehicle is a hypernym of car, and animal is a hypernym of dog.
+
+    7. Meronymy is the part-whole relationship, for example, wheel is a part of car, and car is the whole containing wheel.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">llama - CS (CS_llama_prompt4)</p>
+                        <p>In the realm of NLP, a sense can be thought of as a unique class or object in a programming context, encapsulating one specific aspect of a word's meaning. Consider the example of a mouse, which can refer to either a computer input device or a small rodent. This duality in meaning is akin to polymorphism in object-oriented programming, where a single entity can have multiple forms or behaviors. Similarly, a bank can be a financial institution or the side of a river, illustrating the concept of method overloading, where a single function or term can have different implementations or meanings based on context. The definitions provided by dictionaries and thesauruses, known as glosses, can be viewed as docstrings or comments in code, offering a human-readable description of each sense. Synonyms, such as couch and sofa, or vomit and throw up, can be seen as equivalent classes or interfaces, where two different words convey the same meaning. Antonyms, like long and short, or big and little, represent opposing values or states, similar to true and false in a boolean context. The relationship between hyponyms and hypernyms can be likened to inheritance in object-oriented programming, where a more specific class (hyponym) inherits properties from a more general class (hypernym). For instance, car is a subclass of vehicle, just as dog is a subclass of animal. Meronymy, the part-whole relation, can be thought of as a composition relationship in programming, where an object is composed of smaller parts, such as a car being composed of wheels, or a wheel being a part of a car. This analogy allows us to better understand the complex relationships between words and their meanings, much like how we design and understand software systems.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">gpt4o - CS (CS_gpt4o_prompt1)</p>
+                        <p>In computer science, understanding language nuances is important, especially when working with natural language processing (NLP). A "sense" or "word sense" refers to a specific meaning of a word, which can have multiple interpretations based on context. For example, consider "mouse": in one context, it refers to a computer peripheral (mouse1), while in another, it refers to a small animal (mouse2). Similarly, "bank" can mean a financial institution (bank1) or the side of a river (bank2).
+
+Dictionaries and thesauruses define these word senses using glosses, which are brief textual definitions. For instance, a "bank" can be glossed as "1. a financial institution that accepts deposits and channels the money into lending activities" or "2. sloping land beside a body of water."
+
+In NLP, it's crucial to understand relationships between word senses:
+
+- **Synonyms**: Different words with similar meanings, like couch/sofa or car/automobile.
+- **Antonyms**: Words with opposite meanings, such as long/short or hot/cold.
+- **Hyponyms and Hypernyms**: These describe subclass relationships. A "car" is a hyponym of "vehicle," meaning it’s a specific type of vehicle. Conversely, "vehicle" is a hypernym of "car."
+- **Meronymy**: This is the part-whole relationship. For example, a "wheel" is a meronym of "car," meaning a wheel is a part of a car, and "car" is a holonym of "wheel."
+
+These concepts help us build better algorithms for tasks like word sense disambiguation, which is crucial for developing systems that understand human language effectively.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">claude - CS (CS_claude_prompt1)</p>
+                        <p>Let me explain word meanings and relationships using concepts familiar to CS students:
+
+Think of a word as a class that can have multiple implementations (senses). Just like how a class Mouse could be implemented as either ComputerMouse or RodentMouse, words can have different concrete meanings based on context.
+
+Consider these meanings like different instances of a class:
+- Mouse.COMPUTER = "device for controlling cursor"
+- Mouse.ANIMAL = "small rodent"
+
+Dictionary definitions are like documentation strings or specifications for each implementation. For example:
+Bank.FINANCIAL = "institution managing money transactions"
+Bank.GEOGRAPHIC = "slope beside water body"
+
+Word relationships can be modeled as different types of associations:
+
+1. Synonyms: Multiple classes implementing the same interface
+   Example: {Car, Automobile} both implement Vehicle with identical behavior
+
+2. Antonyms: Complementary or inverse implementations
+   Example: Hot/Cold are like Boolean opposites, similar to !isHot
+
+3. Hyponyms/Hypernyms: Inheritance relationships
+   - Car extends Vehicle (Car is hyponym)
+   - Vehicle is superclass of Car (Vehicle is hypernym)
+   Similar to how ArrayList is a hyponym of List in Java
+
+4. Meronymy: Composition relationships
+   Like class components:
+   class Car {
+       Wheel[] wheels;  // Wheel is meronym of Car
+   }
+   Car is holonym of Wheel (contains Wheel as component)
+
+This object-oriented approach to word meanings helps organize and understand linguistic concepts using familiar programming patterns.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">deepseek - CS (CS_deepseek_prompt4)</p>
+                        <p>In computational semantics, a **word sense** is a distinct meaning variant of a term, analogous to how a single function name in code might have overloaded implementations (e.g., `mouse` as input device vs. animal). Key semantic relations include:  
+1. **Synonyms**: Different terms mapping to the same semantic value, like aliases in programming (e.g., `vomit`/`throw_up` ≈ `sort()`/`arrange()`).  
+2. **Antonyms**: Binary opposites, akin to Boolean complements (e.g., `long`/`short` ≈ `true`/`false` in logic gates).  
+3. **Hyponymy/Hypernymy**: Inheritance hierarchies (e.g., `Car` is a subclass of `Vehicle` in OOP; `dog` → `animal` mirrors `LinkedList` → `List`).  
+4. **Meronymy**: Compositional relationships, like components in a data structure (e.g., `wheel` is a meronym of `car` ≈ `Node` is part of `LinkedList`).  
+
+Lexical resources define senses via structured entries (like API documentation), enabling disambiguation algorithms to treat word meaning as a multi-label classification problem.</p>
+                    </div>
+                    </div></body></html>

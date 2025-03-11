@@ -1,0 +1,109 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Machine Translation</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 40px; padding: 20px; line-height: 1.6; }
+                    .container { max-width: 800px; margin: auto; }
+                    h1, h2 { color: #333; }
+                    .box { background: #f4f4f4; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+                    .category { font-weight: bold; color: #0056b3; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>Machine Translation</h1>
+                    <p><strong>Instance Code:</strong> T14</p>
+                    <p><strong>Original Category:</strong> CL</p>
+                    <p><strong>Target Category:</strong> CS</p>
+                    <div class="box">
+                        <h2>Original Text</h2>
+                        <p>The standard architecture for MT is the encoder-decoder transformer or sequence-to-sequence model [...]. Given a sentence in a source language, the MT task is then to generate a corresponding sentence in a target language. […]. MT uses supervised machine learning: at training time the system is given a large set of parallel sentences (each sentence in a source language matched with a sentence in the target language), and learns to map source sentences into target sentences. [...] we split the sentences into a sequence of subword tokens (tokens can be words, or subwords, or individual characters). The systems are then trained to maximize the probability of the sequence of tokens in the target language y1,..., ym given the sequence of tokens in the source language x1,..., xn: P(y1,..., ym|x1,..., xn). […] The encoder takes the input words x = [x1,..., xn] and produces an intermediate context h. At decoding time, the system takes h and, word by word, generates the output y [...]. [...] Machine translation models are trained on a parallel corpus, sometimes called a bitext, a text that appears in two (or more) languages. [...] Standard training corpora for MT come as aligned pairs of sentences. [...] To score the similarity of sentences across languages, we need to make use of a multilingual embedding space, in which sentences from different languages are in the same embedding space [...]</p>
+                    </div>
+                    <h2>CS Tailored Explanations</h2>
+            
+                    <div class="box">
+                        <p class="category">mistral - CS (CS_mistral_prompt4)</p>
+                        <p>In the context of machine translation (MT), the typical structure involves an encoder-decoder transformer or sequence-to-sequence model. Given a sentence in a source language, the objective is to generate a corresponding sentence in the target language. Machine translation employs supervised machine learning during training; the system is presented with a large collection of paired sentences (each sentence in the source language corresponding to a sentence in the target language), allowing it to learn to convert source sentences into target sentences. The sentences are first broken down into a series of subword tokens (which can be words, subwords, or individual characters). The objective of the system is to maximize the probability of the sequence of tokens in the target language (y1,..., ym) given the sequence of tokens in the source language (x1,..., xn) [P(y1,..., ym|x1,..., xn)]. The encoder processes the input words (x = [x1,..., xn]) and produces an intermediate context (h). During decoding, the system uses h to progressively generate the output (y). Machine translation models are trained on parallel corpora, often referred to as bitexts, which are texts that exist in two (or more) languages. Standard training sets for MT consist of aligned pairs of sentences. To evaluate the similarity between sentences across languages, we must employ a multilingual embedding space, where sentences from different languages exist within the same space.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">llama - CS (CS_llama_prompt2)</p>
+                        <p>Consider a neural network architecture similar to the sequence-to-sequence models you've studied in machine learning, but applied to natural language processing. The goal of machine translation (MT) is to take a sentence in one language (source) and generate the equivalent sentence in another language (target). 
+     This process leverages supervised learning, where the model is trained on a large dataset of paired sentences in both the source and target languages. The model learns to map inputs from the source language to outputs in the target language, maximizing the probability of generating the correct target sentence given the source sentence.
+     To process the input sentences, we break them down into subword tokens, which can be words, subwords, or even individual characters. This is similar to tokenization in programming, where you split code into individual elements for processing.
+     The MT model consists of an encoder and a decoder. The encoder takes the input sentence and generates an intermediate representation, or context, which captures the essential information from the input. This context is then used by the decoder to generate the output sentence, word by word, in the target language.
+     Training data for MT models comes in the form of parallel corpora, or bitexts, which are texts that exist in multiple languages. These corpora are typically composed of aligned pairs of sentences, where each sentence in the source language is paired with its equivalent in the target language.
+     To compare sentences across languages, we use a multilingual embedding space. This space allows sentences from different languages to be represented in a common vector space, enabling the model to capture similarities and relationships between sentences across languages.
+     Think of this embedding space like a high-dimensional vector space in linear algebra, where each sentence is a point in that space. The closer two points are, the more similar the sentences they represent. This allows the model to learn a shared representation of language, facilitating translation between languages.
+     The key to successful MT is training the model on a large, diverse dataset that covers a wide range of languages and topics. This enables the model to learn the patterns and structures of language, as well as the relationships between languages, resulting in more accurate and fluent translations. 
+     By leveraging these concepts and techniques, MT models can achieve state-of-the-art results in translating text from one language to another, opening up new possibilities for communication and information exchange across languages and cultures. 
+     In terms of the probability calculation, the model aims to maximize P(y1,..., ym|x1,..., xn), where x represents the input sentence in the source language and y represents the output sentence in the target language. This probability calculation is similar to the likelihood calculations you've encountered in machine learning, where the goal is to find the model parameters that maximize the probability of the observed data.
+     The encoder-decoder architecture and the use of subword tokens are crucial components of MT models, allowing them to effectively capture the nuances of language and generate accurate translations. 
+     By understanding how MT models work and how they're trained, you can appreciate the complexity and power of these systems, and how they can be applied to a wide range of tasks and applications. 
+     The use of multilingual embedding spaces and parallel corpora enables MT models to learn a shared representation of language, facilitating translation between languages and enabling the model to capture similarities and relationships between sentences across languages. 
+     Overall, the combination of supervised learning, sequence-to-sequence models, and multilingual embedding spaces makes MT a powerful tool for translating text from one language to another, with applications in fields such as language translation, language understanding, and language generation. 
+     The ability to process and generate human-like language is a fundamental aspect of MT, and the techniques used in MT have far-reaching implications for natural language processing and artificial intelligence as a whole. 
+     By applying the principles of machine learning and neural networks to the task of language translation, MT models can learn to generate fluent and accurate translations, opening up new possibilities for communication and information exchange across languages and cultures. 
+     The MT model's ability to learn a shared representation of language and capture similarities between sentences across languages enables it to generate translations that are not only accurate but also contextually relevant, taking into account the nuances of language and the relationships between languages. 
+     In the context of MT, the encoder-decoder architecture and the use of subword tokens allow the model to effectively capture the structure and meaning of the input sentence, and generate an output sentence that is equivalent in meaning and context. 
+     The use of parallel corpora and multilingual embedding spaces enables the model to learn from a large dataset of paired sentences, and to capture the patterns and relationships between languages, resulting in more accurate and fluent translations. 
+     By leveraging these techniques and concepts, MT models can achieve state-of-the-art results in translating text from one language to another, and have a significant impact on fields such as language translation, language understanding, and language generation. 
+     The application of MT models has far-reaching implications for natural language processing and artificial intelligence, enabling the development of more sophisticated</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">gpt4o - CS (CS_gpt4o_prompt1)</p>
+                        <p>In machine translation (MT), we use a model called the encoder-decoder transformer, also known as a sequence-to-sequence model. This model's job is to take a sentence from one language (the source language) and generate a corresponding sentence in another language (the target language). Think of it like translating a sentence from English to French.
+
+MT relies on supervised machine learning. During training, the system is fed a large dataset of parallel sentences, where each sentence in the source language is paired with its translation in the target language. The model learns to map these source sentences to their target counterparts.
+
+To handle the sentences, we break them down into sequences of subword tokens. These tokens can be whole words, parts of words, or even individual characters. The training process involves maximizing the probability of producing the correct sequence of target tokens (y1, y2, ..., ym) given the source tokens (x1, x2, ..., xn). Formally, this is represented as P(y1, y2, ..., ym | x1, x2, ..., xn).
+
+The encoder component of the model processes the input words (x1, x2, ..., xn) and generates an intermediate representation called context (h). During decoding, this context is used to generate the output sentence in the target language, one word at a time.
+
+These translation models are trained using a parallel corpus, or bitext, where the same text is available in two or more languages. The training data consists of sentence pairs that are aligned for translation.
+
+To evaluate how similar sentences are across different languages, we utilize a multilingual embedding space. This space allows sentences from various languages to be represented in a common framework, making it easier to compare and translate between them.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">claude - CS (CS_claude_prompt2)</p>
+                        <p>Machine Translation (MT) is like building a code compiler that translates between programming languages, but for human languages. The core architecture uses an encoder-decoder transformer model, similar to how compilers have front-end and back-end components.
+
+The system processes input like parsing code: it breaks down sentences into tokens (think of them as lexical units, similar to how a compiler tokenizes source code). These tokens can be words, subwords, or individual characters, comparable to how programming languages have keywords, operators, and literals.
+
+The training process uses supervised learning with a dataset of parallel sentences - imagine having two arrays where array[i] in language A corresponds to array[i] in language B. The model learns to maximize the probability function P(y1,...,ym|x1,...,xn), where x is the input sequence and y is the output sequence, similar to how you'd implement a probabilistic mapping function.
+
+The encoder component processes the input sequence [x1,...,xn] and generates an intermediate representation h (think of it as an abstract syntax tree in compilation). The decoder then uses this representation to generate the output sequence word by word, similar to how a compiler generates target code from an AST.
+
+The training data comes from a parallel corpus (or bitext) - essentially a synchronized database of texts in multiple languages. To compare sentences across languages, the system uses a multilingual embedding space, conceptually similar to how word2vec or other embedding algorithms create vector representations, but in a unified space that works across multiple languages.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">deepseek - CS (CS_deepseek_prompt3)</p>
+                        <p>Here's your CS-friendly adaptation:
+
+Machine translation (MT) works like a neural sequence converter, using an encoder-decoder architecture similar to how autoencoders process data. Think of it as a transformer-based pipeline that processes text through computational layers:
+
+1. **Data Processing**  
+Input sentences get tokenized into subword units (like byte-pair encoding in NLP pipelines) to handle rare words efficiently. Imagine splitting "unhappiness" into ["un", "happiness"].
+
+2. **Training Phase**  
+The model learns from parallel text pairs (source-target sentence pairs in a dataset, structured like key-value pairs in a dictionary). It optimizes weights to maximize the probability P(target_tokens | source_tokens) - similar to minimizing cross-entropy loss in classification tasks.
+
+3. **Encoder (Feature Extractor)**  
+The encoder processes source tokens (x₁,...xₙ) into context vectors **h** - like generating feature embeddings in CNNs, but for sequential data.
+
+4. **Decoder (Autoregressive Generator)**  
+Using **h**, the decoder generates target tokens (y₁,...yₘ) sequentially, like predictive text generation but constrained by the source context. Each step uses attention mechanisms (like graph networks focusing on relevant nodes) to align target/source elements.
+
+5. **Multilingual Embedding Space**  
+The system projects different languages into a shared vector space - similar to how word2vec aligns similar meanings, but across languages. This enables semantic similarity comparisons between sentences in different languages through vector operations.
+
+The entire system is trained end-to-end using gradient descent, with the parallel corpus acting like a labeled training set where each input (source sentence) has a corresponding output label (target sentence).</p>
+                    </div>
+                    </div></body></html>

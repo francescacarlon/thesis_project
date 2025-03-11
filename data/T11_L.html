@@ -1,0 +1,151 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Naive Bayes Classifiers</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 40px; padding: 20px; line-height: 1.6; }
+                    .container { max-width: 800px; margin: auto; }
+                    h1, h2 { color: #333; }
+                    .box { background: #f4f4f4; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+                    .category { font-weight: bold; color: #0056b3; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>Naive Bayes Classifiers</h1>
+                    <p><strong>Instance Code:</strong> T11</p>
+                    <p><strong>Original Category:</strong> CL</p>
+                    <p><strong>Target Category:</strong> L</p>
+                    <div class="box">
+                        <h2>Original Text</h2>
+                        <p>In this section we introduce the multinomial naive Bayes classifier, so called because it is a Bayesian classifier that makes a simplifying (naive) assumption about how the features interact. [...] We represent a text document as if it were a bag of words, that is, an unordered set of words with their position ignored, keeping only their frequency in the document. [...] Naive Bayes is a probabilistic classifier, meaning that for a document d, out of all classes c ∈ C the classifier returns the class ˆc which has the maximum posterior probability given the document. […] we use the hat notation ˆ to mean “our estimate of the correct class”, and we use argmax to mean an operation that selects the argument (in this case the class c) that maximizes a function (in this case the probability P(c|d). cˆ = argmax c∈C P(c|d). [...] Thus, we can choose the class that maximizes this simpler formula: cˆ = argmax c∈C P(c|d) = argmax c∈C P(d|c)P(c). [...] we compute the most probable class ˆc given some document d by choosing the class which has the highest product of two probabilities: the prior probability of the class P(c) and the likelihood of the document P(d|c): cˆ = argmax c∈C P(d|c)(likelihood)P(c)(prior). [...] The first is the bag-of-words assumption discussed intuitively above: we assume position doesn't matter [...]. The second is commonly called the naive Bayes assumption: this is the conditional independence assumption that the probabilities P(fi|c) are independent given the class c and hence can be 'naively' multiplied as follows: P(f1, f2,...., fn|c) = P(f1|c)·P(f2|c)· ... ·P(fn|c). The final equation for the class chosen by a naive Bayes classifier is thus: cNB = argmax c∈C P(c) Yf∈F P(f|c). [...] . Classifiers that use a linear combination of the inputs to make a classification decision —like naive Bayes and also logistic regression—are called linear classifiers.</p>
+                    </div>
+                    <h2>L Tailored Explanations</h2>
+            
+                    <div class="box">
+                        <p class="category">mistral - L (L_mistral_prompt3)</p>
+                        <p>In this section, we discuss the multinomial naive Bayes classifier, a probabilistic method that makes a simplifying assumption about how words contribute to determining a text's category (class).
+
+     To simplify our analysis, we'll represent a text document as a collection of words, ignoring their order and focusing only on their frequency within the document.
+
+     As a probabilistic classifier, the multinomial naive Bayes classifier aims to predict the class (category) c out of all possible classes C for a given document d, by returning the class ˆc with the highest probability: cˆ = argmax c∈C P(c|d).
+
+     We use the hat notation ˆ to mean our estimate of the correct class, and we use argmax to mean an operation that selects the argument (in this case the class c) that maximizes a function (in this case the probability P(c|d).
+
+     To choose the class that best fits the document, we can maximize this simpler formula: cˆ = argmax c∈C P(c|d) = argmax c∈C P(d|c)P(c).
+
+     We determine the most probable class ˆc for a given document d by selecting the class with the highest product of two probabilities: the prior probability of the class P(c) and the likelihood of the document P(d|c). cˆ = argmax c∈C P(d|c)(likelihood)P(c)(prior).
+
+     The first part of this equation follows from the bag-of-words assumption, where we ignore word positions and assume that their order doesn't affect the text's category.
+
+     The second part is known as the naive Bayes assumption: it states that the probabilities P(fi|c) (where fi represents a word frequency in a document) are independent given the class c, allowing us to naively multiply these probabilities as follows: P(f1, f2, ..., fn|c) = P(f1|c)·P(f2|c)·...·P(fn|c).
+
+     The final equation for the class chosen by a naive Bayes classifier is thus: cNB = argmax c∈C P(c) Yf∈F P(f|c).
+
+     Classifiers that use a linear combination of the inputs to make a classification decision, like naive Bayes and logistic regression, are called linear classifiers.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">llama - L (L_llama_prompt1)</p>
+                        <p>Imagine we are analyzing a collection of texts to determine their authorship, and we want to categorize them into different genres, such as fiction or non-fiction. To achieve this, we use a statistical approach called the multinomial naive Bayes classifier. This method is "naive" because it simplifies the interactions between the features in our texts, much like how we simplify the rules of language when describing them in terms of phonemes or morphemes.
+
+    Think of each text as a "bag of words," where the order of the words doesn't matter, only their frequency. This is similar to how we analyze the distribution of phonemes in a language, where the order of phonemes can change the meaning, but their frequency can give us clues about the language's structure. In this case, we're looking at the frequency of words to understand the genre of the text.
+
+    The multinomial naive Bayes classifier is a probabilistic approach, meaning it calculates the probability of a text belonging to a particular genre based on the words it contains. It's like trying to guess the meaning of a sentence based on the semantics of the individual words, without considering their syntactic structure. The classifier returns the genre with the highest probability, which we can think of as the "most likely" genre.
+
+    To calculate this probability, we use a formula that takes into account two things: the prior probability of a genre (how likely it is to occur in general) and the likelihood of the text given that genre (how well the words in the text fit with that genre). This is similar to how we use context to disambiguate words with multiple meanings, where the prior probability of a word's meaning is influenced by the surrounding words.
+
+    The "naive" part of the classifier comes from the assumption that the probabilities of each word occurring in a text are independent of each other, given the genre. This means we can multiply the probabilities of each word together to get the overall probability of the text. It's like assuming that the meaning of a sentence is the sum of the meanings of its individual words, without considering how they interact with each other.
+
+    For example, if we're trying to classify a text as fiction or non-fiction, we might look at the frequency of words like "once upon a time" or "in conclusion." If a text contains many instances of "once upon a time," it's likely to be fiction, while a text with many instances of "in conclusion" is likely to be non-fiction. The classifier would calculate the probability of each genre based on these word frequencies and return the genre with the highest probability.
+
+    This approach is called a "linear classifier" because it uses a linear combination of the inputs (in this case, the word frequencies) to make a classification decision. It's a simple yet powerful tool for analyzing and categorizing texts, and it has many applications in linguistics and natural language processing.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">gpt4o - L (L_gpt4o_prompt1)</p>
+                        <p>In this section, we introduce the multinomial naive Bayes classifier. It is a tool used to categorize documents by using probabilities. The classifier is called "naive" because it makes a simplifying assumption about the independence of features—in this case, words in a document.
+
+Imagine a text document as a "bag of words." This means we consider the words without worrying about their order, just how often each word appears. This method is like focusing on the frequency of words, ignoring their placement in sentences.
+
+Naive Bayes is a probabilistic classifier. It means that for any given document \(d\), it predicts the class \( \hat{c} \) from a set of possible classes \( C \), where \( \hat{c} \) is the class with the highest probability of being correct based on the document. The symbol \( \hat{c} \) indicates our estimate of the correct class. 
+
+To determine \( \hat{c} \), we use a function called "argmax," which helps us find the class that maximizes the probability. Specifically, we calculate:
+
+\[ \hat{c} = \arg\max_{c \in C} P(c|d) \]
+
+This formula tells us to choose the class \( c \) that makes \( P(c|d) \) largest. We simplify this to:
+
+\[ \hat{c} = \arg\max_{c \in C} P(d|c)P(c) \]
+
+Here, \( P(d|c) \) is the likelihood of the document given the class, and \( P(c) \) is the prior probability of the class. We select the class with the highest product of these probabilities.
+
+The naive Bayes classifier operates under two key assumptions:
+
+1. **Bag-of-words assumption:** The position of words in a document is irrelevant. We only care about their frequency.
+   
+2. **Conditional independence assumption:** Given a class \( c \), the occurrence of each word is independent of the others. This means we can multiply their probabilities:
+
+\[ P(f_1, f_2, \ldots, f_n|c) = P(f_1|c) \cdot P(f_2|c) \cdot \ldots \cdot P(f_n|c) \]
+
+The final equation for selecting the class in a naive Bayes classifier is:
+
+\[ c_{\text{NB}} = \arg\max_{c \in C} P(c) \prod_{f \in F} P(f|c) \]
+
+Classifiers like naive Bayes, which use a linear combination of input features to decide the class, are known as linear classifiers. Another example of a linear classifier is logistic regression.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">claude - L (L_claude_prompt1)</p>
+                        <p>Let me explain how the Naive Bayes classifier works, using concepts familiar to linguistics students.
+
+Just as we analyze texts without considering word order in discourse analysis, the Naive Bayes classifier treats a text as a "bag of words" - imagine dumping all the words from a text into a bag, where only their frequency matters, not their position or syntax.
+
+Think of this classifier as similar to how we categorize language families: we look for specific features to determine which family a language belongs to. In this case, we're trying to determine which category (or class) a text belongs to based on its features (words).
+
+The classifier works with two key linguistic probabilities:
+1. The "prior probability" - how common a category is (like how common Romance languages are among world languages)
+2. The "likelihood" - how likely specific features are in that category (like how likely certain phonemes are in Romance languages)
+
+The "naive" part comes from a simplifying assumption: it treats each feature as independent, similar to how we might initially analyze phonemes in isolation, even though we know they influence each other through processes like assimilation.
+
+The classifier multiplies these probabilities together to make its decision, choosing the category with the highest probability score. It's "linear" because it combines these features in a straightforward way, much like how we might add up distinctive features to identify a phoneme.
+
+This method is called "Bayesian" because it uses probability theory to make predictions, similar to how historical linguists use probability to reconstruct proto-languages based on existing evidence.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">deepseek - L (L_deepseek_prompt1)</p>
+                        <p>**Adapted Explanation for Linguistics Students:**
+
+The **multinomial naive Bayes classifier** is a tool for categorizing texts by calculating the most probable linguistic category (like "syntax" vs. "phonetics") based on word patterns. Here’s how it aligns with your linguistic knowledge:
+
+1. **Bag-of-Words Model**:  
+   Texts are analyzed like a *frequency lexicon*—we ignore word order (similar to studying a corpus’s vocabulary distribution) and focus only on how often words appear. Think of it as creating a histogram of word tokens, detached from syntax.
+
+2. **Bayesian Logic**:  
+   The classifier combines two linguistic intuitions:  
+   - **Prior Probability (P(c))**: The baseline likelihood of a category *before* seeing the text (e.g., "phonetics" might be rare in a general corpus).  
+   - **Likelihood (P(d|c))**: How probable the document’s word frequencies are *if* it belongs to category *c* (e.g., a text with "allophone" and "formant" is likelier in a phonetics category).  
+
+3. **Naive Assumption**:  
+   Like analyzing morphemes independently of their morphological context, we assume **words are statistically independent** within a category (even though this oversimplifies semantic/pragmatic relationships). This lets us multiply individual word probabilities:  
+   *P("morphology", "syntax" | c) ≈ P("morphology"|c) · P("syntax"|c)*.  
+
+4. **Classification Rule**:  
+   The chosen category **ĉ** maximizes:  
+   *ĉ = argmaxₐ [P(c) × Π P(word|c)]*  
+   (Here, **argmax** selects the category with the highest score, like identifying a language family from diagnostic features.)  
+
+**Example**: To classify a paper as "syntax" or "semantics":  
+- If "theta role" and "binding theory" appear frequently, their combined probabilities under "syntax" (weighted by the prior likelihood of syntax papers) might outweigh "semantics".  
+
+**Why "Linear Classifier"?**  
+It combines word evidence *additively* (like summing phonetic cues in speech perception), making it efficient but blind to word-order interactions.  
+
+This method prioritizes computational simplicity over nuanced linguistic structure—useful for rapid text categorization, even if it ignores your field’s deeper relational analyses.</p>
+                    </div>
+                    </div></body></html>

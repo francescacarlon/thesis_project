@@ -1,0 +1,90 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Vector Semantics</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 40px; padding: 20px; line-height: 1.6; }
+                    .container { max-width: 800px; margin: auto; }
+                    h1, h2 { color: #333; }
+                    .box { background: #f4f4f4; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+                    .category { font-weight: bold; color: #0056b3; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>Vector Semantics</h1>
+                    <p><strong>Instance Code:</strong> T12</p>
+                    <p><strong>Original Category:</strong> CL</p>
+                    <p><strong>Target Category:</strong> L</p>
+                    <div class="box">
+                        <h2>Original Text</h2>
+                        <p>Vector semantics is the standard way to represent word meaning in NLP, helping us model many of the aspects of word meaning we saw in the previous section. [...] to define the meaning of a word by its distribution in language use, meaning its neighboring words or grammatical environments. Their idea was that two words that occur in very similar distributions (whose neighboring words are similar) have similar meanings. [...] The idea of vector semantics is to represent a word as a point in a multidimensional semantic space that is derived (in ways we'll see) from the distributions of embeddings word neighbors. Vectors for representing words are called embeddings, [...] two most commonly used models. In the tf-idf model, an important baseline, the meaning of a word is defined by a simple function of the counts of nearby words. We will see that this method results in very long vectors that are sparse, i.e. mostly zeros (since most words simply never occur in the context of others).[…] the word2vec model family for constructing short, dense vectors that have useful semantic properties.</p>
+                    </div>
+                    <h2>L Tailored Explanations</h2>
+            
+                    <div class="box">
+                        <p class="category">mistral - L (L_mistral_prompt4)</p>
+                        <p>In the realm of natural language processing, vector semantics is the predominant approach for conveying word meaning. This method allows us to capture various aspects of word meaning discussed earlier, primarily by considering the words surrounding a given term and its grammatical context. The underlying assumption is that words with similar distributions of surrounding words or contexts have similar meanings.
+
+    To represent words as points in a multi-dimensional semantic space, the concept of vector semantics is employed. In this approach, words are represented as vectors, referred to as embeddings.
+
+    Among the popular models for representing words as embeddings, two stand out: the tf-idf model and the word2vec model family. The former, which serves as a significant baseline, defines word meaning through a simple function of the counts of nearby words. However, it results in lengthy vectors that are sparse, meaning they are dominated by zeros due to the infrequency of most words appearing in the context of others.
+
+    Conversely, the word2vec model family generates compact, dense vectors with beneficial semantic properties.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">llama - L (L_llama_prompt3)</p>
+                        <p>Vector semantics in Natural Language Processing (NLP) works similarly to how you analyze the meaning of a word in a sentence by looking at its neighboring words and grammatical context. Just as you use syntax and semantics to understand how words relate to each other, vector semantics represents word meaning as a point in a multidimensional space based on the words that surround it and the grammatical environments it appears in. 
+
+    This approach is rooted in the idea that words with similar meanings tend to appear in similar contexts, much like how words with similar phonetic properties may be pronounced similarly. For instance, just as the sounds /p/ and /b/ are distinct but related, words like "run" and "sprint" have distinct but related meanings because they often appear in similar distributions - for example, both can be followed by words like "fast" or "quickly". 
+
+    To capture these relationships, vector semantics uses "embeddings" - a way of representing words as vectors that can be mathematically manipulated. Think of it like mapping the phonetic features of a sound onto a multidimensional space, where each dimension represents a different aspect of the sound. Similarly, in vector semantics, each dimension in the vector space represents a different aspect of word meaning. 
+
+    There are different models for creating these embeddings, such as the tf-idf model, which looks at the frequency of nearby words to define a word's meaning. However, this approach can result in very long and sparse vectors, much like how a detailed phonetic transcription might include many silent or unused features. 
+
+    A more efficient approach is the word2vec model family, which generates shorter, denser vectors that capture useful semantic properties. This is similar to how a simplified phonetic transcription can still convey the essential features of a sound, allowing for more effective comparison and analysis. By using vector semantics and these models, NLP can better understand and work with the complex meanings of words in language. 
+
+### START OF OUTPUT ###</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">gpt4o - L (L_gpt4o_prompt5)</p>
+                        <p>Vector semantics is a method used in Natural Language Processing (NLP) to understand word meanings by examining their contexts in language. This approach is somewhat similar to examining how words function within different grammatical structures or how they appear alongside other words. The core idea is that words sharing similar contexts tend to have similar meanings, much like how synonyms often appear in similar syntactic structures.
+
+Imagine representing each word as a point in a large, complex space, akin to a phonetic or syntactic space but based on meaning. This space is defined by the various contexts words appear in, much like how we understand a word's function by its syntactic role. These points, or vectors, are called embeddings. 
+
+In the tf-idf model, we quantify a word's meaning by counting how often other words appear alongside it, similar to how we might categorize phonetic features by frequency. However, this results in large, sparse vectors, filled mostly with zeros, as many words rarely co-occur. Think of it like a syntactic analysis where most possible combinations don't occur in actual speech.
+
+On the other hand, the word2vec model creates shorter, dense vectors that capture more nuanced semantic relationships, much like how understanding the subtleties of phonetic variation can reveal more about pronunciation than broad categorizations.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">claude - L (L_claude_prompt2)</p>
+                        <p>Words in language are like stars in a constellation - they gain meaning through their relationships with other words around them. Just as linguists study how words connect in sentences and how meaning emerges from context, vector semantics maps words into a special kind of space where similar words cluster together.
+
+Think of it like creating a detailed map of word relationships. When two words frequently appear in similar contexts - like how "happy" and "joyful" often appear near similar words - we consider their meaning to be related. This is similar to how you might analyze collocations or semantic fields in linguistics.
+
+There are two main ways to create these word maps. The first (tf-idf) is like creating an extensive dictionary where we record every time words appear near each other. This creates a very detailed but sparse record - like having a huge chart where most spaces are empty because most words don't commonly appear together.
+
+The second method (word2vec) is more like creating a concise semantic feature matrix, similar to the distinctive feature matrices used in phonology. It captures the essential relationships between words in a more compact form, making it easier to work with while maintaining the important meaning connections.
+
+These mathematical representations help computers understand language relationships in a way that mirrors how linguists analyze semantic networks and word associations.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">deepseek - L (L_deepseek_prompt4)</p>
+                        <p>**Adapted Explanation:**  
+Vector semantics operationalizes the distributional hypothesis—familiar from structural linguistics—by encoding a word’s meaning numerically based on its habitual co-occurrence patterns. Just as phonemes are defined by their positional contrasts, words are mapped into a geometric space where proximity reflects semantic similarity: words sharing collocational habitats (like "river" and "bank") cluster together. Two methods dominate. The first, akin to a frequency-tabulated concordance, generates sparse vectors (mostly zeros), mirroring exhaustive but inefficient lexical inventories. The second, like extracting distinctive features in phonology, produces dense vectors that compactly capture core semantic dimensions (e.g., "king" – "man" + "woman" ≈ "queen"). Both transform Firth’s axiom—“a word is known by the company it keeps”—into measurable spatial relationships.  
+
+**Rationale:**  
+- **Linguistic hooks:** References to structuralism (Firth), phonology (contrastive features), and semantics (collocations) align with the jury’s expertise.  
+- **Analogy:** Comparing sparse vectors to concordances and dense vectors to phonological features bridges technical and familiar concepts.  
+- **Example:** Arithmetic on embeddings (king → queen) mirrors componential analysis in semantics.  
+- **Avoids jargon:** "Embeddings" become "numerical vectors"; "tf-idf" is reframed via concordances.  
+- **Flow:** Links distributionalism → methods → linguistic parallels, ensuring coherence.</p>
+                    </div>
+                    </div></body></html>
