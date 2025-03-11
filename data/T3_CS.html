@@ -1,0 +1,148 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Semantic Roles and Diathesis Alternations</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 40px; padding: 20px; line-height: 1.6; }
+                    .container { max-width: 800px; margin: auto; }
+                    h1, h2 { color: #333; }
+                    .box { background: #f4f4f4; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+                    .category { font-weight: bold; color: #0056b3; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>Semantic Roles and Diathesis Alternations</h1>
+                    <p><strong>Instance Code:</strong> T3</p>
+                    <p><strong>Original Category:</strong> L</p>
+                    <p><strong>Target Category:</strong> CS</p>
+                    <div class="box">
+                        <h2>Original Text</h2>
+                        <p>Consider the meanings of the arguments Sasha, Pat, the window, and the door in these two sentences. Sasha broke the window. Pat opened the door. The subjects Sasha and Pat, what we might call the breaker of the window breaking event and the opener of the door-opening event, have something in common. They are both volitional actors, often animate, and they have direct causal responsibility for their events. Thematic roles are a way to capture this semantic commonality between breakers and openers. We say that the subjects of both these verbs are agents. Thus, AGENT is the thematic role that represents an abstract idea such as volitional causation. Similarly, the direct objects of both these verbs, the BrokenThing and OpenedThing, are both prototypically inanimate objects that are affected in some way by the action. The semantic role for these participants is theme. [...] Semantic roles thus help generalize over different surface realizations of predicate arguments. For example, while the AGENT is often realized as the subject of the sentence, in other cases the THEME can be the subject. [...] John (AGENT) broke the window (THEME). John (AGENT) broke the window (THEME) with a rock (INSTRUMENT). The rock (INSTRUMENT) broke the window (THEME). The window (THEME) broke. The window (THEME) was broken by John (AGENT). These examples suggest that break has (at least) the possible arguments AGENT, THEME, and INSTRUMENT. [...] These multiple argument structure realizations [...] are called verb alternations or diathesis alternations.</p>
+                    </div>
+                    <h2>CS Tailored Explanations</h2>
+            
+                    <div class="box">
+                        <p class="category">mistral - CS (CS_mistral_prompt1)</p>
+                        <p>1. Analyze the meanings of Sasha, Pat, window, and door in these sentences: Sasha broke the window. Pat opened the door. Sasha and Pat are the agents responsible for their respective actions (breaking and opening). In CS terms, we call them subjects, as they initiate an event.
+
+    2. The broken window and opened door are affected by the actions of the subjects. In linguistics, we call these affected entities as direct objects.
+
+    3. The concept of an agent represents the volitional causation, which is common to both subjects. Similarly, the direct objects are prototypically inanimate objects that undergo some change due to the action.
+
+    4. In our CS context, the subjects (agents) are often the main entities in a function call, while the direct objects (themes) are the parameters that get altered by the function.
+
+    5. For example, in the function call `break(window)`, `window` is the theme (the entity being broken). In another function call like `break(window, rock)`, `rock` is the instrument (the entity causing the breakage).
+
+    6. In certain cases, the thematic roles can change positions. For instance, in the function call `rockBreak(window)`, the roles are reversed, but the meaning remains the same.
+
+    7. The multiple ways a function can take arguments are called function alternations or diathesis alternations.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">llama - CS (CS_llama_prompt2)</p>
+                        <p>To effectively grasp the concept of thematic roles, consider a scenario where you're designing a program with various functions, each taking different arguments. In this context, think of the arguments as entities participating in an event or action, similar to how objects interact in object-oriented programming.
+
+     The terms "Sasha" and "Pat" can be viewed as instances of a "class" called Agent, where an Agent is an entity that initiates an action. This is analogous to a class having a method that performs a specific task. 
+     
+     The window and door can be seen as objects affected by the actions initiated by the Agents, similar to how objects are modified by methods in a program. In this sense, the window and door are instances of a "class" called Theme, representing entities that are affected by the actions.
+
+     The concept of thematic roles, such as AGENT and THEME, is similar to defining abstract interfaces or base classes in programming. These roles capture the commonalities between different entities participating in various events or actions, enabling you to generalize and reason about their behaviors.
+
+     For example, consider a function "break" that can take different arguments, such as an Agent (the one performing the action) and a Theme (the object being broken). This function can have multiple implementations or "realizations," similar to how a method can be overridden in object-oriented programming.
+
+     In the sentence "John broke the window," John is the Agent and the window is the Theme. If we add more details, such as "John broke the window with a rock," the rock becomes an instance of another thematic role, called INSTRUMENT, which represents the means by which the action is performed.
+
+     These different ways of expressing the same action, such as "The rock broke the window" or "The window was broken by John," demonstrate how the same arguments (Agent, Theme, INSTRUMENT) can be realized in different ways, similar to how a method can be called with different parameters or how objects can be composed in various ways.
+
+     This concept of thematic roles and their various realizations is crucial in understanding how to design and analyze complex systems, such as natural language processing models, where the ability to identify and generalize thematic roles enables more accurate and robust processing of human language. 
+
+     The variations in how these thematic roles are expressed, such as the different sentence structures, are referred to as verb alternations or diathesis alternations, akin to how different programming paradigms or design patterns can be used to achieve similar goals. 
+
+     By recognizing and applying thematic roles, you can develop more sophisticated and flexible models that can handle a wide range of linguistic expressions, much like how a well-designed program can accommodate various inputs and scenarios. 
+
+     In summary, thematic roles provide a framework for understanding the relationships between entities participating in events or actions, allowing for more effective design and analysis of complex systems, including those involved in natural language processing. This framework is essential for developing robust and accurate models that can generalize across different contexts and expressions. 
+
+     Understanding thematic roles and their applications can help you create more efficient and adaptable programs, similar to how recognizing design patterns and principles in software development enables the creation of more maintainable and scalable code. 
+
+     By leveraging this knowledge, you can improve the performance and capabilities of your natural language processing models, ultimately leading to more effective and intelligent systems. 
+
+     The concept of thematic roles, when applied to programming and software development, can facilitate the design of more modular, flexible, and robust systems, enabling you to tackle complex problems and create innovative solutions. 
+
+     In the context of AI and machine learning, recognizing and utilizing thematic roles can enhance the accuracy and reliability of your models, allowing you to develop more sophisticated and human-like language understanding capabilities. 
+
+     This, in turn, can lead to breakthroughs in areas such as human-computer interaction, sentiment analysis, and language generation, ultimately driving progress in the field of artificial intelligence. 
+
+     By grasping the concept of thematic roles and their significance in natural language processing, you can unlock new possibilities for developing intelligent systems that can understand and interact with humans more effectively. 
+
+     As a result, understanding thematic roles is essential for creating more advanced and capable AI models, and their applications can have a profound impact on the development of future AI technologies. 
+
+     The integration of thematic roles into your programming and software development workflow can lead to more efficient, adaptable, and intelligent systems, ultimately driving innovation and progress in the field of artificial intelligence. 
+
+     Therefore, recognizing the importance of thematic roles and their applications can help you stay at the forefront of AI development, enabling you to create more sophisticated and human-like language understanding capabilities. 
+
+     By applying the concept of thematic roles to your work, you can develop more robust, flexible, and accurate models, leading to breakthroughs in various areas of AI research and development. 
+
+     In conclusion, thematic roles provide a powerful framework for understanding the relationships between entities participating in events or actions, enabling the development of more advanced and capable AI models.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">gpt4o - CS (CS_gpt4o_prompt5)</p>
+                        <p>In computer science, especially in areas like programming and machine learning, understanding how different components interact can be crucial. One way to think about this is through "thematic roles," which are similar to how we define roles in a function.
+
+Consider two sentences as functions with inputs: "Sasha broke the window," and "Pat opened the door." Here, Sasha and Pat are like the function's main parameters that initiate an action—similar to a main method in a program. These are called AGENTS because they actively cause something to happen, just as a function might execute a series of commands.
+
+The window and the door represent the objects impacted by these actions, akin to data structures modified by a function. These are labeled as THEMES because they undergo change due to the AGENT's actions.
+
+Just like in programming, where a function can have different input and output configurations, verbs in language can have different argument structures, known as verb alternations. For example:
+
+- "John broke the window" involves John as the AGENT and the window as the THEME.
+- "John broke the window with a rock" introduces a new role, INSTRUMENT, which is the rock—akin to a tool or helper function in a program.
+- "The rock broke the window" shifts the role of the rock to be more prominent, similar to refactoring a program where a helper function becomes the main one.
+- "The window was broken by John" reorders roles, like changing the order of operations in a function without altering the final result.
+
+These thematic roles help us understand how different actions and participants interact, much like analyzing a program's flow and identifying the roles of various components. This concept is useful when designing systems that need to understand language, such as natural language processing tools.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">claude - CS (CS_claude_prompt1)</p>
+                        <p>Let me explain thematic roles using concepts familiar to computer programming and object-oriented design.
+
+Think of thematic roles as interfaces or abstract classes that define the behavior of entities in a sentence, similar to how we define roles in software design patterns. Just as a class can implement multiple interfaces, words in a sentence can fulfill specific semantic roles.
+
+Let's analyze this using two example sentences:Sasha broke the window
+Pat opened the doorIn object-oriented terms, we can identify several key roles:
+
+1. AGENT: Similar to the initiator object in the Command pattern, this is the entity that triggers the action. It has:
+   - Control flow responsibility
+   - Intentional execution
+   - Direct causation
+   In our examples, Sasha and Pat are AGENTS.
+
+2. THEME: Think of this as the target object that the operation acts upon, similar to how a method modifies its parameter. The window and door are THEMEs.
+
+3. INSTRUMENT: Like a utility class or helper method, it's a tool used to accomplish the action.
+
+These roles can be arranged in different syntactic patterns, similar to how we can refactor method calls:// Different valid arrangements of the same semantic roles
+John (AGENT) broke the window (THEME)
+John (AGENT) broke the window (THEME) with a rock (INSTRUMENT)
+The rock (INSTRUMENT) broke the window (THEME)
+The window (THEME) broke
+The window (THEME) was broken by John (AGENT)This is analogous to method overloading or different implementations of the same interface, where the underlying semantic relationship remains constant despite syntactic variations. These different arrangements are called verb alternations, similar to how a single API endpoint might accept different parameter combinations.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">deepseek - CS (CS_deepseek_prompt5)</p>
+                        <p>Thematic roles in linguistics are like parameter types in a function signature, defining the roles entities play in an action. In "Sasha broke the window" and "Pat opened the door," **Sasha** and **Pat** are **AGENTS**—they act as the "functions" intentionally initiating the action (like a `for` loop actively modifying an array). The **window** and **door** are **THEMES**—the "data structures" being directly affected (like an array mutated by `push()`). An **INSTRUMENT** (e.g., "a rock" in "John broke the window with a rock") is an optional tool parameter, akin to passing a sorting algorithm a comparator function.  
+
+**Verb alternations** mirror function overloading: the same core action ("break") can be expressed with different argument structures, similar to a method accepting varying parameter orders or optional args. For example:  
+- `break(AGENT=John, THEME=window, INSTRUMENT=rock)`  
+- `break(THEME=window)` (passive voice: `window.wasBrokenBy(John)`)  
+- `break(INSTRUMENT=rock, THEME=window)` ("The rock broke the window")  
+
+These roles generalize argument patterns across contexts, much like interfaces enforce consistent method signatures despite varying implementations.</p>
+                    </div>
+                    </div></body></html>

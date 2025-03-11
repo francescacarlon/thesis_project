@@ -1,0 +1,114 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Long Short-Term Memory (LSTMs)</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 40px; padding: 20px; line-height: 1.6; }
+                    .container { max-width: 800px; margin: auto; }
+                    h1, h2 { color: #333; }
+                    .box { background: #f4f4f4; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+                    .category { font-weight: bold; color: #0056b3; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>Long Short-Term Memory (LSTMs)</h1>
+                    <p><strong>Instance Code:</strong> T10</p>
+                    <p><strong>Original Category:</strong> CS</p>
+                    <p><strong>Target Category:</strong> L</p>
+                    <div class="box">
+                        <h2>Original Text</h2>
+                        <p>[...] it is quite difficult to train RNNs for tasks that require a network to make use of information distant from the current point of processing. [...] the information encoded in hidden states tends to be fairly local, more relevant to the most recent parts of the input sequence and recent decisions. [...] the gradients are eventually driven to zero, a situation called the vanishing gradients problem. To address these issues, more complex network architectures have been designed to explicitly manage the task of maintaining relevant context over time, by enabling the network to learn to forget information that is no longer needed and to remember information required for decisions still to come. The most commonly used such extension to RNNs is the long short-term memory (LSTM) network. LSTMs [...] remove information no longer needed from the context, and adding information likely to be needed for later decision making. [...] LSTMs accomplish this by first adding an explicit context layer to the architecture [...], and control the flow of information into and out of the units [...]. These gates are implemented through the use of additional weights that operate sequentially on the input, and previous hidden layer, and previous context layers. [...] The purpose of [the forget gate] is to delete information from the context that is no longer needed. [...] the add gate to select the information to add to the current context. [...] The final gate is the output gate which is used to decide what information is required for the current hidden state. [...]</p>
+                    </div>
+                    <h2>L Tailored Explanations</h2>
+            
+                    <div class="box">
+                        <p class="category">mistral - L (L_mistral_prompt1)</p>
+                        <p>0. LSTM Networks: A Solution to the Vanishing Gradients Problem in RNNs
+
+    Recall that Recurrent Neural Networks (RNNs) are a type of neural network that processes sequences of data, where the hidden state is updated based on the previous hidden state and the current input. However, RNNs struggle with long term dependencies, as the information encoded in the hidden states is typically local and more relevant to recent parts of the input sequence and recent decisions. This issue arises due to the vanishing gradients problem, where gradients are driven to zero, making it difficult for the network to learn effectively from distant parts of the input sequence.
+
+    To tackle these challenges, LSTM Networks have been developed, which explicitly manage the task of maintaining relevant context over time. LSTMs allow the network to learn to forget information that is no longer needed and remember information required for decisions still to come.
+
+    ### 1. LSTM Network Architecture
+
+    LSTMs are an extension of RNNs and consist of three main components: the forget gate, the input gate, and the output gate. These components are designed to manage the flow of information in and out of the units, allowing the network to selectively forget and remember relevant information.
+
+    ### 2. The Forget Gate
+
+    The forget gate decides which information to delete from the context, ensuring that the network focuses on the most important parts of the input sequence. This helps address the vanishing gradients problem by preventing irrelevant information from accumulating and overwhelming the network.
+
+    ### 3. The Input Gate
+
+    The input gate selects the information to add to the current context, ensuring that the network considers only the most relevant information for the task at hand. This helps improve the quality of the hidden state and enables the network to make better decisions.
+
+    ### 4. The Output Gate
+
+    The output gate determines which information is required for the current hidden state, allowing the network to focus on the relevant information and ignore the rest. This helps the network make more accurate predictions and improve its overall performance.
+
+    ### 5. LSTM Network Implementation
+
+    LSTMs introduce an explicit context layer to the architecture, which allows the network to maintain a memory of the input sequence over time. The gates in LSTMs are controlled through the use of additional weights that operate sequentially on the input, previous hidden state, and previous context layer. This enables the network to adapt to different input sequences and tasks.
+
+    ### Conclusion
+
+    LSTM Networks are an essential tool in addressing the vanishing gradients problem in RNNs and improving the long-term dependency issue. By explicitly managing the flow of information in and out of the units, LSTMs enable the network to selectively forget and remember relevant information, resulting in improved performance on tasks that require long-term dependencies.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">llama - L (L_llama_prompt2)</p>
+                        <p>Consider a sentence where you want to understand the relationship between words that are far apart, like "The dog, which ran quickly, caught the ball." To comprehend this sentence, you need to keep track of the subject "dog" and its actions across the sentence. In linguistic terms, this is similar to analyzing long-distance dependencies in syntax. 
+
+    In a similar way, Recurrent Neural Networks (RNNs) process sequential data, like sentences, one step at a time. However, they struggle to retain information from earlier parts of the sequence, much like how it's hard to remember the beginning of a long sentence. This is because the information encoded in the hidden states of RNNs is local, focusing on the most recent parts of the input sequence and recent decisions. As a result, the gradients, which are essential for training the network, tend to disappear, a phenomenon known as the vanishing gradients problem.
+
+    To overcome this issue, more complex network architectures, like Long Short-Term Memory (LSTM) networks, have been developed. LSTMs are designed to manage context over time, allowing the network to learn what information to discard and what to retain for future decisions. This is analogous to a linguistic process where you selectively focus on specific words or phrases in a sentence to understand its meaning.
+
+    LSTMs achieve this by introducing an explicit context layer and control gates that regulate the flow of information. These gates operate sequentially, using additional weights to determine what information to add, remove, or output. The forget gate acts like a filter, removing irrelevant information from the context, while the add gate selects relevant information to include. The output gate then decides what information is necessary for the current hidden state, much like how you choose the relevant words to focus on when parsing a sentence.
+
+    By using LSTMs, the network can effectively handle long-distance dependencies in sequential data, much like how linguists analyze complex sentence structures. This enables the network to make more accurate predictions and decisions, making it a powerful tool for natural language processing tasks. 
+
+    Think of LSTMs as a skilled reader who can keep track of the narrative thread, retaining relevant information and discarding unnecessary details, to ultimately comprehend the meaning of a text. This ability to manage context and selectively focus on relevant information makes LSTMs a valuable asset in understanding and generating human language.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">gpt4o - L (L_gpt4o_prompt3)</p>
+                        <p>In the realm of neural networks, particularly Recurrent Neural Networks (RNNs), there's a challenge similar to understanding a sentence where key information is spread out. RNNs often struggle with remembering details from earlier in a sequence, much like trying to recall the beginning of a long sentence while reading the end. This happens because the information stored in the network's memory, or "hidden states," tends to focus on recent input, akin to emphasizing the last few words you've just read. This can lead to the "vanishing gradients problem," where early information fades away, much like how earlier parts of a conversation might become hazy.
+
+To tackle this, an advanced version of RNNs called Long Short-Term Memory networks (LSTMs) was developed. Imagine LSTMs as having a more sophisticated memory system that can decide what to forget and what to remember, similar to how you might choose to remember a phone number but forget a random number you just heard. LSTMs achieve this through a series of "gates," which are mechanisms that control the flow of information.
+
+Firstly, there's the "forget gate," which clears out unnecessary information, like erasing irrelevant details. Then there's the "add gate," which selects new information to store, akin to jotting down important notes. Finally, the "output gate" determines what information is essential for the current task, much like choosing the right words when forming a sentence. By using these gates, LSTMs manage to maintain relevant context over time, allowing them to handle sequences where information is scattered across various points, much like understanding a complex sentence structure.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">claude - L (L_claude_prompt2)</p>
+                        <p>Think of language processing like reading a long story. Just as we humans need to remember important details from earlier chapters while forgetting irrelevant ones, computers need a similar ability when processing language.
+
+Traditional systems (RNNs) are like readers with very short-term memory - they mainly focus on what they've just read, struggling to connect it with information from many pages ago. This is similar to how we might forget crucial plot details from chapter one when we're deep into chapter ten.
+
+This is where LSTM networks come in - think of them as a skilled reader with a notepad (the context layer). Just as you might jot down important points while reading a complex text, LSTMs have a system of "gates" that work like your decision-making process when taking notes:
+
+- The forget gate is like deciding which notes to erase from your notepad because they're no longer relevant
+- The add gate is similar to deciding what new information is worth writing down
+- The output gate is like choosing which of your notes are relevant for understanding the current paragraph
+
+Just as linguists use morphemes and phonemes as building blocks of language, these gates are the building blocks that help computers maintain long-term understanding of text. They work together like the various levels of language analysis (phonological, syntactic, semantic) to create a comprehensive understanding of the input.
+
+This system allows computers to process language more like humans do, maintaining important context while discarding irrelevant information, much like how we maintain coherence when analyzing discourse structure.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">deepseek - L (L_deepseek_prompt3)</p>
+                        <p>**Adapted Explanation:**  
+Training language models to handle long-distance dependencies—like connecting a pronoun to its antecedent several clauses back—is similar to tracking grammatical agreement across complex sentences. Basic recurrent neural networks (RNNs) struggle here, behaving like a listener who only retains the last few words of a sentence. Their "working memory" (hidden states) fades quickly, losing track of earlier context—a technical flaw called *vanishing gradients*, akin to a syntactic dependency chain breaking over distance.  
+
+LSTMs fix this by mimicking how discourse structure manages context. Imagine an editor revising a text:  
+1. **Forget Gate:** Erases irrelevant details (e.g., discarding a resolved pronoun after its referent is no longer needed).  
+2. **Add Gate:** Highlights new, crucial information (e.g., noting a verb’s tense for future agreement).  
+3. **Output Gate:** Decides what to prioritize in the current "working memory" (like foregrounding the subject in a passive construction).  
+
+These "gates" operate like syntactic rules, learned through exposure to data, to maintain coherence. Just as you parse a sentence by integrating case markers or word order, LSTMs dynamically update their mental notepad (context layer), ensuring distant elements stay linked—critical for tasks like semantic role labeling or narrative tracking.</p>
+                    </div>
+                    </div></body></html>

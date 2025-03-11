@@ -11,6 +11,8 @@ BASE_PATH = Path("C:/Users/Francesca Carlon/Desktop/Fran_stuff/MASTER/THESIS/the
 DATASET_PATH = BASE_PATH / "data/dataset.json"
 BENCHMARK_PATH = BASE_PATH / "data/benchmark.json"
 LINGUISTIC_ANALYSIS_PATH = BASE_PATH / "data/linguistic_analysis.json"  # New file only for linguistic analysis
+RANDOMIZED_BENCHMARK_PATH = BASE_PATH / "data/benchmark_randomized.json"
+TEXT_PAGES_PATH = BASE_PATH / "data/"
 
 # Load environment variables from .env file
 load_dotenv()

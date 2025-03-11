@@ -1,0 +1,104 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Machine Translation</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 40px; padding: 20px; line-height: 1.6; }
+                    .container { max-width: 800px; margin: auto; }
+                    h1, h2 { color: #333; }
+                    .box { background: #f4f4f4; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+                    .category { font-weight: bold; color: #0056b3; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>Machine Translation</h1>
+                    <p><strong>Instance Code:</strong> T14</p>
+                    <p><strong>Original Category:</strong> CL</p>
+                    <p><strong>Target Category:</strong> L</p>
+                    <div class="box">
+                        <h2>Original Text</h2>
+                        <p>The standard architecture for MT is the encoder-decoder transformer or sequence-to-sequence model [...]. Given a sentence in a source language, the MT task is then to generate a corresponding sentence in a target language. […]. MT uses supervised machine learning: at training time the system is given a large set of parallel sentences (each sentence in a source language matched with a sentence in the target language), and learns to map source sentences into target sentences. [...] we split the sentences into a sequence of subword tokens (tokens can be words, or subwords, or individual characters). The systems are then trained to maximize the probability of the sequence of tokens in the target language y1,..., ym given the sequence of tokens in the source language x1,..., xn: P(y1,..., ym|x1,..., xn). […] The encoder takes the input words x = [x1,..., xn] and produces an intermediate context h. At decoding time, the system takes h and, word by word, generates the output y [...]. [...] Machine translation models are trained on a parallel corpus, sometimes called a bitext, a text that appears in two (or more) languages. [...] Standard training corpora for MT come as aligned pairs of sentences. [...] To score the similarity of sentences across languages, we need to make use of a multilingual embedding space, in which sentences from different languages are in the same embedding space [...]</p>
+                    </div>
+                    <h2>L Tailored Explanations</h2>
+            
+                    <div class="box">
+                        <p class="category">mistral - L (L_mistral_prompt3)</p>
+                        <p>1. Understand the basics of machine translation (MT): it's a system that translates sentences from one language (source) to another (target) using a sequence-to-sequence model called encoder-decoder transformer.
+
+    2. The training process involves providing the system with a large set of sentences in both languages (source and target), so it can learn to convert one into the other.
+
+    3. To do this, we break down the sentences into smaller units, called subword tokens, that can be words, parts of words, or even individual characters.
+
+    4. The system then tries to generate the sequence of these tokens in the target language given the sequence in the source language. It maximizes the probability of the target sequence given the source sequence.
+
+    5. Initially, the system takes the input words from the source language and produces an intermediate context. During the decoding process, it uses this context to generate the output word by word in the target language.
+
+    6. Machine translation models are trained on parallel corpora (bitexts), which are texts that appear in more than one language.
+
+    7. Standard training data for MT comes in the form of aligned pairs of sentences, one in each language.
+
+    8. To evaluate the similarity of sentences across languages, we need a multilingual embedding space, where sentences from different languages can be compared.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">llama - L (L_llama_prompt2)</p>
+                        <p>```
+
+To better grasp the concept of machine translation (MT), let's break it down using linguistics terms. In MT, we're essentially dealing with a translation task, where a sentence in one language (the source language) needs to be translated into another language (the target language). This process is similar to how a linguist analyzes the syntax and semantics of a sentence to understand its meaning. 
+
+Imagine you're translating a sentence from English to Spanish. The MT system uses a technique called supervised machine learning, which is like having a language teacher who provides you with a set of example sentences in both languages. The system learns to map the source sentence to the target sentence by analyzing these examples. 
+
+In linguistics, we split sentences into smaller units like phonemes or morphemes. Similarly, in MT, we break down sentences into subword tokens, which can be words, subwords, or even individual characters. The system is trained to predict the probability of a sequence of tokens in the target language given the sequence of tokens in the source language. 
+
+Think of the MT system like a language generator. It takes the input sentence (the source language) and produces an intermediate representation, similar to how a linguist might represent the underlying structure of a sentence using a parse tree. Then, it generates the output sentence (the target language) word by word, much like how a language speaker would construct a sentence. 
+
+The training data for MT systems consists of parallel corpora, which are like bilingual dictionaries, where each sentence in one language is paired with its equivalent in another language. This allows the system to learn the relationships between sentences across languages. 
+
+To compare sentences across languages, we use a concept called multilingual embedding space. Imagine a shared semantic space where sentences from different languages are represented in a way that captures their meanings and relationships. This space enables the system to score the similarity between sentences, even if they're in different languages. 
+
+In essence, machine translation is a complex task that leverages linguistics concepts, such as syntax, semantics, and phonetics, to generate translations. By understanding how MT systems work, you can appreciate the intricacies of language and the challenges of translating meaning from one language to another.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">gpt4o - L (L_gpt4o_prompt4)</p>
+                        <p>In machine translation (MT), we use a model called an encoder-decoder, which is a type of sequence-to-sequence model. Imagine you have a sentence in one language and you want to translate it into another. The MT system learns to do this by being trained on a large collection of sentence pairs, one in the original language and one in the translated language.
+
+The process starts by breaking down sentences into smaller parts, such as words or even smaller units. The encoder reads the entire input sentence and creates a summary or context. Then, during translation, the decoder uses this context to generate the sentence in the target language, word by word.
+
+To ensure the translation is accurate, we use a concept called a parallel corpus, which is essentially a bilingual text with aligned sentences in two languages. This helps the system learn the relationships between the two languages.
+
+Additionally, we use something called a multilingual embedding space. Think of it as a common area where sentences from different languages can be compared and measured for similarity, helping the system understand how similar sentences are across languages.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">claude - L (L_claude_prompt2)</p>
+                        <p>Machine Translation works much like a highly skilled interpreter who understands both the source and target languages. Think of it as a two-part process, similar to how we process language in linguistics: first understanding (encoding), then producing (decoding).
+
+Just as we learn languages through exposure to parallel examples (like bilingual texts or dictionaries), the system learns from millions of matched sentence pairs - imagine having a massive collection of perfectly aligned bilingual texts. These sentences are broken down into smaller units, similar to how we analyze morphemes and phonemes in linguistic analysis.
+
+The first part (encoder) functions like our language comprehension system: it takes the input sentence and creates a deep understanding of its meaning, much like how we process semantic content. The second part (decoder) is like our language production system: it takes that understanding and expresses it in the target language, following the target language's syntactic and morphological rules.
+
+The system needs a way to understand equivalence across languages, similar to how we recognize that "house" and "maison" refer to the same concept despite being in different languages. It does this through a shared semantic space, much like how cognates or universal semantic features work across languages.
+
+The training process is similar to how children acquire language through exposure to paired meanings and utterances, but on a much larger scale using structured bilingual texts, like having millions of perfectly annotated parallel texts that linguists would use for comparative analysis.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">deepseek - L (L_deepseek_prompt1)</p>
+                        <p>**Adapted Explanation for Linguistics Students:**  
+
+Machine translation (MT) relies on a *syntax-to-syntax transformer model*—a system that converts a source language sentence into a target language sentence, much like re-mapping syntactic structures across languages. Imagine parsing a sentence into its grammatical components (encoder) and then regenerating it in another language while preserving meaning (decoder).  
+
+MT learns from *aligned bilingual texts* (e.g., paired English-French sentences, akin to parallel corpora in dialectology). During training, it breaks sentences into subword units (like morphemes or graphemes) to handle rare words, similar to morphological analysis. The model then calculates the probability of generating each target unit (*y₁, y₂…*) given the source units (*x₁, x₂…*), optimizing for semantic equivalence.  
+
+The encoder analyzes the source sentence’s structure, creating a *contextual representation* (like a semantic prototype). The decoder uses this prototype to sequentially produce the target sentence, ensuring alignment in meaning—think of it as code-switching guided by syntactic rules.  
+
+To evaluate cross-linguistic similarity, MT maps sentences into a shared *semantic vector space* (analogous to universal semantic roles), where "dog" (English) and "perro" (Spanish) occupy overlapping conceptual regions. This ensures translations preserve not just lexical but also pragmatic meaning.  
+
+**Example:** Translating “She runs” (English) to “Ella corre” (Spanish) involves encoding the VP structure, then decoding using Spanish morphosyntax—a controlled transfer of grammatical and semantic features.</p>
+                    </div>
+                    </div></body></html>

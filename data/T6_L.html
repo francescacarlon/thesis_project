@@ -1,0 +1,98 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Feed-Forward Neural Networks (FFNNs)</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 40px; padding: 20px; line-height: 1.6; }
+                    .container { max-width: 800px; margin: auto; }
+                    h1, h2 { color: #333; }
+                    .box { background: #f4f4f4; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+                    .category { font-weight: bold; color: #0056b3; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>Feed-Forward Neural Networks (FFNNs)</h1>
+                    <p><strong>Instance Code:</strong> T6</p>
+                    <p><strong>Original Category:</strong> CS</p>
+                    <p><strong>Target Category:</strong> L</p>
+                    <div class="box">
+                        <h2>Original Text</h2>
+                        <p>A feedforward network is a multilayer network in which the units are connected with no cycles; the outputs from units in each layer are passed to units in the next higher layer, and no outputs are passed back to lower layers. [...] Simple feedforward networks have three kinds of nodes: input units, hidden units, and output units. [...] The input layer x is a vector of simple scalar values. [...] The core of the neural network is the hidden layer h formed of hidden units hi, each of which is a neural unit [...]. In the standard architecture, each layer is fully-connected, meaning that each unit in each layer takes as input the outputs from all the units in the previous layer, and there is a link between every pair of units from two adjacent layers. [...] a single hidden unit has as parameters a weight vector and a bias. We represent the parameters for the entire hidden layer by combining the weight vector and bias for each unit i into a single weight matrix W and a single bias vector b for the whole layer. [...] the hidden layer computation for a feedforward network can be done very efficiently with simple matrix operations. In fact, the computation only has three steps: multiplying the weight matrix by the input vector x, adding the bias vector b, and applying the activation function g (such as the sigmoid, tanh, or ReLU activation […]). The output of the hidden layer, the vector h, is thus the following (for this example we'll use the sigmoid function σ as our activation function): h = σ(Wx+b). [...] The role of the output layer is to take this new representation h and compute a final output. This output could be a real valued number, but in many cases the goal of the network is to make some sort of classification decision, [...].</p>
+                    </div>
+                    <h2>L Tailored Explanations</h2>
+            
+                    <div class="box">
+                        <p class="category">mistral - L (L_mistral_prompt3)</p>
+                        <p>1. In a feedforward network, the information flows in one direction, from input to output, without loops.
+    2. It consists of three primary components: input nodes, hidden nodes, and output nodes.
+    3. The input layer (x) is a collection of simple, scalar values.
+    4. The heart of the neural network is the hidden layer, composed of multiple hidden nodes. Each node is a neural unit.
+    5. In most cases, each layer is fully connected, meaning each node in a layer receives input from all nodes in the preceding layer.
+    6. Each hidden node has a set of parameters, including a weight vector and a bias. We group these for the entire hidden layer into a single weight matrix (W) and a single bias vector (b).
+    7. The hidden layer computation can be efficiently performed using basic matrix operations. Specifically, it involves multiplying the weight matrix by the input vector, adding the bias vector, and applying an activation function like the sigmoid function (σ).
+    8. The hidden layer's output, the vector h, can be represented as h = σ(Wx+b).
+    9. The output layer's responsibility is to process this new representation (h) and produce a final output. This output may be a real number, but often, the network's goal is to make a classification decision.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">llama - L (L_llama_prompt1)</p>
+                        <p>In the field of Linguistics, you're likely familiar with the concept of hierarchical structures, where elements are organized in a specific order to convey meaning. A feedforward network can be thought of as a similar hierarchical structure, where units are connected in a specific way to process and transform information. 
+
+Imagine a simple sentence with a subject, verb, and object. In a feedforward network, the input layer would be like the subject, providing the initial information. The hidden layer would be like the verb, taking the input and transforming it into a new representation, much like how a verb changes the subject in a sentence. The output layer would be like the object, receiving the transformed information and producing a final result.
+
+In a feedforward network, the units are connected in a specific way, with no cycles or feedback loops. The output from each unit in one layer is passed to the units in the next layer, but not back to the previous layer. This is similar to how words in a sentence are arranged in a specific order to convey meaning, with</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">gpt4o - L (L_gpt4o_prompt3)</p>
+                        <p>A feedforward network is a type of neural network that processes information in one direction: from input to output, without any loops. Think of it as a layered structure where each layer sends information to the next, like a series of linguistic transformations where each step builds on the previous one.
+
+This network has three kinds of layers: input, hidden, and output. The input layer consists of simple numerical values, much like how phonetic features are raw data for linguistic analysis. The hidden layer, which is the core of the network, is made up of hidden units. These units are like the underlying rules in syntax—essential but not directly observable. Each hidden unit has parameters, specifically a weight and a bias, much like how linguistic rules have specific conditions and constraints.
+
+In this network, each layer is fully connected to the next. This means every unit in one layer is linked to every unit in the following layer, similar to how every phoneme can potentially affect the meaning of a word in different contexts.
+
+The hidden layer computes its output using simple matrix operations, akin to applying transformational rules in syntax. First, it multiplies the input vector by a weight matrix, adds a bias vector, and then applies an activation function (like sigmoid, tanh, or ReLU). For example, using the sigmoid function, the output of the hidden layer can be represented as h = σ(Wx + b). This process transforms the input into a new representation, much like how semantic interpretation derives meaning from structure.
+
+Finally, the output layer takes the transformed data from the hidden layer to produce a result. This result could be a numerical value or a category, similar to how we might classify a sentence as a question or a statement based on its structure.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">claude - L (L_claude_prompt3)</p>
+                        <p>A feedforward network can be understood as a language processing system with distinct layers, similar to how we analyze language in hierarchical levels. Think of it as a one-way street where information flows forward only, like how we process language from sounds to meaning without going backwards.
+
+The network has three main components, comparable to linguistic levels of analysis: input units (like phonemes), hidden units (like morphemes and syntax), and output units (like semantic meaning). The input layer is simply a sequence of values, similar to how we represent distinctive features in phonology.
+
+The hidden layer, which is the heart of the network, functions like our mental grammar. Just as each grammatical rule connects different linguistic elements, each hidden unit connects to all units in the layers before and after it - we call this "fully-connected." These connections are weighted (like how certain linguistic features carry more importance than others) and have a bias (similar to language-specific constraints).
+
+To process information, the network performs three steps, comparable to language processing: it weighs the importance of each input (like assigning stress in phonology), adds bias (like applying language-specific rules), and activates certain patterns (like phonological or syntactic transformations). We can express this mathematically as h = σ(Wx+b), where the activation function σ works like a filter that determines which patterns become prominent.
+
+Finally, the output layer interprets this processed information to make decisions, similar to how we derive meaning after processing all linguistic levels. This could produce various outcomes, but often it's used for classification, like determining whether a sentence is grammatical or ungrammatical.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">deepseek - L (L_deepseek_prompt2)</p>
+                        <p>**Adapted Explanation for Linguistics Students:**  
+
+Think of a feedforward network as a *syntactic tree* for processing information: it flows one-way (like parsing a sentence left-to-right), with no feedback loops. It has three *linguistic-like layers*:  
+
+1. **Input Layer:** Raw data (e.g., phonetic features or word embeddings) enters here, like phonemes entering a phonological parser.  
+2. **Hidden Layer:** This acts like a *hierarchical syntax layer*, combining inputs into abstract patterns. Each "node" here is akin to a rule (e.g., merging phrases), weighted by how critical it is (like prosodic stress in phonology). A **bias** adjusts its baseline activity, similar to a phonotactic constraint (e.g., avoiding /ŋ/ in syllable onsets).  
+3. **Output Layer:** Produces a final "meaning" (e.g., classifying a word’s semantic role).  
+
+The hidden layer works like a *morphological paradigm*:  
+- **Weight Matrix (W):** Determines how strongly each input influences a hidden rule (like how syntactic heads govern dependents).  
+- **Bias Vector (b):** Adjusts each rule’s sensitivity (similar to allophonic variation thresholds).  
+- **Activation Function (σ):** A decision boundary, like turning continuous acoustic signals into discrete phonemes (e.g., sigmoid squishes values into 0–1, like voicing detection).  
+
+**Example:** To classify a verb’s tense, the network might:  
+1. Multiply input (word form) by weights (prioritizing affixal cues).  
+2. Add bias (accounting for irregular verbs).  
+3. Apply activation (deciding "past" vs. "present" via a probability threshold).  
+
+This mimics how linguistic competence combines features hierarchically—but here, weights/biases are learned from data, not innate.</p>
+                    </div>
+                    </div></body></html>
