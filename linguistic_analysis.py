@@ -115,6 +115,10 @@ def encode_long_text(text):
 # Function to compute cosine similarity without truncation
 def compute_cosine_similarity(original_text, tailored_text):
     """Computes cosine similarity between original and paraphrased texts without truncation."""
+
+    print(f"\n🔍 Computing cosine similarity between:\n"
+          f"📝 Original: {original_text[:300]}...\n"
+          f"📝 Tailored: {tailored_text[:300]}...\n")  # Show first 300 chars for clarity
     
     # Encode full texts without truncation
     embedding1 = encode_long_text(original_text)
@@ -124,6 +128,7 @@ def compute_cosine_similarity(original_text, tailored_text):
     cosine_sim = util.pytorch_cos_sim(embedding1, embedding2).item()
 
     return {"cosine_similarity": cosine_sim}
+
 
 # Function to analyze a text
 def analyze_text(text):
