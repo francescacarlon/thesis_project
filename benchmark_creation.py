@@ -1,5 +1,5 @@
 from utils import load_dataset, save_dataset
-from linguistic_analysis import analyze_text
+from linguistic_analysis import analyze_text, compute_cosine_similarity
 from llm_caller import call_llm
 from prompts import *  # Import all prompts
 from prompts import PROMPT_FUNCTIONS
@@ -91,26 +91,46 @@ def clean_existing_texts(benchmark):
                     benchmark[key]["tailored_texts"][llm][category][prompt_key] = cleaned_text
     print(f"\n✅ Post-run cleanup applied to {cleaned_count} texts in benchmark.")
 
-def clean_existing_texts_in_linguistic_analysis(linguistic_analysis):
+def clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark):
+    """Cleans up and reanalyzes texts in linguistic_analysis, ensuring cosine similarity is computed for all."""
     cleaned_count = 0
+    updated_similarities = 0
+
     for key, entry in linguistic_analysis.items():
+        original_text = entry["original_text"]
+
         for llm, categories in entry.get("tailored_texts", {}).items():
             for category, prompts in categories.items():
                 for prompt_key, analysis in prompts.items():
                     if "text" in analysis:
                         cleaned_text = clean_text(analysis["text"])
                         updated_analysis = analyze_text(cleaned_text)
+
                         if cleaned_text != analysis["text"]:
                             cleaned_count += 1
+
+                        # Compute cosine similarity if missing
+                        if "cosine_similarity" not in analysis:
+                            cosine_sim = compute_cosine_similarity(original_text, cleaned_text)["cosine_similarity"]
+                            updated_similarities += 1
+                        else:
+                            cosine_sim = analysis["cosine_similarity"]
+
                         linguistic_analysis[key]["tailored_texts"][llm][category][prompt_key] = {
                             "text": cleaned_text,
                             "token_count": updated_analysis["token_count"],
                             "readability": updated_analysis["readability"],
-                            "pos": updated_analysis["pos"]
+                            "pos": updated_analysis["pos"],
+                            "cosine_similarity": cosine_sim
                         }
-    print(f"\n✅ Post-run cleanup and re-analysis applied to {cleaned_count} texts in linguistic_analysis.")
+
+    print(f"\n✅ Post-run cleanup applied to {cleaned_count} texts in linguistic_analysis.")
+    print(f"\n✅ Cosine similarity computed/updated for {updated_similarities} text pairs.")
+
 
 def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_key=None):
+    """Creates a benchmark, generating new tailored texts and updating linguistic analysis with cosine similarity."""
+    
     dataset = load_dataset(DATASET_PATH)
 
     try:
@@ -171,7 +191,17 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
             existing_text = (tailored_texts.get(prompt_key) or "").strip()
 
             if is_valid_existing_text(existing_text):
-                print(f"Skipping {target_category} for {key}, already exists and passed validation.")
+                print(f"Skipping generation for {target_category} in {key}, already exists and passed validation.")
+
+                # Ensure cosine similarity is computed if missing
+                existing_analysis = linguistic_analysis[key]["tailored_texts"].get(llm_model, {}).get(target_category, {}).get(prompt_key, {})
+                if "cosine_similarity" not in existing_analysis:
+                    print(f"Computing cosine similarity for {target_category} in {key} (existing text).")
+                    cosine_sim = compute_cosine_similarity(original_text, existing_text)["cosine_similarity"]
+                    linguistic_analysis[key].setdefault("tailored_texts", {}).setdefault(llm_model, {}).setdefault(target_category, {})[prompt_key] = {
+                        "text": existing_text,
+                        "cosine_similarity": cosine_sim
+                    }
                 continue
 
             reason = get_invalid_reason(existing_text)
@@ -195,30 +225,20 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
 
             tailored_texts[prompt_key] = response_text
             tailored_analysis = analyze_text(response_text)
+
+            # Compute cosine similarity for the newly generated text
+            cosine_sim = compute_cosine_similarity(original_text, response_text)["cosine_similarity"]
+
             linguistic_analysis[key].setdefault("tailored_texts", {}).setdefault(llm_model, {}).setdefault(target_category, {})[prompt_key] = {
                 "text": response_text,
                 "token_count": tailored_analysis["token_count"],
                 "readability": tailored_analysis["readability"],
-                "pos": tailored_analysis["pos"]
+                "pos": tailored_analysis["pos"],
+                "cosine_similarity": cosine_sim
             }
 
     clean_existing_texts(benchmark)
-    clean_existing_texts_in_linguistic_analysis(linguistic_analysis)
-
-    def sort_prompt_keys(data):
-        for entry_key, entry in data.items():
-            for llm, categories in entry.get("tailored_texts", {}).items():
-                for category, prompts in categories.items():
-                    if not isinstance(prompts, dict):
-                        print(f"⚠️ Warning: Unexpected type for prompts in {entry_key}-{llm}-{category}. Skipping reorder.")
-                        continue
-                    sorted_prompts = dict(sorted(prompts.items(), key=lambda x: int(x[0].replace("prompt", ""))))
-                    if list(prompts.keys()) != list(sorted_prompts.keys()):
-                        print(f"Reordering prompts for {entry_key}-{llm}-{category}")
-                    categories[category] = sorted_prompts
-
-    sort_prompt_keys(benchmark)
-    sort_prompt_keys(linguistic_analysis)
+    clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark)
 
     save_dataset(benchmark, BENCHMARK_PATH)
     save_dataset(linguistic_analysis, LINGUISTIC_ANALYSIS_PATH)
