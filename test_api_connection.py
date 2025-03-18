@@ -58,7 +58,7 @@ except Exception as e:
     print("❌ Error:", e)
 
 
-### CHECK ON COSINE SIMILARITY
+import json
 
 # ✅ Load the dataset
 with open(LINGUISTIC_ANALYSIS_PATH, "r", encoding="utf-8") as f:
@@ -73,22 +73,25 @@ for key, entry in linguistic_analysis.items():
     for llm in entry.get("tailored_texts", {}):
         for category in entry["tailored_texts"][llm]:
             for prompt_key, analysis in entry["tailored_texts"][llm][category].items():
-                if "cosine_similarity" in analysis:
+                
+                # ✅ Check if BERTScore exists
+                if "bertscore" in analysis:
                     found_compared_texts = True  # Mark that at least one comparison exists
                     tailored_text = analysis["text"]  # The tailored text
-                    similarity = analysis["cosine_similarity"]
+                    bertscore = analysis["bertscore"]  # Extract BERTScore
 
-                    # ✅ Print the text pairs
-                    print(f"\n🔍 Already compared:")
+                    # ✅ Print the text pairs with BERTScore
+                    print(f"\n🔍 Already compared (BERTScore):")
                     print(f"📌 Entry: {key} | LLM: {llm} | Category: {category} | Prompt: {prompt_key}")
                     print(f"📝 Original: {original_text[:300]}...")  # Show first 300 characters
                     print(f"📝 Tailored: {tailored_text[:300]}...")  # Show first 300 characters
-                    print(f"📊 Cosine Similarity: {similarity:.4f}")
+                    print(f"📊 BERTScore - Precision: {bertscore['bertscore_precision']:.4f} | Recall: {bertscore['bertscore_recall']:.4f} | F1: {bertscore['bertscore_f1']:.4f}")
                     print("-" * 80)  # Separator for readability
 
 # ✅ If no compared texts found, inform the user
 if not found_compared_texts:
-    print("\n🚨 No texts with cosine similarity found!")
+    print("\n🚨 No texts with BERTScore found!")
+
 
 
 

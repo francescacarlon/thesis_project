@@ -26,7 +26,7 @@ def main():
         print(f"   ✏️  Prompt Function: {prompt_function_name}")
 
         # ✅ Call the benchmark function for the test case
-        create_benchmark(llm_model, prompt_function_name, target_key="1")  # Optionally: max_entries=2
+        create_benchmark(llm_model, prompt_function_name, max_entries=1)  # Optionally:  target_key="1" or max_entries=2
 
     else:
         # ✅ Run the full benchmark loop for all LLMs and prompts

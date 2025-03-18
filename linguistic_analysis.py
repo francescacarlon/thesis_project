@@ -6,8 +6,8 @@ For each text:
 - POS distribution.
 
 For similarity scores between the original text and the tailored texts:
-- Cosine similarity; ONGOING
-- Jaccard similarity; TO DO
+- Cosine similarity; 
+- BERT score; TO DO
 - BLEU and ROUGE scores. TO DO
 
 """
@@ -18,6 +18,10 @@ import torch
 from collections import Counter
 from sentence_transformers import SentenceTransformer, util
 from transformers import AutoTokenizer
+from bert_score import score
+import logging
+
+logging.getLogger("transformers.modeling_utils").setLevel(logging.ERROR)
 
 nltk.download('averaged_perceptron_tagger_eng')
 nltk.download('punkt')
@@ -115,10 +119,6 @@ def encode_long_text(text):
 # Function to compute cosine similarity without truncation
 def compute_cosine_similarity(original_text, tailored_text):
     """Computes cosine similarity between original and paraphrased texts without truncation."""
-
-    print(f"\n🔍 Computing cosine similarity between:\n"
-          f"📝 Original: {original_text[:300]}...\n"
-          f"📝 Tailored: {tailored_text[:300]}...\n")  # Show first 300 chars for clarity
     
     # Encode full texts without truncation
     embedding1 = encode_long_text(original_text)
@@ -128,6 +128,41 @@ def compute_cosine_similarity(original_text, tailored_text):
     cosine_sim = util.pytorch_cos_sim(embedding1, embedding2).item()
 
     return {"cosine_similarity": cosine_sim}
+
+
+# Function to compute BERTScore using roberta-large
+def compute_bertscore(original_text, tailored_text, model_name="roberta-large"):
+    if not original_text.strip() or not tailored_text.strip():
+        print("⚠️ Skipping BERTScore computation: Empty input detected.")
+        return {"bertscore_precision": None, "bertscore_recall": None, "bertscore_f1": None}
+
+    # Split long texts into chunks (to prevent truncation)
+    original_chunks = chunk_text(original_text, max_tokens=512, overlap=50)
+    tailored_chunks = chunk_text(tailored_text, max_tokens=512, overlap=50)
+
+    # Compute BERTScore for each chunk
+    scores = {"precision": [], "recall": [], "f1": []}
+
+    for orig_chunk, tail_chunk in zip(original_chunks, tailored_chunks):
+        P, R, F1 = score(
+            [tail_chunk], 
+            [orig_chunk], 
+            model_type=model_name,  
+            lang="en", 
+            rescale_with_baseline=False,  # ✅ Prevents negative values
+            batch_size=8  
+        )
+        scores["precision"].append(P.item())
+        scores["recall"].append(R.item())
+        scores["f1"].append(F1.item())
+
+    # Return the averaged BERTScore
+    return {
+        "bertscore_precision": sum(scores["precision"]) / len(scores["precision"]),
+        "bertscore_recall": sum(scores["recall"]) / len(scores["recall"]),
+        "bertscore_f1": sum(scores["f1"]) / len(scores["f1"]),
+    }
+
 
 
 # Function to analyze a text
@@ -140,9 +175,10 @@ def analyze_text(text):
 
 # Function to analyze similarity between two texts
 def analyze_similarity(original_text, tailored_text):
-    """Analyzes linguistic metrics and cosine similarity between two texts."""
+    """Analyzes linguistic metrics and similarity scores between two texts."""
     return {
         "original_text_analysis": analyze_text(original_text),
         "tailored_text_analysis": analyze_text(tailored_text),
-        "cosine_similarity": compute_cosine_similarity(original_text, tailored_text)
-        }
+        "cosine_similarity": compute_cosine_similarity(original_text, tailored_text),
+        "bertscore": compute_bertscore(original_text, tailored_text)
+    }

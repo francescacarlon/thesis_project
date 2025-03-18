@@ -1,5 +1,5 @@
 from utils import load_dataset, save_dataset
-from linguistic_analysis import analyze_text, compute_cosine_similarity
+from linguistic_analysis import analyze_text, compute_cosine_similarity, compute_bertscore
 from llm_caller import call_llm
 from prompts import *  # Import all prompts
 from prompts import PROMPT_FUNCTIONS
@@ -91,10 +91,13 @@ def clean_existing_texts(benchmark):
                     benchmark[key]["tailored_texts"][llm][category][prompt_key] = cleaned_text
     print(f"\n✅ Post-run cleanup applied to {cleaned_count} texts in benchmark.")
 
-def clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark):
-    """Cleans up and reanalyzes texts in linguistic_analysis, ensuring cosine similarity is computed for all."""
+
+def clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark, target_key=None, max_entries=None):
+    """Cleans up and forces recomputation of all BERTScores using DeBERTa."""
+    
     cleaned_count = 0
     updated_similarities = 0
+    updated_bertscores = 0
 
     for key, entry in linguistic_analysis.items():
         original_text = entry["original_text"]
@@ -106,30 +109,32 @@ def clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark):
                         cleaned_text = clean_text(analysis["text"])
                         updated_analysis = analyze_text(cleaned_text)
 
-                        if cleaned_text != analysis["text"]:
-                            cleaned_count += 1
+                        # Always recompute cosine similarity
+                        cosine_sim = compute_cosine_similarity(original_text, cleaned_text)["cosine_similarity"]
+                        updated_similarities += 1
 
-                        # Compute cosine similarity if missing
-                        if "cosine_similarity" not in analysis:
-                            cosine_sim = compute_cosine_similarity(original_text, cleaned_text)["cosine_similarity"]
-                            updated_similarities += 1
-                        else:
-                            cosine_sim = analysis["cosine_similarity"]
+                        # ⚠️ Force recompute BERTScore with DeBERTa
+                        bert_scores = compute_bertscore(original_text, cleaned_text)
+                        updated_bertscores += 1
 
+                        # Update the JSON structure
                         linguistic_analysis[key]["tailored_texts"][llm][category][prompt_key] = {
                             "text": cleaned_text,
                             "token_count": updated_analysis["token_count"],
                             "readability": updated_analysis["readability"],
                             "pos": updated_analysis["pos"],
-                            "cosine_similarity": cosine_sim
+                            "cosine_similarity": cosine_sim,
+                            "bertscore": bert_scores
                         }
 
     print(f"\n✅ Post-run cleanup applied to {cleaned_count} texts in linguistic_analysis.")
-    print(f"\n✅ Cosine similarity computed/updated for {updated_similarities} text pairs.")
+    print(f"🔹 Cosine similarity recomputed for {updated_similarities} text pairs.")
+    print(f"🔹 BERTScore recomputed for {updated_bertscores} text pairs using 'roberta-large'.")
+
 
 
 def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_key=None):
-    """Creates a benchmark, generating new tailored texts and updating linguistic analysis with cosine similarity."""
+    """Creates a benchmark, generating new tailored texts and updating linguistic analysis with similarity scores."""
     
     dataset = load_dataset(DATASET_PATH)
 
@@ -156,11 +161,12 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
     prompt_key = f"prompt{prompt_number}"
 
     for i, (key, value) in enumerate(dataset.items()):
-        if max_entries and i >= max_entries:
+        # ✅ If target_key is set, process ONLY that entry and ignore max_entries
+        if target_key:
+            if key != target_key:
+                continue
+        elif max_entries and i >= max_entries:  # ✅ If no target_key, apply max_entries limit
             break
-
-        if target_key and key != target_key:
-            continue
 
         print(f"\nProcessing entry {i+1}/{max_entries or len(dataset)}: {key}")
 
@@ -190,18 +196,25 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
             tailored_texts = benchmark[key].setdefault("tailored_texts", {}).setdefault(llm_model, {}).setdefault(target_category, {})
             existing_text = (tailored_texts.get(prompt_key) or "").strip()
 
+            # ✅ Extract existing analysis for this prompt key
+            existing_analysis = linguistic_analysis[key]["tailored_texts"].setdefault(llm_model, {}).setdefault(target_category, {}).setdefault(prompt_key, {})
+
             if is_valid_existing_text(existing_text):
                 print(f"Skipping generation for {target_category} in {key}, already exists and passed validation.")
 
-                # Ensure cosine similarity is computed if missing
-                existing_analysis = linguistic_analysis[key]["tailored_texts"].get(llm_model, {}).get(target_category, {}).get(prompt_key, {})
-                if "cosine_similarity" not in existing_analysis:
+                cosine_sim = existing_analysis.get("cosine_similarity")
+                if cosine_sim is None:
                     print(f"Computing cosine similarity for {target_category} in {key} (existing text).")
                     cosine_sim = compute_cosine_similarity(original_text, existing_text)["cosine_similarity"]
-                    linguistic_analysis[key].setdefault("tailored_texts", {}).setdefault(llm_model, {}).setdefault(target_category, {})[prompt_key] = {
-                        "text": existing_text,
-                        "cosine_similarity": cosine_sim
-                    }
+
+                print(f"⚠️ Overwriting BERTScore for {target_category} in {key} with 'roberta-large'.")
+                bert_scores = compute_bertscore(original_text, existing_text)
+
+                existing_analysis.update({
+                    "text": existing_text,
+                    "cosine_similarity": cosine_sim,
+                    "bertscore": bert_scores
+                })
                 continue
 
             reason = get_invalid_reason(existing_text)
@@ -226,19 +239,22 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
             tailored_texts[prompt_key] = response_text
             tailored_analysis = analyze_text(response_text)
 
-            # Compute cosine similarity for the newly generated text
+            # ✅ Compute similarity scores
             cosine_sim = compute_cosine_similarity(original_text, response_text)["cosine_similarity"]
+            bert_scores = compute_bertscore(original_text, response_text)
 
-            linguistic_analysis[key].setdefault("tailored_texts", {}).setdefault(llm_model, {}).setdefault(target_category, {})[prompt_key] = {
+            existing_analysis.update({
                 "text": response_text,
                 "token_count": tailored_analysis["token_count"],
                 "readability": tailored_analysis["readability"],
                 "pos": tailored_analysis["pos"],
-                "cosine_similarity": cosine_sim
-            }
+                "cosine_similarity": cosine_sim,
+                "bertscore": bert_scores
+            })
 
+    # ✅ Pass max_entries when calling cleanup
     clean_existing_texts(benchmark)
-    clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark)
+    clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark, target_key, max_entries)
 
     save_dataset(benchmark, BENCHMARK_PATH)
     save_dataset(linguistic_analysis, LINGUISTIC_ANALYSIS_PATH)
