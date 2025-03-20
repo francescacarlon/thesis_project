@@ -11,7 +11,7 @@ LLM_MODELS = {
 }
 
 # ✅ Toggle between test mode and full benchmark
-TEST_MODE = True  # Set to False to run the whole benchmark
+TEST_MODE = False  # Set to False to run the whole benchmark
 
 def main():
     print("\n🚀 Starting automatic benchmark generation...\n")

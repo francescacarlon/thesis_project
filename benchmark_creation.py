@@ -222,14 +222,14 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
                     print(f"Computing cosine similarity for {target_category} in {key} (existing text).")
                     cosine_sim = compute_cosine_similarity(original_text, existing_text)["cosine_similarity"]
 
-                print(f"⚠️ Overwriting BERTScore for {target_category} in {key} with 'deberta-xlarge-mnli'.")
-                bert_scores = compute_bertscore(original_text, existing_text)
+                    print(f"⚠️ Overwriting BERTScore for {target_category} in {key} with 'deberta-xlarge-mnli'.")
+                    bert_scores = compute_bertscore(original_text, existing_text)
 
-                existing_analysis.update({
-                    "text": existing_text,
-                    "cosine_similarity": cosine_sim,
-                    "bertscore": bert_scores
-                })
+                    existing_analysis.update({
+                        "text": existing_text,
+                        "cosine_similarity": cosine_sim,
+                        "bertscore": bert_scores
+                    })
                 continue
 
             reason = get_invalid_reason(existing_text)
