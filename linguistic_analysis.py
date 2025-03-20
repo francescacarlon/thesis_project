@@ -20,6 +20,8 @@ from sentence_transformers import SentenceTransformer, util
 from transformers import AutoTokenizer
 from bert_score import score
 import logging
+from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
+from rouge_score import rouge_scorer
 
 logging.getLogger("transformers.modeling_utils").setLevel(logging.ERROR)
 
@@ -130,8 +132,8 @@ def compute_cosine_similarity(original_text, tailored_text):
     return {"cosine_similarity": cosine_sim}
 
 
-# Function to compute BERTScore using roberta-large
-def compute_bertscore(original_text, tailored_text, model_name="roberta-large"):
+# Function to compute BERTScore using microsoft/deberta-xlarge-mnli
+def compute_bertscore(original_text, tailored_text, model_name="microsoft/deberta-xlarge-mnli"):
     if not original_text.strip() or not tailored_text.strip():
         print("⚠️ Skipping BERTScore computation: Empty input detected.")
         return {"bertscore_precision": None, "bertscore_recall": None, "bertscore_f1": None}
@@ -140,21 +142,33 @@ def compute_bertscore(original_text, tailored_text, model_name="roberta-large"):
     original_chunks = chunk_text(original_text, max_tokens=512, overlap=50)
     tailored_chunks = chunk_text(tailored_text, max_tokens=512, overlap=50)
 
+    # Ensure both lists have the same number of chunks
+    max_len = max(len(original_chunks), len(tailored_chunks))
+    original_chunks += [""] * (max_len - len(original_chunks))
+    tailored_chunks += [""] * (max_len - len(tailored_chunks))
+
     # Compute BERTScore for each chunk
     scores = {"precision": [], "recall": [], "f1": []}
 
     for orig_chunk, tail_chunk in zip(original_chunks, tailored_chunks):
+        if not orig_chunk.strip() or not tail_chunk.strip():
+            continue  # Skip empty chunks
+
         P, R, F1 = score(
             [tail_chunk], 
             [orig_chunk], 
             model_type=model_name,  
             lang="en", 
-            rescale_with_baseline=False,  # ✅ Prevents negative values
+            rescale_with_baseline=True,  # ✅ Prevents inflated scores
             batch_size=8  
         )
+
         scores["precision"].append(P.item())
         scores["recall"].append(R.item())
         scores["f1"].append(F1.item())
+
+    if not scores["precision"]:  # In case all chunks were empty
+        return {"bertscore_precision": None, "bertscore_recall": None, "bertscore_f1": None}
 
     # Return the averaged BERTScore
     return {
@@ -163,7 +177,34 @@ def compute_bertscore(original_text, tailored_text, model_name="roberta-large"):
         "bertscore_f1": sum(scores["f1"]) / len(scores["f1"]),
     }
 
+# Function to compute BLEU score
+def compute_bleu_score(original_text, tailored_text):
+    """Computes BLEU score for similarity checking."""
+    if not original_text.strip() or not tailored_text.strip():
+        return {"bleu_score": None}  
 
+    original_tokens = [nltk.word_tokenize(original_text)]  
+    tailored_tokens = nltk.word_tokenize(tailored_text)  
+
+    smoothie = SmoothingFunction().method1
+
+    # BLEU uses n-grams, so we set weights evenly across 1-gram to 4-gram
+    bleu_score = sentence_bleu(original_tokens, tailored_tokens, 
+                               weights=(1, 0, 0, 0),  
+                               smoothing_function=smoothie)
+    
+    return {"bleu_score": bleu_score}
+
+# Function to compute ROUGE scores
+def compute_rouge_scores(original_text, tailored_text):
+    scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
+    scores = scorer.score(original_text, tailored_text)
+    
+    return {
+        "rouge_1": scores["rouge1"].fmeasure,
+        "rouge_2": scores["rouge2"].fmeasure,
+        "rouge_L": scores["rougeL"].fmeasure
+    }
 
 # Function to analyze a text
 def analyze_text(text):
@@ -180,5 +221,7 @@ def analyze_similarity(original_text, tailored_text):
         "original_text_analysis": analyze_text(original_text),
         "tailored_text_analysis": analyze_text(tailored_text),
         "cosine_similarity": compute_cosine_similarity(original_text, tailored_text),
-        "bertscore": compute_bertscore(original_text, tailored_text)
+        "bertscore": compute_bertscore(original_text, tailored_text),
+        "bleu_score": compute_bleu_score(original_text, tailored_text),
+        "rouge_scores": compute_rouge_scores(original_text, tailored_text)
     }

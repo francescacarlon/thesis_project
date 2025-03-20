@@ -1,5 +1,5 @@
 from utils import load_dataset, save_dataset
-from linguistic_analysis import analyze_text, compute_cosine_similarity, compute_bertscore
+from linguistic_analysis import analyze_text, compute_cosine_similarity, compute_bertscore, compute_bleu_score, compute_rouge_scores
 from llm_caller import call_llm
 from prompts import *  # Import all prompts
 from prompts import PROMPT_FUNCTIONS
@@ -92,12 +92,14 @@ def clean_existing_texts(benchmark):
     print(f"\n✅ Post-run cleanup applied to {cleaned_count} texts in benchmark.")
 
 
-def clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark, target_key=None, max_entries=None):
-    """Cleans up and forces recomputation of all BERTScores using DeBERTa."""
+def clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark, target_key=None, max_entries=None, force_recompute=False):
+    """Cleans up and computes missing similarity metrics only if they are absent, unless force_recompute is True."""
     
     cleaned_count = 0
     updated_similarities = 0
     updated_bertscores = 0
+    updated_bleus = 0
+    updated_rouges = 0
 
     for key, entry in linguistic_analysis.items():
         original_text = entry["original_text"]
@@ -108,28 +110,41 @@ def clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark, 
                     if "text" in analysis:
                         cleaned_text = clean_text(analysis["text"])
                         updated_analysis = analyze_text(cleaned_text)
+                        
+                        # Compute metrics only if missing or if forced recomputation
+                        if force_recompute or "cosine_similarity" not in analysis:
+                            cosine_sim = compute_cosine_similarity(original_text, cleaned_text)["cosine_similarity"]
+                            analysis["cosine_similarity"] = cosine_sim
+                            updated_similarities += 1
 
-                        # Always recompute cosine similarity
-                        cosine_sim = compute_cosine_similarity(original_text, cleaned_text)["cosine_similarity"]
-                        updated_similarities += 1
+                        if force_recompute or "bertscore" not in analysis:
+                            bert_scores = compute_bertscore(original_text, cleaned_text)
+                            analysis["bertscore"] = bert_scores
+                            updated_bertscores += 1
 
-                        # ⚠️ Force recompute BERTScore with DeBERTa
-                        bert_scores = compute_bertscore(original_text, cleaned_text)
-                        updated_bertscores += 1
+                        if force_recompute or "bleu_score" not in analysis:
+                            bleu_score = compute_bleu_score(original_text, cleaned_text)
+                            analysis["bleu_score"] = bleu_score
+                            updated_bleus += 1
 
-                        # Update the JSON structure
-                        linguistic_analysis[key]["tailored_texts"][llm][category][prompt_key] = {
+                        if force_recompute or "rouge_scores" not in analysis:
+                            rouge_scores = compute_rouge_scores(original_text, cleaned_text)
+                            analysis["rouge_scores"] = rouge_scores
+                            updated_rouges += 1
+
+                        # Update the dataset with text and linguistic features
+                        analysis.update({
                             "text": cleaned_text,
                             "token_count": updated_analysis["token_count"],
                             "readability": updated_analysis["readability"],
-                            "pos": updated_analysis["pos"],
-                            "cosine_similarity": cosine_sim,
-                            "bertscore": bert_scores
-                        }
+                            "pos": updated_analysis["pos"]
+                        })
 
     print(f"\n✅ Post-run cleanup applied to {cleaned_count} texts in linguistic_analysis.")
     print(f"🔹 Cosine similarity recomputed for {updated_similarities} text pairs.")
-    print(f"🔹 BERTScore recomputed for {updated_bertscores} text pairs using 'roberta-large'.")
+    print(f"🔹 BERTScore recomputed for {updated_bertscores} text pairs.")
+    print(f"🔹 BLEU score recomputed for {updated_bleus} text pairs.")
+    print(f"🔹 ROUGE score recomputed for {updated_rouges} text pairs.")
 
 
 
@@ -207,7 +222,7 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
                     print(f"Computing cosine similarity for {target_category} in {key} (existing text).")
                     cosine_sim = compute_cosine_similarity(original_text, existing_text)["cosine_similarity"]
 
-                print(f"⚠️ Overwriting BERTScore for {target_category} in {key} with 'roberta-large'.")
+                print(f"⚠️ Overwriting BERTScore for {target_category} in {key} with 'deberta-xlarge-mnli'.")
                 bert_scores = compute_bertscore(original_text, existing_text)
 
                 existing_analysis.update({
@@ -242,15 +257,21 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
             # ✅ Compute similarity scores
             cosine_sim = compute_cosine_similarity(original_text, response_text)["cosine_similarity"]
             bert_scores = compute_bertscore(original_text, response_text)
+            bleu_score = compute_bleu_score(original_text, response_text)
+            rouge_scores = compute_rouge_scores(original_text, response_text)
+
 
             existing_analysis.update({
-                "text": response_text,
-                "token_count": tailored_analysis["token_count"],
-                "readability": tailored_analysis["readability"],
-                "pos": tailored_analysis["pos"],
-                "cosine_similarity": cosine_sim,
-                "bertscore": bert_scores
+            "text": response_text,
+            "token_count": tailored_analysis["token_count"],
+            "readability": tailored_analysis["readability"],
+            "pos": tailored_analysis["pos"],
+            "cosine_similarity": cosine_sim,
+            "bertscore": bert_scores,
+            "bleu_score": bleu_score,
+            "rouge_scores": rouge_scores
             })
+
 
     # ✅ Pass max_entries when calling cleanup
     clean_existing_texts(benchmark)
