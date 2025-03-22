@@ -7,8 +7,8 @@ For each text:
 
 For similarity scores between the original text and the tailored texts:
 - Cosine similarity; 
-- BERT score; TO DO
-- BLEU and ROUGE scores. TO DO
+- BERT score; 
+- BLEU and ROUGE scores. 
 
 """
 
