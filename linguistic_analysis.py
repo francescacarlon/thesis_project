@@ -133,6 +133,7 @@ def compute_cosine_similarity(original_text, tailored_text):
 
 
 # Function to compute BERTScore using microsoft/deberta-xlarge-mnli
+# use the embeddings from this strong DeBERTa model to compute token-level similarity.
 def compute_bertscore(original_text, tailored_text, model_name="microsoft/deberta-xlarge-mnli"):
     if not original_text.strip() or not tailored_text.strip():
         print("⚠️ Skipping BERTScore computation: Empty input detected.")
