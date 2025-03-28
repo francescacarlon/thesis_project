@@ -11,7 +11,7 @@ from config import LINGUISTIC_ANALYSIS_PATH
 # Prompt to detect hallucinations 
 
 detect_hallucination_prompt = """
-You are an expert judge tasked with evaluating the faithfulness of AI-generated tailored texts for difference target audiences from the original text, originally aimed to a specific target audience. 
+You are an expert judge tasked with evaluating the faithfulness of AI-generated tailored texts for different target audiences from the original text, originally aimed to a specific target audience. 
 Analyze the provided original texts and tailored texts to determine if the tailored texts contain any hallucinations or unfaithful information.
 
 Relevance: The rating measures how well the tailored text captures the key points of the original text. Consider
@@ -50,247 +50,176 @@ Consistency: <score>
 """
 
 # Toggle for test mode
-TEST_MODE = False
+TEST_MODE = True
 
 # Load the JSON data
 with open(LINGUISTIC_ANALYSIS_PATH, "r", encoding="utf-8") as f:
     data = json.load(f)
 
+# Models to evaluate
+llms = ["mistral", "llama", "gpt4o", "claude", "deepseek"]
+
 if TEST_MODE:
-    # ✅ Test mode: example: entry 1, prompt1, mistral only
-    # ENTRY
+
     entry_id = list(data.keys())[0]
     entry = data[entry_id]
     original_text = entry["original_text"]
-    # MODEL
-    model = "deepseek"
-    for user_category, prompts in entry.get("tailored_texts", {}).get(model, {}).items():
-        # PROMPT
-        if "prompt1" in prompts:
-            prompt_data = prompts["prompt1"]
-            tailored_text = prompt_data["text"]
-            prompt = detect_hallucination_prompt.format(
-                original=original_text.strip(),
-                tailored=tailored_text.strip()
-            )
-            response = call_llm(model, prompt)
-            relevance = consistency = None
-            if response:
-                relevance_match = re.search(r"Relevance\s*[:=]\s*(\d(?:\.\d)?)", response, re.IGNORECASE)
-                consistency_match = re.search(r"Consistency\s*[:=]\s*(\d(?:\.\d)?)", response, re.IGNORECASE)
-                if relevance_match and consistency_match:
-                    relevance = float(relevance_match.group(1))
-                    consistency = float(consistency_match.group(1))
-                    average = round((relevance + consistency) / 2, 2)
-                    prompt_data.setdefault("hallucination_scores", {})[model] = {
-                        "relevance": relevance,
-                        "consistency": consistency,
-                        "average": average
-                    }
+
+    print(f"🧪 Running TEST_MODE on entry: {entry_id}")
+
+    for gen_model in llms:
+        model_data = entry.get("tailored_texts", {}).get(gen_model)
+        if not model_data:
+            print(f"⚠️ No tailored texts for generator model {gen_model} in entry {entry_id}")
+            continue
+
+        for user_category, prompts in model_data.items():
+            for prompt_id, prompt_data in prompts.items():
+                if prompt_id != "prompt4":
+                    continue
+
+                for eval_model in llms:
+                    # Skip if already scored by this evaluator
+                    if eval_model in prompt_data.get("hallucination_scores", {}):
+                        print(f"⏭️ Already scored by {eval_model}: {gen_model} → {user_category} → {prompt_id}")
+                        continue
+
+                    tailored_text = prompt_data.get("text", "").strip()
+                    if not tailored_text:
+                        print(f"⚠️ Missing tailored text for {entry_id} → {gen_model} → {user_category} → {prompt_id}")
+                        continue
+
+                    print(f"📍 Evaluating {entry_id} → Gen: {gen_model} → Eval: {eval_model} → {user_category} → {prompt_id}")
+                    prompt = detect_hallucination_prompt.format(
+                        original=original_text,
+                        tailored=tailored_text
+                    )
+
+                    try:
+                        response = call_llm(eval_model, prompt)
+                    except Exception as e:
+                        print(f"🔥 Error calling LLM '{eval_model}' for {entry_id} → {prompt_id}: {e}")
+                        continue
+
+                    if not response:
+                        print(f"⚠️ No response from {eval_model} for {entry_id} → {prompt_id}")
+                        continue
+
+                    relevance_match = re.search(r"Relevance\s*[:=]\s*(\d(?:\.\d)?)", response, re.IGNORECASE)
+                    consistency_match = re.search(r"Consistency\s*[:=]\s*(\d(?:\.\d)?)", response, re.IGNORECASE)
+
+                    if relevance_match and consistency_match:
+                        relevance = float(relevance_match.group(1))
+                        consistency = float(consistency_match.group(1))
+                        average = round((relevance + consistency) / 2, 2)
+
+                        prompt_data.setdefault("hallucination_scores", {})[eval_model] = {
+                            "relevance": relevance,
+                            "consistency": consistency,
+                            "average": average
+                        }
+
+                        print(f"✅ Scored by {eval_model}: relevance={relevance}, consistency={consistency}, avg={average}")
+                    else:
+                        print(f"⚠️ Failed to parse scores from {eval_model} for {entry_id} → {prompt_id}:\n{response}")
+
+                # ✅ Compute hallucinations_overall_average after all evaluators have scored this prompt
+                avg_scores = [
+                    s["average"]
+                    for s in prompt_data.get("hallucination_scores", {}).values()
+                    if isinstance(s, dict) and "average" in s
+                ]
+
+                if avg_scores:
+                    prompt_data["hallucination_scores"]["hallucinations_overall_average"] = round(mean(avg_scores), 2)
+                    print(f"📊 Overall average for {gen_model} → {user_category} → {prompt_id}: {prompt_data['hallucination_scores']['hallucinations_overall_average']}")
+
+
+    # Overwrite full data back to main file
+    with open(LINGUISTIC_ANALYSIS_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+        print(f"📝 Test results written to {LINGUISTIC_ANALYSIS_PATH}")
+
 
 else:
-    # Models to evaluate
-    llms = ["mistral", "llama", "gpt4o", "claude", "deepseek"]
-
-    print(f"🚀 Starting hallucination scoring on {len(data)} entries...")
+    print(f"🚀 Starting full hallucination scoring on {len(data)} entries...")
 
     total_scored = 0
 
     for entry_id, entry in tqdm(data.items(), desc="Scoring entries"):
         original_text = entry.get("original_text", "").strip()
-        hallucination_scores = {}
-        all_avg_scores = []
 
-        for model in llms:
-            model_data = entry.get("tailored_texts", {}).get(model)
+        for gen_model in llms:
+            model_data = entry.get("tailored_texts", {}).get(gen_model)
             if not model_data:
-                tqdm.write(f"⚠️ No tailored texts for model {model} in entry {entry_id}")
+                tqdm.write(f"⚠️ No tailored texts for generator model {gen_model} in entry {entry_id}")
                 continue
-
-            model_scores = []
-
-            for user_category, prompts in model_data.items():
-                if not isinstance(prompts, dict):
-                    continue
-
-                for prompt_id, prompt_data in prompts.items():
-                    if model in prompt_data.get("hallucination_scores", {}):
-                        continue  # Already scored
-
-                    tailored_text = prompt_data.get("text", "").strip()
-                    if not tailored_text:
-                        tqdm.write(f"⚠️ Missing tailored text for {entry_id} → {model} → {user_category} → {prompt_id}")
-                        continue
-
-                    tqdm.write(f"📍 Scoring {entry_id} → {model} → {user_category} → {prompt_id}")
-                    prompt = detect_hallucination_prompt.format(
-                        original=original_text,
-                        tailored=tailored_text
-                    )
-
-                    try:
-                        response = call_llm(model, prompt)
-                    except Exception as e:
-                        tqdm.write(f"🔥 Error calling LLM '{model}' for {entry_id} → {prompt_id}: {e}")
-                        continue
-
-                    if not response:
-                        tqdm.write(f"⚠️ No response from {model} for {entry_id} → {prompt_id}")
-                        continue
-
-                    relevance_match = re.search(r"Relevance\s*[:=]\s*(\d(?:\.\d)?)", response, re.IGNORECASE)
-                    consistency_match = re.search(r"Consistency\s*[:=]\s*(\d(?:\.\d)?)", response, re.IGNORECASE)
-
-                    if relevance_match and consistency_match:
-                        relevance = float(relevance_match.group(1))
-                        consistency = float(consistency_match.group(1))
-                        average = round((relevance + consistency) / 2, 2)
-
-                        prompt_data.setdefault("hallucination_scores", {})[model] = {
-                            "relevance": relevance,
-                            "consistency": consistency,
-                            "average": average
-                        }
-
-                        model_scores.append(average)
-                        total_scored += 1
-                        tqdm.write(f"✅ Scored {entry_id} → {model} → {user_category} → {prompt_id} → avg: {average}")
-                    else:
-                        tqdm.write(f"⚠️ Failed to parse scores from {model} for {entry_id} → {prompt_id}:\n{response}")
-
-            # Aggregate per-model average if available
-            if model_scores:
-                relevance_vals = []
-                consistency_vals = []
-
-                for prompts in entry["tailored_texts"][model].values():
-                    for p in prompts.values():
-                        scores = p.get("hallucination_scores", {}).get(model)
-                        if scores:
-                            relevance_vals.append(scores["relevance"])
-                            consistency_vals.append(scores["consistency"])
-
-                hallucination_scores[model] = {
-                    "relevance": round(mean(relevance_vals), 2),
-                    "consistency": round(mean(consistency_vals), 2),
-                    "average": round(mean(model_scores), 2)
-                }
-
-                all_avg_scores.append(hallucination_scores[model]["average"])
-
-        # Update entry-level scores
-        entry["hallucination_scores"] = hallucination_scores
-        entry["overall_hallucination_average"] = round(mean(all_avg_scores), 2) if all_avg_scores else None
-
-        tqdm.write(f"📦 Finished entry {entry_id}")
-
-    # Save updated file
-    with open(LINGUISTIC_ANALYSIS_PATH, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
-
-    print(f"✅ Hallucination scoring complete. Total prompts scored: {total_scored}")
-
-
-"""
-### DOESN'T WORK ###
-else:
-    llms = ["mistral", "llama", "gpt4o", "claude", "deepseek"]
-    print(f"🚀 Starting hallucination scoring on {len(data)} entries...")
-
-
-    for entry_id, entry in tqdm(data.items(), desc="Scoring entries"):
-        print(f"➡️ Processing entry: {entry_id}")
-        sys.stdout.flush()
-
-        original_text = entry.get("original_text", "").strip()
-        hallucination_scores = {}
-        all_avg_scores = []
-
-        for model in llms:
-            model_data = entry.get("tailored_texts", {}).get(model)
-            if not model_data:
-                continue
-
-            model_scores = []
 
             for user_category, prompts in model_data.items():
                 for prompt_id, prompt_data in prompts.items():
-                    # Skip if already scored
-                    if model in prompt_data.get("hallucination_scores", {}):
-                        continue
+                    # if prompt_id != "prompt1":
+                    #     continue
 
-                    tailored_text = prompt_data.get("text", "").strip()
-                    if not tailored_text:
-                        tqdm.write(f"⚠️ Missing tailored text for {entry_id} → {model} → {user_category} → {prompt_id}")
-                        continue
+                    for eval_model in llms:
+                        if eval_model in prompt_data.get("hallucination_scores", {}):
+                            continue  # Already scored by this model
 
-                    prompt = detect_hallucination_prompt.format(
-                        original=original_text,
-                        tailored=tailored_text
-                    )
+                        tailored_text = prompt_data.get("text", "").strip()
+                        if not tailored_text:
+                            tqdm.write(f"⚠️ Missing tailored text for {entry_id} → {gen_model} → {user_category} → {prompt_id}")
+                            continue
 
-                    try:
-                        response = call_llm(model, prompt)
-                    except Exception as e:
-                        tqdm.write(f"🔥 Error calling LLM '{model}' for entry '{entry_id}', prompt '{prompt_id}': {e}")
-                        continue
+                        tqdm.write(f"📍 Scoring {entry_id} → Gen: {gen_model} → Eval: {eval_model} → {user_category} → {prompt_id}")
+                        prompt = detect_hallucination_prompt.format(
+                            original=original_text,
+                            tailored=tailored_text
+                        )
 
-                    if not response:
-                        tqdm.write(f"⚠️ No response from {model} for {entry_id} → {prompt_id}")
-                        continue
+                        try:
+                            response = call_llm(eval_model, prompt)
+                        except Exception as e:
+                            tqdm.write(f"🔥 Error calling LLM '{eval_model}' for {entry_id} → {prompt_id}: {e}")
+                            continue
 
-                    # Extract hallucination scores
-                    relevance_match = re.search(r"Relevance\s*[:=]\s*(\d(?:\.\d)?)", response, re.IGNORECASE)
-                    consistency_match = re.search(r"Consistency\s*[:=]\s*(\d(?:\.\d)?)", response, re.IGNORECASE)
+                        if not response:
+                            tqdm.write(f"⚠️ No response from {eval_model} for {entry_id} → {prompt_id}")
+                            continue
 
-                    if relevance_match and consistency_match:
-                        relevance = float(relevance_match.group(1))
-                        consistency = float(consistency_match.group(1))
-                        average = round((relevance + consistency) / 2, 2)
+                        relevance_match = re.search(r"Relevance\s*[:=]\s*(\d(?:\.\d)?)", response, re.IGNORECASE)
+                        consistency_match = re.search(r"Consistency\s*[:=]\s*(\d(?:\.\d)?)", response, re.IGNORECASE)
 
-                        prompt_data.setdefault("hallucination_scores", {})[model] = {
-                            "relevance": relevance,
-                            "consistency": consistency,
-                            "average": average
-                        }
+                        if relevance_match and consistency_match:
+                            relevance = float(relevance_match.group(1))
+                            consistency = float(consistency_match.group(1))
+                            average = round((relevance + consistency) / 2, 2)
 
-                        model_scores.append(average)
-                    else:
-                        tqdm.write(f"⚠️ Failed to parse scores from {model} response for {entry_id} → {prompt_id}:\n{response}")
+                            prompt_data.setdefault("hallucination_scores", {})[eval_model] = {
+                                "relevance": relevance,
+                                "consistency": consistency,
+                                "average": average
+                            }
 
-            if model_scores:
-                # Compute per-model average scores
-                relevance_vals = []
-                consistency_vals = []
+                            total_scored += 1
+                            tqdm.write(f"✅ Scored → relevance={relevance}, consistency={consistency}, avg={average}")
+                        else:
+                            tqdm.write(f"⚠️ Failed to parse scores from {eval_model} for {entry_id} → {prompt_id}:\n{response}")
 
-                for prompts in entry["tailored_texts"][model].values():
-                    for p in prompts.values():
-                        scores = p.get("hallucination_scores", {}).get(model)
-                        if scores:
-                            relevance_vals.append(scores["relevance"])
-                            consistency_vals.append(scores["consistency"])
+                    # ✅ Compute hallucinations_overall_average after all evaluators have scored this prompt
+                    avg_scores = [
+                        s["average"]
+                        for s in prompt_data.get("hallucination_scores", {}).values()
+                        if isinstance(s, dict) and "average" in s
+                    ]
 
-                hallucination_scores[model] = {
-                    "relevance": round(mean(relevance_vals), 2),
-                    "consistency": round(mean(consistency_vals), 2),
-                    "average": round(mean(model_scores), 2)
-                }
+                    if avg_scores:
+                        prompt_data["hallucination_scores"]["hallucinations_overall_average"] = round(mean(avg_scores), 2)
+                        tqdm.write(f"📊 Overall average for {entry_id} → {gen_model} → {user_category} → {prompt_id}: {prompt_data['hallucination_scores']['hallucinations_overall_average']}")
 
-                all_avg_scores.append(hallucination_scores[model]["average"])
-
-        entry["hallucination_scores"] = hallucination_scores
-        entry["overall_hallucination_average"] = round(mean(all_avg_scores), 2) if all_avg_scores else None
-
-        tqdm.write(f"✅ Processed entry {entry_id}")
-
-    # Save updated file
-    with open(LINGUISTIC_ANALYSIS_PATH, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
-    
-    print("✅ Hallucination scoring complete.")
-
-# Save updated file
-with open(LINGUISTIC_ANALYSIS_PATH, "w", encoding="utf-8") as f:
-    json.dump(data, f, indent=2, ensure_ascii=False)
-
-print("✅ Hallucination scoring complete.")"""
+    # ✅ Save updated file
+    if data:
+        with open(LINGUISTIC_ANALYSIS_PATH, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+            print(f"✅ Saved updated results to {LINGUISTIC_ANALYSIS_PATH}")
+        print(f"✅ Hallucination scoring complete. Total prompts scored: {total_scored}")
+    else:
+        print("⚠️ No data found. Skipping save.")

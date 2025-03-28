@@ -65,7 +65,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "llama": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "gpt4o": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 3.0,
+                "average": 4.0
+              },
+              "hallucinations_overall_average": 4.8
             }
           },
           "prompt2": {
@@ -109,7 +130,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "deepseek": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "hallucinations_overall_average": 4.7
             }
           },
           "prompt3": {
@@ -152,7 +194,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "llama": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "gpt4o": {
+                "relevance": 5.0,
+                "consistency": 4.0,
+                "average": 4.5
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "deepseek": {
+                "relevance": 3.0,
+                "consistency": 2.0,
+                "average": 2.5
+              },
+              "hallucinations_overall_average": 4.4
             }
           },
           "prompt4": {
@@ -195,7 +258,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "llama": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "gpt4o": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "deepseek": {
+                "relevance": 4.0,
+                "consistency": 3.0,
+                "average": 3.5
+              },
+              "hallucinations_overall_average": 4.7
             }
           },
           "prompt5": {
@@ -284,7 +368,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "llama": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "gpt4o": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 4.0,
+                "average": 4.5
+              },
+              "hallucinations_overall_average": 4.9
             }
           },
           "prompt2": {
@@ -327,7 +432,28 @@
                 "relevance": 4.0,
                 "consistency": 5.0,
                 "average": 4.5
-              }
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "gpt4o": {
+                "relevance": 5.0,
+                "consistency": 4.0,
+                "average": 4.5
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 4.0,
+                "average": 4.5
+              },
+              "deepseek": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "hallucinations_overall_average": 4.3
             }
           },
           "prompt3": {
@@ -371,7 +497,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "gpt4o": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 4.0,
+                "average": 4.5
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 3.0,
+                "average": 4.0
+              },
+              "hallucinations_overall_average": 4.5
             }
           },
           "prompt4": {
@@ -414,7 +561,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "llama": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "gpt4o": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 3.0,
+                "average": 4.0
+              },
+              "hallucinations_overall_average": 4.8
             }
           },
           "prompt5": {
@@ -504,7 +672,28 @@
                 "relevance": 4.0,
                 "consistency": 4.0,
                 "average": 4.0
-              }
+              },
+              "mistral": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 4.0,
+                "average": 4.5
+              },
+              "hallucinations_overall_average": 4.4
             }
           },
           "prompt2": {
@@ -547,7 +736,28 @@
                 "relevance": 4.0,
                 "consistency": 4.0,
                 "average": 4.0
-              }
+              },
+              "mistral": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "gpt4o": {
+                "relevance": 3.0,
+                "consistency": 4.0,
+                "average": 3.5
+              },
+              "claude": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 4.0,
+                "average": 4.5
+              },
+              "hallucinations_overall_average": 4.1
             }
           },
           "prompt3": {
@@ -590,7 +800,28 @@
                 "relevance": 4.0,
                 "consistency": 5.0,
                 "average": 4.5
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "deepseek": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "hallucinations_overall_average": 4.6
             }
           },
           "prompt4": {
@@ -634,7 +865,28 @@
                 "relevance": 3.0,
                 "consistency": 2.0,
                 "average": 2.5
-              }
+              },
+              "mistral": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "gpt4o": {
+                "relevance": 3.0,
+                "consistency": 3.0,
+                "average": 3.0
+              },
+              "claude": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "hallucinations_overall_average": 3.8
             }
           },
           "prompt5": {
@@ -724,7 +976,28 @@
                 "relevance": 4.0,
                 "consistency": 4.0,
                 "average": 4.0
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "claude": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 3.0,
+                "average": 4.0
+              },
+              "hallucinations_overall_average": 4.3
             }
           },
           "prompt2": {
@@ -768,7 +1041,28 @@
                 "relevance": 2.0,
                 "consistency": 2.0,
                 "average": 2.0
-              }
+              },
+              "mistral": {
+                "relevance": 4.5,
+                "consistency": 5.0,
+                "average": 4.75
+              },
+              "gpt4o": {
+                "relevance": 2.0,
+                "consistency": 3.0,
+                "average": 2.5
+              },
+              "claude": {
+                "relevance": 3.0,
+                "consistency": 2.0,
+                "average": 2.5
+              },
+              "deepseek": {
+                "relevance": 3.0,
+                "consistency": 2.0,
+                "average": 2.5
+              },
+              "hallucinations_overall_average": 2.85
             }
           },
           "prompt3": {
@@ -811,7 +1105,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 3.0,
+                "average": 3.5
+              },
+              "claude": {
+                "relevance": 3.0,
+                "consistency": 3.0,
+                "average": 3.0
+              },
+              "deepseek": {
+                "relevance": 4.0,
+                "consistency": 3.0,
+                "average": 3.5
+              },
+              "hallucinations_overall_average": 4.0
             }
           },
           "prompt4": {
@@ -856,7 +1171,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "gpt4o": {
+                "relevance": 2.0,
+                "consistency": 2.0,
+                "average": 2.0
+              },
+              "claude": {
+                "relevance": 4.0,
+                "consistency": 3.0,
+                "average": 3.5
+              },
+              "deepseek": {
+                "relevance": 4.0,
+                "consistency": 2.0,
+                "average": 3.0
+              },
+              "hallucinations_overall_average": 3.7
             }
           },
           "prompt5": {
@@ -948,7 +1284,28 @@
                 "relevance": 3.0,
                 "consistency": 4.0,
                 "average": 3.5
-              }
+              },
+              "mistral": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "hallucinations_overall_average": 4.3
             }
           },
           "prompt2": {
@@ -992,7 +1349,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "hallucinations_overall_average": 4.9
             }
           },
           "prompt3": {
@@ -1037,7 +1415,23 @@
                 "relevance": 4.0,
                 "consistency": 4.0,
                 "average": 4.0
-              }
+              },
+              "mistral": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 4.0,
+                "average": 4.5
+              },
+              "hallucinations_overall_average": 4.5
             }
           },
           "prompt4": {
@@ -1081,7 +1475,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "llama": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "hallucinations_overall_average": 5.0
             }
           },
           "prompt5": {
@@ -1169,7 +1584,28 @@
                 "relevance": 4.0,
                 "consistency": 5.0,
                 "average": 4.5
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "llama": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "claude": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 4.0,
+                "average": 4.5
+              },
+              "hallucinations_overall_average": 4.6
             }
           },
           "prompt2": {
@@ -1213,7 +1649,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "mistral": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "claude": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "hallucinations_overall_average": 4.5
             }
           },
           "prompt3": {
@@ -1258,7 +1715,28 @@
                 "relevance": 5.0,
                 "consistency": 4.0,
                 "average": 4.5
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "llama": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "claude": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 4.0,
+                "average": 4.5
+              },
+              "hallucinations_overall_average": 4.6
             }
           },
           "prompt4": {
@@ -1303,7 +1781,28 @@
                 "relevance": 4.0,
                 "consistency": 5.0,
                 "average": 4.5
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "llama": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "hallucinations_overall_average": 4.9
             }
           },
           "prompt5": {
@@ -1396,7 +1895,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "mistral": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "llama": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 3.0,
+                "average": 4.0
+              },
+              "hallucinations_overall_average": 4.4
             }
           },
           "prompt2": {
@@ -1440,7 +1960,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "mistral": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "gpt4o": {
+                "relevance": 3.0,
+                "consistency": 3.0,
+                "average": 3.0
+              },
+              "deepseek": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "hallucinations_overall_average": 4.1
             }
           },
           "prompt3": {
@@ -1485,7 +2026,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "gpt4o": {
+                "relevance": 3.0,
+                "consistency": 4.0,
+                "average": 3.5
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "hallucinations_overall_average": 4.5
             }
           },
           "prompt4": {
@@ -1528,7 +2090,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "mistral": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "gpt4o": {
+                "relevance": 3.0,
+                "consistency": 3.0,
+                "average": 3.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "hallucinations_overall_average": 4.3
             }
           },
           "prompt5": {
@@ -1618,7 +2201,28 @@
                 "relevance": 4.0,
                 "consistency": 4.0,
                 "average": 4.0
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "llama": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 3.0,
+                "average": 4.0
+              },
+              "hallucinations_overall_average": 4.5
             }
           },
           "prompt2": {
@@ -1660,7 +2264,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "deepseek": {
+                "relevance": 4.0,
+                "consistency": 3.0,
+                "average": 3.5
+              },
+              "hallucinations_overall_average": 4.4
             }
           },
           "prompt3": {
@@ -1704,7 +2329,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "mistral": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "deepseek": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "hallucinations_overall_average": 4.5
             }
           },
           "prompt4": {
@@ -1747,7 +2393,28 @@
                 "relevance": 4.0,
                 "consistency": 5.0,
                 "average": 4.5
-              }
+              },
+              "mistral": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "llama": {
+                "relevance": 3.0,
+                "consistency": 3.0,
+                "average": 3.0
+              },
+              "gpt4o": {
+                "relevance": 3.0,
+                "consistency": 4.0,
+                "average": 3.5
+              },
+              "deepseek": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "hallucinations_overall_average": 3.9
             }
           },
           "prompt5": {
@@ -1838,7 +2505,28 @@
                 "relevance": 5.0,
                 "consistency": 3.0,
                 "average": 4.0
-              }
+              },
+              "mistral": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "claude": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "hallucinations_overall_average": 4.1
             }
           },
           "prompt2": {
@@ -1881,7 +2569,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "mistral": {
+                "relevance": 3.0,
+                "consistency": 5.0,
+                "average": 4.0
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "gpt4o": {
+                "relevance": 3.0,
+                "consistency": 4.0,
+                "average": 3.5
+              },
+              "claude": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "hallucinations_overall_average": 4.2
             }
           },
           "prompt3": {
@@ -1925,7 +2634,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "mistral": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 3.0,
+                "average": 3.5
+              },
+              "claude": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "hallucinations_overall_average": 4.3
             }
           },
           "prompt4": {
@@ -1968,7 +2698,28 @@
                 "relevance": 3.0,
                 "consistency": 2.0,
                 "average": 2.5
-              }
+              },
+              "mistral": {
+                "relevance": 2.0,
+                "consistency": 4.0,
+                "average": 3.0
+              },
+              "llama": {
+                "relevance": 2.0,
+                "consistency": 1.0,
+                "average": 1.5
+              },
+              "gpt4o": {
+                "relevance": 2.0,
+                "consistency": 2.0,
+                "average": 2.0
+              },
+              "claude": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "hallucinations_overall_average": 2.7
             }
           },
           "prompt5": {
@@ -2057,7 +2808,28 @@
                 "relevance": 4.0,
                 "consistency": 4.0,
                 "average": 4.0
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "claude": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "hallucinations_overall_average": 4.2
             }
           },
           "prompt2": {
@@ -2099,7 +2871,28 @@
                 "relevance": 5.0,
                 "consistency": 4.0,
                 "average": 4.5
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 3.0,
+                "average": 3.5
+              },
+              "claude": {
+                "relevance": 4.0,
+                "consistency": 3.0,
+                "average": 3.5
+              },
+              "hallucinations_overall_average": 4.2
             }
           },
           "prompt3": {
@@ -2142,7 +2935,28 @@
                 "relevance": 5.0,
                 "consistency": 5.0,
                 "average": 5.0
-              }
+              },
+              "mistral": {
+                "relevance": 4.5,
+                "consistency": 5.0,
+                "average": 4.75
+              },
+              "llama": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "claude": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "hallucinations_overall_average": 4.75
             }
           },
           "prompt4": {
@@ -2184,7 +2998,28 @@
                 "relevance": 4.0,
                 "consistency": 5.0,
                 "average": 4.5
-              }
+              },
+              "mistral": {
+                "relevance": 5.0,
+                "consistency": 5.0,
+                "average": 5.0
+              },
+              "llama": {
+                "relevance": 4.0,
+                "consistency": 5.0,
+                "average": 4.5
+              },
+              "gpt4o": {
+                "relevance": 4.0,
+                "consistency": 3.0,
+                "average": 3.5
+              },
+              "claude": {
+                "relevance": 4.0,
+                "consistency": 4.0,
+                "average": 4.0
+              },
+              "hallucinations_overall_average": 4.3
             }
           },
           "prompt5": {
@@ -2232,35 +3067,7 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 4.9,
-        "consistency": 5.0,
-        "average": 5.0
-      },
-      "llama": {
-        "relevance": 3.7,
-        "consistency": 3.8,
-        "average": 3.92
-      },
-      "gpt4o": {
-        "relevance": 4.3,
-        "consistency": 4.6,
-        "average": 4.56
-      },
-      "claude": {
-        "relevance": 4.7,
-        "consistency": 4.9,
-        "average": 4.88
-      },
-      "deepseek": {
-        "relevance": 4.5,
-        "consistency": 3.9,
-        "average": 4.25
-      }
-    },
-    "overall_hallucination_average": 4.52
+    }
   },
   "2": {
     "original_category": "L",
@@ -4454,35 +5261,7 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 4.8,
-        "consistency": 5.0,
-        "average": 4.9
-      },
-      "llama": {
-        "relevance": 3.9,
-        "consistency": 4.2,
-        "average": 4.05
-      },
-      "gpt4o": {
-        "relevance": 5.0,
-        "consistency": 4.8,
-        "average": 4.9
-      },
-      "claude": {
-        "relevance": 4.6,
-        "consistency": 4.8,
-        "average": 4.7
-      },
-      "deepseek": {
-        "relevance": 4.1,
-        "consistency": 3.9,
-        "average": 4.0
-      }
-    },
-    "overall_hallucination_average": 4.51
+    }
   },
   "3": {
     "original_category": "L",
@@ -6666,35 +7445,7 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 4.7,
-        "consistency": 5.0,
-        "average": 4.85
-      },
-      "llama": {
-        "relevance": 3.7,
-        "consistency": 3.9,
-        "average": 3.8
-      },
-      "gpt4o": {
-        "relevance": 4.6,
-        "consistency": 4.7,
-        "average": 4.65
-      },
-      "claude": {
-        "relevance": 4.9,
-        "consistency": 5.0,
-        "average": 4.95
-      },
-      "deepseek": {
-        "relevance": 4.6,
-        "consistency": 4.1,
-        "average": 4.35
-      }
-    },
-    "overall_hallucination_average": 4.52
+    }
   },
   "4": {
     "original_category": "L",
@@ -8888,35 +9639,7 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 5.0,
-        "consistency": 5.0,
-        "average": 5.0
-      },
-      "llama": {
-        "relevance": 4.3,
-        "consistency": 4.9,
-        "average": 4.6
-      },
-      "gpt4o": {
-        "relevance": 4.6,
-        "consistency": 4.8,
-        "average": 4.7
-      },
-      "claude": {
-        "relevance": 4.7,
-        "consistency": 4.9,
-        "average": 4.8
-      },
-      "deepseek": {
-        "relevance": 4.4,
-        "consistency": 4.1,
-        "average": 4.25
-      }
-    },
-    "overall_hallucination_average": 4.67
+    }
   },
   "5": {
     "original_category": "L",
@@ -11118,35 +11841,7 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 4.95,
-        "consistency": 5.0,
-        "average": 4.97
-      },
-      "llama": {
-        "relevance": 3.9,
-        "consistency": 4.1,
-        "average": 4.0
-      },
-      "gpt4o": {
-        "relevance": 5.0,
-        "consistency": 4.8,
-        "average": 4.9
-      },
-      "claude": {
-        "relevance": 5.0,
-        "consistency": 5.0,
-        "average": 5.0
-      },
-      "deepseek": {
-        "relevance": 3.9,
-        "consistency": 3.0,
-        "average": 3.45
-      }
-    },
-    "overall_hallucination_average": 4.46
+    }
   },
   "6": {
     "original_category": "CS",
@@ -13345,35 +14040,7 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 4.85,
-        "consistency": 5.0,
-        "average": 4.92
-      },
-      "llama": {
-        "relevance": 3.1,
-        "consistency": 2.8,
-        "average": 2.95
-      },
-      "gpt4o": {
-        "relevance": 4.9,
-        "consistency": 4.9,
-        "average": 4.9
-      },
-      "claude": {
-        "relevance": 4.3,
-        "consistency": 4.6,
-        "average": 4.45
-      },
-      "deepseek": {
-        "relevance": 4.2,
-        "consistency": 4.0,
-        "average": 4.1
-      }
-    },
-    "overall_hallucination_average": 4.26
+    }
   },
   "7": {
     "original_category": "CS",
@@ -15545,35 +16212,7 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 4.78,
-        "consistency": 5.0,
-        "average": 4.89
-      },
-      "llama": {
-        "relevance": 3.9,
-        "consistency": 4.3,
-        "average": 4.1
-      },
-      "gpt4o": {
-        "relevance": 4.6,
-        "consistency": 4.5,
-        "average": 4.55
-      },
-      "claude": {
-        "relevance": 4.3,
-        "consistency": 4.8,
-        "average": 4.55
-      },
-      "deepseek": {
-        "relevance": 4.4,
-        "consistency": 4.0,
-        "average": 4.2
-      }
-    },
-    "overall_hallucination_average": 4.46
+    }
   },
   "8": {
     "original_category": "CS",
@@ -17801,35 +18440,7 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 5.0,
-        "consistency": 5.0,
-        "average": 5.0
-      },
-      "llama": {
-        "relevance": 3.0,
-        "consistency": 2.7,
-        "average": 2.85
-      },
-      "gpt4o": {
-        "relevance": 4.4,
-        "consistency": 4.6,
-        "average": 4.5
-      },
-      "claude": {
-        "relevance": 3.8,
-        "consistency": 4.3,
-        "average": 4.05
-      },
-      "deepseek": {
-        "relevance": 4.4,
-        "consistency": 4.1,
-        "average": 4.25
-      }
-    },
-    "overall_hallucination_average": 4.13
+    }
   },
   "9": {
     "original_category": "CS",
@@ -19993,35 +20604,7 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 4.75,
-        "consistency": 5.0,
-        "average": 4.88
-      },
-      "llama": {
-        "relevance": 3.75,
-        "consistency": 4.25,
-        "average": 4.0
-      },
-      "gpt4o": {
-        "relevance": 4.8,
-        "consistency": 4.7,
-        "average": 4.75
-      },
-      "claude": {
-        "relevance": 4.3,
-        "consistency": 4.6,
-        "average": 4.45
-      },
-      "deepseek": {
-        "relevance": 4.4,
-        "consistency": 4.4,
-        "average": 4.4
-      }
-    },
-    "overall_hallucination_average": 4.5
+    }
   },
   "10": {
     "original_category": "CS",
@@ -22195,35 +22778,7 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 4.7,
-        "consistency": 5.0,
-        "average": 4.85
-      },
-      "llama": {
-        "relevance": 4.4,
-        "consistency": 5.0,
-        "average": 4.7
-      },
-      "gpt4o": {
-        "relevance": 4.9,
-        "consistency": 4.9,
-        "average": 4.9
-      },
-      "claude": {
-        "relevance": 4.5,
-        "consistency": 4.9,
-        "average": 4.7
-      },
-      "deepseek": {
-        "relevance": 4.4,
-        "consistency": 3.7,
-        "average": 4.05
-      }
-    },
-    "overall_hallucination_average": 4.64
+    }
   },
   "11": {
     "original_category": "CL",
@@ -24419,35 +24974,7 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 4.95,
-        "consistency": 5.0,
-        "average": 4.97
-      },
-      "llama": {
-        "relevance": 3.6,
-        "consistency": 3.9,
-        "average": 3.75
-      },
-      "gpt4o": {
-        "relevance": 4.8,
-        "consistency": 5.0,
-        "average": 4.9
-      },
-      "claude": {
-        "relevance": 4.4,
-        "consistency": 4.8,
-        "average": 4.6
-      },
-      "deepseek": {
-        "relevance": 4.7,
-        "consistency": 4.2,
-        "average": 4.45
-      }
-    },
-    "overall_hallucination_average": 4.53
+    }
   },
   "12": {
     "original_category": "CL",
@@ -26641,35 +27168,7 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 5.0,
-        "consistency": 5.0,
-        "average": 5.0
-      },
-      "llama": {
-        "relevance": 3.6,
-        "consistency": 3.5,
-        "average": 3.55
-      },
-      "gpt4o": {
-        "relevance": 4.7,
-        "consistency": 4.5,
-        "average": 4.6
-      },
-      "claude": {
-        "relevance": 4.0,
-        "consistency": 3.4,
-        "average": 3.7
-      },
-      "deepseek": {
-        "relevance": 4.6,
-        "consistency": 3.7,
-        "average": 4.15
-      }
-    },
-    "overall_hallucination_average": 4.2
+    }
   },
   "13": {
     "original_category": "CL",
@@ -28862,35 +29361,7 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 4.8,
-        "consistency": 5.0,
-        "average": 4.9
-      },
-      "llama": {
-        "relevance": 3.2,
-        "consistency": 3.1,
-        "average": 3.15
-      },
-      "gpt4o": {
-        "relevance": 4.8,
-        "consistency": 4.6,
-        "average": 4.7
-      },
-      "claude": {
-        "relevance": 4.1,
-        "consistency": 3.8,
-        "average": 3.95
-      },
-      "deepseek": {
-        "relevance": 4.5,
-        "consistency": 4.5,
-        "average": 4.5
-      }
-    },
-    "overall_hallucination_average": 4.24
+    }
   },
   "14": {
     "original_category": "CL",
@@ -31123,35 +31594,7 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 4.55,
-        "consistency": 5.0,
-        "average": 4.78
-      },
-      "llama": {
-        "relevance": 3.9,
-        "consistency": 4.2,
-        "average": 4.05
-      },
-      "gpt4o": {
-        "relevance": 5.0,
-        "consistency": 4.9,
-        "average": 4.95
-      },
-      "claude": {
-        "relevance": 4.8,
-        "consistency": 4.9,
-        "average": 4.85
-      },
-      "deepseek": {
-        "relevance": 4.4,
-        "consistency": 3.8,
-        "average": 4.1
-      }
-    },
-    "overall_hallucination_average": 4.55
+    }
   },
   "15": {
     "original_category": "CL",
@@ -33349,34 +33792,6 @@
           }
         }
       }
-    },
-    "hallucination_scores": {
-      "mistral": {
-        "relevance": 4.9,
-        "consistency": 5.0,
-        "average": 4.95
-      },
-      "llama": {
-        "relevance": 3.5,
-        "consistency": 3.6,
-        "average": 3.55
-      },
-      "gpt4o": {
-        "relevance": 5.0,
-        "consistency": 5.0,
-        "average": 5.0
-      },
-      "claude": {
-        "relevance": 4.7,
-        "consistency": 4.8,
-        "average": 4.75
-      },
-      "deepseek": {
-        "relevance": 4.4,
-        "consistency": 3.7,
-        "average": 4.05
-      }
-    },
-    "overall_hallucination_average": 4.46
+    }
   }
 }
