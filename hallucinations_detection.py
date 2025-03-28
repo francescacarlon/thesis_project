@@ -61,7 +61,7 @@ llms = ["mistral", "llama", "gpt4o", "claude", "deepseek"]
 
 if TEST_MODE:
 
-    entry_id = list(data.keys())[0]
+    entry_id = list(data.keys())[1]
     entry = data[entry_id]
     original_text = entry["original_text"]
 
@@ -75,7 +75,7 @@ if TEST_MODE:
 
         for user_category, prompts in model_data.items():
             for prompt_id, prompt_data in prompts.items():
-                if prompt_id != "prompt4":
+                if prompt_id != "prompt1":
                     continue
 
                 for eval_model in llms:
