@@ -50,7 +50,7 @@ Consistency: <score>
 """
 
 # Toggle for test mode
-TEST_MODE = True
+TEST_MODE = False
 
 # Load the JSON data
 with open(LINGUISTIC_ANALYSIS_PATH, "r", encoding="utf-8") as f:
@@ -75,7 +75,7 @@ if TEST_MODE:
 
         for user_category, prompts in model_data.items():
             for prompt_id, prompt_data in prompts.items():
-                if prompt_id != "prompt1":
+                if prompt_id != "prompt2":
                     continue
 
                 for eval_model in llms:
@@ -142,7 +142,7 @@ if TEST_MODE:
 
 
 else:
-    print(f"🚀 Starting full hallucination scoring on {len(data)} entries...")
+    print(f"🚀 Starting full hallucination scoring on {len(data)} entries...\n")
 
     total_scored = 0
 
@@ -157,19 +157,17 @@ else:
 
             for user_category, prompts in model_data.items():
                 for prompt_id, prompt_data in prompts.items():
-                    # if prompt_id != "prompt1":
-                    #     continue
+                    tailored_text = prompt_data.get("text", "").strip()
+                    if not tailored_text:
+                        tqdm.write(f"⚠️ Missing tailored text for {entry_id} → {gen_model} → {user_category} → {prompt_id}")
+                        continue
 
                     for eval_model in llms:
                         if eval_model in prompt_data.get("hallucination_scores", {}):
                             continue  # Already scored by this model
 
-                        tailored_text = prompt_data.get("text", "").strip()
-                        if not tailored_text:
-                            tqdm.write(f"⚠️ Missing tailored text for {entry_id} → {gen_model} → {user_category} → {prompt_id}")
-                            continue
-
                         tqdm.write(f"📍 Scoring {entry_id} → Gen: {gen_model} → Eval: {eval_model} → {user_category} → {prompt_id}")
+
                         prompt = detect_hallucination_prompt.format(
                             original=original_text,
                             tailored=tailored_text
@@ -204,22 +202,23 @@ else:
                         else:
                             tqdm.write(f"⚠️ Failed to parse scores from {eval_model} for {entry_id} → {prompt_id}:\n{response}")
 
-                    # ✅ Compute hallucinations_overall_average after all evaluators have scored this prompt
+                    # After all eval models scored this prompt → compute overall average
                     avg_scores = [
                         s["average"]
                         for s in prompt_data.get("hallucination_scores", {}).values()
                         if isinstance(s, dict) and "average" in s
                     ]
-
                     if avg_scores:
                         prompt_data["hallucination_scores"]["hallucinations_overall_average"] = round(mean(avg_scores), 2)
-                        tqdm.write(f"📊 Overall average for {entry_id} → {gen_model} → {user_category} → {prompt_id}: {prompt_data['hallucination_scores']['hallucinations_overall_average']}")
+                        tqdm.write(
+                            f"📊 Overall average for {entry_id} → {gen_model} → {user_category} → {prompt_id}: "
+                            f"{prompt_data['hallucination_scores']['hallucinations_overall_average']}"
+                        )
 
-    # ✅ Save updated file
-    if data:
+        # 💾 Save progress after each entry
         with open(LINGUISTIC_ANALYSIS_PATH, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
-            print(f"✅ Saved updated results to {LINGUISTIC_ANALYSIS_PATH}")
-        print(f"✅ Hallucination scoring complete. Total prompts scored: {total_scored}")
-    else:
-        print("⚠️ No data found. Skipping save.")
+            tqdm.write(f"💾 Progress saved after entry {entry_id}")
+
+    # ✅ Final message
+    print(f"\n✅ Hallucination scoring complete. Total prompts scored: {total_scored}")
