@@ -276,6 +276,8 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
     # ✅ Pass max_entries when calling cleanup
     clean_existing_texts(benchmark)
     clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark, target_key, max_entries)
+    # add hallucination detection in the benchmark creation?
 
     save_dataset(benchmark, BENCHMARK_PATH)
     save_dataset(linguistic_analysis, LINGUISTIC_ANALYSIS_PATH)
+    # add hallucination detection in the benchmark creation?
