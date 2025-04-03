@@ -85,7 +85,7 @@ filtered_tailored_texts = {}
 
 # Thresholds
 HALL_THRESHOLD = 4.0
-COS_THRESHOLD = 0.8
+COS_THRESHOLD = 0.7
 
 # Traverse each top-level entry (e.g., ID 1, 2, 3...)
 for entry_id, entry_data in data.items():
@@ -110,10 +110,72 @@ for entry_id, entry_data in data.items():
                         continue
 
 # Save filtered results
-output_path = "./data/filtered_metadata.json"
+output_path = "./data/filtered_metadata_0.7.json"
 with open(output_path, "w", encoding="utf-8") as f:
     json.dump(filtered_tailored_texts, f, ensure_ascii=False, indent=2)
 
 print(f"\n✅ Saved filtered results to: {output_path}")
 
 
+import json
+from collections import defaultdict
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Load JSON
+with open("./data/filtered_metadata_no_CL_0.7.json", "r", encoding="utf-8") as f:
+    data = json.load(f)
+
+# Build topic mapping
+# Structure: combination_counts[background][LLM-prompt] = count
+# Structure: topic_ids[background][LLM-prompt] = [list of topic IDs]
+combination_counts = defaultdict(lambda: defaultdict(int))
+topic_ids = defaultdict(lambda: defaultdict(list))
+
+for topic_id, entry in data.items():
+    tailored_texts = entry.get("tailored_texts", {})
+    for llm, backgrounds in tailored_texts.items():
+        for background, prompts in backgrounds.items():
+            for prompt_id in prompts:
+                key = f"{llm} - {prompt_id}"
+                combination_counts[background][key] += 1
+                topic_ids[background][key].append(topic_id)
+
+# Prepare data
+all_combinations = sorted(set(
+    combo for bg_counts in combination_counts.values() for combo in bg_counts
+))
+cs_counts = [combination_counts["CS"].get(combo, 0) for combo in all_combinations]
+l_counts = [combination_counts["L"].get(combo, 0) for combo in all_combinations]
+cs_topics = [", ".join(topic_ids["CS"].get(combo, [])) for combo in all_combinations]
+l_topics = [", ".join(topic_ids["L"].get(combo, [])) for combo in all_combinations]
+
+# Plotting
+x = np.arange(len(all_combinations))
+width = 0.35
+fig, ax = plt.subplots(figsize=(14, 6))
+
+bars_cs = ax.bar(x - width/2, cs_counts, width, label='CS')
+bars_l = ax.bar(x + width/2, l_counts, width, label='L')
+
+# Annotate each bar with entry numbers (topics)
+for i, bar in enumerate(bars_cs):
+    if cs_counts[i] > 0:
+        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.1, cs_topics[i],
+                ha='center', va='bottom', fontsize=8, rotation=90)
+
+for i, bar in enumerate(bars_l):
+    if l_counts[i] > 0:
+        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.1, l_topics[i],
+                ha='center', va='bottom', fontsize=8, rotation=90)
+
+# Aesthetics
+ax.set_xlabel('LLM - Prompt')
+ax.set_ylabel('Count')
+ax.set_title('LLM-Prompt Combinations by Background with Topics')
+ax.set_xticks(x)
+ax.set_xticklabels(all_combinations, rotation=45, ha='right')
+ax.legend()
+
+plt.tight_layout()
+plt.show()

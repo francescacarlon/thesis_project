@@ -1,0 +1,879 @@
+{
+  "1": {
+    "tailored_texts": {
+      "mistral": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.8153522610664368,
+            "hallucination_avg": 4.8,
+            "token_count": 267
+          },
+          "prompt2": {
+            "cosine_similarity": 0.9181023836135864,
+            "hallucination_avg": 4.7,
+            "token_count": 271
+          },
+          "prompt3": {
+            "cosine_similarity": 0.9068188071250916,
+            "hallucination_avg": 4.4,
+            "token_count": 216
+          },
+          "prompt4": {
+            "cosine_similarity": 0.9225825071334839,
+            "hallucination_avg": 4.7,
+            "token_count": 186
+          },
+          "prompt5": {
+            "cosine_similarity": 0.8517158627510071,
+            "hallucination_avg": 4.7,
+            "token_count": 225
+          }
+        }
+      },
+      "llama": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.7556427717208862,
+            "hallucination_avg": 4.4,
+            "token_count": 386
+          },
+          "prompt2": {
+            "cosine_similarity": 0.7969599366188049,
+            "hallucination_avg": 4.1,
+            "token_count": 364
+          },
+          "prompt3": {
+            "cosine_similarity": 0.8156543970108032,
+            "hallucination_avg": 4.6,
+            "token_count": 390
+          }
+        }
+      },
+      "gpt4o": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.7093019485473633,
+            "hallucination_avg": 4.3,
+            "token_count": 290
+          },
+          "prompt2": {
+            "cosine_similarity": 0.8687797784805298,
+            "hallucination_avg": 4.9,
+            "token_count": 225
+          },
+          "prompt3": {
+            "cosine_similarity": 0.7783818244934082,
+            "hallucination_avg": 4.4,
+            "token_count": 228
+          },
+          "prompt4": {
+            "cosine_similarity": 0.8722004294395447,
+            "hallucination_avg": 5.0,
+            "token_count": 161
+          },
+          "prompt5": {
+            "cosine_similarity": 0.8682388663291931,
+            "hallucination_avg": 4.2,
+            "token_count": 232
+          }
+        }
+      },
+      "claude": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.7271918058395386,
+            "hallucination_avg": 4.4,
+            "token_count": 238
+          },
+          "prompt2": {
+            "cosine_similarity": 0.7223411202430725,
+            "hallucination_avg": 4.1,
+            "token_count": 168
+          },
+          "prompt3": {
+            "cosine_similarity": 0.7538257837295532,
+            "hallucination_avg": 4.5,
+            "token_count": 227
+          },
+          "prompt4": {
+            "cosine_similarity": 0.7809346914291382,
+            "hallucination_avg": 4.3,
+            "token_count": 189
+          }
+        }
+      },
+      "deepseek": {
+        "CS": {
+          "prompt5": {
+            "cosine_similarity": 0.7209832668304443,
+            "hallucination_avg": 4.1,
+            "token_count": 151
+          }
+        }
+      }
+    }
+  },
+  "2": {
+    "tailored_texts": {
+      "mistral": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.9449005126953125,
+            "hallucination_avg": 4.3,
+            "token_count": 221
+          },
+          "prompt2": {
+            "cosine_similarity": 0.952573835849762,
+            "hallucination_avg": 5.0,
+            "token_count": 257
+          },
+          "prompt3": {
+            "cosine_similarity": 0.9251545667648315,
+            "hallucination_avg": 4.8,
+            "token_count": 280
+          },
+          "prompt4": {
+            "cosine_similarity": 0.9170640707015991,
+            "hallucination_avg": 4.55,
+            "token_count": 216
+          },
+          "prompt5": {
+            "cosine_similarity": 0.9754759073257446,
+            "hallucination_avg": 5.0,
+            "token_count": 256
+          }
+        }
+      },
+      "llama": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.9069540500640869,
+            "hallucination_avg": 4.6,
+            "token_count": 403
+          },
+          "prompt2": {
+            "cosine_similarity": 0.8814425468444824,
+            "hallucination_avg": 4.2,
+            "token_count": 487
+          },
+          "prompt3": {
+            "cosine_similarity": 0.917875349521637,
+            "hallucination_avg": 4.9,
+            "token_count": 483
+          }
+        }
+      },
+      "gpt4o": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.9382408857345581,
+            "hallucination_avg": 4.9,
+            "token_count": 258
+          },
+          "prompt2": {
+            "cosine_similarity": 0.9450578093528748,
+            "hallucination_avg": 4.95,
+            "token_count": 251
+          },
+          "prompt3": {
+            "cosine_similarity": 0.8995142579078674,
+            "hallucination_avg": 4.7,
+            "token_count": 322
+          },
+          "prompt4": {
+            "cosine_similarity": 0.9377381801605225,
+            "hallucination_avg": 5.0,
+            "token_count": 186
+          },
+          "prompt5": {
+            "cosine_similarity": 0.9204601645469666,
+            "hallucination_avg": 4.6,
+            "token_count": 280
+          }
+        }
+      },
+      "claude": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.8069146275520325,
+            "hallucination_avg": 4.5,
+            "token_count": 219
+          },
+          "prompt2": {
+            "cosine_similarity": 0.8867177963256836,
+            "hallucination_avg": 4.6,
+            "token_count": 244
+          },
+          "prompt3": {
+            "cosine_similarity": 0.839339017868042,
+            "hallucination_avg": 4.8,
+            "token_count": 277
+          },
+          "prompt4": {
+            "cosine_similarity": 0.8151059150695801,
+            "hallucination_avg": 4.3,
+            "token_count": 240
+          },
+          "prompt5": {
+            "cosine_similarity": 0.822647213935852,
+            "hallucination_avg": 4.5,
+            "token_count": 240
+          }
+        }
+      },
+      "deepseek": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.8134670257568359,
+            "hallucination_avg": 4.7,
+            "token_count": 182
+          },
+          "prompt2": {
+            "cosine_similarity": 0.8282610177993774,
+            "hallucination_avg": 4.5,
+            "token_count": 146
+          },
+          "prompt3": {
+            "cosine_similarity": 0.8565070033073425,
+            "hallucination_avg": 4.2,
+            "token_count": 175
+          },
+          "prompt4": {
+            "cosine_similarity": 0.8532506227493286,
+            "hallucination_avg": 4.2,
+            "token_count": 130
+          },
+          "prompt5": {
+            "cosine_similarity": 0.8011308908462524,
+            "hallucination_avg": 4.5,
+            "token_count": 186
+          }
+        }
+      }
+    }
+  },
+  "3": {
+    "tailored_texts": {
+      "mistral": {
+        "CS": {
+          "prompt2": {
+            "cosine_similarity": 0.7428303956985474,
+            "hallucination_avg": 4.3,
+            "token_count": 294
+          },
+          "prompt3": {
+            "cosine_similarity": 0.8803181052207947,
+            "hallucination_avg": 4.95,
+            "token_count": 187
+          },
+          "prompt4": {
+            "cosine_similarity": 0.8980931639671326,
+            "hallucination_avg": 4.2,
+            "token_count": 250
+          },
+          "prompt5": {
+            "cosine_similarity": 0.9079538583755493,
+            "hallucination_avg": 4.7,
+            "token_count": 168
+          }
+        }
+      },
+      "llama": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.7876723408699036,
+            "hallucination_avg": 4.0,
+            "token_count": 388
+          },
+          "prompt3": {
+            "cosine_similarity": 0.7187134027481079,
+            "hallucination_avg": 4.4,
+            "token_count": 498
+          },
+          "prompt4": {
+            "cosine_similarity": 0.7957355380058289,
+            "hallucination_avg": 4.4,
+            "token_count": 160
+          }
+        }
+      },
+      "gpt4o": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.7376251220703125,
+            "hallucination_avg": 4.75,
+            "token_count": 332
+          },
+          "prompt2": {
+            "cosine_similarity": 0.7788221836090088,
+            "hallucination_avg": 4.95,
+            "token_count": 314
+          },
+          "prompt3": {
+            "cosine_similarity": 0.813031017780304,
+            "hallucination_avg": 4.5,
+            "token_count": 320
+          },
+          "prompt4": {
+            "cosine_similarity": 0.8472038507461548,
+            "hallucination_avg": 4.4,
+            "token_count": 232
+          },
+          "prompt5": {
+            "cosine_similarity": 0.751553475856781,
+            "hallucination_avg": 4.55,
+            "token_count": 291
+          }
+        }
+      },
+      "claude": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.7751758098602295,
+            "hallucination_avg": 4.9,
+            "token_count": 260
+          },
+          "prompt2": {
+            "cosine_similarity": 0.7997280359268188,
+            "hallucination_avg": 4.85,
+            "token_count": 192
+          },
+          "prompt3": {
+            "cosine_similarity": 0.7947980165481567,
+            "hallucination_avg": 4.7,
+            "token_count": 223
+          },
+          "prompt5": {
+            "cosine_similarity": 0.7411124110221863,
+            "hallucination_avg": 4.7,
+            "token_count": 213
+          }
+        }
+      },
+      "deepseek": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.8205076456069946,
+            "hallucination_avg": 4.8,
+            "token_count": 159
+          },
+          "prompt2": {
+            "cosine_similarity": 0.710166335105896,
+            "hallucination_avg": 4.8,
+            "token_count": 152
+          },
+          "prompt3": {
+            "cosine_similarity": 0.7136894464492798,
+            "hallucination_avg": 4.6,
+            "token_count": 197
+          },
+          "prompt5": {
+            "cosine_similarity": 0.7451804876327515,
+            "hallucination_avg": 4.8,
+            "token_count": 152
+          }
+        }
+      }
+    }
+  },
+  "4": {
+    "tailored_texts": {
+      "mistral": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.8484218120574951,
+            "hallucination_avg": 4.8,
+            "token_count": 224
+          },
+          "prompt4": {
+            "cosine_similarity": 0.9003214836120605,
+            "hallucination_avg": 4.9,
+            "token_count": 191
+          },
+          "prompt5": {
+            "cosine_similarity": 0.8777247667312622,
+            "hallucination_avg": 4.8,
+            "token_count": 184
+          }
+        }
+      },
+      "llama": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.8411433696746826,
+            "hallucination_avg": 4.9,
+            "token_count": 360
+          },
+          "prompt2": {
+            "cosine_similarity": 0.7392531633377075,
+            "hallucination_avg": 4.8,
+            "token_count": 721
+          },
+          "prompt3": {
+            "cosine_similarity": 0.7157641649246216,
+            "hallucination_avg": 5.0,
+            "token_count": 378
+          },
+          "prompt4": {
+            "cosine_similarity": 0.7607795000076294,
+            "hallucination_avg": 4.4,
+            "token_count": 283
+          },
+          "prompt5": {
+            "cosine_similarity": 0.8244737386703491,
+            "hallucination_avg": 4.7,
+            "token_count": 260
+          }
+        }
+      },
+      "gpt4o": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.8802945613861084,
+            "hallucination_avg": 5.0,
+            "token_count": 224
+          },
+          "prompt2": {
+            "cosine_similarity": 0.7866648435592651,
+            "hallucination_avg": 4.8,
+            "token_count": 265
+          },
+          "prompt3": {
+            "cosine_similarity": 0.7992713451385498,
+            "hallucination_avg": 5.0,
+            "token_count": 274
+          },
+          "prompt4": {
+            "cosine_similarity": 0.8923216462135315,
+            "hallucination_avg": 5.0,
+            "token_count": 146
+          },
+          "prompt5": {
+            "cosine_similarity": 0.7462050318717957,
+            "hallucination_avg": 4.5,
+            "token_count": 251
+          }
+        }
+      },
+      "claude": {
+        "CS": {
+          "prompt3": {
+            "cosine_similarity": 0.7507920265197754,
+            "hallucination_avg": 4.8,
+            "token_count": 175
+          }
+        }
+      },
+      "deepseek": {
+        "CS": {
+          "prompt3": {
+            "cosine_similarity": 0.7511783838272095,
+            "hallucination_avg": 4.65,
+            "token_count": 149
+          },
+          "prompt4": {
+            "cosine_similarity": 0.7241308093070984,
+            "hallucination_avg": 4.6,
+            "token_count": 122
+          },
+          "prompt5": {
+            "cosine_similarity": 0.7234094142913818,
+            "hallucination_avg": 4.3,
+            "token_count": 154
+          }
+        }
+      }
+    }
+  },
+  "5": {
+    "tailored_texts": {
+      "mistral": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.8298665881156921,
+            "hallucination_avg": 4.75,
+            "token_count": 198
+          },
+          "prompt2": {
+            "cosine_similarity": 0.8436535000801086,
+            "hallucination_avg": 4.9,
+            "token_count": 210
+          },
+          "prompt3": {
+            "cosine_similarity": 0.847260594367981,
+            "hallucination_avg": 4.7,
+            "token_count": 198
+          },
+          "prompt4": {
+            "cosine_similarity": 0.8559238910675049,
+            "hallucination_avg": 4.7,
+            "token_count": 199
+          },
+          "prompt5": {
+            "cosine_similarity": 0.8655133247375488,
+            "hallucination_avg": 5.0,
+            "token_count": 223
+          }
+        }
+      },
+      "llama": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.705380916595459,
+            "hallucination_avg": 4.6,
+            "token_count": 489
+          },
+          "prompt3": {
+            "cosine_similarity": 0.7616757750511169,
+            "hallucination_avg": 4.9,
+            "token_count": 446
+          },
+          "prompt4": {
+            "cosine_similarity": 0.702519953250885,
+            "hallucination_avg": 4.3,
+            "token_count": 275
+          }
+        }
+      },
+      "gpt4o": {
+        "CS": {
+          "prompt1": {
+            "cosine_similarity": 0.7437691688537598,
+            "hallucination_avg": 4.85,
+            "token_count": 403
+          },
+          "prompt2": {
+            "cosine_similarity": 0.822360634803772,
+            "hallucination_avg": 4.8,
+            "token_count": 310
+          },
+          "prompt3": {
+            "cosine_similarity": 0.7328649759292603,
+            "hallucination_avg": 4.8,
+            "token_count": 352
+          },
+          "prompt4": {
+            "cosine_similarity": 0.7715228199958801,
+            "hallucination_avg": 4.7,
+            "token_count": 228
+          },
+          "prompt5": {
+            "cosine_similarity": 0.7495458126068115,
+            "hallucination_avg": 4.7,
+            "token_count": 370
+          }
+        }
+      },
+      "claude": {
+        "CS": {
+          "prompt2": {
+            "cosine_similarity": 0.7636847496032715,
+            "hallucination_avg": 4.4,
+            "token_count": 252
+          },
+          "prompt3": {
+            "cosine_similarity": 0.7503669261932373,
+            "hallucination_avg": 4.8,
+            "token_count": 237
+          }
+        }
+      }
+    }
+  },
+  "6": {
+    "tailored_texts": {
+      "mistral": {
+        "L": {
+          "prompt1": {
+            "cosine_similarity": 0.7560995817184448,
+            "hallucination_avg": 4.5,
+            "token_count": 212
+          },
+          "prompt2": {
+            "cosine_similarity": 0.7491192817687988,
+            "hallucination_avg": 4.7,
+            "token_count": 296
+          },
+          "prompt3": {
+            "cosine_similarity": 0.8470892906188965,
+            "hallucination_avg": 5.0,
+            "token_count": 203
+          },
+          "prompt4": {
+            "cosine_similarity": 0.8939213752746582,
+            "hallucination_avg": 4.8,
+            "token_count": 292
+          },
+          "prompt5": {
+            "cosine_similarity": 0.7644941210746765,
+            "hallucination_avg": 4.9,
+            "token_count": 261
+          }
+        }
+      },
+      "gpt4o": {
+        "L": {
+          "prompt1": {
+            "cosine_similarity": 0.7341257333755493,
+            "hallucination_avg": 4.8,
+            "token_count": 317
+          }
+        }
+      }
+    }
+  },
+  "7": {
+    "tailored_texts": {
+      "mistral": {
+        "L": {
+          "prompt1": {
+            "cosine_similarity": 0.7685374617576599,
+            "hallucination_avg": 5.0,
+            "token_count": 243
+          },
+          "prompt2": {
+            "cosine_similarity": 0.8275209665298462,
+            "hallucination_avg": 5.0,
+            "token_count": 201
+          },
+          "prompt3": {
+            "cosine_similarity": 0.8169453740119934,
+            "hallucination_avg": 5.0,
+            "token_count": 215
+          },
+          "prompt4": {
+            "cosine_similarity": 0.8082410097122192,
+            "hallucination_avg": 5.0,
+            "token_count": 181
+          },
+          "prompt5": {
+            "cosine_similarity": 0.721289873123169,
+            "hallucination_avg": 4.9,
+            "token_count": 158
+          }
+        }
+      },
+      "llama": {
+        "L": {
+          "prompt1": {
+            "cosine_similarity": 0.7035237550735474,
+            "hallucination_avg": 4.2,
+            "token_count": 490
+          }
+        }
+      },
+      "gpt4o": {
+        "L": {
+          "prompt4": {
+            "cosine_similarity": 0.701055645942688,
+            "hallucination_avg": 5.0,
+            "token_count": 211
+          }
+        }
+      }
+    }
+  },
+  "8": {
+    "tailored_texts": {
+      "mistral": {
+        "L": {
+          "prompt1": {
+            "cosine_similarity": 0.8322855234146118,
+            "hallucination_avg": 4.3,
+            "token_count": 309
+          },
+          "prompt2": {
+            "cosine_similarity": 0.8036302328109741,
+            "hallucination_avg": 4.7,
+            "token_count": 246
+          },
+          "prompt3": {
+            "cosine_similarity": 0.885465681552887,
+            "hallucination_avg": 5.0,
+            "token_count": 214
+          },
+          "prompt4": {
+            "cosine_similarity": 0.8798613548278809,
+            "hallucination_avg": 5.0,
+            "token_count": 223
+          },
+          "prompt5": {
+            "cosine_similarity": 0.9102436304092407,
+            "hallucination_avg": 5.0,
+            "token_count": 226
+          }
+        }
+      }
+    }
+  },
+  "9": {
+    "tailored_texts": {
+      "mistral": {
+        "L": {
+          "prompt1": {
+            "cosine_similarity": 0.9185652732849121,
+            "hallucination_avg": 4.5,
+            "token_count": 278
+          },
+          "prompt2": {
+            "cosine_similarity": 0.8964722156524658,
+            "hallucination_avg": 4.9,
+            "token_count": 276
+          },
+          "prompt3": {
+            "cosine_similarity": 0.9138847589492798,
+            "hallucination_avg": 5.0,
+            "token_count": 190
+          },
+          "prompt4": {
+            "cosine_similarity": 0.8371784687042236,
+            "hallucination_avg": 5.0,
+            "token_count": 220
+          },
+          "prompt5": {
+            "cosine_similarity": 0.8323479294776917,
+            "hallucination_avg": 4.5,
+            "token_count": 407
+          }
+        }
+      },
+      "llama": {
+        "L": {
+          "prompt1": {
+            "cosine_similarity": 0.7385510802268982,
+            "hallucination_avg": 4.35,
+            "token_count": 307
+          },
+          "prompt2": {
+            "cosine_similarity": 0.7960047721862793,
+            "hallucination_avg": 4.1,
+            "token_count": 411
+          }
+        }
+      },
+      "gpt4o": {
+        "L": {
+          "prompt1": {
+            "cosine_similarity": 0.8634300231933594,
+            "hallucination_avg": 5.0,
+            "token_count": 290
+          },
+          "prompt2": {
+            "cosine_similarity": 0.720793604850769,
+            "hallucination_avg": 4.55,
+            "token_count": 273
+          },
+          "prompt3": {
+            "cosine_similarity": 0.827786922454834,
+            "hallucination_avg": 4.45,
+            "token_count": 302
+          },
+          "prompt4": {
+            "cosine_similarity": 0.7335523962974548,
+            "hallucination_avg": 4.3,
+            "token_count": 223
+          },
+          "prompt5": {
+            "cosine_similarity": 0.8369871377944946,
+            "hallucination_avg": 4.3,
+            "token_count": 254
+          }
+        }
+      },
+      "claude": {
+        "L": {
+          "prompt2": {
+            "cosine_similarity": 0.7246525287628174,
+            "hallucination_avg": 4.2,
+            "token_count": 220
+          }
+        }
+      },
+      "deepseek": {
+        "L": {
+          "prompt5": {
+            "cosine_similarity": 0.7041867971420288,
+            "hallucination_avg": 4.1,
+            "token_count": 218
+          }
+        }
+      }
+    }
+  },
+  "10": {
+    "tailored_texts": {
+      "mistral": {
+        "L": {
+          "prompt1": {
+            "cosine_similarity": 0.8672769069671631,
+            "hallucination_avg": 4.9,
+            "token_count": 450
+          },
+          "prompt2": {
+            "cosine_similarity": 0.875806450843811,
+            "hallucination_avg": 4.9,
+            "token_count": 272
+          },
+          "prompt3": {
+            "cosine_similarity": 0.9429935812950134,
+            "hallucination_avg": 5.0,
+            "token_count": 237
+          },
+          "prompt4": {
+            "cosine_similarity": 0.9057005643844604,
+            "hallucination_avg": 4.8,
+            "token_count": 249
+          },
+          "prompt5": {
+            "cosine_similarity": 0.8381253480911255,
+            "hallucination_avg": 4.9,
+            "token_count": 215
+          }
+        }
+      },
+      "llama": {
+        "L": {
+          "prompt3": {
+            "cosine_similarity": 0.7388617992401123,
+            "hallucination_avg": 4.85,
+            "token_count": 365
+          },
+          "prompt4": {
+            "cosine_similarity": 0.8173843622207642,
+            "hallucination_avg": 4.75,
+            "token_count": 125
+          },
+          "prompt5": {
+            "cosine_similarity": 0.7279637455940247,
+            "hallucination_avg": 4.7,
+            "token_count": 237
+          }
+        }
+      },
+      "gpt4o": {
+        "L": {
+          "prompt1": {
+            "cosine_similarity": 0.7686081528663635,
+            "hallucination_avg": 4.8,
+            "token_count": 259
+          },
+          "prompt2": {
+            "cosine_similarity": 0.8235943913459778,
+            "hallucination_avg": 4.9,
+            "token_count": 284
+          },
+          "prompt3": {
+            "cosine_similarity": 0.7615212202072144,
+            "hallucination_avg": 5.0,
+            "token_count": 259
+          },
+          "prompt5": {
+            "cosine_similarity": 0.7741060256958008,
+            "hallucination_avg": 4.9,
+            "token_count": 258
+          }
+        }
+      }
+    }
+  }
+}
