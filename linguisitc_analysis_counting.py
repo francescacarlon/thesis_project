@@ -1,4 +1,4 @@
-from config import LINGUISTIC_ANALYSIS_PATH
+"""from config import LINGUISTIC_ANALYSIS_PATH
 import json
 
 # Load the JSON file
@@ -71,10 +71,11 @@ traverse_fixed_hallucination_structure(data)
 print(f"Entries with hallucinations_overall_average ≥ 4.0 and cosine_similarity ≥ 0.8: {halluc_with_high_cos}")
 # print(f"Entries with hallucinations_overall_average ≥ 4.0 and cosine_similarity < 0.8: {halluc_with_low_cos}")
 # print(f"Entries with hallucinations_overall_average ≥ 4.0 and cosine_similarity missing: {halluc_with_missing_cos}")
+"""
 
 import os
 import json
-from config import LINGUISTIC_ANALYSIS_PATH
+from config import LINGUISTIC_ANALYSIS_PATH  # Adjust this if you're not using a config module
 
 # Load the original JSON file
 with open(LINGUISTIC_ANALYSIS_PATH, "r", encoding="utf-8") as f:
@@ -85,10 +86,15 @@ filtered_tailored_texts = {}
 
 # Thresholds
 HALL_THRESHOLD = 4.0
-COS_THRESHOLD = 0.7
 
 # Traverse each top-level entry (e.g., ID 1, 2, 3...)
 for entry_id, entry_data in data.items():
+    try:
+        if not (1 <= int(entry_id) <= 10):
+            continue  # Skip entries not in the range 1–10
+    except ValueError:
+        continue  # Skip non-integer keys, just in case
+
     tailored = entry_data.get("tailored_texts", {})
     for llm, topics in tailored.items():
         for topic, prompts in topics.items():
@@ -96,25 +102,40 @@ for entry_id, entry_data in data.items():
                 hall_avg = content.get("hallucination_scores", {}).get("hallucinations_overall_average")
                 cos_sim = content.get("cosine_similarity")
                 token_count = content.get("token_count")
-                if hall_avg is not None and cos_sim is not None:
+                readability = content.get("readability")
+                pos = content.get("pos")
+                bleu = content.get("bleu_score")
+                rouge = content.get("rouge_scores")
+
+                if hall_avg is not None:
+                    # print(f"Entry {entry_id} | LLM: {llm} | Topic: {topic} | Prompt: {prompt} | Hall Avg: {hall_avg}")
+
                     try:
-                        if float(hall_avg) >= HALL_THRESHOLD and float(cos_sim) >= COS_THRESHOLD:
+                        if float(hall_avg) >= HALL_THRESHOLD:
+                            # print(f"Entry {entry_id} | LLM: {llm} | Topic: {topic} | Prompt: {prompt} | Hall Avg: {hall_avg}")
+
                             # Build nested filtered structure
                             filtered_tailored_texts.setdefault(entry_id, {}).setdefault("tailored_texts", {}) \
                                 .setdefault(llm, {}).setdefault(topic, {})[prompt] = {
-                                    "cosine_similarity": float(cos_sim),
+                                    "cosine_similarity": float(cos_sim) if cos_sim is not None else None,
                                     "hallucination_avg": float(hall_avg),
-                                    "token_count": int(token_count)
+                                    "token_count": int(token_count) if token_count is not None else None,
+                                    "readability": readability if readability is not None else None,
+                                    "pos": pos if pos is not None else None,
+                                    "bleu_score": bleu if bleu is not None else None,
+                                    "rouge_scores": rouge
                                 }
                     except (ValueError, TypeError):
                         continue
 
 # Save filtered results
-output_path = "./data/filtered_metadata_0.7.json"
-with open(output_path, "w", encoding="utf-8") as f:
-    json.dump(filtered_tailored_texts, f, ensure_ascii=False, indent=2)
-
-print(f"\n✅ Saved filtered results to: {output_path}")
+# output_path = "./data/filtered_metadata_halls_4.0.json"
+# os.makedirs(os.path.dirname(output_path), exist_ok=True)
+# 
+# with open(output_path, "w", encoding="utf-8") as f:
+#     json.dump(filtered_tailored_texts, f, ensure_ascii=False, indent=2)
+# 
+# print(f"\n✅ Saved filtered results to: {output_path}")
 
 
 import json
@@ -123,7 +144,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Load JSON
-with open("./data/filtered_metadata_no_CL_0.7.json", "r", encoding="utf-8") as f:
+with open("./data/filtered_metadata_halls_4.0_no_CL.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # Build topic mapping
@@ -178,4 +199,136 @@ ax.set_xticklabels(all_combinations, rotation=45, ha='right')
 ax.legend()
 
 plt.tight_layout()
+plt.show()
+
+
+import json
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the JSON file
+with open("./data/filtered_metadata_halls_4.0_no_CL.json", "r", encoding="utf-8") as f:
+    data = json.load(f)
+
+# Convert JSON to DataFrame
+df = pd.DataFrame(data)
+
+# Extract cosine similarity values
+all_cosine_similarities = []
+
+for col in df.columns:
+    entry = df[col]["tailored_texts"]
+    for model in entry:
+        for group in entry[model]:
+            for prompt in entry[model][group]:
+                cos_sim = entry[model][group][prompt].get("cosine_similarity")
+                if cos_sim is not None:
+                    all_cosine_similarities.append({
+                        "entry": int(col),
+                        "model": model,
+                        "group": group,
+                        "prompt": prompt,
+                        "cosine_similarity": cos_sim
+                    })
+
+# Create a DataFrame
+all_cos_sim_df = pd.DataFrame(all_cosine_similarities)
+
+# Sort entries to ensure correct line plotting
+all_cos_sim_df.sort_values(by="entry", inplace=True)
+
+# Plot with prompt as color and group as line style
+sns.set(style="whitegrid")
+g = sns.relplot(
+    data=all_cos_sim_df,
+    x="entry",
+    y="cosine_similarity",
+    col="model",
+    hue="prompt",        # prompt controls color
+    style="group",       # group controls line dashes
+    kind="line",
+    marker="o",
+    col_wrap=2,
+    height=5,
+    aspect=1.5
+)
+
+# Add vertical line between topic 5 and 6
+for ax, model_name in zip(g.axes.flat, g.col_names):
+    ax.axvline(x=5.5, color="gray", linestyle="--", linewidth=1)
+    
+    # Extract groups used in this subplot
+    groups = all_cos_sim_df[all_cos_sim_df["model"] == model_name]["group"].unique()
+    label = " & ".join(sorted(groups))
+    
+
+# Final touches
+g.set_titles("{col_name}")
+g.set_axis_labels("Entry", "Cosine Similarity")
+g._legend.set_title("Prompt / Group")
+g.fig.suptitle("Cosine Similarity by Model\nColor = Prompt, Line Style = Group", fontsize=16)
+plt.subplots_adjust(top=0.88)
+plt.show()
+
+import json
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the JSON file
+with open("./data/filtered_metadata_halls_4.0_no_CL.json", "r", encoding="utf-8") as f:
+    data = json.load(f)
+
+df = pd.DataFrame(data)
+
+# Extract hallucination values
+hallucination_data = []
+for col in df.columns:
+    entry = df[col]["tailored_texts"]
+    for model in entry:
+        for group in entry[model]:
+            for prompt in entry[model][group]:
+                hallucination = entry[model][group][prompt].get("hallucination_avg")
+                if hallucination is not None:
+                    hallucination_data.append({
+                        "entry": int(col),
+                        "model": model,
+                        "group": group,
+                        "prompt": prompt,
+                        "hallucination_avg": hallucination
+                    })
+
+# Create DataFrame
+hallucination_df = pd.DataFrame(hallucination_data)
+hallucination_df.sort_values(by="entry", inplace=True)
+
+# Plot
+sns.set(style="whitegrid")
+g = sns.relplot(
+    data=hallucination_df,
+    x="entry",
+    y="hallucination_avg",
+    col="model",
+    hue="prompt",      # color by prompt
+    style="group",     # line style by group
+    kind="line",
+    marker="o",
+    col_wrap=2,
+    height=5,
+    aspect=1.5
+)
+
+# Add vertical line at topic boundary (between entry 5 and 6) and group label
+for ax, model_name in zip(g.axes.flat, g.col_names):
+    ax.axvline(x=5.5, color="gray", linestyle="--", linewidth=1)
+    groups = hallucination_df[hallucination_df["model"] == model_name]["group"].unique()
+    label = " & ".join(sorted(groups))
+
+# Final polish
+g.set_titles("{col_name}")
+g.set_axis_labels("Entry", "Avg. Hallucinations")
+g._legend.set_title("Prompt / Group")
+g.fig.suptitle("Average Hallucinations by Model\nColor = Prompt, Line Style = Group", fontsize=16)
+plt.subplots_adjust(top=0.88)
 plt.show()
