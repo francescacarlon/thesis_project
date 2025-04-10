@@ -25,72 +25,25 @@
                     </div>
                     <h2>L Tailored Explanations</h2>
             
-                    <div class="box">
-                        <p class="category">mistral - L (L_mistral_prompt1)</p>
-                        <p>Neural networks are a type of machine learning where we train the system to predict the correct outcome (y) for given input (x). To do this, we adjust weights (W[i]) and biases (b[i]) in each layer (i) to make our prediction (ˆy) as close as possible to the actual outcome (y).
+                <div class="box">
+                    <p class="category">L_gpt4o_prompt5</p>
+                    <p>In linguistics terms, a feedforward neural network can be thought of as a system designed to predict an outcome based on a given input. Imagine it as a complex language model trying to translate a sentence. For every input sentence (x), we know the correct translation (y) and the model tries to produce its best guess (ŷ) of that translation.
 
-     To measure how close we are, we use a loss function, similar to the one used in logistic regression, called cross-entropy loss. This function tells us how far our prediction is from the correct answer.
+The goal is to train this model so that its guess (ŷ) is as close as possible to the correct translation (y). To achieve this, it adjusts certain internal elements (let's call them parameters, similar to phonetic rules in a language) over several layers, each layer refining the guess based on the previous one.
 
-     To find the best weights and biases, we use a method called gradient descent. However, this method requires knowing the gradient, or the rate of change, of the loss function for each parameter.
+First, we need a way to measure the difference between the model's guess and the correct translation, much like evaluating how well a student has translated a sentence. We use a method called cross-entropy loss for this purpose, which is similar to assessing the semantic accuracy in translation.
 
-     In a neural network with many layers and millions of parameters, it can be challenging to compute the gradient for a single weight in the first layer when the loss is attached to a much later layer. This is where backpropagation, or error backpropagation, comes in.
+Next, to minimize this difference, we use an optimization technique called gradient descent. This is akin to gradually fine-tuning a grammar rule by observing many instances of its application.
 
-     Backpropagation helps us calculate the gradient by partially deriving the loss function over all intermediate layers. In other words, it helps us trace the error back from the last layer to the very first one.
+However, this process involves many parameters, like adjusting various phonetic and syntactic rules simultaneously, which can become complex in a large system. To effectively adjust these, we use a technique called error backpropagation. It's like retracing steps in a derivational tree to see how a change at one point affects the overall structure.
 
-     To compute the gradient using backpropagation, we need to calculate the partial derivative of the loss function with respect to each parameter. This is essential for the gradient descent algorithm to find the best weights and biases that minimize the loss function.</p>
-                    </div>
-                    
-                    <div class="box">
-                        <p class="category">llama - L (L_llama_prompt1)</p>
-                        <p>To understand the concept of a feedforward neural net, consider a linguistic analogy where a speaker produces an utterance, and the listener tries to understand its meaning. The speaker's utterance can be seen as the input x, while the listener's interpretation is the output y. However, the listener's interpretation might not perfectly match the speaker's intended meaning, which we can denote as ˆy. The goal is to make the listener's interpretation ˆy as close as possible to the speaker's intended meaning y.
-
-    In linguistics, we analyze the structure and meaning of language using various tools and methods. Similarly, in machine learning, we use a loss function to measure the distance between the system's output ˆy and the true output y. The loss function is like a metric that evaluates how well the system is performing. A common choice for this loss function is the cross-entropy loss, which is also used in logistic regression.
-
-    To optimize the system's performance, we use an algorithm called gradient descent. This algorithm is like a grammar correction tool that helps the system adjust its parameters to minimize the loss function. However, computing the gradient of the loss function with respect to each parameter can be challenging, especially when dealing with complex neural networks. This is where the algorithm called error backpropagation comes in. It's like a parsing algorithm that helps us break down the loss function and compute the partial derivative of the loss function with respect to each parameter, even in the presence of multiple intermediate layers.
-
-    Think of error backpropagation like a process of tracing back the dependencies between words in a sentence to understand the grammatical structure. In a similar way, error backpropagation helps us trace back the dependencies between the parameters in the neural network to compute the gradient of the loss function. By using this algorithm, we can optimize the system's performance and make the output ˆy as close as possible to the true output y. 
-
-    To illustrate this concept further, consider a simple example from phonetics. Suppose we have a speech recognition system that tries to transcribe spoken words into written text. The input x is the audio signal, and the output y is the transcribed text. The system's estimate ˆy might not perfectly match the true transcription y. By using a loss function and the gradient descent algorithm, we can optimize the system's performance and improve the accuracy of the transcription. The error backpropagation algorithm helps us compute the gradient of the loss function and adjust the system's parameters to minimize the loss, resulting in a more accurate transcription. 
-
-    In summary, the concept of a feedforward neural net can be understood through linguistic analogies, such as the speaker-listener model and the process of parsing. The loss function and gradient descent algorithm are used to optimize the system's performance, while error backpropagation helps us compute the gradient of the loss function and adjust the system's parameters to achieve the desired output.</p>
-                    </div>
-                    
-                    <div class="box">
-                        <p class="category">gpt4o - L (L_gpt4o_prompt2)</p>
-                        <p>In linguistics, you might think of a feedforward neural network as a complex system designed to "understand" and produce human language, although it doesn't quite grasp it like we do. Imagine we have sentences (or observations) with known meanings (or correct outputs). The network's job is to predict these meanings as accurately as possible. 
-
-Think of the network as a student learning a new language: it tries to guess the meaning of sentences it hasn't seen before, based on what it has learned from examples. The "correct output" is like a translation dictionary, where the network checks if its guess is right.
-
-To train this network, we need a "loss function," akin to a linguistic test that measures how well the network's guesses (ˆy) match the true meanings (y). One common "test" used is similar to cross-entropy loss, which you can think of like a measure of error in translation.
-
-The training process also involves "gradient descent," which is like adjusting the student's study habits to minimize errors in translation. It requires understanding how each part of the network contributes to the error, much like figuring out which linguistic rules a student is misunderstanding.
-
-However, neural networks are like vast linguistic systems with many layers of rules. To figure out how mistakes in translation flow through this system, we use an algorithm called "error backpropagation." Imagine tracing back through a sentence to see where a misunderstanding began, and then correcting it. This is crucial for the network to learn effectively.
-
-In essence, a feedforward neural network uses structured learning and error correction, similar to how one might teach a computer to understand and generate language using linguistic principles.</p>
-                    </div>
-                    
-                    <div class="box">
-                        <p class="category">claude - L (L_claude_prompt1)</p>
-                        <p>In linguistics, we often study how humans learn and process language. Neural networks are like a simplified model of how our brains learn patterns, but in a more structured way. Let's understand this through language acquisition.
-
-Imagine teaching a child language (this is our "supervised learning"). You know the correct form (y) - like saying "ran" as the past tense of "run". The child might say "runned" (ˆy) at first. The difference between what they say and what's correct is what we need to fix.
-
-Just as children learn through patterns and corrections, neural networks learn through a process called training. Think of it like learning morphological rules: the system needs to figure out the patterns (parameters) that transform input forms into correct output forms.
-
-The network measures its mistakes using something called a loss function - similar to how we measure errors in language production. Think of it like counting the number of pronunciation or grammatical errors a language learner makes.
-
-To improve, the system uses a method called gradient descent - imagine it like a language learner gradually refining their pronunciation by moving their tongue and lips closer to the correct position. They need to know which direction to adjust (the gradient).
-
-The challenging part is figuring out exactly what to adjust when there are many steps between input and output - like understanding how an early phonological error affects the final meaning of a complex sentence. This is solved through "backpropagation," which is like tracing back through the steps of language processing to find where the error began.
-
-Just as we can analyze a speech error by working backward from the output to find the point of confusion, backpropagation helps the network understand which parts of its process need adjustment.</p>
-                    </div>
-                    
-                    <div class="box">
-                        <p class="category">deepseek - L (L_deepseek_prompt5)</p>
-                        <p>A feedforward neural network operates like a supervised language learning task, where the system is trained on input-output pairs (x, y), akin to teaching a learner to map phonetic inputs (e.g., acoustic signals) to semantic outputs (e.g., word meanings). The network generates an estimate (ŷ) for each input, analogous to a language model predicting a syntactic structure for a sentence. Training adjusts "weights" (W[i]) and "biases" (b[i])—parameters acting like language-specific rules at different layers (phonological, morphological, etc.)—to minimize the mismatch between ŷ and y.  
+In essence, error backpropagation helps us understand how to tweak the phonetic and syntactic rules at various layers to improve the overall translation accuracy of the neural network.</p>
+                </div>
+                
+                <div class="box">
+                    <p class="category">L_deepseek_prompt5</p>
+                    <p>A feedforward neural network operates like a supervised language learning task, where the system is trained on input-output pairs (x, y), akin to teaching a learner to map phonetic inputs (e.g., acoustic signals) to semantic outputs (e.g., word meanings). The network generates an estimate (ŷ) for each input, analogous to a language model predicting a syntactic structure for a sentence. Training adjusts "weights" (W[i]) and "biases" (b[i])—parameters acting like language-specific rules at different layers (phonological, morphological, etc.)—to minimize the mismatch between ŷ and y.  
 
 The **loss function** (e.g., cross-entropy) quantifies this mismatch, much like measuring the divergence between a predicted phoneme sequence and its attested form. **Gradient descent** iteratively refines parameters, akin to adjusting phonological or syntactic rules to reduce errors in a language learner’s output. Crucially, computing how early-layer parameters (e.g., phonetic feature weights) contribute to later errors (e.g., semantic misinterpretations) requires **backpropagation**. This mirrors tracing a semantic error back through syntactic, morphological, and phonological layers to identify where the representation diverged, adjusting each layer’s "rules" accordingly. The process ensures coordinated learning across hierarchical linguistic levels, optimizing the entire system’s performance.</p>
-                    </div>
-                    </div></body></html>
+                </div>
+                </div></body></html>

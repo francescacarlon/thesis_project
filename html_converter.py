@@ -5,25 +5,18 @@ from config import RANDOMIZED_BENCHMARK_PATH, TEXT_PAGES_PATH
 with open(RANDOMIZED_BENCHMARK_PATH, "r", encoding="utf-8") as f:
     benchmark_data = json.load(f)
 
-# Generate HTML files for all tailored explanations from all LLMs for CS, CL, and L
+# Only generate HTML for CS and L categories, and only if they exist
 for instance_code, data in benchmark_data.items():
     original_text_title = data.get("original_text_title", "Unknown Title")
     original_text = data.get("original_text", "No text available")
     original_category = data.get("original_category", "Unknown Category")
     selected_texts = data.get("selected_texts", {})
-    
-    for target_category in ["CS", "CL", "L"]:
-        # Collect all tailored explanations for the current target category across different LLMs
-        category_texts = {}
-        for model, categories in selected_texts.items():
-            if target_category in categories:
-                category_texts[model] = categories[target_category]
-        
-        # If no tailored text for this category, skip
-        if not category_texts:
-            continue
 
-        # Generate HTML file
+    for target_category in ["CS", "L"]:  # CL no longer relevant
+        texts = selected_texts.get(target_category)
+        if not texts:
+            continue  # Skip if no tailored texts for this category
+
         html_file_path = TEXT_PAGES_PATH / f"{instance_code}_{target_category}.html"
         with open(html_file_path, "w", encoding="utf-8") as f:
             f.write(f"""
@@ -54,15 +47,14 @@ for instance_code, data in benchmark_data.items():
                     <h2>{target_category} Tailored Explanations</h2>
             """)
 
-            for model, texts in category_texts.items():
-                for key, text in texts.items():
-                    f.write(f"""
-                    <div class="box">
-                        <p class="category">{model} - {target_category} ({key})</p>
-                        <p>{text}</p>
-                    </div>
-                    """)
+            for key, text in texts.items():
+                f.write(f"""
+                <div class="box">
+                    <p class="category">{key}</p>
+                    <p>{text}</p>
+                </div>
+                """)
 
             f.write("</div></body></html>")
 
-print(f"Tailored explanation HTML files for CS, CL, and L generated in: {TEXT_PAGES_PATH}")
+print(f"Tailored explanation HTML files for CS and L generated in: {TEXT_PAGES_PATH}")

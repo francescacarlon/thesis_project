@@ -6,32 +6,50 @@ from config import BENCHMARK_PATH, RANDOMIZED_BENCHMARK_PATH
 with open(BENCHMARK_PATH, "r", encoding="utf-8") as f:
     benchmark_data = json.load(f)
 
-# Process data
+# Define which topic keys are allowed
+cs_target_topics = {"2", "3", "4"}
+l_target_topics = {"7", "8", "10"}
+target_keys = cs_target_topics.union(l_target_topics)
+
+# Load benchmark data
+with open(BENCHMARK_PATH, "r", encoding="utf-8") as f:
+    benchmark_data = json.load(f)
+
+# Build the randomized dataset
 randomized_data = {}
+
 for key, value in benchmark_data.items():
-    instance_code = f"T{key}"  # Assign unique instance code
+    if key not in target_keys:
+        continue  # Skip everything not explicitly requested
+
+    instance_code = f"T{key}"
     original_text = value.get("original_text")
     original_category = value.get("original_category")
-    original_text_title = value.get("topic")  # Keep original text title
+    original_text_title = value.get("topic")
     tailored_texts = value.get("tailored_texts", {})
-    
-    if isinstance(tailored_texts, dict):
-        selected_texts = {}
+
+    selected_texts = {}
+
+    def collect_prompts(category_name):
+        collected = []
         for model, categories in tailored_texts.items():
-            if isinstance(categories, dict):
-                selected_texts[model] = {}
-                for category, prompts in categories.items():
-                    if isinstance(prompts, dict) and prompts:
-                        selected_prompt_key = random.choice(list(prompts.keys()))  # Select prompt key
-                        selected_key = f"{category}_{model}_{selected_prompt_key}"  # Format key
-                        selected_texts[model][category] = {
-                            selected_key: prompts[selected_prompt_key]  # Store text with formatted key
-                        }
-                    else:
-                        selected_texts[model][category] = None
-    else:
-        selected_texts = None
-    
+            if not isinstance(categories, dict):
+                continue
+            prompts = categories.get(category_name, {})
+            if not isinstance(prompts, dict):
+                continue
+            for prompt_key, prompt_text in prompts.items():
+                collected.append((f"{category_name}_{model}_{prompt_key}", prompt_text))
+        return collected
+
+    if key in cs_target_topics:
+        cs_prompts = collect_prompts("CS")
+        selected_texts["CS"] = dict(random.sample(cs_prompts, min(2, len(cs_prompts)))) if cs_prompts else None
+
+    if key in l_target_topics:
+        l_prompts = collect_prompts("L")
+        selected_texts["L"] = dict(random.sample(l_prompts, min(2, len(l_prompts)))) if l_prompts else None
+
     randomized_data[instance_code] = {
         "instance_code": instance_code,
         "original_category": original_category,
@@ -40,7 +58,7 @@ for key, value in benchmark_data.items():
         "selected_texts": selected_texts
     }
 
-# Save randomized data
+
 with open(RANDOMIZED_BENCHMARK_PATH, "w", encoding="utf-8") as f:
     json.dump(randomized_data, f, indent=4, ensure_ascii=False)
 

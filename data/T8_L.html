@@ -25,9 +25,24 @@
                     </div>
                     <h2>L Tailored Explanations</h2>
             
-                    <div class="box">
-                        <p class="category">mistral - L (L_mistral_prompt5)</p>
-                        <p>1. The computation graph in machine learning is crucial for its backward pass, which calculates the needed derivatives for updating the weights during the learning process. The principal tool used in this process is chain rule from calculus.
+                <div class="box">
+                    <p class="category">L_claude_prompt1</p>
+                    <p>Let me explain backward differentiation using concepts familiar to linguistics students:
+
+Just as we analyze sentences from larger structures down to their smallest components, backward differentiation works by starting from the final output and moving backwards through each step. Think of it like decomposing a complex sentence into its constituent parts.
+
+The chain rule is similar to how we break down nested clauses in syntax trees. If we have a sentence with multiple embedded clauses, we need to understand how each clause relates to the others. Similarly, when we have a sequence of mathematical operations, we need to understand how changes in one part affect the whole.
+
+Let's use a linguistic analogy: Imagine analyzing how a change in word stress (x) affects the overall meaning of an utterance (f). If this relationship passes through intermediate effects on intonation (w), which affects phrase boundaries (v), which finally influences meaning (u), we need to consider each step's contribution. Just as meaning changes cascade through different linguistic levels, the chain rule shows us how changes flow backward through each calculation step.
+
+In our computation graph, each node is like a morpheme that contributes to the final meaning. Just as a morpheme's meaning combines with others to create word meaning, each node takes information from later calculations (upstream) and passes modified information to earlier calculations (downstream), multiplying the effects at each step.
+
+When we calculate derivatives like ∂L/∂c, ∂L/∂a, and ∂L/∂b, we're essentially tracing back through our calculation path, similar to how we might trace semantic change through historical linguistics, seeing how each change influences the final result.</p>
+                </div>
+                
+                <div class="box">
+                    <p class="category">L_mistral_prompt5</p>
+                    <p>1. The computation graph in machine learning is crucial for its backward pass, which calculates the needed derivatives for updating the weights during the learning process. The principal tool used in this process is chain rule from calculus.
 
     2. Let's imagine a complex function f(x) that is the result of multiple operations u(v(x)). To calculate the derivative of this function, we use the chain rule. Specifically, the derivative of f(x) is the derivative of u(x) with respect to v(x) times the derivative of v(x) with respect to x.
 
@@ -36,61 +51,5 @@
     4. The chain rule's fundamental principle is that it allows us to "pass" the gradients from the final node backward through the entire graph. Each node in the graph receives an upstream gradient from its parent node, computes local gradients (gradients of the output with respect to its input), and then passes downstream gradients to the next earlier node using the chain rule.
 
     5. Let's calculate the derivatives we need for our example. Suppose our computation graph is L = ce, the derivative of L with respect to c is straightforward: ∂L/∂c = e. To find the derivatives with respect to a and b, we'll use the chain rule: ∂L/∂a = ∂L/∂e * ∂e/∂a and ∂L/∂b = ∂L/∂e * ∂e/∂d * ∂d/∂b.</p>
-                    </div>
-                    
-                    <div class="box">
-                        <p class="category">llama - L (L_llama_prompt4)</p>
-                        <p>In linguistics, when analyzing the grammatical structure of a sentence, we often break it down into smaller components, similar to how a computation graph is constructed. The backward pass in computation can be likened to tracing the grammatical dependencies in a sentence from the main verb to the subject, and then to the modifiers, to understand how each component contributes to the overall meaning. This process is akin to applying the chain rule in calculus, where the derivative of a composite function is calculated by multiplying the derivatives of its constituent parts. For instance, when computing the derivative of a function f(x) = u(v(x)), we consider how the output of v(x) affects u(x), much like how a modifier affects the meaning of a noun it describes. The chain rule extends to more complex sentence structures, just as it does in calculus, allowing us to compute the derivative of a function like f(x) = u(v(w(x))) by chaining the derivatives of u, v, and w. In the context of computation graphs, this means passing gradients backwards from the final node to earlier nodes, much like how the meaning of a sentence is constructed by combining the meanings of its parts. Each node in the graph, like each word in a sentence, receives an "upstream" contribution from its parent node and computes its own "local" contribution, which is then combined using the chain rule to produce a "downstream" contribution to the next node. This process allows us to compute the derivatives needed for tasks like weight updates, much like how understanding the grammatical structure of a sentence allows us to comprehend its meaning. For example, given a computation graph where L = ce, we can directly compute the derivative ∂L/∂c, just as we can identify the main verb in a sentence. For more complex computations, like ∂L/∂a or ∂L/∂b, we apply the chain rule, tracing the dependencies through the graph, much like tracing grammatical dependencies in a sentence, to compute the necessary derivatives.</p>
-                    </div>
-                    
-                    <div class="box">
-                        <p class="category">gpt4o - L (L_gpt4o_prompt1)</p>
-                        <p>In computational linguistics, understanding how to update weights in a model involves calculating derivatives through a process called backward differentiation. This is where the computation graph plays a crucial role. Let's break this down using concepts from your linguistics background.
-
-Imagine a computation graph as a syntactic tree, where each node represents a function or operation, and each branch indicates the relationship between them. Just like in syntax, where you analyze sentence structure, here we analyze how functions are composed to form a final output.
-
-Backward differentiation uses a mathematical rule called the chain rule, similar to how we analyze sentence components. If we have a function f(x) that combines other functions, say f(x) = u(v(x)), the chain rule helps us find the derivative of f by looking at how changes in x affect v, and then how changes in v affect u. In simpler terms, it's like understanding how changing one word in a sentence might affect the meaning of the entire sentence.
-
-Now, let's extend this to a more complex function: f(x) = u(v(w(x))). The chain rule tells us to find the derivative by multiplying the derivatives at each step: df/dx = du/dv · dv/dw · dw/dx. This is like tracing the influence of a word through several layers of sentence structure.
-
-In practical terms, backward differentiation involves passing gradients (akin to semantic weight or influence) from the final output node back to the input nodes, much like how understanding the meaning of a sentence involves tracing back through its structure to see how each part contributes to the whole.
-
-Let's consider a specific example. Suppose in our computation graph, the output L is a function of c and e, such that L = ce. To find how changes in c affect L, we compute the derivative ∂L/∂c, which is simply e, similar to identifying the direct role a word plays in a sentence. For more complex relationships, like how a affects L, we use the chain rule: ∂L/∂a = ∂L/∂e * ∂e/∂a. This is akin to understanding indirect semantic roles through multiple layers of sentence structure.
-
-By visualizing the computation graph and using principles similar to syntactic analysis, we can grasp how changes propagate through a model, enabling us to adjust weights effectively.</p>
-                    </div>
-                    
-                    <div class="box">
-                        <p class="category">claude - L (L_claude_prompt5)</p>
-                        <p>Here's the adapted explanation for linguistics experts:
-
-Think of backward differentiation like tracing the etymology of a complex derived word back to its root components. Just as a word like "unthinkable" can be decomposed into morphemes (un- + think + -able), mathematical functions can be broken down into simpler parts.
-
-In linguistics, you analyze how meaning changes as you add or remove morphemes. Similarly, in this mathematical process, we trace how changes propagate backward through a chain of operations. This is comparable to how semantic change flows through compound words or phrases.
-
-The chain rule works like morphological dependency: just as the meaning of each morpheme affects the next one in sequence (think of how negation markers affect subsequent elements), each mathematical operation influences the next in a specific order. For example, just as we can trace how the negative prefix "un-" affects the entire word "unthinkable," we can track how changes in one part of a mathematical expression affect the final result.
-
-When we compute derivatives backwards, it's similar to analyzing a sentence from right to left in head-final languages - each element passes information to the previous one. Just as morphological rules combine in specific ways (like how inflectional morphemes must follow derivational ones), these mathematical gradients multiply in a specific order to show how each part contributes to the whole expression.
-
-The computation follows strict rules of composition, much like how morphological and syntactic rules govern word formation and sentence structure in language.</p>
-                    </div>
-                    
-                    <div class="box">
-                        <p class="category">deepseek - L (L_deepseek_prompt2)</p>
-                        <p>**Adapted Explanation:**  
-Think of a neural network’s computation graph as a **syntactic tree** for a sentence. Just as a tree breaks a sentence into nested phrases (e.g., [S [NP][VP]]), the graph breaks a mathematical function into smaller operations. The "backward pass" is like tracing dependencies in reverse to diagnose how each word (or node) contributed to a grammatical error (loss).  
-
-**Chain Rule = Nested Dependencies**  
-Imagine calculating the acceptability of a sentence like *"The cat, which was hungry, meowed."* The overall structure depends on smaller clauses. Similarly, if a function \( f(x) = u(v(w(x))) \), its "derivative" (sensitivity to change) is computed by chaining local sensitivities:  
-\[ \frac{df}{dx} = \frac{du}{dv} \cdot \frac{dv}{dw} \cdot \frac{dw}{dx} \]  
-This mirrors how a misplaced relative clause (*which was hungry*) propagates errors through the sentence structure.  
-
-**Backward Differentiation = Error Diagnosis**  
-Suppose your model’s output \( L \) (e.g., a sentence’s grammaticality score) depends on nodes \( c \) and \( e \) (\( L = c \cdot e \)). To adjust weights (like fixing syntax):  
-1. **Direct influence**: \( \frac{\partial L}{\partial c} = e \) (how much \( c \) alone affects \( L \)).  
-2. **Indirect influence**: For nodes like \( a \) or \( b \), trace backward through dependencies (chain rule):  
-   - \( \frac{\partial L}{\partial a} = \frac{\partial L}{\partial e} \cdot \frac{\partial e}{\partial a} \) (how \( a \) affects \( e \), which then affects \( L \)).  
-
-**Analogy**: Just as you’d revise a verb’s tense (*meowed* → *meows*) by checking its role in the VP and NP, backward pass identifies which "nodes" (words/operations) need adjustment to minimize errors.</p>
-                    </div>
-                    </div></body></html>
+                </div>
+                </div></body></html>

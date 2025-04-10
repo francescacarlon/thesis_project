@@ -25,80 +25,27 @@
                     </div>
                     <h2>CS Tailored Explanations</h2>
             
-                    <div class="box">
-                        <p class="category">mistral - CS (CS_mistral_prompt3)</p>
-                        <p>Syntactic constituency is the principle that a collection of words can function as a single unit, or constituent, in a sentence. For instance, take a 'noun phrase' - a collection of words surrounding a noun, such as 'three parties from Brooklyn'. These words can appear in similar syntactic positions, like before a verb: 'three parties from Brooklyn arrive'.
+                <div class="box">
+                    <p class="category">CS_gpt4o_prompt2</p>
+                    <p>Syntactic constituency is the concept that certain groups of words function as single units, known as constituents, in a sentence. Consider a noun phrase, which is a sequence of words centered around at least one noun. For example, in the sentence 'three parties from Brooklyn arrive,' 'three parties from Brooklyn' behaves as a single unit before the verb 'arrive.'
 
-     A common formal system for modeling this constituent structure is the context-free grammar (CFG). A CFG comprises a set of rules, or productions, each expressing the possible combinations and orderings of symbols in the language, and a lexicon of words and symbols.
+A common way to model these structures in natural language is by using a context-free grammar (CFG). A CFG is a formal system that uses a set of rules, or productions, to show how symbols (words) can be grouped and ordered. It includes a lexicon, which is like a dictionary of words and symbols. For instance, a noun phrase (NP) can be made up of a proper noun or a determiner followed by a nominal. Here's an example of some context-free rules: Det → a, Det → the, Noun → flight.
 
-     Let's break down an example of a rule in a CFG: NP (noun phrase) → ProperNoun or Det (determiner) followed by a Nominal. Here, 'Det' could be a word like 'a' or 'the'. Similarly, 'Nominal' could represent a noun like 'flight'.
+These rules can be applied in a hierarchical manner, meaning they can be nested within each other. Using a CFG, you can generate a set of strings, which is a sequence of rule applications known as a derivation. This can be visually represented as a parse tree, typically shown with the root at the top.
 
-     These rules can be nested, or hierarchically embedded, like Det → a, Det → the, Noun → flight. This means that a 'Det' can be further broken down into individual words, and a 'Noun' can be combined with multiple 'Det's'.
+A CFG, such as L0, defines a formal language. Sentences that can be derived using the grammar are considered part of the formal language and are called grammatical. Those that cannot be derived are ungrammatical. In the field of linguistics, using formal languages like CFGs to model natural languages is known as generative grammar.</p>
+                </div>
+                
+                <div class="box">
+                    <p class="category">CS_mistral_prompt4</p>
+                    <p>"In natural language processing, syntactic constituency refers to the concept of grouping words together to form meaningful units or constituents, such as noun phrases. For instance, a noun phrase might consist of a determiner (like 'a' or 'the') and a noun (like 'flight'). These groupings can appear in similar structures, such as before a verb, as in the example 'three parties from Brooklyn arrive'.
 
-     By applying a series of these rules, a CFG can generate a sequence of words, or a derivation. This derivation is often represented as a parse tree, with the root at the top.
+     A widely used formal system for modeling these constituent structures is the Context-Free Grammar (CFG), which consists of a set of rules for arranging symbols and words, and a lexicon of words and symbols. An example of a CFG rule might be Det → a, Det → the, and Noun → flight.
 
-     A CFG like the one for language L0 defines a formal language. Sentences (strings of words) that can be derived by a grammar belong to the formal language defined by that grammar, and are called grammatical sentences. On the other hand, sentences that cannot be derived by a specific grammar are not part of the language defined by that grammar and are referred to as ungrammatical.
+     These rules can be hierarchically embedded, allowing for more complex structures to be generated. For example, the rule Det → Det Noun could be used to create a more complex noun phrase like 'the flight'.
 
-     In linguistics, the use of formal languages to model natural languages is known as generative grammar.</p>
-                    </div>
-                    
-                    <div class="box">
-                        <p class="category">llama - CS (CS_llama_prompt3)</p>
-                        <p>Imagine you're writing a compiler for a new programming language. You need to define the rules that govern how the language's syntax is structured. In the context of natural language processing, this concept is known as syntactic constituency, where groups of words behave as single units. Think of it like a function or a class in object-oriented programming - a self-contained unit that can be treated as a single entity.
+     The application of a CFG results in a derivation, or sequence of rule expansions, which can be represented by a parse tree, with the root at the top. This tree structure defines a formal language, and sentences that can be derived by the grammar are considered grammatical, while those that cannot are referred to as ungrammatical.
 
-    Consider a sequence of words like "three parties from Brooklyn." In programming terms, you can view this as a data structure, where each word is an element, and the sequence as a whole represents a noun phrase. Just like how you would define a data type for a variable, a noun phrase can be defined as a specific arrangement of words that can appear in a certain context, such as before a verb.
-
-    To model this concept formally, linguists use a system called context-free grammar (CFG), which is similar to a set of production rules in a compiler. A CFG consists of a set of rules that define how symbols (or words) can be combined and ordered, along with a lexicon of words and symbols. These rules can be thought of as functions that take input and produce output, where the output is a valid sequence of words.
-
-    For example, you can define a rule for a noun phrase (NP) as either a ProperNoun or a determiner (Det) followed by a Nominal. This is similar to defining a recursive function, where the output of one function call can be used as input for another. The rules can be hierarchically embedded, allowing you to define complex structures like Det → a, Det → the, Noun → flight.
-
-    The process of applying these rules to generate a valid sequence of words is called a derivation. It's similar to the process of parsing source code, where the compiler applies a set of rules to ensure that the code is syntactically correct. The resulting derivation can be represented as a parse tree, which shows the hierarchical structure of the sentence.
-
-    In linguistics, a CFG defines a formal language, which is a set of strings (or sentences) that can be generated by the grammar. Sentences that can be derived by the grammar are considered grammatical, while those that cannot are considered ungrammatical. This concept is similar to the idea of a programming language's syntax, where certain sequences of characters are valid and others are not.
-
-    The use of formal languages to model natural languages is called generative grammar, which is analogous to the concept of a programming language's grammar. Just as a programming language's grammar defines the rules for writing valid code, a generative grammar defines the rules for constructing valid sentences in a natural language. By using this formal approach, linguists can analyze and understand the structure of language, just like how programmers use grammars to analyze and understand the structure of code.</p>
-                    </div>
-                    
-                    <div class="box">
-                        <p class="category">gpt4o - CS (CS_gpt4o_prompt3)</p>
-                        <p>In computer science terms, syntactic constituency is like treating certain groups of words as single "modules" or "units" in a program. Take a noun phrase, for example: it’s a sequence of words that includes at least one noun. These noun phrases can be used in similar positions in a sentence, much like how functions can be called in similar contexts within different parts of your code. For instance, in the sentence "three parties from Brooklyn arrive," the noun phrase "three parties from Brooklyn" acts as a single unit that appears before the verb "arrive."
-
-To formally model how these word groups work, we use something similar to what you might recognize as context-free grammars (CFGs) in programming languages. A CFG is a set of rules that describe how words and symbols can be combined, much like syntax rules in a programming language. For example, a noun phrase (NP) might be made up of a ProperNoun or a determiner (Det) followed by a Nominal. These rules can be layered, similar to how functions can call other functions: Det → a, Det → the, Noun → flight.
-
-Using these rules, a CFG can generate sequences of words, known as a derivation. Think of it like tracing the execution of a program through a call stack. This derivation can be visualized using a parse tree, where the tree's root is at the top and branches show how the sentence is built, much like a decision tree in algorithms.
-
-A CFG defines a formal language, where sentences that can be "derived" or generated by the grammar are considered "grammatical," like valid inputs that your code can process. Sentences that can't be derived are "ungrammatical," similar to invalid inputs that would cause your program to throw an error.
-
-In the field of linguistics, using formal languages to model natural language structures is called generative grammar, akin to how we use formal languages to define the syntax rules in programming languages.</p>
-                    </div>
-                    
-                    <div class="box">
-                        <p class="category">claude - CS (CS_claude_prompt4)</p>
-                        <p>Here's my adaptation for CS practitioners:
-
-In programming languages, syntactic constituency is like nested object composition, where smaller components combine to form larger functional units. Think of it as a tree data structure where each node represents a language component.
-
-Context-Free Grammar (CFG) is similar to the compilation process's parsing phase, where code is broken down into a hierarchical structure. Just as programming languages have syntax rules (like how to form a valid if-statement or function declaration), natural language has production rules that define valid word combinations.
-
-Consider this analogy: A noun phrase is like a custom object class, where different instances (three parties from Brooklyn, the big computer, my red car) can all serve as the subject in a statement, just as different objects of the same class can be used interchangeably in your code.
-
-The CFG rules work like a recursive function: starting from a root node (like the main() function), it expands into smaller components following predefined patterns. For example:NP -> Det Nominal  // Parent class definition
-Det -> "the"       // Terminal value assignment
-Nominal -> "computer" // Terminal value assignmentThe parse tree generated is essentially an Abstract Syntax Tree (AST), similar to what compilers create when parsing source code. Valid sentences are those that can be generated by following these grammar rules, just as valid programs must follow the programming language's syntax rules.
-
-Think of generative grammar as the BNF (Backus-Naur Form) notation used to define programming language syntax, but for natural language instead.</p>
-                    </div>
-                    
-                    <div class="box">
-                        <p class="category">deepseek - CS (CS_deepseek_prompt4)</p>
-                        <p>In computer science terms, syntactic constituency organizes words into nested groups (constituents) analogous to hierarchical data structures. These groups follow rewrite rules defined in a context-free grammar (CFG), which operates similarly to Backus-Naur Form in programming language specifications. A CFG contains:
-
-1. **Terminals**: Base tokens (words) like "flight" or "the"
-2. **Non-terminals**: Structural categories (NP for noun phrase, VP for verb phrase)
-3. **Production rules**: 
-   - NP → Det Noun (e.g., "the flight")
-   - VP → Verb NP (e.g., "book the flight")
-
-These rules generate parse trees through recursive substitutions, mirroring how compilers derive abstract syntax trees from source code. A sentence is **grammatical** if it can be generated through valid rule applications (like syntactically correct code), otherwise **ungrammatical** (invalid syntax). This formalism enables NLP systems to decompose sentences into executable structural patterns, much like parsing mathematical expressions using operator precedence hierarchies.</p>
-                    </div>
-                    </div></body></html>
+     This approach of using formal languages to model natural languages is known as generative grammar in linguistics."</p>
+                </div>
+                </div></body></html>

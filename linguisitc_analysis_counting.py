@@ -73,6 +73,7 @@ print(f"Entries with hallucinations_overall_average ≥ 4.0 and cosine_similarit
 # print(f"Entries with hallucinations_overall_average ≥ 4.0 and cosine_similarity missing: {halluc_with_missing_cos}")
 """
 
+"""
 import os
 import json
 from config import LINGUISTIC_ANALYSIS_PATH  # Adjust this if you're not using a config module
@@ -331,4 +332,427 @@ g.set_axis_labels("Entry", "Avg. Hallucinations")
 g._legend.set_title("Prompt / Group")
 g.fig.suptitle("Average Hallucinations by Model\nColor = Prompt, Line Style = Group", fontsize=16)
 plt.subplots_adjust(top=0.88)
+plt.show()
+
+
+import json
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the JSON data
+with open("./data/filtered_metadata_halls_4.0_no_CL.json", "r") as f:
+    data = json.load(f)
+
+# Extract token counts per model and category
+token_data = []
+
+for section in data.values():
+    for model, model_data in section.get("tailored_texts", {}).items():
+        for category, category_data in model_data.items():
+            for prompt, prompt_data in category_data.items():
+                token_data.append({
+                    "model": model,
+                    "category": category,
+                    "token_count": prompt_data.get("token_count", 0)
+                })
+
+# Create DataFrame
+df = pd.DataFrame(token_data)
+
+# Compute average token counts per model per category
+avg_token_counts = df.groupby(["category", "model"])["token_count"].mean().unstack().round(2)
+
+# Display the average table
+print("Average Token Count per Model by Category:\n")
+print(avg_token_counts)
+
+# Compute mean and standard deviation per model per category
+model_stats = df.groupby(["category", "model"])["token_count"].agg(["mean", "std"]).round(2)
+
+# To print as a readable table
+print("Token Count Stats per Model by Category:")
+print(model_stats)
+
+# Plot the results
+plt.figure(figsize=(12, 6))
+avg_token_counts.T.plot(kind="bar")
+plt.title("Average Token Count per Model by Category")
+plt.ylabel("Average Token Count")
+plt.xlabel("Model")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+import json
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load JSON data
+with open("./data/filtered_metadata_halls_4.0_no_CL.json", "r") as f:
+    data = json.load(f)
+
+# Extract prompt, category, and token count
+prompt_with_cat_data = []
+
+for section in data.values():
+    for model, model_data in section.get("tailored_texts", {}).items():
+        for category, category_data in model_data.items():
+            for prompt, prompt_data_item in category_data.items():
+                prompt_with_cat_data.append({
+                    "prompt": prompt,
+                    "category": category,
+                    "token_count": prompt_data_item.get("token_count", 0)
+                })
+
+# Create DataFrame
+prompt_df_cat = pd.DataFrame(prompt_with_cat_data)
+
+# Compute average token count per prompt and category
+avg_token_per_prompt_cat = prompt_df_cat.groupby(["category", "prompt"])["token_count"].mean().unstack().round(2)
+
+# Print the results
+print("Average Token Count per Prompt by Category:")
+print(avg_token_per_prompt_cat)
+
+# Compute mean and standard deviation per prompt per category
+prompt_stats = prompt_df_cat.groupby(["category", "prompt"])["token_count"].agg(["mean", "std"]).round(2)
+
+# To print the result
+print("Token Count Stats per Prompt by Category:")
+print(prompt_stats)
+
+
+# Plot
+avg_token_per_prompt_cat.T.plot(kind="bar", figsize=(12, 6))
+plt.title("Average Token Count per Prompt Number by Category")
+plt.ylabel("Average Token Count")
+plt.xlabel("Prompt Number")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+# Pivot for plotting
+mean_model_df = model_stats["mean"].unstack()
+std_model_df = model_stats["std"].unstack()
+
+# Print summary table
+print("Token Count Stats per Model by Category:")
+print(model_stats)
+
+# Plot with error bars
+mean_model_df.T.plot(kind="bar", yerr=std_model_df.T, figsize=(12, 6), capsize=4)
+plt.title("Average Token Count per Model by Category (with Std Dev)")
+plt.ylabel("Average Token Count")
+plt.xlabel("Model")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+
+# Pivoted versions
+mean_df = prompt_stats["mean"].unstack()
+std_df = prompt_stats["std"].unstack()
+
+# Plot with error bars
+mean_df.T.plot(kind="bar", yerr=std_df.T, figsize=(12, 6), capsize=4)
+plt.title("Average Token Count per Prompt Number by Category (with Std Dev)")
+plt.ylabel("Average Token Count")
+plt.xlabel("Prompt Number")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+
+import json
+import pandas as pd
+import matplotlib.pyplot as plt
+import re
+from matplotlib.patches import Patch
+
+# Load JSON data
+with open("./data/filtered_metadata_halls_4.0_no_CL.json", "r") as f:
+    data = json.load(f)
+
+# Extract token counts per topic
+topic_data = []
+for topic, section in data.items():
+    for model, model_data in section.get("tailored_texts", {}).items():
+        for category, category_data in model_data.items():
+            for prompt, prompt_data in category_data.items():
+                topic_data.append({
+                    "topic": topic,
+                    "token_count": prompt_data.get("token_count", 0)
+                })
+
+# Create DataFrame
+df_topic = pd.DataFrame(topic_data)
+
+# Helper to extract topic number
+def extract_number(topic_name):
+    match = re.search(r'(\d+)$', topic_name)
+    return int(match.group(1)) if match else float('inf')
+
+df_topic["topic_number"] = df_topic["topic"].apply(extract_number)
+
+# Group by topic and compute mean & std
+topic_stats = (
+    df_topic
+    .groupby(["topic", "topic_number"])["token_count"]
+    .agg(["mean", "std"])
+    .round(2)
+    .sort_values("topic_number")
+    .reset_index()
+)
+
+# Drop topic_number for display
+topic_stats_cleaned = topic_stats.drop(columns=["topic_number"]).set_index("topic")
+
+# Add (CS) or (L) to topic labels
+def label_category(topic):
+    num = extract_number(topic)
+    if num <= 5:
+        return f"{topic}"
+    elif num <= 10:
+        return f"{topic}"
+    else:
+        return topic
+
+topic_stats_cleaned_labeled = topic_stats_cleaned.copy()
+topic_stats_cleaned_labeled.index = [label_category(t) for t in topic_stats_cleaned.index]
+
+# Set bar colors
+colors = [
+    "blue" if extract_number(topic) <= 5 else "orange"
+    for topic in topic_stats_cleaned.index
+]
+
+# Plot
+plt.figure(figsize=(14, 6))
+plt.bar(
+    topic_stats_cleaned_labeled.index,
+    topic_stats_cleaned["mean"],
+    yerr=topic_stats_cleaned["std"],
+    capsize=4,
+    color=colors
+)
+plt.title("Average Token Count per Topic with Std Dev")
+plt.ylabel("Average Token Count")
+plt.xlabel("Topic")
+plt.xticks(rotation=90)
+plt.tight_layout()
+
+# Add legend
+legend_elements = [
+    Patch(facecolor='blue', label='CS'),
+    Patch(facecolor='orange', label='L')
+]
+plt.legend(handles=legend_elements, title="Category")
+
+plt.show()
+
+import json
+import pandas as pd
+import matplotlib.pyplot as plt
+import re
+
+# Load the JSON data
+with open("./data/filtered_metadata_halls_4.0_no_CL.json", "r") as f:
+    data = json.load(f)
+
+# Extract token counts per topic
+topic_data = []
+for topic, section in data.items():
+    for model, model_data in section.get("tailored_texts", {}).items():
+        for category, category_data in model_data.items():
+            for prompt, prompt_data in category_data.items():
+                topic_data.append({
+                    "topic": topic,
+                    "token_count": prompt_data.get("token_count", 0)
+                })
+
+# Create DataFrame
+df_topic = pd.DataFrame(topic_data)
+
+# Extract numeric suffix for sorting
+def extract_number(topic_name):
+    match = re.search(r'(\d+)$', topic_name)
+    return int(match.group(1)) if match else float('inf')
+
+df_topic["topic_number"] = df_topic["topic"].apply(extract_number)
+
+# Compute stats per topic: number of texts, mean, std
+topic_stats = (
+    df_topic
+    .groupby(["topic", "topic_number"])["token_count"]
+    .agg(num_tailored_texts="count", mean="mean", std="std")
+    .round(2)
+    .sort_values("topic_number")
+    .reset_index()
+)
+
+# Drop helper column for clean display
+topic_stats_cleaned = topic_stats.drop(columns=["topic_number"]).set_index("topic")
+
+# Print the result
+print("Token Count Stats per Topic (Number of Texts, Mean, Std):")
+print(topic_stats_cleaned)
+"""
+
+import json
+import pandas as pd
+import matplotlib.pyplot as plt
+import re
+from matplotlib.patches import Patch
+
+# Load JSON data
+with open("./data/filtered_metadata_halls_4.0_no_CL.json", "r") as f:
+    data = json.load(f)
+
+# Extract hallucination scores per topic
+hallucination_data = []
+for topic, section in data.items():
+    for model, model_data in section.get("tailored_texts", {}).items():
+        for category, category_data in model_data.items():
+            for prompt, prompt_data in category_data.items():
+                halluc = prompt_data.get("hallucination_avg")
+                if halluc is not None:
+                    hallucination_data.append({
+                        "topic": topic,
+                        "hallucination_avg": halluc
+                    })
+
+# Create DataFrame
+df_halluc = pd.DataFrame(hallucination_data)
+
+# Extract topic number for sorting
+def extract_number(topic_name):
+    match = re.search(r'(\d+)$', topic_name)
+    return int(match.group(1)) if match else float('inf')
+
+df_halluc["topic_number"] = df_halluc["topic"].apply(extract_number)
+
+# Compute stats per topic: count, mean, std
+halluc_stats = (
+    df_halluc
+    .groupby(["topic", "topic_number"])["hallucination_avg"]
+    .agg(num_tailored_texts="count", mean="mean", std="std")
+    .round(2)
+    .sort_values("topic_number")
+    .reset_index()
+    .drop(columns=["topic_number"])
+    .set_index("topic")
+)
+
+# Print table with counts
+print("Hallucination Score Stats per Topic (with Count, Mean, Std):")
+print(halluc_stats)
+
+# Assign colors: blue = CS (1–5), orange = L (6–10)
+colors_ordered = [
+    "blue" if extract_number(topic) <= 5 else "orange"
+    for topic in halluc_stats.index
+]
+
+# Plot
+plt.figure(figsize=(14, 6))
+plt.bar(
+    halluc_stats.index,
+    halluc_stats["mean"],
+    yerr=halluc_stats["std"],
+    capsize=4,
+    color=colors_ordered
+)
+plt.title("Average Hallucination Score per Topic (1–10) with Std Dev")
+plt.ylabel("Average Hallucination Score")
+plt.xlabel("Topic")
+plt.xticks(rotation=90)
+
+# Add legend
+legend_elements = [
+    Patch(facecolor='blue', label='CS'),
+    Patch(facecolor='orange', label='L')
+]
+plt.legend(handles=legend_elements, title="Category")
+
+plt.tight_layout()
+plt.show()
+
+
+import json
+import pandas as pd
+import matplotlib.pyplot as plt
+import re
+from matplotlib.patches import Patch
+
+# Load JSON data
+with open("./data/filtered_metadata_halls_4.0_no_CL.json", "r") as f:
+    data = json.load(f)
+
+# Extract cosine similarity per topic
+cosine_data = []
+for topic, section in data.items():
+    for model, model_data in section.get("tailored_texts", {}).items():
+        for category, category_data in model_data.items():
+            for prompt, prompt_data in category_data.items():
+                cosine = prompt_data.get("cosine_similarity")
+                if cosine is not None:
+                    cosine_data.append({
+                        "topic": topic,
+                        "cosine_similarity": cosine
+                    })
+
+# Create DataFrame
+df_cosine = pd.DataFrame(cosine_data)
+
+# Extract topic number for sorting
+def extract_number(topic_name):
+    match = re.search(r'(\d+)$', topic_name)
+    return int(match.group(1)) if match else float('inf')
+
+df_cosine["topic_number"] = df_cosine["topic"].apply(extract_number)
+
+# Compute stats per topic
+cosine_stats = (
+    df_cosine
+    .groupby(["topic", "topic_number"])["cosine_similarity"]
+    .agg(num_tailored_texts="count", mean="mean", std="std")
+    .round(3)
+    .sort_values("topic_number")
+    .reset_index()
+    .drop(columns=["topic_number"])
+    .set_index("topic")
+)
+
+# Print the table
+print("Cosine Similarity Stats per Topic (with Count, Mean, Std):")
+print(cosine_stats)
+
+# Assign colors: blue for CS (1–5), orange for L (6–10)
+colors_ordered = [
+    "blue" if extract_number(topic) <= 5 else "orange"
+    for topic in cosine_stats.index
+]
+
+# Plot
+plt.figure(figsize=(14, 6))
+plt.bar(
+    cosine_stats.index,
+    cosine_stats["mean"],
+    yerr=cosine_stats["std"],
+    capsize=4,
+    color=colors_ordered
+)
+plt.title("Average Cosine Similarity per Topic (1–10) with Std Dev")
+plt.ylabel("Average Cosine Similarity")
+plt.xlabel("Topic")
+plt.xticks(rotation=90)
+
+# Legend
+legend_elements = [
+    Patch(facecolor='blue', label='CS '),
+    Patch(facecolor='orange', label='L')
+]
+plt.legend(handles=legend_elements, title="Category")
+
+plt.tight_layout()
 plt.show()
