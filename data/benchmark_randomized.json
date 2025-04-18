@@ -1,73 +1,434 @@
 {
     "T2": {
+        "topic": "Constituency and Context-Free Grammars",
         "instance_code": "T2",
-        "original_category": "L",
-        "original_text_title": "Constituency and Context-Free Grammars",
-        "original_text": "Syntactic constituency is the idea that groups of words can behave as single units, or constituents. Consider the noun phrase, a sequence of words surrounding at least one noun. [...] they can all appear in similar syntactic environments, for example, before a verb: 'three parties from Brooklyn arrive'. [...] A widely used formal system for modeling constituent structure in natural language is the context-free grammar (CFG). [...] A context-free grammar consists of a set of rules or productions, each of which expresses the ways that symbols of the language can be grouped and ordered together, and a lexicon of words and symbols. [...] an NP (or noun phrase) can be composed of either a ProperNoun or a determiner (Det) followed by a Nominal; [...]. Context-free rules can be hierarchically  embedded, [...]: Det → a, Det → the, Noun → flight. [...] Thus, a CFG can be used to generate a set of strings. This sequence of rule expansions is called a derivation of the string of words. It is common to represent a derivation by a parse tree (commonly shown inverted with the root at the top). [...]. A CFG like that of L0 defines a formal language. Sentences (strings of words) that can be derived by a grammar are in the formal language defined by that grammar, and are called grammatical sentences. Sentences that cannot be derived by a given formal grammar are not in the language defined by that grammar and are  referred to as ungrammatical. [...] In linguistics, the use of formal languages to model natural languages is called generative grammar [...].",
         "selected_texts": {
             "CS": {
-                "CS_gpt4o_prompt2": "Syntactic constituency is the concept that certain groups of words function as single units, known as constituents, in a sentence. Consider a noun phrase, which is a sequence of words centered around at least one noun. For example, in the sentence 'three parties from Brooklyn arrive,' 'three parties from Brooklyn' behaves as a single unit before the verb 'arrive.'\n\nA common way to model these structures in natural language is by using a context-free grammar (CFG). A CFG is a formal system that uses a set of rules, or productions, to show how symbols (words) can be grouped and ordered. It includes a lexicon, which is like a dictionary of words and symbols. For instance, a noun phrase (NP) can be made up of a proper noun or a determiner followed by a nominal. Here's an example of some context-free rules: Det → a, Det → the, Noun → flight.\n\nThese rules can be applied in a hierarchical manner, meaning they can be nested within each other. Using a CFG, you can generate a set of strings, which is a sequence of rule applications known as a derivation. This can be visually represented as a parse tree, typically shown with the root at the top.\n\nA CFG, such as L0, defines a formal language. Sentences that can be derived using the grammar are considered part of the formal language and are called grammatical. Those that cannot be derived are ungrammatical. In the field of linguistics, using formal languages like CFGs to model natural languages is known as generative grammar.",
-                "CS_mistral_prompt4": "\"In natural language processing, syntactic constituency refers to the concept of grouping words together to form meaningful units or constituents, such as noun phrases. For instance, a noun phrase might consist of a determiner (like 'a' or 'the') and a noun (like 'flight'). These groupings can appear in similar structures, such as before a verb, as in the example 'three parties from Brooklyn arrive'.\n\n     A widely used formal system for modeling these constituent structures is the Context-Free Grammar (CFG), which consists of a set of rules for arranging symbols and words, and a lexicon of words and symbols. An example of a CFG rule might be Det → a, Det → the, and Noun → flight.\n\n     These rules can be hierarchically embedded, allowing for more complex structures to be generated. For example, the rule Det → Det Noun could be used to create a more complex noun phrase like 'the flight'.\n\n     The application of a CFG results in a derivation, or sequence of rule expansions, which can be represented by a parse tree, with the root at the top. This tree structure defines a formal language, and sentences that can be derived by the grammar are considered grammatical, while those that cannot are referred to as ungrammatical.\n\n     This approach of using formal languages to model natural languages is known as generative grammar in linguistics.\""
+                "CS_claude_prompt1": {
+                    "text": "Here's an explanation adapted for CS students:\n\nContext-free grammars (CFGs), which you may know from compiler design, can also model natural language structure. Similar to how we parse programming languages, natural language has components that combine hierarchically.\n\nThink of syntactic constituency like object-oriented composition: words group together to form larger functional units (constituents), just as objects combine to create more complex objects. For example, a noun phrase is like a composite class that can contain multiple elements but acts as a single unit in larger structures.\n\nThe CFG implementation for natural language works exactly like the grammars you've used for programming languages:\n- Production rules define valid combinations (similar to BNF notation)\n- A lexicon serves as the terminal symbols (like keywords and literals in programming)\n- Parse trees represent the derivation (identical to AST generation)\n\nFor example, consider this simplified grammar:NP -> ProperNoun | Det Nominal\nDet -> \"a\" | \"the\"\nNoun -> \"flight\"Just as a compiler validates program syntax, these rules determine if a sentence is grammatical (parseable) or ungrammatical (syntax error). The process of generating valid sentences by applying these rules is called generative grammar - conceptually similar to how a programming language grammar generates valid program structures.\n\nThis is why compiler theory and natural language processing share many fundamental algorithms, like recursive descent parsing and CYK parsing, despite operating on different types of languages.",
+                    "cosine_similarity": 0.8069146275520325,
+                    "hallucination_avg": 4.5,
+                    "token_count": 219,
+                    "readability": {
+                        "flesch_reading_ease": 22.79,
+                        "flesch_kincaid_grade": 17.9
+                    },
+                    "pos": {
+                        "RB": 0.04411764705882353,
+                        "DT": 0.09313725490196079,
+                        "NN": 0.3431372549019608,
+                        "VBN": 0.014705882352941176,
+                        "IN": 0.11764705882352941,
+                        "NNP": 0.06372549019607843,
+                        "MD": 0.014705882352941176,
+                        "VB": 0.10294117647058823,
+                        "JJ": 0.1568627450980392,
+                        "VBG": 0.024509803921568627,
+                        "CC": 0.024509803921568627
+                    },
+                    "bleu_score": {
+                        "bleu_score": 0.3581732347591889
+                    },
+                    "rouge_scores": {
+                        "rouge_1": 0.44166666666666665,
+                        "rouge_2": 0.0794979079497908,
+                        "rouge_L": 0.18333333333333335
+                    }
+                },
+                "CS_mistral_prompt1": {
+                    "text": "Syntactic constituents are the fundamental units of organization in language, where groups of words work together to form a single, coherent unit. For instance, a noun phrase (NP) is a sequence of words centered around a noun, such as 'three parties from Brooklyn'. These groups can appear in similar contexts, for example, they can all follow a verb: 'arrive'.\n\n     A common formal system used to analyze and model the structure of these constituents is the Context-Free Grammar (CFG). An CFG consists of a set of rules and a lexicon of words. These rules define the ways that symbols can be grouped and ordered together. For example, an NP can be composed of either a ProperNoun or a Determiner (Det) followed by a Nominal:\n\n    - Det → a, Det → the\n    - Noun → flight\n\n     Rules can be hierarchically nested, allowing for more complex structures. For example, Det → a Det → the.\n\n     By applying these rules in a sequence, we can generate a set of strings, or sentences. This process is called a derivation. A derivation can be represented by a tree structure, with the root at the top.\n\n     An CFG defines a formal language, and sentences that can be derived by a grammar are grammatical sentences. Sentences that cannot be derived by a grammar are ungrammatical.\n\n     The use of formal languages to model natural languages is called generative grammar.",
+                    "cosine_similarity": 0.9449005126953125,
+                    "hallucination_avg": 4.3,
+                    "token_count": 221,
+                    "readability": {
+                        "flesch_reading_ease": 63.8,
+                        "flesch_kincaid_grade": 8.3
+                    },
+                    "pos": {
+                        "JJ": 0.08450704225352113,
+                        "NN": 0.24882629107981222,
+                        "VB": 0.11267605633802817,
+                        "DT": 0.18309859154929578,
+                        "IN": 0.13615023474178403,
+                        "RB": 0.023474178403755867,
+                        "NNP": 0.07042253521126761,
+                        "VBN": 0.056338028169014086,
+                        "MD": 0.04225352112676056,
+                        "CC": 0.03286384976525822,
+                        "VBG": 0.009389671361502348
+                    },
+                    "bleu_score": {
+                        "bleu_score": 0.6142736393856458
+                    },
+                    "rouge_scores": {
+                        "rouge_1": 0.7557411273486431,
+                        "rouge_2": 0.46540880503144655,
+                        "rouge_L": 0.580375782881002
+                    }
+                }
             }
         }
     },
     "T3": {
+        "topic": "Semantic Roles and Diathesis Alternations",
         "instance_code": "T3",
-        "original_category": "L",
-        "original_text_title": "Semantic Roles and Diathesis Alternations",
-        "original_text": "Consider the meanings of the arguments Sasha, Pat, the window, and the door in these two sentences. Sasha broke the window. Pat opened the door. The subjects Sasha and Pat, what we might call the breaker of the window breaking event and the opener of the door-opening event, have something in common. They are both volitional actors, often animate, and they have direct causal responsibility for their events. Thematic roles are a way to capture this semantic commonality between breakers and openers. We say that the subjects of both these verbs are agents. Thus, AGENT is the thematic role that represents an abstract idea such as volitional causation. Similarly, the direct objects of both these verbs, the BrokenThing and OpenedThing, are both prototypically inanimate objects that are affected in some way by the action. The semantic role for these participants is theme. [...] Semantic roles thus help generalize over different surface realizations of predicate arguments. For example, while the AGENT is often realized as the subject of the sentence, in other cases the THEME can be the subject. [...] John (AGENT) broke the window (THEME). John (AGENT) broke the window (THEME) with a rock (INSTRUMENT). The rock (INSTRUMENT) broke the window (THEME). The window (THEME) broke. The window (THEME) was broken by John (AGENT). These examples suggest that break has (at least) the possible arguments AGENT, THEME, and INSTRUMENT. [...] These multiple argument structure realizations [...] are called verb alternations or diathesis alternations.",
         "selected_texts": {
             "CS": {
-                "CS_llama_prompt5": "In the realm of Computer Science, you're likely familiar with concepts like object-oriented programming and design patterns. Think of semantic roles as a way to define abstract classes or interfaces that capture common behaviors or characteristics across different entities. Just as an interface in Java defines a contract that must be implemented by any class that implements it, semantic roles define a set of properties or behaviors that are shared by entities in a sentence. In the context of natural language processing, these entities can be thought of as \"objects\" that play specific roles in a \"scene\" or sentence. The AGENT role, for example, represents an entity that performs an action, much like a class that implements an interface for a specific action. The THEME role represents an entity that is affected by the action, similar to an object that is modified by a method call. Just as you might have multiple classes that implement the same interface, you can have multiple entities that play the same semantic role in different sentences. The concept of verb alternations or diathesis alternations can be thought of as different implementations of the same interface, where the same action or verb can be realized in different ways, with different entities playing different roles. For instance, in the sentence \"John broke the window,\" John is the AGENT and the window is the THEME. But in the sentence \"The window was broken by John,\" the window is still the THEME, but it's now the subject of the sentence, illustrating how the same entity can play different roles in different contexts. This is similar to how a class can implement multiple interfaces, or how an object can be used in different contexts, playing different roles. By recognizing these semantic roles and their relationships, you can better understand the structure and meaning of natural language, much like how you would analyze the design patterns and interfaces in a software system.",
-                "CS_deepseek_prompt2": "Thematic roles are like abstract data types that categorize arguments based on their function in an event. Think of them as semantic interfaces – different noun phrases implement these roles depending on their relationship to the verb.  \n\nIn \"Sasha broke the window\" and \"Pat opened the door\":  \n- **Sasha/Pat** = AGENT (volitional initiator, like a `main()` function triggering an action)  \n- **window/door** = THEME (object being modified, similar to a parameter passed by reference)  \n\nThese roles persist even when syntax changes, just like how a variable's memory address matters more than its identifier. For example:  \n1. `break(agent=John, theme=window)` ➔ \"John broke the window\"  \n2. `break(theme=window)` ➔ \"The window broke\" (agent omitted like a default parameter)  \n3. `break(instrument=rock, theme=window)` ➔ \"The rock broke the window\" (instrument promoted to subject position)  \n\nThis syntactic flexibility is called **verb alternation** – similar to method overloading where the same operation accepts different argument structures. Recognizing these patterns helps NLP systems parse meaning independently of surface syntax, like maintaining invariants across different algorithm implementations."
+                "CS_mistral_prompt4": {
+                    "text": "1. Distinguish the functions of Sasha, Pat, window, and door in these statements: Sasha shattered the window, Pat opened the door. Sasha and Pat, the instigators of the window-shattering and door-opening incidents, share a commonality. They are active agents who have direct control over their actions. In CS, we label these subjects as agents. The thematic role term for this concept is AGENT. On the other hand, the window and door are passive entities that are subject to change due to the actions of these agents. The semantic role for them is theme.\n\n    2. For example, in the sentences \"John shattered the window\" and \"John shattered the window with a hammer\", the AGENT is John, while the THEME is the broken window, and the hammer acts as the INSTRUMENT in the second sentence. In \"The window shattered\", the window is still the theme, but without an explicit agent. In \"The window was shattered by John\", the agent is John, and the window remains the theme. These examples demonstrate that the verb \"shatter\" can take the arguments AGENT, THEME, and INSTRUMENT.\n\n    3. These diverse argument structures, such as those illustrated in the examples, are known as verb alternations or diathesis alternations. They provide a means to generalize over various forms of predicate arguments. For instance, while the AGENT is often the subject of the sentence, in some cases, the THEME can take on this role.\n\n    By using familiar CS terminology and providing examples that the jury can relate to, the explanation becomes more understandable and accurate.",
+                    "cosine_similarity": 0.8980931639671326,
+                    "hallucination_avg": 4.2,
+                    "token_count": 250,
+                    "readability": {
+                        "flesch_reading_ease": 62.68,
+                        "flesch_kincaid_grade": 8.7
+                    },
+                    "pos": {
+                        "VB": 0.100418410041841,
+                        "DT": 0.200836820083682,
+                        "NN": 0.2719665271966527,
+                        "IN": 0.13389121338912133,
+                        "NNP": 0.09205020920502092,
+                        "CC": 0.0502092050209205,
+                        "VBN": 0.03765690376569038,
+                        "JJ": 0.07531380753138076,
+                        "RB": 0.012552301255230125,
+                        "MD": 0.012552301255230125,
+                        "RP": 0.0041841004184100415,
+                        "VBG": 0.008368200836820083
+                    },
+                    "bleu_score": {
+                        "bleu_score": 0.5616883116883117
+                    },
+                    "rouge_scores": {
+                        "rouge_1": 0.6156941649899397,
+                        "rouge_2": 0.2828282828282828,
+                        "rouge_L": 0.3822937625754528
+                    }
+                },
+                "CS_gpt4o_prompt5": {
+                    "text": "In computer science, especially in areas like programming and machine learning, understanding how different components interact can be crucial. One way to think about this is through \"thematic roles,\" which are similar to how we define roles in a function.\n\nConsider two sentences as functions with inputs: \"Sasha broke the window,\" and \"Pat opened the door.\" Here, Sasha and Pat are like the function's main parameters that initiate an action—similar to a main method in a program. These are called AGENTS because they actively cause something to happen, just as a function might execute a series of commands.\n\nThe window and the door represent the objects impacted by these actions, akin to data structures modified by a function. These are labeled as THEMES because they undergo change due to the AGENT's actions.\n\nJust like in programming, where a function can have different input and output configurations, verbs in language can have different argument structures, known as verb alternations. For example:\n\n- \"John broke the window\" involves John as the AGENT and the window as the THEME.\n- \"John broke the window with a rock\" introduces a new role, INSTRUMENT, which is the rock—akin to a tool or helper function in a program.\n- \"The rock broke the window\" shifts the role of the rock to be more prominent, similar to refactoring a program where a helper function becomes the main one.\n- \"The window was broken by John\" reorders roles, like changing the order of operations in a function without altering the final result.\n\nThese thematic roles help us understand how different actions and participants interact, much like analyzing a program's flow and identifying the roles of various components. This concept is useful when designing systems that need to understand language, such as natural language processing tools.",
+                    "cosine_similarity": 0.751553475856781,
+                    "hallucination_avg": 4.55,
+                    "token_count": 291,
+                    "readability": {
+                        "flesch_reading_ease": 50.26,
+                        "flesch_kincaid_grade": 11.4
+                    },
+                    "pos": {
+                        "IN": 0.13108614232209737,
+                        "NN": 0.30711610486891383,
+                        "RB": 0.02247191011235955,
+                        "CC": 0.033707865168539325,
+                        "VBG": 0.026217228464419477,
+                        "JJ": 0.0749063670411985,
+                        "MD": 0.0149812734082397,
+                        "VB": 0.1198501872659176,
+                        "CD": 0.00749063670411985,
+                        "DT": 0.1647940074906367,
+                        "NNP": 0.052434456928838954,
+                        "VBN": 0.0449438202247191
+                    },
+                    "bleu_score": {
+                        "bleu_score": 0.42485549132947975
+                    },
+                    "rouge_scores": {
+                        "rouge_1": 0.46840148698884754,
+                        "rouge_2": 0.16044776119402987,
+                        "rouge_L": 0.23420074349442377
+                    }
+                }
             }
         }
     },
     "T4": {
+        "topic": "Word Senses and Relations Between Senses",
         "instance_code": "T4",
-        "original_category": "L",
-        "original_text_title": "Word Senses and Relations Between Senses",
-        "original_text": "A sense (or word sense) is a discrete representation of one aspect of the meaning of a word. [...] In context, it's easy to see the different meanings: mouse1: a mouse controlling a computer system in 1968. mouse2: a quiet animal like a mouse. bank1: a bank can hold the investments in a custodial account. bank2: as agriculture burgeons on the east bank, the river...[...] we need to consider the alternative ways that dictionaries and thesauruses offer for defining senses. One is based on the fact that dictionaries or thesauruses give textual definitions for each sense called glosses. [...] bank: 1. financial institution that accepts deposits and channels the money into lending activities 2. sloping land (especially the slope beside a body of water). [...] when two senses of two different words (lemmas) are identical, or nearly identical, we say the two senses are synonyms [...] couch/sofa vomit/throw up filbert/hazelnut car/automobile. [...] antonyms are words with an opposite meaning, like: long/short big/little fast/slow cold/hot dark/light. [...] [a] hyponym of [a] word if the [other word] is more specific, denoting a subclass of the other. For example, car is a hyponym of vehicle, dog is a hyponym of animal, [...]. Conversely, we say that vehicle is a hypernym of car, and animal is a hypernym of dog. [...] meronymy, the part-whole relation. [...] wheel is a meronym of car, and car is a holonym of wheel.",
         "selected_texts": {
             "CS": {
-                "CS_mistral_prompt1": "1. In the realm of Computer Science, understanding word senses is crucial. Each sense represents a unique facet of a word's meaning.\n\n    2. For example, consider the words 'mouse' and 'bank'. In the context of programming, 'mouse' refers to the input device that controls a cursor on the screen. 'Bank', on the other hand, can denote a financial institution that manages money transactions.\n\n    3. Dictionaries and thesauruses help define these senses using textual definitions called 'glosses'. For example, the gloss for 'bank' would be something like: \"a financial institution that accepts deposits and channels money into lending activities\".\n\n    4. When two words share identical or nearly identical meanings, we call them synonyms. For instance, 'couch' and 'sofa' are synonyms, as are 'filbert' and 'hazelnut'.\n\n    5. Conversely, antonyms are words with opposite meanings. For example, 'long' and 'short', 'big' and 'little', 'fast' and 'slow', 'cold' and 'hot', and 'dark' and 'light' are all pairs of antonyms.\n\n    6. A hyponym is a word that is more specific and denotes a subclass of another word. For example, 'car' is a hyponym of 'vehicle', meaning that a car is a type of vehicle.\n\n    7. On the flip side, we call the other word a hypernym. For instance, 'vehicle' is a hypernym of 'car', as it encompasses all types of vehicles, not just cars.\n\n    8. Lastly, meronymy is the relationship between a part and a whole. For example, in a car, the 'wheel' is a part, and the 'car' is the whole. In this case, the car is the holonym of the wheel.",
-                "CS_deepseek_prompt3": "In natural language processing, think of **word senses** as different \"function overloads\" for the same word. Just like `sort()` might handle arrays vs. linked lists differently, the word \"mouse\" switches meaning based on context:  \n- `mouse(context=\"tech\")` → computer device  \n- `mouse(context=\"nature\")` → small rodent  \n\n**Synonyms** are like aliases for the same concept—different variable names pointing to the same object (e.g., `couch`/`sofa` or `vomit`/`throw_up`). **Antonyms** are boolean opposites: `dark`/`light` works like `is_dark = !is_light`.  \n\n**Hyponyms** and **hypernyms** mirror class inheritance:  \n- `Car` *inherits from* `Vehicle` → \"car\" is a hyponym of \"vehicle\"  \n- `Vehicle` *is a superclass of* `Car` → \"vehicle\" is a hypernym of \"car\"  \n\n**Meronymy** describes object composition:  \n- `Wheel` is a component of `Car` → \"wheel\" is a meronym of \"car\"  \n- `Car` *has-a* `Wheel` → \"car\" is a holonym of \"wheel\"  \n\nDictionaries act like key-value databases, where each sense (key) maps to a definition (value). Disambiguating senses is like resolving variable naming conflicts in a scope—the correct \"version\" depends on surrounding code (context)."
+                "CS_llama_prompt4": {
+                    "text": "In the realm of NLP, a sense can be thought of as a unique class or object in a programming context, encapsulating one specific aspect of a word's meaning. Consider the example of a mouse, which can refer to either a computer input device or a small rodent. This duality in meaning is akin to polymorphism in object-oriented programming, where a single entity can have multiple forms or behaviors. Similarly, a bank can be a financial institution or the side of a river, illustrating the concept of method overloading, where a single function or term can have different implementations or meanings based on context. The definitions provided by dictionaries and thesauruses, known as glosses, can be viewed as docstrings or comments in code, offering a human-readable description of each sense. Synonyms, such as couch and sofa, or vomit and throw up, can be seen as equivalent classes or interfaces, where two different words convey the same meaning. Antonyms, like long and short, or big and little, represent opposing values or states, similar to true and false in a boolean context. The relationship between hyponyms and hypernyms can be likened to inheritance in object-oriented programming, where a more specific class (hyponym) inherits properties from a more general class (hypernym). For instance, car is a subclass of vehicle, just as dog is a subclass of animal. Meronymy, the part-whole relation, can be thought of as a composition relationship in programming, where an object is composed of smaller parts, such as a car being composed of wheels, or a wheel being a part of a car. This analogy allows us to better understand the complex relationships between words and their meanings, much like how we design and understand software systems.",
+                    "cosine_similarity": 0.7607795000076294,
+                    "hallucination_avg": 4.4,
+                    "token_count": 283,
+                    "readability": {
+                        "flesch_reading_ease": 44.98,
+                        "flesch_kincaid_grade": 13.5
+                    },
+                    "pos": {
+                        "IN": 0.13805970149253732,
+                        "DT": 0.13432835820895522,
+                        "NN": 0.30970149253731344,
+                        "NNP": 0.014925373134328358,
+                        "MD": 0.033582089552238806,
+                        "VB": 0.08955223880597014,
+                        "VBN": 0.03731343283582089,
+                        "JJ": 0.1044776119402985,
+                        "CC": 0.07835820895522388,
+                        "VBG": 0.022388059701492536,
+                        "CD": 0.007462686567164179,
+                        "RB": 0.026119402985074626,
+                        "RP": 0.0037313432835820895
+                    },
+                    "bleu_score": {
+                        "bleu_score": 0.403030303030303
+                    },
+                    "rouge_scores": {
+                        "rouge_1": 0.4763705103969754,
+                        "rouge_2": 0.12903225806451615,
+                        "rouge_L": 0.27599243856332706
+                    }
+                },
+                "CS_mistral_prompt4": {
+                    "text": "1. A sense (or word sense) is a distinct representation of a single meaning of a word, as understood in context. For example, \"mouse\" can refer to:\n       - A computer peripheral used to interact with a system (1968 mouse)\n       - A small rodent (rodent mouse)\n\n    2. \"Bank\" can have the following meanings:\n       - A financial institution that manages and lends money (bank1)\n       - A slope adjacent to a body of water (bank2)\n\n    3. Dictionaries and thesauruses provide alternative definitions for each sense, often in the form of glosses.\n\n    4. Synonyms are two senses of two different words that are identical or nearly identical. For example, couch and sofa are synonyms, as are filbert and hazelnut, car and automobile.\n\n    5. Antonyms are words with opposite meanings, such as long and short, big and little, fast and slow, cold and hot, dark and light.\n\n    6. A hyponym is a more specific word denoting a subclass of another word. For example, car is a hyponym of vehicle, and dog is a hyponym of animal. Conversely, vehicle is a hypernym of car, and animal is a hypernym of dog.\n\n    7. Meronymy is the part-whole relationship, for example, wheel is a part of car, and car is the whole containing wheel.",
+                    "cosine_similarity": 0.9003214836120605,
+                    "hallucination_avg": 4.9,
+                    "token_count": 191,
+                    "readability": {
+                        "flesch_reading_ease": 61.26,
+                        "flesch_kincaid_grade": 9.3
+                    },
+                    "pos": {
+                        "DT": 0.12834224598930483,
+                        "NN": 0.34759358288770054,
+                        "CC": 0.08021390374331551,
+                        "VB": 0.10695187165775401,
+                        "JJ": 0.12834224598930483,
+                        "IN": 0.12834224598930483,
+                        "MD": 0.0106951871657754,
+                        "VBN": 0.0053475935828877,
+                        "NNP": 0.016042780748663103,
+                        "RB": 0.03208556149732621,
+                        "CD": 0.0106951871657754,
+                        "VBG": 0.0053475935828877
+                    },
+                    "bleu_score": {
+                        "bleu_score": 0.5039158054418753
+                    },
+                    "rouge_scores": {
+                        "rouge_1": 0.6909090909090908,
+                        "rouge_2": 0.3789954337899544,
+                        "rouge_L": 0.5409090909090909
+                    }
+                }
             }
         }
     },
     "T7": {
+        "topic": " Training FFNNs (Loss Function and Gradient)",
         "instance_code": "T7",
-        "original_category": "CS",
-        "original_text_title": " Training FFNNs (Loss Function and Gradient)",
-        "original_text": "A feedforward neural net is an instance of supervised machine learning in which we know the correct output y for each observation x. What the system produces is ˆy, the system's estimate of the true y. The goal of the training procedure is to learn parameters W[i] and b[i] for each layer i that make ˆy for each training observation as close as possible to the true y. [...] First, we'll need a loss function that models the distance between the system output and the gold output, and it's common to use the loss function used for logistic regression, the cross-entropy loss. Second, to find the parameters that minimize this loss function, we'll use the gradient descent optimization algorithm [...]. Third, gradient descent requires knowing the gradient of the loss function, the vector that contains the partial derivative of the loss function with respect to each of the parameters. [...] for neural networks, with millions of parameters in many layers, it's much harder to see how to compute the partial derivative of some weight in layer 1 when the loss is attached to some much later layer. How do we partial out the loss over all those intermediate layers? The answer is the algorithm called error backpropagation or backward differentiation. [...] Computing the gradient requires the partial derivative of the loss function with respect to each parameter. [...] The solution to computing this gradient is an algorithm called error backpropagation.",
         "selected_texts": {
             "L": {
-                "L_gpt4o_prompt5": "In linguistics terms, a feedforward neural network can be thought of as a system designed to predict an outcome based on a given input. Imagine it as a complex language model trying to translate a sentence. For every input sentence (x), we know the correct translation (y) and the model tries to produce its best guess (ŷ) of that translation.\n\nThe goal is to train this model so that its guess (ŷ) is as close as possible to the correct translation (y). To achieve this, it adjusts certain internal elements (let's call them parameters, similar to phonetic rules in a language) over several layers, each layer refining the guess based on the previous one.\n\nFirst, we need a way to measure the difference between the model's guess and the correct translation, much like evaluating how well a student has translated a sentence. We use a method called cross-entropy loss for this purpose, which is similar to assessing the semantic accuracy in translation.\n\nNext, to minimize this difference, we use an optimization technique called gradient descent. This is akin to gradually fine-tuning a grammar rule by observing many instances of its application.\n\nHowever, this process involves many parameters, like adjusting various phonetic and syntactic rules simultaneously, which can become complex in a large system. To effectively adjust these, we use a technique called error backpropagation. It's like retracing steps in a derivational tree to see how a change at one point affects the overall structure.\n\nIn essence, error backpropagation helps us understand how to tweak the phonetic and syntactic rules at various layers to improve the overall translation accuracy of the neural network.",
-                "L_deepseek_prompt5": "A feedforward neural network operates like a supervised language learning task, where the system is trained on input-output pairs (x, y), akin to teaching a learner to map phonetic inputs (e.g., acoustic signals) to semantic outputs (e.g., word meanings). The network generates an estimate (ŷ) for each input, analogous to a language model predicting a syntactic structure for a sentence. Training adjusts \"weights\" (W[i]) and \"biases\" (b[i])—parameters acting like language-specific rules at different layers (phonological, morphological, etc.)—to minimize the mismatch between ŷ and y.  \n\nThe **loss function** (e.g., cross-entropy) quantifies this mismatch, much like measuring the divergence between a predicted phoneme sequence and its attested form. **Gradient descent** iteratively refines parameters, akin to adjusting phonological or syntactic rules to reduce errors in a language learner’s output. Crucially, computing how early-layer parameters (e.g., phonetic feature weights) contribute to later errors (e.g., semantic misinterpretations) requires **backpropagation**. This mirrors tracing a semantic error back through syntactic, morphological, and phonological layers to identify where the representation diverged, adjusting each layer’s \"rules\" accordingly. The process ensures coordinated learning across hierarchical linguistic levels, optimizing the entire system’s performance."
+                "L_mistral_prompt2": {
+                    "text": "❝ In feedforward neural networks, we teach the system to predict a specific outcome for a given input by adjusting its internal weights and biases. The system's predicted outcome, ˆy, should match the actual outcome, y, as closely as possible.\n\n    To measure the system's accuracy, we use the cross-entropy loss function, which is commonly employed in logistic regression. The goal is to minimize this loss function using the gradient descent optimization algorithm.\n\n    Gradient descent needs the gradient of the loss function, which is a vector representing the rate of change of the loss with respect to each parameter. However, when dealing with multiple layers and millions of parameters in a neural network, computing the partial derivative of a weight in one layer with respect to the loss in a later layer can be challenging.\n\n    To tackle this issue, we employ the error backpropagation algorithm, also known as backward differentiation. This algorithm helps us propagate the error, or the rate of change of the loss, backward through the network, enabling us to compute the gradient for each parameter.\n\n    By computing the gradient using error backpropagation, we can adjust the weights and biases in the network to minimize the cross-entropy loss and improve the system's accuracy. ❞",
+                    "cosine_similarity": 0.8275209665298462,
+                    "hallucination_avg": 5.0,
+                    "token_count": 201,
+                    "readability": {
+                        "flesch_reading_ease": 40.08,
+                        "flesch_kincaid_grade": 13.3
+                    },
+                    "pos": {
+                        "IN": 0.12568306010928962,
+                        "JJ": 0.08196721311475409,
+                        "NN": 0.33879781420765026,
+                        "VB": 0.10382513661202186,
+                        "DT": 0.1912568306010929,
+                        "VBN": 0.01639344262295082,
+                        "VBG": 0.04918032786885246,
+                        "CC": 0.0273224043715847,
+                        "NNP": 0.00546448087431694,
+                        "MD": 0.01639344262295082,
+                        "RB": 0.03825136612021858,
+                        "CD": 0.00546448087431694
+                    },
+                    "bleu_score": {
+                        "bleu_score": 0.5008114564428555
+                    },
+                    "rouge_scores": {
+                        "rouge_1": 0.6031042128603104,
+                        "rouge_2": 0.27616926503340755,
+                        "rouge_L": 0.39911308203991125
+                    }
+                },
+                "L_gpt4o_prompt5": {
+                    "text": "In linguistics terms, a feedforward neural network can be thought of as a system designed to predict an outcome based on a given input. Imagine it as a complex language model trying to translate a sentence. For every input sentence (x), we know the correct translation (y) and the model tries to produce its best guess (ŷ) of that translation.\n\nThe goal is to train this model so that its guess (ŷ) is as close as possible to the correct translation (y). To achieve this, it adjusts certain internal elements (let's call them parameters, similar to phonetic rules in a language) over several layers, each layer refining the guess based on the previous one.\n\nFirst, we need a way to measure the difference between the model's guess and the correct translation, much like evaluating how well a student has translated a sentence. We use a method called cross-entropy loss for this purpose, which is similar to assessing the semantic accuracy in translation.\n\nNext, to minimize this difference, we use an optimization technique called gradient descent. This is akin to gradually fine-tuning a grammar rule by observing many instances of its application.\n\nHowever, this process involves many parameters, like adjusting various phonetic and syntactic rules simultaneously, which can become complex in a large system. To effectively adjust these, we use a technique called error backpropagation. It's like retracing steps in a derivational tree to see how a change at one point affects the overall structure.\n\nIn essence, error backpropagation helps us understand how to tweak the phonetic and syntactic rules at various layers to improve the overall translation accuracy of the neural network.",
+                    "cosine_similarity": 0.518333911895752,
+                    "hallucination_avg": 4.3,
+                    "token_count": 270,
+                    "readability": {
+                        "flesch_reading_ease": 50.26,
+                        "flesch_kincaid_grade": 11.4
+                    },
+                    "pos": {
+                        "IN": 0.10970464135021098,
+                        "NN": 0.29957805907172996,
+                        "DT": 0.1729957805907173,
+                        "JJ": 0.13924050632911392,
+                        "MD": 0.008438818565400843,
+                        "VB": 0.1308016877637131,
+                        "VBN": 0.0379746835443038,
+                        "VBG": 0.029535864978902954,
+                        "CC": 0.016877637130801686,
+                        "NNP": 0.012658227848101266,
+                        "RB": 0.0379746835443038,
+                        "CD": 0.004219409282700422
+                    },
+                    "bleu_score": {
+                        "bleu_score": 0.37777777777777777
+                    },
+                    "rouge_scores": {
+                        "rouge_1": 0.42857142857142855,
+                        "rouge_2": 0.12015503875968991,
+                        "rouge_L": 0.24324324324324326
+                    }
+                }
             }
         }
     },
     "T8": {
+        "topic": "Backward Pass",
         "instance_code": "T8",
-        "original_category": "CS",
-        "original_text_title": "Backward Pass",
-        "original_text": "The importance of the computation graph comes from the backward pass, which is used to compute the derivatives that we'll need for the weight update. [...] Backwards differentiation makes use of the chain rule [...]. Suppose we are computing the derivative of a composite function f(x) = u(v(x)). The derivative of f(x) is the derivative of u(x) with respect to v(x) times the derivative of v(x) with respect to x. [...] The chain rule extends to more than two functions. If computing the derivative of a composite function f(x) = u(v(w(x))), the derivative of f(x) is: df/dx = du/dv·dv/dw·dw/dx. The intuition of backward differentiation is to pass gradients back from the final node to all the nodes in the graph. [...] Each node takes an upstream gradient that is passed in from its parent node to the right, and for each of its inputs computes a local gradient (the gradient of its output with respect to its input), and uses the chain rule to multiply these two to compute a downstream gradient to be passed on to the next earlier node. Let's now compute the 3 derivatives we need. Since in the computation graph L = ce, we can directly compute the derivative ∂L/∂c: ∂L/∂c = e. For the other two, we'll need to use the chain rule: ∂L/∂a=∂L/∂e*∂e/∂a [and] ∂L/∂b=∂L/∂e*∂e/∂d*∂d/∂b.",
         "selected_texts": {
             "L": {
-                "L_claude_prompt1": "Let me explain backward differentiation using concepts familiar to linguistics students:\n\nJust as we analyze sentences from larger structures down to their smallest components, backward differentiation works by starting from the final output and moving backwards through each step. Think of it like decomposing a complex sentence into its constituent parts.\n\nThe chain rule is similar to how we break down nested clauses in syntax trees. If we have a sentence with multiple embedded clauses, we need to understand how each clause relates to the others. Similarly, when we have a sequence of mathematical operations, we need to understand how changes in one part affect the whole.\n\nLet's use a linguistic analogy: Imagine analyzing how a change in word stress (x) affects the overall meaning of an utterance (f). If this relationship passes through intermediate effects on intonation (w), which affects phrase boundaries (v), which finally influences meaning (u), we need to consider each step's contribution. Just as meaning changes cascade through different linguistic levels, the chain rule shows us how changes flow backward through each calculation step.\n\nIn our computation graph, each node is like a morpheme that contributes to the final meaning. Just as a morpheme's meaning combines with others to create word meaning, each node takes information from later calculations (upstream) and passes modified information to earlier calculations (downstream), multiplying the effects at each step.\n\nWhen we calculate derivatives like ∂L/∂c, ∂L/∂a, and ∂L/∂b, we're essentially tracing back through our calculation path, similar to how we might trace semantic change through historical linguistics, seeing how each change influences the final result.",
-                "L_mistral_prompt5": "1. The computation graph in machine learning is crucial for its backward pass, which calculates the needed derivatives for updating the weights during the learning process. The principal tool used in this process is chain rule from calculus.\n\n    2. Let's imagine a complex function f(x) that is the result of multiple operations u(v(x)). To calculate the derivative of this function, we use the chain rule. Specifically, the derivative of f(x) is the derivative of u(x) with respect to v(x) times the derivative of v(x) with respect to x.\n\n    3. Consider a simple example of the chain rule applied to a composite function f(x) = u(v(w(x))). The derivative of f(x) can be calculated as follows: df/dx = du/dv·dv/dw·dw/dx.\n\n    4. The chain rule's fundamental principle is that it allows us to \"pass\" the gradients from the final node backward through the entire graph. Each node in the graph receives an upstream gradient from its parent node, computes local gradients (gradients of the output with respect to its input), and then passes downstream gradients to the next earlier node using the chain rule.\n\n    5. Let's calculate the derivatives we need for our example. Suppose our computation graph is L = ce, the derivative of L with respect to c is straightforward: ∂L/∂c = e. To find the derivatives with respect to a and b, we'll use the chain rule: ∂L/∂a = ∂L/∂e * ∂e/∂a and ∂L/∂b = ∂L/∂e * ∂e/∂d * ∂d/∂b."
+                "L_mistral_prompt3": {
+                    "text": "1. In the context of our computation graph, the backward pass plays a critical role by calculating the derivatives essential for weight updates. This process, known as backward differentiation, leverages the chain rule for composite functions.\n\n    2. To illustrate, consider a multi-layered function f(x) = u(v(w(x))). The derivative of f(x) can be broken down into three components: the derivative of u(x) with respect to v(x), the derivative of v(x) with respect to w(x), and the derivative of w(x) with respect to x.\n\n    3. The chain rule, applied here, links the derivatives of each function to the derivative of the overall function. If we have a more complex function with multiple layers, the same rule applies. For instance, a function like f(x) = u(v(w(x))) would follow the formula: df/dx = du/dv·dv/dw·dw/dx.\n\n    4. The essence of backward differentiation is to propagate gradients from the final node back through all nodes in the graph. Each node receives an upstream gradient from its parent node, calculates a local gradient (the gradient of its output with respect to its input), and passes on a downstream gradient to the preceding node.\n\n    5. Applying this concept to our computation graph, where L = ce, we can compute the derivative ∂L/∂c: ∂L/∂c = e. For the remaining derivatives, we'll utilize the chain rule: ∂L/∂a = ∂L/∂e * ∂e/∂a and ∂L/∂b = ∂L/∂e * ∂e/∂d * ∂d/∂b.",
+                    "cosine_similarity": 0.885465681552887,
+                    "hallucination_avg": 5.0,
+                    "token_count": 214,
+                    "readability": {
+                        "flesch_reading_ease": 51.38,
+                        "flesch_kincaid_grade": 11.0
+                    },
+                    "pos": {
+                        "IN": 0.14795918367346939,
+                        "DT": 0.17346938775510204,
+                        "NN": 0.3673469387755102,
+                        "VB": 0.08163265306122448,
+                        "JJ": 0.08673469387755102,
+                        "VBG": 0.02040816326530612,
+                        "VBN": 0.015306122448979591,
+                        "NNP": 0.04081632653061224,
+                        "FW": 0.01020408163265306,
+                        "MD": 0.015306122448979591,
+                        "RP": 0.00510204081632653,
+                        "CD": 0.00510204081632653,
+                        "CC": 0.015306122448979591,
+                        "RB": 0.015306122448979591
+                    },
+                    "bleu_score": {
+                        "bleu_score": 0.6807817589576547
+                    },
+                    "rouge_scores": {
+                        "rouge_1": 0.7298387096774194,
+                        "rouge_2": 0.5141700404858299,
+                        "rouge_L": 0.6169354838709677
+                    }
+                },
+                "L_gpt4o_prompt2": {
+                    "text": "In the world of artificial intelligence, understanding how systems learn from data is crucial. One key concept is the \"computation graph,\" which is like a detailed map that shows how different parts of a system are connected and interact. This map is important because it helps us figure out how to make the system better at its tasks, similar to how we might refine our understanding of a language.\n\nImagine you're analyzing a sentence's structure to understand its meaning—a process linguists are familiar with. In AI, we use a method called \"backward differentiation\" to enhance our models. Think of it like tracing a sentence back from its conclusion to see how each word contributes to the overall meaning.\n\nIn backward differentiation, we use a mathematical tool called the \"chain rule.\" It's like understanding how a complex sentence breaks down into smaller parts. For instance, if you have a function f(x) that's made of two smaller functions, say u(v(x)), the chain rule helps us understand how changes in x affect the entire sentence through these smaller components.\n\nIf we add more layers, like u(v(w(x))), the chain rule still applies, allowing us to trace the influence of the smallest component (x) on the overall result (f(x)). This is similar to breaking down a complex sentence into even smaller grammatical units.\n\nNow, let's talk about how this works in practice. Each \"node\" in the computation graph (think of nodes as words or phrases in a sentence) takes a \"gradient\" (similar to how a word influences meaning) from its \"parent node\" (what comes later in the sentence) and calculates how it affects the input. This process continues backward through the graph, much like how you'd parse a sentence from end to beginning to understand its structure.\n\nFor example, if we represent a concept L as the product of c and e (L = ce), finding how L changes with respect to c is straightforward, like identifying the role of a word in a sentence. But for more complex relationships, such as understanding how L changes with respect to a or b, we rely on the chain rule to trace these relationships back through the graph, much like unpacking the layers of meaning in a complex sentence.\n\nIn summary, computation graphs and backward differentiation in AI are akin to breaking down and understanding language structures in linguistics. Both involve tracing back through components to see how each part contributes to the whole.",
+                    "cosine_similarity": 0.5946052074432373,
+                    "hallucination_avg": 4.0,
+                    "token_count": 412,
+                    "readability": {
+                        "flesch_reading_ease": 57.0,
+                        "flesch_kincaid_grade": 10.9
+                    },
+                    "pos": {
+                        "IN": 0.16101694915254236,
+                        "DT": 0.14124293785310735,
+                        "NN": 0.3022598870056497,
+                        "JJ": 0.10451977401129943,
+                        "VBG": 0.03672316384180791,
+                        "VB": 0.1327683615819209,
+                        "CD": 0.005649717514124294,
+                        "VBN": 0.011299435028248588,
+                        "CC": 0.022598870056497175,
+                        "RP": 0.011299435028248588,
+                        "RB": 0.03389830508474576,
+                        "MD": 0.002824858757062147,
+                        "NNP": 0.02824858757062147,
+                        "FW": 0.005649717514124294
+                    },
+                    "bleu_score": {
+                        "bleu_score": 0.35887096774193544
+                    },
+                    "rouge_scores": {
+                        "rouge_1": 0.45577211394302847,
+                        "rouge_2": 0.14135338345864665,
+                        "rouge_L": 0.22188905547226387
+                    }
+                }
             }
         }
     },
     "T10": {
+        "topic": "Long Short-Term Memory (LSTMs)",
         "instance_code": "T10",
-        "original_category": "CS",
-        "original_text_title": "Long Short-Term Memory (LSTMs)",
-        "original_text": "[...] it is quite difficult to train RNNs for tasks that require a network to make use of information distant from the current point of processing. [...] the information encoded in hidden states tends to be fairly local, more relevant to the most recent parts of the input sequence and recent decisions. [...] the gradients are eventually driven to zero, a situation called the vanishing gradients problem. To address these issues, more complex network architectures have been designed to explicitly manage the task of maintaining relevant context over time, by enabling the network to learn to forget information that is no longer needed and to remember information required for decisions still to come. The most commonly used such extension to RNNs is the long short-term memory (LSTM) network. LSTMs [...] remove information no longer needed from the context, and adding information likely to be needed for later decision making. [...] LSTMs accomplish this by first adding an explicit context layer to the architecture [...], and control the flow of information into and out of the units [...]. These gates are implemented through the use of additional weights that operate sequentially on the input, and previous hidden layer, and previous context layers. [...] The purpose of [the forget gate] is to delete information from the context that is no longer needed. [...] the add gate to select the information to add to the current context. [...] The final gate is the output gate which is used to decide what information is required for the current hidden state. [...]",
         "selected_texts": {
             "L": {
-                "L_gpt4o_prompt3": "In the realm of neural networks, particularly Recurrent Neural Networks (RNNs), there's a challenge similar to understanding a sentence where key information is spread out. RNNs often struggle with remembering details from earlier in a sequence, much like trying to recall the beginning of a long sentence while reading the end. This happens because the information stored in the network's memory, or \"hidden states,\" tends to focus on recent input, akin to emphasizing the last few words you've just read. This can lead to the \"vanishing gradients problem,\" where early information fades away, much like how earlier parts of a conversation might become hazy.\n\nTo tackle this, an advanced version of RNNs called Long Short-Term Memory networks (LSTMs) was developed. Imagine LSTMs as having a more sophisticated memory system that can decide what to forget and what to remember, similar to how you might choose to remember a phone number but forget a random number you just heard. LSTMs achieve this through a series of \"gates,\" which are mechanisms that control the flow of information.\n\nFirstly, there's the \"forget gate,\" which clears out unnecessary information, like erasing irrelevant details. Then there's the \"add gate,\" which selects new information to store, akin to jotting down important notes. Finally, the \"output gate\" determines what information is essential for the current task, much like choosing the right words when forming a sentence. By using these gates, LSTMs manage to maintain relevant context over time, allowing them to handle sequences where information is scattered across various points, much like understanding a complex sentence structure.",
-                "L_claude_prompt1": "In language processing, Recurrent Neural Networks (RNNs) work similarly to how we process sentences - reading them word by word. However, just as we might forget the beginning of a very long sentence by the time we reach its end, RNNs struggle to maintain information over long distances. Think of it like trying to remember the subject of a complex sentence with many embedded clauses.\n\nTo solve this memory problem, researchers developed Long Short-Term Memory (LSTM) networks, which work more like our conscious reading comprehension process. Just as we actively decide what information to keep in mind while reading a text, LSTMs have special mechanisms called \"gates\" that manage information flow.\n\nThese gates function like our cognitive processes when reading:\n- The forget gate works like our ability to discard irrelevant information (like forgetting unnecessary details in a long text)\n- The add gate is similar to how we highlight or note important information we'll need later\n- The output gate resembles how we select relevant information when answering questions about what we just read\n\nFor example, in the sentence \"The book, which was written by the author who lived in Paris during the 1920s, discusses modernist literature,\" an LSTM can maintain the connection between \"The book\" and \"discusses\" despite the long intervening relative clause, much like how we maintain coherence while parsing complex sentences.\n\nThis system allows LSTMs to handle long-distance dependencies in language, similar to how we process complex syntactic structures in natural languages."
+                "L_mistral_prompt5": {
+                    "text": "Language model enthusiasts often face challenges when training Recurrent Neural Networks (RNNs) to handle tasks that require a network to take into account information far removed from the current processing point. The information stored in hidden states tends to be more relevant to the latest parts of the input sequence and recent decisions, with crucial details from prior sections often getting lost along the way. This is known as the vanishing gradients problem.\n\n     To overcome these issues, experts have developed more intricate network designs to manage the task of maintaining context over time, helping the network to discard irrelevant information and remember crucial data for impending decisions. A popular extension to RNNs is the Long Short-Term Memory (LSTM) network.\n\n     LSTMs are designed to manage context by discarding unnecessary information and holding on to useful data for future decision-making. They achieve this by adding an explicit context layer to the network architecture and carefully controlling the flow of information into and out of the units. This is done through the use of specialized gates.\n\n     The forget gate's primary function is to erase information from the context that is no longer relevant. The add gate serves to select the data to include in the current context. The output gate determines which information is essential for the current hidden state.",
+                    "cosine_similarity": 0.8381253480911255,
+                    "hallucination_avg": 4.9,
+                    "token_count": 215,
+                    "readability": {
+                        "flesch_reading_ease": 43.02,
+                        "flesch_kincaid_grade": 12.2
+                    },
+                    "pos": {
+                        "NNP": 0.04081632653061224,
+                        "NN": 0.3163265306122449,
+                        "RB": 0.030612244897959183,
+                        "VB": 0.11734693877551021,
+                        "VBG": 0.04591836734693878,
+                        "DT": 0.14285714285714285,
+                        "IN": 0.12244897959183673,
+                        "VBN": 0.03571428571428571,
+                        "JJ": 0.12244897959183673,
+                        "CC": 0.025510204081632654
+                    },
+                    "bleu_score": {
+                        "bleu_score": 0.5093659205899633
+                    },
+                    "rouge_scores": {
+                        "rouge_1": 0.6638115631691649,
+                        "rouge_2": 0.40860215053763443,
+                        "rouge_L": 0.5952890792291221
+                    }
+                },
+                "L_llama_prompt2": {
+                    "text": "Consider a sentence where you want to understand the relationship between words that are far apart, like \"The dog, which ran quickly, caught the ball.\" To comprehend this sentence, you need to keep track of the subject \"dog\" and its actions across the sentence. In linguistic terms, this is similar to analyzing long-distance dependencies in syntax. \n\n    In a similar way, Recurrent Neural Networks (RNNs) process sequential data, like sentences, one step at a time. However, they struggle to retain information from earlier parts of the sequence, much like how it's hard to remember the beginning of a long sentence. This is because the information encoded in the hidden states of RNNs is local, focusing on the most recent parts of the input sequence and recent decisions. As a result, the gradients, which are essential for training the network, tend to disappear, a phenomenon known as the vanishing gradients problem.\n\n    To overcome this issue, more complex network architectures, like Long Short-Term Memory (LSTM) networks, have been developed. LSTMs are designed to manage context over time, allowing the network to learn what information to discard and what to retain for future decisions. This is analogous to a linguistic process where you selectively focus on specific words or phrases in a sentence to understand its meaning.\n\n    LSTMs achieve this by introducing an explicit context layer and control gates that regulate the flow of information. These gates operate sequentially, using additional weights to determine what information to add, remove, or output. The forget gate acts like a filter, removing irrelevant information from the context, while the add gate selects relevant information to include. The output gate then decides what information is necessary for the current hidden state, much like how you choose the relevant words to focus on when parsing a sentence.\n\n    By using LSTMs, the network can effectively handle long-distance dependencies in sequential data, much like how linguists analyze complex sentence structures. This enables the network to make more accurate predictions and decisions, making it a powerful tool for natural language processing tasks. \n\n    Think of LSTMs as a skilled reader who can keep track of the narrative thread, retaining relevant information and discarding unnecessary details, to ultimately comprehend the meaning of a text. This ability to manage context and selectively focus on relevant information makes LSTMs a valuable asset in understanding and generating human language.",
+                    "cosine_similarity": 0.6509807109832764,
+                    "hallucination_avg": 4.8,
+                    "token_count": 389,
+                    "readability": {
+                        "flesch_reading_ease": 40.89,
+                        "flesch_kincaid_grade": 13.0
+                    },
+                    "pos": {
+                        "VB": 0.13372093023255813,
+                        "DT": 0.14534883720930233,
+                        "NN": 0.29651162790697677,
+                        "IN": 0.12790697674418605,
+                        "RB": 0.040697674418604654,
+                        "VBN": 0.020348837209302327,
+                        "CC": 0.029069767441860465,
+                        "JJ": 0.11918604651162791,
+                        "VBG": 0.0377906976744186,
+                        "NNP": 0.040697674418604654,
+                        "CD": 0.0029069767441860465,
+                        "MD": 0.005813953488372093
+                    },
+                    "bleu_score": {
+                        "bleu_score": 0.40979955456570155
+                    },
+                    "rouge_scores": {
+                        "rouge_1": 0.5567651632970451,
+                        "rouge_2": 0.24024960998439937,
+                        "rouge_L": 0.3234836702954899
+                    }
+                }
             }
         }
     }
