@@ -1,0 +1,52 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Long Short-Term Memory (LSTMs)</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 40px; padding: 20px; line-height: 1.6; }
+                    .container { max-width: 800px; margin: auto; }
+                    h1, h2 { color: #333; }
+                    .box { background: #f4f4f4; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+                    .category { font-weight: bold; color: #0056b3; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>Long Short-Term Memory (LSTMs)</h1>
+                    <p><strong>Instance Code:</strong> T10</p>
+                    <p><strong>Target Category:</strong> L</p>
+                    <div class="box">
+                        <h2>Original Text</h2>
+                        <p>[...] it is quite difficult to train RNNs for tasks that require a network to make use of information distant from the current point of processing. [...] the information encoded in hidden states tends to be fairly local, more relevant to the most recent parts of the input sequence and recent decisions. [...] the gradients are eventually driven to zero, a situation called the vanishing gradients problem. To address these issues, more complex network architectures have been designed to explicitly manage the task of maintaining relevant context over time, by enabling the network to learn to forget information that is no longer needed and to remember information required for decisions still to come. The most commonly used such extension to RNNs is the long short-term memory (LSTM) network. LSTMs [...] remove information no longer needed from the context, and adding information likely to be needed for later decision making. [...] LSTMs accomplish this by first adding an explicit context layer to the architecture [...], and control the flow of information into and out of the units [...]. These gates are implemented through the use of additional weights that operate sequentially on the input, and previous hidden layer, and previous context layers. [...] The purpose of [the forget gate] is to delete information from the context that is no longer needed. [...] the add gate to select the information to add to the current context. [...] The final gate is the output gate which is used to decide what information is required for the current hidden state. [...]</p>
+                    </div>
+                    <h2>L Tailored Explanations</h2>
+            
+                <div class="box">
+                    <p class="category">L_gpt4o_prompt2</p>
+                    <p>In the world of neural networks, particularly when dealing with Recurrent Neural Networks (RNNs), we encounter challenges when trying to process information that is not immediately nearby in the sequence of data. Imagine you're reading a sentence and trying to remember a word from the beginning while you're at the end. RNNs struggle with this because they tend to focus more on recent words, much like how we might remember the last word of a sentence more clearly than the first.
+
+This issue is known as the "vanishing gradients problem," where the important information from earlier parts of the sequence fades away as the network processes more data. To tackle this, a more sophisticated type of RNN called Long Short-Term Memory (LSTM) networks was developed. Think of LSTMs as a more advanced way to handle context, similar to how we might use a mental note to keep track of key points while reading a long text.
+
+LSTMs have special mechanisms, called "gates," which function like filters. These gates help the network decide what information to discard, what to keep, and what to focus on at any given moment. For example, the "forget gate" acts like a mental eraser, removing details that are no longer relevant. The "add gate" is like highlighting important notes, ensuring that essential information is retained. Finally, the "output gate" helps determine what information should be actively used to make the next decision, much like choosing the right words to form a coherent sentence.
+
+In essence, LSTMs are designed to help neural networks remember crucial information over longer sequences, allowing them to process language more effectively and make better decisions, much like how linguists analyze language structure to understand meaning and context.</p>
+                </div>
+                
+                <div class="box">
+                    <p class="category">L_claude_prompt5</p>
+                    <p>Here's the linguistics-oriented explanation:
+
+Think of how we process complex sentences across discourse. Just as we need to track grammatical dependencies and referents across long stretches of text, artificial neural networks need to handle information across sequences. However, like how working memory has limitations in processing center-embedded clauses, basic neural networks struggle with long-distance dependencies.
+
+Imagine parsing a long sentence - we naturally forget irrelevant earlier parts while maintaining important elements like subjects or antecedents for later reference. Long Short-Term Memory (LSTM) networks mirror this cognitive process. Like how we use discourse markers and cohesive devices to manage information flow in text, LSTMs have special mechanisms called "gates" that control information:
+
+- The "forget gate" acts like pronoun resolution - it clears out old referents that are no longer needed
+- The "add gate" works similarly to introducing new discourse topics or referents
+- The "output gate" functions like selecting relevant information for the current clause being processed
+
+Just as we maintain a mental discourse model while processing text, LSTMs maintain a "context layer" that stores important information. Think of it as keeping track of topic continuity and coherence relations across sentences. The gates work together like the cognitive mechanisms we use to build and update our mental representation of discourse structure.</p>
+                </div>
+                </div></body></html>

@@ -109,11 +109,15 @@ for topic_key, instance in list(randomized_data.items()):
                 print(f"[ERROR] Failed to process {prompt_id}: {e}")
                 prompts[prompt_id]["text"] = None
 
-    # Reorder fields as: topic → instance_code → selected_texts
+    original_text = topic_entry.get("original_text", "UNKNOWN_ORIGINAL_TEXT")
+
+    # Reorder fields as: topic → instance_code → original_text → selected_texts
     reordered_instance = OrderedDict()
     reordered_instance["topic"] = topic_title
     reordered_instance["instance_code"] = instance["instance_code"]
+    reordered_instance["original_text"] = original_text
     reordered_instance["selected_texts"] = selected_texts
+
 
     randomized_data[topic_key] = reordered_instance
 
