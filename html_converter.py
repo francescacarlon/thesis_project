@@ -96,9 +96,10 @@ for instance_code, data in benchmark_data.items():
 
                 for prompt_id, entry in rotated_items:
                     text = entry.get("text", "")
+                    topic_number = instance_code.replace("T", "")  # extract once
+
                     # Build the code name title
                     if prompt_id == "ORIGINAL":
-                        topic_number = instance_code.replace("T", "")
                         code_name = f"{target_category}_o_{topic_number}"
                     else:
                         try:
@@ -110,9 +111,9 @@ for instance_code, data in benchmark_data.items():
                             prompt_num = ''.join(filter(str.isdigit, prompt_key))
 
                             # Use first lowercase letter of model
-                            code_name = f"{target_category}_{model[0].lower()}_{prompt_num}"
+                            code_name = f"{target_category}_{model[0].lower()}_{prompt_num}_{topic_number}"
                         except Exception as e:
-                            code_name = f"{target_category}_x_unknown"
+                            code_name = f"{target_category}_x_unknown_{topic_number}"
                             print(f"[WARNING] Could not parse prompt_id '{prompt_id}' → {e}")
 
                     f.write(f"""
