@@ -11,7 +11,7 @@ import json
 # ========================
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key="OPENAI_API_KEY")
+client = OpenAI(api_key=openai.api_key)
 
 # ========================
 # 📖 Role Descriptions
@@ -86,7 +86,7 @@ def query_llm(prompt, model="gpt-4o"):
         temperature=0,
         max_tokens=500
     )
-    return response.choices[0].message["content"]
+    return response.choices[0].message.content
 
 # ========================
 # 🧪 Run for all files in folder
