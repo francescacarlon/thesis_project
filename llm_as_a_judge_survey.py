@@ -1,17 +1,26 @@
-import openai
-from openai import OpenAI
-import os
 from dotenv import load_dotenv
+import os
 from bs4 import BeautifulSoup
 from pathlib import Path
 import json
+from llm_caller import call_llm
 
 # ========================
-# 🔐 Load API Key
+# 🔐 Load & Validate All API Keys
 # ========================
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key=openai.api_key)
+
+required_keys = {
+    "OPENAI_API_KEY": "OpenAI",
+    "ANTHROPIC_API_KEY": "Anthropic (Claude)",
+    "DEEPSEEK_API_KEY": "DeepSeek",
+    "HF_API_KEY": "Hugging Face (Mistral, LLaMA)"
+}
+
+for env_key, service_name in required_keys.items():
+    if not os.getenv(env_key):
+        print(f"⚠️ {env_key} ({service_name}) not found. Make sure your .env file is set up correctly.")
+
 
 # ========================
 # 📖 Role Descriptions
@@ -73,94 +82,68 @@ def prompt_judge(role, input_texts, instructions, role_definitions):
     
     return full_prompt
 
-# ========================
-# 🤖 Query LLM
-# ========================
-def query_llm(prompt, model="gpt-4o"):
-    response = client.chat.completions.create(
-        model=model,
-        messages=[
-            {"role": "system", "content": "You are a current MSc Computational Linguistics student who has been selected for the evaluation of texts."},
-            {"role": "user", "content": prompt}
-        ],
-        temperature=0,
-        max_tokens=500
-    )
-    return response.choices[0].message.content
 
 # ========================
 # 🧪 Run for all files in folder
 # ========================
-def evaluate_folder(role, folder_path: Path, save_dir: Path):
+def evaluate_folder(role, folder_path: Path, save_dir: Path, model_name="gpt4o"):
     instructions = "Clarity, technical accuracy, and accessibility to someone from your background."
     html_files = list(folder_path.glob("*.html"))
-    
+
     for file in html_files:
+        output_path = save_dir / f"{file.stem}_{model_name}_response.json"
+        
+        if output_path.exists():
+            print(f"⏭ Skipping {file.name} for {model_name} (already processed)")
+            continue
+
         texts = extract_texts_from_html_file(file)
         if len(texts) != 3:
             print(f"⚠️ Skipping {file.name} — does not contain 3 texts.")
             continue
 
         prompt = prompt_judge(role, texts, instructions, role_definitions)
-        response = query_llm(prompt)
+        response = call_llm(model_name, prompt)
 
-        # ✅ Just save filename and response
+        if response is None:
+            print(f"❌ No response for {file.name} with model {model_name}")
+            continue
+
         output_data = {
+            "model": model_name,
             "filename": file.name,
             "response": response
         }
 
-        output_path = save_dir / f"{file.stem}_response.json"
-        with open(output_path, "w", encoding="utf-8") as f:
+        with output_path.open("w", encoding="utf-8") as f:
             json.dump(output_data, f, ensure_ascii=False, indent=2)
 
         print(f"✅ Saved JSON: {output_path.name}")
 
 
+def load_results_from_folder(folder):
+    result_dict = {}
+    for json_file in folder.glob("*.json"):
+        with json_file.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+            filename = data.get("filename", json_file.name.split("_response")[0] + ".html")
+            model = data.get("model", "unknown")
 
-### MAIN X TEST ###
+            if filename not in result_dict:
+                result_dict[filename] = {}
 
-if __name__ == "__main__":
-    BASE_PATH = Path.cwd()
-
-    role = "Linguist"
-    input_folder = BASE_PATH / "data/texts_survey/llm_as_a_judge_texts/target_linguistics"
-    output_folder = input_folder / "results"
-    output_folder.mkdir(parents=True, exist_ok=True)
-
-    # Run only on the first file
-    html_files = sorted(input_folder.glob("*.html"))
-    if not html_files:
-        print("❌ No HTML files found.")
-    else:
-        test_file = html_files[0]
-        print(f"🚀 Running test on: {test_file.name}")
-
-        texts = extract_texts_from_html_file(test_file)
-        if len(texts) != 3:
-            print(f"⚠️ Skipping {test_file.name} — does not contain 3 texts.")
-        else:
-            instructions = "Clarity, technical accuracy, and accessibility to someone from your background."
-            prompt = prompt_judge(role, texts, instructions, role_definitions)
-            response = query_llm(prompt)
-
-            output_data = {
-                "filename": test_file.name,
-                "response": response
+            result_dict[filename][model] = {
+                "response": data["response"]
             }
+    return result_dict
 
-            output_path = output_folder / f"{test_file.stem}_response.json"
-            with open(output_path, "w", encoding="utf-8") as f:
-                json.dump(output_data, f, ensure_ascii=False, indent=2)
-
-            print(f"✅ Saved JSON: {output_path.name}")
-
-
-"""# ========================
+# ========================
 # 🚀 Run for both Linguist and Computer Scientist
 # ========================
 if __name__ == "__main__":
     BASE_PATH = Path.cwd()
+    models_who_judge = ["gpt4o", "claude", "deepseek"]
+    # models_who_judge = ["gpt4o", "claude", "deepseek", "llama", "mistral"]
 
     role_configs = [
         {
@@ -175,13 +158,29 @@ if __name__ == "__main__":
         }
     ]
 
+    for model_name in models_who_judge:
+        for config in role_configs:
+            role = config["role"]
+            input_folder = config["input_folder"]
+            output_folder = config["output_folder"]
+            output_folder.mkdir(parents=True, exist_ok=True)
+
+            print(f"\n🚀 Running {model_name} evaluation for: {role}")
+            evaluate_folder(role, input_folder, output_folder, model_name=model_name)
+
+
+    # ========================
+    # 📦 Aggregate All Results into One File
+    # ========================
+    aggregated_results = {}
     for config in role_configs:
         role = config["role"]
-        input_folder = config["input_folder"]
-        output_folder = config["output_folder"]
-        output_folder.mkdir(parents=True, exist_ok=True)
+        results_folder = config["output_folder"]
+        print(f"📥 Aggregating results for: {role}")
+        aggregated_results[role] = load_results_from_folder(results_folder)
 
-        print(f"\n🚀 Running evaluation for: {role}")
-        evaluate_folder(role, input_folder, output_folder)
-"""
+    output_path = BASE_PATH / "data/texts_survey/llm_as_a_judge_texts/evaluation_results.json"
+    with output_path.open("w", encoding="utf-8") as f:
+        json.dump(aggregated_results, f, indent=2, ensure_ascii=False)
 
+    print(f"\n✅ Combined results saved to: {output_path}")
