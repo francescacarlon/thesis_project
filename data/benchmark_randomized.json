@@ -12,7 +12,8 @@
                     "token_count": 322,
                     "readability": {
                         "flesch_reading_ease": 65.05,
-                        "flesch_kincaid_grade": 9.9
+                        "flesch_kincaid_grade": 9.9,
+                        "smog_index": 11.6
                     },
                     "pos": {
                         "IN": 0.15120274914089346,
@@ -45,7 +46,8 @@
                     "token_count": 240,
                     "readability": {
                         "flesch_reading_ease": 35.71,
-                        "flesch_kincaid_grade": 15.0
+                        "flesch_kincaid_grade": 15.0,
+                        "smog_index": 16.5
                     },
                     "pos": {
                         "RB": 0.027149321266968326,
@@ -87,7 +89,8 @@
                     "token_count": 250,
                     "readability": {
                         "flesch_reading_ease": 62.68,
-                        "flesch_kincaid_grade": 8.7
+                        "flesch_kincaid_grade": 8.7,
+                        "smog_index": 11.2
                     },
                     "pos": {
                         "VB": 0.100418410041841,
@@ -119,7 +122,8 @@
                     "token_count": 332,
                     "readability": {
                         "flesch_reading_ease": 64.61,
-                        "flesch_kincaid_grade": 8.0
+                        "flesch_kincaid_grade": 8.0,
+                        "smog_index": 11.5
                     },
                     "pos": {
                         "IN": 0.1189710610932476,
@@ -160,7 +164,8 @@
                     "token_count": 157,
                     "readability": {
                         "flesch_reading_ease": 4.95,
-                        "flesch_kincaid_grade": 20.6
+                        "flesch_kincaid_grade": 20.6,
+                        "smog_index": 19.9
                     },
                     "pos": {
                         "RB": 0.013245033112582781,
@@ -232,7 +237,8 @@
                     "token_count": 243,
                     "readability": {
                         "flesch_reading_ease": 59.43,
-                        "flesch_kincaid_grade": 10.0
+                        "flesch_kincaid_grade": 10.0,
+                        "smog_index": 12.7
                     },
                     "pos": {
                         "JJ": 0.10900473933649289,
@@ -263,7 +269,8 @@
                     "token_count": 155,
                     "readability": {
                         "flesch_reading_ease": 29.96,
-                        "flesch_kincaid_grade": 13.0
+                        "flesch_kincaid_grade": 13.0,
+                        "smog_index": 13.8
                     },
                     "pos": {
                         "NNP": 0.08695652173913043,
@@ -303,7 +310,8 @@
                     "token_count": 226,
                     "readability": {
                         "flesch_reading_ease": 60.45,
-                        "flesch_kincaid_grade": 9.6
+                        "flesch_kincaid_grade": 9.6,
+                        "smog_index": 12.9
                     },
                     "pos": {
                         "DT": 0.16176470588235295,
@@ -378,7 +386,8 @@
                     "token_count": 284,
                     "readability": {
                         "flesch_reading_ease": 55.78,
-                        "flesch_kincaid_grade": 11.4
+                        "flesch_kincaid_grade": 11.4,
+                        "smog_index": 13.6
                     },
                     "pos": {
                         "IN": 0.13654618473895583,
@@ -409,7 +418,8 @@
                     "token_count": 203,
                     "readability": {
                         "flesch_reading_ease": 28.27,
-                        "flesch_kincaid_grade": 15.8
+                        "flesch_kincaid_grade": 15.8,
+                        "smog_index": 16.5
                     },
                     "pos": {
                         "RB": 0.04371584699453552,
