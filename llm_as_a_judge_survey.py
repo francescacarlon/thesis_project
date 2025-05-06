@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 import os
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup # to extract data from HTML or XML documents
 from pathlib import Path
 import json
 from llm_caller import call_llm
@@ -78,6 +78,8 @@ def prompt_judge(role, input_texts, instructions, role_definitions):
         "Best Comment: <why it was helpful>\n"
         "Worst: <reference>\n"
         "Worst Comment: <why it was hard to understand>"
+        "**Important**: Do *not* repeat the prompt or the input texts in your answer. Only return your evaluation in the format above."
+
     )
     
     return full_prompt
@@ -142,7 +144,8 @@ def load_results_from_folder(folder):
 # ========================
 if __name__ == "__main__":
     BASE_PATH = Path.cwd()
-    models_who_judge = ["gpt4o", "claude", "deepseek"]
+    # models_who_judge = ["gpt4o", "claude", "deepseek"]
+    models_who_judge = ["mistral"]
     # models_who_judge = ["gpt4o", "claude", "deepseek", "llama", "mistral"]
 
     role_configs = [
