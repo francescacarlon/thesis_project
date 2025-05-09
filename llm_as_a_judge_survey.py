@@ -144,9 +144,7 @@ def load_results_from_folder(folder):
 # ========================
 if __name__ == "__main__":
     BASE_PATH = Path.cwd()
-    # models_who_judge = ["gpt4o", "claude", "deepseek"]
-    models_who_judge = ["mistral"]
-    # models_who_judge = ["gpt4o", "claude", "deepseek", "llama", "mistral"]
+    models_who_judge = ["gpt4o", "claude", "deepseek", "llama", "mistral"]
 
     role_configs = [
         {

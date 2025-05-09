@@ -3,6 +3,26 @@
         "topic": "Constituency and Context-Free Grammars",
         "instance_code": "T2",
         "original_text": "Syntactic constituency is the idea that groups of words can behave as single units, or constituents. Consider the noun phrase, a sequence of words surrounding at least one noun. [...] they can all appear in similar syntactic environments, for example, before a verb: 'three parties from Brooklyn arrive'. [...] A widely used formal system for modeling constituent structure in natural language is the context-free grammar (CFG). [...] A context-free grammar consists of a set of rules or productions, each of which expresses the ways that symbols of the language can be grouped and ordered together, and a lexicon of words and symbols. [...] an NP (or noun phrase) can be composed of either a ProperNoun or a determiner (Det) followed by a Nominal; [...]. Context-free rules can be hierarchically  embedded, [...]: Det → a, Det → the, Noun → flight. [...] Thus, a CFG can be used to generate a set of strings. This sequence of rule expansions is called a derivation of the string of words. It is common to represent a derivation by a parse tree (commonly shown inverted with the root at the top). [...]. A CFG like that of L0 defines a formal language. Sentences (strings of words) that can be derived by a grammar are in the formal language defined by that grammar, and are called grammatical sentences. Sentences that cannot be derived by a given formal grammar are not in the language defined by that grammar and are  referred to as ungrammatical. [...] In linguistics, the use of formal languages to model natural languages is called generative grammar [...].",
+        "token_count": 248,
+        "readability": {
+            "flesch_reading_ease": 62.88,
+            "flesch_kincaid_grade": 8.7,
+            "smog_index": 10.9
+        },
+        "pos": {
+            "JJ": 0.07563025210084033,
+            "NN": 0.2647058823529412,
+            "VB": 0.10084033613445378,
+            "DT": 0.15546218487394958,
+            "IN": 0.15546218487394958,
+            "MD": 0.03361344537815126,
+            "CC": 0.04201680672268908,
+            "VBG": 0.008403361344537815,
+            "CD": 0.004201680672268907,
+            "NNP": 0.0546218487394958,
+            "RB": 0.029411764705882353,
+            "VBN": 0.07563025210084033
+        },
         "selected_texts": {
             "CS": {
                 "CS_gpt4o_prompt3": {
@@ -37,6 +57,11 @@
                         "rouge_1": 0.6402753872633391,
                         "rouge_2": 0.2867012089810017,
                         "rouge_L": 0.43029259896729777
+                    },
+                    "bertscore": {
+                            "bertscore_precision": 0.3646497130393982,
+                            "bertscore_recall": 0.44694414734840393,
+                            "bertscore_f1": 0.40703248977661133
                     }
                 },
                 "CS_claude_prompt4": {
@@ -71,7 +96,12 @@
                         "rouge_1": 0.4126984126984127,
                         "rouge_2": 0.09163346613545818,
                         "rouge_L": 0.19444444444444448
-                    }
+                    },
+                    "bertscore": {
+                            "bertscore_precision": 0.09143423289060593,
+                            "bertscore_recall": 0.10574717074632645,
+                            "bertscore_f1": 0.10216652601957321
+                        }
                 }
             }
         }
@@ -80,6 +110,26 @@
         "topic": "Semantic Roles and Diathesis Alternations",
         "instance_code": "T3",
         "original_text": "Consider the meanings of the arguments Sasha, Pat, the window, and the door in these two sentences. Sasha broke the window. Pat opened the door. The subjects Sasha and Pat, what we might call the breaker of the window breaking event and the opener of the door-opening event, have something in common. They are both volitional actors, often animate, and they have direct causal responsibility for their events. Thematic roles are a way to capture this semantic commonality between breakers and openers. We say that the subjects of both these verbs are agents. Thus, AGENT is the thematic role that represents an abstract idea such as volitional causation. Similarly, the direct objects of both these verbs, the BrokenThing and OpenedThing, are both prototypically inanimate objects that are affected in some way by the action. The semantic role for these participants is theme. [...] Semantic roles thus help generalize over different surface realizations of predicate arguments. For example, while the AGENT is often realized as the subject of the sentence, in other cases the THEME can be the subject. [...] John (AGENT) broke the window (THEME). John (AGENT) broke the window (THEME) with a rock (INSTRUMENT). The rock (INSTRUMENT) broke the window (THEME). The window (THEME) broke. The window (THEME) was broken by John (AGENT). These examples suggest that break has (at least) the possible arguments AGENT, THEME, and INSTRUMENT. [...] These multiple argument structure realizations [...] are called verb alternations or diathesis alternations.",
+        "token_count": 238,
+        "readability": {
+            "flesch_reading_ease": 59.3,
+            "flesch_kincaid_grade": 8.0,
+            "smog_index": 11.0
+        },
+        "pos": {
+            "VB": 0.09170305676855896,
+            "DT": 0.19213973799126638,
+            "NN": 0.2663755458515284,
+            "IN": 0.1091703056768559,
+            "NNP": 0.11790393013100436,
+            "CC": 0.034934497816593885,
+            "CD": 0.004366812227074236,
+            "VBN": 0.048034934497816595,
+            "MD": 0.008733624454148471,
+            "VBG": 0.004366812227074236,
+            "JJ": 0.09606986899563319,
+            "RB": 0.026200873362445413
+        },
         "selected_texts": {
             "CS": {
                 "CS_mistral_prompt4": {
@@ -113,6 +163,11 @@
                         "rouge_1": 0.6156941649899397,
                         "rouge_2": 0.2828282828282828,
                         "rouge_L": 0.3822937625754528
+                    },
+                    "bertscore": {
+                            "bertscore_precision": 0.3525541424751282,
+                            "bertscore_recall": 0.37998685240745544,
+                            "bertscore_f1": 0.36868295073509216
                     }
                 },
                 "CS_gpt4o_prompt1": {
@@ -146,6 +201,11 @@
                         "rouge_1": 0.5669565217391305,
                         "rouge_2": 0.21291448516579406,
                         "rouge_L": 0.29913043478260865
+                    },
+                    "bertscore": {
+                            "bertscore_precision": 0.19560104608535767,
+                            "bertscore_recall": 0.2893739938735962,
+                            "bertscore_f1": 0.24385039508342743
                     }
                 }
             }
@@ -155,6 +215,26 @@
         "topic": "Word Senses and Relations Between Senses",
         "instance_code": "T4",
         "original_text": "A sense (or word sense) is a discrete representation of one aspect of the meaning of a word. [...] In context, it's easy to see the different meanings: mouse1: a mouse controlling a computer system in 1968. mouse2: a quiet animal like a mouse. bank1: a bank can hold the investments in a custodial account. bank2: as agriculture burgeons on the east bank, the river...[...] we need to consider the alternative ways that dictionaries and thesauruses offer for defining senses. One is based on the fact that dictionaries or thesauruses give textual definitions for each sense called glosses. [...] bank: 1. financial institution that accepts deposits and channels the money into lending activities 2. sloping land (especially the slope beside a body of water). [...] when two senses of two different words (lemmas) are identical, or nearly identical, we say the two senses are synonyms [...] couch/sofa vomit/throw up filbert/hazelnut car/automobile. [...] antonyms are words with an opposite meaning, like: long/short big/little fast/slow cold/hot dark/light. [...] [a] hyponym of [a] word if the [other word] is more specific, denoting a subclass of the other. For example, car is a hyponym of vehicle, dog is a hyponym of animal, [...]. Conversely, we say that vehicle is a hypernym of car, and animal is a hypernym of dog. [...] meronymy, the part-whole relation. [...] wheel is a meronym of car, and car is a holonym of wheel.",
+        "token_count": 209,
+        "readability": {
+            "flesch_reading_ease": 57.98,
+            "flesch_kincaid_grade": 8.5,
+            "smog_index": 11.8
+        },
+        "pos": {
+            "DT": 0.1691542288557214,
+            "NN": 0.3681592039800995,
+            "CC": 0.03482587064676617,
+            "VB": 0.10945273631840796,
+            "JJ": 0.07960199004975124,
+            "IN": 0.15422885572139303,
+            "CD": 0.024875621890547265,
+            "VBG": 0.01990049751243781,
+            "MD": 0.004975124378109453,
+            "VBN": 0.009950248756218905,
+            "RB": 0.01990049751243781,
+            "RP": 0.004975124378109453
+        },
         "selected_texts": {
             "CS": {
                 "CS_claude_prompt4": {
@@ -188,6 +268,11 @@
                         "rouge_1": 0.34739454094292804,
                         "rouge_2": 0.054862842892768084,
                         "rouge_L": 0.17369727047146402
+                    },
+                    "bertscore": {
+                            "bertscore_precision": 0.06583473086357117,
+                            "bertscore_recall": 0.06621532887220383,
+                            "bertscore_f1": 0.06977730989456177
                     }
                 },
                 "CS_mistral_prompt5": {
@@ -219,6 +304,11 @@
                         "rouge_1": 0.6589861751152074,
                         "rouge_2": 0.2916666666666667,
                         "rouge_L": 0.4654377880184332
+                    },
+                    "bertscore": {
+                            "bertscore_precision": 0.24799351394176483,
+                            "bertscore_recall": 0.3140544891357422,
+                            "bertscore_f1": 0.2830999493598938
                     }
                 }
             }
@@ -228,6 +318,25 @@
         "topic": " Training FFNNs (Loss Function and Gradient)",
         "instance_code": "T7",
         "original_text": "A feedforward neural net is an instance of supervised machine learning in which we know the correct output y for each observation x. What the system produces is ˆy, the system's estimate of the true y. The goal of the training procedure is to learn parameters W[i] and b[i] for each layer i that make ˆy for each training observation as close as possible to the true y. [...] First, we'll need a loss function that models the distance between the system output and the gold output, and it's common to use the loss function used for logistic regression, the cross-entropy loss. Second, to find the parameters that minimize this loss function, we'll use the gradient descent optimization algorithm [...]. Third, gradient descent requires knowing the gradient of the loss function, the vector that contains the partial derivative of the loss function with respect to each of the parameters. [...] for neural networks, with millions of parameters in many layers, it's much harder to see how to compute the partial derivative of some weight in layer 1 when the loss is attached to some much later layer. How do we partial out the loss over all those intermediate layers? The answer is the algorithm called error backpropagation or backward differentiation. [...] Computing the gradient requires the partial derivative of the loss function with respect to each parameter. [...] The solution to computing this gradient is an algorithm called error backpropagation.",
+        "token_count": 235,
+        "readability": {
+            "flesch_reading_ease": 49.75,
+            "flesch_kincaid_grade": 11.6,
+            "smog_index": 13.2
+        },
+        "pos": {
+            "DT": 0.20574162679425836,
+            "JJ": 0.10526315789473684,
+            "NN": 0.3827751196172249,
+            "VB": 0.10526315789473684,
+            "IN": 0.11004784688995216,
+            "NNP": 0.014354066985645933,
+            "CC": 0.019138755980861243,
+            "RB": 0.019138755980861243,
+            "VBN": 0.019138755980861243,
+            "VBG": 0.014354066985645933,
+            "RP": 0.004784688995215311
+        },
         "selected_texts": {
             "L": {
                 "L_mistral_prompt1": {
@@ -260,6 +369,11 @@
                         "rouge_1": 0.6557377049180327,
                         "rouge_2": 0.29218106995884774,
                         "rouge_L": 0.4385245901639344
+                    },
+                    "bertscore": {
+                            "bertscore_precision": 0.3468829393386841,
+                            "bertscore_recall": 0.39278966188430786,
+                            "bertscore_f1": 0.3719981908798218
                     }
                 },
                 "L_deepseek_prompt3": {
@@ -292,6 +406,11 @@
                         "rouge_1": 0.31862745098039214,
                         "rouge_2": 0.06896551724137932,
                         "rouge_L": 0.18137254901960786
+                    },
+                    "bertscore": {
+                            "bertscore_precision": 0.042795635759830475,
+                            "bertscore_recall": 0.0653061494231224,
+                            "bertscore_f1": 0.057735588401556015
                     }
                 }
             }
@@ -301,6 +420,27 @@
         "topic": "Backward Pass",
         "instance_code": "T8",
         "original_text": "The importance of the computation graph comes from the backward pass, which is used to compute the derivatives that we'll need for the weight update. [...] Backwards differentiation makes use of the chain rule [...]. Suppose we are computing the derivative of a composite function f(x) = u(v(x)). The derivative of f(x) is the derivative of u(x) with respect to v(x) times the derivative of v(x) with respect to x. [...] The chain rule extends to more than two functions. If computing the derivative of a composite function f(x) = u(v(w(x))), the derivative of f(x) is: df/dx = du/dv·dv/dw·dw/dx. The intuition of backward differentiation is to pass gradients back from the final node to all the nodes in the graph. [...] Each node takes an upstream gradient that is passed in from its parent node to the right, and for each of its inputs computes a local gradient (the gradient of its output with respect to its input), and uses the chain rule to multiply these two to compute a downstream gradient to be passed on to the next earlier node. Let's now compute the 3 derivatives we need. Since in the computation graph L = ce, we can directly compute the derivative ∂L/∂c: ∂L/∂c = e. For the other two, we'll need to use the chain rule: ∂L/∂a=∂L/∂e*∂e/∂a [and] ∂L/∂b=∂L/∂e*∂e/∂d*∂d/∂b.",
+        "token_count": 216,
+        "readability": {
+            "flesch_reading_ease": 60.35,
+            "flesch_kincaid_grade": 9.6,
+            "smog_index": 12.2
+        },
+        "pos": {
+            "DT": 0.17801047120418848,
+            "NN": 0.32460732984293195,
+            "IN": 0.14659685863874344,
+            "VB": 0.14136125654450263,
+            "VBN": 0.015706806282722512,
+            "NNP": 0.041884816753926704,
+            "VBG": 0.010471204188481676,
+            "JJ": 0.07329842931937172,
+            "FW": 0.010471204188481676,
+            "RB": 0.020942408376963352,
+            "CD": 0.015706806282722512,
+            "CC": 0.015706806282722512,
+            "MD": 0.005235602094240838
+        },
         "selected_texts": {
             "L": {
                 "L_mistral_prompt5": {
@@ -334,6 +474,11 @@
                         "rouge_1": 0.7850098619329389,
                         "rouge_2": 0.499009900990099,
                         "rouge_L": 0.5996055226824457
+                    },
+                    "bertscore": {
+                            "bertscore_precision": 0.5684764385223389,
+                            "bertscore_recall": 0.6069672107696533,
+                            "bertscore_f1": 0.5891520380973816
                     }
                 },
                 "L_gpt4o_prompt3": {
@@ -368,6 +513,11 @@
                         "rouge_1": 0.5022970903522206,
                         "rouge_2": 0.18433179723502305,
                         "rouge_L": 0.30321592649310875
+                    },
+                    "bertscore": {
+                            "bertscore_precision": 0.21649083495140076,
+                            "bertscore_recall": 0.3311777412891388,
+                            "bertscore_f1": 0.2743002474308014
                     }
                 }
             }
@@ -377,6 +527,25 @@
         "topic": "Long Short-Term Memory (LSTMs)",
         "instance_code": "T10",
         "original_text": "[...] it is quite difficult to train RNNs for tasks that require a network to make use of information distant from the current point of processing. [...] the information encoded in hidden states tends to be fairly local, more relevant to the most recent parts of the input sequence and recent decisions. [...] the gradients are eventually driven to zero, a situation called the vanishing gradients problem. To address these issues, more complex network architectures have been designed to explicitly manage the task of maintaining relevant context over time, by enabling the network to learn to forget information that is no longer needed and to remember information required for decisions still to come. The most commonly used such extension to RNNs is the long short-term memory (LSTM) network. LSTMs [...] remove information no longer needed from the context, and adding information likely to be needed for later decision making. [...] LSTMs accomplish this by first adding an explicit context layer to the architecture [...], and control the flow of information into and out of the units [...]. These gates are implemented through the use of additional weights that operate sequentially on the input, and previous hidden layer, and previous context layers. [...] The purpose of [the forget gate] is to delete information from the context that is no longer needed. [...] the add gate to select the information to add to the current context. [...] The final gate is the output gate which is used to decide what information is required for the current hidden state. [...]",
+        "token_count": 245,
+        "readability": {
+            "flesch_reading_ease": 50.67,
+            "flesch_kincaid_grade": 11.3,
+            "smog_index": 13.4
+        },
+        "pos": {
+            "VB": 0.1415525114155251,
+            "RB": 0.0684931506849315,
+            "JJ": 0.0958904109589041,
+            "NNP": 0.0228310502283105,
+            "IN": 0.1050228310502283,
+            "NN": 0.2968036529680365,
+            "DT": 0.1506849315068493,
+            "VBN": 0.0639269406392694,
+            "CC": 0.0319634703196347,
+            "CD": 0.0045662100456621,
+            "VBG": 0.0182648401826484
+        },
         "selected_texts": {
             "L": {
                 "L_gpt4o_prompt2": {
@@ -409,6 +578,11 @@
                         "rouge_1": 0.46355140186915883,
                         "rouge_2": 0.1275797373358349,
                         "rouge_L": 0.205607476635514
+                    },
+                    "bertscore": {
+                            "bertscore_precision": 0.20870621502399445,
+                            "bertscore_recall": 0.23907874524593353,
+                            "bertscore_f1": 0.22682897746562958
                     }
                 },
                 "L_claude_prompt5": {
@@ -441,6 +615,11 @@
                         "rouge_1": 0.35729847494553374,
                         "rouge_2": 0.08315098468271334,
                         "rouge_L": 0.187363834422658
+                    },
+                    "bertscore": {
+                            "bertscore_precision": 0.10483010113239288,
+                            "bertscore_recall": 0.1307893991470337,
+                            "bertscore_f1": 0.12120893597602844
                     }
                 }
             }
