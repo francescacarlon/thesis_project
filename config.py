@@ -12,6 +12,7 @@ DATASET_PATH = BASE_PATH / "data/dataset.json"
 BENCHMARK_PATH = BASE_PATH / "data/benchmark.json"
 LINGUISTIC_ANALYSIS_PATH = BASE_PATH / "data/linguistic_analysis.json"  # New file only for linguistic analysis
 RANDOMIZED_BENCHMARK_PATH = BASE_PATH / "data/benchmark_randomized.json"
+RANDOMIZED_BENCHMARK_WITH_SCORES_PATH = BASE_PATH / "data/benchmark_randomized_with_agreement_scores.json"
 TEXT_PAGES_PATH = BASE_PATH / "data/"
 
 # Load environment variables from .env file
