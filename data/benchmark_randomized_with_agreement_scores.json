@@ -400,7 +400,7 @@
             "bertscore_f1": 0.3719981908798218
           },
           "LLMs_judge": 30,
-          "humans_judge": 0
+          "humans_judge": 18
         },
         "L_deepseek_prompt3_7": {
           "text": "**Adapted Explanation:**  \nA feedforward neural network works like a language model that learns by correction. Imagine teaching a student to transcribe phonetics: you show them a sound (input **x**) and the correct symbol (target **y**). The student’s guess (**ŷ**) is compared to **y**, and we adjust their \"mental rules\" (parameters) to minimize errors.  \n\n**Training involves three linguistic parallels:**  \n1. **Loss Function**: Like measuring phonetic dissimilarity, we use *cross-entropy loss*—a tool from logistic regression—to quantify how far **ŷ** is from **y**.  \n2. **Gradient Descent**: Think of tuning a synthesizer’s pitch. To fix errors, you adjust dials (parameters) incrementally, guided by *which changes most reduce distortion* (the gradient).  \n3. **Backpropagation**: Syntax trees show how sentence errors trace back to individual words. Similarly, backpropagation calculates how each \"rule\" (weight) in early network layers contributed to the final error, working backward layer-by-layer—like diagnosing mispronunciation by retracing articulatory steps.  \n\nThis mirrors language acquisition: systematic feedback refines internal rules until performance aligns with target patterns.",
@@ -439,13 +439,13 @@
             "bertscore_f1": 0.057735588401556015
           },
           "LLMs_judge": 44,
-          "humans_judge": 0
+          "humans_judge": 8
         }
       }
     },
     "original_text_7_score": {
       "LLMs_judge": 16,
-      "humans_judge": 0
+      "humans_judge": 10
     }
   },
   "T8": {
@@ -513,7 +513,7 @@
             "bertscore_f1": 0.5891520380973816
           },
           "LLMs_judge": 26,
-          "humans_judge": 0
+          "humans_judge": 13
         },
         "L_gpt4o_prompt3_8": {
           "text": "In the world of computation, we often deal with functions that depend on other functions, much like how words in a sentence depend on each other for meaning. Here, we're focusing on something called a \"computation graph,\" which is crucial for a process called \"backward differentiation.\" This process helps us figure out how to adjust the 'weights' in a system, similar to editing a sentence to improve its clarity or meaning.\n\nLet’s break down the key idea using concepts you're familiar with. Backward differentiation uses a mathematical principle called the chain rule, which you can think of as understanding how changes in one part of a sentence affect the whole sentence's meaning. Imagine you have a function f(x) that is made up of two smaller functions, u and v, like a sentence made up of phrases. The overall change in f(x) is influenced by changes in both u and v, just as changing one phrase affects the entire sentence.\n\nThe chain rule tells us that to find the change in f(x), we multiply the change in u with respect to v by the change in v with respect to x. This concept extends to more complex functions, like adding more phrases to a sentence. For example, if f(x) is made up of three functions u(v(w(x))), the change in f(x) involves multiplying the changes across all functions, much like understanding how each phrase in a compound sentence contributes to the overall message.\n\nIn backward differentiation, we trace these changes back through the computation graph, starting from the end and moving to the beginning, similar to proofreading a sentence backwards to see how each word contributes to the sentence's meaning.\n\nNow, let's see this in action with an example. Suppose in our computation graph, we have L = ce. Here, the derivative (or change) of L with respect to c is simply e, much like how changing a single word affects its immediate meaning. For changes involving more parts, like ∂L/∂a, we apply the chain rule: ∂L/∂a=∂L/∂e*∂e/∂a. Similarly, for ∂L/∂b, the chain rule helps us: ∂L/∂b=∂L/∂e*∂e/∂d*∂d/∂b.\n\nBy understanding how each part of the function affects the whole, we can adjust the 'weights' effectively, much as you would revise a complex sentence to ensure every word is contributing to your intended meaning.",
@@ -554,13 +554,13 @@
             "bertscore_f1": 0.2743002474308014
           },
           "LLMs_judge": 41,
-          "humans_judge": 0
+          "humans_judge": 10
         }
       }
     },
     "original_text_8_score": {
       "LLMs_judge": 23,
-      "humans_judge": 0
+      "humans_judge": 13
     }
   },
   "T10": {
@@ -625,7 +625,7 @@
             "bertscore_f1": 0.22682897746562958
           },
           "LLMs_judge": 34,
-          "humans_judge": 0
+          "humans_judge": 18
         },
         "L_claude_prompt5_10": {
           "text": "Here's the linguistics-oriented explanation:\n\nThink of how we process complex sentences across discourse. Just as we need to track grammatical dependencies and referents across long stretches of text, artificial neural networks need to handle information across sequences. However, like how working memory has limitations in processing center-embedded clauses, basic neural networks struggle with long-distance dependencies.\n\nImagine parsing a long sentence - we naturally forget irrelevant earlier parts while maintaining important elements like subjects or antecedents for later reference. Long Short-Term Memory (LSTM) networks mirror this cognitive process. Like how we use discourse markers and cohesive devices to manage information flow in text, LSTMs have special mechanisms called \"gates\" that control information:\n\n- The \"forget gate\" acts like pronoun resolution - it clears out old referents that are no longer needed\n- The \"add gate\" works similarly to introducing new discourse topics or referents\n- The \"output gate\" functions like selecting relevant information for the current clause being processed\n\nJust as we maintain a mental discourse model while processing text, LSTMs maintain a \"context layer\" that stores important information. Think of it as keeping track of topic continuity and coherence relations across sentences. The gates work together like the cognitive mechanisms we use to build and update our mental representation of discourse structure.",
@@ -664,13 +664,13 @@
             "bertscore_f1": 0.12120893597602844
           },
           "LLMs_judge": 40,
-          "humans_judge": 0
+          "humans_judge": 9
         }
       }
     },
     "original_text_10_score": {
       "LLMs_judge": 16,
-      "humans_judge": 0
+      "humans_judge": 9
     }
   }
 }
