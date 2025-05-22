@@ -265,8 +265,8 @@ def plot_judgment_correlation(df):
 linguistic_metrics = ["cosine_similarity"]
 # linguistic_metrics = ["JJ", "NN", "VB", "DT", "IN", "MD", "CC", "VBG", "NNP", "RB", "VBN"]  # these are the most significant POS tags
 
-# compute_linguistic_metric_correlations(df, linguistic_metrics)
-# plot_linguistic_metric_correlations(df, linguistic_metrics)
-# 
-# compute_judgment_alignment(df)
-# plot_judgment_correlation(df)
+compute_linguistic_metric_correlations(df, linguistic_metrics)
+plot_linguistic_metric_correlations(df, linguistic_metrics)
+
+compute_judgment_alignment(df)
+plot_judgment_correlation(df)

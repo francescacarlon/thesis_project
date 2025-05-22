@@ -181,7 +181,15 @@ def compute_bertscore(original_text, tailored_text, model_name="microsoft/debert
 
 # Function to compute BLEU score
 def compute_bleu_score(original_text, tailored_text):
-    """Computes BLEU score for similarity checking."""
+    """Computes BLEU score for similarity checking.
+    BLEU-1 formula:
+    BLEU = BP * p1
+    where:
+      - p1 = modified unigram precision (clipped count of matching unigrams / total unigrams in candidate)
+      - BP = brevity penalty = 1 if candidate length > reference length,
+                                else exp(1 - reference_length / candidate_length)
+    Smoothing is applied using nltk.translate.bleu_score.SmoothingFunction().method1
+"""
     if not original_text.strip() or not tailored_text.strip():
         return {"bleu_score": None}  
 
@@ -191,6 +199,7 @@ def compute_bleu_score(original_text, tailored_text):
     smoothie = SmoothingFunction().method1
 
     # BLEU uses n-grams, so we set weights evenly across 1-gram to 4-gram
+    # Here I used 1-gram
     bleu_score = sentence_bleu(original_tokens, tailored_tokens, 
                                weights=(1, 0, 0, 0),  
                                smoothing_function=smoothie)
