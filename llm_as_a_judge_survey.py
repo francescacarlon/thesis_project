@@ -25,16 +25,37 @@ for env_key, service_name in required_keys.items():
 # ========================
 # 📖 Role Descriptions
 # ========================
+
+# role_definitions = {
+#     "Linguist": (
+#         "Linguists have a strong background in language structure, phonetics, syntax, and semantics. "
+#         "They are familiar with theoretical concepts in language analysis but typically have little or no experience with programming or technical machine learning methods."
+#     ),
+#     "Computer Scientist": (
+#         "Computer scientists have a strong background in programming, algorithms, data structures, and machine learning. "
+#         "They are not typically trained in linguistics, language theory, or phonetics."
+#     )
+# }
+
+
+# NEW Role definitions according to the typical human evaluator's background information from survey
 role_definitions = {
     "Linguist": (
-        "Linguists have a strong background in language structure, phonetics, syntax, and semantics. "
-        "They are familiar with theoretical concepts in language analysis but typically have little or no experience with programming or technical machine learning methods."
+        "Linguists are students enrolled in the Master of Science Computational Linguistics. They currently study AI, Machine Learning and NLP-related subjects."
+        "They have obtained a Bachelor's degree in Linguistics, where they studied phonetics, syntax, and semantics."
+        "They have completed University-level courses mainly in Linguistics, a few in Computational Linguistics but none or only few in Computer Science."
+        "They have gained work experience mainly in Linguistics, a little in Computational Linguistics, but none or little in Computer Science."
+        "Their native language is not English."
     ),
     "Computer Scientist": (
-        "Computer scientists have a strong background in programming, algorithms, data structures, and machine learning. "
-        "They are not typically trained in linguistics, language theory, or phonetics."
+        "Computer Scientists are students enrolled in the Master of Science Computational Linguistics. They currently study AI, Machine Learning and NLP-related subjects."
+        "They have obtained a Bachelor's degree in Computer Science, where they studied programming, algorithms and data structures."
+        "They have completed University-level courses mainly in Computer Science, a few in Computational Linguistics but none in Linguistics."
+        "They have gained work experience mainly in Computer Science, a little in Computational Linguistics, but none in Linguistics."
+        "Their native language is not English."
     )
 }
+
 
 # ========================
 # 📄 Extract 3 explanations from file
@@ -144,18 +165,20 @@ def load_results_from_folder(folder):
 # ========================
 if __name__ == "__main__":
     BASE_PATH = Path.cwd()
-    models_who_judge = ["gpt4o", "claude", "deepseek", "llama", "mistral"]
+    #models_who_judge = ["gpt4o", "claude", "deepseek", "llama", "mistral"]
 
     role_configs = [
         {
             "role": "Linguist",
             "input_folder": BASE_PATH / "data/texts_survey/llm_as_a_judge_texts/target_linguistics",
-            "output_folder": BASE_PATH / "data/texts_survey/llm_as_a_judge_texts/target_linguistics/results"
+            # "output_folder": BASE_PATH / "data/texts_survey/llm_as_a_judge_texts/target_linguistics/results"
+            "output_folder": BASE_PATH / "data/texts_survey/llm_as_a_judge_texts/target_linguistics/new_results" # new results
         },
         {
             "role": "Computer Scientist",
             "input_folder": BASE_PATH / "data/texts_survey/llm_as_a_judge_texts/target_computer_science",
-            "output_folder": BASE_PATH / "data/texts_survey/llm_as_a_judge_texts/target_computer_science/results"
+            # "output_folder": BASE_PATH / "data/texts_survey/llm_as_a_judge_texts/target_computer_science/results"
+            "output_folder": BASE_PATH / "data/texts_survey/llm_as_a_judge_texts/target_computer_science/new_results" # new results
         }
     ]
 
@@ -180,7 +203,8 @@ if __name__ == "__main__":
         print(f"📥 Aggregating results for: {role}")
         aggregated_results[role] = load_results_from_folder(results_folder)
 
-    output_path = BASE_PATH / "data/texts_survey/llm_as_a_judge_texts/evaluation_results.json"
+    # output_path = BASE_PATH / "data/texts_survey/llm_as_a_judge_texts/evaluation_results.json"
+    output_path = BASE_PATH / "data/texts_survey/llm_as_a_judge_texts/new_evaluation_results.json"
     with output_path.open("w", encoding="utf-8") as f:
         json.dump(aggregated_results, f, indent=2, ensure_ascii=False)
 

@@ -63,7 +63,9 @@
             "bertscore_recall": 0.44694414734840393,
             "bertscore_f1": 0.40703248977661133
           },
-          "LLMs_judge": 33,
+          "LLMs_judge_first_trial": 33,
+          "LLMs_judge": 37,
+          "LLMs_judge_tot": 70,
           "humans_judge": 26
         },
         "CS_claude_prompt4_2": {
@@ -104,13 +106,17 @@
             "bertscore_recall": 0.10574717074632645,
             "bertscore_f1": 0.10216652601957321
           },
-          "LLMs_judge": 36,
+          "LLMs_judge_first_trial": 36,
+          "LLMs_judge": 33 ,
+          "LLMs_judge_tot": 69,
           "humans_judge": 19
         }
       }
     },
     "original_text_2_score": {
-      "LLMs_judge": 21,
+      "LLMs_judge_first_trial": 21,
+      "LLMs_judge": 20,
+      "LLMs_judge_tot": 41,
       "humans_judge": 15
     }
   },
@@ -177,7 +183,9 @@
             "bertscore_recall": 0.37998685240745544,
             "bertscore_f1": 0.36868295073509216
           },
-          "LLMs_judge": 27,
+          "LLMs_judge_first_trial": 27,
+          "LLMs_judge": 25 ,
+          "LLMs_judge_tot": 52,
           "humans_judge": 20
         },
         "CS_gpt4o_prompt1_3": {
@@ -217,13 +225,17 @@
             "bertscore_recall": 0.2893739938735962,
             "bertscore_f1": 0.24385039508342743
           },
-          "LLMs_judge": 43,
+          "LLMs_judge_first_trial": 43,
+          "LLMs_judge": 42,
+          "LLMs_judge_tot": 85, 
           "humans_judge": 24
         }
       }
     },
     "original_text_3_score": {
-      "LLMs_judge": 20,
+      "LLMs_judge_first_trial": 20,
+      "LLMs_judge": 23, 
+      "LLMs_judge_tot": 43,
       "humans_judge": 16
     }
   },
@@ -290,7 +302,9 @@
             "bertscore_recall": 0.06621532887220383,
             "bertscore_f1": 0.06977730989456177
           },
+          "LLMs_judge_first_trial": 42,
           "LLMs_judge": 42,
+          "LLMs_judge_tot": 84,
           "humans_judge": 20
         },
         "CS_mistral_prompt5_4": {
@@ -328,13 +342,17 @@
             "bertscore_recall": 0.3140544891357422,
             "bertscore_f1": 0.2830999493598938
           },
-          "LLMs_judge": 28,
+          "LLMs_judge_first_trial": 28,
+          "LLMs_judge": 25,
+          "LLMs_judge_tot": 53, 
           "humans_judge": 24
         }
       }
     },
     "original_text_4_score": {
-      "LLMs_judge": 20,
+      "LLMs_judge_first_trial": 20,
+      "LLMs_judge": 23,
+      "LLMs_judge_tot": 43,
       "humans_judge": 16
     }
   },
@@ -399,7 +417,9 @@
             "bertscore_recall": 0.39278966188430786,
             "bertscore_f1": 0.3719981908798218
           },
-          "LLMs_judge": 30,
+          "LLMs_judge_first_trial": 30,
+          "LLMs_judge": 34,
+          "LLMs_judge_tot": 64,
           "humans_judge": 38
         },
         "L_deepseek_prompt3_7": {
@@ -438,13 +458,17 @@
             "bertscore_recall": 0.0653061494231224,
             "bertscore_f1": 0.057735588401556015
           },
-          "LLMs_judge": 44,
+          "LLMs_judge_first_trial": 44,
+          "LLMs_judge": 40,
+          "LLMs_judge_tot": 84,
           "humans_judge": 20
         }
       }
     },
     "original_text_7_score": {
-      "LLMs_judge": 16,
+      "LLMs_judge_first_trial": 16,
+      "LLMs_judge":16 ,
+      "LLMs_judge_tot": 32,
       "humans_judge": 20
     }
   },
@@ -512,7 +536,9 @@
             "bertscore_recall": 0.6069672107696533,
             "bertscore_f1": 0.5891520380973816
           },
-          "LLMs_judge": 26,
+          "LLMs_judge_first_trial": 26,
+          "LLMs_judge": 28,
+          "LLMs_judge_tot": 54,
           "humans_judge": 29
         },
         "L_gpt4o_prompt3_8": {
@@ -553,13 +579,17 @@
             "bertscore_recall": 0.3311777412891388,
             "bertscore_f1": 0.2743002474308014
           },
+          "LLMs_judge_first_trial": 41,
           "LLMs_judge": 41,
+          "LLMs_judge_tot": 82,
           "humans_judge": 27
         }
       }
     },
     "original_text_8_score": {
-      "LLMs_judge": 23,
+      "LLMs_judge_first_trial": 23,
+      "LLMs_judge": 21,
+      "LLMs_judge_tot": 44,
       "humans_judge": 22
     }
   },
@@ -624,7 +654,9 @@
             "bertscore_recall": 0.23907874524593353,
             "bertscore_f1": 0.22682897746562958
           },
-          "LLMs_judge": 34,
+          "LLMs_judge_first_trial": 34,
+          "LLMs_judge": 38,
+          "LLMs_judge_tot": 72, 
           "humans_judge": 38
         },
         "L_claude_prompt5_10": {
@@ -663,13 +695,17 @@
             "bertscore_recall": 0.1307893991470337,
             "bertscore_f1": 0.12120893597602844
           },
-          "LLMs_judge": 40,
+          "LLMs_judge_first_trial": 40,
+          "LLMs_judge": 35,
+          "LLMs_judge_tot": 75,
           "humans_judge": 22
         }
       }
     },
     "original_text_10_score": {
-      "LLMs_judge": 16,
+      "LLMs_judge_first_trial": 16,
+      "LLMs_judge": 17,
+      "LLMs_judge_tot": 33,
       "humans_judge": 18
     }
   }

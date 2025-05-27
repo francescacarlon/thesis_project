@@ -1,0 +1,56 @@
+
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title> Training FFNNs (Loss Function and Gradient) (Rotation v1)</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 40px; padding: 20px; line-height: 1.6; }
+                        .container { max-width: 800px; margin: auto; }
+                        h1, h2 { color: #333; }
+                        .box { background: #f4f4f4; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+                        .category { font-weight: bold; color: #0056b3; }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <h1> Training FFNNs (Loss Function and Gradient) (Rotation v1)</h1>
+                        <p><strong>Instance Code:</strong> T7</p>
+                        <p><strong>Target Category:</strong> L</p>
+                        
+                        <h2>Explanations</h2>
+                
+                    <div class="box">
+                        <p class="category">L_o_7</p>
+                        <p>A feedforward neural net is an instance of supervised machine learning in which we know the correct output y for each observation x. What the system produces is ˆy, the system's estimate of the true y. The goal of the training procedure is to learn parameters W[i] and b[i] for each layer i that make ˆy for each training observation as close as possible to the true y. [...] First, we'll need a loss function that models the distance between the system output and the gold output, and it's common to use the loss function used for logistic regression, the cross-entropy loss. Second, to find the parameters that minimize this loss function, we'll use the gradient descent optimization algorithm [...]. Third, gradient descent requires knowing the gradient of the loss function, the vector that contains the partial derivative of the loss function with respect to each of the parameters. [...] for neural networks, with millions of parameters in many layers, it's much harder to see how to compute the partial derivative of some weight in layer 1 when the loss is attached to some much later layer. How do we partial out the loss over all those intermediate layers? The answer is the algorithm called error backpropagation or backward differentiation. [...] Computing the gradient requires the partial derivative of the loss function with respect to each parameter. [...] The solution to computing this gradient is an algorithm called error backpropagation.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">L_m_1_7</p>
+                        <p>Neural networks are a type of machine learning where we train the system to predict the correct outcome (y) for given input (x). To do this, we adjust weights (W[i]) and biases (b[i]) in each layer (i) to make our prediction (ˆy) as close as possible to the actual outcome (y).
+
+     To measure how close we are, we use a loss function, similar to the one used in logistic regression, called cross-entropy loss. This function tells us how far our prediction is from the correct answer.
+
+     To find the best weights and biases, we use a method called gradient descent. However, this method requires knowing the gradient, or the rate of change, of the loss function for each parameter.
+
+     In a neural network with many layers and millions of parameters, it can be challenging to compute the gradient for a single weight in the first layer when the loss is attached to a much later layer. This is where backpropagation, or error backpropagation, comes in.
+
+     Backpropagation helps us calculate the gradient by partially deriving the loss function over all intermediate layers. In other words, it helps us trace the error back from the last layer to the very first one.
+
+     To compute the gradient using backpropagation, we need to calculate the partial derivative of the loss function with respect to each parameter. This is essential for the gradient descent algorithm to find the best weights and biases that minimize the loss function.</p>
+                    </div>
+                    
+                    <div class="box">
+                        <p class="category">L_d_3_7</p>
+                        <p>**Adapted Explanation:**  
+A feedforward neural network works like a language model that learns by correction. Imagine teaching a student to transcribe phonetics: you show them a sound (input **x**) and the correct symbol (target **y**). The student’s guess (**ŷ**) is compared to **y**, and we adjust their "mental rules" (parameters) to minimize errors.  
+
+**Training involves three linguistic parallels:**  
+1. **Loss Function**: Like measuring phonetic dissimilarity, we use *cross-entropy loss*—a tool from logistic regression—to quantify how far **ŷ** is from **y**.  
+2. **Gradient Descent**: Think of tuning a synthesizer’s pitch. To fix errors, you adjust dials (parameters) incrementally, guided by *which changes most reduce distortion* (the gradient).  
+3. **Backpropagation**: Syntax trees show how sentence errors trace back to individual words. Similarly, backpropagation calculates how each "rule" (weight) in early network layers contributed to the final error, working backward layer-by-layer—like diagnosing mispronunciation by retracing articulatory steps.  
+
+This mirrors language acquisition: systematic feedback refines internal rules until performance aligns with target patterns.</p>
+                    </div>
+                    
