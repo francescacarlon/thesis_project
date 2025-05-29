@@ -262,11 +262,11 @@ def plot_judgment_correlation(df):
 # Define your list of linguistic metrics
 
 # linguistic_metrics = ["token_count", "cosine_similarity", "flesch_reading_ease", "flesch_kincaid_grade", "smog_index", "bleu_score", "rouge_1", "rouge_2", "rouge_L", "bertscore_precision", "bertscore_recall", "bertscore_f1", "JJ", "NN", "VB", "DT", "IN", "MD", "CC", "VBG", "NNP", "RB", "VBN"]  # all metrics
-linguistic_metrics = ["token_count"]
+linguistic_metrics = ["token_count", "NN", "VB", "IN","VBN"]
 # linguistic_metrics = ["JJ", "NN", "VB", "DT", "IN", "MD", "CC", "VBG", "NNP", "RB", "VBN"]  # these are the most significant POS tags
 
 compute_linguistic_metric_correlations(df, linguistic_metrics)
 plot_linguistic_metric_correlations(df, linguistic_metrics)
 
-compute_judgment_alignment(df)
-plot_judgment_correlation(df)
+# compute_judgment_alignment(df)
+# plot_judgment_correlation(df)
