@@ -2,7 +2,7 @@
   "T2": {
     "topic": "Constituency and Context-Free Grammars",
     "instance_code": "T2",
-    "original_text_2": "Syntactic constituency is the idea that groups of words can behave as single units, or constituents. Consider the noun phrase, a sequence of words surrounding at least one noun. [...] they can all appear in similar syntactic environments, for example, before a verb: 'three parties from Brooklyn arrive'. [...] A widely used formal system for modeling constituent structure in natural language is the context-free grammar (CFG). [...] A context-free grammar consists of a set of rules or productions, each of which expresses the ways that symbols of the language can be grouped and ordered together, and a lexicon of words and symbols. [...] an NP (or noun phrase) can be composed of either a ProperNoun or a determiner (Det) followed by a Nominal; [...]. Context-free rules can be hierarchically  embedded, [...]: Det \u2192 a, Det \u2192 the, Noun \u2192 flight. [...] Thus, a CFG can be used to generate a set of strings. This sequence of rule expansions is called a derivation of the string of words. It is common to represent a derivation by a parse tree (commonly shown inverted with the root at the top). [...]. A CFG like that of L0 defines a formal language. Sentences (strings of words) that can be derived by a grammar are in the formal language defined by that grammar, and are called grammatical sentences. Sentences that cannot be derived by a given formal grammar are not in the language defined by that grammar and are  referred to as ungrammatical. [...] In linguistics, the use of formal languages to model natural languages is called generative grammar [...].",
+    "original_text_2": "Syntactic constituency is the idea that groups of words can behave as single units, or constituents. Consider the noun phrase, a sequence of words surrounding at least one noun. [...] they can all appear in similar syntactic environments, for example, before a verb: 'three parties from Brooklyn arrive'. [...] A widely used formal system for modeling constituent structure in natural language is the context-free grammar (CFG). [...] A context-free grammar consists of a set of rules or productions, each of which expresses the ways that symbols of the language can be grouped and ordered together, and a lexicon of words and symbols. [...] an NP (or noun phrase) can be composed of either a ProperNoun or a determiner (Det) followed by a Nominal; [...]. Context-free rules can be hierarchically  embedded, [...]: Det → a, Det → the, Noun → flight. [...] Thus, a CFG can be used to generate a set of strings. This sequence of rule expansions is called a derivation of the string of words. It is common to represent a derivation by a parse tree (commonly shown inverted with the root at the top). [...]. A CFG like that of L0 defines a formal language. Sentences (strings of words) that can be derived by a grammar are in the formal language defined by that grammar, and are called grammatical sentences. Sentences that cannot be derived by a given formal grammar are not in the language defined by that grammar and are  referred to as ungrammatical. [...] In linguistics, the use of formal languages to model natural languages is called generative grammar [...].",
     "token_count": 248,
     "readability": {
       "flesch_reading_ease": 62.88,
@@ -26,7 +26,7 @@
     "selected_texts": {
       "CS": {
         "CS_gpt4o_prompt3_2": {
-          "text": "In computer science terms, syntactic constituency is like treating certain groups of words as single \"modules\" or \"units\" in a program. Take a noun phrase, for example: it\u2019s a sequence of words that includes at least one noun. These noun phrases can be used in similar positions in a sentence, much like how functions can be called in similar contexts within different parts of your code. For instance, in the sentence \"three parties from Brooklyn arrive,\" the noun phrase \"three parties from Brooklyn\" acts as a single unit that appears before the verb \"arrive.\"\n\nTo formally model how these word groups work, we use something similar to what you might recognize as context-free grammars (CFGs) in programming languages. A CFG is a set of rules that describe how words and symbols can be combined, much like syntax rules in a programming language. For example, a noun phrase (NP) might be made up of a ProperNoun or a determiner (Det) followed by a Nominal. These rules can be layered, similar to how functions can call other functions: Det \u2192 a, Det \u2192 the, Noun \u2192 flight.\n\nUsing these rules, a CFG can generate sequences of words, known as a derivation. Think of it like tracing the execution of a program through a call stack. This derivation can be visualized using a parse tree, where the tree's root is at the top and branches show how the sentence is built, much like a decision tree in algorithms.\n\nA CFG defines a formal language, where sentences that can be \"derived\" or generated by the grammar are considered \"grammatical,\" like valid inputs that your code can process. Sentences that can't be derived are \"ungrammatical,\" similar to invalid inputs that would cause your program to throw an error.\n\nIn the field of linguistics, using formal languages to model natural language structures is called generative grammar, akin to how we use formal languages to define the syntax rules in programming languages.",
+          "text": "In computer science terms, syntactic constituency is like treating certain groups of words as single \"modules\" or \"units\" in a program. Take a noun phrase, for example: it’s a sequence of words that includes at least one noun. These noun phrases can be used in similar positions in a sentence, much like how functions can be called in similar contexts within different parts of your code. For instance, in the sentence \"three parties from Brooklyn arrive,\" the noun phrase \"three parties from Brooklyn\" acts as a single unit that appears before the verb \"arrive.\"\n\nTo formally model how these word groups work, we use something similar to what you might recognize as context-free grammars (CFGs) in programming languages. A CFG is a set of rules that describe how words and symbols can be combined, much like syntax rules in a programming language. For example, a noun phrase (NP) might be made up of a ProperNoun or a determiner (Det) followed by a Nominal. These rules can be layered, similar to how functions can call other functions: Det → a, Det → the, Noun → flight.\n\nUsing these rules, a CFG can generate sequences of words, known as a derivation. Think of it like tracing the execution of a program through a call stack. This derivation can be visualized using a parse tree, where the tree's root is at the top and branches show how the sentence is built, much like a decision tree in algorithms.\n\nA CFG defines a formal language, where sentences that can be \"derived\" or generated by the grammar are considered \"grammatical,\" like valid inputs that your code can process. Sentences that can't be derived are \"ungrammatical,\" similar to invalid inputs that would cause your program to throw an error.\n\nIn the field of linguistics, using formal languages to model natural language structures is called generative grammar, akin to how we use formal languages to define the syntax rules in programming languages.",
           "cosine_similarity": 0.8995142579078674,
           "hallucination_avg": 4.7,
           "token_count": 322,
@@ -66,8 +66,7 @@
           "LLMs_judge_first_trial": 33,
           "LLMs_judge": 37,
           "LLMs_judge_tot": 70,
-          "humans_judge": 26,
-          "parse_tree_depth_mean": 13.0
+          "humans_judge": 26
         },
         "CS_claude_prompt4_2": {
           "text": "Here's my adaptation for CS practitioners:\n\nIn programming languages, syntactic constituency is like nested object composition, where smaller components combine to form larger functional units. Think of it as a tree data structure where each node represents a language component.\n\nContext-Free Grammar (CFG) is similar to the compilation process's parsing phase, where code is broken down into a hierarchical structure. Just as programming languages have syntax rules (like how to form a valid if-statement or function declaration), natural language has production rules that define valid word combinations.\n\nConsider this analogy: A noun phrase is like a custom object class, where different instances (three parties from Brooklyn, the big computer, my red car) can all serve as the subject in a statement, just as different objects of the same class can be used interchangeably in your code.\n\nThe CFG rules work like a recursive function: starting from a root node (like the main() function), it expands into smaller components following predefined patterns. For example:NP -> Det Nominal  // Parent class definition\nDet -> \"the\"       // Terminal value assignment\nNominal -> \"computer\" // Terminal value assignmentThe parse tree generated is essentially an Abstract Syntax Tree (AST), similar to what compilers create when parsing source code. Valid sentences are those that can be generated by following these grammar rules, just as valid programs must follow the programming language's syntax rules.\n\nThink of generative grammar as the BNF (Backus-Naur Form) notation used to define programming language syntax, but for natural language instead.",
@@ -108,10 +107,9 @@
             "bertscore_f1": 0.10216652601957321
           },
           "LLMs_judge_first_trial": 36,
-          "LLMs_judge": 33,
+          "LLMs_judge": 33 ,
           "LLMs_judge_tot": 69,
-          "humans_judge": 19,
-          "parse_tree_depth_mean": 12.666666666666666
+          "humans_judge": 19
         }
       }
     },
@@ -120,8 +118,7 @@
       "LLMs_judge": 20,
       "LLMs_judge_tot": 41,
       "humans_judge": 15
-    },
-    "parse_tree_depth_mean_original_text_2": 8.444444444444445
+    }
   },
   "T3": {
     "topic": "Semantic Roles and Diathesis Alternations",
@@ -187,10 +184,9 @@
             "bertscore_f1": 0.36868295073509216
           },
           "LLMs_judge_first_trial": 27,
-          "LLMs_judge": 25,
+          "LLMs_judge": 25 ,
           "LLMs_judge_tot": 52,
-          "humans_judge": 20,
-          "parse_tree_depth_mean": 7.529411764705882
+          "humans_judge": 20
         },
         "CS_gpt4o_prompt1_3": {
           "text": "In computer science, we often deal with structured representations of data and the relationships between different entities. When analyzing language, we can think of sentences as structured data, where each part has a specific role. Let's break down the concepts using this analogy.\n\nConsider these sentences: \"Sasha broke the window\" and \"Pat opened the door.\" Here, Sasha and Pat are the subjects. In our CS terms, think of them as the main actors or agents in these events. An agent, in linguistic terms, is like the main thread in a program that initiates an action. Sasha and Pat are the ones causing something to happen, just like a function call might initiate a process.\n\nThe window and the door are the objects affected by these actions. In programming, you might think of these as the data structures that are modified by a function. These objects have a thematic role called THEME, which represents the items being acted upon.\n\nNow, let's discuss the flexibility of these roles. In different contexts, the same verb can involve various arguments. For example, in \"John broke the window with a rock,\" John is the AGENT, the window is the THEME, and the rock is the INSTRUMENT. Here, the rock is like a tool or parameter used by the function (John) to achieve an effect (breaking the window).\n\nSometimes, the structure changes, but the roles can be understood by the effect they have on the sentence's meaning. For instance:\n- \"The rock (INSTRUMENT) broke the window (THEME).\" \n- \"The window (THEME) broke.\"\n- \"The window (THEME) was broken by John (AGENT).\"\n\nThese examples show that the same verb \"break\" can have different argument structures, known as verb alternations or diathesis alternations. This is similar to how a function might be overloaded to handle different types or numbers of parameters in programming.\n\nUnderstanding these roles and alternations helps us abstract the core semantics of sentences, similar to how we abstract data types and functions in computer science to handle various situations effectively.",
@@ -231,19 +227,17 @@
           },
           "LLMs_judge_first_trial": 43,
           "LLMs_judge": 42,
-          "LLMs_judge_tot": 85,
-          "humans_judge": 24,
-          "parse_tree_depth_mean": 9.090909090909092
+          "LLMs_judge_tot": 85, 
+          "humans_judge": 24
         }
       }
     },
     "original_text_3_score": {
       "LLMs_judge_first_trial": 20,
-      "LLMs_judge": 23,
+      "LLMs_judge": 23, 
       "LLMs_judge_tot": 43,
       "humans_judge": 16
-    },
-    "parse_tree_depth_mean_original_text_3": 7.2
+    }
   },
   "T4": {
     "topic": "Word Senses and Relations Between Senses",
@@ -311,8 +305,7 @@
           "LLMs_judge_first_trial": 42,
           "LLMs_judge": 42,
           "LLMs_judge_tot": 84,
-          "humans_judge": 20,
-          "parse_tree_depth_mean": 11.166666666666666
+          "humans_judge": 20
         },
         "CS_mistral_prompt5_4": {
           "text": "1. Word Senses:\n       - A word sense is a separate definition of a word's meaning in a specific context. For instance, the word 'bank' can refer to a financial institution (bank1), or the sloping land beside a body of water (bank2).\n\n    2. Defining Word Senses:\n       - Dictionaries and thesauruses provide definitions, known as glosses, for each distinct sense.\n\n    3. Synonyms:\n       - Synonyms are words with identical or nearly identical meanings, such as couch and sofa, filbert and hazelnut, or car and automobile.\n\n    4. Antonyms:\n       - Antonyms are words with opposite meanings, like big and small, fast and slow, hot and cold, light and dark.\n\n    5. Hyponymy:\n       - A hyponym is a word that is more specific and denotes a subclass of another word. For example, car is a hyponym of vehicle, and dog is a hyponym of animal.\n\n    6. Hypernymy:\n       - The opposite of hyponymy, a hypernym is a more general word that encompasses a specific word. For instance, vehicle is a hypernym of car, and animal is a hypernym of dog.\n\n    7. Meronymy:\n       - Meronymy refers to the part-whole relationship, such as wheel being a part (meronym) of a car, and a car being the whole (holonym) that contains the wheel.",
@@ -351,9 +344,8 @@
           },
           "LLMs_judge_first_trial": 28,
           "LLMs_judge": 25,
-          "LLMs_judge_tot": 53,
-          "humans_judge": 24,
-          "parse_tree_depth_mean": 6.055555555555555
+          "LLMs_judge_tot": 53, 
+          "humans_judge": 24
         }
       }
     },
@@ -362,13 +354,12 @@
       "LLMs_judge": 23,
       "LLMs_judge_tot": 43,
       "humans_judge": 16
-    },
-    "parse_tree_depth_mean_original_text_4": 7.684210526315789
+    }
   },
   "T7": {
     "topic": " Training FFNNs (Loss Function and Gradient)",
     "instance_code": "T7",
-    "original_text_7": "A feedforward neural net is an instance of supervised machine learning in which we know the correct output y for each observation x. What the system produces is \u02c6y, the system's estimate of the true y. The goal of the training procedure is to learn parameters W[i] and b[i] for each layer i that make \u02c6y for each training observation as close as possible to the true y. [...] First, we'll need a loss function that models the distance between the system output and the gold output, and it's common to use the loss function used for logistic regression, the cross-entropy loss. Second, to find the parameters that minimize this loss function, we'll use the gradient descent optimization algorithm [...]. Third, gradient descent requires knowing the gradient of the loss function, the vector that contains the partial derivative of the loss function with respect to each of the parameters. [...] for neural networks, with millions of parameters in many layers, it's much harder to see how to compute the partial derivative of some weight in layer 1 when the loss is attached to some much later layer. How do we partial out the loss over all those intermediate layers? The answer is the algorithm called error backpropagation or backward differentiation. [...] Computing the gradient requires the partial derivative of the loss function with respect to each parameter. [...] The solution to computing this gradient is an algorithm called error backpropagation.",
+    "original_text_7": "A feedforward neural net is an instance of supervised machine learning in which we know the correct output y for each observation x. What the system produces is ˆy, the system's estimate of the true y. The goal of the training procedure is to learn parameters W[i] and b[i] for each layer i that make ˆy for each training observation as close as possible to the true y. [...] First, we'll need a loss function that models the distance between the system output and the gold output, and it's common to use the loss function used for logistic regression, the cross-entropy loss. Second, to find the parameters that minimize this loss function, we'll use the gradient descent optimization algorithm [...]. Third, gradient descent requires knowing the gradient of the loss function, the vector that contains the partial derivative of the loss function with respect to each of the parameters. [...] for neural networks, with millions of parameters in many layers, it's much harder to see how to compute the partial derivative of some weight in layer 1 when the loss is attached to some much later layer. How do we partial out the loss over all those intermediate layers? The answer is the algorithm called error backpropagation or backward differentiation. [...] Computing the gradient requires the partial derivative of the loss function with respect to each parameter. [...] The solution to computing this gradient is an algorithm called error backpropagation.",
     "token_count": 235,
     "readability": {
       "flesch_reading_ease": 49.75,
@@ -391,7 +382,7 @@
     "selected_texts": {
       "L": {
         "L_mistral_prompt1_7": {
-          "text": "Neural networks are a type of machine learning where we train the system to predict the correct outcome (y) for given input (x). To do this, we adjust weights (W[i]) and biases (b[i]) in each layer (i) to make our prediction (\u02c6y) as close as possible to the actual outcome (y).\n\n     To measure how close we are, we use a loss function, similar to the one used in logistic regression, called cross-entropy loss. This function tells us how far our prediction is from the correct answer.\n\n     To find the best weights and biases, we use a method called gradient descent. However, this method requires knowing the gradient, or the rate of change, of the loss function for each parameter.\n\n     In a neural network with many layers and millions of parameters, it can be challenging to compute the gradient for a single weight in the first layer when the loss is attached to a much later layer. This is where backpropagation, or error backpropagation, comes in.\n\n     Backpropagation helps us calculate the gradient by partially deriving the loss function over all intermediate layers. In other words, it helps us trace the error back from the last layer to the very first one.\n\n     To compute the gradient using backpropagation, we need to calculate the partial derivative of the loss function with respect to each parameter. This is essential for the gradient descent algorithm to find the best weights and biases that minimize the loss function.",
+          "text": "Neural networks are a type of machine learning where we train the system to predict the correct outcome (y) for given input (x). To do this, we adjust weights (W[i]) and biases (b[i]) in each layer (i) to make our prediction (ˆy) as close as possible to the actual outcome (y).\n\n     To measure how close we are, we use a loss function, similar to the one used in logistic regression, called cross-entropy loss. This function tells us how far our prediction is from the correct answer.\n\n     To find the best weights and biases, we use a method called gradient descent. However, this method requires knowing the gradient, or the rate of change, of the loss function for each parameter.\n\n     In a neural network with many layers and millions of parameters, it can be challenging to compute the gradient for a single weight in the first layer when the loss is attached to a much later layer. This is where backpropagation, or error backpropagation, comes in.\n\n     Backpropagation helps us calculate the gradient by partially deriving the loss function over all intermediate layers. In other words, it helps us trace the error back from the last layer to the very first one.\n\n     To compute the gradient using backpropagation, we need to calculate the partial derivative of the loss function with respect to each parameter. This is essential for the gradient descent algorithm to find the best weights and biases that minimize the loss function.",
           "cosine_similarity": 0.7685374617576599,
           "hallucination_avg": 5.0,
           "token_count": 243,
@@ -429,11 +420,10 @@
           "LLMs_judge_first_trial": 30,
           "LLMs_judge": 34,
           "LLMs_judge_tot": 64,
-          "humans_judge": 38,
-          "parse_tree_depth_mean": 10.083333333333334
+          "humans_judge": 38
         },
         "L_deepseek_prompt3_7": {
-          "text": "**Adapted Explanation:**  \nA feedforward neural network works like a language model that learns by correction. Imagine teaching a student to transcribe phonetics: you show them a sound (input **x**) and the correct symbol (target **y**). The student\u2019s guess (**\u0177**) is compared to **y**, and we adjust their \"mental rules\" (parameters) to minimize errors.  \n\n**Training involves three linguistic parallels:**  \n1. **Loss Function**: Like measuring phonetic dissimilarity, we use *cross-entropy loss*\u2014a tool from logistic regression\u2014to quantify how far **\u0177** is from **y**.  \n2. **Gradient Descent**: Think of tuning a synthesizer\u2019s pitch. To fix errors, you adjust dials (parameters) incrementally, guided by *which changes most reduce distortion* (the gradient).  \n3. **Backpropagation**: Syntax trees show how sentence errors trace back to individual words. Similarly, backpropagation calculates how each \"rule\" (weight) in early network layers contributed to the final error, working backward layer-by-layer\u2014like diagnosing mispronunciation by retracing articulatory steps.  \n\nThis mirrors language acquisition: systematic feedback refines internal rules until performance aligns with target patterns.",
+          "text": "**Adapted Explanation:**  \nA feedforward neural network works like a language model that learns by correction. Imagine teaching a student to transcribe phonetics: you show them a sound (input **x**) and the correct symbol (target **y**). The student’s guess (**ŷ**) is compared to **y**, and we adjust their \"mental rules\" (parameters) to minimize errors.  \n\n**Training involves three linguistic parallels:**  \n1. **Loss Function**: Like measuring phonetic dissimilarity, we use *cross-entropy loss*—a tool from logistic regression—to quantify how far **ŷ** is from **y**.  \n2. **Gradient Descent**: Think of tuning a synthesizer’s pitch. To fix errors, you adjust dials (parameters) incrementally, guided by *which changes most reduce distortion* (the gradient).  \n3. **Backpropagation**: Syntax trees show how sentence errors trace back to individual words. Similarly, backpropagation calculates how each \"rule\" (weight) in early network layers contributed to the final error, working backward layer-by-layer—like diagnosing mispronunciation by retracing articulatory steps.  \n\nThis mirrors language acquisition: systematic feedback refines internal rules until performance aligns with target patterns.",
           "cosine_similarity": 0.5533915162086487,
           "hallucination_avg": 4.3,
           "token_count": 155,
@@ -471,23 +461,21 @@
           "LLMs_judge_first_trial": 44,
           "LLMs_judge": 40,
           "LLMs_judge_tot": 84,
-          "humans_judge": 20,
-          "parse_tree_depth_mean": 8.818181818181818
+          "humans_judge": 20
         }
       }
     },
     "original_text_7_score": {
       "LLMs_judge_first_trial": 16,
-      "LLMs_judge": 16,
+      "LLMs_judge":16 ,
       "LLMs_judge_tot": 32,
       "humans_judge": 20
-    },
-    "parse_tree_depth_mean_original_text_7": 8.642857142857142
+    }
   },
   "T8": {
     "topic": "Backward Pass",
     "instance_code": "T8",
-    "original_text_8": "The importance of the computation graph comes from the backward pass, which is used to compute the derivatives that we'll need for the weight update. [...] Backwards differentiation makes use of the chain rule [...]. Suppose we are computing the derivative of a composite function f(x) = u(v(x)). The derivative of f(x) is the derivative of u(x) with respect to v(x) times the derivative of v(x) with respect to x. [...] The chain rule extends to more than two functions. If computing the derivative of a composite function f(x) = u(v(w(x))), the derivative of f(x) is: df/dx = du/dv\u00b7dv/dw\u00b7dw/dx. The intuition of backward differentiation is to pass gradients back from the final node to all the nodes in the graph. [...] Each node takes an upstream gradient that is passed in from its parent node to the right, and for each of its inputs computes a local gradient (the gradient of its output with respect to its input), and uses the chain rule to multiply these two to compute a downstream gradient to be passed on to the next earlier node. Let's now compute the 3 derivatives we need. Since in the computation graph L = ce, we can directly compute the derivative \u2202L/\u2202c: \u2202L/\u2202c = e. For the other two, we'll need to use the chain rule: \u2202L/\u2202a=\u2202L/\u2202e*\u2202e/\u2202a [and] \u2202L/\u2202b=\u2202L/\u2202e*\u2202e/\u2202d*\u2202d/\u2202b.",
+    "original_text_8": "The importance of the computation graph comes from the backward pass, which is used to compute the derivatives that we'll need for the weight update. [...] Backwards differentiation makes use of the chain rule [...]. Suppose we are computing the derivative of a composite function f(x) = u(v(x)). The derivative of f(x) is the derivative of u(x) with respect to v(x) times the derivative of v(x) with respect to x. [...] The chain rule extends to more than two functions. If computing the derivative of a composite function f(x) = u(v(w(x))), the derivative of f(x) is: df/dx = du/dv·dv/dw·dw/dx. The intuition of backward differentiation is to pass gradients back from the final node to all the nodes in the graph. [...] Each node takes an upstream gradient that is passed in from its parent node to the right, and for each of its inputs computes a local gradient (the gradient of its output with respect to its input), and uses the chain rule to multiply these two to compute a downstream gradient to be passed on to the next earlier node. Let's now compute the 3 derivatives we need. Since in the computation graph L = ce, we can directly compute the derivative ∂L/∂c: ∂L/∂c = e. For the other two, we'll need to use the chain rule: ∂L/∂a=∂L/∂e*∂e/∂a [and] ∂L/∂b=∂L/∂e*∂e/∂d*∂d/∂b.",
     "token_count": 216,
     "readability": {
       "flesch_reading_ease": 60.35,
@@ -512,7 +500,7 @@
     "selected_texts": {
       "L": {
         "L_mistral_prompt5_8": {
-          "text": "1. The computation graph in machine learning is crucial for its backward pass, which calculates the needed derivatives for updating the weights during the learning process. The principal tool used in this process is chain rule from calculus.\n\n    2. Let's imagine a complex function f(x) that is the result of multiple operations u(v(x)). To calculate the derivative of this function, we use the chain rule. Specifically, the derivative of f(x) is the derivative of u(x) with respect to v(x) times the derivative of v(x) with respect to x.\n\n    3. Consider a simple example of the chain rule applied to a composite function f(x) = u(v(w(x))). The derivative of f(x) can be calculated as follows: df/dx = du/dv\u00b7dv/dw\u00b7dw/dx.\n\n    4. The chain rule's fundamental principle is that it allows us to \"pass\" the gradients from the final node backward through the entire graph. Each node in the graph receives an upstream gradient from its parent node, computes local gradients (gradients of the output with respect to its input), and then passes downstream gradients to the next earlier node using the chain rule.\n\n    5. Let's calculate the derivatives we need for our example. Suppose our computation graph is L = ce, the derivative of L with respect to c is straightforward: \u2202L/\u2202c = e. To find the derivatives with respect to a and b, we'll use the chain rule: \u2202L/\u2202a = \u2202L/\u2202e * \u2202e/\u2202a and \u2202L/\u2202b = \u2202L/\u2202e * \u2202e/\u2202d * \u2202d/\u2202b.",
+          "text": "1. The computation graph in machine learning is crucial for its backward pass, which calculates the needed derivatives for updating the weights during the learning process. The principal tool used in this process is chain rule from calculus.\n\n    2. Let's imagine a complex function f(x) that is the result of multiple operations u(v(x)). To calculate the derivative of this function, we use the chain rule. Specifically, the derivative of f(x) is the derivative of u(x) with respect to v(x) times the derivative of v(x) with respect to x.\n\n    3. Consider a simple example of the chain rule applied to a composite function f(x) = u(v(w(x))). The derivative of f(x) can be calculated as follows: df/dx = du/dv·dv/dw·dw/dx.\n\n    4. The chain rule's fundamental principle is that it allows us to \"pass\" the gradients from the final node backward through the entire graph. Each node in the graph receives an upstream gradient from its parent node, computes local gradients (gradients of the output with respect to its input), and then passes downstream gradients to the next earlier node using the chain rule.\n\n    5. Let's calculate the derivatives we need for our example. Suppose our computation graph is L = ce, the derivative of L with respect to c is straightforward: ∂L/∂c = e. To find the derivatives with respect to a and b, we'll use the chain rule: ∂L/∂a = ∂L/∂e * ∂e/∂a and ∂L/∂b = ∂L/∂e * ∂e/∂d * ∂d/∂b.",
           "cosine_similarity": 0.9102436304092407,
           "hallucination_avg": 5.0,
           "token_count": 226,
@@ -551,11 +539,10 @@
           "LLMs_judge_first_trial": 26,
           "LLMs_judge": 28,
           "LLMs_judge_tot": 54,
-          "humans_judge": 29,
-          "parse_tree_depth_mean": 8.2
+          "humans_judge": 29
         },
         "L_gpt4o_prompt3_8": {
-          "text": "In the world of computation, we often deal with functions that depend on other functions, much like how words in a sentence depend on each other for meaning. Here, we're focusing on something called a \"computation graph,\" which is crucial for a process called \"backward differentiation.\" This process helps us figure out how to adjust the 'weights' in a system, similar to editing a sentence to improve its clarity or meaning.\n\nLet\u2019s break down the key idea using concepts you're familiar with. Backward differentiation uses a mathematical principle called the chain rule, which you can think of as understanding how changes in one part of a sentence affect the whole sentence's meaning. Imagine you have a function f(x) that is made up of two smaller functions, u and v, like a sentence made up of phrases. The overall change in f(x) is influenced by changes in both u and v, just as changing one phrase affects the entire sentence.\n\nThe chain rule tells us that to find the change in f(x), we multiply the change in u with respect to v by the change in v with respect to x. This concept extends to more complex functions, like adding more phrases to a sentence. For example, if f(x) is made up of three functions u(v(w(x))), the change in f(x) involves multiplying the changes across all functions, much like understanding how each phrase in a compound sentence contributes to the overall message.\n\nIn backward differentiation, we trace these changes back through the computation graph, starting from the end and moving to the beginning, similar to proofreading a sentence backwards to see how each word contributes to the sentence's meaning.\n\nNow, let's see this in action with an example. Suppose in our computation graph, we have L = ce. Here, the derivative (or change) of L with respect to c is simply e, much like how changing a single word affects its immediate meaning. For changes involving more parts, like \u2202L/\u2202a, we apply the chain rule: \u2202L/\u2202a=\u2202L/\u2202e*\u2202e/\u2202a. Similarly, for \u2202L/\u2202b, the chain rule helps us: \u2202L/\u2202b=\u2202L/\u2202e*\u2202e/\u2202d*\u2202d/\u2202b.\n\nBy understanding how each part of the function affects the whole, we can adjust the 'weights' effectively, much as you would revise a complex sentence to ensure every word is contributing to your intended meaning.",
+          "text": "In the world of computation, we often deal with functions that depend on other functions, much like how words in a sentence depend on each other for meaning. Here, we're focusing on something called a \"computation graph,\" which is crucial for a process called \"backward differentiation.\" This process helps us figure out how to adjust the 'weights' in a system, similar to editing a sentence to improve its clarity or meaning.\n\nLet’s break down the key idea using concepts you're familiar with. Backward differentiation uses a mathematical principle called the chain rule, which you can think of as understanding how changes in one part of a sentence affect the whole sentence's meaning. Imagine you have a function f(x) that is made up of two smaller functions, u and v, like a sentence made up of phrases. The overall change in f(x) is influenced by changes in both u and v, just as changing one phrase affects the entire sentence.\n\nThe chain rule tells us that to find the change in f(x), we multiply the change in u with respect to v by the change in v with respect to x. This concept extends to more complex functions, like adding more phrases to a sentence. For example, if f(x) is made up of three functions u(v(w(x))), the change in f(x) involves multiplying the changes across all functions, much like understanding how each phrase in a compound sentence contributes to the overall message.\n\nIn backward differentiation, we trace these changes back through the computation graph, starting from the end and moving to the beginning, similar to proofreading a sentence backwards to see how each word contributes to the sentence's meaning.\n\nNow, let's see this in action with an example. Suppose in our computation graph, we have L = ce. Here, the derivative (or change) of L with respect to c is simply e, much like how changing a single word affects its immediate meaning. For changes involving more parts, like ∂L/∂a, we apply the chain rule: ∂L/∂a=∂L/∂e*∂e/∂a. Similarly, for ∂L/∂b, the chain rule helps us: ∂L/∂b=∂L/∂e*∂e/∂d*∂d/∂b.\n\nBy understanding how each part of the function affects the whole, we can adjust the 'weights' effectively, much as you would revise a complex sentence to ensure every word is contributing to your intended meaning.",
           "cosine_similarity": 0.6825222969055176,
           "hallucination_avg": 4.9,
           "token_count": 381,
@@ -595,8 +582,7 @@
           "LLMs_judge_first_trial": 41,
           "LLMs_judge": 41,
           "LLMs_judge_tot": 82,
-          "humans_judge": 27,
-          "parse_tree_depth_mean": 12.75
+          "humans_judge": 27
         }
       }
     },
@@ -605,8 +591,7 @@
       "LLMs_judge": 21,
       "LLMs_judge_tot": 44,
       "humans_judge": 22
-    },
-    "parse_tree_depth_mean_original_text_8": 7.352941176470588
+    }
   },
   "T10": {
     "topic": "Long Short-Term Memory (LSTMs)",
@@ -671,9 +656,8 @@
           },
           "LLMs_judge_first_trial": 34,
           "LLMs_judge": 38,
-          "LLMs_judge_tot": 72,
-          "humans_judge": 38,
-          "parse_tree_depth_mean": 13.166666666666666
+          "LLMs_judge_tot": 72, 
+          "humans_judge": 38
         },
         "L_claude_prompt5_10": {
           "text": "Here's the linguistics-oriented explanation:\n\nThink of how we process complex sentences across discourse. Just as we need to track grammatical dependencies and referents across long stretches of text, artificial neural networks need to handle information across sequences. However, like how working memory has limitations in processing center-embedded clauses, basic neural networks struggle with long-distance dependencies.\n\nImagine parsing a long sentence - we naturally forget irrelevant earlier parts while maintaining important elements like subjects or antecedents for later reference. Long Short-Term Memory (LSTM) networks mirror this cognitive process. Like how we use discourse markers and cohesive devices to manage information flow in text, LSTMs have special mechanisms called \"gates\" that control information:\n\n- The \"forget gate\" acts like pronoun resolution - it clears out old referents that are no longer needed\n- The \"add gate\" works similarly to introducing new discourse topics or referents\n- The \"output gate\" functions like selecting relevant information for the current clause being processed\n\nJust as we maintain a mental discourse model while processing text, LSTMs maintain a \"context layer\" that stores important information. Think of it as keeping track of topic continuity and coherence relations across sentences. The gates work together like the cognitive mechanisms we use to build and update our mental representation of discourse structure.",
@@ -714,8 +698,7 @@
           "LLMs_judge_first_trial": 40,
           "LLMs_judge": 35,
           "LLMs_judge_tot": 75,
-          "humans_judge": 22,
-          "parse_tree_depth_mean": 12.5
+          "humans_judge": 22
         }
       }
     },
@@ -724,7 +707,6 @@
       "LLMs_judge": 17,
       "LLMs_judge_tot": 33,
       "humans_judge": 18
-    },
-    "parse_tree_depth_mean_original_text_10": 11.133333333333333
+    }
   }
 }

@@ -54,6 +54,7 @@ for task_id, task_content in benchmark_data.items():
                 "FW": pos.get("FW"),
                 "LLMs_judge": model_data.get("LLMs_judge"),
                 "humans_judge": model_data.get("humans_judge"),
+                "parse_tree_depth_mean":model_data.get("parse_tree_depth_mean"),
                 "topic": topic,
                 "texts_from": texts_from,
             })
@@ -88,6 +89,7 @@ for task_id, task_content in benchmark_data.items():
                     "FW": pos.get("FW"),
                     "LLMs_judge": score_block["LLMs_judge"],
                     "humans_judge": score_block["humans_judge"],
+                    "parse_tree_depth_mean": task_content.get(f"parse_tree_depth_mean_{key}"),
                     "topic": topic,
                     "texts_from": texts_from,
                 })
@@ -261,8 +263,9 @@ def plot_judgment_correlation(df):
 
 # Define your list of linguistic metrics
 
-# linguistic_metrics = ["token_count", "cosine_similarity", "flesch_reading_ease", "flesch_kincaid_grade", "smog_index", "bleu_score", "rouge_1", "rouge_2", "rouge_L", "bertscore_precision", "bertscore_recall", "bertscore_f1", "JJ", "NN", "VB", "DT", "IN", "MD", "CC", "VBG", "NNP", "RB", "VBN"]  # all metrics
-linguistic_metrics = ["token_count", "NN", "VB", "IN","VBN"]
+# linguistic_metrics = ["token_count", "cosine_similarity", "flesch_reading_ease", "flesch_kincaid_grade", "smog_index", "bleu_score", "rouge_1", "rouge_2", "rouge_L", "bertscore_precision", "bertscore_recall", "bertscore_f1", "JJ", "NN", "VB", "DT", "IN", "MD", "CC", "VBG", "NNP", "RB", "VBN", "parse_tree_depth_mean"]  # all metrics
+# linguistic_metrics = ["token_count", "NN", "VB", "IN","VBN", "parse_tree_depth_mean"]
+linguistic_metrics = [""]
 # linguistic_metrics = ["JJ", "NN", "VB", "DT", "IN", "MD", "CC", "VBG", "NNP", "RB", "VBN"]  # these are the most significant POS tags
 
 compute_linguistic_metric_correlations(df, linguistic_metrics)
