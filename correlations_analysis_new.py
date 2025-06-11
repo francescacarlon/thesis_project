@@ -255,6 +255,17 @@ def plot_judgment_correlation(df):
         height=6,
         aspect=1.3
     )
+
+        # Add overall regression line (fits through ALL data regardless of category)
+    sns.regplot(
+        data=df, 
+        x="LLMs_judge", 
+        y="humans_judge",
+        scatter=False,  # Don't plot points again
+        color="#2d8659",  # Green color for overall line
+        line_kws={'linewidth': 3, 'label': 'Overall Trend'}
+    )
+
     plt.title("LLMs_judge vs Humans_judge with Linear Regression")
     plt.tight_layout()
     plt.show()
@@ -265,11 +276,10 @@ def plot_judgment_correlation(df):
 
 # linguistic_metrics = ["token_count", "cosine_similarity", "flesch_reading_ease", "flesch_kincaid_grade", "smog_index", "bleu_score", "rouge_1", "rouge_2", "rouge_L", "bertscore_precision", "bertscore_recall", "bertscore_f1", "JJ", "NN", "VB", "DT", "IN", "MD", "CC", "VBG", "NNP", "RB", "VBN", "parse_tree_depth_mean"]  # all metrics
 # linguistic_metrics = ["token_count", "NN", "VB", "IN","VBN", "parse_tree_depth_mean"]
-linguistic_metrics = [""]
-# linguistic_metrics = ["JJ", "NN", "VB", "DT", "IN", "MD", "CC", "VBG", "NNP", "RB", "VBN"]  # these are the most significant POS tags
+linguistic_metrics = ["JJ", "NN", "VB", "DT", "IN", "MD", "CC", "VBG", "NNP", "RB", "VBN"]  # these are the most significant POS tags
 
-compute_linguistic_metric_correlations(df, linguistic_metrics)
-plot_linguistic_metric_correlations(df, linguistic_metrics)
+# compute_linguistic_metric_correlations(df, linguistic_metrics)
+# plot_linguistic_metric_correlations(df, linguistic_metrics)
 
-# compute_judgment_alignment(df)
-# plot_judgment_correlation(df)
+compute_judgment_alignment(df)
+plot_judgment_correlation(df)
