@@ -85,7 +85,7 @@ def create_prompt3(target_category, text):
     The key objective is to ensure that your audience grasps concepts outside their existing background knowledge so your client will publish your work.
     If you succeed, many more clients will work with you, and you will become extremely successful.
 
-    Consider the information on {category_explanation} to tailor the explanation to your audience’s specific background.
+    Consider the information on {category_explanation} to tailor the explanation to your audience's specific background.
 
     - Read the text carefully.
     - Identify key concepts.
@@ -104,8 +104,10 @@ def create_prompt3(target_category, text):
 
     """
 
-# ✅ Define the prompt template and define the categories
 def create_prompt4(target_category, text):
+    """ 
+    Generates expert-tailored paraphrases for a domain-specific jury to outscore the opponent and win a game. 
+    """
 
     category_definitions = {
         "L": "Linguistics (L) jury have a strong background on language structure, phonetics, syntax, and semantics. They have little or no technical knowledge.",
@@ -140,8 +142,10 @@ def create_prompt4(target_category, text):
 
     """
 
-# ✅ Define the prompt template and define the categories
 def create_prompt5(target_category, text): # this with no role
+    """
+    Generates paraphrasis with zero-shot prompting and CoT (no role assigned).
+    """
 
     category_definitions = {
         "L": "Linguistics (L) audience have a strong background on language structure, phonetics, syntax, and semantics. They have little or no technical knowledge.",
