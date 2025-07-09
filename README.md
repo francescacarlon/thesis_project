@@ -6,8 +6,10 @@ written at the University of Stuttgart, Germany.
 
 ---
 
-Francesca Carlon
+Francesca Carlon 
+
 MSc. Computational Linguistics
+
 francesca.carlon8@gmail.com
 
 ## Description

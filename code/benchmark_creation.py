@@ -28,6 +28,7 @@ from llm_caller import call_llm
 from prompts import *  # Import all prompts
 from prompts import PROMPT_FUNCTIONS
 from config import DATASET_PATH, BENCHMARK_PATH, LINGUISTIC_ANALYSIS_PATH
+from add_parse_tree_score import compute_mean_parse_tree_depth
 
 from openai.types.chat import ChatCompletion
 import re
@@ -134,6 +135,7 @@ def clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark, 
                     if "text" in analysis:
                         cleaned_text = clean_text(analysis["text"])
                         updated_analysis = analyze_text(cleaned_text)
+                        updated_analysis["parse_tree_depth_mean"] = compute_mean_parse_tree_depth(cleaned_text)
                         
                         # Compute metrics only if missing or if forced recomputation
                         if force_recompute or "cosine_similarity" not in analysis:
@@ -161,7 +163,7 @@ def clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark, 
                             "text": cleaned_text,
                             "token_count": updated_analysis["token_count"],
                             "readability": updated_analysis["readability"],
-                            "parse_tree_depth_mean": updated_analysis["parse_tree_depth_mean"], # check if in your case it has _original or _tailored
+                            "parse_tree_depth_mean": updated_analysis["parse_tree_depth_mean"], 
                             "pos": updated_analysis["pos"]
                         })
 
@@ -223,12 +225,13 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
         })
 
         original_analysis = analyze_text(original_text)
+        original_analysis["parse_tree_depth_mean"] = compute_mean_parse_tree_depth(original_text)
         linguistic_analysis.setdefault(key, {
             "original_category": original_category,
             "original_text": original_text,
             "token_count": original_analysis["token_count"],
             "readability": original_analysis["readability"],
-            "parse_tree_depth_mean":  original_analysis["parse_tree_depth_mean"], # check if in your case it has _original or _tailored
+            "parse_tree_depth_mean":  original_analysis["parse_tree_depth_mean"], 
             "pos": original_analysis["pos"],
             "tailored_texts": {}
         })
@@ -279,6 +282,7 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
 
             tailored_texts[prompt_key] = response_text
             tailored_analysis = analyze_text(response_text)
+            tailored_analysis["parse_tree_depth_mean"] = compute_mean_parse_tree_depth(response_text)
 
             # ✅ Compute similarity scores
             cosine_sim = compute_cosine_similarity(original_text, response_text)["cosine_similarity"]
@@ -291,7 +295,7 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
             "text": response_text,
             "token_count": tailored_analysis["token_count"],
             "readability": tailored_analysis["readability"],
-            "parse_tree_depth_mean":  tailored_analysis["parse_tree_depth_mean"], # check if in your case it has _original or _tailored
+            "parse_tree_depth_mean":  tailored_analysis["parse_tree_depth_mean"], 
             "pos": tailored_analysis["pos"],
             "cosine_similarity": cosine_sim,
             "bertscore": bert_scores,

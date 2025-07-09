@@ -7,7 +7,6 @@ Per-text metrics
 - token_count
 - readability        (Flesch Reading Ease, Flesch-Kincaid Grade, **SMOG**)
 - POS distribution
-- Parse Tree Mean Depth
 
 Pairwise similarity
 -------------------
@@ -24,7 +23,6 @@ from transformers import AutoTokenizer
 from bert_score import score
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 from rouge_score import rouge_scorer
-from add_parse_tree_score import compute_mean_parse_tree_depth
 
 logging.getLogger("transformers.modeling_utils").setLevel(logging.ERROR)
 
@@ -239,6 +237,4 @@ def analyze_similarity(original_text, tailored_text):
         "bertscore": compute_bertscore(original_text, tailored_text),
         "bleu_score": compute_bleu_score(original_text, tailored_text),
         "rouge_scores": compute_rouge_scores(original_text, tailored_text),
-        "parse_tree_depth_mean_original": compute_mean_parse_tree_depth(original_text),
-        "parse_tree_depth_mean_tailored": compute_mean_parse_tree_depth(tailored_text)
     }
