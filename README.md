@@ -69,7 +69,7 @@ cd code/
 python llm_as_a_judge_survey.py
 ```
 
-# Human annotation setup: 
+## Human annotation setup: 
 
 To randomize a subset from Benchmark:
 ```bash
