@@ -1,3 +1,28 @@
+"""
+Benchmark Generation Script
+---------------------------
+
+This script automates the generation of benchmark paraphrases using different
+Large Language Models (LLMs) and prompt engineering strategies.
+
+It loops through all defined LLMs and prompt functions (from the PROMPT_FUNCTIONS dictionary),
+sends the input to each model with each prompt, and saves the paraphrased outputs for later evaluation.
+
+Usage:
+- In TEST_MODE = True: runs a single benchmark case (for debugging or quick inspection)
+- In TEST_MODE = False: runs full benchmark generation for all (LLM x prompt) combinations
+
+Output:
+- Stores the generated paraphrases in a structured format (e.g., JSON) for evaluation
+  in later stages (e.g., human or LLM-as-a-judge evaluations, correlation analysis)
+
+Dependencies:
+- Requires `create_benchmark` function (from `benchmark_creation.py`)
+- Uses prompt templates defined in `prompts.py`
+
+Set up your models and prompt functions in `LLM_MODELS` and `PROMPT_FUNCTIONS`.
+"""
+
 from benchmark_creation import create_benchmark
 from prompts import PROMPT_FUNCTIONS
 

@@ -36,20 +36,33 @@ pip install -r requirements.txt
 ## Running the code
 
 ## Dataset Creation
+To create initial dataset with original texts from selected chapters of your book.
+
 ```bash
 cd code/
 python dataset_creation.py
 ```
 
+## Benchmark Creation
+To create tailored paraphrasis with different prompts-LLMs combinations.
+```bash
+cd code/
+python create_benchmark_main.py
+```
 
-Benchmark Creation
+(Optional) Hallucination Scores can be added with: 
+```bash
+cd code/
+python add_hallucination_scores.py
+```
 ...
 LLM-as-a-judge Survey
 ...
 Correlation Analysis
 ...
 
-(Optional for human annotation setup)
+# (Optional) Human annotation setup: 
+
 Randomized Benchmark Creation
 ...
 HTML Converter

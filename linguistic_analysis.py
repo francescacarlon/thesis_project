@@ -1,27 +1,30 @@
 """
-File with the linguistic metrics functions.
-For each text:
-- length (token count);
-- readability: Flesch scores;
-- POS distribution.
+linguistic_analysis.py
+Core linguistic - metric utilities.
 
-For similarity scores between the original text and the tailored texts:
-- Cosine similarity; 
-- BERT score; 
-- BLEU and ROUGE scores. 
+Per-text metrics
+----------------
+- token_count
+- readability        (Flesch Reading Ease, Flesch-Kincaid Grade, **SMOG**)
+- POS distribution
+- Parse Tree Mean Depth
 
+Pairwise similarity
+-------------------
+- cosine similarity
+- BERTScore          (DeBERTa-mnli)
+- BLEU-1
+- ROUGE-1/-2/-L
 """
 
-import nltk
-import textstat
-import torch
+import nltk, textstat, torch, logging
 from collections import Counter
 from sentence_transformers import SentenceTransformer, util
 from transformers import AutoTokenizer
 from bert_score import score
-import logging
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 from rouge_score import rouge_scorer
+from add_parse_tree_score import compute_mean_parse_tree_depth
 
 logging.getLogger("transformers.modeling_utils").setLevel(logging.ERROR)
 
@@ -40,17 +43,18 @@ def count_tokens(text):
     return len(words)
 
 # Function to compute readability scores
-def compute_readability(text):
-    """Computes readability scores, ensuring text is a valid string."""
-    if not isinstance(text, str) or not text.strip():  # Check for None or empty strings
-        return {"flesch_reading_ease": 0, "flesch_kincaid_grade": 0, "smog_index": 0}
+def compute_readability(text: str) -> dict:
+    """
+    Flesch Reading Ease, FK‑Grade, SMOG – returns zeros if text is empty/None.
+    """
+    if not isinstance(text, str) or not text.strip():
+        return {"flesch_reading_ease": 0,
+                "flesch_kincaid_grade": 0,
+                "smog_index": 0}
 
-    return {
-        "flesch_reading_ease": textstat.flesch_reading_ease(text),
-        "flesch_kincaid_grade": textstat.flesch_kincaid_grade(text),
-        "smog_index": textstat.smog_index(text)
-    }
-
+    return {"flesch_reading_ease":  textstat.flesch_reading_ease(text),
+            "flesch_kincaid_grade": textstat.flesch_kincaid_grade(text),
+            "smog_index":           textstat.smog_index(text)}
 
 
 # Function to compute POS distribution
@@ -234,5 +238,7 @@ def analyze_similarity(original_text, tailored_text):
         "cosine_similarity": compute_cosine_similarity(original_text, tailored_text),
         "bertscore": compute_bertscore(original_text, tailored_text),
         "bleu_score": compute_bleu_score(original_text, tailored_text),
-        "rouge_scores": compute_rouge_scores(original_text, tailored_text)
+        "rouge_scores": compute_rouge_scores(original_text, tailored_text),
+        "parse_tree_depth_mean_original": compute_mean_parse_tree_depth(original_text),
+        "parse_tree_depth_mean_tailored": compute_mean_parse_tree_depth(tailored_text)
     }
