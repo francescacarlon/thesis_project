@@ -2,8 +2,11 @@
 
 This repository contains the code and resources for my Master's thesis,  
 **"Tailoring Language for User Backgrounds: Human and LLM Evaluations of Paraphrased Texts"**,  
-written at the University of Stuttgart.
+written at the University of Stuttgart, Germany.
 
+Francesca Carlon
+MSc. Computational Linguistics
+francesca.carlon8@gmail.com
 ---
 
 ## Description
