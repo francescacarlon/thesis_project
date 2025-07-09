@@ -1,3 +1,18 @@
+"""
+This module analyzes hallucination scores from a JSON dataset containing
+LLM-generated tailored texts. It computes average hallucination scores by
+category and prompt, both overall and per individual LLM. The module
+provides functions to print results, export them to CSV and JSON, and
+visualize hallucination scores with grouped bar charts for easy comparison
+across LLMs and categories.
+
+Usage:
+- Analyze hallucination scores from a JSON file
+- Filter analysis by specific LLMs if desired
+- Export summarized results to CSV/JSON
+- Plot comparative bar charts of hallucination averages
+"""
+
 import json
 import pandas as pd
 from collections import defaultdict

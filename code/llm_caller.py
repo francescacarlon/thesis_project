@@ -1,6 +1,11 @@
 """
-This file calls the different LLMs with the corresponding API keys. 
+This module manages API calls to various large language models (LLMs) such as OpenAI's GPT, Anthropic Claude, DeepSeek,
+and Hugging Face-hosted models (LLaMA, Mistral). It loads API keys from environment variables, selects the appropriate
+API call function based on the model, handles request retries, processes the API responses, and returns clean textual output.
+
+Supported models: gpt4o, o1-preview, o1, claude, deepseek, llama, mistral.
 """
+
 
 from dotenv import load_dotenv
 import os
@@ -42,12 +47,12 @@ def get_api_function_llm(model):
         def openai_o1_preview_call(messages):
             """Calls OpenAI's o1-preview model, ensuring it does not include 'system' messages."""
             
-            # ✅ Filter out system messages
+            # Filter out system messages
             filtered_messages = [msg for msg in messages if msg.get("role") != "system"]
 
             response = client.chat.completions.create(
                 model="o1-preview",  
-                messages=filtered_messages  # ✅ Use filtered messages
+                messages=filtered_messages  # Use filtered messages
                 #temperature=0.7 # parameter not available
             )
             return response
@@ -84,13 +89,13 @@ def get_api_function_llm(model):
                     messages=[
                         {
                             "role": "user",
-                            "content": [{"type": "text", "text": str(user_message)}]  # ✅ Ensure user_message is a string
+                            "content": [{"type": "text", "text": str(user_message)}]  # Ensure user_message is a string
                         }
                     ]  
                 )
-                return response.content[0].text.strip()  # ✅ Extract text from response
+                return response.content[0].text.strip()  # Extract text from response
             except Exception as e:
-                print(f"\n❌ Error calling Anthropic API: {e}")
+                print(f"\n Error calling Anthropic API: {e}")
                 return None
 
   
@@ -122,11 +127,11 @@ def get_api_function_llm(model):
                 if response.status_code == 200:
                     return response.json()["choices"][0]["message"]["content"].strip()
                 else:
-                    print(f"\n❌ Error calling DeepSeek API: {response.status_code} - {response.text}")
+                    print(f"\n Error calling DeepSeek API: {response.status_code} - {response.text}")
                     return None
 
             except Exception as e:
-                print(f"\n❌ Unexpected error: {e}")
+                print(f"\n Unexpected error: {e}")
                 return None
 
         return deepseek_call
@@ -158,16 +163,16 @@ def get_api_function_llm(model):
                     elif isinstance(response_json, dict) and "generated_text" in response_json:
                         return response_json["generated_text"].strip()
                     else:
-                        print("\n❌ Unexpected response format from LLaMA API")
+                        print("\n Unexpected response format from LLaMA API")
                         print(response_json)  # Debugging info
                         return None
 
                 else:
-                    print(f"\n❌ Error calling LLaMA API: {response.status_code} - {response.text}")
+                    print(f"\n Error calling LLaMA API: {response.status_code} - {response.text}")
                     return None
 
             except Exception as e:
-                print(f"\n❌ Unexpected error: {e}")
+                print(f"\n Unexpected error: {e}")
                 return None
 
         return llama_call
@@ -186,7 +191,7 @@ def get_api_function_llm(model):
 
             try:
                 response = requests.post(
-                    "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3",  # ✅ Correct model name
+                    "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3",  # Correct model name
                     headers=headers,
                     json=payload
                 )
@@ -198,16 +203,16 @@ def get_api_function_llm(model):
                     elif isinstance(response_json, dict) and "generated_text" in response_json:
                         return response_json["generated_text"].strip()
                     else:
-                        print("\n❌ Unexpected response format from Mistral API")
+                        print("\n Unexpected response format from Mistral API")
                         print(response_json)
                         return None
 
                 else:
-                    print(f"\n❌ Error calling Mistral API: {response.status_code} - {response.text}")
+                    print(f"\n Error calling Mistral API: {response.status_code} - {response.text}")
                     return None
 
             except Exception as e:
-                print(f"\n❌ Unexpected error: {e}")
+                print(f"\n Unexpected error: {e}")
                 return None
 
         return mistral_call
@@ -219,13 +224,13 @@ def get_api_function_llm(model):
 def call_llm(model, prompt, retries=3, delay=2):
     llm_function = get_api_function_llm(model)
     if llm_function is None:
-        raise ValueError(f"❌ No valid LLM function found for model '{model}'")
+        raise ValueError(f" No valid LLM function found for model '{model}'")
 
     def process_response(response):
         """Extracts and processes the response correctly for different models."""
         try:
             if not response:
-                print(f"\n❌ Received empty response.")
+                print(f"\n Received empty response.")
                 return None
 
             if isinstance(response, str):
@@ -240,12 +245,12 @@ def call_llm(model, prompt, retries=3, delay=2):
                 elif "generated_text" in response:
                     response_text = response["generated_text"].strip()
                 else:
-                    print(f"\n❌ Unexpected response format (dict case)")
+                    print(f"\n Unexpected response format (dict case)")
                     print(response)
                     return None
 
             else:
-                print(f"\n❌ Unexpected response type: {type(response)}")
+                print(f"\n Unexpected response type: {type(response)}")
                 print(response)
                 return None
 
@@ -259,7 +264,7 @@ def call_llm(model, prompt, retries=3, delay=2):
             return response_text
 
         except Exception as e:
-            print(f"\n❌ Error processing response - {e}")
+            print(f"\n Error processing response - {e}")
             print(response)
             return None
 
@@ -277,12 +282,12 @@ def call_llm(model, prompt, retries=3, delay=2):
 
             result = process_response(response)
             if result is not None:
-                return result  # ✅ If processing worked, return early
+                return result  # If processing worked, return early
 
         except Exception as e:
-            print(f"\n❌ Attempt {attempt + 1}: Error calling {model} - {e}")
+            print(f"\n Attempt {attempt + 1}: Error calling {model} - {e}")
             if attempt < retries - 1:
                 time.sleep(delay)
 
-    print(f"\n❌ All {retries} attempts failed for model: {model}")
-    return None  # ✅ All retries exhausted, return None
+    print(f"\n All {retries} attempts failed for model: {model}")
+    return None  # All retries exhausted, return None

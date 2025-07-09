@@ -1,3 +1,42 @@
+"""
+Multi‑Model Hallucination Scoring Script
+
+This script evaluates tailored (paraphrased) texts for hallucinations by
+comparing them with their original source texts.  For each paraphrase, it asks
+several LLMs to rate:
+
+• **Relevance** (1 – 5): how well the tailored text covers the key points  
+• **Consistency** (1 – 5): factual faithfulness to the original text  
+
+The script:
+
+1. Loads the project‑wide `linguistic_analysis.json` file (path set in
+   `config.py`).
+2. Iterates through every tailored text (or a single example in `TEST_MODE`).
+3. Sends a hallucination‑detection prompt to each evaluator LLM.
+4. Extracts numeric scores with regex, stores them under
+   `prompt_data["hallucination_scores"][eval_model]`.
+5. Computes an average per evaluator **and** an overall average per prompt.
+6. Saves progress after each entry; final results go to the same JSON file.
+
+Key toggles & inputs
+--------------------
+• `TEST_MODE` – when `True`, scores a single hard‑coded entry for quick checks.  
+• `llms` – list of generator/evaluator model names supported by `call_llm()`.  
+• Requires valid API keys / env variables for OpenAI, Anthropic, and Mistral.
+
+Outputs
+-------
+Adds this block to every prompt that gets scored:
+
+"hallucination_scores": {
+  "gpt4o":  { "relevance": 4, "consistency": 5, "average": 4.5 },
+  "claude": { "relevance": 3, "consistency": 4, "average": 3.5 },
+  …
+  "hallucinations_overall_average": 4.00
+}
+"""
+
 import json
 import re
 from statistics import mean
@@ -65,12 +104,12 @@ if TEST_MODE:
     entry = data[entry_id]
     original_text = entry["original_text"]
 
-    print(f"🧪 Running TEST_MODE on entry: {entry_id}")
+    print(f" Running TEST_MODE on entry: {entry_id}")
 
     for gen_model in llms:
         model_data = entry.get("tailored_texts", {}).get(gen_model)
         if not model_data:
-            print(f"⚠️ No tailored texts for generator model {gen_model} in entry {entry_id}")
+            print(f" No tailored texts for generator model {gen_model} in entry {entry_id}")
             continue
 
         for user_category, prompts in model_data.items():
@@ -81,15 +120,15 @@ if TEST_MODE:
                 for eval_model in llms:
                     # Skip if already scored by this evaluator
                     if eval_model in prompt_data.get("hallucination_scores", {}):
-                        print(f"⏭️ Already scored by {eval_model}: {gen_model} → {user_category} → {prompt_id}")
+                        print(f" Already scored by {eval_model}: {gen_model} → {user_category} → {prompt_id}")
                         continue
 
                     tailored_text = prompt_data.get("text", "").strip()
                     if not tailored_text:
-                        print(f"⚠️ Missing tailored text for {entry_id} → {gen_model} → {user_category} → {prompt_id}")
+                        print(f" Missing tailored text for {entry_id} → {gen_model} → {user_category} → {prompt_id}")
                         continue
 
-                    print(f"📍 Evaluating {entry_id} → Gen: {gen_model} → Eval: {eval_model} → {user_category} → {prompt_id}")
+                    print(f"Evaluating {entry_id} → Gen: {gen_model} → Eval: {eval_model} → {user_category} → {prompt_id}")
                     prompt = detect_hallucination_prompt.format(
                         original=original_text,
                         tailored=tailored_text
@@ -98,11 +137,11 @@ if TEST_MODE:
                     try:
                         response = call_llm(eval_model, prompt)
                     except Exception as e:
-                        print(f"🔥 Error calling LLM '{eval_model}' for {entry_id} → {prompt_id}: {e}")
+                        print(f" Error calling LLM '{eval_model}' for {entry_id} → {prompt_id}: {e}")
                         continue
 
                     if not response:
-                        print(f"⚠️ No response from {eval_model} for {entry_id} → {prompt_id}")
+                        print(f" No response from {eval_model} for {entry_id} → {prompt_id}")
                         continue
 
                     relevance_match = re.search(r"Relevance\s*[:=]\s*(\d(?:\.\d)?)", response, re.IGNORECASE)
@@ -119,11 +158,11 @@ if TEST_MODE:
                             "average": average
                         }
 
-                        print(f"✅ Scored by {eval_model}: relevance={relevance}, consistency={consistency}, avg={average}")
+                        print(f" Scored by {eval_model}: relevance={relevance}, consistency={consistency}, avg={average}")
                     else:
-                        print(f"⚠️ Failed to parse scores from {eval_model} for {entry_id} → {prompt_id}:\n{response}")
+                        print(f" Failed to parse scores from {eval_model} for {entry_id} → {prompt_id}:\n{response}")
 
-                # ✅ Compute hallucinations_overall_average after all evaluators have scored this prompt
+                #  Compute hallucinations_overall_average after all evaluators have scored this prompt
                 avg_scores = [
                     s["average"]
                     for s in prompt_data.get("hallucination_scores", {}).values()
@@ -132,17 +171,17 @@ if TEST_MODE:
 
                 if avg_scores:
                     prompt_data["hallucination_scores"]["hallucinations_overall_average"] = round(mean(avg_scores), 2)
-                    print(f"📊 Overall average for {gen_model} → {user_category} → {prompt_id}: {prompt_data['hallucination_scores']['hallucinations_overall_average']}")
+                    print(f" Overall average for {gen_model} → {user_category} → {prompt_id}: {prompt_data['hallucination_scores']['hallucinations_overall_average']}")
 
 
     # Overwrite full data back to main file
     with open(LINGUISTIC_ANALYSIS_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
-        print(f"📝 Test results written to {LINGUISTIC_ANALYSIS_PATH}")
+        print(f" Test results written to {LINGUISTIC_ANALYSIS_PATH}")
 
 
 else:
-    print(f"🚀 Starting full hallucination scoring on {len(data)} entries...\n")
+    print(f" Starting full hallucination scoring on {len(data)} entries...\n")
 
     total_scored = 0
 
@@ -152,21 +191,21 @@ else:
         for gen_model in llms:
             model_data = entry.get("tailored_texts", {}).get(gen_model)
             if not model_data:
-                tqdm.write(f"⚠️ No tailored texts for generator model {gen_model} in entry {entry_id}")
+                tqdm.write(f" No tailored texts for generator model {gen_model} in entry {entry_id}")
                 continue
 
             for user_category, prompts in model_data.items():
                 for prompt_id, prompt_data in prompts.items():
                     tailored_text = prompt_data.get("text", "").strip()
                     if not tailored_text:
-                        tqdm.write(f"⚠️ Missing tailored text for {entry_id} → {gen_model} → {user_category} → {prompt_id}")
+                        tqdm.write(f" Missing tailored text for {entry_id} → {gen_model} → {user_category} → {prompt_id}")
                         continue
 
                     for eval_model in llms:
                         if eval_model in prompt_data.get("hallucination_scores", {}):
                             continue  # Already scored by this model
 
-                        tqdm.write(f"📍 Scoring {entry_id} → Gen: {gen_model} → Eval: {eval_model} → {user_category} → {prompt_id}")
+                        tqdm.write(f" Scoring {entry_id} → Gen: {gen_model} → Eval: {eval_model} → {user_category} → {prompt_id}")
 
                         prompt = detect_hallucination_prompt.format(
                             original=original_text,
@@ -176,11 +215,11 @@ else:
                         try:
                             response = call_llm(eval_model, prompt)
                         except Exception as e:
-                            tqdm.write(f"🔥 Error calling LLM '{eval_model}' for {entry_id} → {prompt_id}: {e}")
+                            tqdm.write(f" Error calling LLM '{eval_model}' for {entry_id} → {prompt_id}: {e}")
                             continue
 
                         if not response:
-                            tqdm.write(f"⚠️ No response from {eval_model} for {entry_id} → {prompt_id}")
+                            tqdm.write(f" No response from {eval_model} for {entry_id} → {prompt_id}")
                             continue
 
                         relevance_match = re.search(r"Relevance\s*[:=]\s*(\d(?:\.\d)?)", response, re.IGNORECASE)
@@ -198,9 +237,9 @@ else:
                             }
 
                             total_scored += 1
-                            tqdm.write(f"✅ Scored → relevance={relevance}, consistency={consistency}, avg={average}")
+                            tqdm.write(f" Scored → relevance={relevance}, consistency={consistency}, avg={average}")
                         else:
-                            tqdm.write(f"⚠️ Failed to parse scores from {eval_model} for {entry_id} → {prompt_id}:\n{response}")
+                            tqdm.write(f" Failed to parse scores from {eval_model} for {entry_id} → {prompt_id}:\n{response}")
 
                     # After all eval models scored this prompt → compute overall average
                     avg_scores = [
@@ -211,14 +250,14 @@ else:
                     if avg_scores:
                         prompt_data["hallucination_scores"]["hallucinations_overall_average"] = round(mean(avg_scores), 2)
                         tqdm.write(
-                            f"📊 Overall average for {entry_id} → {gen_model} → {user_category} → {prompt_id}: "
+                            f" Overall average for {entry_id} → {gen_model} → {user_category} → {prompt_id}: "
                             f"{prompt_data['hallucination_scores']['hallucinations_overall_average']}"
                         )
 
-        # 💾 Save progress after each entry
+        # Save progress after each entry
         with open(LINGUISTIC_ANALYSIS_PATH, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
-            tqdm.write(f"💾 Progress saved after entry {entry_id}")
+            tqdm.write(f"Progress saved after entry {entry_id}")
 
     # ✅ Final message
-    print(f"\n✅ Hallucination scoring complete. Total prompts scored: {total_scored}")
+    print(f"\n Hallucination scoring complete. Total prompts scored: {total_scored}")

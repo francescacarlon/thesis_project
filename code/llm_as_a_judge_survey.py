@@ -1,3 +1,15 @@
+"""
+This script evaluates explanations tailored for different target audiences by
+prompting large language models (LLMs) to rank and comment on their clarity,
+technical accuracy, and accessibility from the perspective of two roles:
+'Linguist' and 'Computer Scientist'.
+
+It processes HTML files containing three explanations each, extracts the texts,
+constructs prompts for the LLM evaluators, collects their responses, and
+aggregates all results into a single JSON file for further analysis.
+"""
+
+
 from dotenv import load_dotenv
 import os
 from bs4 import BeautifulSoup # to extract data from HTML or XML documents
@@ -6,8 +18,8 @@ import json
 from llm_caller import call_llm
 
 # ========================
-# 🔐 Load & Validate All API Keys
-# ========================
+# Load & Validate All API Keys
+
 load_dotenv()
 
 required_keys = {
@@ -19,12 +31,12 @@ required_keys = {
 
 for env_key, service_name in required_keys.items():
     if not os.getenv(env_key):
-        print(f"⚠️ {env_key} ({service_name}) not found. Make sure your .env file is set up correctly.")
+        print(f" {env_key} ({service_name}) not found. Make sure your .env file is set up correctly.")
 
 
 # ========================
-# 📖 Role Descriptions
-# ========================
+# Role Descriptions
+
 
 # role_definitions = {
 #     "Linguist": (
@@ -58,8 +70,8 @@ role_definitions = {
 
 
 # ========================
-# 📄 Extract 3 explanations from file
-# ========================
+# Extract 3 explanations from file
+
 def extract_texts_from_html_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         soup = BeautifulSoup(f, 'html.parser')
@@ -72,8 +84,8 @@ def extract_texts_from_html_file(filepath):
     return texts
 
 # ========================
-# ✍️ Prompt Constructor
-# ========================
+# Prompt Constructor
+
 def prompt_judge(role, input_texts, instructions, role_definitions):
     role_description = f"You are a {role}.\n\n{role_definitions[role]}"
     
@@ -107,8 +119,8 @@ def prompt_judge(role, input_texts, instructions, role_definitions):
 
 
 # ========================
-# 🧪 Run for all files in folder
-# ========================
+# Run for all files in folder
+
 def evaluate_folder(role, folder_path: Path, save_dir: Path, model_name="gpt4o"):
     instructions = "Clarity, technical accuracy, and accessibility to someone from your background."
     html_files = list(folder_path.glob("*.html"))
@@ -122,14 +134,14 @@ def evaluate_folder(role, folder_path: Path, save_dir: Path, model_name="gpt4o")
 
         texts = extract_texts_from_html_file(file)
         if len(texts) != 3:
-            print(f"⚠️ Skipping {file.name} — does not contain 3 texts.")
+            print(f" Skipping {file.name} — does not contain 3 texts.")
             continue
 
         prompt = prompt_judge(role, texts, instructions, role_definitions)
         response = call_llm(model_name, prompt)
 
         if response is None:
-            print(f"❌ No response for {file.name} with model {model_name}")
+            print(f" No response for {file.name} with model {model_name}")
             continue
 
         output_data = {
@@ -141,7 +153,7 @@ def evaluate_folder(role, folder_path: Path, save_dir: Path, model_name="gpt4o")
         with output_path.open("w", encoding="utf-8") as f:
             json.dump(output_data, f, ensure_ascii=False, indent=2)
 
-        print(f"✅ Saved JSON: {output_path.name}")
+        print(f" Saved JSON: {output_path.name}")
 
 
 def load_results_from_folder(folder):
@@ -161,8 +173,8 @@ def load_results_from_folder(folder):
     return result_dict
 
 # ========================
-# 🚀 Run for both Linguist and Computer Scientist
-# ========================
+#  Run for both Linguist and Computer Scientist
+
 if __name__ == "__main__":
     BASE_PATH = Path.cwd()
     #models_who_judge = ["gpt4o", "claude", "deepseek", "llama", "mistral"]
@@ -189,18 +201,18 @@ if __name__ == "__main__":
             output_folder = config["output_folder"]
             output_folder.mkdir(parents=True, exist_ok=True)
 
-            print(f"\n🚀 Running {model_name} evaluation for: {role}")
+            print(f"\n Running {model_name} evaluation for: {role}")
             evaluate_folder(role, input_folder, output_folder, model_name=model_name)
 
 
     # ========================
-    # 📦 Aggregate All Results into One File
-    # ========================
+    # Aggregate All Results into One File
+  
     aggregated_results = {}
     for config in role_configs:
         role = config["role"]
         results_folder = config["output_folder"]
-        print(f"📥 Aggregating results for: {role}")
+        print(f" Aggregating results for: {role}")
         aggregated_results[role] = load_results_from_folder(results_folder)
 
     # output_path = BASE_PATH / "data/texts_survey/llm_as_a_judge_texts/evaluation_results.json"
@@ -208,4 +220,4 @@ if __name__ == "__main__":
     with output_path.open("w", encoding="utf-8") as f:
         json.dump(aggregated_results, f, indent=2, ensure_ascii=False)
 
-    print(f"\n✅ Combined results saved to: {output_path}")
+    print(f"\n Combined results saved to: {output_path}")

@@ -203,11 +203,11 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
     prompt_key = f"prompt{prompt_number}"
 
     for i, (key, value) in enumerate(dataset.items()):
-        # ✅ If target_key is set, process ONLY that entry and ignore max_entries
+        # If target_key is set, process ONLY that entry and ignore max_entries
         if target_key:
             if key != target_key:
                 continue
-        elif max_entries and i >= max_entries:  # ✅ If no target_key, apply max_entries limit
+        elif max_entries and i >= max_entries:  # If no target_key, apply max_entries limit
             break
 
         print(f"\nProcessing entry {i+1}/{max_entries or len(dataset)}: {key}")
@@ -240,7 +240,7 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
             tailored_texts = benchmark[key].setdefault("tailored_texts", {}).setdefault(llm_model, {}).setdefault(target_category, {})
             existing_text = (tailored_texts.get(prompt_key) or "").strip()
 
-            # ✅ Extract existing analysis for this prompt key
+            # Extract existing analysis for this prompt key
             existing_analysis = linguistic_analysis[key]["tailored_texts"].setdefault(llm_model, {}).setdefault(target_category, {}).setdefault(prompt_key, {})
 
             if is_valid_existing_text(existing_text):
@@ -284,7 +284,7 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
             tailored_analysis = analyze_text(response_text)
             tailored_analysis["parse_tree_depth_mean"] = compute_mean_parse_tree_depth(response_text)
 
-            # ✅ Compute similarity scores
+            # Compute similarity scores
             cosine_sim = compute_cosine_similarity(original_text, response_text)["cosine_similarity"]
             bert_scores = compute_bertscore(original_text, response_text)
             bleu_score = compute_bleu_score(original_text, response_text)
@@ -304,7 +304,7 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
             })
 
 
-    # ✅ Pass max_entries when calling cleanup
+    # Pass max_entries when calling cleanup
     clean_existing_texts(benchmark)
     clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark, target_key, max_entries)
 

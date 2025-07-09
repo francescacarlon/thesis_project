@@ -1,3 +1,21 @@
+"""
+LLM-Based Hallucination Scoring Script
+
+This script evaluates the hallucination levels of paraphrased (tailored) texts 
+by comparing them to original texts using multiple LLMs (GPT-4, Claude, Mistral). 
+Each model provides scores for:
+- **Relevance**: how well the tailored text matches the topic of the original
+- **Consistency**: how factually and logically aligned it is with the original
+
+Main features:
+- Sends input to each LLM with a hallucination detection prompt
+- Extracts and stores relevance and consistency scores (1–5)
+- Computes an average score per LLM and overall
+- Saves results to `linguistic_analysis_with_scores.json`
+
+Requires valid API keys for OpenAI, Anthropic, and Mistral.
+"""
+
 import json
 import os
 from openai import OpenAI

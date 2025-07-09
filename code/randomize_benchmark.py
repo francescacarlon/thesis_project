@@ -1,3 +1,17 @@
+"""
+This script generates a randomized benchmark dataset by selecting a subset of tailored texts
+from a filtered metadata JSON file for specific topic categories (CS and L). It then enriches
+the randomized dataset by attaching the full prompt texts from the original benchmark data,
+reorders fields for clarity, and saves the final output to a JSON file.
+
+Main steps:
+- Load filtered benchmark metadata and select target topics
+- Randomly sample a limited number of tailored prompts per category and topic
+- Attach corresponding prompt texts from the full benchmark data
+- Reorder fields for consistency and readability
+- Save the finalized randomized benchmark dataset for further use
+"""
+
 import json
 import random
 from collections import OrderedDict
@@ -125,4 +139,4 @@ for topic_key, instance in list(randomized_data.items()):
 with open(RANDOMIZED_BENCHMARK_PATH, "w", encoding="utf-8") as f:
     json.dump(randomized_data, f, indent=4, ensure_ascii=False)
 
-print("✅ Ordered output: 'topic' → 'instance_code' → 'selected_texts'. All texts populated.")
+print("Ordered output: 'topic' → 'instance_code' → 'selected_texts'. All texts populated.")

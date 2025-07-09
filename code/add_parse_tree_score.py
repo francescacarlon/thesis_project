@@ -74,7 +74,7 @@ def compute_mean_parse_tree_depth(text):
     try:
         doc = nlp(text)
     except Exception as e:
-        print(f"❌ spaCy/Benepar failed to parse:\n'{text[:100]}...'\nReason: {e}")
+        print(f"spaCy/Benepar failed to parse:\n'{text[:100]}...'\nReason: {e}")
         return None
 
     depths = []
@@ -110,9 +110,9 @@ for i, (key, instance) in enumerate(data.items()):
                 if isinstance(text, str):
                     depth = compute_mean_parse_tree_depth(text)
                     instance[f"parse_tree_depth_mean_{orig_key}"] = depth
-                    print(f"  ➤ {orig_key}: depth = {depth}")
+                    print(f"  {orig_key}: depth = {depth}")
                 else:
-                    print(f"  ⚠️ Invalid or missing text in {orig_key}")
+                    print(f"Invalid or missing text in {orig_key}")
 
         # Process selected (tailored) texts
         selected_texts = instance.get("selected_texts", {})
@@ -122,22 +122,22 @@ for i, (key, instance) in enumerate(data.items()):
                 if isinstance(text, str):
                     depth = compute_mean_parse_tree_depth(text)
                     variant["parse_tree_depth_mean"] = depth
-                    print(f"  ➤ {background}/{variant_key}: depth = {depth}")
+                    print(f"  {background}/{variant_key}: depth = {depth}")
                 else:
-                    print(f"  ⚠️ Invalid or missing text in {background}/{variant_key}")
+                    print(f"Invalid or missing text in {background}/{variant_key}")
 
         processed_data[key] = instance
-        print(f"✅ Added {key} to processed_data.")
+        print(f"Added {key} to processed_data.")
 
         # Save partial progress
         if (i + 1) % PARTIAL_SAVE_EVERY == 0:
             partial_path = "partial_" + os.path.basename(RANDOMIZED_BENCHMARK_WITH_SCORES_PATH)
-            print(f"🔃 Saving partial progress to: {partial_path}")
+            print(f"Saving partial progress to: {partial_path}")
             with open(partial_path, "w", encoding="utf-8") as pf:
                 json.dump(processed_data, pf, indent=2)
 
     except Exception as e:
-        print(f"❌ Error processing {key}: {type(e).__name__} — {e}")
+        print(f"Error processing {key}: {type(e).__name__} — {e}")
         traceback.print_exc()
         with open("parse_errors.log", "a", encoding="utf-8") as logf:
             logf.write(f"{key}: {type(e).__name__} — {e}\n")
@@ -145,8 +145,8 @@ for i, (key, instance) in enumerate(data.items()):
 
 # === FINAL SAVE ===
 output_path = os.path.splitext(RANDOMIZED_BENCHMARK_WITH_SCORES_PATH)[0] + "_parsed_depths.json"
-print(f"\n✅ Saving full output to: {output_path}")
+print(f"\nSaving full output to: {output_path}")
 with open(output_path, "w", encoding="utf-8") as f:
     json.dump(processed_data, f, indent=2)
 
-print("✅ Done.")
+print("Done.")

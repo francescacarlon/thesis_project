@@ -1,3 +1,23 @@
+"""
+Evaluation Analysis Script for Human and LLM Judgments
+
+This script analyzes and visualizes the relationship between linguistic features 
+(e.g., POS tags, readability scores, similarity metrics) and evaluation scores 
+from both human annotators and large language models (LLMs). It works on a 
+JSON-formatted benchmark dataset that includes original and tailored texts.
+
+Main features:
+- Loads and flattens the benchmark data into a structured DataFrame
+- Computes Spearman and Pearson correlations between linguistic metrics and judgment scores
+- Compares human and LLM judgments across domains (e.g., Computer Science, Linguistics)
+- Generates scatter plots and regression lines for interpretability
+
+Used for investigating the alignment between LLMs and humans as evaluators and 
+the influence of linguistic properties on perceived quality.
+
+"""
+
+
 from config import RANDOMIZED_BENCHMARK_WITH_SCORES_PATH
 import json
 import matplotlib.pyplot as plt
@@ -140,7 +160,7 @@ def plot_linguistic_metric_correlations(df, linguistic_metrics, judgment_scores=
 
     for metric in linguistic_metrics:
         for score_type in judgment_scores:
-            print(f"📊 Plotting {score_type} vs {metric}...\n")
+            print(f"Plotting {score_type} vs {metric}...\n")
 
             # ---------------- SCATTER PLOT ----------------
             plt.figure(figsize=(10, 6))

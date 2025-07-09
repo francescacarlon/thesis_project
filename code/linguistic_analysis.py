@@ -1,19 +1,10 @@
 """
-linguistic_analysis.py
-Core linguistic - metric utilities.
+Linguistic and Similarity Analysis Toolkit for Text Comparison
 
-Per-text metrics
-----------------
-- token_count
-- readability        (Flesch Reading Ease, Flesch-Kincaid Grade, **SMOG**)
-- POS distribution
-
-Pairwise similarity
--------------------
-- cosine similarity
-- BERTScore          (DeBERTa-mnli)
-- BLEU-1
-- ROUGE-1/-2/-L
+This module provides a suite of functions to analyze texts linguistically
+and to compute various similarity metrics between original and tailored texts.
+It is designed to support evaluation of paraphrasing, summarization, or
+tailored text generation by large language models.
 """
 
 import nltk, textstat, torch, logging
@@ -139,7 +130,7 @@ def compute_cosine_similarity(original_text, tailored_text):
 # use the embeddings from this strong DeBERTa model to compute token-level similarity.
 def compute_bertscore(original_text, tailored_text, model_name="microsoft/deberta-xlarge-mnli"):
     if not original_text.strip() or not tailored_text.strip():
-        print("⚠️ Skipping BERTScore computation: Empty input detected.")
+        print(" Skipping BERTScore computation: Empty input detected.")
         return {"bertscore_precision": None, "bertscore_recall": None, "bertscore_f1": None}
 
     # Split long texts into chunks (to prevent truncation)
@@ -163,7 +154,7 @@ def compute_bertscore(original_text, tailored_text, model_name="microsoft/debert
             [orig_chunk], 
             model_type=model_name,  
             lang="en", 
-            rescale_with_baseline=True,  # ✅ Prevents inflated scores
+            rescale_with_baseline=True,  # Prevents inflated scores
             batch_size=8  
         )
 

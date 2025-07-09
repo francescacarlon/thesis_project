@@ -1,46 +1,13 @@
-# updates for benchmark file(s)
+"""
+This script updates the benchmark JSON file with new LLM-as-a-judge and human evaluation scores
+for specific topics and prompts. It loads the existing benchmark, inserts the evaluation scores,
+and saves the updated data back to disk.
+"""
 
-from utils import load_dataset, save_dataset
-from config import LINGUISTIC_ANALYSIS_PATH, BASE_PATH
+from config import BASE_PATH
 from linguistic_analysis import compute_readability
 import json
 import os
-
-def update_only_readability(linguistic_analysis):
-    """Updates only the readability field (incl. SMOG) for all tailored texts."""
-    updated = 0
-
-    for key, entry in linguistic_analysis.items():
-        # Update original text readability
-        if "original_text" in entry:
-            original_text = entry["original_text"]
-            updated_readability = compute_readability(original_text)
-            entry["readability"] = updated_readability
-
-        # Update all tailored texts' readability
-        for llm, categories in entry.get("tailored_texts", {}).items():
-            for category, prompts in categories.items():
-                for prompt_key, analysis in prompts.items():
-                    if "text" in analysis:
-                        text = analysis["text"]
-                        updated_readability = compute_readability(text)
-                        analysis["readability"] = updated_readability
-                        updated += 1
-
-    print(f"\n✅ Readability scores updated (including SMOG) for {updated} tailored texts.")
-
-# if __name__ == "__main__":
-    # print("📂 Loading linguistic analysis data...")
-    # linguistic_analysis = load_dataset(LINGUISTIC_ANALYSIS_PATH)
-# 
-    # print("🔧 Updating readability scores...")
-    # update_only_readability(linguistic_analysis)
-# 
-    # print("💾 Saving updated dataset...")
-    # save_dataset(linguistic_analysis, LINGUISTIC_ANALYSIS_PATH)
-# 
-    # print("✅ Done. SMOG scores are now included.")
-
 
 # update LLM-as-a-judge and human evaluation scores in benchmark_randomized_with_agreement_scores.json
 
@@ -48,12 +15,12 @@ def update_only_readability(linguistic_analysis):
 final_benchmark_path = os.path.join(BASE_PATH, 'data/benchmark_randomized_with_agreement_scores.json')
 
 if __name__ == "__main__":
-    # 📂 Load benchmark JSON
-    print("📂 Loading benchmark file...")
+    # Load benchmark JSON
+    print("Loading benchmark file...")
     with open(final_benchmark_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    # 📝 Insert judge scores
+    # Insert judge scores
     data['T2']['original_text_2_score'] = {
         "LLMs_judge": 21,
         "humans_judge": 0
@@ -111,11 +78,11 @@ if __name__ == "__main__":
     data['T10']['selected_texts']['L']['L_claude_prompt5']['LLMs_judge'] = 40
     data['T10']['selected_texts']['L']['L_claude_prompt5']['humans_judge'] = 0
 
-    # 💾 Save updated benchmark
-    print("💾 Saving updated benchmark...")
+    #  Save updated benchmark
+    print(" Saving updated benchmark...")
     with open(final_benchmark_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
-    print("✅ Benchmark file updated successfully.")
+    print("Benchmark file updated successfully.")
 
 
