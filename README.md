@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 ## Running the code
 
-# Dataset Creation
+## Dataset Creation
 ```bash
 cd code/
 python dataset_creation.py
