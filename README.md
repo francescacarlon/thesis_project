@@ -42,7 +42,7 @@ pip install -r requirements.txt
 ## Running the code
 
 ## Dataset Creation
-To create initial dataset with original texts from selected chapters of your book.
+To create initial dataset with original texts from selected chapters of your book:
 
 ```bash
 cd code/
@@ -50,7 +50,7 @@ python dataset_creation.py
 ```
 
 ## Benchmark Creation
-To create tailored paraphrases with different prompts-LLMs combinations and compute linguistic metrics for each text. 
+To create tailored paraphrases with different prompts-LLMs combinations and compute linguistic metrics for each text:
 ```bash
 cd code/
 python create_benchmark_main.py
@@ -62,13 +62,13 @@ cd code/
 python add_hallucination_scores.py
 ```
 
-To implement LLM-as-a-judge Survey
+To implement LLM-as-a-judge Survey:
 ```bash
 cd code/
 python llm_as_a_judge_survey.py
 ```
 
-To compute Correlation Analysis (scores and visuals)
+To compute Correlation Analysis (scores and visuals):
 ```bash
 cd code/
 python correlations_analysis.py
@@ -76,13 +76,13 @@ python correlations_analysis.py
 
 # (Optional) Human annotation setup: 
 
-To randomize a subset from Benchmark
+To randomize a subset from Benchmark:
 ```bash
 cd code/
 python randomize_benchmark.py
 ```
 
-To convert files into HTML for better readability and survey distribution
+To convert files into HTML for better readability and survey distribution:
 ```bash
 cd code/
 python html_converter.py
