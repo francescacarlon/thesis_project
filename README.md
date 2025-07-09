@@ -62,19 +62,14 @@ cd code/
 python add_hallucination_scores.py
 ```
 
+## LLM-as-a-Judge
 To implement LLM-as-a-judge Survey:
 ```bash
 cd code/
 python llm_as_a_judge_survey.py
 ```
 
-To compute Correlation Analysis (scores and visuals):
-```bash
-cd code/
-python correlations_analysis.py
-```
-
-# (Optional) Human annotation setup: 
+# Human annotation setup: 
 
 To randomize a subset from Benchmark:
 ```bash
@@ -86,4 +81,11 @@ To convert files into HTML for better readability and survey distribution:
 ```bash
 cd code/
 python html_converter.py
+```
+
+## Correlation Analysis
+To compute Correlation Analysis (scores and visuals):
+```bash
+cd code/
+python correlations_analysis.py
 ```
