@@ -1,3 +1,27 @@
+"""
+Benchmark Creation Script for Tailored Text Generation and Evaluation
+
+This script processes a dataset of original texts and generates tailored paraphrases 
+using large language models (LLMs) and prompt functions. The generated texts are 
+evaluated using a range of linguistic and similarity metrics.
+
+Main functionalities:
+- Generate paraphrases for different target audiences based on prompt–LLM combinations
+- Validate and clean existing or newly generated texts
+- Compute and store linguistic features (e.g., readability, POS tags, parse tree depth)
+- Compute similarity metrics: cosine similarity, BERTScore, BLEU, and ROUGE
+- Maintain two persistent JSON files: `benchmark.json` and `linguistic_analysis.json`
+
+Core components:
+- `create_benchmark(...)`: Orchestrates the generation and evaluation pipeline
+- `clean_existing_texts(...)`: Strips out artifacts and normalizes texts
+- `is_valid_existing_text(...)`: Validates texts for reuse
+- `analyze_text(...)`: Computes linguistic features using spaCy
+- `compute_*`: Metrics for comparing original and tailored texts
+
+Configuration paths for datasets and outputs are defined in `config.py`.
+"""
+
 from utils import load_dataset, save_dataset
 from linguistic_analysis import analyze_text, compute_cosine_similarity, compute_bertscore, compute_bleu_score, compute_rouge_scores
 from llm_caller import call_llm
@@ -137,14 +161,15 @@ def clean_existing_texts_in_linguistic_analysis(linguistic_analysis, benchmark, 
                             "text": cleaned_text,
                             "token_count": updated_analysis["token_count"],
                             "readability": updated_analysis["readability"],
+                            "parse_tree_depth_mean": updated_analysis["parse_tree_depth_mean"], # check if in your case it has _original or _tailored
                             "pos": updated_analysis["pos"]
                         })
 
-    print(f"\n✅ Post-run cleanup applied to {cleaned_count} texts in linguistic_analysis.")
-    print(f"🔹 Cosine similarity recomputed for {updated_similarities} text pairs.")
-    print(f"🔹 BERTScore recomputed for {updated_bertscores} text pairs.")
-    print(f"🔹 BLEU score recomputed for {updated_bleus} text pairs.")
-    print(f"🔹 ROUGE score recomputed for {updated_rouges} text pairs.")
+    # print(f"\n✅ Post-run cleanup applied to {cleaned_count} texts in linguistic_analysis.")
+    # print(f"🔹 Cosine similarity recomputed for {updated_similarities} text pairs.")
+    # print(f"🔹 BERTScore recomputed for {updated_bertscores} text pairs.")
+    # print(f"🔹 BLEU score recomputed for {updated_bleus} text pairs.")
+    # print(f"🔹 ROUGE score recomputed for {updated_rouges} text pairs.")
 
 
 
@@ -203,6 +228,7 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
             "original_text": original_text,
             "token_count": original_analysis["token_count"],
             "readability": original_analysis["readability"],
+            "parse_tree_depth_mean":  original_analysis["parse_tree_depth_mean"], # check if in your case it has _original or _tailored
             "pos": original_analysis["pos"],
             "tailored_texts": {}
         })
@@ -265,6 +291,7 @@ def create_benchmark(llm_model, prompt_function_name, max_entries=None, target_k
             "text": response_text,
             "token_count": tailored_analysis["token_count"],
             "readability": tailored_analysis["readability"],
+            "parse_tree_depth_mean":  tailored_analysis["parse_tree_depth_mean"], # check if in your case it has _original or _tailored
             "pos": tailored_analysis["pos"],
             "cosine_similarity": cosine_sim,
             "bertscore": bert_scores,

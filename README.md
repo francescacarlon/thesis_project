@@ -44,7 +44,7 @@ python dataset_creation.py
 ```
 
 ## Benchmark Creation
-To create tailored paraphrasis with different prompts-LLMs combinations.
+To create tailored paraphrases with different prompts-LLMs combinations and compute linguistic metrics for each text. 
 ```bash
 cd code/
 python create_benchmark_main.py
@@ -55,15 +55,29 @@ python create_benchmark_main.py
 cd code/
 python add_hallucination_scores.py
 ```
-...
-LLM-as-a-judge Survey
-...
-Correlation Analysis
-...
+
+To implement LLM-as-a-judge Survey
+```bash
+cd code/
+python llm_as_a_judge_survey.py
+```
+
+To compute Correlation Analysis (scores and visuals)
+```bash
+cd code/
+python correlations_analysis.py
+```
 
 # (Optional) Human annotation setup: 
 
-Randomized Benchmark Creation
-...
-HTML Converter
-...
+To randomize a subset from Benchmark
+```bash
+cd code/
+python randomize_benchmark.py
+```
+
+To convert files into HTML for better readability and survey distribution
+```bash
+cd code/
+python html_converter.py
+```

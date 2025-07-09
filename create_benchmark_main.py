@@ -42,7 +42,7 @@ def main():
     print("\n🚀 Starting automatic benchmark generation...\n")
 
     if TEST_MODE:
-        # ✅ Run a single test prompt
+        # ✅ Run a singae test prompt
         llm_model = "mistral"  # Set the model for testing
         prompt_function_name = PROMPT_FUNCTIONS[1]  # Choose the specific prompt function
 
