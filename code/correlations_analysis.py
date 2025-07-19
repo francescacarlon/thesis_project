@@ -176,7 +176,7 @@ def plot_linguistic_metric_correlations(df, linguistic_metrics, judgment_scores=
             plt.title(f"{score_type} vs {metric}", fontsize=14)
             plt.xlabel(metric)
             plt.ylabel(score_type)
-            plt.legend(title="Texts from")
+            plt.legend(title="Texts from", loc="upper right")
             plt.tight_layout()
 
             # Add model labels
@@ -186,7 +186,7 @@ def plot_linguistic_metric_correlations(df, linguistic_metrics, judgment_scores=
             plt.show()
 
             # ---------------- REGRESSION PLOT ----------------
-            sns.lmplot(
+            g = sns.lmplot(
                 data=df,
                 x=metric,
                 y=score_type,
@@ -198,7 +198,11 @@ def plot_linguistic_metric_correlations(df, linguistic_metrics, judgment_scores=
                 height=6,
                 aspect=1.3
             )
-            plt.title(f"{score_type} vs {metric} with Linear Regression")
+
+            g._legend.set_bbox_to_anchor((1, 1))     # top-right outside the plot
+            g._legend.set_loc("upper right")         # top-right corner
+            g._legend.set_title("Texts from")
+            plt.title(f"{score_type} vs {metric} with Linear Regression", y=1.03)
             plt.xlabel(metric)
             plt.ylabel(score_type)
             plt.tight_layout()
@@ -244,8 +248,10 @@ def compute_judgment_alignment(df):
 
 def plot_judgment_correlation(df):
     """
-    Plot LLMs_judge vs. humans_judge with regression line.
+    Plot LLMs_judge vs. humans_judge with scatter and regression lines.
+    Legend is placed in the top-left corner, including the 'Overall Trend' line.
     """
+    # ----- SCATTER PLOT -----
     plt.figure(figsize=(10, 6))
     sns.scatterplot(
         data=df,
@@ -259,11 +265,12 @@ def plot_judgment_correlation(df):
     plt.title("LLMs_judge vs Humans_judge")
     plt.xlabel("LLMs_judge")
     plt.ylabel("humans_judge")
-    plt.legend(title="Texts from")
+    plt.legend(title="Texts from", loc="upper left")
     plt.tight_layout()
     plt.show()
 
-    sns.lmplot(
+    # ----- REGRESSION PLOT with subgroup trends -----
+    g = sns.lmplot(
         data=df,
         x="LLMs_judge",
         y="humans_judge",
@@ -273,33 +280,43 @@ def plot_judgment_correlation(df):
         line_kws={'linewidth': 2},
         ci=95,
         height=6,
-        aspect=1.3
+        aspect=1.3,
+        legend=False
     )
 
-        # Add overall regression line (fits through ALL data regardless of category)
+    # Add overall regression line
+    ax = g.axes[0, 0]  # Get the single subplot axis from FacetGrid
     sns.regplot(
-        data=df, 
-        x="LLMs_judge", 
+        data=df,
+        x="LLMs_judge",
         y="humans_judge",
-        scatter=False,  # Don't plot points again
-        color="#2d8659",  # Green color for overall line
-        line_kws={'linewidth': 3, 'label': 'Overall Trend'}
+        scatter=False,
+        color="#2d8659",
+        line_kws={'linewidth': 3, 'label': 'Overall Trend'},
+        ax=ax
     )
 
-    plt.title("LLMs_judge vs Humans_judge with Linear Regression")
+    # Update legend: combine handles for hue + overall
+    handles, labels = ax.get_legend_handles_labels()
+    ax.legend(handles=handles, labels=labels, title="Texts from", loc="upper left")
+
+    # Set title and labels
+    g.fig.suptitle("LLMs_judge vs Humans_judge with Linear Regression", y=1.03)
+    g.set_axis_labels("LLMs_judge", "humans_judge")
     plt.tight_layout()
     plt.show()
+
 
 
 
 # Define your list of linguistic metrics
 
 # linguistic_metrics = ["token_count", "cosine_similarity", "flesch_reading_ease", "flesch_kincaid_grade", "smog_index", "bleu_score", "rouge_1", "rouge_2", "rouge_L", "bertscore_precision", "bertscore_recall", "bertscore_f1", "JJ", "NN", "VB", "DT", "IN", "MD", "CC", "VBG", "NNP", "RB", "VBN", "parse_tree_depth_mean"]  # all metrics
-linguistic_metrics = ["token_count", "NN", "VB", "IN","VBN", "parse_tree_depth_mean"]
+linguistic_metrics = ["flesch_reading_ease"]
 # linguistic_metrics = ["JJ", "NN", "VB", "DT", "IN", "MD", "CC", "VBG", "NNP", "RB", "VBN"]  # these are the most significant POS tags
 
-compute_linguistic_metric_correlations(df, linguistic_metrics)
-plot_linguistic_metric_correlations(df, linguistic_metrics)
+# compute_linguistic_metric_correlations(df, linguistic_metrics)
+# plot_linguistic_metric_correlations(df, linguistic_metrics)
 
 compute_judgment_alignment(df)
 plot_judgment_correlation(df)
